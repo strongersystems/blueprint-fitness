@@ -29,8 +29,12 @@ const ROUTES = {
 };
 const PAGES = Object.keys(ROUTES);
 
+/* preserve the hand-written README.txt across rebuilds */
+const readmePath = path.join(OUT, 'README.txt');
+const readme = fs.existsSync(readmePath) ? fs.readFileSync(readmePath) : null;
 fs.rmSync(OUT, { recursive: true, force: true });
 fs.mkdirSync(OUT, { recursive: true });
+if (readme) fs.writeFileSync(readmePath, readme);
 
 /* ---------- shared CSS + JS ---------- */
 let cssSrc = fs.readFileSync(path.join(SRC, 'css/main.css'), 'utf8').replace(/@font-face\{[^}]*\}\s*/g, '');

@@ -268,9 +268,12 @@ p{margin:0 0 1em}
 /* ============================================================
    MOTION KIT 5 — card & section life
    ============================================================ */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity var(--dur) var(--ease-out),transform var(--dur) var(--ease-out)}
+/* hidden-until-revealed states only apply once the script has flipped
+   body.no-js -> body.js — without JavaScript the page is fully static
+   and fully visible (same convention as the RLF/CTPT builds) */
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity var(--dur) var(--ease-out),transform var(--dur) var(--ease-out)}
 .reveal.in-view{opacity:1;transform:none}
-.stagger>*{opacity:0;transform:translateY(22px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
+.js .stagger>*{opacity:0;transform:translateY(22px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
 .stagger.in-view>*{opacity:1;transform:none}
 .stagger.in-view>*:nth-child(1){transition-delay:.05s}
 .stagger.in-view>*:nth-child(2){transition-delay:.14s}
@@ -805,7 +808,7 @@ body.menu-locked .site-header .btn-primary{visibility:hidden}
 /* ---------- kit 8: blueprint develop (images print into colour) ----------
    "Photos develop from blueprint to reality, because Blueprint
    turns plans into results." */
-.plan-frame img{
+.js .plan-frame img{
   filter:grayscale(1) brightness(.72) sepia(.35) hue-rotate(180deg) saturate(2.6);
   transition:filter 1.3s var(--ease-out) .15s;
 }
@@ -1320,3 +1323,26 @@ body.modal-open{overflow:hidden}
 }
 .closer .inner{position:relative;z-index:1;padding:clamp(4rem,9vw,7rem) var(--gutter)}
 .closer .lede{color:#C9D8EE;margin-inline:auto}
+
+/* ============================================================
+   no-JS static fallback (body.no-js — the script flips it to .js)
+   Mirrors the reduced-motion rendering: everything visible, plan
+   line drawn, milestones lit, photos developed, chrome hidden.
+   This is what makes the pages safe in embeds that strip scripts.
+   ============================================================ */
+body.no-js .co-label,
+body.no-js .print-caption{opacity:1;transform:rotate(-1.5deg)}
+body.no-js .print-overlay,
+body.no-js .print-head{display:none}
+body.no-js .ribbon .track{animation:none;padding-left:0}
+body.no-js .photo-strip .strip-track{animation:none}
+body.no-js .ruler,
+body.no-js .companion,
+body.no-js .sticky-cta{display:none}
+body.no-js .journey-line .fill{height:100%}
+body.no-js .journey-item .node{border-color:var(--blue);color:#fff;background:var(--blue)}
+body.no-js .draft-u{
+  padding-bottom:.1em;
+  background-image:linear-gradient(var(--blue),var(--blue));
+  background-repeat:no-repeat;background-size:100% .12em;background-position:0 100%;
+}

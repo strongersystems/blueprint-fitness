@@ -6,6 +6,12 @@
 (function () {
   'use strict';
 
+  /* progressive enhancement gate: hidden-until-revealed CSS is scoped
+     under body.js, so pages render fully static wherever this script
+     is stripped (same convention as the RLF/CTPT builds) */
+  document.body.classList.remove('no-js');
+  document.body.classList.add('js');
+
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var isDesktop = window.matchMedia('(min-width: 920px)').matches;
 

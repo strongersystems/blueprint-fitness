@@ -195,3 +195,12 @@ The live preview is a Higgsfield-hosted static deploy. To update it:
   deliberately excluded here per client direction.
 - "5/5 on Google, 200+ reviews", "100+ sessions/week", "6am–9pm, 7 days" are
   real numbers from their current pages — re-verify at launch.
+
+## `compact/` — paste-ready build
+
+`compact/` holds the same site repackaged for AI Studio Builder and similar
+tools: **HTML + CSS only, every file under 50,000 characters**, JS minified
+and inlined per page, and all images/video/fonts referenced by absolute URL
+on the live deploy (no base64). Rebuild it with
+`node research/build-compact.mjs`, verify with `node research/verify-compact.mjs`.
+See `compact/README.md`.

@@ -9,6 +9,26 @@
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var isDesktop = window.matchMedia('(min-width: 920px)').matches;
 
+  /* ---------- text helpers ----------
+     Written without backslashes so these files stay safe to embed in a
+     TSX template literal. Behaviour matches the regex forms exactly. */
+  /* .apply so the minifier cannot fold this back into escape sequences */
+  var WS = String.fromCharCode.apply(null, [32, 9, 10, 13, 12, 11]);
+  var SPLIT_WS = new RegExp('([' + WS + ']+)');
+  function hasWs(str) {
+    for (var i = 0; i < str.length; i++) if (WS.indexOf(str.charAt(i)) !== -1) return true;
+    return false;
+  }
+  function isEmail(v) {                 /* was: ^[^ws@]+@[^ws@]+.[^ws@]+$ */
+    if (!v || hasWs(v)) return false;
+    var at = v.indexOf('@');
+    if (at < 1 || v.indexOf('@', at + 1) !== -1) return false;
+    var dom = v.slice(at + 1);
+    var dot = dom.indexOf('.');
+    return dot >= 1 && dot <= dom.length - 2;
+  }
+  var TEL_RE = new RegExp('^[+0-9][0-9' + WS + '()-]{6,}$');
+
   /* ---------- generic in-view reveals (kit 5) ----------
      Checked inside the rAF scroll loop rather than an
      IntersectionObserver: observers are throttled and can miss
@@ -61,8 +81,8 @@
       Array.prototype.slice.call(node.childNodes).forEach(function (child) {
         if (child.nodeType === 3) {
           var frag = document.createDocumentFragment();
-          child.textContent.split(/(\s+)/).forEach(function (tok) {
-            if (/^\s+$/.test(tok) || tok === '') {
+          child.textContent.split(SPLIT_WS).forEach(function (tok) {
+            if (tok.trim() === '') {
               frag.appendChild(document.createTextNode(tok));
             } else {
               var s = document.createElement('span');
@@ -332,8 +352,8 @@
       var ok = true;
       var v = input.value.trim();
       if (input.required && !v) ok = false;
-      if (ok && input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) ok = false;
-      if (ok && input.type === 'tel' && v && !/^[+\d][\d\s\-()]{6,}$/.test(v)) ok = false;
+      if (ok && input.type === 'email' && !isEmail(v)) ok = false;
+      if (ok && input.type === 'tel' && v && !TEL_RE.test(v)) ok = false;
       field.classList.toggle('invalid', !ok);
       input.setAttribute('aria-invalid', ok ? 'false' : 'true');
       return ok;
@@ -398,7 +418,7 @@
   dims.forEach(function (d, i) {
     var idx = document.createElement('span');
     idx.className = 'idx';
-    idx.textContent = (i + 1 < 10 ? '0' : '') + (i + 1) + ' \u2014 ';
+    idx.textContent = (i + 1 < 10 ? '0' : '') + (i + 1) + ' — ';
     d.insertBefore(idx, d.firstChild);
   });
 

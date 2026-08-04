@@ -196,11 +196,13 @@ The live preview is a Higgsfield-hosted static deploy. To update it:
 - "5/5 on Google, 200+ reviews", "100+ sessions/week", "6am–9pm, 7 days" are
   real numbers from their current pages — re-verify at launch.
 
-## `lite/` — for size-limited site builders
+## `import-pack/` — single-file pastes for AI Studio
 
-`lite/` holds the same six pages packaged for AI site builders that cap file
-size: **HTML only, every page well under 50,000 characters** (7,850–25,246).
-Nothing is inlined — fonts come from Google Fonts, and photography, video and
-the shared minified CSS/JS come from the Higgsfield CDN, so the pages are the
-only thing to paste. Rebuild with `node research/build-compact.mjs`, verify
-with `node research/verify-compact.mjs`. See `lite/README.md`.
+`import-pack/` holds the site packaged for AI site builders: **8 paste files
+for 6 pages**, every file under 50,000 characters and **TSX-safe by
+construction** (no backticks, no `${`, no backslashes — enforced by the
+build). Four pages are one self-contained file each; `index` and `kickstart`
+ship as HTML+JS plus a separate stylesheet. CSS is subset per page, fonts come
+from Google Fonts and media from the CDN. Rebuild with
+`node research/build-pack.mjs`, verify with `node research/verify-pack.mjs`
+and `node research/style-parity.mjs`. See `import-pack/README.txt`.

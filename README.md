@@ -196,11 +196,11 @@ The live preview is a Higgsfield-hosted static deploy. To update it:
 - "5/5 on Google, 200+ reviews", "100+ sessions/week", "6am–9pm, 7 days" are
   real numbers from their current pages — re-verify at launch.
 
-## `compact/` — paste-ready build
+## `lite/` — for size-limited site builders
 
-`compact/` holds the same site repackaged for AI Studio Builder and similar
-tools: **HTML + CSS only, every file under 50,000 characters**, JS minified
-and inlined per page, and all images/video/fonts referenced by absolute URL
-on the live deploy (no base64). Rebuild it with
-`node research/build-compact.mjs`, verify with `node research/verify-compact.mjs`.
-See `compact/README.md`.
+`lite/` holds the same six pages packaged for AI site builders that cap file
+size: **HTML only, every page well under 50,000 characters** (7,850–25,246).
+Nothing is inlined — fonts come from Google Fonts, and photography, video and
+the shared minified CSS/JS come from the Higgsfield CDN, so the pages are the
+only thing to paste. Rebuild with `node research/build-compact.mjs`, verify
+with `node research/verify-compact.mjs`. See `lite/README.md`.

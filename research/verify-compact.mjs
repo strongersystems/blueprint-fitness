@@ -4,7 +4,7 @@
 import { chromium } from '/opt/node22/lib/node_modules/playwright/index.mjs';
 process.env.NODE_EXTRA_CA_CERTS = '/root/.ccr/ca-bundle.crt';
 
-const BASE = 'http://localhost:8644';
+const BASE = 'http://localhost:8645';
 const PAGES = ['index.html', 'kickstart.html', 'next-steps.html', 'locations.html', 'team.html', 'contact.html'];
 const problems = [];
 
@@ -16,7 +16,11 @@ const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } })
 /* every request is fetched Node-side and fulfilled: localhost resolves
    directly, live-site assets go out through the agent proxy. */
 await ctx.route('**/*', async route => {
-  try { await route.fulfill({ response: await route.fetch() }); } catch { await route.abort(); }
+  for (let attempt = 0; attempt < 3; attempt++) {          // proxy can flake on big assets
+    try { return await route.fulfill({ response: await route.fetch() }); }
+    catch { await new Promise(r => setTimeout(r, 400)); }
+  }
+  await route.abort();
 });
 
 for (const page of PAGES) {
@@ -47,7 +51,7 @@ for (const page of PAGES) {
       if (!fontOk) problems.push(`${page} Anton webfont not loaded`);
     }
     if (errs.length) problems.push(`${page}@${w} console: ${errs.slice(0, 2).join(' | ')}`);
-    if (w === 1440) await p.screenshot({ path: `compact-shots/${page}.png`, fullPage: true, animations: 'disabled' });
+    if (w === 1440) await p.screenshot({ path: `lite-shots/${page}.png`, fullPage: true, animations: 'disabled' });
     await p.close();
   }
 }

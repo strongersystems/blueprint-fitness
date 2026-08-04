@@ -11,7 +11,7 @@ tool again; see "Redeploying" below.)
 ## Run it locally
 
 ```bash
-cd blueprint-fitness/site
+cd site
 python3 -m http.server 8642
 # open http://localhost:8642
 ```

@@ -10,7 +10,7 @@ await new Promise(r=>srv.listen(8647,r));
 const b=await chromium.launch({executablePath:'/opt/pw-browsers/chromium-1194/chrome-linux/chrome',
   proxy:{server:process.env.HTTPS_PROXY,bypass:'localhost,127.0.0.1'}});
 const ctx=await b.newContext({viewport:{width:1440,height:900}});
-await ctx.route('**/*',async r=>{for(let i=0;i<3;i++){try{return await r.fulfill({response:await r.fetch()});}catch{await new Promise(x=>setTimeout(x,300));}}await r.abort();});
+await ctx.route('**/*',async r=>{for(let i=0;i<3;i++){try{const resp=await r.fetch();if(resp.status()<400||i===2)return await r.fulfill({response:resp});}catch{}await new Promise(x=>setTimeout(x,300));}await r.abort();});
 const PROPS=['display','position','color','background-color','font-family','font-size','font-weight','padding','margin','border-radius','width','height','flex-direction','grid-template-columns','text-transform','letter-spacing','opacity','transform','overflow','z-index','align-items','justify-content','gap','max-width','line-height','border','box-shadow'];
 async function snap(url){
   const p=await ctx.newPage(); await p.goto(url,{waitUntil:'load'});

@@ -304,7 +304,7 @@
       '<div class="form-success" id="signup-success" role="status">' +
         '<span class="stamp">Plan approved</span>' +
         '<h3 class="h-2" style="margin-top:1.2rem">Lovely &mdash; you&rsquo;re in.</h3>' +
-        '<p style="color:#B9C6DB">Taking you to your next steps in <span data-advance-count>3</span>&hellip;</p>' +
+        '<p style="color:#EAF1FB">Taking you to your next steps in <span data-advance-count>3</span>&hellip;</p>' +
         '<p><a class="btn btn-ghost" href="next-steps.html">Or go there now</a></p>' +
       '</div>' +
     '</div>';

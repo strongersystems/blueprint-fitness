@@ -15,7 +15,6 @@ const SRC = '/workspace/blueprint-fitness/site';
 const OUT = '/workspace/blueprint-fitness/import-pack';
 const BIN = '/tmp/claude-0/-home-user-Stronger-Systems-Sites/7b94fbc0-5e63-5761-b0b1-15628e62fc8e/scratchpad/node_modules/.bin';
 const CDN = 'https://blueprint-fitness.higgsfield.app';
-const GFONTS = 'https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@400..700&family=Montserrat:wght@100..900&display=swap';
 const LIMIT = 50000;
 
 /* paste file -> pretty route */
@@ -110,10 +109,8 @@ function minifyHtml(html) {
     .trim();
 }
 
-const HEAD =
-  '<link rel="preconnect" href="https://fonts.googleapis.com">' +
-  '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' +
-  `<link rel="stylesheet" href="${GFONTS}">`;
+/* pages carry their own Google Fonts links in <head> now — nothing to add */
+const HEAD = '';
 
 const jsTokens = tokensOf(fs.readFileSync(path.join(SRC, 'js/main.js'), 'utf8'));
 const report = [];
@@ -122,7 +119,6 @@ for (const page of PAGES) {
   let html = fs.readFileSync(path.join(SRC, page), 'utf8');
   html = html.replace(/((?:src|href|poster)=")(img|video)\//g, `$1${CDN}/$2/`);
   html = html.replace(/url\((['"]?)(img|video)\//g, `url($1${CDN}/$2/`);
-  html = html.replace(/<link rel="preload" href="fonts\/[^>]*>\s*/g, '');
   html = prettify(html);
   html = minifyHtml(html);
 

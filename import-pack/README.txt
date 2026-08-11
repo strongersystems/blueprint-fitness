@@ -13,14 +13,14 @@ FILES AND CHARACTER COUNTS (limit 50,000)
 
   paste file          chars    contains
   ------------------  -------  ---------------------------------------------
-  index.html           30,943  HTML + inline JS
-  index.css            29,829  home stylesheet (link'd as `index.css`)
-  kickstart.html       38,930  HTML + inline JS
-  kickstart.css        30,679  kickstart stylesheet (link'd as `kickstart.css`)
-  next-steps.html      45,292  HTML + inline CSS + inline JS
-  locations.html       47,813  HTML + inline CSS + inline JS
-  team.html            47,743  HTML + inline CSS + inline JS
-  contact.html         43,585  HTML + inline CSS + inline JS
+  index.html           31,082  HTML + inline JS
+  index.css            30,065  home stylesheet (link'd as `index.css`)
+  kickstart.html       39,000  HTML + inline JS
+  kickstart.css        30,994  kickstart stylesheet (link'd as `kickstart.css`)
+  next-steps.html      45,543  HTML + inline CSS + inline JS
+  locations.html       48,147  HTML + inline CSS + inline JS
+  team.html            48,105  HTML + inline CSS + inline JS
+  contact.html         43,897  HTML + inline CSS + inline JS
 
 
 WORKS WITHOUT JAVASCRIPT (the fix that matters)
@@ -86,8 +86,8 @@ motion kit and the sign-up lightbox as well, inject the HTML via an iframe
 OTHER CONVENTIONS
 -----------------
 
-- Fonts load from Google Fonts (Anton + Montserrat + Caveat) - the same trio
-  the client's own site uses.
+- Fonts load from Google Fonts (Inter + Montserrat), per the client's brand
+  guide. The pages carry their own font links in <head>.
 - All images, video and favicons are absolute URLs to
   https://blueprint-fitness.higgsfield.app/... (all 50 verified 200). Moving
   media later is one find-and-replace of that base URL.

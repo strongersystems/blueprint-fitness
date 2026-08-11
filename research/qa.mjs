@@ -16,6 +16,10 @@ let problems = [];
 
 for (const [vpName, vp] of VIEWPORTS) {
   const ctx = await browser.newContext({ viewport: vp, deviceScaleFactor: 1 });
+  /* no proxy in this harness: fail Google Fonts fast so pending stylesheets never stall deferred scripts */
+  await ctx.route('https://fonts.googleapis.com/**', r => r.fulfill({ status: 200, contentType: 'text/css', body: '' }));
+  await ctx.route('https://fonts.gstatic.com/**', r => r.abort());
+
   for (const p of PAGES) {
     const page = await ctx.newPage();
     const errors = [];
@@ -59,6 +63,9 @@ for (const [vpName, vp] of VIEWPORTS) {
 
 // ---- interaction tests at 390 ----
 const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  await ctx.route('https://fonts.googleapis.com/**', r => r.fulfill({ status: 200, contentType: 'text/css', body: '' }));
+  await ctx.route('https://fonts.gstatic.com/**', r => r.abort());
+
 const page = await ctx.newPage();
 const ierr = [];
 page.on('pageerror', e => ierr.push(e.message));
@@ -138,6 +145,9 @@ if (cInvalid === 0) problems.push('interaction: contact form validation missing'
 
 // reduced motion sanity: content visible without JS-driven motion
 const rmCtx = await browser.newContext({ viewport: { width: 1440, height: 900 }, reducedMotion: 'reduce' });
+  await rmCtx.route('https://fonts.googleapis.com/**', r => r.fulfill({ status: 200, contentType: 'text/css', body: '' }));
+  await rmCtx.route('https://fonts.gstatic.com/**', r => r.abort());
+
 const rmPage = await rmCtx.newPage();
 await rmPage.goto(`${BASE}/index.html`, { waitUntil: 'load' });
 await rmPage.waitForTimeout(800);

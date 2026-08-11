@@ -32,19 +32,27 @@ No build step. Any static file server works.
 The funnel actually flows: register form success state stamps "PLAN APPROVED"
 and auto-advances to `next-steps.html` after a 3-second countdown.
 
-## Design tokens (`css/main.css`)
+## Design tokens (`css/main.css`) — Brand Guide v2 (Aug 2026)
 
-Extracted from their real sites (hackney.blueprintfitness.uk CSS bundle +
-blueprintfitnessldn.com), not invented:
+From the client's brand guide (`brand/` on the Stronger-Web-1 brand branch),
+which supersedes the palette originally extracted from their old sites:
 
-- `--blue: #0072F5` — their `--primary: hsl(212 100% 48%)`
-- `--ink: #020817` — their foreground `hsl(222.2 84% 4.9%)`
-- `--mist: #F1F5F9`, `--grey: #64748B` — their secondary/muted
-- `--draft: #0A1A33` — "blueprint paper" navy for dark sections (+ faint drafting grid)
-- `--radius: .5rem` — their radius token
-- Fonts (self-hosted woff2 in `fonts/`): **Anton** (display caps), **Montserrat
-  variable** (body), **Caveat variable** (script annotations) — exactly the trio
-  their new Hackney site loads from Google Fonts.
+- `--blue: #0072F5` — Blueprint Blue (primary; no tints or fades)
+- `--blue-deep: #0059C2` — Deep Blue (small blue text on white, hover/pressed)
+- `--ink / --draft: #101B2F` — Midnight Ink (text + dark sections)
+- `--mist: #EAF1FB` — Drafting Mist (soft panels; also body text on midnight)
+- `--sky: #5EA2FF` — Sky Draft (**accent only** — labels/lines on midnight,
+  never a background, never text on white)
+- `--grey: #3D4A63` — Ink Soft (muted body on light)
+- Type: **Inter** ExtraBold 800 headlines / Bold 700 subheads, sentence case,
+  −2% tracking; **Montserrat** body, with Bold 700 uppercase +12% tracking for
+  buttons and labels. Served from Google Fonts (the guide's canonical web
+  delivery — the brand TTFs are a different cut and wrap differently).
+- Logos: the real brand marks (`img/logo-horizontal-*.png`) in the header,
+  footer and menus — blue on light, white on midnight.
+- Caveat (the old handwritten annotation face) is **retired** per the guide;
+  former annotations are now Montserrat label chips, and the coach's notes
+  are Montserrat italic asides.
 
 ## The motion kit — "the drafting kit"
 

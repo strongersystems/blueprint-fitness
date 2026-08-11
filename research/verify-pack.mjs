@@ -34,8 +34,12 @@ const browser = await chromium.launch({
 const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
 await ctx.route('**/*', async route => {
   for (let i = 0; i < 3; i++) {
-    try { return await route.fulfill({ response: await route.fetch() }); }
-    catch { await new Promise(r => setTimeout(r, 400)); }
+    try {
+      const resp = await route.fetch();
+      /* retry bad statuses too — the proxy can flake on font/CDN hosts */
+      if (resp.status() < 400 || i === 2) return await route.fulfill({ response: resp });
+    } catch {}
+    await new Promise(r => setTimeout(r, 400));
   }
   await route.abort();
 });
@@ -58,7 +62,7 @@ async function shoot(url, out, w) {
   const info = await p.evaluate(() => ({
     over: document.documentElement.scrollWidth - document.documentElement.clientWidth,
     broken: [...document.images].filter(i => i.complete && i.naturalWidth === 0).map(i => i.src),
-    anton: document.fonts.check('1em Anton'),
+    anton: document.fonts.check('800 1em Inter'),
     h: document.body.scrollHeight,
   }));
   if (out) await p.screenshot({ path: out, fullPage: true, animations: 'disabled' });
@@ -74,7 +78,7 @@ for (const [route, file] of Object.entries(ROUTES)) {
     if (r.over > 1) problems.push(`${route}@${w} overflow ${r.over}px`);
     if (r.broken.length) problems.push(`${route}@${w} broken img: ${r.broken[0]}`);
     if (r.errs.length) problems.push(`${route}@${w} console: ${r.errs.slice(0, 2).join(' | ')}`);
-    if (w === 1440 && !r.anton) problems.push(`${route} Anton not loaded`);
+    if (w === 1440 && !r.anton) problems.push(`${route} Inter not loaded`);
   }
   /* reference render from site/ (full stylesheet) for side-by-side eyeballing.
      Page height must match exactly; anything subtler is caught definitively by

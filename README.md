@@ -24,7 +24,7 @@ No build step. Any static file server works.
 |---|---|
 | `index.html` | Home — drafting-board hero (their footage pinned as a site photo), definition manifesto, services, why-it-works, testimonials, studios, Kickstart CTA |
 | `locations.html` | South Woodford / Leytonstone / Hackney (opening order) with real addresses, hours, emails |
-| `team.html` | All 12 coaches by studio — photo cards with notched role chips, mirroring their own meet-the-team design (their exact per-coach photos), elevated with develop-on-scroll and corner ticks |
+| `team.html` | **Hidden for now** (unlinked from all navigation, still builds) — returns later, likely as head coaches per studio |
 | `contact.html` | Per-studio contact cards + placeholder message form |
 | `kickstart.html` | **The funnel** (general, all three studios). "Try us for 30 days" throughout; price appears exactly twice, quietly (what's-included note + FAQ). Annotated-photo hero → what's included → 30-day journey → timetable tags → site survey → testimonials → FAQ → closing CTA. Sticky mobile CTA. |
 | `next-steps.html` | Post-registration: what-happens-next, styled booking-calendar placeholder, reinforcement testimonials |

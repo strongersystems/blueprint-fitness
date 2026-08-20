@@ -1,11 +1,12 @@
 BLUEPRINT FITNESS - AI Studio import pack (single-file pastes)
 ==============================================================
 
-8 paste files for 6 pages. Four pages are ONE self-contained file each (CSS +
+7 paste files for 5 pages. Three pages are ONE self-contained file each (CSS +
 JS minified inline). Two pages carry too much code to fit in one paste -
 index and kickstart, the home page and the flagship funnel - so each ships as
 exactly two pastes: its HTML+JS, and its stylesheet. Both halves are under
-the limit.
+the limit. (The team page is hidden for now at the client's request - it is
+unlinked from all navigation and not part of this pack.)
 
 
 FILES AND CHARACTER COUNTS (limit 50,000)
@@ -13,14 +14,13 @@ FILES AND CHARACTER COUNTS (limit 50,000)
 
   paste file          chars    contains
   ------------------  -------  ---------------------------------------------
-  index.html           31,082  HTML + inline JS
-  index.css            30,065  home stylesheet (link'd as `index.css`)
-  kickstart.html       39,000  HTML + inline JS
-  kickstart.css        30,994  kickstart stylesheet (link'd as `kickstart.css`)
-  next-steps.html      45,543  HTML + inline CSS + inline JS
-  locations.html       48,147  HTML + inline CSS + inline JS
-  team.html            48,105  HTML + inline CSS + inline JS
-  contact.html         43,897  HTML + inline CSS + inline JS
+  index.html           30,956  HTML + inline JS
+  index.css            30,149  home stylesheet (link'd as `index.css`)
+  kickstart.html       39,677  HTML + inline JS
+  kickstart.css        31,670  kickstart stylesheet (link'd as `kickstart.css`)
+  next-steps.html      45,530  HTML + inline CSS + inline JS
+  locations.html       48,022  HTML + inline CSS + inline JS
+  contact.html         43,758  HTML + inline CSS + inline JS
 
 
 WORKS WITHOUT JAVASCRIPT (the fix that matters)
@@ -40,7 +40,7 @@ in the CSS is scoped under .js, so:
                      chrome (scroll ruler, page companion, sticky bar,
                      sign-up lightbox) simply absent
 
-Verified by rendering all 6 pages in a real browser with JavaScript
+Verified by rendering every page in a real browser with JavaScript
 disabled: zero hidden or transformed elements, zero photos stuck in the
 blueprint filter, zero horizontal overflow.
 
@@ -89,10 +89,10 @@ OTHER CONVENTIONS
 - Fonts load from Google Fonts (Inter + Montserrat), per the client's brand
   guide. The pages carry their own font links in <head>.
 - All images, video and favicons are absolute URLs to
-  https://blueprint-fitness.higgsfield.app/... (all 50 verified 200). Moving
+  https://blueprint-fitness.higgsfield.app/... (all verified 200 against the live deploy). Moving
   media later is one find-and-replace of that base URL.
 - Internal links are root-relative pretty routes (/, /kickstart, /locations,
-  /team, /next-steps, /contact) - keep those slugs or find-and-replace. The
+  /next-steps, /contact) - keep those slugs or find-and-replace. The
   studio anchors are /locations#south-woodford, #leytonstone and #hackney.
 - Two button labels are wired to different behaviour and must not be
   reworded: "Try us for 30 days" navigates to /kickstart; "Tap to get
@@ -125,14 +125,14 @@ VERIFICATION RUN AGAINST THESE EXACT FILES
 
 Served over HTTP in a real browser on the pretty routes, scripts ENABLED:
 zero console errors, zero failed requests and zero horizontal overflow on
-all 6 pages at 1440, 390 and 360 wide; Anton confirmed loading from Google
+all 5 pages at 1440, 390 and 360 wide; Anton confirmed loading from Google
 Fonts; every image loaded; page heights identical to the full build.
 Interactions all functional: sign-up lightbox opens, validates empty submits
 inline, accepts a full submission, shows the "Plan approved" stamp and
 redirects to /next-steps; FAQ accordion; mobile burger menu; and the home
 CTA navigating to /kickstart without opening the lightbox.
 
-Scripts DISABLED: all 6 pages still render complete and correct (see the
+Scripts DISABLED: all 5 pages still render complete and correct (see the
 no-JS section above).
 
 (Environment-only skips: mp4/webm playback - the headless test browser

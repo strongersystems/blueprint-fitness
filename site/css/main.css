@@ -81,14 +81,13 @@ p{margin:0 0 1em}
 .on-dark .lede{color:#EAF1FB}
 .small{font-size:.85rem}
 
-/* brand label — Montserrat Bold caps, tracked (Brand Guide v2) */
+/* the coach's aside — Montserrat italic, sentence case (Brand Guide v2:
+   annotations are body voice; caps labels are reserved for short tags) */
 .annotation{
   font-family:var(--font-script);
-  font-weight:700;
-  font-size:.74rem;
+  font-weight:600;font-style:italic;
+  font-size:1rem;line-height:1.5;
   color:var(--blue-deep);
-  text-transform:uppercase;
-  letter-spacing:.1em;
 }
 .on-dark .annotation{color:#5EA2FF}
 
@@ -935,7 +934,7 @@ body.menu-locked .site-header .btn-primary{visibility:hidden}
 .survey-honest ul{list-style:none;margin:0 0 1rem;padding:0;display:grid;gap:.6rem;color:var(--grey);font-weight:500}
 .survey-honest ul li{padding-left:1.2rem;position:relative}
 .survey-honest ul li::before{content:"—";position:absolute;left:0;color:var(--grey)}
-.survey-honest .annotation{font-size:1.2rem}
+.survey-honest .annotation{font-size:1.02rem}
 
 /* ---------- kit 11: timetable slot tags ---------- */
 .slot-chips{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0 1.1rem}
@@ -996,7 +995,9 @@ body.menu-locked .site-header .btn-primary{visibility:hidden}
 .annotation-hl{
   display:inline;
   background:var(--blue);color:#fff;
-  padding:.1em .5em;border-radius:6px;
+  font-style:normal;font-weight:700;font-size:.78rem;
+  text-transform:uppercase;letter-spacing:.1em;
+  padding:.32em .7em;border-radius:6px;
   box-decoration-break:clone;-webkit-box-decoration-break:clone;
 }
 

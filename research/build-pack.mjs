@@ -23,7 +23,6 @@ const ROUTES = {
   'kickstart.html': '/kickstart',
   'next-steps.html': '/next-steps',
   'locations.html': '/locations',
-  'team.html': '/team',
   'contact.html': '/contact',
 };
 const PAGES = Object.keys(ROUTES);

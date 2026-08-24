@@ -234,7 +234,7 @@
   var burger = document.querySelector('.burger');
   var menu = document.querySelector('.mobile-menu');
   if (burger && menu) {
-    function setMenu(open) {
+    var setMenu = function (open) {
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
       burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       menu.classList.toggle('open', open);
@@ -351,7 +351,7 @@
     var vtVideo = vtOverlay.querySelector('video');
     var vtWho = vtOverlay.querySelector('.vt-who');
     var vtLast = null;
-    function closeVt() {
+    var closeVt = function () {
       vtVideo.pause();
       vtOverlay.classList.remove('show');
       document.body.classList.remove('modal-open');
@@ -416,7 +416,7 @@
     var embedSlot = embedOverlay.querySelector('.embed-slot');
     var embedTitle = embedOverlay.querySelector('#embed-title');
     var embedLast = null;
-    function closeEmbed() {
+    var closeEmbed = function () {
       embedOverlay.classList.remove('show');
       document.body.classList.remove('modal-open');
       var hide = function () { embedOverlay.hidden = true; embedSlot.innerHTML = ''; };
@@ -607,7 +607,7 @@
       'Two ticks — sounding a lot like our members.',
       'That’s a match. This is exactly who the plan was drawn for.'
     ];
-    function updateVerdict() {
+    var updateVerdict = function () {
       var n = items.filter(function (b) { return b.getAttribute('aria-pressed') === 'true'; }).length;
       if (verdict) verdict.textContent = verdicts[Math.min(n, 3)];
       survey.classList.toggle('matched', n >= 3);
@@ -626,7 +626,7 @@
   if (slotWrap) {
     var chips = Array.prototype.slice.call(slotWrap.querySelectorAll('.slot-chip'));
     var line = document.querySelector('[data-slot-line]');
-    function updateSlots() {
+    var updateSlots = function () {
       var on = chips.filter(function (c) { return c.getAttribute('aria-pressed') === 'true'; })
         .map(function (c) { return c.getAttribute('data-label'); });
       if (!line) return;

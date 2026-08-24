@@ -1,7 +1,7 @@
 BLUEPRINT FITNESS - AI Studio import pack (single-file pastes)
 ==============================================================
 
-14 paste files for 10 pages - the public site plus the members area
+17 paste files for 10 pages - the public site plus the members area
 (/members, /check-in, /bookings-cancellations, /terms, /cancel). Pages that
 fit ship as ONE self-contained file (CSS + JS minified inline); pages that
 don't ship as exactly two pastes - HTML+JS plus a stylesheet - each half
@@ -18,21 +18,23 @@ FILES AND CHARACTER COUNTS (limit 50,000)
 
   paste file                  chars    contains
   --------------------------  -------  --------------------------------------
-  index.html                   33,053  HTML + inline JS
-  index.css                    30,786  stylesheet (link'd as `index.css`)
-  kickstart.html               41,730  HTML + inline JS
-  kickstart.css                32,307  stylesheet (link'd as `kickstart.css`)
-  next-steps.html              48,220  HTML + inline CSS + inline JS
-  locations.html               26,019  HTML + inline JS
-  locations.css                24,766  stylesheet (link'd as `locations.css`)
-  contact.html                 46,492  HTML + inline CSS + inline JS
-  members.html                 45,910  HTML + inline CSS + inline JS
-  check-in.html                46,904  HTML + inline CSS + inline JS
-  bookings-cancellations.html  25,430  HTML + inline JS
-  bookings-cancellations.css   24,613  stylesheet (link'd as `bookings-cancellations.css`)
-  terms.html                   28,227  HTML + inline JS
-  terms.css                    24,461  stylesheet (link'd as `terms.css`)
-  cancel.html                  47,652  HTML + inline CSS + inline JS
+  index.html                   40,314  HTML + inline JS
+  index.css                    33,712  stylesheet (link'd as `index.css`)
+  kickstart.html               48,902  HTML + inline JS
+  kickstart.css                35,153  stylesheet (link'd as `kickstart.css`)
+  next-steps.html              31,519  HTML + inline JS
+  next-steps.css               26,632  stylesheet (link'd as `next-steps.css`)
+  locations.html               27,687  HTML + inline JS
+  locations.css                25,835  stylesheet (link'd as `locations.css`)
+  contact.html                 49,185  HTML + inline CSS + inline JS
+  members.html                 48,592  HTML + inline CSS + inline JS
+  check-in.html                49,586  HTML + inline CSS + inline JS
+  bookings-cancellations.html  27,043  HTML + inline JS
+  bookings-cancellations.css   25,682  stylesheet (link'd as `bookings-cancellations.css`)
+  terms.html                   29,840  HTML + inline JS
+  terms.css                    25,530  stylesheet (link'd as `terms.css`)
+  cancel.html                  25,099  HTML + inline JS
+  cancel.css                   25,261  stylesheet (link'd as `cancel.css`)
 
 
 WORKS WITHOUT JAVASCRIPT (the fix that matters)
@@ -100,9 +102,12 @@ OTHER CONVENTIONS
 
 - Fonts load from Google Fonts (Inter + Montserrat), per the client's brand
   guide. The pages carry their own font links in <head>.
-- All images, video and favicons are absolute URLs to
-  https://blueprint-fitness.higgsfield.app/... (all verified 200 against the live deploy). Moving
-  media later is one find-and-replace of that base URL.
+- All images, video (including the six member-story films + their VTT
+  captions and poster thumbnails) and favicons are absolute URLs to
+  https://strongersystems.github.io/blueprint-fitness/... - the GitHub Pages
+  deploy of site/, which updates automatically on every push to main.
+  Moving media later (e.g. back to the Higgsfield URL or a custom domain)
+  is one find-and-replace of that base URL, or one edit in build-pack.mjs.
 - Internal links are root-relative pretty routes (/, /kickstart, /locations,
   /next-steps, /contact, /members, /check-in, /bookings-cancellations,
   /terms, /cancel) - keep those slugs or find-and-replace. The
@@ -111,6 +116,10 @@ OTHER CONVENTIONS
   reworded: "Try us for 30 days" navigates to /kickstart; "Tap to get
   started" (kickstart only) opens the sign-up lightbox. The script picks
   them out by their text.
+- The member-stories section ([data-vt] cards, #member-stories) opens each
+  film in a video lightbox; without JavaScript the cards link straight to
+  the mp4. It appears on /, /kickstart and /next-steps and is safe to copy
+  into any other page.
 - The sign-up lightbox is built by the JavaScript at runtime - it is not in
   the markup. Its success state redirects to /next-steps.
 - Forms remain front-end placeholders (they validate and show a "Plan

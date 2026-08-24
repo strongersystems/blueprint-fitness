@@ -332,6 +332,67 @@
     if (e.key === 'Escape' && !signupOverlay.hidden) closeSignup();
   });
 
+  /* ---------- member stories: video lightbox ----------
+     Cards ([data-vt]) open a minimal player over the page; portrait
+     videos fit within 86dvh, mobile-first. Without JS the card is a
+     plain link to the mp4, which opens the native player. */
+  var vtCards = document.querySelectorAll('[data-vt]');
+  if (vtCards.length) {
+    var vtOverlay = document.createElement('div');
+    vtOverlay.className = 'vt-overlay';
+    vtOverlay.hidden = true;
+    vtOverlay.innerHTML =
+      '<div class="vt-frame" role="dialog" aria-modal="true" aria-label="Member story">' +
+        '<button type="button" class="vt-close" aria-label="Close">&times;</button>' +
+        '<video controls playsinline preload="metadata"></video>' +
+        '<p class="vt-who"></p>' +
+      '</div>';
+    document.body.appendChild(vtOverlay);
+    var vtVideo = vtOverlay.querySelector('video');
+    var vtWho = vtOverlay.querySelector('.vt-who');
+    var vtLast = null;
+    function closeVt() {
+      vtVideo.pause();
+      vtOverlay.classList.remove('show');
+      document.body.classList.remove('modal-open');
+      var hide = function () {
+        vtOverlay.hidden = true;
+        vtVideo.removeAttribute('src');
+        while (vtVideo.firstChild) vtVideo.removeChild(vtVideo.firstChild);
+        vtVideo.load();
+      };
+      if (reduced) hide(); else setTimeout(hide, 250);
+      if (vtLast) vtLast.focus();
+    }
+    vtOverlay.querySelector('.vt-close').addEventListener('click', closeVt);
+    vtOverlay.addEventListener('click', function (e) { if (e.target === vtOverlay) closeVt(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !vtOverlay.hidden) closeVt();
+    });
+    vtCards.forEach(function (card) {
+      card.addEventListener('click', function (e) {
+        e.preventDefault();
+        vtLast = card;
+        vtVideo.poster = card.getAttribute('data-poster') || '';
+        vtVideo.src = card.getAttribute('data-src');
+        var cap = card.getAttribute('data-captions');
+        if (cap) {
+          var tr = document.createElement('track');
+          tr.kind = 'captions'; tr.label = 'English'; tr.srclang = 'en'; tr.src = cap;
+          vtVideo.appendChild(tr);
+        }
+        var who = card.getAttribute('data-name') || '';
+        var role = card.getAttribute('data-role') || 'Blueprint member';
+        vtWho.innerHTML = '<strong>' + who + '</strong> &middot; ' + role;
+        vtOverlay.hidden = false;
+        document.body.classList.add('modal-open');
+        requestAnimationFrame(function () { vtOverlay.classList.add('show'); });
+        var playAttempt = vtVideo.play();
+        if (playAttempt && playAttempt.catch) playAttempt.catch(function () {});
+      });
+    });
+  }
+
   /* ---------- members: per-studio cancellation lightbox ----------
      PLACEHOLDER MODE while the client signs off going live: the modal
      shows a branded placeholder carrying the real form id. To go live,

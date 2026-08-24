@@ -209,6 +209,19 @@ The live preview is a Higgsfield-hosted static deploy. To update it:
 - "5/5 on Google, 200+ reviews", "100+ sessions/week", "6am–9pm, 7 days" are
   real numbers from their current pages — re-verify at launch.
 
+## Member story films (`.vt` section)
+
+Six professionally-shot member testimonial films (from the client's video
+team) live in `site/video/vt-*.mp4` — compressed to 720x1280, ~48MB total,
+with optional auto-transcribed `.vtt` captions and hand-picked, graded 4:5
+thumbnails in `site/img/vt-*.jpg`. The **member stories** section
+(`section.vt` + `#member-stories`) renders a branded card grid (play ring,
+duration chip, name + verbatim quote) and opens each film in a mobile-first
+lightbox (`[data-vt]` cards; Esc/backdrop closes, no-JS falls back to
+linking the mp4). The section is self-contained — copy the section markup
+into any page or landing page that loads the shared CSS/JS.
+Placed on: home, kickstart, next-steps.
+
 ## `import-pack/` — single-file pastes for AI Studio
 
 `import-pack/` holds the site packaged for AI site builders: **8 paste files

@@ -14,7 +14,9 @@ import postcss from '/tmp/claude-0/-home-user-Stronger-Systems-Sites/7b94fbc0-5e
 const SRC = '/workspace/blueprint-fitness/site';
 const OUT = '/workspace/blueprint-fitness/import-pack';
 const BIN = '/tmp/claude-0/-home-user-Stronger-Systems-Sites/7b94fbc0-5e63-5761-b0b1-15628e62fc8e/scratchpad/node_modules/.bin';
-const CDN = 'https://blueprint-fitness.higgsfield.app';
+/* asset host: GitHub Pages deploy of site/ — updates on every push to main.
+   (Switch back to the Higgsfield URL — or a custom domain — in one edit here.) */
+const CDN = 'https://strongersystems.github.io/blueprint-fitness';
 const LIMIT = 50000;
 
 /* paste file -> pretty route */
@@ -121,7 +123,7 @@ const report = [];
 
 for (const page of PAGES) {
   let html = fs.readFileSync(path.join(SRC, page), 'utf8');
-  html = html.replace(/((?:src|href|poster)=")(img|video)\//g, `$1${CDN}/$2/`);
+  html = html.replace(/((?:src|href|poster|data-src|data-captions|data-poster)=")(img|video)\//g, `$1${CDN}/$2/`);
   html = html.replace(/url\((['"]?)(img|video)\//g, `url($1${CDN}/$2/`);
   html = prettify(html);
   html = minifyHtml(html);

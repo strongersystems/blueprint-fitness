@@ -131,6 +131,21 @@ await page.waitForURL('**/kickstart.html*', { timeout: 4000 }).catch(() => probl
 const strayModal = await page.$eval('.signup-overlay', el => el.hidden).catch(() => true);
 if (!strayModal) problems.push('interaction: lightbox opened on navigation CTA (should only open on "Tap to get started")');
 
+// video-testimonial lightbox (member stories)
+await page.goto(`${BASE}/index.html`, { waitUntil: 'load' });
+await page.$eval('.vt-card', c => c.scrollIntoView({ behavior: 'instant', block: 'center' }));
+await page.waitForTimeout(400);
+await page.click('.vt-card');
+await page.waitForTimeout(500);
+const vtOpen = await page.$eval('.vt-overlay', el => !el.hidden && el.classList.contains('show'));
+if (!vtOpen) problems.push('interaction: video card did not open the player lightbox');
+const vtSrc = await page.$eval('.vt-overlay video', v => v.getAttribute('src') || '');
+if (!vtSrc.includes('vt-')) problems.push('interaction: player has no video src');
+await page.keyboard.press('Escape');
+await page.waitForTimeout(400);
+const vtClosed = await page.$eval('.vt-overlay', el => el.hidden);
+if (!vtClosed) problems.push('interaction: Escape did not close the video lightbox');
+
 // sticky CTA visibility after scrolling on kickstart
 await page.goto(`${BASE}/kickstart.html`, { waitUntil: 'load' });
 await page.evaluate(() => window.scrollTo(0, 2200));

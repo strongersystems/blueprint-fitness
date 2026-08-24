@@ -63,3 +63,27 @@ downloaded to assets/photos-drive2/ at w1600 via Drive's image endpoint).
 - bf-j-rower (D30 — rower effort, room full) ← p6370
 Unused from this folder: img5493.png (tall team group shot — composition
 too tall for the journey frames), p6389, p6682, p6833, p6913.
+
+## Round 17 — member story films (video testimonials)
+Source: Google Drive folder 1PEnAsKd6CfdYeC1cGrOoC7dmw1mAUd5Y — six
+professionally-shot member films (produced by seenthestories.com, burned-in
+captions and titling are theirs). All six used.
+
+Web encodes in site/video/ (720x1280 H.264 CRF26, mono AAC 96k, faststart):
+- vt-rebecca.mp4 (1:26, 12.3MB) — young-onset Parkinson's story
+- vt-george.mp4  (1:05, 7.0MB)  — "I've lost almost 17 stone myself"
+- vt-jayna.mp4   (0:57, 7.6MB)
+- vt-sonia.mp4   (1:03, 8.4MB)  — South Woodford
+- vt-hannah.mp4  (0:51, 4.9MB)  — Leytonstone
+- vt-adrian.mp4  (0:41, 8.1MB)
+
+Per-film extras:
+- site/video/vt-*.vtt — auto-transcribed captions (faster-whisper; small.en
+  for hannah/george/sonia, base.en for the rest), name/brand spellings
+  corrected only. The films also carry the production team's burned-in
+  captions; the VTT track is optional/off by default.
+- site/img/vt-*.jpg — 720x900 (4:5) thumbnails: hand-picked frames, cropped
+  above the burned-caption band, graded (+contrast/+colour, unsharp mask).
+- assets/video-testimonials/*.txt — full transcripts.
+- Card quotes on the site are verbatim lines, cross-checked against the
+  production captions burned into the films.

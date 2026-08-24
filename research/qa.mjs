@@ -2,7 +2,8 @@ import { chromium } from '/opt/node22/lib/node_modules/playwright/index.mjs';
 import fs from 'fs';
 
 const BASE = 'http://localhost:8642';
-const PAGES = ['index.html', 'kickstart.html', 'next-steps.html', 'locations.html', 'team.html', 'contact.html'];
+const PAGES = ['index.html', 'kickstart.html', 'next-steps.html', 'locations.html', 'team.html', 'contact.html',
+  'members.html', 'check-in.html', 'bookings-cancellations.html', 'terms.html', 'cancel.html'];
 const VIEWPORTS = [
   ['1440', { width: 1440, height: 900 }],
   ['390', { width: 390, height: 844 }],

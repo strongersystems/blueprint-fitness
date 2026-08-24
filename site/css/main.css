@@ -1339,3 +1339,76 @@ body.no-js .draft-u{
   background-image:linear-gradient(var(--blue),var(--blue));
   background-repeat:no-repeat;background-size:100% .12em;background-position:0 100%;
 }
+
+/* ============================================================
+   members area — subnav, policy pages, embed lightbox
+   ============================================================ */
+.subnav{
+  position:sticky;top:56px;z-index:55;
+  background:var(--draft);
+  border-bottom:1px solid rgba(94,162,255,.16);
+}
+.subnav .container{
+  display:flex;gap:.3rem;align-items:center;
+  overflow-x:auto;-webkit-overflow-scrolling:touch;
+  padding-top:.5rem;padding-bottom:.5rem;
+  scrollbar-width:none;
+}
+.subnav .container::-webkit-scrollbar{display:none}
+.subnav a{
+  flex:none;text-decoration:none;
+  font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+  color:#EAF1FB;padding:.5rem .8rem;border-radius:7px;
+  transition:background .2s,color .2s;
+}
+.subnav a:hover{background:rgba(94,162,255,.16)}
+.subnav a[aria-current="page"]{background:var(--blue);color:#fff}
+@media(max-width:480px){.subnav{top:50px}}
+
+/* long-form policy content */
+.policy{max-width:46rem}
+.policy h2{margin:2.8rem 0 .9rem;scroll-margin-top:8rem}
+.policy h2:first-child{margin-top:0}
+.policy h3{margin:1.7rem 0 .5rem;font-size:1rem;font-weight:700;font-family:var(--font-body);letter-spacing:0}
+.policy p{margin:0 0 .95rem;color:var(--grey)}
+.policy ul{margin:.2rem 0 1.15rem;padding-left:1.25rem;color:var(--grey);display:grid;gap:.5rem}
+.policy li{padding-left:.15rem}
+.policy strong{color:var(--ink)}
+.callout{
+  background:var(--mist);border-left:3px solid var(--blue);border-radius:8px;
+  padding:1.05rem 1.25rem;margin:1.3rem 0;
+}
+.callout p{margin:0;color:var(--ink)}
+.callout p+p{margin-top:.55rem}
+.onpage{margin:1.6rem 0 0}
+.onpage p{font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#5EA2FF;margin:0 0 .55rem}
+.onpage ol{margin:0;padding:0;list-style:none;columns:2;column-gap:2rem;max-width:38rem}
+.onpage li{margin:0 0 .45rem;break-inside:avoid}
+.onpage a{color:#EAF1FB;text-decoration:none;font-weight:600;font-size:.95rem}
+.onpage a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:560px){.onpage ol{columns:1}}
+
+/* member form checkbox row */
+.check-field{display:flex;gap:.65rem;align-items:flex-start;cursor:pointer;font-weight:600;font-size:.92rem;color:var(--grey)}
+.check-field input{flex:none;width:1.15rem;height:1.15rem;margin-top:.1rem;accent-color:var(--blue)}
+
+/* cancel-page studio buttons */
+.studio-choice{display:grid;gap:.9rem;grid-template-columns:1fr;max-width:26rem}
+@media(min-width:700px){.studio-choice{grid-template-columns:repeat(3,1fr);max-width:none}}
+
+/* embed lightbox (reuses the signup overlay shell); placeholder panel inside */
+.signup-modal.embed-modal{width:min(30rem,100%)}
+.embed-slot{margin-top:1rem}
+.embed-slot iframe{width:100%;height:640px;border:none;border-radius:8px;background:#fff}
+.embed-placeholder{
+  border:2px dashed rgba(94,162,255,.45);border-radius:10px;
+  padding:2.2rem 1.4rem;text-align:center;color:#EAF1FB;
+}
+.embed-placeholder .h-3{margin-bottom:.5rem}
+.embed-placeholder p{color:#EAF1FB;opacity:.75;font-size:.92rem;margin:0}
+.embed-placeholder .ref{
+  display:inline-block;margin-top:1rem;
+  font-weight:700;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;
+  color:#5EA2FF;border:1px solid rgba(94,162,255,.4);border-radius:6px;padding:.4em .8em;
+}
+body.no-js .members-form-note{display:block}

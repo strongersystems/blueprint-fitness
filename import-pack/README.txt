@@ -1,26 +1,38 @@
 BLUEPRINT FITNESS - AI Studio import pack (single-file pastes)
 ==============================================================
 
-7 paste files for 5 pages. Three pages are ONE self-contained file each (CSS +
-JS minified inline). Two pages carry too much code to fit in one paste -
-index and kickstart, the home page and the flagship funnel - so each ships as
-exactly two pastes: its HTML+JS, and its stylesheet. Both halves are under
-the limit. (The team page is hidden for now at the client's request - it is
-unlinked from all navigation and not part of this pack.)
+14 paste files for 10 pages - the public site plus the members area
+(/members, /check-in, /bookings-cancellations, /terms, /cancel). Pages that
+fit ship as ONE self-contained file (CSS + JS minified inline); pages that
+don't ship as exactly two pastes - HTML+JS plus a stylesheet - each half
+under the limit. (The team page is hidden for now at the client's request -
+unlinked from all navigation and not part of this pack. All forms, including
+the members check-in and the per-studio cancellation lightboxes, are
+placeholders: nothing is sent and no CRM is wired. The cancellation modals
+carry their real form ids - flip EMBED_LIVE to true in the script to load
+the live link.stronger.systems embeds when signed off.)
 
 
 FILES AND CHARACTER COUNTS (limit 50,000)
 -----------------------------------------
 
-  paste file          chars    contains
-  ------------------  -------  ---------------------------------------------
-  index.html           30,956  HTML + inline JS
-  index.css            30,149  home stylesheet (link'd as `index.css`)
-  kickstart.html       39,677  HTML + inline JS
-  kickstart.css        31,670  kickstart stylesheet (link'd as `kickstart.css`)
-  next-steps.html      45,530  HTML + inline CSS + inline JS
-  locations.html       48,022  HTML + inline CSS + inline JS
-  contact.html         43,758  HTML + inline CSS + inline JS
+  paste file                  chars    contains
+  --------------------------  -------  --------------------------------------
+  index.html                   33,053  HTML + inline JS
+  index.css                    30,786  stylesheet (link'd as `index.css`)
+  kickstart.html               41,730  HTML + inline JS
+  kickstart.css                32,307  stylesheet (link'd as `kickstart.css`)
+  next-steps.html              48,220  HTML + inline CSS + inline JS
+  locations.html               26,019  HTML + inline JS
+  locations.css                24,766  stylesheet (link'd as `locations.css`)
+  contact.html                 46,492  HTML + inline CSS + inline JS
+  members.html                 45,910  HTML + inline CSS + inline JS
+  check-in.html                46,904  HTML + inline CSS + inline JS
+  bookings-cancellations.html  25,430  HTML + inline JS
+  bookings-cancellations.css   24,613  stylesheet (link'd as `bookings-cancellations.css`)
+  terms.html                   28,227  HTML + inline JS
+  terms.css                    24,461  stylesheet (link'd as `terms.css`)
+  cancel.html                  47,652  HTML + inline CSS + inline JS
 
 
 WORKS WITHOUT JAVASCRIPT (the fix that matters)
@@ -92,7 +104,8 @@ OTHER CONVENTIONS
   https://blueprint-fitness.higgsfield.app/... (all verified 200 against the live deploy). Moving
   media later is one find-and-replace of that base URL.
 - Internal links are root-relative pretty routes (/, /kickstart, /locations,
-  /next-steps, /contact) - keep those slugs or find-and-replace. The
+  /next-steps, /contact, /members, /check-in, /bookings-cancellations,
+  /terms, /cancel) - keep those slugs or find-and-replace. The
   studio anchors are /locations#south-woodford, #leytonstone and #hackney.
 - Two button labels are wired to different behaviour and must not be
   reworded: "Try us for 30 days" navigates to /kickstart; "Tap to get

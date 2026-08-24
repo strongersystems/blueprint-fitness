@@ -332,6 +332,74 @@
     if (e.key === 'Escape' && !signupOverlay.hidden) closeSignup();
   });
 
+  /* ---------- members: per-studio cancellation lightbox ----------
+     PLACEHOLDER MODE while the client signs off going live: the modal
+     shows a branded placeholder carrying the real form id. To go live,
+     set EMBED_LIVE to true — the stored id then loads the real embed
+     from link.stronger.systems (plus its form_embed.js, once). */
+  var EMBED_LIVE = false;
+  var EMBed_SCRIPT_LOADED = false;
+  var embedTriggers = document.querySelectorAll('[data-embed-form]');
+  if (embedTriggers.length) {
+    var embedOverlay = document.createElement('div');
+    embedOverlay.className = 'signup-overlay';
+    embedOverlay.hidden = true;
+    embedOverlay.innerHTML =
+      '<div class="signup-modal embed-modal" role="dialog" aria-modal="true" aria-labelledby="embed-title">' +
+        '<button type="button" class="signup-close" aria-label="Close">&times;</button>' +
+        '<p class="annotation" style="margin:0 0 .2rem">Membership cancellation</p>' +
+        '<h3 class="h-3" id="embed-title">Cancellation form</h3>' +
+        '<div class="embed-slot"></div>' +
+      '</div>';
+    document.body.appendChild(embedOverlay);
+    var embedSlot = embedOverlay.querySelector('.embed-slot');
+    var embedTitle = embedOverlay.querySelector('#embed-title');
+    var embedLast = null;
+    function closeEmbed() {
+      embedOverlay.classList.remove('show');
+      document.body.classList.remove('modal-open');
+      var hide = function () { embedOverlay.hidden = true; embedSlot.innerHTML = ''; };
+      if (reduced) hide(); else setTimeout(hide, 250);
+      if (embedLast) embedLast.focus();
+    }
+    embedOverlay.querySelector('.signup-close').addEventListener('click', closeEmbed);
+    embedOverlay.addEventListener('click', function (e) { if (e.target === embedOverlay) closeEmbed(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !embedOverlay.hidden) closeEmbed();
+    });
+    embedTriggers.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        embedLast = btn;
+        var studio = btn.getAttribute('data-studio') || 'your studio';
+        var formId = btn.getAttribute('data-embed-form');
+        embedTitle.textContent = studio + ' cancellation form';
+        if (EMBED_LIVE) {
+          if (!EMBed_SCRIPT_LOADED) {
+            var sc = document.createElement('script');
+            sc.src = 'https://link.stronger.systems/js/form_embed.js';
+            document.body.appendChild(sc);
+            EMBed_SCRIPT_LOADED = true;
+          }
+          embedSlot.innerHTML =
+            '<iframe src="https://link.stronger.systems/widget/form/' + formId + '"' +
+            ' id="inline-' + formId + '" title="Cancellation Form ' + studio + '"' +
+            ' data-layout-iframe-id="inline-' + formId + '" data-form-id="' + formId + '"' +
+            ' data-form-name="Cancellation Form"></iframe>';
+        } else {
+          embedSlot.innerHTML =
+            '<div class="embed-placeholder">' +
+              '<p>Placeholder — the live form appears here when forms are switched on. Nothing is sent yet.</p>' +
+              '<span class="ref">form id: ' + formId + '</span>' +
+            '</div>';
+        }
+        embedOverlay.hidden = false;
+        document.body.classList.add('modal-open');
+        requestAnimationFrame(function () { embedOverlay.classList.add('show'); });
+      });
+    });
+  }
+
   /* every button that says "Tap to get started" (the kickstart page) opens it.
      "Try us for 30 days" buttons elsewhere navigate to the kickstart page. */
   document.querySelectorAll('a.btn, button.btn').forEach(function (b) {
@@ -356,6 +424,12 @@
       var input = field.querySelector('input, select, textarea');
       if (!input) return true;
       var ok = true;
+      if (input.type === 'checkbox') {
+        ok = !input.required || input.checked;
+        field.classList.toggle('invalid', !ok);
+        input.setAttribute('aria-invalid', ok ? 'false' : 'true');
+        return ok;
+      }
       var v = input.value.trim();
       if (input.required && !v) ok = false;
       if (ok && input.type === 'email' && !isEmail(v)) ok = false;
@@ -366,7 +440,7 @@
     }
 
     form.querySelectorAll('.field input, .field select').forEach(function (input) {
-      if (input.type === 'radio') {
+      if (input.type === 'radio' || input.type === 'checkbox') {
         input.addEventListener('change', function () { validateField(input.closest('.field')); });
         return;
       }

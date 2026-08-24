@@ -28,6 +28,11 @@ No build step. Any static file server works.
 | `contact.html` | Per-studio contact cards + placeholder message form |
 | `kickstart.html` | **The funnel** (general, all three studios). "Try us for 30 days" throughout; price appears exactly twice, quietly (what's-included note + FAQ). Annotated-photo hero → what's included → 30-day journey → timetable tags → site survey → testimonials → FAQ → closing CTA. Sticky mobile CTA. |
 | `next-steps.html` | Post-registration: what-happens-next, styled booking-calendar placeholder, reinforcement testimonials |
+| `members.html` | **Members area hub** — cards to the member pages, with a sticky members sub-nav shared across all of them |
+| `check-in.html` | Member check-in form (name/email/phone/message + confirm-details tickbox). Placeholder — not CRM-linked yet, per client |
+| `bookings-cancellations.html` | Booking, waitlist, 9-hour cancellation and blackout policy — long-form, with an on-page contents list |
+| `terms.html` | Membership terms & conditions (PRS Coaching Ltd t/a Blueprint Fitness) |
+| `cancel.html` | Change/pause/holiday guidance + per-studio cancellation buttons opening a lightbox. Placeholder mode: the modal shows a branded panel carrying the real form id; set EMBED_LIVE=true in js/main.js to load the live link.stronger.systems embeds |
 
 The funnel actually flows: register form success state stamps "PLAN APPROVED"
 and auto-advances to `next-steps.html` after a 3-second countdown.

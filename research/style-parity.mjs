@@ -2,7 +2,7 @@ import { chromium } from '/opt/node22/lib/node_modules/playwright/index.mjs';
 import http from 'http'; import fs from 'fs'; import path from 'path';
 process.env.NODE_EXTRA_CA_CERTS='/root/.ccr/ca-bundle.crt';
 const PACK='/workspace/blueprint-fitness/import-pack';
-const ROUTES={'/':'index.html','/kickstart':'kickstart.html','/next-steps':'next-steps.html','/locations':'locations.html','/contact':'contact.html'};
+const ROUTES={'/':'index.html','/kickstart':'kickstart.html','/next-steps':'next-steps.html','/locations':'locations.html','/contact':'contact.html','/members':'members.html','/check-in':'check-in.html','/bookings-cancellations':'bookings-cancellations.html','/terms':'terms.html','/cancel':'cancel.html'};
 const srv=http.createServer((q,s)=>{const u=q.url.split('?')[0];const f=ROUTES[u]||u.slice(1);const p=path.join(PACK,f);
   if(!fs.existsSync(p)){s.writeHead(404);return s.end();}
   s.writeHead(200,{'Content-Type':f.endsWith('.css')?'text/css':'text/html; charset=utf-8'});s.end(fs.readFileSync(p));});

@@ -24,6 +24,11 @@ const ROUTES = {
   'next-steps.html': '/next-steps',
   'locations.html': '/locations',
   'contact.html': '/contact',
+  'members.html': '/members',
+  'check-in.html': '/check-in',
+  'bookings-cancellations.html': '/bookings-cancellations',
+  'terms.html': '/terms',
+  'cancel.html': '/cancel',
 };
 const PAGES = Object.keys(ROUTES);
 

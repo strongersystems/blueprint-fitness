@@ -12,7 +12,9 @@ process.env.NODE_EXTRA_CA_CERTS = '/root/.ccr/ca-bundle.crt';
 const PACK = '/workspace/blueprint-fitness/import-pack';
 const REF = 'http://localhost:8642';           // site/ with the full stylesheet
 const ROUTES = { '/': 'index.html', '/kickstart': 'kickstart.html', '/next-steps': 'next-steps.html',
-                 '/locations': 'locations.html',  '/contact': 'contact.html' };
+                 '/locations': 'locations.html', '/contact': 'contact.html',
+                 '/members': 'members.html', '/check-in': 'check-in.html',
+                 '/bookings-cancellations': 'bookings-cancellations.html', '/terms': 'terms.html', '/cancel': 'cancel.html' };
 const problems = [];
 
 /* pretty-route static server for the pack */

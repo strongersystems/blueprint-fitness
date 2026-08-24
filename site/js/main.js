@@ -394,12 +394,16 @@
   }
 
   /* ---------- members: per-studio cancellation lightbox ----------
-     PLACEHOLDER MODE while the client signs off going live: the modal
-     shows a branded placeholder carrying the real form id. To go live,
-     set EMBED_LIVE to true — the stored id then loads the real embed
-     from link.stronger.systems (plus its form_embed.js, once). */
-  var EMBED_LIVE = false;
-  var EMBed_SCRIPT_LOADED = false;
+     Opens the studio's live cancellation form (link.stronger.systems)
+     inside the branded modal, mirroring the client's original embed
+     spec; form_embed.js is loaded once, on first open, and handles
+     iframe resizing. Without JavaScript the buttons link straight to
+     the hosted form instead. */
+  var embedJsLoaded = false;
+  /* the {'id':'INLINE'} layout value is built at runtime via .apply so the
+     minifier cannot fold it into a string literal needing escaped quotes */
+  var SQ = String.fromCharCode.apply(null, [39]);
+  var EMBED_LAYOUT = '{' + SQ + 'id' + SQ + ':' + SQ + 'INLINE' + SQ + '}';
   var embedTriggers = document.querySelectorAll('[data-embed-form]');
   if (embedTriggers.length) {
     var embedOverlay = document.createElement('div');
@@ -422,7 +426,7 @@
       var hide = function () { embedOverlay.hidden = true; embedSlot.innerHTML = ''; };
       if (reduced) hide(); else setTimeout(hide, 250);
       if (embedLast) embedLast.focus();
-    }
+    };
     embedOverlay.querySelector('.signup-close').addEventListener('click', closeEmbed);
     embedOverlay.addEventListener('click', function (e) { if (e.target === embedOverlay) closeEmbed(); });
     document.addEventListener('keydown', function (e) {
@@ -434,26 +438,27 @@
         embedLast = btn;
         var studio = btn.getAttribute('data-studio') || 'your studio';
         var formId = btn.getAttribute('data-embed-form');
+        var h = btn.getAttribute('data-embed-height') || '640';
         embedTitle.textContent = studio + ' cancellation form';
-        if (EMBED_LIVE) {
-          if (!EMBed_SCRIPT_LOADED) {
-            var sc = document.createElement('script');
-            sc.src = 'https://link.stronger.systems/js/form_embed.js';
-            document.body.appendChild(sc);
-            EMBed_SCRIPT_LOADED = true;
-          }
-          embedSlot.innerHTML =
-            '<iframe src="https://link.stronger.systems/widget/form/' + formId + '"' +
-            ' id="inline-' + formId + '" title="Cancellation Form ' + studio + '"' +
-            ' data-layout-iframe-id="inline-' + formId + '" data-form-id="' + formId + '"' +
-            ' data-form-name="Cancellation Form"></iframe>';
-        } else {
-          embedSlot.innerHTML =
-            '<div class="embed-placeholder">' +
-              '<p>Placeholder — the live form appears here when forms are switched on. Nothing is sent yet.</p>' +
-              '<span class="ref">form id: ' + formId + '</span>' +
-            '</div>';
+        if (!embedJsLoaded) {
+          var sc = document.createElement('script');
+          sc.src = 'https://link.stronger.systems/js/form_embed.js';
+          document.body.appendChild(sc);
+          embedJsLoaded = true;
         }
+        embedSlot.innerHTML =
+          '<iframe src="https://link.stronger.systems/widget/form/' + formId + '"' +
+          ' style="width:100%;height:' + h + 'px;border:none;border-radius:8px;background:#fff"' +
+          ' id="inline-' + formId + '"' +
+          ' data-layout="' + EMBED_LAYOUT + '"' +
+          ' data-trigger-type="alwaysShow" data-trigger-value=""' +
+          ' data-activation-type="alwaysActivated" data-activation-value=""' +
+          ' data-deactivation-type="neverDeactivate" data-deactivation-value=""' +
+          ' data-form-name="Cancellation Form"' +
+          ' data-height="' + h + '"' +
+          ' data-layout-iframe-id="inline-' + formId + '"' +
+          ' data-form-id="' + formId + '"' +
+          ' title="Cancellation Form ' + studio + '"></iframe>';
         embedOverlay.hidden = false;
         document.body.classList.add('modal-open');
         requestAnimationFrame(function () { embedOverlay.classList.add('show'); });

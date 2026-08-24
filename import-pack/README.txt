@@ -6,11 +6,13 @@ BLUEPRINT FITNESS - AI Studio import pack (single-file pastes)
 fit ship as ONE self-contained file (CSS + JS minified inline); pages that
 don't ship as exactly two pastes - HTML+JS plus a stylesheet - each half
 under the limit. (The team page is hidden for now at the client's request -
-unlinked from all navigation and not part of this pack. All forms, including
-the members check-in and the per-studio cancellation lightboxes, are
-placeholders: nothing is sent and no CRM is wired. The cancellation modals
-carry their real form ids - flip EMBED_LIVE to true in the script to load
-the live link.stronger.systems embeds when signed off.)
+unlinked from all navigation and not part of this pack. The /cancel page's
+three studio buttons open LIVE cancellation forms - the client's real
+link.stronger.systems embeds, loaded in a branded lightbox with
+form_embed.js fetched on first open; without JavaScript the buttons link
+straight to the hosted forms. Every other form - contact, kickstart
+sign-up, members check-in - remains a placeholder: nothing is sent and no
+CRM is wired.)
 
 
 FILES AND CHARACTER COUNTS (limit 50,000)
@@ -122,8 +124,10 @@ OTHER CONVENTIONS
   into any other page.
 - The sign-up lightbox is built by the JavaScript at runtime - it is not in
   the markup. Its success state redirects to /next-steps.
-- Forms remain front-end placeholders (they validate and show a "Plan
-  approved" state but send nothing); wire to the CRM when ready.
+- The three /cancel studio buttons submit to the client's LIVE CRM forms
+  (link.stronger.systems). All other forms remain front-end placeholders
+  (they validate and show a success state but send nothing); wire to the
+  CRM when ready.
 - The coaching ratio is 5:1 throughout ("five people per coach"), corrected
   by the client - never 6:1.
 

@@ -1,0 +1,21 @@
+import { chromium } from '/opt/node22/lib/node_modules/playwright/index.mjs';
+process.env.NODE_EXTRA_CA_CERTS='/root/.ccr/ca-bundle.crt';
+const b=await chromium.launch({executablePath:'/opt/pw-browsers/chromium-1194/chrome-linux/chrome',
+  proxy:{server:process.env.HTTPS_PROXY,bypass:'localhost,127.0.0.1'}});
+const ctx=await b.newContext({viewport:{width:1440,height:900}});
+await ctx.route('**/*',async r=>{for(let i=0;i<3;i++){try{const resp=await r.fetch();if(resp.status()<400||i===2)return await r.fulfill({response:resp});}catch{}await new Promise(x=>setTimeout(x,350));}await r.abort();});
+const p=await ctx.newPage();
+await p.goto('http://localhost:8642/cancel.html',{waitUntil:'load'});
+await p.$eval('#cancel-forms', el=>el.scrollIntoView({behavior:'instant'}));
+await p.waitForTimeout(800);
+await p.click('[data-studio="South Woodford"]');
+await p.waitForTimeout(6000);
+await p.screenshot({path:'cancel-live-lightbox.png'});
+const m=await ctx.newPage(); await m.setViewportSize({width:360,height:740});
+await m.goto('http://localhost:8642/cancel.html',{waitUntil:'load'});
+await m.$eval('#cancel-forms', el=>el.scrollIntoView({behavior:'instant'}));
+await m.waitForTimeout(600);
+await m.click('[data-studio="Leytonstone"]');
+await m.waitForTimeout(6000);
+await m.screenshot({path:'cancel-live-360.png'});
+await b.close();console.log('ok');

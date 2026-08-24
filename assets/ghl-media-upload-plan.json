@@ -443,5 +443,10 @@
    }
   ]
  },
- "note": "Upload via HighLevel Media Library upload-by-URL; all sourceUrls are live on GitHub Pages. Target location to be confirmed (default: Blueprint Fitness South Woodford)."
+ "note": "Upload into the South Woodford Media Library via upload-by-URL: every sourceUrl below is already live on GitHub Pages, so no local transfer is needed. Create the folders listed, then ingest each file by URL. Blocked only on the HighLevel connector being authorised for this session.",
+ "target": {
+  "sub_account": "Blueprint Fitness South Woodford",
+  "locationId": "cquQsieyBZx9vRgEqBge",
+  "confirmed_by": "client \u2014 all media to South Woodford (single library, not mirrored)"
+ }
 }

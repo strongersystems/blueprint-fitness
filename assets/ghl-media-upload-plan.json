@@ -1,0 +1,447 @@
+{
+ "folders": {
+  "Blueprint Website/Member Story Videos": [
+   {
+    "name": "vt-adrian.mp4",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/video/vt-adrian.mp4",
+    "bytes": 8085065
+   },
+   {
+    "name": "vt-george.mp4",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/video/vt-george.mp4",
+    "bytes": 7016229
+   },
+   {
+    "name": "vt-hannah.mp4",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/video/vt-hannah.mp4",
+    "bytes": 4920842
+   },
+   {
+    "name": "vt-jayna.mp4",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/video/vt-jayna.mp4",
+    "bytes": 7603602
+   },
+   {
+    "name": "vt-rebecca.mp4",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/video/vt-rebecca.mp4",
+    "bytes": 12346134
+   },
+   {
+    "name": "vt-sonia.mp4",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/video/vt-sonia.mp4",
+    "bytes": 8368507
+   }
+  ],
+  "Blueprint Website/Member Story Captions": [
+   {
+    "name": "vt-adrian.vtt",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/video/vt-adrian.vtt",
+    "bytes": 990
+   },
+   {
+    "name": "vt-george.vtt",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/video/vt-george.vtt",
+    "bytes": 1697
+   },
+   {
+    "name": "vt-hannah.vtt",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/video/vt-hannah.vtt",
+    "bytes": 1246
+   },
+   {
+    "name": "vt-jayna.vtt",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/video/vt-jayna.vtt",
+    "bytes": 1183
+   },
+   {
+    "name": "vt-rebecca.vtt",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/video/vt-rebecca.vtt",
+    "bytes": 1760
+   },
+   {
+    "name": "vt-sonia.vtt",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/video/vt-sonia.vtt",
+    "bytes": 1441
+   }
+  ],
+  "Blueprint Website/Ambient Video": [
+   {
+    "name": "arch-dolly-poster.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/video/arch-dolly-poster.jpg",
+    "bytes": 104199
+   },
+   {
+    "name": "arch-dolly.mp4",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/video/arch-dolly.mp4",
+    "bytes": 834727
+   },
+   {
+    "name": "arch-dolly.webm",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/video/arch-dolly.webm",
+    "bytes": 986416
+   },
+   {
+    "name": "arch-glide-poster.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/video/arch-glide-poster.jpg",
+    "bytes": 97172
+   },
+   {
+    "name": "arch-glide.mp4",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/video/arch-glide.mp4",
+    "bytes": 993785
+   },
+   {
+    "name": "arch-glide.webm",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/video/arch-glide.webm",
+    "bytes": 1128782
+   },
+   {
+    "name": "hero-montage-poster.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/video/hero-montage-poster.jpg",
+    "bytes": 66726
+   },
+   {
+    "name": "hero-montage.mp4",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/video/hero-montage.mp4",
+    "bytes": 1596498
+   },
+   {
+    "name": "hero-montage.webm",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/video/hero-montage.webm",
+    "bytes": 840891
+   }
+  ],
+  "Blueprint Website/Logos": [
+   {
+    "name": "logo-horizontal-blue.png",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/logo-horizontal-blue.png",
+    "bytes": 39431
+   },
+   {
+    "name": "logo-horizontal-white.png",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/logo-horizontal-white.png",
+    "bytes": 16215
+   }
+  ],
+  "Blueprint Website/Video Thumbnails": [
+   {
+    "name": "vt-adrian.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/vt-adrian.jpg",
+    "bytes": 64177
+   },
+   {
+    "name": "vt-george.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/vt-george.jpg",
+    "bytes": 56183
+   },
+   {
+    "name": "vt-hannah.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/vt-hannah.jpg",
+    "bytes": 66831
+   },
+   {
+    "name": "vt-jayna.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/vt-jayna.jpg",
+    "bytes": 82687
+   },
+   {
+    "name": "vt-rebecca.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/vt-rebecca.jpg",
+    "bytes": 84329
+   },
+   {
+    "name": "vt-sonia.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/vt-sonia.jpg",
+    "bytes": 90090
+   }
+  ],
+  "Blueprint Website/Site Photography": [
+   {
+    "name": "apple-touch-icon.png",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/apple-touch-icon.png",
+    "bytes": 40307
+   },
+   {
+    "name": "assault-bike-woman.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/assault-bike-woman.jpg",
+    "bytes": 342326
+   },
+   {
+    "name": "bands-smiling-woman.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bands-smiling-woman.jpg",
+    "bytes": 180740
+   },
+   {
+    "name": "bands-woman.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bands-woman.jpg",
+    "bytes": 111574
+   },
+   {
+    "name": "bf-arch-floor.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-arch-floor.jpg",
+    "bytes": 358610
+   },
+   {
+    "name": "bf-armsup.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-armsup.jpg",
+    "bytes": 88143
+   },
+   {
+    "name": "bf-assess.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-assess.jpg",
+    "bytes": 93319
+   },
+   {
+    "name": "bf-banded-lunge.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-banded-lunge.jpg",
+    "bytes": 163763
+   },
+   {
+    "name": "bf-bench-room.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-bench-room.jpg",
+    "bytes": 453629
+   },
+   {
+    "name": "bf-bench-window.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-bench-window.jpg",
+    "bytes": 481605
+   },
+   {
+    "name": "bf-brand-tee.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-brand-tee.jpg",
+    "bytes": 214353
+   },
+   {
+    "name": "bf-chat.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-chat.jpg",
+    "bytes": 234143
+   },
+   {
+    "name": "bf-coach-bench.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-coach-bench.jpg",
+    "bytes": 343329
+   },
+   {
+    "name": "bf-curls.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-curls.jpg",
+    "bytes": 141811
+   },
+   {
+    "name": "bf-deadlift-wall.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-deadlift-wall.jpg",
+    "bytes": 163752
+   },
+   {
+    "name": "bf-demo.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-demo.jpg",
+    "bytes": 157159
+   },
+   {
+    "name": "bf-dumbbell-detail.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-dumbbell-detail.jpg",
+    "bytes": 117278
+   },
+   {
+    "name": "bf-fistbump.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-fistbump.jpg",
+    "bytes": 182609
+   },
+   {
+    "name": "bf-floor-wide.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-floor-wide.jpg",
+    "bytes": 196057
+   },
+   {
+    "name": "bf-form-fix.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-form-fix.jpg",
+    "bytes": 147791
+   },
+   {
+    "name": "bf-incline-coach.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-incline-coach.jpg",
+    "bytes": 154683
+   },
+   {
+    "name": "bf-j-bands.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-j-bands.jpg",
+    "bytes": 81353
+   },
+   {
+    "name": "bf-j-bikes.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-j-bikes.jpg",
+    "bytes": 147357
+   },
+   {
+    "name": "bf-j-planning.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-j-planning.jpg",
+    "bytes": 86390
+   },
+   {
+    "name": "bf-j-press.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-j-press.jpg",
+    "bytes": 92820
+   },
+   {
+    "name": "bf-j-rower.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-j-rower.jpg",
+    "bytes": 102107
+   },
+   {
+    "name": "bf-listening.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-listening.jpg",
+    "bytes": 107594
+   },
+   {
+    "name": "bf-planks.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-planks.jpg",
+    "bytes": 137595
+   },
+   {
+    "name": "bf-pullup.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-pullup.jpg",
+    "bytes": 125570
+   },
+   {
+    "name": "bf-rackline.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-rackline.jpg",
+    "bytes": 168247
+   },
+   {
+    "name": "bf-squat-wall.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-squat-wall.jpg",
+    "bytes": 98414
+   },
+   {
+    "name": "bf-sw-session.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-sw-session.jpg",
+    "bytes": 265790
+   },
+   {
+    "name": "bf-tee-seated.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-tee-seated.jpg",
+    "bytes": 131643
+   },
+   {
+    "name": "bf-whiteboard.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bf-whiteboard.jpg",
+    "bytes": 244745
+   },
+   {
+    "name": "bike-class-laughing.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/bike-class-laughing.jpg",
+    "bytes": 154701
+   },
+   {
+    "name": "coach-member-smiling.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/coach-member-smiling.jpg",
+    "bytes": 193260
+   },
+   {
+    "name": "coach-spotting-press.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/coach-spotting-press.jpg",
+    "bytes": 145393
+   },
+   {
+    "name": "coach-whiteboard.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/coach-whiteboard.jpg",
+    "bytes": 152426
+   },
+   {
+    "name": "coaches-talking.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/coaches-talking.jpg",
+    "bytes": 151504
+   },
+   {
+    "name": "coaching-group-plates.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/coaching-group-plates.jpg",
+    "bytes": 210087
+   },
+   {
+    "name": "community-hug.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/community-hug.jpg",
+    "bytes": 458205
+   },
+   {
+    "name": "dumbbell-press-member.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/dumbbell-press-member.jpg",
+    "bytes": 149433
+   },
+   {
+    "name": "favicon.png",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/favicon.png",
+    "bytes": 7910
+   },
+   {
+    "name": "group-lunges-overhead.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/group-lunges-overhead.jpg",
+    "bytes": 286683
+   },
+   {
+    "name": "group-training-row.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/group-training-row.jpg",
+    "bytes": 196488
+   },
+   {
+    "name": "hackney-exterior.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/hackney-exterior.jpg",
+    "bytes": 304358
+   },
+   {
+    "name": "kettlebell-member.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/kettlebell-member.jpg",
+    "bytes": 55086
+   },
+   {
+    "name": "member-smiling-blue.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/member-smiling-blue.jpg",
+    "bytes": 142887
+   },
+   {
+    "name": "og.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/og.jpg",
+    "bytes": 89446
+   },
+   {
+    "name": "ring-pushups.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/ring-pushups.jpg",
+    "bytes": 47805
+   },
+   {
+    "name": "rower-coaching.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/rower-coaching.jpg",
+    "bytes": 143792
+   },
+   {
+    "name": "rowing-class.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/rowing-class.jpg",
+    "bytes": 163033
+   },
+   {
+    "name": "rowing-woman.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/rowing-woman.jpg",
+    "bytes": 138967
+   },
+   {
+    "name": "sled-dark.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/sled-dark.jpg",
+    "bytes": 190226
+   },
+   {
+    "name": "team-portrait-three.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/team-portrait-three.jpg",
+    "bytes": 179560
+   },
+   {
+    "name": "walking-lunges.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/walking-lunges.jpg",
+    "bytes": 225339
+   },
+   {
+    "name": "warmup-fitness-wall.jpg",
+    "sourceUrl": "https://strongersystems.github.io/blueprint-fitness/img/warmup-fitness-wall.jpg",
+    "bytes": 36501
+   }
+  ]
+ },
+ "note": "Upload via HighLevel Media Library upload-by-URL; all sourceUrls are live on GitHub Pages. Target location to be confirmed (default: Blueprint Fitness South Woodford)."
+}

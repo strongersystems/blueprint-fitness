@@ -3,7 +3,7 @@ import fs from 'fs';
 
 const BASE = 'http://localhost:8642';
 const PAGES = ['index.html', 'kickstart.html', 'next-steps.html', 'locations.html', 'team.html', 'contact.html',
-  'members.html', 'check-in.html', 'bookings-cancellations.html', 'terms.html', 'cancel.html'];
+  'members.html', 'check-in.html', 'bookings-cancellations.html', 'terms.html', 'cancel.html', 'nutrition-request.html'];
 const VIEWPORTS = [
   ['1440', { width: 1440, height: 900 }],
   ['390', { width: 390, height: 844 }],
@@ -19,6 +19,7 @@ for (const [vpName, vp] of VIEWPORTS) {
   const ctx = await browser.newContext({ viewport: vp, deviceScaleFactor: 1 });
   /* no proxy in this harness: fail Google Fonts fast so pending stylesheets never stall deferred scripts */
   await ctx.route('https://fonts.googleapis.com/**', r => r.fulfill({ status: 200, contentType: 'text/css', body: '' }));
+  await ctx.route('https://link.stronger.systems/**', r => r.fulfill({ status: 200, contentType: r.request().url().endsWith('.js') ? 'application/javascript' : 'text/html', body: r.request().url().endsWith('.js') ? '/* stub */' : '<!doctype html><title>form stub</title>' }));
   await ctx.route('https://fonts.gstatic.com/**', r => r.abort());
 
   for (const p of PAGES) {
@@ -65,6 +66,7 @@ for (const [vpName, vp] of VIEWPORTS) {
 // ---- interaction tests at 390 ----
 const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
   await ctx.route('https://fonts.googleapis.com/**', r => r.fulfill({ status: 200, contentType: 'text/css', body: '' }));
+  await ctx.route('https://link.stronger.systems/**', r => r.fulfill({ status: 200, contentType: r.request().url().endsWith('.js') ? 'application/javascript' : 'text/html', body: r.request().url().endsWith('.js') ? '/* stub */' : '<!doctype html><title>form stub</title>' }));
   await ctx.route('https://fonts.gstatic.com/**', r => r.abort());
 
 const page = await ctx.newPage();
@@ -162,6 +164,7 @@ if (cInvalid === 0) problems.push('interaction: contact form validation missing'
 // reduced motion sanity: content visible without JS-driven motion
 const rmCtx = await browser.newContext({ viewport: { width: 1440, height: 900 }, reducedMotion: 'reduce' });
   await rmCtx.route('https://fonts.googleapis.com/**', r => r.fulfill({ status: 200, contentType: 'text/css', body: '' }));
+  await rmCtx.route('https://link.stronger.systems/**', r => r.fulfill({ status: 200, contentType: r.request().url().endsWith('.js') ? 'application/javascript' : 'text/html', body: r.request().url().endsWith('.js') ? '/* stub */' : '<!doctype html><title>form stub</title>' }));
   await rmCtx.route('https://fonts.gstatic.com/**', r => r.abort());
 
 const rmPage = await rmCtx.newPage();

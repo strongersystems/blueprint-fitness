@@ -1498,3 +1498,22 @@ body.no-js .members-form-note{display:block}
   .vt-overlay{transition:none}
   .vt-media img,.vt-play{transition:none}
 }
+
+/* inline CRM form embed (nutrition consultation) */
+.embed-inline{
+  border-radius:8px;overflow:hidden;background:#fff;
+  border:1px solid rgba(16,27,47,.1);
+}
+.embed-inline iframe{
+  display:block;width:100%;min-height:900px;border:none;background:#fff;
+}
+@media(max-width:560px){.embed-inline iframe{min-height:1000px}}
+
+/* quiet "sure you want to cancel?" nudge under the change/pause options */
+.cancel-nudge{max-width:46rem;margin:1.1rem 0 0}
+.cancel-nudge a{
+  font-weight:600;font-size:.85rem;color:var(--grey);
+  text-decoration:underline;text-underline-offset:3px;
+  opacity:.75;transition:opacity .2s,color .2s;
+}
+.cancel-nudge a:hover{opacity:1;color:var(--ink)}

@@ -1,8 +1,8 @@
 BLUEPRINT FITNESS - AI Studio import pack (single-file pastes)
 ==============================================================
 
-17 paste files for 10 pages - the public site plus the members area
-(/members, /check-in, /bookings-cancellations, /terms, /cancel). Pages that
+18 paste files for 11 pages - the public site plus the members area
+(/members, /check-in, /nutrition-request, /bookings-cancellations, /terms, /cancel). Pages that
 fit ship as ONE self-contained file (CSS + JS minified inline); pages that
 don't ship as exactly two pastes - HTML+JS plus a stylesheet - each half
 under the limit. (The team page is hidden for now at the client's request -
@@ -20,23 +20,24 @@ FILES AND CHARACTER COUNTS (limit 50,000)
 
   paste file                  chars    contains
   --------------------------  -------  --------------------------------------
-  index.html                   40,314  HTML + inline JS
-  index.css                    33,712  stylesheet (link'd as `index.css`)
-  kickstart.html               48,902  HTML + inline JS
-  kickstart.css                35,153  stylesheet (link'd as `kickstart.css`)
-  next-steps.html              31,519  HTML + inline JS
-  next-steps.css               26,632  stylesheet (link'd as `next-steps.css`)
-  locations.html               27,687  HTML + inline JS
-  locations.css                25,835  stylesheet (link'd as `locations.css`)
-  contact.html                 49,185  HTML + inline CSS + inline JS
-  members.html                 48,592  HTML + inline CSS + inline JS
-  check-in.html                49,586  HTML + inline CSS + inline JS
-  bookings-cancellations.html  27,043  HTML + inline JS
-  bookings-cancellations.css   25,682  stylesheet (link'd as `bookings-cancellations.css`)
-  terms.html                   29,840  HTML + inline JS
-  terms.css                    25,530  stylesheet (link'd as `terms.css`)
-  cancel.html                  25,099  HTML + inline JS
-  cancel.css                   25,261  stylesheet (link'd as `cancel.css`)
+  index.html                   40,316  HTML + inline JS
+  index.css                    33,237  stylesheet (link'd as `index.css`)
+  kickstart.html               49,127  HTML + inline JS
+  kickstart.css                34,678  stylesheet (link'd as `kickstart.css`)
+  next-steps.html              31,744  HTML + inline JS
+  next-steps.css               26,157  stylesheet (link'd as `next-steps.css`)
+  locations.html               27,912  HTML + inline JS
+  locations.css                25,360  stylesheet (link'd as `locations.css`)
+  contact.html                 48,935  HTML + inline CSS + inline JS
+  members.html                 48,781  HTML + inline CSS + inline JS
+  check-in.html                49,378  HTML + inline CSS + inline JS
+  nutrition-request.html       49,409  HTML + inline CSS + inline JS
+  bookings-cancellations.html  26,213  HTML + inline JS
+  bookings-cancellations.css   25,031  stylesheet (link'd as `bookings-cancellations.css`)
+  terms.html                   30,107  HTML + inline JS
+  terms.css                    25,055  stylesheet (link'd as `terms.css`)
+  cancel.html                  25,789  HTML + inline JS
+  cancel.css                   25,047  stylesheet (link'd as `cancel.css`)
 
 
 WORKS WITHOUT JAVASCRIPT (the fix that matters)
@@ -124,8 +125,10 @@ OTHER CONVENTIONS
   into any other page.
 - The sign-up lightbox is built by the JavaScript at runtime - it is not in
   the markup. Its success state redirects to /next-steps.
-- The three /cancel studio buttons submit to the client's LIVE CRM forms
-  (link.stronger.systems). All other forms remain front-end placeholders
+- The three /cancel studio buttons, and the inline form on /nutrition-request,
+  submit to the client's LIVE CRM forms (link.stronger.systems). The nutrition
+  form is embedded inline (not a lightbox) and works even without JavaScript -
+  form_embed.js only handles auto-resizing. All other forms remain front-end placeholders
   (they validate and show a success state but send nothing); wire to the
   CRM when ready.
 - The coaching ratio is 5:1 throughout ("five people per coach"), corrected

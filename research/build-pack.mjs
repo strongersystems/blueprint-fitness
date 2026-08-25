@@ -31,6 +31,7 @@ const ROUTES = {
   'bookings-cancellations.html': '/bookings-cancellations',
   'terms.html': '/terms',
   'cancel.html': '/cancel',
+  'nutrition-request.html': '/nutrition-request',
 };
 const PAGES = Object.keys(ROUTES);
 

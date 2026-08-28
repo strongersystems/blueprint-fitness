@@ -52,7 +52,9 @@ export const studios: Studio[] = [
     locationId: 'cquQsieyBZx9vRgEqBge',
     cancellationFormId: 'sGRVF4TDOJuG1B55SN95',
     cancellationFormHeight: 661,
-    trackingScript: null,
+    trackingScript:
+      '<script src="https://link.stronger.systems/js/external-tracking.js" ' +
+      'data-tracking-id="tk_aec9d659c5e84a3383569603f1a02f88"></script>',
   },
   {
     slug: 'leytonstone',
@@ -70,7 +72,9 @@ export const studios: Studio[] = [
     locationId: 'mztjJyXHNWiEotc8ItXP',
     cancellationFormId: 'CRXo5oPCz8vG0Wf1qKrD',
     cancellationFormHeight: 600,
-    trackingScript: null,
+    trackingScript:
+      '<script src="https://link.stronger.systems/js/external-tracking.js" ' +
+      'data-tracking-id="tk_feff3ad595f64c029eab0771634d520c"></script>',
   },
   {
     slug: 'hackney',
@@ -88,7 +92,9 @@ export const studios: Studio[] = [
     locationId: '',
     cancellationFormId: 'zqqA4jVAOEMR7yq3UhEt',
     cancellationFormHeight: 640,
-    trackingScript: null,
+    trackingScript:
+      '<script src="https://link.stronger.systems/js/external-tracking.js" ' +
+      'data-tracking-id="tk_959536f8daf54d288a44ce0bc72d180e"></script>',
   },
 ];
 

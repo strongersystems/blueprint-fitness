@@ -513,6 +513,7 @@ import { url } from "../lib/url";
         <EnquiryForm client:visible
           studios={studios.map((st) => ({ slug: st.slug, name: st.name, formValue: st.formValue }))}
           successHref={url("next-steps/")}
+          formId="blueprint-enquiry-main-site"
           heading="Start your 30 days"
           intro="Pick your studio"
           submitLabel="Book my friendly chat" />

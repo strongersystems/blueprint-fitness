@@ -116,6 +116,7 @@ const { studio } = Astro.props;
           studios={studios.map((s) => ({ slug: s.slug, name: s.name, formValue: s.formValue }))}
           fixedStudio={studio.formValue}
           successHref={url(`${studio.slug}/next-steps/`)}
+          formId={`blueprint-enquiry-${studio.slug}`}
           heading={`Start at ${studio.name}`}
           intro="No hard sell, ever"
           submitLabel="Book my friendly chat" />

@@ -59,8 +59,7 @@ import { url } from "../lib/url";
           </div>
         </div>
         <div style="background:var(--mist);border-radius:var(--radius);padding:clamp(1.4rem,4vw,2.2rem)">
-          <span class="form-note">Placeholder form &mdash; nothing is sent yet</span>
-          <form data-placeholder-form data-success="#contact-success" novalidate>
+          <form id="blueprint-contact" name="blueprint-contact" data-placeholder-form data-success="#contact-success" novalidate>
             <div class="field">
               <label for="c-name">Full name</label>
               <input id="c-name" name="name" type="text" autocomplete="name" required>
@@ -90,7 +89,7 @@ import { url } from "../lib/url";
             <button class="btn btn-primary" type="submit" style="width:100%">Send message</button>
           </form>
           <div class="form-success" id="contact-success" role="status">
-            <span class="stamp">Message drafted</span>
+            <span class="stamp">Message sent</span>
             <h3 class="h-2" style="margin-top:1.2rem">Thanks &mdash; we&rsquo;ll be in touch.</h3>
             <p style="color:var(--grey)">A coach will reply within one working day.
               (Preview note: this form is a placeholder &mdash; nothing was actually sent.)</p>

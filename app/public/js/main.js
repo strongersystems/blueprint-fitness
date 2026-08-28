@@ -264,73 +264,15 @@
     });
   });
 
-  /* ---------- the signup lightbox ----------
-     One shared form, one click away from every "Try us for 30 days" button.
-     Injected here so all six pages carry it without duplicating markup. */
-  var signupOverlay = document.createElement('div');
-  signupOverlay.className = 'signup-overlay';
-  signupOverlay.hidden = true;
-  signupOverlay.innerHTML =
-    '<div class="signup-modal" role="dialog" aria-modal="true" aria-labelledby="signup-title">' +
-      '<button type="button" class="signup-close" aria-label="Close">&times;</button>' +
-      '<span class="form-note">Placeholder form &mdash; nothing is sent yet</span>' +
-      '<p class="annotation">The plan starts here</p>' +
-      '<h3 class="h-3" id="signup-title">Try us for 30 days</h3>' +
-      '<p class="signup-intro">Pop your details in and one of the team will give you a ring for a ' +
-        'friendly chat &mdash; no hard sell, ever.</p>' +
-      '<form data-placeholder-form data-success="#signup-success" data-advance="next-steps.html" novalidate>' +
-        '<div class="field"><label for="su-name">Name</label>' +
-          '<input id="su-name" name="name" type="text" autocomplete="name" required>' +
-          '<p class="err">Please tell us your name.</p></div>' +
-        '<div class="field"><label for="su-email">Email</label>' +
-          '<input id="su-email" name="email" type="email" autocomplete="email" required>' +
-          '<p class="err">That email doesn&rsquo;t look right.</p></div>' +
-        '<div class="field"><label for="su-phone">Number</label>' +
-          '<input id="su-phone" name="phone" type="tel" autocomplete="tel" required>' +
-          '<p class="err">Please add a number so the team can give you a ring.</p></div>' +
-        '<div class="field"><label for="su-loc">Closest studio</label>' +
-          '<select id="su-loc" name="location" required>' +
-            '<option value="" selected disabled>Choose a studio&hellip;</option>' +
-            '<option>South Woodford</option>' +
-            '<option>Leytonstone</option>' +
-            '<option>Hackney</option>' +
-            '<option>Not sure yet</option>' +
-          '</select>' +
-          '<p class="err">Pick whichever&rsquo;s closest &mdash; &ldquo;not sure yet&rdquo; is fine too.</p></div>' +
-        '<button class="btn btn-primary btn-big" type="submit" style="width:100%">Book my friendly chat</button>' +
-        '<p class="signup-fine">By registering you agree to receive updates about Blueprint Fitness. ' +
-          'Nothing else &mdash; just a call about your goals.</p>' +
-      '</form>' +
-      '<div class="form-success" id="signup-success" role="status">' +
-        '<span class="stamp">Plan approved</span>' +
-        '<h3 class="h-2" style="margin-top:1.2rem">Lovely &mdash; you&rsquo;re in.</h3>' +
-        '<p style="color:#EAF1FB">Taking you to your next steps in <span data-advance-count>3</span>&hellip;</p>' +
-        '<p><a class="btn btn-ghost" href="next-steps.html">Or go there now</a></p>' +
-      '</div>' +
-    '</div>';
-  document.body.appendChild(signupOverlay);
-
-  var signupLastFocus = null;
-  function openSignup() {
-    signupLastFocus = document.activeElement;
-    signupOverlay.hidden = false;
-    document.body.classList.add('modal-open');
-    requestAnimationFrame(function () { signupOverlay.classList.add('show'); });
-    var first = signupOverlay.querySelector('input');
-    setTimeout(function () { if (first) first.focus(); }, reduced ? 0 : 200);
-  }
-  function closeSignup() {
-    signupOverlay.classList.remove('show');
-    document.body.classList.remove('modal-open');
-    var hide = function () { signupOverlay.hidden = true; };
-    if (reduced) hide(); else setTimeout(hide, 250);
-    if (signupLastFocus) signupLastFocus.focus();
-  }
-  signupOverlay.querySelector('.signup-close').addEventListener('click', closeSignup);
-  signupOverlay.addEventListener('click', function (e) { if (e.target === signupOverlay) closeSignup(); });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && !signupOverlay.hidden) closeSignup();
-  });
+  /* ---------- the sign-up funnel ----------
+     The old placeholder sign-up lightbox has been retired. Every kickstart
+     page now carries the real enquiry form (the React island), and that is
+     the only form we want in the document: HighLevel's tracking script binds
+     to EVERY form on the page, so a second, unidentified sign-up form would
+     post empty submissions into the CRM. "Tap to get started" scrolls to the
+     real form and focuses it. (site/ and import-pack/ still ship the original
+     lightbox - they are the untouched static build.) */
+  var realForm = document.querySelector('form[id^="blueprint-"]');
 
   /* ---------- member stories: video lightbox ----------
      Cards ([data-vt]) open a minimal player over the page; portrait
@@ -469,8 +411,13 @@
   /* every button that says "Tap to get started" (the kickstart page) opens it.
      "Try us for 30 days" buttons elsewhere navigate to the kickstart page. */
   document.querySelectorAll('a.btn, button.btn').forEach(function (b) {
-    if (b.textContent.trim().toLowerCase() === 'tap to get started') {
-      b.addEventListener('click', function (e) { e.preventDefault(); openSignup(); });
+    if (realForm && b.textContent.trim().toLowerCase() === 'tap to get started') {
+      b.addEventListener('click', function (e) {
+        e.preventDefault();
+        realForm.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'center' });
+        var target = realForm.querySelector('input');
+        setTimeout(function () { if (target) target.focus(); }, reduced ? 0 : 520);
+      });
     }
   });
 

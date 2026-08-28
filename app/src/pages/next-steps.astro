@@ -1,0 +1,185 @@
+---
+import Base from "../layouts/Base.astro";
+import { url } from "../lib/url";
+---
+<Base
+  title={"You're in — Blueprint Fitness"}
+  description={'What happens next after registering for the 30-Day Kickstart.'}
+  minimal
+  label="Next steps"
+  trackAll
+  noindex>
+
+
+  <section class="section on-dark" style="padding-bottom:clamp(2.5rem,5vw,4rem)">
+    <div class="container" style="text-align:center;max-width:46rem">
+      <span class="stamp" style="display:inline-block;font-family:var(--font-display);text-transform:uppercase;color:#5EA2FF;border:3px solid #5EA2FF;border-radius:6px;padding:.35em .7em;font-size:1.2rem;letter-spacing:.06em;transform:rotate(-4deg)">On the plan</span>
+      <h1 class="h-display" style="margin-top:1rem">You&rsquo;re <span class="draft-u">in.</span></h1>
+      <p class="lede" style="margin-inline:auto">Lovely to have you. No guesswork from here &mdash;
+        this is exactly what happens next.</p>
+    </div>
+  </section>
+
+  <!-- what happens next -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-head">
+        <p class="dim">What happens next</p>
+        <h2 class="h-1">Three steps. <span class="draft-u hl">All planned.</span></h2>
+      </div>
+      <div class="grid-3 stagger">
+        <article class="card">
+          <span class="ghost-num" aria-hidden="true">01</span>
+          <div class="plan-frame" style="aspect-ratio:16/10;margin-bottom:1.1rem">
+            <img src={url("img/bf-demo.jpg")} alt="A Blueprint coach chatting a member through the plan" loading="lazy" width="962" height="1436" style="object-position:center 30%">
+          </div>
+          <h3 class="h-3">A friendly call</h3>
+          <p>A member of the team will call you for a friendly chat about your goals &mdash; and to
+            make sure Blueprint is a good fit for you too. No hard sell, ever.</p>
+        </article>
+        <article class="card">
+          <span class="ghost-num" aria-hidden="true">02</span>
+          <div class="plan-frame" style="aspect-ratio:16/10;margin-bottom:1.1rem">
+            <img src={url("img/bf-assess.jpg")} alt="A Blueprint coach assessing a member&#39;s movement" loading="lazy" width="880" height="1384" style="object-position:center 40%">
+          </div>
+          <h3 class="h-3">Your onboarding session</h3>
+          <p>Book your InBody scan and goal-setting session below. We&rsquo;ll map out exactly
+            where you are and where you want to be.</p>
+        </article>
+        <article class="card">
+          <span class="ghost-num" aria-hidden="true">03</span>
+          <div class="plan-frame" style="aspect-ratio:16/10;margin-bottom:1.1rem">
+            <img src={url("img/bf-banded-lunge.jpg")} alt="A member working through a banded lunge at the rack" loading="lazy" width="958" height="1398" style="object-position:center 45%">
+          </div>
+          <h3 class="h-3">Day one of thirty</h3>
+          <p>You turn up. We take care of the rest &mdash; your programme, your coaching, your
+            weekly check-ins with your head coach.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- booking calendar placeholder -->
+  <section class="section on-mist" id="booking">
+    <div class="container grid-2" style="align-items:start">
+      <div>
+        <div class="sec-head" style="margin-bottom:1.4rem">
+          <p class="dim">Book your onboarding</p>
+          <h2 class="h-1">Pick a time that<br><span class="draft-u hl">suits you</span></h2>
+        </div>
+        <p class="lede">Choose a 30-minute onboarding slot at your studio &mdash; South Woodford,
+          Leytonstone or Hackney.</p>
+        <p class="annotation">Sessions run 7 days a week, early &rsquo;til late.</p>
+      </div>
+      <div class="calendar-ph reveal" role="img" aria-label="Placeholder for the booking calendar — the live booking system will be embedded here">
+        <span class="form-note">Booking calendar placeholder &mdash; live embed goes here</span>
+        <h3 class="h-3" style="margin-top:.4rem">August 2026</h3>
+        <div class="cal-grid" aria-hidden="true">
+          <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+          <span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+          <span>10</span><span class="hot">11</span><span>12</span><span class="hot">13</span><span>14</span><span class="hot">15</span><span>16</span>
+          <span>17</span><span>18</span><span class="hot">19</span><span>20</span><span class="hot">21</span><span>22</span><span>23</span>
+        </div>
+        <p class="small" style="color:var(--grey);margin:1rem 0 0">Highlighted dates show example
+          availability. Your real calendar (e.g. the studio&rsquo;s booking system) will replace
+          this block.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- message from Nick / reassurance -->
+  <section class="section">
+    <div class="container grid-2">
+      <div class="plan-frame reveal" style="aspect-ratio:4/3">
+        <img src={url("img/bf-whiteboard.jpg")} alt="A Blueprint coach walking members through the plan on the whiteboard" loading="lazy" width="1400" height="2100" style="object-position:center 25%">
+      </div>
+      <div>
+        <p class="annotation reveal">A message from the team</p>
+        <h2 class="h-1">Nervous? <span class="draft-u hl">Good.</span><br>That&rsquo;s day one.</h2>
+        <p class="lede">The most important step was putting your name down. This week, your only
+          goal is to show up &mdash; learn the movements, meet the coaches, get comfortable in the
+          space. Consistency beats intensity, every single time.</p>
+        <p class="lede">Your head coach will walk you through exactly what to expect and how to
+          prepare for your first session on your welcome call.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== member stories: video testimonials ===== -->
+  <section class="section on-dark vt" id="member-stories">
+    <div class="container">
+      <div class="sec-head">
+        <p class="dim">Member stories</p>
+        <h2 class="h-1">Watch what happens <span class="draft-u">next</span></h2>
+        <p class="lede">Six members who started with the same first step you&rsquo;ve just taken.</p>
+      </div>
+      <div class="vt-grid stagger">
+        <a class="vt-card" href="video/vt-rebecca.mp4" data-vt data-name="Rebecca" data-role="Blueprint member"
+           data-src={url("video/vt-rebecca.mp4")} data-captions={url("video/vt-rebecca.vtt")} data-poster={url("img/vt-rebecca.jpg")}>
+          <span class="vt-media"><img src={url("img/vt-rebecca.jpg")} alt="Rebecca, a Blueprint Fitness member, in the studio" loading="lazy" width="720" height="900"><span class="vt-play" aria-hidden="true"></span><span class="vt-dur">1:26</span></span>
+          <span class="vt-meta"><strong>Rebecca</strong><em>&ldquo;Coaches that give you unbelievable support&hellip; and a community telling you that you&rsquo;re amazing.&rdquo;</em></span>
+        </a>
+        <a class="vt-card" href="video/vt-george.mp4" data-vt data-name="George" data-role="Blueprint member"
+           data-src={url("video/vt-george.mp4")} data-captions={url("video/vt-george.vtt")} data-poster={url("img/vt-george.jpg")}>
+          <span class="vt-media"><img src={url("img/vt-george.jpg")} alt="George, a Blueprint Fitness member, in the studio" loading="lazy" width="720" height="900"><span class="vt-play" aria-hidden="true"></span><span class="vt-dur">1:05</span></span>
+          <span class="vt-meta"><strong>George</strong><em>&ldquo;I&rsquo;ve lost almost 17 stone myself.&rdquo;</em></span>
+        </a>
+        <a class="vt-card" href="video/vt-jayna.mp4" data-vt data-name="Jayna" data-role="Blueprint member"
+           data-src={url("video/vt-jayna.mp4")} data-captions={url("video/vt-jayna.vtt")} data-poster={url("img/vt-jayna.jpg")}>
+          <span class="vt-media"><img src={url("img/vt-jayna.jpg")} alt="Jayna, a Blueprint Fitness member, in front of the studio sign" loading="lazy" width="720" height="900"><span class="vt-play" aria-hidden="true"></span><span class="vt-dur">0:57</span></span>
+          <span class="vt-meta"><strong>Jayna</strong><em>&ldquo;Blueprint is honestly my happy place.&rdquo;</em></span>
+        </a>
+        <a class="vt-card" href="video/vt-sonia.mp4" data-vt data-name="Sonia" data-role="South Woodford member"
+           data-src={url("video/vt-sonia.mp4")} data-captions={url("video/vt-sonia.vtt")} data-poster={url("img/vt-sonia.jpg")}>
+          <span class="vt-media"><img src={url("img/vt-sonia.jpg")} alt="Sonia, a Blueprint Fitness member, outside the South Woodford studio" loading="lazy" width="720" height="900"><span class="vt-play" aria-hidden="true"></span><span class="vt-dur">1:03</span></span>
+          <span class="vt-meta"><strong>Sonia</strong><em>&ldquo;You get the individual support, but you get to train with people.&rdquo;</em></span>
+        </a>
+        <a class="vt-card" href="video/vt-hannah.mp4" data-vt data-name="Hannah" data-role="Leytonstone member"
+           data-src={url("video/vt-hannah.mp4")} data-captions={url("video/vt-hannah.vtt")} data-poster={url("img/vt-hannah.jpg")}>
+          <span class="vt-media"><img src={url("img/vt-hannah.jpg")} alt="Hannah, a Blueprint Fitness member, in the Leytonstone studio" loading="lazy" width="720" height="900"><span class="vt-play" aria-hidden="true"></span><span class="vt-dur">0:51</span></span>
+          <span class="vt-meta"><strong>Hannah</strong><em>&ldquo;You always feel like you&rsquo;ve got someone&rsquo;s attention.&rdquo;</em></span>
+        </a>
+        <a class="vt-card" href="video/vt-adrian.mp4" data-vt data-name="Adrian" data-role="Blueprint member"
+           data-src={url("video/vt-adrian.mp4")} data-captions={url("video/vt-adrian.vtt")} data-poster={url("img/vt-adrian.jpg")}>
+          <span class="vt-media"><img src={url("img/vt-adrian.jpg")} alt="Adrian, a Blueprint Fitness member, mid-session" loading="lazy" width="720" height="900"><span class="vt-play" aria-hidden="true"></span><span class="vt-dur">0:41</span></span>
+          <span class="vt-meta"><strong>Adrian</strong><em>&ldquo;My favourite thing about BP is the constant push.&rdquo;</em></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- reinforcement testimonials -->
+  <section class="section on-dark">
+    <div class="container">
+      <div class="sec-head">
+        <p class="dim">You&rsquo;re in good company</p>
+        <h2 class="h-1">Members who stood<br>exactly <span class="draft-u">here</span></h2>
+      </div>
+      <div class="grid-3 stagger">
+        <figure class="quote-card">
+          <span class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <blockquote>The support that you get from the whole team and community was the key to the
+            whole journey. I&rsquo;ve lost a stone and 6 inches round my waist!</blockquote>
+          <figcaption><span class="who">Felicity</span><br><span class="role">Blueprint member</span></figcaption>
+        </figure>
+        <figure class="quote-card">
+          <span class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <blockquote>It&rsquo;s exhilarating &mdash; thanks to the whole team I am back on track.
+            Thank you!</blockquote>
+          <figcaption><span class="who">Michelle</span><br><span class="role">Blueprint member</span></figcaption>
+        </figure>
+        <figure class="quote-card">
+          <span class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <blockquote>Everyone&rsquo;s really friendly! I feel a lot more confident in myself and my
+            fitness has improved so much.</blockquote>
+          <figcaption><span class="who">Georgia</span><br><span class="role">Blueprint member</span></figcaption>
+        </figure>
+      </div>
+      <p style="margin-top:2.5rem;text-align:center">
+        <a class="btn btn-ghost" href={url("/")}>Explore the rest of Blueprint</a>
+      </p>
+    </div>
+  </section>
+
+
+</Base>

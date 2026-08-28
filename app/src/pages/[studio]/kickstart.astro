@@ -1,0 +1,129 @@
+---
+import Base from '../../layouts/Base.astro';
+import VideoTestimonials from '../../components/VideoTestimonials.astro';
+import EnquiryForm from '../../components/EnquiryForm.tsx';
+import { studios } from '../../data/studios';
+import { site } from '../../data/site';
+import { url } from '../../lib/url';
+
+export async function getStaticPaths() {
+  return studios.map((studio) => ({ params: { studio: studio.slug }, props: { studio } }));
+}
+const { studio } = Astro.props;
+---
+<Base
+  title={`30-Day Kickstart at Blueprint Fitness ${studio.name}`}
+  description={`Try small group personal training at Blueprint Fitness ${studio.name} — ${studio.addressLines.join(', ')}. A coached month, never more than five people per coach.`}
+  minimal label={`${studio.name} · 30-Day Kickstart`}
+  trackStudios={[studio.slug]}
+  ogImage={studio.heroImage}
+>
+  <section class="hero hero-draft" data-cta-sentinel>
+    <div class="hero-inner container hero-draft-grid">
+      <div>
+        <p class="annotation"><span class="annotation-hl">Small group personal training in {studio.name}</span></p>
+        <h1 class="h-display">
+          <span class="dline"><span>This isn’t</span></span>
+          <span class="dline"><span>another <span class="draft-u">gym.</span></span></span>
+        </h1>
+        <p class="lede">{studio.blurb}</p>
+        <p class="lede">This is personal training — delivered in a small, supportive group of no
+          more than five people per coach, with people who’ll genuinely look after you.</p>
+        <div class="btn-row" style="margin-top:1.4rem">
+          <a class="btn btn-primary btn-big" href="#register">Tap to get started</a>
+        </div>
+        <p class="hold-hint" style="margin-top:.9rem;color:#5EA2FF">
+          12 coached sessions · unlimited classes · your plan written for you</p>
+        <div class="hero-stats" aria-label="The Kickstart in numbers">
+          <div class="stat"><span class="n">30</span><span class="l">days, planned</span></div>
+          <div class="stat"><span class="n">{site.ratio}</span><span class="l">max ratio</span></div>
+          <div class="stat"><span class="n">100+</span><span class="l">sessions a week</span></div>
+        </div>
+      </div>
+      <div class="plan-frame" style="aspect-ratio:4/5">
+        <img src={url(studio.heroImage)} alt={studio.heroImageAlt} width="1400" height="1750" />
+      </div>
+    </div>
+  </section>
+
+  <div class="ribbon" aria-hidden="true">
+    <div class="track">
+      <span>Small Group Personal Training</span><span>&#9679;</span>
+      <span>Max 5 people per coach</span><span>&#9679;</span>
+      <span>Rated 5/5 on Google — 200+ reviews</span><span>&#9679;</span>
+      <span>{studio.name}</span><span>&#9679;</span>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="h-1" data-ignite style="max-width:54rem">
+        No wandering around a gym floor. No generic workouts. No being lost in a crowded class.
+        Just a <span class="key"><span class="hl">plan</span></span> — and a coach who makes
+        sure you follow it.
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-dark section-tight" id="value">
+    <div class="container grid-2" style="align-items:center">
+      <div>
+        <div class="sec-head" style="margin-bottom:1.4rem">
+          <p class="dim">One month, one price</p>
+          <h2 class="h-1">Everything in.<br /><span class="draft-u">Nothing extra.</span></h2>
+        </div>
+        <p class="lede">Booked as one-to-one personal training, a month like this would cost
+          several hundred pounds. Because you share your coach with four others, the whole
+          Kickstart is {site.kickstartPrice} — under £6 a day for a month where everything is
+          done for you:</p>
+        <ul class="check-list" style="margin:1.3rem 0 0">
+          <li>Your beginners’ intro session — an InBody scan and a proper chat about your goals</li>
+          <li>12 coached PT sessions — never more than five of you to a coach</li>
+          <li>Unlimited conditioning classes, 7 days a week</li>
+          <li>A 1-to-1 check-in with your head coach every week</li>
+          <li>Practical nutrition guidance — no fad diets, no meal plans to buy</li>
+          <li>No joining fee, no contract, nothing else to pay</li>
+        </ul>
+        <p class="annotation" style="margin:1.4rem 0 1.8rem">And a coach rings you first, to make
+          sure it’s actually right for you.</p>
+      </div>
+      <div class="plan-frame reveal" style="aspect-ratio:4/5;max-width:24rem;justify-self:center">
+        <img src={url('img/bf-brand-tee.jpg')} alt="A Blueprint Fitness member mid-session" loading="lazy" width="1200" height="1800" style="object-position:center 20%" />
+      </div>
+    </div>
+  </section>
+
+  <VideoTestimonials
+    eyebrow="Member stories"
+    heading='They started exactly <span class="draft-u">where you are</span>'
+    lede="Six members on where they began, and where it took them. Tap to watch." />
+
+  <section class="section on-dark" id="register">
+    <div class="container grid-2" style="align-items:start">
+      <div>
+        <p class="annotation reveal">Five to a coach, so everyone gets looked after</p>
+        <h2 class="h-1">Ready when <span class="draft-u">you are.</span></h2>
+        <p class="lede">Thirty days from now: stronger, fitter, and sure of yourself — that’s the
+          plan, and it’s already written.</p>
+        <ul class="check-list" style="margin-top:1.4rem">
+          <li>{studio.addressLines.join(', ')}, {studio.postcode}</li>
+          <li>{studio.hours}</li>
+          <li>{studio.email}</li>
+        </ul>
+      </div>
+      <div class="card" style="align-self:start">
+        <EnquiryForm client:visible
+          studios={studios.map((s) => ({ slug: s.slug, name: s.name, formValue: s.formValue }))}
+          fixedStudio={studio.formValue}
+          successHref={url(`${studio.slug}/next-steps/`)}
+          heading={`Start at ${studio.name}`}
+          intro="No hard sell, ever"
+          submitLabel="Book my friendly chat" />
+      </div>
+    </div>
+  </section>
+
+  <div class="sticky-cta" aria-hidden="false">
+    <a class="btn btn-primary" href="#register">Tap to get started</a>
+  </div>
+</Base>

@@ -1,0 +1,62 @@
+---
+import '../styles/main.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Tracking from '../components/Tracking.astro';
+import { url } from '../lib/url';
+
+interface Props {
+  title: string;
+  description: string;
+  /** current top-nav item, for aria-current */
+  current?: string;
+  /** distraction-light header (landing pages): brand + label only */
+  minimal?: boolean;
+  label?: string;
+  /** HighLevel tracking: studio slugs, or all three */
+  trackStudios?: string[];
+  trackAll?: boolean;
+  noindex?: boolean;
+  ogImage?: string;
+}
+const {
+  title, description, current = '', minimal = false, label = '',
+  trackStudios = [], trackAll = false, noindex = false,
+  ogImage = 'img/og.jpg',
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+---
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  {noindex && <meta name="robots" content="noindex" />}
+  <meta name="theme-color" content="#0072F5" />
+  <link rel="icon" type="image/png" href={url('img/favicon.png')} />
+  <link rel="apple-touch-icon" href={url('img/apple-touch-icon.png')} />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={new URL(url(ogImage), Astro.site).href} />
+  <meta property="og:url" content={canonical} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Montserrat:wght@100..900&display=swap" />
+  <Tracking studios={trackStudios} all={trackAll} />
+  <slot name="head" />
+</head>
+<body class="no-js">
+  <a class="skip" href="#main">Skip to content</a>
+  <Header current={current} minimal={minimal} label={label} />
+  <main id="main"><slot /></main>
+  <Footer />
+  <script src={url('js/main.js')} defer is:inline></script>
+  <slot name="body-end" />
+</body>
+</html>

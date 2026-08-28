@@ -1,0 +1,35 @@
+---
+import { stories } from '../data/testimonials';
+import { url } from '../lib/url';
+interface Props { heading?: string; lede?: string; eyebrow?: string }
+const {
+  eyebrow = 'Member stories',
+  heading = 'Hear it from <span class="draft-u">our members</span>',
+  lede = 'Six members, six stories — tap any of them to watch it in their own words.',
+} = Astro.props;
+---
+<section class="section on-dark vt" id="member-stories">
+  <div class="container">
+    <div class="sec-head">
+      <p class="dim">{eyebrow}</p>
+      <h2 class="h-1" set:html={heading} />
+      <p class="lede">{lede}</p>
+    </div>
+    <div class="vt-grid stagger">
+      {stories.map((s) => (
+        <a class="vt-card" href={url(`video/vt-${s.slug}.mp4`)} data-vt
+           data-name={s.name} data-role={s.role}
+           data-src={url(`video/vt-${s.slug}.mp4`)}
+           data-captions={url(`video/vt-${s.slug}.vtt`)}
+           data-poster={url(`img/vt-${s.slug}.jpg`)}>
+          <span class="vt-media">
+            <img src={url(`img/vt-${s.slug}.jpg`)} alt={s.alt} loading="lazy" width="720" height="900" />
+            <span class="vt-play" aria-hidden="true"></span>
+            <span class="vt-dur">{s.duration}</span>
+          </span>
+          <span class="vt-meta"><strong>{s.name}</strong><em>{s.quote}</em></span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

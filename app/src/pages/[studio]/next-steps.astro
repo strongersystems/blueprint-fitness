@@ -1,0 +1,90 @@
+---
+import Base from '../../layouts/Base.astro';
+import VideoTestimonials from '../../components/VideoTestimonials.astro';
+import { studios } from '../../data/studios';
+import { url } from '../../lib/url';
+
+export async function getStaticPaths() {
+  return studios.map((studio) => ({ params: { studio: studio.slug }, props: { studio } }));
+}
+const { studio } = Astro.props;
+---
+<Base
+  title={`You’re in — Blueprint Fitness ${studio.name}`}
+  description={`What happens next after registering for the 30-Day Kickstart at Blueprint Fitness ${studio.name}.`}
+  minimal label={`${studio.name} · Next steps`}
+  trackStudios={[studio.slug]}
+  noindex
+>
+  <section class="section on-dark section-tight">
+    <div class="container" style="text-align:center;max-width:44rem">
+      <span class="stamp" style="display:inline-block;font-family:var(--font-display);text-transform:uppercase;color:#5EA2FF;border:3px solid #5EA2FF;border-radius:6px;padding:.35em .7em;font-size:1.2rem;letter-spacing:.06em;transform:rotate(-4deg)">On the plan</span>
+      <h1 class="h-display" style="margin-top:1.4rem">You’re <span class="draft-u">in.</span></h1>
+      <p class="lede" style="margin-inline:auto">Lovely to have you. No guesswork from here — this
+        is exactly what happens next at {studio.name}.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="sec-head">
+        <p class="dim">What happens next</p>
+        <h2 class="h-1">Three steps. <span class="draft-u hl">All planned.</span></h2>
+      </div>
+      <div class="grid-3 stagger">
+        <article class="card">
+          <span class="ghost-num" aria-hidden="true">01</span>
+          <div class="plan-frame" style="aspect-ratio:4/3;margin-bottom:1.1rem">
+            <img src={url('img/bf-demo.jpg')} alt="A Blueprint coach talking a member through a movement" loading="lazy" width="962" height="1436" />
+          </div>
+          <h3 class="h-3">A friendly call</h3>
+          <p>A member of the {studio.name} team will call you for a friendly chat about your goals
+            — and to make sure Blueprint is a good fit for you too. No hard sell, ever.</p>
+        </article>
+        <article class="card">
+          <span class="ghost-num" aria-hidden="true">02</span>
+          <div class="plan-frame" style="aspect-ratio:4/3;margin-bottom:1.1rem">
+            <img src={url('img/bf-assess.jpg')} alt="A coach assessing a member's movement" loading="lazy" width="880" height="1384" />
+          </div>
+          <h3 class="h-3">Your onboarding session</h3>
+          <p>Your InBody scan and goal-setting session. We’ll map out exactly where you are and
+            where you want to be.</p>
+        </article>
+        <article class="card">
+          <span class="ghost-num" aria-hidden="true">03</span>
+          <div class="plan-frame" style="aspect-ratio:4/3;margin-bottom:1.1rem">
+            <img src={url('img/bf-banded-lunge.jpg')} alt="A member training in a small group session" loading="lazy" width="988" height="1436" />
+          </div>
+          <h3 class="h-3">Day one of thirty</h3>
+          <p>You turn up. We take care of the rest — your programme, your coaching, your weekly
+            check-ins with your head coach.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-mist">
+    <div class="container grid-2" style="align-items:center">
+      <div>
+        <p class="annotation reveal">A message from the team</p>
+        <h2 class="h-1">Nervous? <span class="draft-u hl">Good.</span><br />That’s day one.</h2>
+        <p class="lede">The most important step was putting your name down. This week, your only
+          goal is to show up — learn the movements, meet the coaches, get comfortable in the
+          space. Consistency beats intensity, every single time.</p>
+        <ul class="check-list" style="margin-top:1.2rem">
+          <li>{studio.addressLines.join(', ')}, {studio.postcode}</li>
+          <li>{studio.hours}</li>
+          <li>{studio.email}</li>
+        </ul>
+      </div>
+      <div class="plan-frame reveal" style="aspect-ratio:4/3">
+        <img src={url('img/bf-whiteboard.jpg')} alt="A coach talking a group through the session plan" loading="lazy" width="1400" height="999" />
+      </div>
+    </div>
+  </section>
+
+  <VideoTestimonials
+    eyebrow="You’re in good company"
+    heading='Members who stood exactly <span class="draft-u">here</span>'
+    lede="Six members who started with the same first step you’ve just taken." />
+</Base>

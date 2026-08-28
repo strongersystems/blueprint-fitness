@@ -1,0 +1,119 @@
+---
+import Base from "../../layouts/Base.astro";
+import { url } from "../../lib/url";
+---
+<Base
+  title={'Bookings & cancellations — Blueprint Fitness'}
+  description={'How bookings, waitlists and cancellations work at Blueprint Fitness.'}
+  noindex>
+
+
+  <section class="section on-dark section-tight">
+    <div class="container">
+      <p class="dim sec-head" style="margin-bottom:1rem">The how-it-works bit</p>
+      <h1 class="h-display">Bookings &amp; <span class="draft-u">cancellations</span></h1>
+      <p class="lede">All bookings and cancellations are managed through the Blueprint app,
+        which every member has access to.</p>
+      <div class="onpage reveal">
+        <p>On this page</p>
+        <ol>
+          <li><a href="#booking">Booking sessions</a></li>
+          <li><a href="#waitlists">Waitlists</a></li>
+          <li><a href="#cancellations">Cancellations</a></li>
+          <li><a href="#swapping">Swapping sessions</a></li>
+          <li><a href="#blackout">Nightly blackout period</a></li>
+          <li><a href="#team-sessions">TEAM sessions</a></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="policy">
+
+        <h2 class="h-2" id="booking">Booking sessions</h2>
+        <ul>
+          <li><strong>SGPT sessions</strong> have up to 6 spaces.</li>
+          <li><strong>TEAM sessions</strong> have 12&ndash;15 spaces, depending on the class.</li>
+          <li>You can book sessions up to <strong>10 days in advance</strong>.</li>
+          <li>You can book all the way up until the session starts.</li>
+        </ul>
+
+        <h2 class="h-2" id="waitlists">Waitlists</h2>
+        <p>Every session has an unlimited waitlist. If a space becomes available:</p>
+        <ul>
+          <li>You&rsquo;ll be notified via the app and/or email.</li>
+          <li>You have <strong>2 hours</strong> to accept the space before it&rsquo;s offered to
+            the next person in the queue.</li>
+        </ul>
+        <p>Please make sure app notifications are switched <strong>ON</strong> and keep an eye on
+          your emails. Members will often (although they&rsquo;re not required to) post in the
+          WhatsApp group when they&rsquo;ve cancelled a session, giving those on the waitlist a
+          heads-up.</p>
+        <p>Ultimately, it&rsquo;s your responsibility to monitor the waitlist and claim any place
+          that becomes available.</p>
+        <div class="callout">
+          <p>If you&rsquo;re on a waitlist, it&rsquo;s worth being prepared to train at short
+            notice. Last-minute cancellations happen regularly, and members who are ready to go
+            often benefit from them.</p>
+          <p>If you know you can no longer make the session, please remove yourself from the
+            waitlist so someone else has the opportunity.</p>
+        </div>
+
+        <h2 class="h-2" id="cancellations">Cancellations</h2>
+        <p>We operate a <strong>9-hour cancellation policy</strong>, which was chosen by members
+          to give everyone a fair opportunity to use available spaces.</p>
+        <ul>
+          <li>If you cancel within 9 hours of your session, you will lose that booking.</li>
+          <li>If there are genuine mitigating circumstances, please contact your coach, Paul or
+            Stu directly.</li>
+        </ul>
+
+        <h2 class="h-2" id="swapping">Swapping sessions</h2>
+        <p>Changing from one session to another within the 9-hour cancellation window is still
+          treated as a cancellation within the app.</p>
+        <div class="callout">
+          <p><strong>For example:</strong> &ldquo;I can&rsquo;t make it to the 7am, can I swap to
+            5pm?&rdquo; sent at 6:30am is still a late cancellation.</p>
+        </div>
+        <p>We are able to override this manually &mdash; so if you speak to your coach,
+          they&rsquo;ll be able to swap it within the system without you losing the session.</p>
+
+        <h2 class="h-2" id="blackout">Nightly blackout period</h2>
+        <p>The system pauses both the cancellation countdown and waitlist expiry overnight.</p>
+        <ul>
+          <li><strong>Blackout hours: 11:00pm &ndash; 5:00am</strong></li>
+        </ul>
+        <h3>Example</h3>
+        <p>With a 9-hour cancellation policy:</p>
+        <ul>
+          <li>For a 7:00am session, the cancellation deadline is 4:00pm the previous day.</li>
+          <li>Waitlist offers do not expire overnight, giving members until after 5:00am to claim
+            any spaces released during the night.</li>
+        </ul>
+        <div class="callout">
+          <p>If you think the blackout period has caused you to unfairly lose a session, send us
+            a message. We&rsquo;ll check it and reinstate the booking if appropriate.</p>
+        </div>
+
+        <h2 class="h-2" id="team-sessions">TEAM sessions</h2>
+        <p>Although TEAM classes are unlimited, every unused place is still a wasted opportunity
+          for another member. The same booking and cancellation rules apply.</p>
+        <div class="callout">
+          <p>Members who repeatedly book TEAM sessions and fail to attend or cancel late may
+            receive a <strong>three-strikes warning</strong>, after which they&rsquo;ll lose the
+            ability to book TEAM sessions for one week.</p>
+        </div>
+
+        <p class="annotation" style="margin-top:2.4rem">If you&rsquo;re ever unsure about any of
+          the above, please get in touch. We&rsquo;d much rather answer a question than have
+          someone lose a booking unnecessarily.</p>
+        <p style="margin-top:1rem"><a class="btn btn-ghost" href={url("contact/")}>Get in touch</a></p>
+
+      </div>
+    </div>
+  </section>
+
+
+</Base>

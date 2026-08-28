@@ -1,8 +1,8 @@
-# Mirrors site/ to the gh-pages branch on every push to main.
-# (Branch-based Pages: the gh-pages branch is what GitHub Pages serves.
-# The previous artifact-based flow needed a Pages-enablement API call the
-# workflow token is not allowed to make.)
-name: Deploy site to GitHub Pages
+# Builds the Astro + React app in app/ and publishes the static output to the
+# gh-pages branch (branch-based Pages: the workflow token can't enable the
+# artifact-based flow). Asset paths under /blueprint-fitness/img and /video
+# are preserved, so the import-pack in import-pack/ keeps working unchanged.
+name: Build and deploy site
 on:
   push:
     branches: [main]
@@ -17,15 +17,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Publish site/ to gh-pages
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+      - run: npm ci
+        working-directory: app
+      - run: npm run build
+        working-directory: app
+      - name: Publish dist/ to gh-pages
         run: |
-          cd site
+          cd app/dist
           touch .nojekyll
           git init -b gh-pages
           git config user.email "actions@github.com"
           git config user.name "github-actions"
           git add -A
-          git commit -m "Pages deploy: ${GITHUB_SHA}"
+          git commit -m "Deploy: ${GITHUB_SHA}"
           git push -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}" gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

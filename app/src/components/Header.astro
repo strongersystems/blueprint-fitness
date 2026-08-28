@@ -1,0 +1,46 @@
+---
+const { base } = { base: import.meta.env.BASE_URL.replace(/\/$/, '') };
+const nav = [
+  { href: `${base}/`, label: 'Home' },
+  { href: `${base}/locations/`, label: 'Locations' },
+  { href: `${base}/contact/`, label: 'Contact' },
+];
+const { current = '', minimal = false, label = '' } = Astro.props;
+---
+<header class="site-header">
+  <div class="container nav-row">
+    <a class="brand" href={`${base}/`} aria-label="Blueprint Fitness home">
+      <img src={`${base}/img/logo-horizontal-blue.png`} alt="Blueprint Fitness" width="1225" height="143" />
+    </a>
+    {minimal ? (
+      <span class="annotation" style="font-size:1.15rem">{label}</span>
+    ) : (
+      <>
+        <nav aria-label="Main">
+          <ul class="nav-links">
+            {nav.map((n) => (
+              <li><a href={n.href} aria-current={current === n.label ? 'page' : undefined}>{n.label}</a></li>
+            ))}
+            <li><a class="btn btn-primary" href={`${base}/kickstart/`}>Try us for 30 days</a></li>
+          </ul>
+        </nav>
+        <button class="burger" aria-expanded="false" aria-label="Open menu" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </>
+    )}
+  </div>
+</header>
+
+{!minimal && (
+  <div class="mobile-menu" id="mobile-menu">
+    <nav aria-label="Mobile">
+      <ul>
+        {nav.map((n) => (<li><a href={n.href}>{n.label}</a></li>))}
+        <li><a href={`${base}/members/`}>Members area</a></li>
+        <li><a href={`${base}/kickstart/`} class="hl">Try us for 30 days</a></li>
+      </ul>
+    </nav>
+    <span class="annotation">The plan starts here.</span>
+  </div>
+)}

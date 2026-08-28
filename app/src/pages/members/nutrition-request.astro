@@ -1,0 +1,66 @@
+---
+import Base from "../../layouts/Base.astro";
+import { url } from "../../lib/url";
+---
+<Base
+  title={'Nutrition consultation — Blueprint Fitness'}
+  description={'Request a nutrition consultation with a Blueprint Fitness coach.'}
+  noindex>
+
+
+  <section class="section on-dark section-tight">
+    <div class="container">
+      <p class="dim sec-head" style="margin-bottom:1rem">Nutrition consultation</p>
+      <h1 class="h-display">Training is half of it. <span class="draft-u">Let&rsquo;s sort the rest.</span></h1>
+      <p class="lede">No fad diets, no meal plans to buy &mdash; just practical, sustainable
+        guidance from our in-house team, built around how you actually live. Fill in the form
+        below and we&rsquo;ll be in touch to book you in.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-2" style="align-items:start">
+      <div>
+        <p class="annotation reveal">Before your consultation</p>
+        <h2 class="h-1">What helps us help you</h2>
+        <p class="lede">Neither of these is essential &mdash; if you haven&rsquo;t got them yet,
+          say so on the form and we&rsquo;ll sort it together.</p>
+        <ul class="check-list" style="margin-top:1.3rem">
+          <li><strong>Your InBody results</strong> &mdash; the scan from your intro session gives
+            us your real starting point</li>
+          <li><strong>A few days of food diary</strong> &mdash; honest, not perfect. It tells us
+            far more than a questionnaire ever could</li>
+          <li><strong>What you&rsquo;re actually struggling with</strong> &mdash; evenings,
+            weekends, portion sizes, eating on the go: whatever it genuinely is</li>
+        </ul>
+        <p class="annotation reveal" style="margin-top:1rem">The more honest the picture, the
+          more useful the plan. Nobody here is judging.</p>
+        <div class="plan-frame reveal" style="aspect-ratio:4/3;margin-top:1.6rem;max-width:26rem">
+          <img src={url("img/bf-chat.jpg")} alt="A Blueprint coach talking with members after a session" loading="lazy" width="1200" height="1800" style="object-position:center 30%">
+        </div>
+      </div>
+
+      <div class="card" style="align-self:start">
+        <p class="annotation" style="margin:0 0 .3rem">Takes two minutes</p>
+        <h3 class="h-3" style="margin-bottom:.9rem">Request your consultation</h3>
+        <div class="embed-inline">
+          <iframe src="https://link.stronger.systems/widget/form/w7SeLy5VqmvSbzp14HKJ"
+                  id="inline-w7SeLy5VqmvSbzp14HKJ"
+                  data-layout={"{'id':'INLINE'}"}
+                  data-trigger-type="alwaysShow" data-trigger-value=""
+                  data-activation-type="alwaysActivated" data-activation-value=""
+                  data-deactivation-type="neverDeactivate" data-deactivation-value=""
+                  data-form-name="Nutrition Consultation Request"
+                  data-height="900"
+                  data-layout-iframe-id="inline-w7SeLy5VqmvSbzp14HKJ"
+                  data-form-id="w7SeLy5VqmvSbzp14HKJ"
+                  title="Nutrition Consultation Request"></iframe>
+        </div>
+        <p class="small" style="color:var(--grey);margin:.9rem 0 0">Submitted straight to the
+          coaching team &mdash; we&rsquo;ll come back to you to arrange a time.</p>
+      </div>
+    </div>
+  </section>
+
+
+</Base>

@@ -1,0 +1,52 @@
+---
+import { url } from '../lib/url';
+import { site } from '../data/site';
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="cols">
+      <div>
+        <a class="brand" href={url('/')}><img src={url('img/logo-horizontal-white.png')} alt="Blueprint Fitness" width="1224" height="142" /></a>
+        <p style="margin-top:.9rem;max-width:24rem">Premium personal training and community-driven
+          results across East London.</p>
+      </div>
+      <div>
+        <h4>Members</h4>
+        <ul>
+          <li><a href={url('members/check-in/')}>Check-in</a></li>
+          <li><a href={url('members/nutrition-request/')}>Nutrition consultation</a></li>
+          <li><a href={url('members/bookings-cancellations/')}>Bookings &amp; cancellations</a></li>
+          <li><a href={url('members/terms/')}>Terms &amp; conditions</a></li>
+          <li><a href={url('members/cancel/')}>Cancel membership</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href={url('/')}>Home</a></li>
+          <li><a href={url('locations/')}>Locations</a></li>
+          <li><a href={url('kickstart/')}>30-Day Kickstart</a></li>
+          <li><a href={url('contact/')}>Contact</a></li>
+          <li><a href={url('members/')}>Members area</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href={site.instagram} rel="noopener">Instagram</a></li>
+          <li><a href={site.facebook} rel="noopener">Facebook</a></li>
+          <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>&copy; 2026 Blueprint Fitness. All rights reserved.</span>
+      <span>Site preview &mdash; some forms are placeholders.</span>
+    </div>
+  </div>
+</footer>
+
+<button class="companion" aria-label="Back to top — page progress">
+  <span class="fillbar" aria-hidden="true"></span>
+  <span class="bf" aria-hidden="true">B:F</span>
+</button>

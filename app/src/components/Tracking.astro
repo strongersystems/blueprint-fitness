@@ -1,0 +1,32 @@
+---
+/**
+ * HighLevel tracking scripts.
+ *
+ * A studio landing page loads ONLY its own studio's script, so conversions
+ * attribute to that sub-account. The main-site enquiry page loads ALL THREE
+ * and the submitted `location` field is what the workflow filters on.
+ *
+ *   <Tracking studios={['hackney']} />   → one studio
+ *   <Tracking all />                     → all three (main-site forms)
+ *
+ * Snippets live in src/data/studios.ts (`trackingScript`). Until a real
+ * snippet is pasted there the entry is null and nothing is emitted, so the
+ * site is never broken by a missing one.
+ */
+import { studios } from '../data/studios';
+
+interface Props { studios?: string[]; all?: boolean }
+const { studios: only, all = false } = Astro.props;
+
+const chosen = all
+  ? studios
+  : studios.filter((s) => (only ?? []).includes(s.slug));
+const live = chosen.filter((s) => s.trackingScript);
+const pending = chosen.filter((s) => !s.trackingScript).map((s) => s.name);
+---
+{live.map((s) => (
+  <Fragment set:html={s.trackingScript} />
+))}
+{pending.length > 0 && (
+  <!-- HighLevel tracking pending for: {pending.join(', ')} — add the snippet to src/data/studios.ts -->
+)}

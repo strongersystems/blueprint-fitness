@@ -52,6 +52,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
   <slot name="head" />
 </head>
 <body class="no-js">
+  <!-- flip the gate during parsing, not on defer: everything scoped under .js
+       (hidden reveal states, the enquiry lightbox) would otherwise flash into
+       view before main.js runs -->
+  <script is:inline>document.body.className = document.body.className.replace('no-js', 'js');</script>
   <a class="skip" href="#main">Skip to content</a>
   <Header current={current} minimal={minimal} label={label} />
   <main id="main"><slot /></main>

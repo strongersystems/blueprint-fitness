@@ -266,13 +266,13 @@
 
   /* ---------- the sign-up funnel ----------
      The old placeholder sign-up lightbox has been retired. Every kickstart
-     page now carries the real enquiry form (the React island), and that is
-     the only form we want in the document: HighLevel's tracking script binds
-     to EVERY form on the page, so a second, unidentified sign-up form would
-     post empty submissions into the CRM. "Tap to get started" scrolls to the
-     real form and focuses it. (site/ and import-pack/ still ship the original
-     lightbox - they are the untouched static build.) */
-  var realForm = document.querySelector('form[id^="blueprint-"]');
+     page now carries the real enquiry form (the React island) inside its own
+     lightbox, and that is the only form we want in the document: HighLevel's
+     tracking script binds to EVERY form on the page, so a second, unidentified
+     sign-up form would post empty submissions into the CRM. Any other button
+     that opens the funnel does it by clicking the island's trigger, so there
+     is one way in and one way out. (site/ and import-pack/ still ship the
+     original lightbox - they are the untouched static build.) */
 
   /* ---------- member stories: video lightbox ----------
      Cards ([data-vt]) open a minimal player over the page; portrait
@@ -408,18 +408,10 @@
     });
   }
 
-  /* every button that says "Tap to get started" (the kickstart page) opens it.
+  /* "Tap to get started" buttons carry data-enquiry-trigger in the markup and
+     are opened by the lightbox island's own delegated listener - nothing to do
+     here. Without JavaScript they stay plain anchors to #register.
      "Try us for 30 days" buttons elsewhere navigate to the kickstart page. */
-  document.querySelectorAll('a.btn, button.btn').forEach(function (b) {
-    if (realForm && b.textContent.trim().toLowerCase() === 'tap to get started') {
-      b.addEventListener('click', function (e) {
-        e.preventDefault();
-        realForm.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'center' });
-        var target = realForm.querySelector('input');
-        setTimeout(function () { if (target) target.focus(); }, reduced ? 0 : 520);
-      });
-    }
-  });
 
   /* ---------- forms: inline validation + branded success ----------
      Placeholder only — nothing is sent anywhere. */

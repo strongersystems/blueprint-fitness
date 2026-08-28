@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import VideoTestimonials from '../../components/VideoTestimonials.astro';
-import EnquiryForm from '../../components/EnquiryForm.tsx';
+import EnquiryLightbox from '../../components/EnquiryLightbox.tsx';
 import { studios } from '../../data/studios';
 import { site } from '../../data/site';
 import { url } from '../../lib/url';
@@ -30,7 +30,7 @@ const { studio } = Astro.props;
         <p class="lede">This is personal training — delivered in a small, supportive group of no
           more than five people per coach, with people who’ll genuinely look after you.</p>
         <div class="btn-row" style="margin-top:1.4rem">
-          <a class="btn btn-primary btn-big" href="#register">Tap to get started</a>
+          <a class="btn btn-primary btn-big" data-enquiry-trigger href="#register">Tap to get started</a>
         </div>
         <p class="hold-hint" style="margin-top:.9rem;color:#5EA2FF">
           12 coached sessions · unlimited classes · your plan written for you</p>
@@ -112,19 +112,25 @@ const { studio } = Astro.props;
         </ul>
       </div>
       <div class="card" style="align-self:start">
-        <EnquiryForm client:visible
-          studios={studios.map((s) => ({ slug: s.slug, name: s.name, formValue: s.formValue }))}
-          fixedStudio={studio.formValue}
-          successHref={url(`${studio.slug}/next-steps/`)}
-          formId={`blueprint-enquiry-${studio.slug}`}
-          heading={`Start at ${studio.name}`}
-          intro="No hard sell, ever"
-          submitLabel="Book my friendly chat" />
+        <h3 class="h-3" style="margin:0 0 .6rem">Start at {studio.name}</h3>
+        <p style="margin:0 0 1.5rem;color:#EAF1FB">Name and number is all we need. Takes about two
+          minutes, then a coach from {studio.name} gives you a ring for a friendly chat.</p>
+        <button type="button" data-enquiry-trigger
+                class="btn btn-primary btn-big enquiry-trigger" style="width:100%">Tap to get started</button>
+        <a class="btn btn-primary btn-big enquiry-fallback" href="#enquiry" style="width:100%">Tap to get started</a>
       </div>
     </div>
   </section>
 
   <div class="sticky-cta" aria-hidden="false">
-    <a class="btn btn-primary" href="#register">Tap to get started</a>
+    <a class="btn btn-primary" data-enquiry-trigger href="#register">Tap to get started</a>
   </div>
+  <EnquiryLightbox slot="body-end" client:load
+    studios={studios.map((s) => ({ slug: s.slug, name: s.name, formValue: s.formValue }))}
+    fixedStudio={studio.formValue}
+    successHref={url(`${studio.slug}/next-steps/`)}
+    formId={`blueprint-enquiry-${studio.slug}`}
+    heading={`Start at ${studio.name}`}
+    intro="No hard sell, ever"
+    submitLabel="Book my friendly chat" />
 </Base>

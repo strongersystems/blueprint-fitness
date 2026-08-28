@@ -75,6 +75,9 @@ async function run(route, fill) {
 }
 
 const good = async p => {
+  /* the enquiry form now lives in a lightbox: open it first */
+  const trig = await p.$('[data-enquiry-trigger]');
+  if (trig) { await trig.click(); await p.waitForTimeout(500); }
   await p.fill('#eq-name', 'Verify Harness');
   await p.fill('#eq-email', 'harness@example.invalid');
   await p.fill('#eq-phone', '+44 7700 900123');
@@ -84,7 +87,11 @@ const good = async p => {
   await p.check('input[name=confirm]');
   await p.click('form[id^=blueprint-] button[type=submit]');
 };
-const empty = async p => { await p.click('form[id^=blueprint-] button[type=submit]'); };
+const empty = async p => {
+  const trig = await p.$('[data-enquiry-trigger]');
+  if (trig) { await trig.click(); await p.waitForTimeout(500); }
+  await p.click('form[id^=blueprint-] button[type=submit]');
+};
 
 const contact = async p => {
   await p.fill('#c-name', 'Verify Harness');

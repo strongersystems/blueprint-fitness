@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import EnquiryForm from "../components/EnquiryForm.tsx";
+import EnquiryLightbox from "../components/EnquiryLightbox.tsx";
 import { studios } from "../data/studios";
 import { url } from "../lib/url";
 ---
@@ -26,7 +26,7 @@ import { url } from "../lib/url";
           small, supportive group of no more than five people per coach, with people who&rsquo;ll
           genuinely look after you.</p>
         <div class="btn-row" style="margin-top:1.4rem">
-          <a class="btn btn-primary btn-big" href="#register">Tap to get started</a>
+          <a class="btn btn-primary btn-big" data-enquiry-trigger href="#register">Tap to get started</a>
         </div>
         <p class="hold-hint" style="margin-top:.9rem;color:#5EA2FF">12 coached sessions &middot; unlimited classes &middot; your plan written for you</p>
         <div class="hero-stats" aria-label="The Kickstart in numbers">
@@ -324,7 +324,7 @@ import { url } from "../lib/url";
       <p class="annotation" style="margin:1.4rem 0 1.8rem">And a coach rings you first, to make
         sure it&rsquo;s actually right for you.</p>
       <div class="btn-row" style="align-items:baseline">
-        <a class="btn btn-primary btn-big" href="#register">Tap to get started</a>
+        <a class="btn btn-primary btn-big" data-enquiry-trigger href="#register">Tap to get started</a>
         <a class="quiet-link" href={url("contact/")}>or ask us anything first</a>
       </div>
       </div>
@@ -510,16 +510,21 @@ import { url } from "../lib/url";
         <p class="small" style="margin-top:1rem"><a href={url("contact/")} style="color:#5EA2FF">Rather talk to a human first? Send us a message &rarr;</a></p>
       </div>
       <div class="card" style="align-self:start">
-        <EnquiryForm client:visible
-          studios={studios.map((st) => ({ slug: st.slug, name: st.name, formValue: st.formValue }))}
-          successHref={url("next-steps/")}
-          formId="blueprint-enquiry-main-site"
-          heading="Start your 30 days"
-          intro="Pick your studio"
-          submitLabel="Book my friendly chat" />
+        <h3 class="h-3" style="margin:0 0 .6rem">Start your 30 days</h3>
+        <p style="margin:0 0 1.5rem;color:#EAF1FB">Name, number, and the studio that suits you
+          &mdash; that&rsquo;s all we need. Takes about two minutes, then one of the team
+          gives you a ring.</p>
+        <button type="button" data-enquiry-trigger
+                class="btn btn-primary btn-big enquiry-trigger" style="width:100%">Tap to get started</button>
+        <a class="btn btn-primary btn-big enquiry-fallback" href="#enquiry" style="width:100%">Tap to get started</a>
       </div>
     </div>
   </section>
-
-
+  <EnquiryLightbox slot="body-end" client:load
+    studios={studios.map((st) => ({ slug: st.slug, name: st.name, formValue: st.formValue }))}
+    successHref={url("next-steps/")}
+    formId="blueprint-enquiry-main-site"
+    heading="Start your 30 days"
+    intro="Pick your studio"
+    submitLabel="Book my friendly chat" />
 </Base>

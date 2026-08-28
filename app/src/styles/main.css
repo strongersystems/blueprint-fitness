@@ -1068,7 +1068,7 @@ body.menu-locked .site-header .btn-primary{visibility:hidden}
 .signup-overlay.show .signup-modal{transform:none}
 .signup-modal .form-note{display:inline-block;margin-right:2.8rem}
 .signup-modal .field .err{color:#FF9B9B}
-.signup-modal .annotation{color:#EAF1FB;margin:0 0 .3rem}
+.signup-modal .annotation{color:#5EA2FF;margin:0 0 .15rem;font-size:1.05rem}
 .signup-modal .h-3{margin:0 0 .5rem}
 .signup-intro{color:#EAF1FB;font-size:.95rem;margin:0 0 1.4rem}
 .signup-fine{color:#5EA2FF;font-size:.8rem;margin:1rem 0 0}
@@ -1083,6 +1083,20 @@ body.modal-open{overflow:hidden}
 @media (prefers-reduced-motion:reduce){
   .signup-overlay,.signup-modal{transition:none}
 }
+
+/* Without JavaScript the lightbox cannot open, so it stops being a lightbox:
+   the trigger is dropped and the panel renders inline where it sits. Same
+   convention as the rest of the motion kit - nothing stays hidden when the
+   script does not run. */
+.no-js .enquiry-trigger{display:none}
+.js .enquiry-fallback{display:none}
+.no-js .signup-overlay,
+.no-js .signup-overlay[hidden]{
+  position:static;display:block;padding:0;opacity:1;z-index:auto;
+  background:none;-webkit-backdrop-filter:none;backdrop-filter:none;
+}
+.no-js .signup-modal{width:100%;max-height:none;overflow:visible;transform:none}
+.no-js .signup-close{display:none}
 
 @media (prefers-reduced-motion:reduce){
   .co svg ellipse{stroke-dashoffset:0!important;animation:none!important}
@@ -1392,7 +1406,10 @@ body.no-js .draft-u{
 .check-field{display:flex;gap:.65rem;align-items:flex-start;cursor:pointer;
   font-weight:600;font-size:.92rem;color:var(--grey);
   text-transform:none;letter-spacing:0}
-.on-dark .check-field,.on-dark .card .check-field{color:#EAF1FB}
+.on-dark .check-field,.on-dark .card .check-field,.signup-modal .check-field{color:#EAF1FB}
+/* `.field label` (0,1,1) out-specifies `.check-field` (0,1,0), so the confirm
+   row inherited the uppercase field-label treatment - win it back explicitly */
+.field label.check-field{font-weight:600;font-size:.92rem;text-transform:none;letter-spacing:0}
 .check-field input{flex:none;width:1.15rem;height:1.15rem;margin-top:.1rem;accent-color:var(--blue)}
 
 /* cancel-page studio buttons */

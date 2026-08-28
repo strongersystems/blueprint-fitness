@@ -78,7 +78,19 @@ Two consequences worth knowing:
 - **One form per tracked page.** The tracker binds to every form in the
   document, so the old placeholder sign-up lightbox was removed from
   `public/js/main.js` — it would have posted empty, unidentified submissions.
-  "Tap to get started" now scrolls to the real form.
+
+The enquiry form is presented in a lightbox (`EnquiryLightbox.tsx`). Two things
+about how it is wired are load-bearing:
+
+- **The overlay is rendered into the layout's `body-end` slot, not the card.**
+  `position: fixed` is trapped by any ancestor with a transform, and the motion
+  kit transforms the cards and sections — nested in the card, the overlay is
+  confined to that column instead of covering the viewport.
+- **The component renders only the overlay.** Anything marked
+  `data-enquiry-trigger` opens it through a delegated listener, so the hero CTAs
+  and the register card share one code path. Without JavaScript those stay plain
+  anchors to `#register`, `.no-js` styling renders the panel inline, and the card
+  swaps its dead button for an anchor down to `#enquiry`.
 
 In HighLevel, Form Analytics and Form Submissions both have to be enabled in
 Settings for these to sync to contacts. The tracker also fires on a submit that

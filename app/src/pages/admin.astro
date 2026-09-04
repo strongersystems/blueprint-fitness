@@ -1,0 +1,187 @@
+---
+import Base from "../layouts/Base.astro";
+import { url } from "../lib/url";
+import { studios } from "../data/studios";
+
+/* Internal page directory. noindex + disallowed in robots.txt — it is a map of
+   the site for the team, not a public page. */
+
+const groups = [
+  {
+    title: 'Main site',
+    note: 'Public pages. All three tracking scripts load on each, so an enquiry is attributed to every sub-account and routed by the form’s location value.',
+    rows: [
+      { path: '', label: 'Home', detail: 'Full site, all sections' },
+      { path: 'kickstart/', label: 'The 30-Day Kickstart', detail: 'Main offer page — enquiry lightbox' },
+      { path: 'locations/', label: 'Locations', detail: 'All three studios with maps' },
+      { path: 'contact/', label: 'Contact', detail: 'Form id blueprint-contact' },
+      { path: 'signup/', label: 'Sign up', detail: 'Studio picker → live payment form' },
+      { path: 'next-steps/', label: 'Next steps', detail: 'Post-enquiry — noindex' },
+    ],
+  },
+  {
+    title: 'Studio landing pages',
+    note: 'Standalone campaign pages with a minimal header. Each loads only its own studio’s tracking script, so conversions land in that sub-account alone.',
+    rows: studios.flatMap((s) => [
+      { path: `${s.slug}/kickstart/`, label: `${s.name} — landing`, detail: `Form id blueprint-enquiry-${s.slug}` },
+      { path: `${s.slug}/next-steps/`, label: `${s.name} — next steps`, detail: 'WhatsApp + sign-up — noindex' },
+      { path: `${s.signupPath}/`, label: `${s.name} — sign up`, detail: `Payment form ${s.signupFormId}` },
+    ]),
+  },
+  {
+    title: 'Members area',
+    note: 'All noindex and disallowed in robots.txt. Shared sub-navigation across every page.',
+    rows: [
+      { path: 'members/', label: 'Members home', detail: 'Hub' },
+      { path: 'members/check-in/', label: 'Check in', detail: 'Form id blueprint-check-in' },
+      { path: 'members/nutrition-request/', label: 'Nutrition request', detail: 'Live CRM form embed' },
+      { path: 'members/bookings-cancellations/', label: 'Bookings & cancellations', detail: 'Policy' },
+      { path: 'members/terms/', label: 'Membership terms', detail: 'Policy' },
+      { path: 'members/cancel/', label: 'Pause or cancel', detail: 'Three live cancellation forms' },
+    ],
+  },
+  {
+    title: 'Utility',
+    note: 'Not linked from the site.',
+    rows: [
+      { path: '404.html', label: '404', detail: 'Served on any unknown path' },
+      { path: 'sitemap.xml', label: 'Sitemap', detail: 'Indexable pages only' },
+      { path: 'robots.txt', label: 'robots.txt', detail: 'Disallows members, next-steps, admin' },
+      { path: 'admin/', label: 'This page', detail: 'Internal directory' },
+    ],
+  },
+];
+
+const forms = [
+  { id: 'blueprint-enquiry-main-site', where: '/kickstart/', goes: 'All three sub-accounts, filter on location' },
+  ...studios.map((s) => ({ id: `blueprint-enquiry-${s.slug}`, where: `/${s.slug}/kickstart/`, goes: `${s.name} only` })),
+  { id: 'blueprint-contact', where: '/contact/', goes: 'All three, filter on location' },
+  { id: 'blueprint-check-in', where: '/members/check-in/', goes: 'All three, filter on location' },
+];
+---
+<Base
+  title={'Page directory — Blueprint Fitness'}
+  description={'Internal map of every page on the site and how the funnel connects.'}
+  minimal label="Internal · Page directory"
+  noindex>
+
+  <section class="section on-dark section-tight">
+    <div class="container">
+      <p class="dim sec-head" style="margin-bottom:1rem">Internal &mdash; not linked publicly</p>
+      <h1 class="h-display">Page <span class="draft-u">directory</span></h1>
+      <p class="lede">Every page on blueprintfitnessldn.com, what it does, and how the funnel
+        joins up. Bookmark it &mdash; nothing links here.</p>
+    </div>
+  </section>
+
+  <!-- ===== the flow ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-head" style="margin-bottom:1.4rem">
+        <p class="dim">How it connects</p>
+        <h2 class="h-1">Two routes in, <span class="draft-u hl">one way through</span></h2>
+      </div>
+      <div class="flow-scroll">
+        <svg class="flow-svg" viewBox="0 0 940 430" role="img"
+             aria-label="Flow diagram: the main site and the three studio landing pages both lead to an enquiry form, then to a next-steps page, then to a sign-up page carrying that studio's payment form. The members area is separate.">
+          <defs>
+            <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="#5EA2FF"></path>
+            </marker>
+          </defs>
+
+          <text x="10" y="24" class="fl-lane">MAIN SITE &mdash; all three tracking scripts</text>
+          <rect x="10" y="36" width="180" height="52" rx="8" class="fl-box"></rect>
+          <text x="100" y="58" class="fl-t">/ and /kickstart</text>
+          <text x="100" y="76" class="fl-s">public, indexed</text>
+
+          <line x1="196" y1="62" x2="256" y2="62" class="fl-line" marker-end="url(#ar)"></line>
+          <rect x="262" y="36" width="180" height="52" rx="8" class="fl-box fl-form"></rect>
+          <text x="352" y="58" class="fl-t">Enquiry lightbox</text>
+          <text x="352" y="76" class="fl-s">location = chosen studio</text>
+
+          <line x1="448" y1="62" x2="508" y2="62" class="fl-line" marker-end="url(#ar)"></line>
+          <rect x="514" y="36" width="180" height="52" rx="8" class="fl-box"></rect>
+          <text x="604" y="58" class="fl-t">/next-steps</text>
+          <text x="604" y="76" class="fl-s">WhatsApp all three</text>
+
+          <line x1="700" y1="62" x2="760" y2="62" class="fl-line" marker-end="url(#ar)"></line>
+          <rect x="766" y="36" width="164" height="52" rx="8" class="fl-box fl-pay"></rect>
+          <text x="848" y="58" class="fl-t">/signup</text>
+          <text x="848" y="76" class="fl-s">picker &rarr; payment</text>
+
+          <text x="10" y="160" class="fl-lane">STUDIO LANDING PAGES &mdash; that studio&rsquo;s script only</text>
+          {studios.map((s, i) => {
+            const y = 172 + i * 74;
+            return (
+              <>
+                <rect x="10" y={y} width="180" height="52" rx="8" class="fl-box"></rect>
+                <text x="100" y={y + 22} class="fl-t">/{s.slug}/kickstart</text>
+                <text x="100" y={y + 40} class="fl-s">{s.name}</text>
+
+                <line x1="196" y1={y + 26} x2="256" y2={y + 26} class="fl-line" marker-end="url(#ar)"></line>
+                <rect x="262" y={y} width="180" height="52" rx="8" class="fl-box fl-form"></rect>
+                <text x="352" y={y + 22} class="fl-t">Enquiry lightbox</text>
+                <text x="352" y={y + 40} class="fl-s">location = {s.name}</text>
+
+                <line x1="448" y1={y + 26} x2="508" y2={y + 26} class="fl-line" marker-end="url(#ar)"></line>
+                <rect x="514" y={y} width="180" height="52" rx="8" class="fl-box"></rect>
+                <text x="604" y={y + 22} class="fl-t">/{s.slug}/next-steps</text>
+                <text x="604" y={y + 40} class="fl-s">WhatsApp {s.name}</text>
+
+                <line x1="700" y1={y + 26} x2="760" y2={y + 26} class="fl-line" marker-end="url(#ar)"></line>
+                <rect x="766" y={y} width="164" height="52" rx="8" class="fl-box fl-pay"></rect>
+                <text x="848" y={y + 22} class="fl-t">/{s.signupPath}</text>
+                <text x="848" y={y + 40} class="fl-s">payment form</text>
+              </>
+            );
+          })}
+        </svg>
+      </div>
+      <p class="small" style="margin-top:1rem;color:var(--grey)">
+        Blue = a form that HighLevel&rsquo;s tracking script reads off the page.
+        Green = a HighLevel payment iframe, which posts to the sub-account directly and is
+        <em>not</em> read by the tracking script. The members area sits outside this flow.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== the directory ===== -->
+  {groups.map((g) => (
+    <section class="section section-tight">
+      <div class="container">
+        <h2 class="h-2" style="margin-bottom:.4rem">{g.title}</h2>
+        <p class="small" style="color:var(--grey);margin:0 0 1.1rem;max-width:52rem">{g.note}</p>
+        <div class="dir-table">
+          {g.rows.map((r) => (
+            <div class="dir-row">
+              <a href={url(r.path)}>/{r.path}</a>
+              <span class="dir-label">{r.label}</span>
+              <span class="dir-detail">{r.detail}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- ===== forms reference ===== -->
+  <section class="section on-mist">
+    <div class="container">
+      <h2 class="h-2" style="margin-bottom:.4rem">Forms and where they land</h2>
+      <p class="small" style="color:var(--grey);margin:0 0 1.1rem;max-width:52rem">These are read
+        off the page by the tracking script &mdash; the form id is the label the submission arrives
+        under in HighLevel. The payment forms on the sign-up pages are iframes and are not listed
+        here; they post to their sub-account themselves.</p>
+      <div class="dir-table">
+        {forms.map((f) => (
+          <div class="dir-row">
+            <code>{f.id}</code>
+            <span class="dir-label">{f.where}</span>
+            <span class="dir-detail">{f.goes}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

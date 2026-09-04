@@ -118,6 +118,8 @@ const { studio } = Astro.props;
         <button type="button" data-enquiry-trigger
                 class="btn btn-primary btn-big enquiry-trigger" style="width:100%">Tap to get started</button>
         <a class="btn btn-primary btn-big enquiry-fallback" href="#enquiry" style="width:100%">Tap to get started</a>
+        <p class="small" style="margin:.9rem 0 0;text-align:center;color:#EAF1FB">Already decided?
+          <a href={url(`${studio.signupPath}/`)} style="color:#5EA2FF">Sign up at {studio.name} &rarr;</a></p>
       </div>
     </div>
   </section>

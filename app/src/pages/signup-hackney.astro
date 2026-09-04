@@ -1,0 +1,13 @@
+---
+import Base from "../layouts/Base.astro";
+import SignupBody from "../components/SignupBody.astro";
+import { studios } from "../data/studios";
+const studio = studios.find((s) => s.slug === 'hackney')!;
+---
+<Base
+  title={`Sign up at ${studio.name} — Blueprint Fitness`}
+  description={`Join the 30-Day Kickstart at Blueprint Fitness ${studio.name}.`}
+  minimal label={`${studio.name} · Sign up`}
+  trackStudios={[studio.slug]}>
+  <SignupBody studio={studio} />
+</Base>

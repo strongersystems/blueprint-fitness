@@ -335,6 +335,28 @@
     });
   }
 
+  /* ---------- sign-up page: studio picker ----------
+     Every studio's payment form is rendered into the page; the picker just
+     chooses which one is visible. Without JavaScript the first is shown and
+     the noscript block links to the per-studio sign-up pages instead. */
+  var signupPicks = document.querySelectorAll('[data-signup-pick]');
+  if (signupPicks.length) {
+    signupPicks.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var slug = btn.getAttribute('data-signup-pick');
+        signupPicks.forEach(function (b) {
+          var on = b === btn;
+          b.setAttribute('aria-pressed', on ? 'true' : 'false');
+          b.classList.toggle('btn-primary', on);
+          b.classList.toggle('btn-ghost', !on);
+        });
+        document.querySelectorAll('[data-signup]').forEach(function (panel) {
+          panel.hidden = panel.getAttribute('data-signup') !== slug;
+        });
+      });
+    });
+  }
+
   /* ---------- members: per-studio cancellation lightbox ----------
      Opens the studio's live cancellation form (link.stronger.systems)
      inside the branded modal, mirroring the client's original embed

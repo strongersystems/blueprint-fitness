@@ -1,5 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
+import MembersNav from "../../components/MembersNav.astro";
 import { url } from "../../lib/url";
 import { studios } from "../../data/studios";
 ---
@@ -8,6 +9,8 @@ import { studios } from "../../data/studios";
   description={'Submit a check-in to your Blueprint Fitness coach.'}
   noindex
   trackAll>
+
+  <MembersNav current="check-in" />
 
 
   <section class="section on-dark section-tight">

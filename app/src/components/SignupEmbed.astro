@@ -1,0 +1,30 @@
+---
+import type { Studio } from '../data/studios';
+interface Props { studio: Studio; hidden?: boolean }
+const { studio, hidden = false } = Astro.props;
+/* The live Kickstart payment form. This is a GoHighLevel iframe, so unlike the
+   enquiry forms it is NOT read by the external tracking script — iframe forms
+   are explicitly unsupported there. It posts to the sub-account directly,
+   which is what we want for a payment. */
+---
+<div class="signup-embed" data-signup={studio.slug} hidden={hidden}>
+  <iframe
+    src={`https://link.stronger.systems/widget/form/${studio.signupFormId}`}
+    style={`width:100%;height:${studio.signupFormHeight}px;border:none;border-radius:8px`}
+    id={`inline-${studio.signupFormId}`}
+    data-layout="{'id':'INLINE'}"
+    data-trigger-type="alwaysShow"
+    data-trigger-value=""
+    data-activation-type="alwaysActivated"
+    data-activation-value=""
+    data-deactivation-type="neverDeactivate"
+    data-deactivation-value=""
+    data-form-name={studio.signupFormName}
+    data-height={String(studio.signupFormHeight)}
+    data-layout-iframe-id={`inline-${studio.signupFormId}`}
+    data-form-id={studio.signupFormId}
+    data-cookie-consent="true"
+    data-cookie-consent-provider="auto"
+    title={studio.signupFormName}
+    loading="lazy"></iframe>
+</div>

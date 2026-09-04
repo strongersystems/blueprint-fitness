@@ -84,6 +84,7 @@ const { studio } = Astro.props;
            href={`https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
              `Hi Blueprint Fitness ${studio.name} — I've just signed up for the 30-Day Kickstart and would like to book my first session.`)}`}
            target="_blank" rel="noopener">WhatsApp {studio.name}</a>
+        <p style="margin:1.3rem 0 0"><a class="btn btn-ghost" style="width:100%" href={url(`${studio.signupPath}/`)}>Or sign up at {studio.name} &rarr;</a></p>
         <p class="small" style="margin:1.2rem 0 0;color:#EAF1FB">Prefer email?
           <a href={`mailto:${studio.email}`} style="color:#5EA2FF">{studio.email}</a></p>
       </div>

@@ -87,6 +87,7 @@ import { studios } from "../data/studios";
             </li>
           ))}
         </ul>
+        <p style="margin:1.3rem 0 0"><a class="btn btn-ghost" style="width:100%" href={url("signup/")}>Or sign up for the Kickstart &rarr;</a></p>
         <p class="small" style="margin:1.2rem 0 0;color:var(--grey)">Prefer email? {studios.map((st, i) => (
           <>{i > 0 ? ' · ' : ''}<a href={`mailto:${st.email}`} style="color:var(--blue)">{st.name}</a></>
         ))}</p>

@@ -4,7 +4,8 @@ const B='http://localhost:8700';
 const ROUTES=['/','/kickstart/','/locations/','/contact/','/members/','/members/cancel/','/members/nutrition-request/',
  '/members/check-in/','/members/terms/','/members/bookings-cancellations/','/next-steps/',
  '/hackney/kickstart/','/leytonstone/kickstart/','/south-woodford/kickstart/',
- '/hackney/next-steps/','/leytonstone/next-steps/','/south-woodford/next-steps/','/404.html'];
+ '/hackney/next-steps/','/leytonstone/next-steps/','/south-woodford/next-steps/','/404.html',
+ '/signup/','/signup-hackney/','/signup-leytonstone/','/signup-southwoodford/','/admin/'];
 const b=await chromium.launch({executablePath:'/opt/pw-browsers/chromium-1194/chrome-linux/chrome',
   proxy:{server:process.env.HTTPS_PROXY,bypass:'localhost,127.0.0.1'}});
 const ctx=await b.newContext({viewport:{width:1440,height:900}});

@@ -4,6 +4,7 @@ Allow: /
 
 # Post-enquiry and member-only pages. These also carry a noindex meta tag;
 # this keeps them out of crawl budget as well.
+Disallow: /admin/
 Disallow: /members/
 Disallow: /next-steps/
 Disallow: /south-woodford/next-steps/

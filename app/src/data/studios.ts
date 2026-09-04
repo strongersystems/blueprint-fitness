@@ -29,6 +29,12 @@ export interface Studio {
   locationId: string;
   cancellationFormId: string;
   cancellationFormHeight: number;
+  /** the studio's live Kickstart payment form (embedded on its sign-up page) */
+  signupFormId: string;
+  signupFormName: string;
+  signupFormHeight: number;
+  /** route of that studio's own sign-up page, e.g. signup-hackney */
+  signupPath: string;
   /**
    * Per-studio HighLevel tracking snippet.
    * PASTE THE REAL SNIPPET BODY HERE (Settings → Business Profile → Tracking
@@ -56,6 +62,10 @@ export const studios: Studio[] = [
     locationId: 'cquQsieyBZx9vRgEqBge',
     cancellationFormId: 'sGRVF4TDOJuG1B55SN95',
     cancellationFormHeight: 661,
+    signupFormId: 'whRaBe5nmwPZPhADC580',
+    signupFormName: '30 Day Kickstart Payment',
+    signupFormHeight: 716,
+    signupPath: 'signup-southwoodford',
     trackingScript:
       '<script src="https://link.stronger.systems/js/external-tracking.js" ' +
       'data-tracking-id="tk_aec9d659c5e84a3383569603f1a02f88"></script>',
@@ -77,6 +87,10 @@ export const studios: Studio[] = [
     locationId: 'mztjJyXHNWiEotc8ItXP',
     cancellationFormId: 'CRXo5oPCz8vG0Wf1qKrD',
     cancellationFormHeight: 600,
+    signupFormId: 'opDyyE9aOFpEeFIFKiWI',
+    signupFormName: 'Kickstart Purchase',
+    signupFormHeight: 716,
+    signupPath: 'signup-leytonstone',
     trackingScript:
       '<script src="https://link.stronger.systems/js/external-tracking.js" ' +
       'data-tracking-id="tk_feff3ad595f64c029eab0771634d520c"></script>',
@@ -98,6 +112,10 @@ export const studios: Studio[] = [
     locationId: '147m777NnBtnn7yLrsdb',
     cancellationFormId: 'zqqA4jVAOEMR7yq3UhEt',
     cancellationFormHeight: 640,
+    signupFormId: 'jYU61MRL886o2IM2neIC',
+    signupFormName: 'Hackney Kickstart Purchase',
+    signupFormHeight: 716,
+    signupPath: 'signup-hackney',
     trackingScript:
       '<script src="https://link.stronger.systems/js/external-tracking.js" ' +
       'data-tracking-id="tk_959536f8daf54d288a44ce0bc72d180e"></script>',

@@ -1,11 +1,14 @@
 ---
 import Base from "../../layouts/Base.astro";
+import MembersNav from "../../components/MembersNav.astro";
 import { url } from "../../lib/url";
 ---
 <Base
   title={'Bookings & cancellations — Blueprint Fitness'}
   description={'How bookings, waitlists and cancellations work at Blueprint Fitness.'}
   noindex>
+
+  <MembersNav current="bookings" />
 
 
   <section class="section on-dark section-tight">

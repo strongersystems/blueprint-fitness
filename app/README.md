@@ -69,6 +69,26 @@ While it is `null` nothing is emitted, so a missing snippet never breaks a build
 The form also pushes a `blueprint_enquiry` event (with `location`) to
 `window.dataLayer` on submit, for tag-manager style triggers.
 
+## Sign-up pages
+
+`/signup` carries all three studios' live HighLevel payment forms and a picker
+that chooses which is visible; `/signup-southwoodford`, `/signup-leytonstone`
+and `/signup-hackney` each carry only their own. All four share
+`components/SignupBody.astro`, so the nurture copy stays in step.
+
+These embeds are **iframes**, so unlike the enquiry forms they are NOT read by
+the tracking script — iframe forms are explicitly unsupported there. They post
+to their sub-account directly, which is what a payment form should do.
+
+Without JavaScript the picker cannot switch, so `/signup` shows the first
+studio's form and a `noscript` block links to the three per-studio pages.
+
+## Internal directory
+
+`/admin` maps every page, what it does and how the funnel joins up, with a flow
+diagram and a table of every form and where it lands. It is `noindex`,
+disallowed in robots.txt and linked from nowhere — bookmark it.
+
 ## Forms — how submissions reach the CRM
 
 There is no POST of our own. The tracking script harvests submissions straight

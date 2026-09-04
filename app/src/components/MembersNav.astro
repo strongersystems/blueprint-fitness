@@ -1,0 +1,33 @@
+---
+import { url } from '../lib/url';
+
+interface Props {
+  /** slug of the page being shown, so it can be marked current */
+  current?: string;
+}
+const { current = '' } = Astro.props;
+
+const links = [
+  { slug: 'hub',      href: url('members/'),                        label: 'Members home' },
+  { slug: 'check-in', href: url('members/check-in/'),               label: 'Check in' },
+  { slug: 'nutrition',href: url('members/nutrition-request/'),      label: 'Nutrition' },
+  { slug: 'bookings', href: url('members/bookings-cancellations/'), label: 'Bookings' },
+  { slug: 'terms',    href: url('members/terms/'),                  label: 'Terms' },
+  { slug: 'cancel',   href: url('members/cancel/'),                 label: 'Pause or cancel' },
+];
+---
+<nav class="members-nav" aria-label="Members area">
+  <div class="container members-nav-row">
+    <a class="members-back" href={current === 'hub' ? url('') : url('members/')}>
+      <span aria-hidden="true">&larr;</span>
+      {current === 'hub' ? 'Main site' : 'Members home'}
+    </a>
+    <ul>
+      {links.filter((l) => l.slug !== 'hub').map((l) => (
+        <li>
+          <a href={l.href} aria-current={current === l.slug ? 'page' : undefined}>{l.label}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>

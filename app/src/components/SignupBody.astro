@@ -1,0 +1,129 @@
+---
+import { studios, type Studio } from '../data/studios';
+import { url } from '../lib/url';
+import SignupEmbed from './SignupEmbed.astro';
+import VideoTestimonials from './VideoTestimonials.astro';
+
+interface Props {
+  /** omit for the combined page (visitor chooses); set for a studio page */
+  studio?: Studio;
+}
+const { studio } = Astro.props;
+const chooser = !studio;
+---
+
+<section class="section on-dark section-tight">
+  <div class="container">
+    <p class="dim sec-head" style="margin-bottom:1rem">
+      {chooser ? 'Join Blueprint Fitness' : `Joining at ${studio!.name}`}
+    </p>
+    <h1 class="h-display">
+      {chooser
+        ? <>Start your <span class="draft-u">30 days.</span></>
+        : <>Your place at <span class="draft-u">{studio!.name}.</span></>}
+    </h1>
+    <p class="lede">
+      Twelve coached sessions, unlimited classes and a plan written for you &mdash; over your first
+      thirty days, with no more than five people to a coach.
+      {chooser
+        ? ' Pick your studio below and you can sign up in a couple of minutes.'
+        : ` Everything below signs you up at ${studio!.name}.`}
+    </p>
+    <ul class="check-list" style="margin-top:1.6rem">
+      <li>12 coached sessions across your first 30 days</li>
+      <li>Unlimited classes on top &mdash; 100+ a week</li>
+      <li>A plan written around you, not handed to you</li>
+      <li>Max 5 people per coach, so nobody gets lost</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container grid-3">
+    <article class="card">
+      <p class="dim">01</p>
+      <h3 class="h-3">You sign up below</h3>
+      <p>Takes a couple of minutes. You&rsquo;ll get a confirmation straight away.</p>
+    </article>
+    <article class="card">
+      <p class="dim">02</p>
+      <h3 class="h-3">We get in touch</h3>
+      <p>A coach calls to learn what you&rsquo;re after and book your first session.</p>
+    </article>
+    <article class="card">
+      <p class="dim">03</p>
+      <h3 class="h-3">Day one</h3>
+      <p>You turn up. We handle the programme, the coaching and the check-ins.</p>
+    </article>
+  </div>
+</section>
+
+<VideoTestimonials />
+
+<section class="section on-mist" id="signup">
+  <div class="container">
+    <div class="sec-head" style="margin-bottom:1.4rem">
+      <p class="dim">Sign up</p>
+      <h2 class="h-1">
+        {chooser
+          ? <>Which studio are you <span class="draft-u hl">signing up for?</span></>
+          : <>Sign up at <span class="draft-u hl">{studio!.name}</span></>}
+      </h2>
+    </div>
+
+    {chooser && (
+      <>
+        <p class="lede" style="margin-bottom:1.2rem">Choose your studio and the right form appears
+          &mdash; or go straight to your studio&rsquo;s own page.</p>
+        <div class="studio-picker" role="group" aria-label="Choose your studio">
+          {studios.map((st, i) => (
+            <button type="button" class:list={["btn", i === 0 ? "btn-primary" : "btn-ghost"]}
+                    data-signup-pick={st.slug} aria-pressed={i === 0 ? 'true' : 'false'}>{st.name}</button>
+          ))}
+        </div>
+        <noscript>
+          <p class="annotation" style="margin-top:1rem">Pick your studio:
+            {studios.map((st, i) => (
+              <>{i > 0 ? ' · ' : ' '}<a href={url(`${st.signupPath}/`)} style="color:var(--blue)">{st.name}</a></>
+            ))}
+          </p>
+        </noscript>
+      </>
+    )}
+
+    <div class="signup-frame" style="margin-top:1.4rem">
+      {chooser
+        ? studios.map((st, i) => (<SignupEmbed studio={st} hidden={i !== 0} />))
+        : <SignupEmbed studio={studio!} />}
+    </div>
+
+    <p class="small" style="margin-top:1rem;color:var(--grey)">
+      Questions before you commit? <a href={url("contact/")} style="color:var(--blue)">Message the team</a>
+      {studio ? <> or WhatsApp <a href={`https://wa.me/${studio.whatsapp}`} target="_blank" rel="noopener" style="color:var(--blue)">{studio.name}</a></> : null}.
+    </p>
+  </div>
+</section>
+
+<section class="section on-dark">
+  <div class="container grid-2" style="align-items:center">
+    <div>
+      <p class="annotation">No lock-in, no surprises</p>
+      <h2 class="h-1">Thirty days to <span class="draft-u">decide.</span></h2>
+      <p class="lede">The Kickstart is exactly what it says: thirty days, twelve coached sessions,
+        and a proper look at whether this is for you. Most people stay. Some don&rsquo;t, and
+        that&rsquo;s fine too &mdash; you&rsquo;ll leave fitter either way.</p>
+      <ul class="check-list" style="margin-top:1.2rem">
+        {(studio ? [studio] : studios).map((st) => (
+          <li>{st.name} &mdash; {st.addressLines[0]}, {st.postcode}</li>
+        ))}
+      </ul>
+    </div>
+    <div class="plan-frame reveal" style="aspect-ratio:4/3">
+      <img src={url("img/bf-whiteboard.jpg")}
+           alt="A Blueprint coach walking members through the plan on the whiteboard"
+           loading="lazy" width="1400" height="2100" style="object-position:center 25%" />
+    </div>
+  </div>
+</section>
+
+<script src="https://link.stronger.systems/js/form_embed.js" is:inline></script>

@@ -13,8 +13,15 @@ interface Props {
    * replaced by a read-only field carrying this value as `location`.
    */
   fixedStudio?: string;
-  /** where the visitor lands after a successful submit */
+  /** where the visitor lands after a successful submit (fallback / fixed studio) */
   successHref: string;
+  /**
+   * Per-studio next-steps destinations, keyed by the studio's `formValue`.
+   * On the general form the visitor is sent to the next-steps page for the
+   * studio they picked; anything unmapped ("Not sure yet") falls back to
+   * successHref. Passed as a map because an island cannot receive a function.
+   */
+  successHrefByStudio?: Record<string, string>;
   /**
    * Becomes the form's id and name. HighLevel's tracking script reads the id
    * first, so this is the label the submission shows up under in the CRM
@@ -27,7 +34,7 @@ interface Props {
   submitLabel?: string;
 }
 
-type Field = 'name' | 'email' | 'phone' | 'location' | 'confirm';
+type Field = 'name' | 'email' | 'phone' | 'location';
 type Errors = Partial<Record<Field, string>>;
 
 /* keep the filled-in form in the DOM long enough for the tracking script's
@@ -51,6 +58,7 @@ export default function EnquiryForm({
   studios,
   fixedStudio,
   successHref,
+  successHrefByStudio,
   formId,
   heading = 'Start with a friendly chat',
   intro = 'Pop your details in and one of the team will give you a ring — no hard sell, ever.',
@@ -59,6 +67,7 @@ export default function EnquiryForm({
   const formRef = useRef<HTMLFormElement>(null);
   const [errors, setErrors] = useState<Errors>({});
   const [sent, setSent] = useState(false);
+  const [sentHref, setSentHref] = useState(successHref);
 
   /* The fields are UNCONTROLLED on purpose. HighLevel's tracking script reads
      the submission straight off the DOM with new FormData(form), so the DOM has
@@ -71,8 +80,7 @@ export default function EnquiryForm({
     const g = (k: string) => String(d.get(k) ?? '').trim();
     return {
       name: g('name'), email: g('email'), phone: g('phone'),
-      location: g('location'), message: g('message'),
-      confirm: d.get('confirm') != null,
+      location: g('location'),
     };
   };
 
@@ -86,7 +94,6 @@ export default function EnquiryForm({
     if (!isEmail(v.email)) e.email = 'That email doesn’t look right.';
     if (!isPhone(v.phone)) e.phone = 'Please add a number so the team can give you a ring.';
     if (!v.location) e.location = 'Pick whichever studio is closest — “not sure yet” is fine.';
-    if (!v.confirm) e.confirm = 'Please tick to confirm your details are correct.';
     return e;
   }
 
@@ -129,8 +136,12 @@ export default function EnquiryForm({
     (window as any).dataLayer = (window as any).dataLayer || [];
     (window as any).dataLayer.push({ event: 'blueprint_enquiry', ...values });
 
+    /* the studio they picked decides where they land next */
+    const target = (!fixedStudio && successHrefByStudio && successHrefByStudio[values.location])
+      || successHref;
+    setSentHref(target);
     window.setTimeout(() => setSent(true), HOLD_MS);
-    window.setTimeout(() => { window.location.href = successHref; }, 2500);
+    window.setTimeout(() => { window.location.href = target; }, 2200);
   }
 
   if (sent) {
@@ -139,7 +150,7 @@ export default function EnquiryForm({
         <span className="stamp">Plan approved</span>
         <h3 className="h-2" style={{ marginTop: '1.2rem' }}>Lovely — you’re in.</h3>
         <p style={{ color: '#EAF1FB' }}>Taking you to your next steps…</p>
-        <p><a className="btn btn-ghost" href={successHref}>Or go there now</a></p>
+        <p><a className="btn btn-ghost" href={sentHref}>Or go there now</a></p>
       </div>
     );
   }
@@ -180,19 +191,6 @@ export default function EnquiryForm({
             </select>
           )}
           <p className="err">{errors.location}</p>
-        </div>
-
-        <div className="field">
-          <label htmlFor="eq-msg">Anything we should know? <span style={{ opacity: .6, fontWeight: 500 }}>(optional)</span></label>
-          <textarea id="eq-msg" name="message" rows={4} />
-        </div>
-
-        <div className={`field${errors.confirm ? ' invalid' : ''}`}>
-          <label className="check-field">
-            <input type="checkbox" name="confirm" onChange={clear('confirm')} />
-            <span>I confirm the details above are correct.</span>
-          </label>
-          <p className="err">{errors.confirm}</p>
         </div>
 
         <button className="btn btn-primary btn-big" type="submit" style={{ width: '100%' }}>{submitLabel}</button>

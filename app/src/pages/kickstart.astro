@@ -525,6 +525,7 @@ import { url } from "../lib/url";
   <EnquiryLightbox slot="body-end" client:load
     studios={studios.map((st) => ({ slug: st.slug, name: st.name, formValue: st.formValue }))}
     successHref={url("next-steps/")}
+    successHrefByStudio={Object.fromEntries(studios.map((st) => [st.formValue, url(`${st.slug}/next-steps/`)]))}
     formId="website-enquiry-all-sites"
     heading="Start your 30 days"
     intro="Pick your studio"

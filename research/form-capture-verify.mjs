@@ -83,8 +83,6 @@ const good = async p => {
   await p.fill('#eq-phone', '+44 7700 900123');
   const loc = await p.$('select#eq-loc');
   if (loc) await p.selectOption('#eq-loc', 'Hackney');
-  await p.fill('#eq-msg', 'automated check - do not action');
-  await p.check('input[name=confirm]');
   await p.click('form[id^=website-] button[type=submit], form[id^=members-] button[type=submit]');
 };
 const empty = async p => {
@@ -132,7 +130,9 @@ for (const [label, route, fill] of [
   console.log('  forms here:', JSON.stringify(r.forms));
   console.log('  FormData at capture:', JSON.stringify(r.snap));
   const fd = ev.formData || {};
-  const need = label === 'contact' ? ['name', 'email', 'message'] : ['name', 'email', 'phone', 'message'];
+  const need = label === 'contact' ? ['name', 'email', 'message']
+    : label === 'check-in' ? ['name', 'email', 'phone', 'message']
+    : ['name', 'email', 'phone'];          // enquiry: no message box any more
   for (const k of need) {
     if (!fd[k]) problems.push(`${label}: field "${k}" missing from formData`);
   }

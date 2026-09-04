@@ -5,6 +5,7 @@ interface Props {
   studios: StudioOption[];
   fixedStudio?: string;
   successHref: string;
+  successHrefByStudio?: Record<string, string>;
   formId: string;
   heading?: string;
   intro?: string;

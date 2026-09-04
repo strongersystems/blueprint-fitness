@@ -5,7 +5,12 @@ const { studio, hidden = false } = Astro.props;
 /* The live Kickstart payment form. This is a GoHighLevel iframe, so unlike the
    enquiry forms it is NOT read by the external tracking script — iframe forms
    are explicitly unsupported there. It posts to the sub-account directly,
-   which is what we want for a payment. */
+   which is what we want for a payment.
+
+   Deliberately NOT loading="lazy": on /signup all three are rendered and two
+   start hidden, and a lazy hidden iframe is never fetched — revealing it later
+   showed an empty box. They all load up front so form_embed.js sizes each one,
+   and switching is only a visibility change. */
 ---
 <div class="signup-embed" data-signup={studio.slug} hidden={hidden}>
   <iframe
@@ -25,6 +30,5 @@ const { studio, hidden = false } = Astro.props;
     data-form-id={studio.signupFormId}
     data-cookie-consent="true"
     data-cookie-consent-provider="auto"
-    title={studio.signupFormName}
-    loading="lazy"></iframe>
+    title={studio.signupFormName}></iframe>
 </div>

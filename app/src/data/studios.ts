@@ -15,6 +15,9 @@ export interface Studio {
   addressLines: string[];
   postcode: string;
   email: string;
+  /** WhatsApp number in wa.me form: country code, digits only, no + or spaces.
+      Taken from each studio's GoHighLevel sub-account phone. */
+  whatsapp: string;
   hours: string;
   /** short line used as the eyebrow on studio pages */
   eyebrow: string;
@@ -43,6 +46,7 @@ export const studios: Studio[] = [
     addressLines: ['4 Raven Road', 'South Woodford, London'],
     postcode: 'E18 1HB',
     email: 'southwoodford@blueprintfitnessldn.com',
+    whatsapp: '447538298457',
     hours: 'Open 6am–9pm, every day — 100+ sessions a week',
     eyebrow: 'Where it all started',
     blurb:
@@ -63,6 +67,7 @@ export const studios: Studio[] = [
     addressLines: ['Unit 3, Hitchcock Business Centre', 'Leytonstone High Road, London'],
     postcode: 'E11 4RE',
     email: 'leytonstone@blueprintfitnessldn.com',
+    whatsapp: '447947790035',
     hours: 'Open early ’til late, 7 days a week',
     eyebrow: 'Progress you can measure',
     blurb:
@@ -83,13 +88,14 @@ export const studios: Studio[] = [
     addressLines: ['Arch 195, Morning Lane', 'Hackney Central, London'],
     postcode: 'E9 6LJ',
     email: 'hackney@blueprintfitnessldn.com',
+    whatsapp: '447944690356',
     hours: 'Mon–Fri 6am–9pm · Sat–Sun 8am–4pm',
     eyebrow: 'The newest one — now open',
     blurb:
       'Our newest studio, tucked into a railway arch just off Morning Lane. A brand-new space built for structured training and community-led coaching — same warm welcome, box-fresh kit.',
     heroImage: 'img/bf-arch-floor.jpg',
     heroImageAlt: 'Inside the Hackney arch studio',
-    locationId: '',
+    locationId: '147m777NnBtnn7yLrsdb',
     cancellationFormId: 'zqqA4jVAOEMR7yq3UhEt',
     cancellationFormHeight: 640,
     trackingScript:

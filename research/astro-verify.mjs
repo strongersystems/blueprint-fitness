@@ -1,10 +1,10 @@
 import { chromium } from '/opt/node22/lib/node_modules/playwright/index.mjs';
 process.env.NODE_EXTRA_CA_CERTS='/root/.ccr/ca-bundle.crt';
-const B='http://localhost:8700/blueprint-fitness';
+const B='http://localhost:8700';
 const ROUTES=['/','/kickstart/','/locations/','/contact/','/members/','/members/cancel/','/members/nutrition-request/',
  '/members/check-in/','/members/terms/','/members/bookings-cancellations/','/next-steps/',
  '/hackney/kickstart/','/leytonstone/kickstart/','/south-woodford/kickstart/',
- '/hackney/next-steps/','/leytonstone/next-steps/','/south-woodford/next-steps/'];
+ '/hackney/next-steps/','/leytonstone/next-steps/','/south-woodford/next-steps/','/404.html'];
 const b=await chromium.launch({executablePath:'/opt/pw-browsers/chromium-1194/chrome-linux/chrome',
   proxy:{server:process.env.HTTPS_PROXY,bypass:'localhost,127.0.0.1'}});
 const ctx=await b.newContext({viewport:{width:1440,height:900}});

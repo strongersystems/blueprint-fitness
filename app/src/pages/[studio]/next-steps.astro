@@ -63,6 +63,33 @@ const { studio } = Astro.props;
     </div>
   </section>
 
+  <!-- next step: WhatsApp this studio -->
+  <section class="section on-dark" id="booking">
+    <div class="container grid-2" style="align-items:start">
+      <div>
+        <div class="sec-head" style="margin-bottom:1.4rem">
+          <p class="dim">Your next step</p>
+          <h2 class="h-1">Message {studio.name}<br /><span class="draft-u">on WhatsApp</span></h2>
+        </div>
+        <p class="lede">We&rsquo;ve got your details &mdash; a coach from {studio.name} will be in
+          touch. If you&rsquo;d rather get going now, send us a message and we&rsquo;ll sort your
+          first session between us.</p>
+        <p class="annotation">Sessions run 7 days a week, early &rsquo;til late.</p>
+      </div>
+      <div class="card" style="align-self:start">
+        <h3 class="h-3" style="margin:0 0 .6rem">Talk to {studio.name}</h3>
+        <p style="margin:0 0 1.4rem;color:#EAF1FB">It opens WhatsApp with a message ready to send
+          &mdash; just add anything you want us to know.</p>
+        <a class="btn btn-primary btn-big" style="width:100%"
+           href={`https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
+             `Hi Blueprint Fitness ${studio.name} — I've just signed up for the 30-Day Kickstart and would like to book my first session.`)}`}
+           target="_blank" rel="noopener">WhatsApp {studio.name}</a>
+        <p class="small" style="margin:1.2rem 0 0;color:#EAF1FB">Prefer email?
+          <a href={`mailto:${studio.email}`} style="color:#5EA2FF">{studio.email}</a></p>
+      </div>
+    </div>
+  </section>
+
   <section class="section on-mist">
     <div class="container grid-2" style="align-items:center">
       <div>

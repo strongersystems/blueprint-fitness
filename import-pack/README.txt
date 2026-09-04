@@ -107,7 +107,7 @@ OTHER CONVENTIONS
   guide. The pages carry their own font links in <head>.
 - All images, video (including the six member-story films + their VTT
   captions and poster thumbnails) and favicons are absolute URLs to
-  https://strongersystems.github.io/blueprint-fitness/... - the GitHub Pages
+  https://blueprintfitnessldn.com/... - the GitHub Pages
   deploy of site/, which updates automatically on every push to main.
   Moving media later (e.g. back to the Higgsfield URL or a custom domain)
   is one find-and-replace of that base URL, or one edit in build-pack.mjs.

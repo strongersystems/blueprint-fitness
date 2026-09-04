@@ -1,0 +1,29 @@
+---
+import Base from "../layouts/Base.astro";
+import { url } from "../lib/url";
+import { studios } from "../data/studios";
+---
+<Base
+  title={'Page not found — Blueprint Fitness'}
+  description={'That page has moved or never existed. Here is the way back.'}
+  noindex>
+
+  <section class="section on-dark">
+    <div class="container">
+      <p class="dim sec-head" style="margin-bottom:1rem">Error 404</p>
+      <h1 class="h-display">Not on the <span class="draft-u">plan.</span></h1>
+      <p class="lede">That page has moved or never existed &mdash; the site was rebuilt in 2026, so
+        an old bookmark or link may point somewhere that has gone. Everything below is where it
+        should be.</p>
+      <p style="margin-top:1.8rem">
+        <a class="btn btn-primary btn-big" href={url("")}>Back to the home page</a>
+      </p>
+      <ul class="check-list" style="margin-top:1.8rem">
+        <li><a href={url("kickstart/")} style="color:#5EA2FF">The 30-Day Kickstart</a> &mdash; how to start with us</li>
+        <li><a href={url("locations/")} style="color:#5EA2FF">Our studios</a> &mdash; {studios.map((s) => s.name).join(', ')}</li>
+        <li><a href={url("contact/")} style="color:#5EA2FF">Contact</a> &mdash; message the team directly</li>
+        <li><a href={url("members/")} style="color:#5EA2FF">Members area</a> &mdash; check-ins, bookings and cancellations</li>
+      </ul>
+    </div>
+  </section>
+</Base>

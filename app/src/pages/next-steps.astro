@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import { url } from "../lib/url";
+import { studios } from "../data/studios";
 ---
 <Base
   title={"You're in — Blueprint Fitness"}
@@ -59,30 +60,36 @@ import { url } from "../lib/url";
     </div>
   </section>
 
-  <!-- booking calendar placeholder -->
+  <!-- next step: WhatsApp the studio -->
   <section class="section on-mist" id="booking">
     <div class="container grid-2" style="align-items:start">
       <div>
         <div class="sec-head" style="margin-bottom:1.4rem">
-          <p class="dim">Book your onboarding</p>
-          <h2 class="h-1">Pick a time that<br><span class="draft-u hl">suits you</span></h2>
+          <p class="dim">Your next step</p>
+          <h2 class="h-1">Message your studio<br><span class="draft-u hl">on WhatsApp</span></h2>
         </div>
-        <p class="lede">Choose a 30-minute onboarding slot at your studio &mdash; South Woodford,
-          Leytonstone or Hackney.</p>
+        <p class="lede">We&rsquo;ve got your details &mdash; a coach will be in touch. If you&rsquo;d
+          rather get going now, send your studio a message and we&rsquo;ll sort your first session
+          between us.</p>
         <p class="annotation">Sessions run 7 days a week, early &rsquo;til late.</p>
       </div>
-      <div class="calendar-ph reveal" role="img" aria-label="Placeholder for the booking calendar — the live booking system will be embedded here">
-        <span class="form-note">Booking calendar placeholder &mdash; live embed goes here</span>
-        <h3 class="h-3" style="margin-top:.4rem">August 2026</h3>
-        <div class="cal-grid" aria-hidden="true">
-          <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
-          <span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
-          <span>10</span><span class="hot">11</span><span>12</span><span class="hot">13</span><span>14</span><span class="hot">15</span><span>16</span>
-          <span>17</span><span>18</span><span class="hot">19</span><span>20</span><span class="hot">21</span><span>22</span><span>23</span>
-        </div>
-        <p class="small" style="color:var(--grey);margin:1rem 0 0">Highlighted dates show example
-          availability. Your real calendar (e.g. the studio&rsquo;s booking system) will replace
-          this block.</p>
+      <div class="card reveal" style="align-self:start">
+        <h3 class="h-3" style="margin:0 0 .6rem">Pick your studio</h3>
+        <p style="margin:0 0 1.4rem;color:var(--grey)">It opens WhatsApp with a message ready to
+          send &mdash; just add anything you want us to know.</p>
+        <ul style="list-style:none;padding:0;margin:0;display:grid;gap:.7rem">
+          {studios.map((st) => (
+            <li style="display:block">
+              <a class="btn btn-primary btn-big" style="width:100%"
+                 href={`https://wa.me/${st.whatsapp}?text=${encodeURIComponent(
+                   `Hi Blueprint Fitness ${st.name} — I've just signed up for the 30-Day Kickstart and would like to book my first session.`)}`}
+                 target="_blank" rel="noopener">WhatsApp {st.name}</a>
+            </li>
+          ))}
+        </ul>
+        <p class="small" style="margin:1.2rem 0 0;color:var(--grey)">Prefer email? {studios.map((st, i) => (
+          <>{i > 0 ? ' · ' : ''}<a href={`mailto:${st.email}`} style="color:var(--blue)">{st.name}</a></>
+        ))}</p>
       </div>
     </div>
   </section>

@@ -11,13 +11,32 @@ npm run build    # static output -> app/dist
 ```
 
 Deploys automatically on every push to `main` (`.github/workflows/pages.yml`)
-to the `gh-pages` branch → https://strongersystems.github.io/blueprint-fitness/
+to the `gh-pages` branch, served by GitHub Pages on the custom domain.
+
+## Hosting and domains
+
+**blueprintfitnessldn.com** is the site. It is served from the root, so
+`astro.config.mjs` sets `site` to that domain and `base` to `/`, and
+`public/CNAME` tells GitHub Pages which domain to answer on.
+
+**blueprintfitness.uk** is not a second site — it already served a redirect stub
+to blueprintfitnessldn.com, and it stays that way. That matters because GitHub
+Pages allows exactly one custom domain per repository (an apex plus its `www`),
+which is only workable here because the second domain is an alias.
+
+DNS for the apex needs GitHub's four A records (185.199.108–111.153), or the
+AAAA equivalents, plus `www` as a CNAME to `strongersystems.github.io`. Enable
+"Enforce HTTPS" in the repository's Pages settings once the certificate is
+issued.
+
+Assets live at `/img` and `/video`. The import pack's absolute URLs were
+repointed from the old github.io host to this domain in the same change.
 
 ## Structure
 
 | Path | What |
 |---|---|
-| `src/data/studios.ts` | **The three studios as data.** Addresses, postcodes, emails, CRM form ids, and each studio's HighLevel tracking snippet. Adding a studio here generates its landing + next-steps pages automatically. |
+| `src/data/studios.ts` | **The three studios as data.** Addresses, postcodes, emails, WhatsApp numbers, HighLevel sub-account and form ids, and each studio's tracking snippet. Adding a studio here generates its landing + next-steps pages automatically. |
 | `src/data/site.ts` | Site-wide constants (CRM host, price, ratio, socials). |
 | `src/data/testimonials.ts` | The six member story films. |
 | `src/layouts/Base.astro` | `<head>`, header, footer, tracking, motion-kit script. |

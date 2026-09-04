@@ -1,7 +1,8 @@
 # Builds the Astro + React app in app/ and publishes the static output to the
 # gh-pages branch (branch-based Pages: the workflow token can't enable the
-# artifact-based flow). Asset paths under /blueprint-fitness/img and /video
-# are preserved, so the import-pack in import-pack/ keeps working unchanged.
+# artifact-based flow). The site is served on the custom domain from the root;
+# app/public/CNAME rides along in dist/ so Pages keeps the domain on each
+# deploy — removing it would silently revert the site to the github.io URL.
 name: Build and deploy site
 on:
   push:

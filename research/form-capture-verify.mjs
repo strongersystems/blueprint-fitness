@@ -12,7 +12,7 @@ import path from 'path';
 process.env.NODE_EXTRA_CA_CERTS = '/root/.ccr/ca-bundle.crt';
 
 const DIST = '/workspace/blueprint-fitness/app/dist';
-const BASE = '/blueprint-fitness';
+const BASE = '';
 const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css',
                 '.svg': 'image/svg+xml', '.json': 'application/json' };
 
@@ -93,6 +93,16 @@ const empty = async p => {
   await p.click('form[id^=blueprint-] button[type=submit]');
 };
 
+const checkin = async p => {
+  await p.fill('#ci-name', 'Verify Harness');
+  await p.fill('#ci-email', 'harness@example.invalid');
+  await p.fill('#ci-phone', '+44 7700 900123');
+  await p.selectOption('#ci-location', 'Hackney');
+  await p.fill('#ci-msg', 'automated check - do not action');
+  await p.check('input[name=confirm]');
+  await p.click('form#blueprint-check-in button[type=submit]');
+};
+
 const contact = async p => {
   await p.fill('#c-name', 'Verify Harness');
   await p.fill('#c-email', 'harness@example.invalid');
@@ -105,6 +115,7 @@ for (const [label, route, fill] of [
   ['main site', '/kickstart/', good],
   ['studio page', '/hackney/kickstart/', good],
   ['contact', '/contact/', contact],
+  ['check-in', '/members/check-in/', checkin],
 ]) {
   const r = await run(route, fill);
   if (r.forms.length !== 1) problems.push(`${label}: expected exactly 1 form on the page, found ${JSON.stringify(r.forms)}`);

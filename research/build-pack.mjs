@@ -14,9 +14,9 @@ import postcss from '/tmp/claude-0/-home-user-Stronger-Systems-Sites/7b94fbc0-5e
 const SRC = '/workspace/blueprint-fitness/site';
 const OUT = '/workspace/blueprint-fitness/import-pack';
 const BIN = '/tmp/claude-0/-home-user-Stronger-Systems-Sites/7b94fbc0-5e63-5761-b0b1-15628e62fc8e/scratchpad/node_modules/.bin';
-/* asset host: GitHub Pages deploy of site/ — updates on every push to main.
-   (Switch back to the Higgsfield URL — or a custom domain — in one edit here.) */
-const CDN = 'https://strongersystems.github.io/blueprint-fitness';
+/* asset host: the live site. GitHub Pages serves it from the custom domain at
+   the root, so assets sit at /img and /video. (Switch hosts in one edit here.) */
+const CDN = 'https://blueprintfitnessldn.com';
 const LIMIT = 50000;
 
 /* paste file -> pretty route */

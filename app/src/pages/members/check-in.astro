@@ -1,11 +1,13 @@
 ---
 import Base from "../../layouts/Base.astro";
 import { url } from "../../lib/url";
+import { studios } from "../../data/studios";
 ---
 <Base
   title={'Member check-in — Blueprint Fitness'}
   description={'Submit a check-in to your Blueprint Fitness coach.'}
-  noindex>
+  noindex
+  trackAll>
 
 
   <section class="section on-dark section-tight">
@@ -32,8 +34,7 @@ import { url } from "../../lib/url";
         <p class="annotation reveal" style="margin-top:1rem">Honest check-ins make the best coaching. We&rsquo;d rather know.</p>
       </div>
       <div class="card" style="align-self:start">
-        <span class="form-note">Placeholder form &mdash; nothing is sent yet</span>
-        <form data-placeholder-form data-success="#checkin-success" novalidate>
+        <form id="blueprint-check-in" name="blueprint-check-in" data-placeholder-form data-success="#checkin-success" novalidate>
           <div class="field">
             <label for="ci-name">Name</label>
             <input id="ci-name" name="name" type="text" autocomplete="name" required>
@@ -48,6 +49,14 @@ import { url } from "../../lib/url";
             <label for="ci-phone">Phone number</label>
             <input id="ci-phone" name="phone" type="tel" autocomplete="tel" required>
             <p class="err">Please add a number so a coach can call you back.</p>
+          </div>
+          <div class="field">
+            <label for="ci-location">Which studio?</label>
+            <select id="ci-location" name="location" required>
+              <option value="">Choose a studio&hellip;</option>
+              {studios.map((st) => (<option value={st.formValue}>{st.name}</option>))}
+            </select>
+            <p class="err">Pick the studio you train at.</p>
           </div>
           <div class="field">
             <label for="ci-msg">What can we help you with?</label>

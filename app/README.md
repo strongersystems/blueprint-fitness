@@ -87,7 +87,20 @@ studio's form and a `noscript` block links to the three per-studio pages.
 
 `/admin` maps every page, what it does and how the funnel joins up, with a flow
 diagram and a table of every form and where it lands. It is `noindex`,
-disallowed in robots.txt and linked from nowhere — bookmark it.
+disallowed in robots.txt and linked from nowhere.
+
+It is behind a password (`blueprint`) via `components/PasswordGate.astro`. The
+site is static, so there is no server to check a password against — a gate that
+only hid markup would leave the content in view-source. Instead the slot is
+rendered at BUILD time, encrypted with AES-GCM under a PBKDF2 key derived from
+the password, and only ciphertext ships; a wrong password fails the GCM auth
+tag, which is the check. Verified: the form ids, pipeline names and routes do
+not appear anywhere in the served HTML until it is unlocked.
+
+The threat model is modest — the password is shared and unchanging, so read it
+as "keep this off the open web", not as access control. For real auth,
+Cloudflare Access can sit in front of the route for free; the domain is already
+proxied through Cloudflare.
 
 ## Forms — how submissions reach the CRM
 

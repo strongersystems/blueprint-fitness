@@ -2,6 +2,7 @@
 import Base from "../layouts/Base.astro";
 import { url } from "../lib/url";
 import { studios } from "../data/studios";
+import PasswordGate from "../components/PasswordGate.astro";
 
 /* Internal page directory. noindex + disallowed in robots.txt — it is a map of
    the site for the team, not a public page. */
@@ -64,6 +65,8 @@ const forms = [
   description={'Internal map of every page on the site and how the funnel connects.'}
   minimal label="Internal · Page directory"
   noindex>
+<PasswordGate password="blueprint" label="Enter the password to see the page directory.">
+
 
   <section class="section on-dark section-tight">
     <div class="container">
@@ -184,4 +187,5 @@ const forms = [
       </div>
     </div>
   </section>
+</PasswordGate>
 </Base>

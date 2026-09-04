@@ -53,11 +53,11 @@ async function run(route, fill) {
   const errs = [];
   p.on('pageerror', e => errs.push(e.message));
   await p.goto(ORIGIN + route, { waitUntil: 'load' });
-  await p.waitForSelector('form[id^=blueprint-]', { state: 'attached' });
+  await p.waitForSelector('form[id^=website-], form[id^=members-]', { state: 'attached' });
   await p.waitForTimeout(2500);            // let the tracker boot and scan
   const forms = await p.$$eval('form', fs => fs.map(f => f.getAttribute('id') || '(no id)'));
   await p.evaluate(() => {
-    const f = document.querySelector('form[id^=blueprint-]');
+    const f = document.querySelector('form[id^=website-], form[id^=members-]');
     f.addEventListener('submit', () => {
       const d = {}; new FormData(f).forEach((v, k) => { d[k] = String(v); });
       window.__snap = { data: d, connected: f.isConnected };
@@ -85,12 +85,12 @@ const good = async p => {
   if (loc) await p.selectOption('#eq-loc', 'Hackney');
   await p.fill('#eq-msg', 'automated check - do not action');
   await p.check('input[name=confirm]');
-  await p.click('form[id^=blueprint-] button[type=submit]');
+  await p.click('form[id^=website-] button[type=submit], form[id^=members-] button[type=submit]');
 };
 const empty = async p => {
   const trig = await p.$('[data-enquiry-trigger]');
   if (trig) { await trig.click(); await p.waitForTimeout(500); }
-  await p.click('form[id^=blueprint-] button[type=submit]');
+  await p.click('form[id^=website-] button[type=submit], form[id^=members-] button[type=submit]');
 };
 
 const checkin = async p => {
@@ -100,7 +100,7 @@ const checkin = async p => {
   await p.selectOption('#ci-location', 'Hackney');
   await p.fill('#ci-msg', 'automated check - do not action');
   await p.check('input[name=confirm]');
-  await p.click('form#blueprint-check-in button[type=submit]');
+  await p.click('form#members-check-in-all-sites button[type=submit]');
 };
 
 const contact = async p => {
@@ -108,7 +108,7 @@ const contact = async p => {
   await p.fill('#c-email', 'harness@example.invalid');
   await p.selectOption('#c-location', 'Hackney');
   await p.fill('#c-msg', 'automated check - do not action');
-  await p.click('form#blueprint-contact button[type=submit]');
+  await p.click('form#website-contact-all-sites button[type=submit]');
 };
 
 for (const [label, route, fill] of [

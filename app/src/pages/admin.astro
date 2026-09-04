@@ -14,7 +14,7 @@ const groups = [
       { path: '', label: 'Home', detail: 'Full site, all sections' },
       { path: 'kickstart/', label: 'The 30-Day Kickstart', detail: 'Main offer page — enquiry lightbox' },
       { path: 'locations/', label: 'Locations', detail: 'All three studios with maps' },
-      { path: 'contact/', label: 'Contact', detail: 'Form id blueprint-contact' },
+      { path: 'contact/', label: 'Contact', detail: 'Form id website-contact-all-sites' },
       { path: 'signup/', label: 'Sign up', detail: 'Studio picker → live payment form' },
       { path: 'next-steps/', label: 'Next steps', detail: 'Post-enquiry — noindex' },
     ],
@@ -23,7 +23,7 @@ const groups = [
     title: 'Studio landing pages',
     note: 'Standalone campaign pages with a minimal header. Each loads only its own studio’s tracking script, so conversions land in that sub-account alone.',
     rows: studios.flatMap((s) => [
-      { path: `${s.slug}/kickstart/`, label: `${s.name} — landing`, detail: `Form id blueprint-enquiry-${s.slug}` },
+      { path: `${s.slug}/kickstart/`, label: `${s.name} — landing`, detail: `Form id website-enquiry-${s.slug}` },
       { path: `${s.slug}/next-steps/`, label: `${s.name} — next steps`, detail: 'WhatsApp + sign-up — noindex' },
       { path: `${s.signupPath}/`, label: `${s.name} — sign up`, detail: `Payment form ${s.signupFormId}` },
     ]),
@@ -33,7 +33,7 @@ const groups = [
     note: 'All noindex and disallowed in robots.txt. Shared sub-navigation across every page.',
     rows: [
       { path: 'members/', label: 'Members home', detail: 'Hub' },
-      { path: 'members/check-in/', label: 'Check in', detail: 'Form id blueprint-check-in' },
+      { path: 'members/check-in/', label: 'Check in', detail: 'Form id members-check-in-all-sites' },
       { path: 'members/nutrition-request/', label: 'Nutrition request', detail: 'Live CRM form embed' },
       { path: 'members/bookings-cancellations/', label: 'Bookings & cancellations', detail: 'Policy' },
       { path: 'members/terms/', label: 'Membership terms', detail: 'Policy' },
@@ -53,10 +53,10 @@ const groups = [
 ];
 
 const forms = [
-  { id: 'blueprint-enquiry-main-site', where: '/kickstart/', goes: 'All three sub-accounts, filter on location' },
-  ...studios.map((s) => ({ id: `blueprint-enquiry-${s.slug}`, where: `/${s.slug}/kickstart/`, goes: `${s.name} only` })),
-  { id: 'blueprint-contact', where: '/contact/', goes: 'All three, filter on location' },
-  { id: 'blueprint-check-in', where: '/members/check-in/', goes: 'All three, filter on location' },
+  { id: 'website-enquiry-all-sites', where: '/kickstart/', goes: 'All three sub-accounts, filter on location' },
+  ...studios.map((s) => ({ id: `website-enquiry-${s.slug}`, where: `/${s.slug}/kickstart/`, goes: `${s.name} only` })),
+  { id: 'website-contact-all-sites', where: '/contact/', goes: 'All three, filter on location' },
+  { id: 'members-check-in-all-sites', where: '/members/check-in/', goes: 'All three, filter on location' },
 ];
 ---
 <Base

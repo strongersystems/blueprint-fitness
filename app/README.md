@@ -104,8 +104,8 @@ off the page, so a form only reaches HighLevel if it keeps to that contract:
   phase on the form itself, so it has already read the fields);
 - a stable `id` on the form. That is the label the submission appears under in
   the CRM — without one everything reports as "Unidentified Form". Ours are
-  `blueprint-enquiry-main-site`, `blueprint-enquiry-<studio>` and
-  `blueprint-contact`.
+  `website-enquiry-all-sites`, `blueprint-enquiry-<studio>` and
+  `website-contact-all-sites`.
 
 Two consequences worth knowing:
 

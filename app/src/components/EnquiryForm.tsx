@@ -79,7 +79,7 @@ export default function EnquiryForm({
     const d = new FormData(formRef.current as HTMLFormElement);
     const g = (k: string) => String(d.get(k) ?? '').trim();
     return {
-      name: g('name'), email: g('email'), phone: g('phone'),
+      name: g('first_name'), email: g('email'), phone: g('phone'),
       location: g('location'),
     };
   };
@@ -125,7 +125,8 @@ export default function EnquiryForm({
     setErrors(e);
     if (Object.keys(e).length) {
       const first = Object.keys(e)[0];
-      const el = formRef.current?.querySelector<HTMLElement>('[name="' + first + '"]');
+      const el = formRef.current?.querySelector<HTMLElement>(
+        '[name="' + (first === 'name' ? 'first_name' : first) + '"]');
       el?.focus();
       return;
     }
@@ -161,8 +162,8 @@ export default function EnquiryForm({
       <h3 className="h-3" style={{ marginBottom: '.9rem' }}>{heading}</h3>
       <form id={formId} name={formId} ref={formRef} onSubmit={onSubmit} noValidate>
         <div className={`field${errors.name ? ' invalid' : ''}`}>
-          <label htmlFor="eq-name">Name</label>
-          <input id="eq-name" name="name" type="text" autoComplete="name" onInput={clear('name')} />
+          <label htmlFor="eq-name">First name</label>
+          <input id="eq-name" name="first_name" type="text" autoComplete="given-name" onInput={clear('name')} />
           <p className="err">{errors.name}</p>
         </div>
         <div className={`field${errors.email ? ' invalid' : ''}`}>

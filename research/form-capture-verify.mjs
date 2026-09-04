@@ -130,9 +130,9 @@ for (const [label, route, fill] of [
   console.log('  forms here:', JSON.stringify(r.forms));
   console.log('  FormData at capture:', JSON.stringify(r.snap));
   const fd = ev.formData || {};
-  const need = label === 'contact' ? ['name', 'email', 'message']
-    : label === 'check-in' ? ['name', 'email', 'phone', 'message']
-    : ['name', 'email', 'phone'];          // enquiry: no message box any more
+  const need = label === 'contact' ? ['first_name', 'email', 'message']
+    : label === 'check-in' ? ['first_name', 'email', 'phone', 'message']
+    : ['first_name', 'email', 'phone'];    // enquiry: no message box any more
   for (const k of need) {
     if (!fd[k]) problems.push(`${label}: field "${k}" missing from formData`);
   }

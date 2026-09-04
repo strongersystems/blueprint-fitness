@@ -22,6 +22,24 @@ Created (all DRAFT — drafts do not run):
     Leytonstone     ecbfd43b-e712-4f59-8629-42e2fc335677
     Hackney         5377f08d-c78b-4075-82cf-78a19b021888
 
-Still to do: a second trigger on each for `website-enquiry-all-sites`, which
-needs a condition on the submitted `location` so a main-site enquiry only runs
-in the studio the visitor picked. The filter field for that is not yet known.
+    create-location-field.mjs  create the Location custom field where missing
+    check-location-field.mjs   confirm a test submission populates it
+
+## The Location field
+
+The main-site form submits `location`, and HighLevel stores it on the contact
+in a TEXT custom field with fieldKey `contact.location`. That field existed
+only in South Woodford — Leytonstone and Hackney were **silently dropping the
+value**, so nothing there could have branched on it. Created in both
+(`POST /locations/{loc}/customFields`, which returns 201 and derives the key
+from the name), then proved with a live submission: all three sub-accounts now
+record Location = the studio the visitor picked.
+
+    South Woodford  1A4CBg54lf2boNj4GNko   (pre-existing)
+    Leytonstone     Rxqtps2bqPTLBpfP3xWp
+    Hackney         pjUy3JEvtGrYO2GoL3J5
+
+Still to do: a second trigger on each for `website-enquiry-all-sites`, plus an
+If/Else on Location so a main-site enquiry only continues in the studio the
+visitor picked. The If/Else condition shape for a custom field is not yet
+known — the one captured example branches on tags, not a custom field.

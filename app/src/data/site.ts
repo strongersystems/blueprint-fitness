@@ -7,7 +7,9 @@ export const site = {
   nutritionFormId: 'w7SeLy5VqmvSbzp14HKJ',
   ratio: '5:1',
   kickstartPrice: '£169',
-  email: 'info@blueprintfitness.uk',
+  /** central inbox — the studio addresses are hackney@ / leytonstone@ /
+      southwoodford@ on the same domain, all able to send */
+  email: 'info@blueprintfitnessldn.com',
   instagram: 'https://www.instagram.com/blueprintfitnessldn/',
   facebook: 'https://www.facebook.com/blueprintfitnessldn/',
 };

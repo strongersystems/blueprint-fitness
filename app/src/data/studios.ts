@@ -14,6 +14,16 @@ export interface Studio {
   formValue: string;
   addressLines: string[];
   postcode: string;
+  /**
+   * Exact door coordinates, so the map drops a single pin instead of running a
+   * text search. A ?q=<address> embed asks Google to *search*, which is why the
+   * old maps showed a scatter of neighbouring businesses and, once clicked,
+   * opened a results list rather than the studio. ?q=<lat>,<lng> pins.
+   * Sources: Hackney and Leytonstone are the studios' own OpenStreetMap nodes;
+   * South Woodford is Google's own listing for the Raven Road unit.
+   */
+  lat: number;
+  lng: number;
   email: string;
   /** WhatsApp number in wa.me form: country code, digits only, no + or spaces.
       Taken from each studio's GoHighLevel sub-account phone. */
@@ -51,6 +61,8 @@ export const studios: Studio[] = [
     formValue: 'South Woodford',
     addressLines: ['4 Raven Road', 'South Woodford, London'],
     postcode: 'E18 1HB',
+    lat: 51.594893,
+    lng: 0.036263,
     email: 'southwoodford@blueprintfitnessldn.com',
     whatsapp: '447538298457',
     hours: 'Open 6am–9pm, every day — 100+ sessions a week',
@@ -76,6 +88,8 @@ export const studios: Studio[] = [
     formValue: 'Leytonstone',
     addressLines: ['Unit 3, Hitchcock Business Centre', 'Leytonstone High Road, London'],
     postcode: 'E11 4RE',
+    lat: 51.563245,
+    lng: 0.009025,
     email: 'leytonstone@blueprintfitnessldn.com',
     whatsapp: '447947790035',
     hours: 'Open early ’til late, 7 days a week',
@@ -99,8 +113,10 @@ export const studios: Studio[] = [
     slug: 'hackney',
     name: 'Hackney',
     formValue: 'Hackney',
-    addressLines: ['Arch 195, Morning Lane', 'Hackney Central, London'],
+    addressLines: ['Arch 195, Morning Lane', 'Hackney, London'],
     postcode: 'E9 6LJ',
+    lat: 51.547289,
+    lng: -0.050239,
     email: 'hackney@blueprintfitnessldn.com',
     whatsapp: '447944690356',
     hours: 'Mon–Fri 6am–9pm · Sat–Sun 8am–4pm',
@@ -124,3 +140,21 @@ export const studios: Studio[] = [
 
 export const studioBySlug = (slug: string) =>
   studios.find((s) => s.slug === slug);
+
+/**
+ * Google Maps URLs for a studio.
+ *
+ * Both forms take coordinates, never an address string. Google treats ?q=<text>
+ * as a search: the embed then renders whatever businesses it matched nearby and
+ * the click-through opens a results page. Coordinates are unambiguous — one pin,
+ * in the right place, and the same place when the visitor taps through.
+ */
+export function mapEmbed(s: Studio, zoom = 17): string {
+  const label = encodeURIComponent(`Blueprint Fitness ${s.name}`).replace(/%20/g, '+');
+  return `https://maps.google.com/maps?q=${s.lat},${s.lng}(${label})&z=${zoom}&hl=en&output=embed`;
+}
+
+/** Google's documented Maps URL API: drops a pin at the exact coordinates. */
+export function mapLink(s: Studio): string {
+  return `https://www.google.com/maps/search/?api=1&query=${s.lat}%2C${s.lng}`;
+}

@@ -1,6 +1,10 @@
 ---
 import Base from "../layouts/Base.astro";
 import { url } from "../lib/url";
+import { studios, mapEmbed } from "../data/studios";
+
+const byslug = Object.fromEntries(studios.map((s) => [s.slug, s]));
+const sw = byslug["south-woodford"], ls = byslug["leytonstone"], hk = byslug["hackney"];
 ---
 <Base
   title={'Blueprint Fitness — Small Group Personal Training in East London'}
@@ -262,7 +266,7 @@ import { url } from "../lib/url";
           <p class="annotation" style="margin:0 0 .3rem">The original</p>
           <h3 class="h-3">South Woodford</h3>
           <div class="mini-map">
-            <iframe src="https://maps.google.com/maps?q=4+Raven+Road,+South+Woodford,+London+E18+1HB&z=14&output=embed" loading="lazy"
+            <iframe src={mapEmbed(sw, 16)} loading="lazy"
                     title="Map — Blueprint Fitness South Woodford" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
           <p class="studio-addr">4 Raven Road, South Woodford, E18 1HB</p>
@@ -272,7 +276,7 @@ import { url } from "../lib/url";
           <p class="annotation" style="margin:0 0 .3rem">Measurable progress</p>
           <h3 class="h-3">Leytonstone</h3>
           <div class="mini-map">
-            <iframe src="https://maps.google.com/maps?q=Hitchcock+Business+Centre,+Leytonstone+High+Road,+London+E11+4RE&z=14&output=embed" loading="lazy"
+            <iframe src={mapEmbed(ls, 16)} loading="lazy"
                     title="Map — Blueprint Fitness Leytonstone" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
           <p class="studio-addr">Hitchcock Business Centre, Leytonstone High Road, E11 4RE</p>
@@ -282,10 +286,10 @@ import { url } from "../lib/url";
           <p class="annotation" style="margin:0 0 .3rem">The newest &mdash; now open</p>
           <h3 class="h-3">Hackney</h3>
           <div class="mini-map">
-            <iframe src="https://maps.google.com/maps?q=Arch+195,+Morning+Lane,+London+E9+6LJ&z=14&output=embed" loading="lazy"
+            <iframe src={mapEmbed(hk, 16)} loading="lazy"
                     title="Map — Blueprint Fitness Hackney" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
-          <p class="studio-addr">Arch 195, Morning Lane, Hackney Central, E9 6LJ</p>
+          <p class="studio-addr">Arch 195, Morning Lane, Hackney, E9 6LJ</p>
           <p class="card-cta"><a class="btn btn-ghost" href={url("locations/")+"#hackney"}>Explore location</a></p>
         </article>
       </div>

@@ -1,6 +1,10 @@
 ---
 import Base from "../layouts/Base.astro";
 import { url } from "../lib/url";
+import { studios, mapEmbed, mapLink } from "../data/studios";
+
+const byslug = Object.fromEntries(studios.map((s) => [s.slug, s]));
+const sw = byslug["south-woodford"], ls = byslug["leytonstone"], hk = byslug["hackney"];
 ---
 <Base
   title={'Locations — Blueprint Fitness | Hackney, South Woodford, Leytonstone'}
@@ -27,10 +31,10 @@ import { url } from "../lib/url";
           <img src={url("img/bf-sw-session.jpg")} alt="Mid-session on the South Woodford training floor" loading="lazy" width="1400" height="2100" style="object-position:center 45%">
         </div>
         <div class="map-frame reveal">
-          <iframe src="https://maps.google.com/maps?q=4+Raven+Road,+South+Woodford,+London+E18+1HB&z=15&output=embed" loading="lazy"
+          <iframe src={mapEmbed(sw, 17)} loading="lazy"
                   title="Map — Blueprint Fitness South Woodford" referrerpolicy="no-referrer-when-downgrade"></iframe>
           <p class="map-cap"><span>E18 1HB</span>
-            <a href="https://maps.google.com/maps?q=4+Raven+Road,+South+Woodford,+London+E18+1HB" rel="noopener" target="_blank">Open in Maps &rarr;</a></p>
+            <a href={mapLink(sw)} rel="noopener" target="_blank">Open in Maps &rarr;</a></p>
         </div>
       </div>
       <div>
@@ -71,10 +75,10 @@ import { url } from "../lib/url";
           <img src={url("img/bf-bench-room.jpg")} alt="The training floor mid-session at Blueprint Fitness Leytonstone" loading="lazy" width="1400" height="2100" style="object-position:center 42%">
         </div>
         <div class="map-frame reveal">
-          <iframe src="https://maps.google.com/maps?q=Hitchcock+Business+Centre,+Leytonstone+High+Road,+London+E11+4RE&z=15&output=embed" loading="lazy"
+          <iframe src={mapEmbed(ls, 17)} loading="lazy"
                   title="Map — Blueprint Fitness Leytonstone" referrerpolicy="no-referrer-when-downgrade"></iframe>
           <p class="map-cap"><span>E11 4RE</span>
-            <a href="https://maps.google.com/maps?q=Hitchcock+Business+Centre,+Leytonstone+High+Road,+London+E11+4RE" rel="noopener" target="_blank">Open in Maps &rarr;</a></p>
+            <a href={mapLink(ls)} rel="noopener" target="_blank">Open in Maps &rarr;</a></p>
         </div>
       </div>
     </div>
@@ -93,10 +97,10 @@ import { url } from "../lib/url";
           </video>
         </div>
         <div class="map-frame reveal">
-          <iframe src="https://maps.google.com/maps?q=Arch+195,+Morning+Lane,+London+E9+6LJ&z=15&output=embed" loading="lazy"
+          <iframe src={mapEmbed(hk, 17)} loading="lazy"
                   title="Map — Blueprint Fitness Hackney" referrerpolicy="no-referrer-when-downgrade"></iframe>
           <p class="map-cap"><span>E9 6LJ</span>
-            <a href="https://maps.google.com/maps?q=Arch+195,+Morning+Lane,+London+E9+6LJ" rel="noopener" target="_blank">Open in Maps &rarr;</a></p>
+            <a href={mapLink(hk)} rel="noopener" target="_blank">Open in Maps &rarr;</a></p>
         </div>
       </div>
       <div>
@@ -104,7 +108,7 @@ import { url } from "../lib/url";
         <h2 class="h-1">Hackney</h2>
         <p class="lede">Our newest studio, tucked into a railway arch just off Morning Lane. A brand-new space built for structured training and community-led coaching &mdash; same warm welcome, box-fresh kit.</p>
         <ul class="check-list">
-          <li>Arch 195, Morning Lane, Hackney Central, London E9 6LJ</li>
+          <li>Arch 195, Morning Lane, Hackney, London E9 6LJ</li>
           <li>Mon&ndash;Fri 6am&ndash;9pm &middot; Sat&ndash;Sun 8am&ndash;4pm</li>
           <li>hackney@blueprintfitnessldn.com</li>
         </ul>

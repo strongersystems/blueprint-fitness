@@ -1,0 +1,130 @@
+---
+/**
+ * Membership comparison.
+ *
+ * Replaces go.blueprintfitnessldn.com/memberships, which was two flat images.
+ * Prices and terms are transcribed from that page — they are the figures the
+ * team have been sending to leads, so they belong in one editable place rather
+ * than baked into a JPEG.
+ */
+import Base from '../layouts/Base.astro';
+import { studios } from '../data/studios';
+import { url } from '../lib/url';
+
+const tiers = [
+  { name: 'SGPT 12', price: '£239', per: 'a month', sessions: '12 coached sessions a month',
+    note: 'Three a week. The one most members settle on.', featured: true },
+  { name: 'SGPT 8', price: '£219', per: 'a month', sessions: '8 coached sessions a month',
+    note: 'Two a week, with room for a third in a busy week.', featured: false },
+  { name: 'SGPT 4', price: '£189', per: 'a month', sessions: '4 coached sessions a month',
+    note: 'One a week — a steady, sustainable start.', featured: false },
+];
+
+const included = [
+  'Your allocated SGPT sessions each month (12, 8 or 4)',
+  'Unlimited TEAM sessions',
+  'A monthly check-in with your coach, on request',
+  'Access to the nutrition resource centre and education library',
+  'InBody result tracking and body composition scanning',
+  'Fundamentals workshops and nutrition clinics',
+  'An invitation to every event and social',
+];
+
+const terms = [
+  '10% discount for couples (same household), NHS and services — SGPT memberships only',
+  'Minimum three-month commitment, then monthly rolling',
+  '30 days’ notice to cancel',
+];
+---
+<Base
+  title="Memberships — Blueprint Fitness"
+  description="Blueprint Fitness membership options: SGPT 12, 8 and 4. Small group personal training in South Woodford, Leytonstone and Hackney — max 5 people per coach."
+  current="Locations"
+  trackAll
+>
+  <section class="section on-dark section-tight">
+    <div class="container">
+      <p class="dim sec-head" style="margin-bottom:1rem">Memberships</p>
+      <h1 class="h-display">Pick your <span class="draft-u">number</span></h1>
+      <p class="lede">Every membership is the same coaching, the same small groups and the same
+        plan. The only question is how many sessions a month suits your life.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-3 stagger">
+        {tiers.map((t) => (
+          <article class="card" style={t.featured ? 'outline:2px solid var(--blue);outline-offset:-2px' : ''}>
+            <p class="annotation" style="margin:0 0 .3rem">{t.featured ? 'Most popular' : '\u00a0'}</p>
+            <h2 class="h-3" style="margin:0 0 .2rem">{t.name}</h2>
+            <p style="margin:0 0 .1rem"><span style="font-family:var(--font-display);font-size:2.4rem;font-weight:800;color:var(--ink)">{t.price}</span>
+              <span style="color:var(--grey)"> {t.per}</span></p>
+            <p style="font-weight:700;margin:.5rem 0 .3rem">{t.sessions}</p>
+            <p style="color:var(--grey)">{t.note}</p>
+            <p class="card-cta"><a class="btn btn-primary" href={url('signup/')}>Join {t.name}</a></p>
+          </article>
+        ))}
+      </div>
+      <p class="small" style="margin-top:1.2rem;color:var(--grey)">Prices shown are per month.
+        Ask your studio about couples, NHS and services rates.</p>
+    </div>
+  </section>
+
+  <section class="section on-mist">
+    <div class="container grid-2" style="align-items:start">
+      <div>
+        <div class="sec-head">
+          <p class="dim">Every membership</p>
+          <h2 class="h-1">What you <span class="draft-u hl">get</span></h2>
+        </div>
+        <ul class="check-list">
+          {included.map((i) => <li>{i}</li>)}
+        </ul>
+      </div>
+      <div>
+        <div class="sec-head">
+          <p class="dim">The small print</p>
+          <h2 class="h-1">Terms</h2>
+        </div>
+        <ul class="check-list">
+          {terms.map((i) => <li>{i}</li>)}
+        </ul>
+        <p style="margin-top:1rem"><a href={url('members/terms/')}>Read the full membership terms &rarr;</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="sec-head">
+        <p class="dim">Where you will train</p>
+        <h2 class="h-1">Three <span class="draft-u">studios</span></h2>
+      </div>
+      <div class="grid-3 stagger">
+        {studios.map((s) => (
+          <article class="card">
+            <h3 class="h-3">{s.name}</h3>
+            <p class="studio-addr">{s.addressLines.join(', ')}, {s.postcode}</p>
+            <p>{s.hours}</p>
+            <p class="card-cta">
+              <a class="btn btn-ghost" href={url(`${s.slug}/timetable/`)}>See the timetable</a>
+            </p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-dark">
+    <div class="container" style="text-align:center;max-width:42rem">
+      <h2 class="h-1">Not sure yet? <span class="draft-u">Try 30 days.</span></h2>
+      <p class="lede" style="margin-inline:auto">Twelve coached sessions and an InBody scan, with
+        no commitment beyond the month. Most people know by week two.</p>
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn btn-primary" href={url('kickstart/')}>The 30-Day Kickstart</a>
+        <a class="btn btn-ghost" href={url('contact/')}>Talk to us first</a>
+      </div>
+    </div>
+  </section>
+</Base>

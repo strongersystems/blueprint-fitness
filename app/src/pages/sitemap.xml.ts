@@ -12,7 +12,9 @@ const paths = [
   '/kickstart/',
   '/locations/',
   '/contact/',
+  '/memberships/',
   ...studios.map((s) => `/${s.slug}/kickstart/`),
+  ...studios.map((s) => `/${s.slug}/timetable/`),
 ];
 
 export const GET: APIRoute = () => {

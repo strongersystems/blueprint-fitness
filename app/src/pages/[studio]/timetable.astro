@@ -1,0 +1,194 @@
+---
+/**
+ * Per-studio class timetable.
+ *
+ * Replaces go.blueprintfitnessldn.com/timetable-sw and /timetable-ls, which
+ * both served a flat JPEG. The grid is real markup: readable on a phone,
+ * readable by a screen reader, and editable in src/data/timetables.ts without
+ * a designer.
+ */
+import Base from '../../layouts/Base.astro';
+import { studios } from '../../data/studios';
+import { timetables, typesUsed, classTypes } from '../../data/timetables';
+import { url } from '../../lib/url';
+
+export async function getStaticPaths() {
+  return studios.map((studio) => ({ params: { studio: studio.slug }, props: { studio } }));
+}
+const { studio } = Astro.props;
+const t = timetables[studio.slug];
+const legend = typesUsed(t);
+const hasGrid = t.weekdays.length > 0;
+const wa = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
+  `Hi Blueprint Fitness ${studio.name} — could you send me the current class timetable?`)}`;
+---
+<Base
+  title={`Class timetable — Blueprint Fitness ${studio.name}`}
+  description={`The weekly class timetable at Blueprint Fitness ${studio.name}: small group personal training and classes, ${studio.hours.replace(/^Open /, '')}.`}
+  current="Locations"
+  trackStudios={[studio.slug]}
+>
+  <section class="section on-dark section-tight">
+    <div class="container">
+      <p class="dim sec-head" style="margin-bottom:1rem">{studio.name} · {studio.postcode}</p>
+      <h1 class="h-display">Class <span class="draft-u">timetable</span></h1>
+      <p class="lede">Every session is coached. Small groups, never more than five people per
+        coach — so you always get eyes on you.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href={url(`${studio.slug}/kickstart/`)}>Try us for 30 days</a>
+        <a class="btn btn-ghost" href={wa} rel="noopener" target="_blank">Message {studio.name}</a>
+      </div>
+    </div>
+  </section>
+
+  {hasGrid ? (
+    <>
+      <section class="section">
+        <div class="container">
+          <div class="sec-head">
+            <p class="dim">Monday to Friday</p>
+            <h2 class="h-1">The <span class="draft-u hl">week</span></h2>
+          </div>
+          <div class="tt-scroll">
+            <table class="tt">
+              <caption class="visually-hidden">Weekday class timetable for Blueprint Fitness {studio.name}</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Time</th>
+                  {t.weekdayCols.map((d) => <th scope="col">{d}</th>)}
+                </tr>
+              </thead>
+              <tbody>
+                {t.weekdays.map((row) => (
+                  <tr>
+                    <th scope="row">{row.time}</th>
+                    {t.weekdayCols.map((d) => (
+                      <td>
+                        {(row.days[d] ?? []).length === 0 ? (
+                          <span class="tt-none" aria-label="No session">&mdash;</span>
+                        ) : (row.days[d] ?? []).map((k) => (
+                          <span class="tt-chip">
+                            <i style={`--dot:${classTypes[k].colour}`} aria-hidden="true"></i>{classTypes[k].label}
+                          </span>
+                        ))}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section on-mist">
+        <div class="container">
+          <div class="sec-head">
+            <p class="dim">Weekends</p>
+            <h2 class="h-1">Saturday{t.weekendCols.length > 1 ? ' & Sunday' : ''}</h2>
+          </div>
+          <div class="tt-scroll">
+            <table class="tt">
+              <caption class="visually-hidden">Weekend class timetable for Blueprint Fitness {studio.name}</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Time</th>
+                  {t.weekendCols.map((d) => <th scope="col">{d}</th>)}
+                </tr>
+              </thead>
+              <tbody>
+                {t.weekend.map((row) => (
+                  <tr>
+                    <th scope="row">{row.time}</th>
+                    {t.weekendCols.map((d) => (
+                      <td>
+                        {(row.days[d] ?? []).length === 0 ? (
+                          <span class="tt-none" aria-label="No session">&mdash;</span>
+                        ) : (row.days[d] ?? []).map((k) => (
+                          <span class="tt-chip">
+                            <i style={`--dot:${classTypes[k].colour}`} aria-hidden="true"></i>{classTypes[k].label}
+                          </span>
+                        ))}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="sec-head">
+            <p class="dim">What the sessions are</p>
+            <h2 class="h-1">Know before you <span class="draft-u">go</span></h2>
+          </div>
+          <div class="grid-3 stagger">
+            {legend.map((c) => (
+              <article class="card">
+                <h3 class="h-3" style="display:flex;align-items:center;gap:.55rem">
+                  <i class="tt-dot" style={`--dot:${c.colour}`} aria-hidden="true"></i>{c.label}
+                </h3>
+                <p>{c.blurb}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  ) : (
+    <section class="section">
+      <div class="container" style="max-width:44rem">
+        <div class="card">
+          <h2 class="h-2">Times, straight from the studio</h2>
+          <p>{t.note}</p>
+          <ul class="check-list">
+            <li>{studio.addressLines.join(', ')} {studio.postcode}</li>
+            <li>{studio.hours}</li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn btn-primary" href={wa} rel="noopener" target="_blank">Ask on WhatsApp</a>
+            <a class="btn btn-ghost" href={`mailto:${studio.email}`}>Email the studio</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section on-dark">
+    <div class="container" style="text-align:center;max-width:42rem">
+      <h2 class="h-1">Come and try it for <span class="draft-u">30 days</span></h2>
+      <p class="lede" style="margin-inline:auto">Twelve coached sessions, an InBody scan and a
+        plan that is actually yours. See if it fits.</p>
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn btn-primary" href={url(`${studio.slug}/kickstart/`)}>Start your 30 days</a>
+        <a class="btn btn-ghost" href={url('locations/')}>All three studios</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* the grid is wide by nature: let it scroll in its own box rather than
+     forcing the page body sideways on a phone */
+  .tt-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch;
+    border: 1px solid rgba(16,27,47,.12); border-radius: 14px; background: #fff; }
+  .tt { border-collapse: collapse; width: 100%; min-width: 40rem; font-size: .95rem; }
+  .tt th, .tt td { padding: .7rem .6rem; text-align: left; vertical-align: top;
+    border-bottom: 1px solid rgba(16,27,47,.09); }
+  .tt thead th { position: sticky; top: 0; background: var(--ink, #101B2F); color: #fff;
+    font-family: var(--font-display); text-transform: uppercase; letter-spacing: .07em;
+    font-size: .78rem; }
+  .tt tbody th { white-space: nowrap; font-weight: 800; color: var(--ink, #101B2F); }
+  .tt tbody tr:last-child th, .tt tbody tr:last-child td { border-bottom: 0; }
+  .tt tbody tr:nth-child(even) { background: rgba(234,241,251,.45); }
+  .tt-chip { display: inline-flex; align-items: center; gap: .35rem; white-space: nowrap;
+    font-weight: 700; font-size: .84rem; color: var(--grey, #3D4A63); margin: 0 .5rem .2rem 0; }
+  .tt-chip i, .tt-dot { width: .68rem; height: .68rem; border-radius: 50%;
+    background: var(--dot); flex: none; display: inline-block; }
+  .tt-none { color: rgba(16,27,47,.28); }
+  .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap; }
+</style>

@@ -1,0 +1,87 @@
+sub_account,where,item,old_url,new_url,status
+Hackney,Snippet,30 DAY FEEDBACK,https://forms.gle/ayxTkN7DDN2KLMMg9,,DECISION - Google Form (30 Day Feedback); still live
+Hackney,Snippet,More info and sign up link,https://bit.ly/blueprint_sign_up_link,https://blueprintfitnessldn.com/signup-southwoodford/,DECISION - currently redirects to TeamUp membership 94919
+Hackney,Snippet,Schedule,https://go.blueprintfitnessldn.com/timetable-sw,,"DECISION - resolves to a timetable JPEG, no page on the new site"
+Leytonstone,Snippet,30 DAY FEEDBACK,https://forms.gle/ayxTkN7DDN2KLMMg9,,DECISION - Google Form (30 Day Feedback); still live
+Leytonstone,Snippet,LEY - Schedule,https://go.blueprintfitnessldn.com/timetable-ls,,"DECISION - resolves to a timetable JPEG, no page on the new site"
+Leytonstone,Snippet,Membership Prices,https://go.blueprintfitnessldn.com/memberships,,DECISION - no membership-comparison page on the new site
+South Woodford,Snippet,30 DAY FEEDBACK,https://forms.gle/ayxTkN7DDN2KLMMg9,,DECISION - Google Form (30 Day Feedback); still live
+South Woodford,Snippet,More info and sign up link,https://bit.ly/blueprint_sign_up_link,https://blueprintfitnessldn.com/signup-southwoodford/,DECISION - currently redirects to TeamUp membership 94919
+South Woodford,Snippet,Schedule,https://go.blueprintfitnessldn.com/timetable-sw,,"DECISION - resolves to a timetable JPEG, no page on the new site"
+Hackney,Email template,Easter Offer 1-Template,https://goteamup.com/p/3662065-blueprint-fitness/memberships/88443/,,LEAVE - TeamUp is the live booking/membership platform
+Hackney,Snippet,CHECK IN (Day 28) - End of trial,https://goteamup.com/providers/configure/memberships/,,LEAVE - TeamUp is the live booking/membership platform
+Hackney,Snippet,Card Payment Change,https://goteamup.com/consumer_required/?next=/dashboard/payment_methods/,,LEAVE - TeamUp is the live booking/membership platform
+Hackney,Snippet,Membership info,https://goteamup.com/p/3662065-blueprint-fitness/memberships/,,LEAVE - TeamUp is the live booking/membership platform
+Hackney,Snippet,We Miss You!,https://goteamup.com/p/3662065-blueprint-fitness/memberships/159836/,,LEAVE - TeamUp is the live booking/membership platform
+Hackney,Trigger link,Join,https://goteamup.com/p/3662065-blueprint-fitness/memberships/,,LEAVE - TeamUp is the live booking/membership platform
+Hackney,Trigger link,Offer Link - Sept 2025,https://goteamup.com/p/3662065-blueprint-fitness/memberships/123799/,,LEAVE - TeamUp is the live booking/membership platform
+Hackney,Trigger link,Six Pack Offer,https://goteamup.com/p/3662065-blueprint-fitness/memberships/161108/,,LEAVE - TeamUp is the live booking/membership platform
+Leytonstone,Email template,BASIC TEMPLATE,https://goteamup.com/p/9748082-blueprint-fitness-leytons/memberships/216972/,,LEAVE - TeamUp is the live booking/membership platform
+Leytonstone,Email template,Easter Offer 1-Template Copy,https://goteamup.com/p/3662065-blueprint-fitness/memberships/88443/,,LEAVE - TeamUp is the live booking/membership platform
+Leytonstone,Snippet,LEY - Join 10%,https://goteamup.com/p/9748082-blueprint-fitness-leytons/memberships/,,LEAVE - TeamUp is the live booking/membership platform
+Leytonstone,Snippet,LEY - Join 15%,https://goteamup.com/p/9748082-blueprint-fitness-leytons/memberships/,,LEAVE - TeamUp is the live booking/membership platform
+Leytonstone,Snippet,LEY - Join FULL Member (no discount),https://goteamup.com/p/9748082-blueprint-fitness-leytons/memberships/,,LEAVE - TeamUp is the live booking/membership platform
+Leytonstone,Snippet,We Miss You!,https://goteamup.com/p/3662065-blueprint-fitness/memberships/159836/,,LEAVE - TeamUp is the live booking/membership platform
+Leytonstone,Trigger link,Join,https://goteamup.com/p/3662065-blueprint-fitness/memberships/,,LEAVE - TeamUp is the live booking/membership platform
+Leytonstone,Trigger link,Six Pack Offer,https://goteamup.com/p/3662065-blueprint-fitness/memberships/161108/,,LEAVE - TeamUp is the live booking/membership platform
+South Woodford,Email template,Easter Offer 1-Template,https://goteamup.com/p/3662065-blueprint-fitness/memberships/88443/,,LEAVE - TeamUp is the live booking/membership platform
+South Woodford,Snippet,CHECK IN (Day 21) - One week left of your trial,https://goteamup.com/p/3662065-blueprint-fitness/memberships/,,LEAVE - TeamUp is the live booking/membership platform
+South Woodford,Snippet,CHECK IN (Day 28) - End of trial,https://goteamup.com/providers/configure/memberships/,,LEAVE - TeamUp is the live booking/membership platform
+South Woodford,Snippet,CHECK IN (Day 28) - End of trial,https://goteamup.com/p/3662065-blueprint-fitness/memberships/,,LEAVE - TeamUp is the live booking/membership platform
+South Woodford,Snippet,Card Payment Change,https://goteamup.com/consumer_required/?next=/dashboard/payment_methods/,,LEAVE - TeamUp is the live booking/membership platform
+South Woodford,Snippet,Membership info,https://goteamup.com/p/3662065-blueprint-fitness/memberships/,,LEAVE - TeamUp is the live booking/membership platform
+South Woodford,Snippet,We Miss You!,https://goteamup.com/p/3662065-blueprint-fitness/memberships/159836/,,LEAVE - TeamUp is the live booking/membership platform
+South Woodford,Trigger link,Join,https://goteamup.com/p/3662065-blueprint-fitness/memberships/,,LEAVE - TeamUp is the live booking/membership platform
+South Woodford,Trigger link,Offer Link - Sept 2025,https://goteamup.com/p/3662065-blueprint-fitness/memberships/123799/,,LEAVE - TeamUp is the live booking/membership platform
+South Woodford,Trigger link,Six Pack Offer,https://goteamup.com/p/3662065-blueprint-fitness/memberships/161108/,,LEAVE - TeamUp is the live booking/membership platform
+Hackney,Email template,Launch 1-Template,https://hackney.blueprintfitness.uk/signup,https://blueprintfitnessldn.com/signup-hackney/,confident
+Hackney,Email template,Launch 2-Template,https://hackney.blueprintfitness.uk/signup,https://blueprintfitnessldn.com/signup-hackney/,confident
+Hackney,Email template,Launch 3-Template,https://hackney.blueprintfitness.uk/signup,https://blueprintfitnessldn.com/signup-hackney/,confident
+Hackney,Email template,Launch 4-Template,https://hackney.blueprintfitness.uk/signup,https://blueprintfitnessldn.com/signup-hackney/,confident
+Hackney,Email template,Launch 5-Template,https://hackney.blueprintfitness.uk/signup,https://blueprintfitnessldn.com/signup-hackney/,confident
+Hackney,Snippet,000 - SIGN UP LINK,https://hackney.blueprintfitness.uk/signup,https://blueprintfitnessldn.com/signup-hackney/,confident
+Hackney,Snippet,000 - SIGN UP LINK,https://go.blueprintfitnessldn.com/,https://blueprintfitnessldn.com/hackney/kickstart/,confident
+Hackney,Snippet,0000 - Pre-sale,https://hackney.blueprintfitness.uk/signup,https://blueprintfitnessldn.com/signup-hackney/,confident
+Hackney,Snippet,001 - Hackney Founder,https://hackney.blueprintfitness.uk/signup,https://blueprintfitnessldn.com/signup-hackney/,confident
+Hackney,Snippet,1 - FIRST CALL - NON RESPONDER,https://hackney.blueprintfitness.uk/signup,https://blueprintfitnessldn.com/signup-hackney/,confident
+Hackney,Snippet,1 - FIRST CALL - NON RESPONDER,https://go.blueprintfitnessldn.com/,https://blueprintfitnessldn.com/hackney/kickstart/,confident
+Hackney,Snippet,2 - SECOND CALL - NON RESPONDER,https://go.blueprintfitnessldn.com/,https://blueprintfitnessldn.com/hackney/kickstart/,confident
+Hackney,Snippet,3 - THIRD CALL - FINAL TRY,https://go.blueprintfitnessldn.com/,https://blueprintfitnessldn.com/hackney/kickstart/,confident
+Hackney,Snippet,4 - YES / NO,https://go.blueprintfitnessldn.com/,https://blueprintfitnessldn.com/hackney/kickstart/,confident
+Hackney,Snippet,More info and sign up link,https://go.blueprintfitnessldn.com/,https://blueprintfitnessldn.com/hackney/kickstart/,confident
+Hackney,Snippet,Nutrition Consultation Request Response,https://www.blueprintfitnessldn.com/nutrition-coaching,https://blueprintfitnessldn.com/members/nutrition-request/,confident (link is DEAD - 404)
+Hackney,Snippet,STRAIGHT TO PAYMENT,http://Go.blueprintfitnessldn.com/signup,https://blueprintfitnessldn.com/signup-hackney/,confident
+Hackney,Trigger link,Challenge,https://go.blueprintfitnessldn.com,https://blueprintfitnessldn.com/hackney/kickstart/,confident
+Hackney,Trigger link,Signup,https://go.blueprintfitnessldn.com/signup,https://blueprintfitnessldn.com/signup-hackney/,confident
+Hackney,Trigger link,Signup Offer,https://go.blueprintfitnessldn.com/signup-offer,https://blueprintfitnessldn.com/hackney/kickstart/,confident
+Leytonstone,Email template,BASIC TEMPLATE,https://go.blueprintfitnessleytonstone.com/founders,https://blueprintfitnessldn.com/leytonstone/kickstart/,confident
+Leytonstone,Snippet,1 - FIRST CALL - NON RESPONDER,https://go.blueprintfitnessleytonstone.com/founders,https://blueprintfitnessldn.com/leytonstone/kickstart/,confident
+Leytonstone,Snippet,2 - SECOND CALL - NON RESPONDER,https://go.blueprintfitnessleytonstone.com/founders,https://blueprintfitnessldn.com/leytonstone/kickstart/,confident
+Leytonstone,Snippet,4 - YES / NO,https://go.blueprintfitnessleytonstone.com/founders,https://blueprintfitnessldn.com/leytonstone/kickstart/,confident
+Leytonstone,Snippet,99 DEC OFFER - Trial Sign-up,https://go.blueprintfitnessleytonstone.com/signup-offer,https://blueprintfitnessldn.com/leytonstone/kickstart/,confident
+Leytonstone,Snippet,CHASE UP - 99 DEC OFFER - Trial Sign-up,https://go.blueprintfitnessleytonstone.com/signup-offer,https://blueprintfitnessldn.com/leytonstone/kickstart/,confident
+Leytonstone,Snippet,LEY - Trial Sign-up 149,https://go.blueprintfitnessleytonstone.com/founders,https://blueprintfitnessldn.com/leytonstone/kickstart/,confident
+Leytonstone,Snippet,Nutrition Consultation Request Response,https://www.blueprintfitnessldn.com/nutrition-coaching,https://blueprintfitnessldn.com/members/nutrition-request/,confident (link is DEAD - 404)
+Leytonstone,Snippet,Re-Connect - Enquiry ,https://go.blueprintfitnessleytonstone.com/founders,https://blueprintfitnessldn.com/leytonstone/kickstart/,confident
+Leytonstone,Snippet,Reconnect - chase lead,https://go.blueprintfitnessldn.com,https://blueprintfitnessldn.com/leytonstone/kickstart/,confident
+Leytonstone,Trigger link,Challenge,https://go.blueprintfitnessleytonstone.com,https://blueprintfitnessldn.com/leytonstone/kickstart/,confident
+Leytonstone,Trigger link,Custom Button: Web URL: aHR0cHM6Ly9nby5ibHVlcHJpbnRmaXRuZXNzbGRuLmNvbQ==,https://go.blueprintfitnessleytonstone.com,https://blueprintfitnessldn.com/leytonstone/kickstart/,confident
+Leytonstone,Trigger link,Signup,https://go.blueprintfitnessleytonstone.com/signup,https://blueprintfitnessldn.com/signup-leytonstone/,confident
+Leytonstone,Trigger link,Signup Offer,https://go.blueprintfitnessleytonstone.com/signup,https://blueprintfitnessldn.com/signup-leytonstone/,confident
+Leytonstone,Workflow: FB Comments,"fb_interactive_messenger step ""Facebook Interactive Messenger""",https://go.blueprintfitnessldn.com,https://blueprintfitnessldn.com/leytonstone/kickstart/,confident
+Leytonstone,Workflow: FB Comments All Posts,"messenger step ""MESSENGER""",https://go.blueprintfitnessleytonstone.com,https://blueprintfitnessldn.com/leytonstone/kickstart/,confident
+Leytonstone,Workflow: FB Comments All Posts,"respond_on_comment step ""Respond On Comment""",https://go.blueprintfitnessleytonstone.com,https://blueprintfitnessldn.com/leytonstone/kickstart/,confident
+South Woodford,Snippet,000 - SIGN UP LINK,https://go.blueprintfitnessldn.com/,https://blueprintfitnessldn.com/south-woodford/kickstart/,confident
+South Woodford,Snippet,1 - FIRST CALL - NON RESPONDER,https://go.blueprintfitnessldn.com/,https://blueprintfitnessldn.com/south-woodford/kickstart/,confident
+South Woodford,Snippet,2 - SECOND CALL - NON RESPONDER,https://go.blueprintfitnessldn.com/,https://blueprintfitnessldn.com/south-woodford/kickstart/,confident
+South Woodford,Snippet,3 - THIRD CALL - FINAL TRY,https://go.blueprintfitnessldn.com/,https://blueprintfitnessldn.com/south-woodford/kickstart/,confident
+South Woodford,Snippet,4 - YES / NO,https://go.blueprintfitnessldn.com/,https://blueprintfitnessldn.com/south-woodford/kickstart/,confident
+South Woodford,Snippet,ABI - Check In,https://go.blueprintfitnessldn.com/,https://blueprintfitnessldn.com/south-woodford/kickstart/,confident
+South Woodford,Snippet,DEC OFFE £99 - SIGN UP LINK,https://go.blueprintfitnessldn.com/signup-offer,https://blueprintfitnessldn.com/south-woodford/kickstart/,confident
+South Woodford,Snippet,More info and sign up link,https://go.blueprintfitnessldn.com/,https://blueprintfitnessldn.com/south-woodford/kickstart/,confident
+South Woodford,Snippet,Nutrition Consultation Request Response,https://www.blueprintfitnessldn.com/nutrition-coaching,https://blueprintfitnessldn.com/members/nutrition-request/,confident (link is DEAD - 404)
+South Woodford,Snippet,STRAIGHT TO PAYMENT,http://Go.blueprintfitnessldn.com/signup,https://blueprintfitnessldn.com/signup-southwoodford/,confident
+South Woodford,Trigger link,Challenge,https://go.blueprintfitnessldn.com,https://blueprintfitnessldn.com/south-woodford/kickstart/,confident
+South Woodford,Trigger link,Signup,https://go.blueprintfitnessldn.com/signup,https://blueprintfitnessldn.com/signup-southwoodford/,confident
+South Woodford,Trigger link,Signup Offer,https://go.blueprintfitnessldn.com/signup-offer,https://blueprintfitnessldn.com/south-woodford/kickstart/,confident
+South Woodford,Workflow: FB Comments,"fb_interactive_messenger step ""Facebook Interactive Messenger""",https://go.blueprintfitnessldn.com,https://blueprintfitnessldn.com/south-woodford/kickstart/,confident

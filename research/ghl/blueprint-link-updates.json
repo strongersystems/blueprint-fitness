@@ -1,0 +1,690 @@
+[
+  {
+    "sub_account": "Hackney",
+    "where": "Snippet",
+    "item": "30 DAY FEEDBACK",
+    "old_url": "https://forms.gle/ayxTkN7DDN2KLMMg9",
+    "new_url": "",
+    "status": "DECISION - Google Form (30 Day Feedback); still live"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Snippet",
+    "item": "More info and sign up link",
+    "old_url": "https://bit.ly/blueprint_sign_up_link",
+    "new_url": "https://blueprintfitnessldn.com/signup-southwoodford/",
+    "status": "DECISION - currently redirects to TeamUp membership 94919"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Snippet",
+    "item": "Schedule",
+    "old_url": "https://go.blueprintfitnessldn.com/timetable-sw",
+    "new_url": "",
+    "status": "DECISION - resolves to a timetable JPEG, no page on the new site"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Snippet",
+    "item": "30 DAY FEEDBACK",
+    "old_url": "https://forms.gle/ayxTkN7DDN2KLMMg9",
+    "new_url": "",
+    "status": "DECISION - Google Form (30 Day Feedback); still live"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Snippet",
+    "item": "LEY - Schedule",
+    "old_url": "https://go.blueprintfitnessldn.com/timetable-ls",
+    "new_url": "",
+    "status": "DECISION - resolves to a timetable JPEG, no page on the new site"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Snippet",
+    "item": "Membership Prices",
+    "old_url": "https://go.blueprintfitnessldn.com/memberships",
+    "new_url": "",
+    "status": "DECISION - no membership-comparison page on the new site"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Snippet",
+    "item": "30 DAY FEEDBACK",
+    "old_url": "https://forms.gle/ayxTkN7DDN2KLMMg9",
+    "new_url": "",
+    "status": "DECISION - Google Form (30 Day Feedback); still live"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Snippet",
+    "item": "More info and sign up link",
+    "old_url": "https://bit.ly/blueprint_sign_up_link",
+    "new_url": "https://blueprintfitnessldn.com/signup-southwoodford/",
+    "status": "DECISION - currently redirects to TeamUp membership 94919"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Snippet",
+    "item": "Schedule",
+    "old_url": "https://go.blueprintfitnessldn.com/timetable-sw",
+    "new_url": "",
+    "status": "DECISION - resolves to a timetable JPEG, no page on the new site"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Email template",
+    "item": "Easter Offer 1-Template",
+    "old_url": "https://goteamup.com/p/3662065-blueprint-fitness/memberships/88443/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Snippet",
+    "item": "CHECK IN (Day 28) - End of trial",
+    "old_url": "https://goteamup.com/providers/configure/memberships/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Snippet",
+    "item": "Card Payment Change",
+    "old_url": "https://goteamup.com/consumer_required/?next=/dashboard/payment_methods/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Snippet",
+    "item": "Membership info",
+    "old_url": "https://goteamup.com/p/3662065-blueprint-fitness/memberships/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Snippet",
+    "item": "We Miss You!",
+    "old_url": "https://goteamup.com/p/3662065-blueprint-fitness/memberships/159836/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Trigger link",
+    "item": "Join",
+    "old_url": "https://goteamup.com/p/3662065-blueprint-fitness/memberships/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Trigger link",
+    "item": "Offer Link - Sept 2025",
+    "old_url": "https://goteamup.com/p/3662065-blueprint-fitness/memberships/123799/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Trigger link",
+    "item": "Six Pack Offer",
+    "old_url": "https://goteamup.com/p/3662065-blueprint-fitness/memberships/161108/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Email template",
+    "item": "BASIC TEMPLATE",
+    "old_url": "https://goteamup.com/p/9748082-blueprint-fitness-leytons/memberships/216972/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Email template",
+    "item": "Easter Offer 1-Template Copy",
+    "old_url": "https://goteamup.com/p/3662065-blueprint-fitness/memberships/88443/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Snippet",
+    "item": "LEY - Join 10%",
+    "old_url": "https://goteamup.com/p/9748082-blueprint-fitness-leytons/memberships/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Snippet",
+    "item": "LEY - Join 15%",
+    "old_url": "https://goteamup.com/p/9748082-blueprint-fitness-leytons/memberships/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Snippet",
+    "item": "LEY - Join FULL Member (no discount)",
+    "old_url": "https://goteamup.com/p/9748082-blueprint-fitness-leytons/memberships/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Snippet",
+    "item": "We Miss You!",
+    "old_url": "https://goteamup.com/p/3662065-blueprint-fitness/memberships/159836/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Trigger link",
+    "item": "Join",
+    "old_url": "https://goteamup.com/p/3662065-blueprint-fitness/memberships/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Trigger link",
+    "item": "Six Pack Offer",
+    "old_url": "https://goteamup.com/p/3662065-blueprint-fitness/memberships/161108/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Email template",
+    "item": "Easter Offer 1-Template",
+    "old_url": "https://goteamup.com/p/3662065-blueprint-fitness/memberships/88443/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Snippet",
+    "item": "CHECK IN (Day 21) - One week left of your trial",
+    "old_url": "https://goteamup.com/p/3662065-blueprint-fitness/memberships/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Snippet",
+    "item": "CHECK IN (Day 28) - End of trial",
+    "old_url": "https://goteamup.com/providers/configure/memberships/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Snippet",
+    "item": "CHECK IN (Day 28) - End of trial",
+    "old_url": "https://goteamup.com/p/3662065-blueprint-fitness/memberships/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Snippet",
+    "item": "Card Payment Change",
+    "old_url": "https://goteamup.com/consumer_required/?next=/dashboard/payment_methods/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Snippet",
+    "item": "Membership info",
+    "old_url": "https://goteamup.com/p/3662065-blueprint-fitness/memberships/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Snippet",
+    "item": "We Miss You!",
+    "old_url": "https://goteamup.com/p/3662065-blueprint-fitness/memberships/159836/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Trigger link",
+    "item": "Join",
+    "old_url": "https://goteamup.com/p/3662065-blueprint-fitness/memberships/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Trigger link",
+    "item": "Offer Link - Sept 2025",
+    "old_url": "https://goteamup.com/p/3662065-blueprint-fitness/memberships/123799/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Trigger link",
+    "item": "Six Pack Offer",
+    "old_url": "https://goteamup.com/p/3662065-blueprint-fitness/memberships/161108/",
+    "new_url": "",
+    "status": "LEAVE - TeamUp is the live booking/membership platform"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Email template",
+    "item": "Launch 1-Template",
+    "old_url": "https://hackney.blueprintfitness.uk/signup",
+    "new_url": "https://blueprintfitnessldn.com/signup-hackney/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Email template",
+    "item": "Launch 2-Template",
+    "old_url": "https://hackney.blueprintfitness.uk/signup",
+    "new_url": "https://blueprintfitnessldn.com/signup-hackney/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Email template",
+    "item": "Launch 3-Template",
+    "old_url": "https://hackney.blueprintfitness.uk/signup",
+    "new_url": "https://blueprintfitnessldn.com/signup-hackney/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Email template",
+    "item": "Launch 4-Template",
+    "old_url": "https://hackney.blueprintfitness.uk/signup",
+    "new_url": "https://blueprintfitnessldn.com/signup-hackney/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Email template",
+    "item": "Launch 5-Template",
+    "old_url": "https://hackney.blueprintfitness.uk/signup",
+    "new_url": "https://blueprintfitnessldn.com/signup-hackney/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Snippet",
+    "item": "000 - SIGN UP LINK",
+    "old_url": "https://hackney.blueprintfitness.uk/signup",
+    "new_url": "https://blueprintfitnessldn.com/signup-hackney/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Snippet",
+    "item": "000 - SIGN UP LINK",
+    "old_url": "https://go.blueprintfitnessldn.com/",
+    "new_url": "https://blueprintfitnessldn.com/hackney/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Snippet",
+    "item": "0000 - Pre-sale",
+    "old_url": "https://hackney.blueprintfitness.uk/signup",
+    "new_url": "https://blueprintfitnessldn.com/signup-hackney/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Snippet",
+    "item": "001 - Hackney Founder",
+    "old_url": "https://hackney.blueprintfitness.uk/signup",
+    "new_url": "https://blueprintfitnessldn.com/signup-hackney/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Snippet",
+    "item": "1 - FIRST CALL - NON RESPONDER",
+    "old_url": "https://hackney.blueprintfitness.uk/signup",
+    "new_url": "https://blueprintfitnessldn.com/signup-hackney/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Snippet",
+    "item": "1 - FIRST CALL - NON RESPONDER",
+    "old_url": "https://go.blueprintfitnessldn.com/",
+    "new_url": "https://blueprintfitnessldn.com/hackney/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Snippet",
+    "item": "2 - SECOND CALL - NON RESPONDER",
+    "old_url": "https://go.blueprintfitnessldn.com/",
+    "new_url": "https://blueprintfitnessldn.com/hackney/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Snippet",
+    "item": "3 - THIRD CALL - FINAL TRY",
+    "old_url": "https://go.blueprintfitnessldn.com/",
+    "new_url": "https://blueprintfitnessldn.com/hackney/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Snippet",
+    "item": "4 - YES / NO",
+    "old_url": "https://go.blueprintfitnessldn.com/",
+    "new_url": "https://blueprintfitnessldn.com/hackney/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Snippet",
+    "item": "More info and sign up link",
+    "old_url": "https://go.blueprintfitnessldn.com/",
+    "new_url": "https://blueprintfitnessldn.com/hackney/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Snippet",
+    "item": "Nutrition Consultation Request Response",
+    "old_url": "https://www.blueprintfitnessldn.com/nutrition-coaching",
+    "new_url": "https://blueprintfitnessldn.com/members/nutrition-request/",
+    "status": "confident (link is DEAD - 404)"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Snippet",
+    "item": "STRAIGHT TO PAYMENT",
+    "old_url": "http://Go.blueprintfitnessldn.com/signup",
+    "new_url": "https://blueprintfitnessldn.com/signup-hackney/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Trigger link",
+    "item": "Challenge",
+    "old_url": "https://go.blueprintfitnessldn.com",
+    "new_url": "https://blueprintfitnessldn.com/hackney/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Trigger link",
+    "item": "Signup",
+    "old_url": "https://go.blueprintfitnessldn.com/signup",
+    "new_url": "https://blueprintfitnessldn.com/signup-hackney/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Hackney",
+    "where": "Trigger link",
+    "item": "Signup Offer",
+    "old_url": "https://go.blueprintfitnessldn.com/signup-offer",
+    "new_url": "https://blueprintfitnessldn.com/hackney/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Email template",
+    "item": "BASIC TEMPLATE",
+    "old_url": "https://go.blueprintfitnessleytonstone.com/founders",
+    "new_url": "https://blueprintfitnessldn.com/leytonstone/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Snippet",
+    "item": "1 - FIRST CALL - NON RESPONDER",
+    "old_url": "https://go.blueprintfitnessleytonstone.com/founders",
+    "new_url": "https://blueprintfitnessldn.com/leytonstone/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Snippet",
+    "item": "2 - SECOND CALL - NON RESPONDER",
+    "old_url": "https://go.blueprintfitnessleytonstone.com/founders",
+    "new_url": "https://blueprintfitnessldn.com/leytonstone/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Snippet",
+    "item": "4 - YES / NO",
+    "old_url": "https://go.blueprintfitnessleytonstone.com/founders",
+    "new_url": "https://blueprintfitnessldn.com/leytonstone/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Snippet",
+    "item": "99 DEC OFFER - Trial Sign-up",
+    "old_url": "https://go.blueprintfitnessleytonstone.com/signup-offer",
+    "new_url": "https://blueprintfitnessldn.com/leytonstone/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Snippet",
+    "item": "CHASE UP - 99 DEC OFFER - Trial Sign-up",
+    "old_url": "https://go.blueprintfitnessleytonstone.com/signup-offer",
+    "new_url": "https://blueprintfitnessldn.com/leytonstone/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Snippet",
+    "item": "LEY - Trial Sign-up 149",
+    "old_url": "https://go.blueprintfitnessleytonstone.com/founders",
+    "new_url": "https://blueprintfitnessldn.com/leytonstone/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Snippet",
+    "item": "Nutrition Consultation Request Response",
+    "old_url": "https://www.blueprintfitnessldn.com/nutrition-coaching",
+    "new_url": "https://blueprintfitnessldn.com/members/nutrition-request/",
+    "status": "confident (link is DEAD - 404)"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Snippet",
+    "item": "Re-Connect - Enquiry ",
+    "old_url": "https://go.blueprintfitnessleytonstone.com/founders",
+    "new_url": "https://blueprintfitnessldn.com/leytonstone/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Snippet",
+    "item": "Reconnect - chase lead",
+    "old_url": "https://go.blueprintfitnessldn.com",
+    "new_url": "https://blueprintfitnessldn.com/leytonstone/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Trigger link",
+    "item": "Challenge",
+    "old_url": "https://go.blueprintfitnessleytonstone.com",
+    "new_url": "https://blueprintfitnessldn.com/leytonstone/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Trigger link",
+    "item": "Custom Button: Web URL: aHR0cHM6Ly9nby5ibHVlcHJpbnRmaXRuZXNzbGRuLmNvbQ==",
+    "old_url": "https://go.blueprintfitnessleytonstone.com",
+    "new_url": "https://blueprintfitnessldn.com/leytonstone/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Trigger link",
+    "item": "Signup",
+    "old_url": "https://go.blueprintfitnessleytonstone.com/signup",
+    "new_url": "https://blueprintfitnessldn.com/signup-leytonstone/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Trigger link",
+    "item": "Signup Offer",
+    "old_url": "https://go.blueprintfitnessleytonstone.com/signup",
+    "new_url": "https://blueprintfitnessldn.com/signup-leytonstone/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Workflow: FB Comments",
+    "item": "fb_interactive_messenger step \"Facebook Interactive Messenger\"",
+    "old_url": "https://go.blueprintfitnessldn.com",
+    "new_url": "https://blueprintfitnessldn.com/leytonstone/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Workflow: FB Comments All Posts",
+    "item": "messenger step \"MESSENGER\"",
+    "old_url": "https://go.blueprintfitnessleytonstone.com",
+    "new_url": "https://blueprintfitnessldn.com/leytonstone/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "Leytonstone",
+    "where": "Workflow: FB Comments All Posts",
+    "item": "respond_on_comment step \"Respond On Comment\"",
+    "old_url": "https://go.blueprintfitnessleytonstone.com",
+    "new_url": "https://blueprintfitnessldn.com/leytonstone/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Snippet",
+    "item": "000 - SIGN UP LINK",
+    "old_url": "https://go.blueprintfitnessldn.com/",
+    "new_url": "https://blueprintfitnessldn.com/south-woodford/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Snippet",
+    "item": "1 - FIRST CALL - NON RESPONDER",
+    "old_url": "https://go.blueprintfitnessldn.com/",
+    "new_url": "https://blueprintfitnessldn.com/south-woodford/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Snippet",
+    "item": "2 - SECOND CALL - NON RESPONDER",
+    "old_url": "https://go.blueprintfitnessldn.com/",
+    "new_url": "https://blueprintfitnessldn.com/south-woodford/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Snippet",
+    "item": "3 - THIRD CALL - FINAL TRY",
+    "old_url": "https://go.blueprintfitnessldn.com/",
+    "new_url": "https://blueprintfitnessldn.com/south-woodford/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Snippet",
+    "item": "4 - YES / NO",
+    "old_url": "https://go.blueprintfitnessldn.com/",
+    "new_url": "https://blueprintfitnessldn.com/south-woodford/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Snippet",
+    "item": "ABI - Check In",
+    "old_url": "https://go.blueprintfitnessldn.com/",
+    "new_url": "https://blueprintfitnessldn.com/south-woodford/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Snippet",
+    "item": "DEC OFFE \u00a399 - SIGN UP LINK",
+    "old_url": "https://go.blueprintfitnessldn.com/signup-offer",
+    "new_url": "https://blueprintfitnessldn.com/south-woodford/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Snippet",
+    "item": "More info and sign up link",
+    "old_url": "https://go.blueprintfitnessldn.com/",
+    "new_url": "https://blueprintfitnessldn.com/south-woodford/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Snippet",
+    "item": "Nutrition Consultation Request Response",
+    "old_url": "https://www.blueprintfitnessldn.com/nutrition-coaching",
+    "new_url": "https://blueprintfitnessldn.com/members/nutrition-request/",
+    "status": "confident (link is DEAD - 404)"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Snippet",
+    "item": "STRAIGHT TO PAYMENT",
+    "old_url": "http://Go.blueprintfitnessldn.com/signup",
+    "new_url": "https://blueprintfitnessldn.com/signup-southwoodford/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Trigger link",
+    "item": "Challenge",
+    "old_url": "https://go.blueprintfitnessldn.com",
+    "new_url": "https://blueprintfitnessldn.com/south-woodford/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Trigger link",
+    "item": "Signup",
+    "old_url": "https://go.blueprintfitnessldn.com/signup",
+    "new_url": "https://blueprintfitnessldn.com/signup-southwoodford/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Trigger link",
+    "item": "Signup Offer",
+    "old_url": "https://go.blueprintfitnessldn.com/signup-offer",
+    "new_url": "https://blueprintfitnessldn.com/south-woodford/kickstart/",
+    "status": "confident"
+  },
+  {
+    "sub_account": "South Woodford",
+    "where": "Workflow: FB Comments",
+    "item": "fb_interactive_messenger step \"Facebook Interactive Messenger\"",
+    "old_url": "https://go.blueprintfitnessldn.com",
+    "new_url": "https://blueprintfitnessldn.com/south-woodford/kickstart/",
+    "status": "confident"
+  }
+]

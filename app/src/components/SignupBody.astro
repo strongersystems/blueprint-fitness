@@ -26,8 +26,8 @@ const chooser = !studio;
       Twelve coached sessions, unlimited classes and a plan written for you &mdash; over your first
       thirty days, with no more than five people to a coach.
       {chooser
-        ? ' Pick your studio below and you can sign up in a couple of minutes.'
-        : ` Everything below signs you up at ${studio!.name}.`}
+        ? ' Pick your studio just below and you can sign up in a couple of minutes.'
+        : ` The form just below signs you up at ${studio!.name}.`}
     </p>
     <ul class="check-list" style="margin-top:1.6rem">
       <li>12 coached sessions across your first 30 days</li>
@@ -37,28 +37,6 @@ const chooser = !studio;
     </ul>
   </div>
 </section>
-
-<section class="section">
-  <div class="container grid-3">
-    <article class="card">
-      <p class="dim">01</p>
-      <h3 class="h-3">You sign up below</h3>
-      <p>Takes a couple of minutes. You&rsquo;ll get a confirmation straight away.</p>
-    </article>
-    <article class="card">
-      <p class="dim">02</p>
-      <h3 class="h-3">We get in touch</h3>
-      <p>A coach calls to learn what you&rsquo;re after and book your first session.</p>
-    </article>
-    <article class="card">
-      <p class="dim">03</p>
-      <h3 class="h-3">Day one</h3>
-      <p>You turn up. We handle the programme, the coaching and the check-ins.</p>
-    </article>
-  </div>
-</section>
-
-<VideoTestimonials />
 
 <section class="section on-mist" id="signup">
   <div class="container">
@@ -104,7 +82,29 @@ const chooser = !studio;
   </div>
 </section>
 
-<section class="section on-dark">
+<section class="section">
+  <div class="container grid-3">
+    <article class="card">
+      <p class="dim">01</p>
+      <h3 class="h-3">You sign up</h3>
+      <p>Takes a couple of minutes. You&rsquo;ll get a confirmation straight away.</p>
+    </article>
+    <article class="card">
+      <p class="dim">02</p>
+      <h3 class="h-3">We get in touch</h3>
+      <p>A coach calls to learn what you&rsquo;re after and book your first session.</p>
+    </article>
+    <article class="card">
+      <p class="dim">03</p>
+      <h3 class="h-3">Day one</h3>
+      <p>You turn up. We handle the programme, the coaching and the check-ins.</p>
+    </article>
+  </div>
+</section>
+
+<VideoTestimonials />
+
+<section class="section on-mist">
   <div class="container grid-2" style="align-items:center">
     <div>
       <p class="annotation">No lock-in, no surprises</p>

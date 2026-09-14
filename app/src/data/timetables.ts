@@ -102,11 +102,12 @@ const ls: Timetable = {
 
 const hackney: Timetable = {
   weekdayCols: WEEKDAYS,
-  weekendCols: WEEKEND,
+  weekendCols: ['Sat'],   /* closed Sunday */
   weekdays: [],
   weekend: [],
   note: 'The Hackney grid is being finalised. Sessions run 6am–9pm Monday to Friday and ' +
-    '8am–4pm at weekends — message the studio and we will tell you exactly what is on, and when.',
+    '8–11am on Saturday; the studio is closed on Sunday. Message us and we will tell you ' +
+    'exactly what is on, and when.',
 };
 
 export const timetables: Record<string, Timetable> = {

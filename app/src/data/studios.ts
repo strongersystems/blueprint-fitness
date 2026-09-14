@@ -29,6 +29,19 @@ export interface Studio {
       Taken from each studio's GoHighLevel sub-account phone. */
   whatsapp: string;
   hours: string;
+  /**
+   * Per-studio facts that used to be written into the templates as if they
+   * were true everywhere. They are not: Hackney is closed on Sundays and has
+   * no 100+ weekly session count to stand behind.
+   */
+  /** how the open days read in prose, e.g. "7 days a week" */
+  openDaysLine: string;
+  /** weekly session-count claim for the hero stat; null = omit the stat */
+  weeklySessions: string | null;
+  /** the "unlimited classes" line on the sign-up page */
+  classesLine: string;
+  /** the reassurance headline on the next-steps page */
+  reassure: { emphasis: string; tail: string };
   /** short line used as the eyebrow on studio pages */
   eyebrow: string;
   blurb: string;
@@ -66,6 +79,10 @@ export const studios: Studio[] = [
     email: 'southwoodford@blueprintfitnessldn.com',
     whatsapp: '447538298457',
     hours: 'Open 6am–9pm, every day — 100+ sessions a week',
+    openDaysLine: '7 days a week',
+    weeklySessions: '100+',
+    classesLine: 'Unlimited classes on top — 100+ a week',
+    reassure: { emphasis: 'Good.', tail: 'That’s day one.' },
     eyebrow: 'Where it all started',
     blurb:
       'The original Blueprint. A premium training space with a thriving community, expert coaching, and structured group training focused on strength, conditioning and consistency.',
@@ -93,6 +110,10 @@ export const studios: Studio[] = [
     email: 'leytonstone@blueprintfitnessldn.com',
     whatsapp: '447947790035',
     hours: 'Open early ’til late, 7 days a week',
+    openDaysLine: '7 days a week',
+    weeklySessions: '100+',
+    classesLine: 'Unlimited classes on top — 100+ a week',
+    reassure: { emphasis: 'Good.', tail: 'That’s day one.' },
     eyebrow: 'Progress you can measure',
     blurb:
       'Small group coaching built around measurable progress and long-term development — expertly designed programmes, delivered by coaches who genuinely care how you’re getting on.',
@@ -119,7 +140,11 @@ export const studios: Studio[] = [
     lng: -0.050239,
     email: 'hackney@blueprintfitnessldn.com',
     whatsapp: '447944690356',
-    hours: 'Mon–Fri 6am–9pm · Sat–Sun 8am–4pm',
+    hours: 'Mon–Fri 6am–9pm · Sat 8–11am · Closed Sunday',
+    openDaysLine: 'Monday to Saturday',
+    weeklySessions: null,
+    classesLine: 'Unlimited classes on top',
+    reassure: { emphasis: 'That’s okay.', tail: 'We can help you from here!' },
     eyebrow: 'The newest one — now open',
     blurb:
       'Our newest studio, tucked into a railway arch just off Morning Lane. A brand-new space built for structured training and community-led coaching — same warm welcome, box-fresh kit.',

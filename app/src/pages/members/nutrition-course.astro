@@ -1,0 +1,322 @@
+---
+/**
+ * The Nutrition Video Series — 22 lessons, watched in the browser.
+ *
+ * Built as a player plus a contents list rather than 22 stacked embeds: one
+ * iframe is created only when a lesson is chosen, so the page costs nothing
+ * until someone actually watches something, and YouTube is not given a chance
+ * to set cookies on arrival (nocookie host, and no iframe until the click).
+ *
+ * Each lesson has a #fragment, so a coach can send a member straight to one.
+ * Progress is remembered per-browser in localStorage — a convenience, not a
+ * record: it never leaves the member's own device.
+ */
+import Base from '../../layouts/Base.astro';
+import MembersNav from '../../components/MembersNav.astro';
+import { modules, lessons } from '../../data/nutritionCourse';
+import { url } from '../../lib/url';
+---
+<Base
+  title={'Nutrition Video Series — Blueprint Fitness'}
+  description={'The Blueprint Fitness nutrition course: 22 short lessons on calories, adherence, habits and what to do when progress stalls.'}
+  noindex>
+
+  <MembersNav current="nutrition-course" />
+
+  <section class="section on-dark section-tight">
+    <div class="container">
+      <p class="dim sec-head" style="margin-bottom:1rem">Members &middot; Nutrition</p>
+      <h1 class="h-display">The Nutrition <span class="draft-u">Video Series</span></h1>
+      <p class="lede">{lessons.length} short lessons, in the order that actually matters &mdash;
+        starting with the things that move the needle most. Watch one a day, or work through a
+        module at a time. Your place is remembered on this device.</p>
+      <div class="btn-row" style="margin-top:1.2rem">
+        <a class="btn btn-primary" href="#watch" data-course-start>Start the series</a>
+        <a class="btn btn-ghost" href={url('members/nutrition-request/')}>Book a consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- the player. Empty until a lesson is picked, so nothing loads on arrival. -->
+  <section class="section" id="watch">
+    <div class="container">
+      <div class="course-layout">
+        <div>
+          <div class="course-stage" id="stage" data-empty="true">
+            <div class="course-placeholder">
+              <p class="course-eyebrow">Ready when you are</p>
+              <p style="margin:0">Pick a lesson from the list and it will play here.</p>
+            </div>
+          </div>
+
+          <div class="course-bar">
+            <button class="btn btn-ghost" type="button" id="prev" disabled>&larr; Previous</button>
+            <p class="course-now" id="now" aria-live="polite">No lesson playing</p>
+            <button class="btn btn-ghost" type="button" id="next" disabled>Next &rarr;</button>
+          </div>
+
+          <p class="course-done-row">
+            <label class="course-done">
+              <input type="checkbox" id="done" disabled />
+              <span>Mark this lesson as watched</span>
+            </label>
+            <a class="course-yt" id="yt" href="https://www.youtube.com/" target="_blank" rel="noopener" hidden>Open on YouTube &rarr;</a>
+          </p>
+        </div>
+
+        <!-- contents -->
+        <aside class="course-toc" aria-label="Course contents">
+          <div class="course-toc-head">
+            <p class="course-eyebrow course-eyebrow-ink">Contents</p>
+            <p class="course-progress" id="progress">0 of {lessons.length} watched</p>
+            <div class="course-meter" role="presentation"><span id="meter"></span></div>
+            <button class="course-reset" type="button" id="reset">Reset progress</button>
+          </div>
+
+          {modules.map((m, mi) => (
+            <section class="course-module">
+              <h2 class="course-module-title">
+                <span class="course-module-n">{String(mi + 1).padStart(2, '0')}</span>{m.title}
+              </h2>
+              <p class="course-module-blurb">{m.blurb}</p>
+              <ol class="course-list">
+                {m.lessons.map((l) => (
+                  <li>
+                    <a class="course-item" href={`#${l.slug}`}
+                       data-lesson={l.id} data-slug={l.slug} data-n={l.n} data-title={l.title}>
+                      <span class="course-n">{l.n}</span>
+                      <span class="course-title">{l.title}</span>
+                      <span class="course-tick" aria-hidden="true"></span>
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          ))}
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-mist">
+    <div class="container grid-2" style="align-items:start">
+      <div>
+        <div class="sec-head">
+          <p class="dim">How to use it</p>
+          <h2 class="h-1">Watch it in <span class="draft-u hl">order</span></h2>
+        </div>
+        <ul class="check-list">
+          <li>The order is deliberate &mdash; the early lessons are the ones that matter most</li>
+          <li>Nothing here needs a notebook. Watch, then change one thing</li>
+          <li>Stuck on something? Bring it to your next check-in</li>
+        </ul>
+      </div>
+      <div>
+        <div class="sec-head">
+          <p class="dim">Want it applied to you?</p>
+          <h2 class="h-1">Book a consultation</h2>
+        </div>
+        <p class="lede">The series explains the principles. A consultation turns them into your
+          plan &mdash; built around how you actually live.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href={url('members/nutrition-request/')}>Request a consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .course-layout { display: grid; gap: 1.6rem; grid-template-columns: 1fr; align-items: start; }
+  @media (min-width: 62rem) {
+    .course-layout { grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); }
+    /* the contents list follows you down the page on a wide screen */
+    .course-toc { position: sticky; top: 1rem; max-height: calc(100vh - 2rem); overflow-y: auto; }
+  }
+
+  .course-stage { position: relative; aspect-ratio: 16 / 9; background: var(--ink, #101B2F);
+    border-radius: 14px; overflow: hidden; }
+  .course-stage :global(iframe) { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .course-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center; color: #fff; padding: 1.4rem; }
+  .course-eyebrow { margin: 0 0 .4rem; font-family: var(--font-display); font-size: .78rem;
+    font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #5EA2FF; }
+  .course-eyebrow-ink { color: var(--blue, #0072F5); margin-bottom: 0; }
+  .course-stage[data-empty="false"] .course-placeholder { display: none; }
+
+  .course-bar { display: flex; align-items: center; justify-content: space-between; gap: .8rem;
+    margin-top: .9rem; flex-wrap: wrap; }
+  .course-now { margin: 0; font-weight: 800; color: var(--ink, #101B2F); text-align: center;
+    flex: 1 1 12rem; }
+  .course-bar .btn:disabled { opacity: .4; cursor: not-allowed; }
+  /* narrow screens: the lesson title gets its own row above the buttons,
+     rather than being squeezed between them and wrapping awkwardly */
+  @media (max-width: 34rem) {
+    .course-now { order: -1; flex-basis: 100%; }
+    .course-bar .btn { flex: 1 1 0; }
+  }
+
+  .course-done-row { display: flex; align-items: center; justify-content: space-between;
+    gap: .8rem; flex-wrap: wrap; margin: .7rem 0 0; }
+  .course-done { display: inline-flex; align-items: center; gap: .5rem; font-weight: 700;
+    color: var(--grey, #3D4A63); cursor: pointer; }
+  .course-done input:disabled { cursor: not-allowed; }
+  .course-done:has(input:disabled) { opacity: .45; cursor: not-allowed; }
+  .course-yt { font-weight: 700; color: var(--blue, #0072F5); text-decoration: none; }
+
+  .course-toc { background: #fff; border: 1px solid rgba(16,27,47,.12); border-radius: 14px;
+    padding: 1.1rem 1.1rem 1.4rem; }
+  .course-toc-head { padding-bottom: .9rem; border-bottom: 1px solid rgba(16,27,47,.1);
+    margin-bottom: .9rem; }
+  .course-progress { margin: .2rem 0 .5rem; font-weight: 800; color: var(--ink, #101B2F); }
+  .course-meter { height: 6px; border-radius: 99px; background: rgba(16,27,47,.1); overflow: hidden; }
+  .course-meter span { display: block; height: 100%; width: 0%; background: var(--blue, #0072F5);
+    transition: width .35s ease; }
+  .course-reset { margin-top: .7rem; background: none; border: 0; padding: 0; cursor: pointer;
+    font: inherit; font-size: .82rem; color: var(--grey, #3D4A63); text-decoration: underline; }
+
+  .course-module + .course-module { margin-top: 1.2rem; }
+  .course-module-title { display: flex; align-items: baseline; gap: .5rem; margin: 0;
+    font-family: var(--font-display); font-size: 1rem; text-transform: uppercase;
+    letter-spacing: .05em; color: var(--ink, #101B2F); }
+  .course-module-n { color: var(--blue, #0072F5); font-size: .78rem; }
+  .course-module-blurb { margin: .2rem 0 .5rem; font-size: .85rem; color: var(--grey, #3D4A63); }
+
+  .course-list { list-style: none; margin: 0; padding: 0; }
+  .course-item { display: flex; align-items: center; gap: .6rem; padding: .5rem .55rem;
+    border-radius: 9px; text-decoration: none; color: var(--ink, #101B2F); font-weight: 600;
+    line-height: 1.35; }
+  .course-item:hover, .course-item:focus-visible { background: var(--mist, #EAF1FB); }
+  .course-item[aria-current="true"] { background: var(--mist, #EAF1FB);
+    box-shadow: inset 3px 0 0 var(--blue, #0072F5); }
+  .course-n { flex: none; width: 1.6rem; height: 1.6rem; border-radius: 50%;
+    display: grid; place-items: center; font-size: .75rem; font-weight: 800;
+    background: rgba(16,27,47,.07); color: var(--grey, #3D4A63); }
+  .course-item[aria-current="true"] .course-n { background: var(--blue, #0072F5); color: #fff; }
+  .course-title { flex: 1 1 auto; font-size: .9rem; }
+  .course-tick { flex: none; width: 1.05rem; height: 1.05rem; border-radius: 50%;
+    border: 2px solid rgba(16,27,47,.18); }
+  .course-item[data-done="true"] .course-tick { background: #16C34A; border-color: #16C34A;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.4l2.2 2.2 4.8-5' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-size: 78%; background-position: center; background-repeat: no-repeat; }
+  .course-item[data-done="true"] .course-title { color: var(--grey, #3D4A63); }
+</style>
+
+<script is:inline>
+  (function () {
+    var KEY = 'bf-nutrition-progress';
+    var items = Array.prototype.slice.call(document.querySelectorAll('[data-lesson]'));
+    if (!items.length) return;
+
+    var stage = document.getElementById('stage');
+    var now = document.getElementById('now');
+    var prev = document.getElementById('prev');
+    var next = document.getElementById('next');
+    var done = document.getElementById('done');
+    var yt = document.getElementById('yt');
+    var meter = document.getElementById('meter');
+    var progress = document.getElementById('progress');
+    var reset = document.getElementById('reset');
+    var current = -1;
+
+    /* localStorage can throw outright (private mode, blocked site data), so
+       every read and write is guarded and the page works without it. */
+    function load() {
+      try { return JSON.parse(localStorage.getItem(KEY) || '[]') || []; } catch (e) { return []; }
+    }
+    function save(list) {
+      try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
+    }
+    var watched = load();
+
+    function paint() {
+      items.forEach(function (a) {
+        a.setAttribute('data-done', watched.indexOf(a.dataset.slug) > -1 ? 'true' : 'false');
+      });
+      var n = items.filter(function (a) { return a.getAttribute('data-done') === 'true'; }).length;
+      progress.textContent = n + ' of ' + items.length + ' watched';
+      meter.style.width = Math.round((n / items.length) * 100) + '%';
+    }
+
+    function play(i, push) {
+      if (i < 0 || i >= items.length) return;
+      current = i;
+      var a = items[i];
+
+      var frame = document.createElement('iframe');
+      /* nocookie host, and only ever created on a deliberate click */
+      frame.src = 'https://www.youtube-nocookie.com/embed/' + a.dataset.lesson + '?rel=0&autoplay=1';
+      frame.title = 'Lesson ' + a.dataset.n + ': ' + a.dataset.title;
+      frame.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+      frame.allowFullscreen = true;
+      var old = stage.querySelector('iframe');
+      if (old) old.remove();
+      stage.appendChild(frame);
+      stage.setAttribute('data-empty', 'false');
+
+      now.textContent = a.dataset.n + '. ' + a.dataset.title;
+      items.forEach(function (x) { x.removeAttribute('aria-current'); });
+      a.setAttribute('aria-current', 'true');
+
+      prev.disabled = i === 0;
+      next.disabled = i === items.length - 1;
+      done.disabled = false;
+      done.checked = watched.indexOf(a.dataset.slug) > -1;
+      yt.hidden = false;
+      yt.href = 'https://youtu.be/' + a.dataset.lesson;
+
+      if (push && history.replaceState) history.replaceState(null, '', '#' + a.dataset.slug);
+      a.scrollIntoView({ block: 'nearest' });
+    }
+
+    items.forEach(function (a, i) {
+      a.addEventListener('click', function (e) { e.preventDefault(); play(i, true); });
+    });
+    prev.addEventListener('click', function () { play(current - 1, true); });
+    next.addEventListener('click', function () { play(current + 1, true); });
+
+    done.addEventListener('change', function () {
+      var slug = items[current].dataset.slug;
+      var at = watched.indexOf(slug);
+      if (done.checked && at === -1) watched.push(slug);
+      if (!done.checked && at > -1) watched.splice(at, 1);
+      save(watched);
+      paint();
+    });
+
+    reset.addEventListener('click', function () {
+      watched = [];
+      save(watched);
+      paint();
+      if (current > -1) done.checked = false;
+    });
+
+    document.querySelector('[data-course-start]').addEventListener('click', function (e) {
+      e.preventDefault();
+      /* resume where they left off: the first lesson not yet ticked */
+      var i = items.findIndex(function (a) { return watched.indexOf(a.dataset.slug) === -1; });
+      play(i === -1 ? 0 : i, true);
+      document.getElementById('watch').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    paint();
+
+    /* a lesson can be linked to directly, but do not autoplay on arrival —
+       just select it, so the member chooses to start */
+    var hash = location.hash.replace('#', '');
+    if (hash) {
+      var i = items.findIndex(function (a) { return a.dataset.slug === hash; });
+      if (i > -1) {
+        items[i].setAttribute('aria-current', 'true');
+        now.textContent = items[i].dataset.n + '. ' + items[i].dataset.title;
+        current = i;
+        prev.disabled = i === 0;
+        next.disabled = i === items.length - 1;
+        done.disabled = false;
+        done.checked = watched.indexOf(items[i].dataset.slug) > -1;
+        yt.hidden = false;
+        yt.href = 'https://youtu.be/' + items[i].dataset.lesson;
+      }
+    }
+  })();
+</script>

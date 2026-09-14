@@ -74,7 +74,7 @@ const { studio } = Astro.props;
         <p class="lede">We&rsquo;ve got your details &mdash; a coach from {studio.name} will be in
           touch. If you&rsquo;d rather get going now, send us a message and we&rsquo;ll sort your
           first session between us.</p>
-        <p class="annotation">Sessions run 7 days a week, early &rsquo;til late.</p>
+        <p class="annotation">Sessions run {studio.openDaysLine}, early &rsquo;til late.</p>
       </div>
       <div class="card" style="align-self:start">
         <h3 class="h-3" style="margin:0 0 .6rem">Talk to {studio.name}</h3>
@@ -95,7 +95,7 @@ const { studio } = Astro.props;
     <div class="container grid-2" style="align-items:center">
       <div>
         <p class="annotation reveal">A message from the team</p>
-        <h2 class="h-1">Nervous? <span class="draft-u hl">Good.</span><br />That’s day one.</h2>
+        <h2 class="h-1">Nervous? <span class="draft-u hl">{studio.reassure.emphasis}</span><br />{studio.reassure.tail}</h2>
         <p class="lede">The most important step was putting your name down. This week, your only
           goal is to show up — learn the movements, meet the coaches, get comfortable in the
           space. Consistency beats intensity, every single time.</p>

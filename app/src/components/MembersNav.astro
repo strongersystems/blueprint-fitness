@@ -10,7 +10,8 @@ const { current = '' } = Astro.props;
 const links = [
   { slug: 'hub',      href: url('members/'),                        label: 'Members home' },
   { slug: 'check-in', href: url('members/check-in/'),               label: 'Check in' },
-  { slug: 'nutrition',href: url('members/nutrition-request/'),      label: 'Nutrition' },
+  { slug: 'nutrition-course', href: url('members/nutrition-course/'), label: 'Nutrition course' },
+  { slug: 'nutrition',href: url('members/nutrition-request/'),      label: 'Nutrition consult' },
   { slug: 'bookings', href: url('members/bookings-cancellations/'), label: 'Bookings' },
   { slug: 'terms',    href: url('members/terms/'),                  label: 'Terms' },
   { slug: 'cancel',   href: url('members/cancel/'),                 label: 'Pause or cancel' },

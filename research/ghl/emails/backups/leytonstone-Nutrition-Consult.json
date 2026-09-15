@@ -1,16 +1,15 @@
 {
  "workflow": {
-  "creationSource": "builder",
   "_id": "bfe3b47a-7061-425b-aa25-21860a0b781f",
   "locationId": "mztjJyXHNWiEotc8ItXP",
   "name": "Nutrition Consult",
   "status": "published",
-  "version": 2,
+  "version": 3,
   "allowMultiple": true,
   "timezone": "account",
   "removeContactFromLastStep": true,
-  "filePath": "location/mztjJyXHNWiEotc8ItXP/workflows/bfe3b47a-7061-425b-aa25-21860a0b781f/2",
-  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2FmztjJyXHNWiEotc8ItXP%2Fworkflows%2Fbfe3b47a-7061-425b-aa25-21860a0b781f%2F2?alt=media&token=4105e88d-013f-45c9-8cc1-17dc25cd3abc",
+  "filePath": "location/mztjJyXHNWiEotc8ItXP/workflows/bfe3b47a-7061-425b-aa25-21860a0b781f/3",
+  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/automation-workflows-production/o/location%2FmztjJyXHNWiEotc8ItXP%2Fworkflows%2Fbfe3b47a-7061-425b-aa25-21860a0b781f%2F3?alt=media&token=acbab7bd-90d8-4154-84d4-ebeb7cbb6261",
   "stopOnResponse": false,
   "autoMarkAsRead": false,
   "originId": "de67f276-2f54-44ad-93a9-bbe27d8126c7",
@@ -19,7 +18,7 @@
   "meta": null,
   "updatedBy": "snapshot",
   "createdAt": "2024-10-16T11:49:16.492Z",
-  "updatedAt": "2024-10-16T11:49:20.947Z",
+  "updatedAt": "2026-09-15T08:44:24.897Z",
   "deleted": false,
   "__v": 0,
   "allowMultipleOpportunity": false,
@@ -40,6 +39,9 @@
    "updatedByName": "snapshot",
    "updatedAt": "2024-10-16T11:49:20.510Z"
   },
+  "companyId": "BHs3MppSlUdmHKGV7DDA",
+  "creationSource": "builder",
+  "isTriggerBucketMigrated": false,
   "id": "bfe3b47a-7061-425b-aa25-21860a0b781f",
   "workflowData": {
    "templates": [
@@ -126,9 +128,9 @@
      "attributes": {
       "from_name": "Blueprint Fitness Nutrition Team",
       "from_email": "info@blueprintfitnessldn.com",
-      "subject": "Nutrition Consultation Request",
-      "template_id": "7CtesP02UIJeN82bSs1t",
-      "templatesource": "other",
+      "subject": "Your nutrition consultation — what to bring",
+      "template_id": "6aa904dfbbf4cb7988a9f75b",
+      "templatesource": "email-builder",
       "attachments": []
      },
      "name": "Email",
@@ -252,9 +254,9 @@
    "attributes": {
     "from_name": "Blueprint Fitness Nutrition Team",
     "from_email": "info@blueprintfitnessldn.com",
-    "subject": "Nutrition Consultation Request",
-    "template_id": "7CtesP02UIJeN82bSs1t",
-    "templatesource": "other",
+    "subject": "Your nutrition consultation — what to bring",
+    "template_id": "6aa904dfbbf4cb7988a9f75b",
+    "templatesource": "email-builder",
     "attachments": []
    },
    "name": "Email",

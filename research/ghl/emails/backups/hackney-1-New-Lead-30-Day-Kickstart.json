@@ -4,12 +4,12 @@
   "locationId": "147m777NnBtnn7yLrsdb",
   "name": "1. New Lead - 30 Day Kickstart",
   "status": "draft",
-  "version": 6,
+  "version": 7,
   "allowMultiple": true,
   "timezone": "account",
   "removeContactFromLastStep": true,
-  "filePath": "location/147m777NnBtnn7yLrsdb/workflows/eceb3ffb-59a5-4970-9699-c2313649ef82/6",
-  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/automation-workflows-production/o/location%2F147m777NnBtnn7yLrsdb%2Fworkflows%2Feceb3ffb-59a5-4970-9699-c2313649ef82%2F6?alt=media&token=5a4c9140-7911-40c5-aeaf-afaf2c9f1588",
+  "filePath": "location/147m777NnBtnn7yLrsdb/workflows/eceb3ffb-59a5-4970-9699-c2313649ef82/7",
+  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/automation-workflows-production/o/location%2F147m777NnBtnn7yLrsdb%2Fworkflows%2Feceb3ffb-59a5-4970-9699-c2313649ef82%2F7?alt=media&token=690f519e-9708-426b-9069-aa6f0c6348c3",
   "stopOnResponse": false,
   "autoMarkAsRead": false,
   "originId": "1107c4db-a01d-4409-bb18-5fff3b0d9859",
@@ -23,7 +23,7 @@
   },
   "updatedBy": "kD5eX8SAxDHruPaeEprZ",
   "createdAt": "2026-05-11T15:27:36.277Z",
-  "updatedAt": "2026-07-21T09:52:15.660Z",
+  "updatedAt": "2026-09-15T08:44:25.689Z",
   "deleted": false,
   "creationSource": "builder",
   "isTriggerBucketMigrated": true,
@@ -33,6 +33,7 @@
   "dataVersion": 7,
   "eventStartDate": null,
   "parentId": "2f9a4e80-6a5b-4eb7-a825-7127c8c594d3",
+  "senderAddress": null,
   "triggersFilePath": "location/147m777NnBtnn7yLrsdb/workflow-triggers/eceb3ffb-59a5-4970-9699-c2313649ef82/5",
   "window": null,
   "workflowNote": {
@@ -440,8 +441,8 @@
      "attributes": {
       "from_name": "Blueprint Fitness",
       "from_email": "{{location.email}}",
-      "subject": "{{location.name}} 30 Day Programme",
-      "template_id": "6a5f414cb9457ac6aa92ef64",
+      "subject": "Thanks {{contact.first_name}} — here is what happens next",
+      "template_id": "6aa904e74531b41084021b3d",
       "templatesource": "email-builder",
       "attachments": []
      },
@@ -664,9 +665,9 @@
      "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
      "order": 31,
      "attributes": {
-      "template_id": "6a01f5618034fde7e2034a92",
+      "template_id": "6aa904e89ed784b5df760dee",
       "templatesource": "email-builder",
-      "subject": "\"I have no motivation to go to the gym\"",
+      "subject": "The gym is not a motivating place. That is rather the point.",
       "from_email": "{{location.email}}",
       "from_name": "Blueprint Fitness",
       "attachments": []
@@ -741,9 +742,9 @@
      "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
      "order": 35,
      "attributes": {
-      "template_id": "6a01f5618034fd8503034aaa",
+      "template_id": "6aa904e99ed784b5df760df9",
       "templatesource": "email-builder",
-      "subject": "We focus on these 4 things...",
+      "subject": "What actually happens in a session",
       "from_email": "{{location.email}}",
       "from_name": "Blueprint Fitness",
       "attachments": []
@@ -818,9 +819,9 @@
      "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
      "order": 37,
      "attributes": {
-      "template_id": "6a01f563eb0c4aaf1d3e0e39",
+      "template_id": "6aa904ea7919774ef2521ed1",
       "templatesource": "email-builder",
-      "subject": "Blueprint is for complete beginners, here's why!",
+      "subject": "Most people who join us are complete beginners",
       "from_email": "{{location.email}}",
       "from_name": "Blueprint Fitness",
       "attachments": []
@@ -895,9 +896,9 @@
      "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
      "order": 39,
      "attributes": {
-      "template_id": "6a01f563eb0c4a37383e0e3b",
+      "template_id": "6aa904ebbbf4cb7988a9f861",
       "templatesource": "email-builder",
-      "subject": "Blueprint Success Stories - Michelle and Georgia",
+      "subject": "Two members who started exactly where you are",
       "from_email": "{{location.email}}",
       "from_name": "Blueprint Fitness",
       "attachments": []
@@ -972,9 +973,9 @@
      "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
      "order": 41,
      "attributes": {
-      "template_id": "6a01f5618034fd59cb034a8c",
+      "template_id": "6aa904ecbbf4cb7988a9f874",
       "templatesource": "email-builder",
-      "subject": "5 Common Hurdles...",
+      "subject": "The four things that stop people starting",
       "from_email": "{{location.email}}",
       "from_name": "Blueprint Fitness",
       "attachments": []
@@ -1049,9 +1050,9 @@
      "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
      "order": 43,
      "attributes": {
-      "template_id": "6a01f5618034fdd980034aae",
+      "template_id": "6aa904ed07aac9f9aaceb2f8",
       "templatesource": "email-builder",
-      "subject": "Spot The Blueprint Difference?",
+      "subject": "What is actually different about training here",
       "from_email": "{{location.email}}",
       "from_name": "Blueprint Fitness",
       "attachments": []
@@ -1126,9 +1127,9 @@
      "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
      "order": 45,
      "attributes": {
-      "template_id": "6a01f5618034fd548d034a9a",
+      "template_id": "6aa904eebbf4cb7988a9f8b3",
       "templatesource": "email-builder",
-      "subject": "Most Common Questions ANSWERED!",
+      "subject": "The questions we get asked most",
       "from_email": "{{location.email}}",
       "from_name": "Blueprint Fitness",
       "attachments": []
@@ -1203,9 +1204,9 @@
      "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
      "order": 47,
      "attributes": {
-      "template_id": "6a01f563eb0c4a9c7e3e0e3d",
+      "template_id": "6aa904ef8fc016e6506e4652",
       "templatesource": "email-builder",
-      "subject": "SURPRISE OFFER! Save £££ Today at Blueprint: Fitness",
+      "subject": "The 30-Day Kickstart, and what £169 covers",
       "from_email": "{{location.email}}",
       "from_name": "Blueprint Fitness",
       "attachments": []
@@ -1280,9 +1281,9 @@
      "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
      "order": 49,
      "attributes": {
-      "template_id": "6a01f5618034fd639d034aa4",
+      "template_id": "6aa904f04531b41084021c0b",
       "templatesource": "email-builder",
-      "subject": "Last Chance {{contact.first_name}}!",
+      "subject": "{{contact.first_name}}, shall we leave it there?",
       "from_email": "{{location.email}}",
       "from_name": "Blueprint Fitness",
       "attachments": []
@@ -2091,8 +2092,8 @@
    "attributes": {
     "from_name": "Blueprint Fitness",
     "from_email": "{{location.email}}",
-    "subject": "{{location.name}} 30 Day Programme",
-    "template_id": "6a5f414cb9457ac6aa92ef64",
+    "subject": "Thanks {{contact.first_name}} — here is what happens next",
+    "template_id": "6aa904e74531b41084021b3d",
     "templatesource": "email-builder",
     "attachments": []
    },
@@ -2315,9 +2316,9 @@
    "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
    "order": 31,
    "attributes": {
-    "template_id": "6a01f5618034fde7e2034a92",
+    "template_id": "6aa904e89ed784b5df760dee",
     "templatesource": "email-builder",
-    "subject": "\"I have no motivation to go to the gym\"",
+    "subject": "The gym is not a motivating place. That is rather the point.",
     "from_email": "{{location.email}}",
     "from_name": "Blueprint Fitness",
     "attachments": []
@@ -2392,9 +2393,9 @@
    "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
    "order": 35,
    "attributes": {
-    "template_id": "6a01f5618034fd8503034aaa",
+    "template_id": "6aa904e99ed784b5df760df9",
     "templatesource": "email-builder",
-    "subject": "We focus on these 4 things...",
+    "subject": "What actually happens in a session",
     "from_email": "{{location.email}}",
     "from_name": "Blueprint Fitness",
     "attachments": []
@@ -2469,9 +2470,9 @@
    "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
    "order": 37,
    "attributes": {
-    "template_id": "6a01f563eb0c4aaf1d3e0e39",
+    "template_id": "6aa904ea7919774ef2521ed1",
     "templatesource": "email-builder",
-    "subject": "Blueprint is for complete beginners, here's why!",
+    "subject": "Most people who join us are complete beginners",
     "from_email": "{{location.email}}",
     "from_name": "Blueprint Fitness",
     "attachments": []
@@ -2546,9 +2547,9 @@
    "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
    "order": 39,
    "attributes": {
-    "template_id": "6a01f563eb0c4a37383e0e3b",
+    "template_id": "6aa904ebbbf4cb7988a9f861",
     "templatesource": "email-builder",
-    "subject": "Blueprint Success Stories - Michelle and Georgia",
+    "subject": "Two members who started exactly where you are",
     "from_email": "{{location.email}}",
     "from_name": "Blueprint Fitness",
     "attachments": []
@@ -2623,9 +2624,9 @@
    "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
    "order": 41,
    "attributes": {
-    "template_id": "6a01f5618034fd59cb034a8c",
+    "template_id": "6aa904ecbbf4cb7988a9f874",
     "templatesource": "email-builder",
-    "subject": "5 Common Hurdles...",
+    "subject": "The four things that stop people starting",
     "from_email": "{{location.email}}",
     "from_name": "Blueprint Fitness",
     "attachments": []
@@ -2700,9 +2701,9 @@
    "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
    "order": 43,
    "attributes": {
-    "template_id": "6a01f5618034fdd980034aae",
+    "template_id": "6aa904ed07aac9f9aaceb2f8",
     "templatesource": "email-builder",
-    "subject": "Spot The Blueprint Difference?",
+    "subject": "What is actually different about training here",
     "from_email": "{{location.email}}",
     "from_name": "Blueprint Fitness",
     "attachments": []
@@ -2777,9 +2778,9 @@
    "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
    "order": 45,
    "attributes": {
-    "template_id": "6a01f5618034fd548d034a9a",
+    "template_id": "6aa904eebbf4cb7988a9f8b3",
     "templatesource": "email-builder",
-    "subject": "Most Common Questions ANSWERED!",
+    "subject": "The questions we get asked most",
     "from_email": "{{location.email}}",
     "from_name": "Blueprint Fitness",
     "attachments": []
@@ -2854,9 +2855,9 @@
    "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
    "order": 47,
    "attributes": {
-    "template_id": "6a01f563eb0c4a9c7e3e0e3d",
+    "template_id": "6aa904ef8fc016e6506e4652",
     "templatesource": "email-builder",
-    "subject": "SURPRISE OFFER! Save £££ Today at Blueprint: Fitness",
+    "subject": "The 30-Day Kickstart, and what £169 covers",
     "from_email": "{{location.email}}",
     "from_name": "Blueprint Fitness",
     "attachments": []
@@ -2931,9 +2932,9 @@
    "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
    "order": 49,
    "attributes": {
-    "template_id": "6a01f5618034fd639d034aa4",
+    "template_id": "6aa904f04531b41084021c0b",
     "templatesource": "email-builder",
-    "subject": "Last Chance {{contact.first_name}}!",
+    "subject": "{{contact.first_name}}, shall we leave it there?",
     "from_email": "{{location.email}}",
     "from_name": "Blueprint Fitness",
     "attachments": []

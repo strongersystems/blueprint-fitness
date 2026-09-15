@@ -4,12 +4,12 @@
   "locationId": "mztjJyXHNWiEotc8ItXP",
   "name": "1. Signed Up - 30 Day Trial",
   "status": "published",
-  "version": 9,
+  "version": 10,
   "allowMultiple": true,
   "timezone": "account",
   "removeContactFromLastStep": true,
-  "filePath": "location/mztjJyXHNWiEotc8ItXP/workflows/e6cf59b0-4509-4922-bca5-b8b807b80194/9",
-  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/automation-workflows-production/o/location%2FmztjJyXHNWiEotc8ItXP%2Fworkflows%2Fe6cf59b0-4509-4922-bca5-b8b807b80194%2F9?alt=media&token=12c0ecb9-11a8-4749-ac43-4d156dda38b0",
+  "filePath": "location/mztjJyXHNWiEotc8ItXP/workflows/e6cf59b0-4509-4922-bca5-b8b807b80194/10",
+  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/automation-workflows-production/o/location%2FmztjJyXHNWiEotc8ItXP%2Fworkflows%2Fe6cf59b0-4509-4922-bca5-b8b807b80194%2F10?alt=media&token=75114916-2fba-4748-bcd4-769154824df5",
   "stopOnResponse": false,
   "autoMarkAsRead": false,
   "originId": "707c1c9f-b0e4-405f-94f3-8b86c68b0932",
@@ -17,7 +17,7 @@
   "type": "workflow",
   "updatedBy": "kD5eX8SAxDHruPaeEprZ",
   "createdAt": "2024-10-16T11:49:15.276Z",
-  "updatedAt": "2026-07-21T10:06:52.766Z",
+  "updatedAt": "2026-09-15T08:44:22.687Z",
   "deleted": false,
   "__v": 0,
   "allowMultipleOpportunity": false,
@@ -214,8 +214,8 @@
      "attributes": {
       "from_name": "Stuart Rook",
       "from_email": "info@blueprintfitnessldn.com",
-      "subject": "Your Super Quick Guide To Getting Started⚡",
-      "template_id": "670fa8277e1f3091e71e0684",
+      "subject": "Welcome to Blueprint Leytonstone — your first steps",
+      "template_id": "6aa904d794dd617868300b99",
       "templatesource": "email-builder",
       "attachments": [
        {
@@ -410,8 +410,8 @@
    "attributes": {
     "from_name": "Stuart Rook",
     "from_email": "info@blueprintfitnessldn.com",
-    "subject": "Your Super Quick Guide To Getting Started⚡",
-    "template_id": "670fa8277e1f3091e71e0684",
+    "subject": "Welcome to Blueprint Leytonstone — your first steps",
+    "template_id": "6aa904d794dd617868300b99",
     "templatesource": "email-builder",
     "attachments": [
      {

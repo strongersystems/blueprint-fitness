@@ -1,16 +1,15 @@
 {
  "workflow": {
-  "creationSource": "builder",
   "_id": "b5695eb9-8c6c-4492-8b96-cbb18ce16478",
   "locationId": "mztjJyXHNWiEotc8ItXP",
   "name": "2. Cancelled (TeamUp)",
   "status": "published",
-  "version": 2,
+  "version": 3,
   "allowMultiple": false,
   "timezone": "account",
   "removeContactFromLastStep": true,
-  "filePath": "location/mztjJyXHNWiEotc8ItXP/workflows/b5695eb9-8c6c-4492-8b96-cbb18ce16478/2",
-  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2FmztjJyXHNWiEotc8ItXP%2Fworkflows%2Fb5695eb9-8c6c-4492-8b96-cbb18ce16478%2F2?alt=media&token=53c6ee9d-d3f4-4e18-902a-49dd1a07d3cd",
+  "filePath": "location/mztjJyXHNWiEotc8ItXP/workflows/b5695eb9-8c6c-4492-8b96-cbb18ce16478/3",
+  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/automation-workflows-production/o/location%2FmztjJyXHNWiEotc8ItXP%2Fworkflows%2Fb5695eb9-8c6c-4492-8b96-cbb18ce16478%2F3?alt=media&token=68ecf774-6c52-404c-aae6-6cf855103d43",
   "stopOnResponse": false,
   "autoMarkAsRead": false,
   "originId": "a15a03d2-f15f-4eb3-ad12-d50e72965c55",
@@ -19,7 +18,7 @@
   "meta": null,
   "updatedBy": "snapshot",
   "createdAt": "2024-10-16T11:49:15.277Z",
-  "updatedAt": "2024-10-16T11:49:19.348Z",
+  "updatedAt": "2026-09-15T08:44:24.103Z",
   "deleted": false,
   "__v": 0,
   "allowMultipleOpportunity": false,
@@ -41,6 +40,9 @@
    "updatedByName": "snapshot",
    "updatedAt": "2024-10-16T11:49:18.641Z"
   },
+  "companyId": "BHs3MppSlUdmHKGV7DDA",
+  "creationSource": "builder",
+  "isTriggerBucketMigrated": false,
   "id": "b5695eb9-8c6c-4492-8b96-cbb18ce16478",
   "workflowData": {
    "templates": [
@@ -254,9 +256,9 @@
      "id": "a8a077bd-8bbe-4e2d-bed3-1bf307859b89",
      "order": 5,
      "attributes": {
-      "template_id": "670fa8217e1f30efff1e0676",
+      "template_id": "6aa904e08fc016e6506e44fb",
       "templatesource": "email-builder",
-      "subject": "Hey {{contact.first_name}}",
+      "subject": "How have you been, {{contact.first_name}}?",
       "from_email": "{{location.email}}",
       "from_name": "{{custom_values.sales_and_journey}}",
       "attachments": []
@@ -288,9 +290,9 @@
      "id": "40bfb3fa-4f71-4a0e-9e3b-eb68f4b845fa",
      "order": 7,
      "attributes": {
-      "template_id": "670fa81621340c8320572a62",
+      "template_id": "6aa904e194dd617868300c5f",
       "templatesource": "email-builder",
-      "subject": "Hope you're well {{contact.first_name}}",
+      "subject": "Still fancy getting back to it?",
       "from_email": "{{location.email}}",
       "from_name": "{{custom_values.sales_and_journey}}",
       "attachments": []
@@ -322,9 +324,9 @@
      "id": "a1254452-d4ed-4990-8bc0-04591cbbf050",
      "order": 9,
      "attributes": {
-      "template_id": "670fa81621340c8320572a62",
+      "template_id": "6aa904e2bbf4cb7988a9f79a",
       "templatesource": "email-builder",
-      "subject": "Hope you're well {{contact.first_name}}",
+      "subject": "Whenever you are ready",
       "from_email": "{{location.email}}",
       "from_name": "{{custom_values.sales_and_journey}}",
       "attachments": []
@@ -570,9 +572,9 @@
    "id": "a8a077bd-8bbe-4e2d-bed3-1bf307859b89",
    "order": 5,
    "attributes": {
-    "template_id": "670fa8217e1f30efff1e0676",
+    "template_id": "6aa904e08fc016e6506e44fb",
     "templatesource": "email-builder",
-    "subject": "Hey {{contact.first_name}}",
+    "subject": "How have you been, {{contact.first_name}}?",
     "from_email": "{{location.email}}",
     "from_name": "{{custom_values.sales_and_journey}}",
     "attachments": []
@@ -604,9 +606,9 @@
    "id": "40bfb3fa-4f71-4a0e-9e3b-eb68f4b845fa",
    "order": 7,
    "attributes": {
-    "template_id": "670fa81621340c8320572a62",
+    "template_id": "6aa904e194dd617868300c5f",
     "templatesource": "email-builder",
-    "subject": "Hope you're well {{contact.first_name}}",
+    "subject": "Still fancy getting back to it?",
     "from_email": "{{location.email}}",
     "from_name": "{{custom_values.sales_and_journey}}",
     "attachments": []
@@ -638,9 +640,9 @@
    "id": "a1254452-d4ed-4990-8bc0-04591cbbf050",
    "order": 9,
    "attributes": {
-    "template_id": "670fa81621340c8320572a62",
+    "template_id": "6aa904e2bbf4cb7988a9f79a",
     "templatesource": "email-builder",
-    "subject": "Hope you're well {{contact.first_name}}",
+    "subject": "Whenever you are ready",
     "from_email": "{{location.email}}",
     "from_name": "{{custom_values.sales_and_journey}}",
     "attachments": []

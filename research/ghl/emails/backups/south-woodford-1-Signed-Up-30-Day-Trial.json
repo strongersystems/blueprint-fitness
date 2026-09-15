@@ -6,7 +6,7 @@
   "companyAge": 13,
   "name": "1. Signed Up - 30 Day Trial",
   "status": "published",
-  "version": 31,
+  "version": 32,
   "dataVersion": 7,
   "allowMultiple": true,
   "senderAddress": {
@@ -14,8 +14,8 @@
    "from_name": "{{custom_values.sales_and_journey}}"
   },
   "removeContactFromLastStep": true,
-  "filePath": "location/cquQsieyBZx9vRgEqBge/workflows/707c1c9f-b0e4-405f-94f3-8b86c68b0932/31",
-  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/automation-workflows-production/o/location%2FcquQsieyBZx9vRgEqBge%2Fworkflows%2F707c1c9f-b0e4-405f-94f3-8b86c68b0932%2F31?alt=media&token=475cd487-d229-431a-a164-c989a5f41c64",
+  "filePath": "location/cquQsieyBZx9vRgEqBge/workflows/707c1c9f-b0e4-405f-94f3-8b86c68b0932/32",
+  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/automation-workflows-production/o/location%2FcquQsieyBZx9vRgEqBge%2Fworkflows%2F707c1c9f-b0e4-405f-94f3-8b86c68b0932%2F32?alt=media&token=bffd3c2c-841f-479c-9948-6fd1493c1e6b",
   "stopOnResponse": false,
   "autoMarkAsRead": false,
   "originId": "5368c200-7a3a-425b-841a-8f62ebeb3456",
@@ -23,7 +23,7 @@
   "type": "workflow",
   "parentId": "2a12cec0-bff3-427f-81c6-094fbc85cbdf",
   "createdAt": "2023-01-03T15:29:09.538Z",
-  "updatedAt": "2026-07-21T10:29:37.906Z",
+  "updatedAt": "2026-09-15T08:54:10.003Z",
   "deleted": false,
   "__v": 0,
   "eventStartDate": null,
@@ -158,7 +158,7 @@
       "opportunity_name": "",
       "opportunity_source": "",
       "allow_backward": true,
-      "pipeline_stage_id": "3a4856dd-a3c6-4b28-af60-005e73b18e4e",
+      "pipeline_stage_id": "056fb00d-4474-4888-8c4e-71bab54c352d",
       "fields": []
      },
      "name": "Update to WON Opportunity",
@@ -354,7 +354,7 @@
     "opportunity_name": "",
     "opportunity_source": "",
     "allow_backward": true,
-    "pipeline_stage_id": "3a4856dd-a3c6-4b28-af60-005e73b18e4e",
+    "pipeline_stage_id": "056fb00d-4474-4888-8c4e-71bab54c352d",
     "fields": []
    },
    "name": "Update to WON Opportunity",

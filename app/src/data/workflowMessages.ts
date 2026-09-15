@@ -441,22 +441,30 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "Intro - Welcome Email",
-    "subject": "Your Super Quick Guide To Getting Started⚡",
+    "subject": "Welcome to Blueprint Hackney — your first steps",
     "from": "Stuart Rook · info@blueprintfitnessldn.com",
-    "template": "1. YOUR SUPER QUICK GUIDE TO GETTING STARTED",
+    "template": "Joined 01 — Welcome and getting started",
     "missing": false,
-    "text": "Dear {{contact.first_name}},\nWe're thrilled to have you on board with Blueprint:Fitness!\nOver your first 30 days, you'll have the chance to experience all we have to offer and see just how far you can go. With our help, you'll make positive changes in your health and wellness and connect with amazing people along the way.\nWhat's next, you may ask?\nThe first step is to schedule your introductory session. If you haven't already, please reach out to Stu by calling or texting 07736033985 to book a time.\nDuring the 30-45 minute intro session, we'll take care of some important details:\n1. Admin: We'll verify your account set up in TeamUp and provide you with an overview of our classes so you know what to expect when you book.\n2. Inbody Body Composition Testing: We'll use the Inbody tracker to gather some baseline data about your muscle mass, body fat mass and percentage, BMR, BMI, and visceral fat. This information will be used to set goals and hold each other accountable, and we'll need you to download the Inbody App.\n3. Functional Movement Screen: This is an opportunity for us to discuss any medical issues, injuries, or pain points, and to assess your posture. The screening only takes 10 minutes and will help us determine the best starting point for your fitness journey.\nPlease take a moment to review our booking system guidelines to ensure fairness for all members. The guidelines can be found by clicking HERE.\nWe've attached your welcome pack to this email, which has more information about our business, classes, and community.\nThank you for joining us. We can't wait to see you on the gym floor soon!\nBest regards,\nThe Blueprint:Fitness Team\ninfo@blueprintfitnessldn.com\n07736 033 985 // 07855 353 798\nblueprintfitnessldn.com\nP.S. Staying connected is essential, so we've created a WhatsApp group for all members. This is where you'll find important updates and information about sessions, classes, social events, general fitness and nutrition.\n\nHere’s the invite:\n\nJoin WhatsApp Group\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
+    "text": "Three things to get sorted before session one.\n\nYou’re in · Hackney\n\nWelcome, {{contact.first_name}}.\n\nLovely to have you. Over the next thirty days you will train properly, meet a few people, and find out what you are actually capable of. Here is what happens first.\n\n1. Your intro call\n\nA coach will ring you to book your first session and get to know you. If you would rather sort it now, message us and we will get it in the diary.\n\nBook your intro on WhatsApp\n\n2. Your InBody scan\n\nWe take a baseline — muscle mass, body fat, BMR — so that in thirty days we are comparing numbers rather than impressions. It takes a couple of minutes.\n\n3. Booking your sessions\n\nSessions are booked through TeamUp. Have a quick read of how booking and cancelling work, so you never lose a session to the cut-off.\n\nHow booking works\n\nAnything at all — injuries, nerves, a week away — just tell us. It is much easier to plan around something we know about.\n\nSee the timetable\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness Hackney\n\nYour studio\n\nBlueprint Fitness Hackney\n\nArch 195, Morning Lane, Hackney, London, E9 6LJ\n\nMon–Fri 6am–9pm · Sat 8–11am · Closed Sunday\n\nhackney@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://www.blueprintfitnessldn.com/teamup",
-      "health": "redirected"
-     },
-     {
-      "url": "https://blueprintfitnessldn.com",
+      "url": "https://wa.me/447944690356?text=Hi%20Blueprint%20Fitness%20Hackney%20%E2%80%94%20I",
       "health": "ok"
      },
      {
-      "url": "https://chat.whatsapp.com/KqiTvAg4B0bI14Ay7YxetN",
+      "url": "https://blueprintfitnessldn.com/members/bookings-cancellations/",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com/hackney/timetable/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
       "health": "ok"
      }
     ]
@@ -2876,12 +2884,28 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "Intro - Welcome Email",
-    "subject": "Your Super Quick Guide To Getting Started⚡",
+    "subject": "Welcome to Blueprint South Woodford — your first steps",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "1. YOUR SUPER QUICK GUIDE TO GETTING STARTED",
+    "template": "Joined 01 — Welcome and getting started",
     "missing": false,
-    "text": "Dear {{contact.first_name}},\nWe're thrilled to have you on board with Blueprint:Fitness!\nOver the next 30 days, you'll have the chance to experience all we have to offer and see just how far you can go. With our help, you'll make positive changes in your health and wellness and connect with amazing people along the way.\nThe first step is to schedule your intro call. If you haven't already, please reach out to our head coach by calling or texting 07538 298 457 to book a time.\nDuring the initial call, we'll take care of some important details:\n1. Admin: We'll verify your account set up in TeamUp and provide you with an overview of our classes so you know what to expect when you book.\n2. Inbody Body Composition Testing: We'll use the Inbody tracker to gather some baseline data about your muscle mass, body fat mass and percentage, BMR, BMI, and visceral fat. This information will be used to set goals and hold each other accountable, and we'll need you to download the Inbody App.\nAnd depending on your current situation, we might need to do...\n3. Functional Movement Screen: This is an opportunity for us to discuss any medical issues, injuries, or pain points, and to assess your posture. We may need to have a quick look at your movement patterns to determine the best start point for you.\nThank you for joining us. We can't wait to see you on the gym floor soon!\nBest regards,\nThe Blueprint:Fitness Team\ninfo@blueprintfitnessldn.com\nblueprintfitnessldn.com\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
+    "text": "Three things to get sorted before session one.\n\nYou’re in · South Woodford\n\nWelcome, {{contact.first_name}}.\n\nLovely to have you. Over the next thirty days you will train properly, meet a few people, and find out what you are actually capable of. Here is what happens first.\n\n1. Your intro call\n\nA coach will ring you to book your first session and get to know you. If you would rather sort it now, message us and we will get it in the diary.\n\nBook your intro on WhatsApp\n\n2. Your InBody scan\n\nWe take a baseline — muscle mass, body fat, BMR — so that in thirty days we are comparing numbers rather than impressions. It takes a couple of minutes.\n\n3. Booking your sessions\n\nSessions are booked through TeamUp. Have a quick read of how booking and cancelling work, so you never lose a session to the cut-off.\n\nHow booking works\n\nAnything at all — injuries, nerves, a week away — just tell us. It is much easier to plan around something we know about.\n\nSee the timetable\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness South Woodford\n\nYour studio\n\nBlueprint Fitness South Woodford\n\n4 Raven Road, South Woodford, London, E18 1HB\n\nOpen 6am–9pm, every day\n\nsouthwoodford@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
+     {
+      "url": "https://wa.me/447538298457?text=Hi%20Blueprint%20Fitness%20South%20Woodford%20%E2%80%94%20I",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com/members/bookings-cancellations/",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com/south-woodford/timetable/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447538298457",
+      "health": "ok"
+     },
      {
       "url": "https://blueprintfitnessldn.com",
       "health": "ok"

@@ -3,6 +3,7 @@ import Base from "../layouts/Base.astro";
 import { url } from "../lib/url";
 import { studios } from "../data/studios";
 import PasswordGate from "../components/PasswordGate.astro";
+import AdminNav from "../components/AdminNav.astro";
 
 /* Internal page directory. noindex + disallowed in robots.txt — it is a map of
    the site for the team, not a public page. */
@@ -77,6 +78,7 @@ const forms = [
   noindex>
 <PasswordGate password="blueprint" label="Enter the password to see the page directory.">
 
+  <AdminNav current="directory" />
 
   <section class="section on-dark section-tight">
     <div class="container">

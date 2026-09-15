@@ -8,6 +8,10 @@
  * "what do we actually send?" without clicking through all of it. This page is
  * that answer, generated from the accounts themselves.
  *
+ * Each email is parked in a <template> and only turned into an iframe when its
+ * step is opened — 208 iframes on load would be absurd. The iframe is sandboxed
+ * with no script permission, since these are templates written by other people.
+ *
  * Password-gated like the rest of /admin. The gate encrypts this whole slot at
  * build time and re-runs inline scripts when it unlocks, so the filtering
  * script must be `is:inline` — a hoisted module would run before the content
@@ -15,6 +19,7 @@
  */
 import Base from '../../layouts/Base.astro';
 import PasswordGate from '../../components/PasswordGate.astro';
+import AdminNav from '../../components/AdminNav.astro';
 import { workflowMessages } from '../../data/workflowMessages';
 import { url } from '../../lib/url';
 
@@ -51,6 +56,8 @@ for (const w of workflowMessages) {
 
   <PasswordGate password="blueprint" label="Internal — every message the CRM sends.">
 
+    <AdminNav current="emails" />
+
     <section class="section on-dark section-tight">
       <div class="container">
         <p class="dim sec-head" style="margin-bottom:1rem">Internal</p>
@@ -58,7 +65,6 @@ for (const w of workflowMessages) {
         <p class="lede">Every email, SMS and internal alert in every workflow, across all three
           sub-accounts — pulled straight from GoHighLevel. Use it to check the copy, spot a
           broken link, or find which workflow is sending the thing a member just asked about.</p>
-        <p style="margin-top:1rem"><a href={url('admin/')} style="color:#5EA2FF;font-weight:700">&larr; Back to the page directory</a></p>
       </div>
     </section>
 
@@ -163,8 +169,21 @@ for (const w of workflowMessages) {
                       ))}
                     </ul>
                   )}
+                  {s.html && (
+                    <div class="em-view" role="group" aria-label="How to show this email">
+                      <button type="button" class="em-vbtn is-on" data-view="rich">Formatted</button>
+                      <button type="button" class="em-vbtn" data-view="plain">Plain text</button>
+                      <button type="button" class="em-vbtn em-open" data-open>Open in a new tab &rarr;</button>
+                    </div>
+                  )}
+                  {s.html && (
+                    <>
+                      <template data-email-html set:html={s.html}></template>
+                      <div class="em-frame" data-frame></div>
+                    </>
+                  )}
                   {s.text
-                    ? <pre class="em-copy">{s.text}</pre>
+                    ? <pre class="em-copy" data-plain hidden={!!s.html}>{s.text}</pre>
                     : <p class="em-empty">No copy could be read for this step&nbsp;— its template is
                         missing from the account.</p>}
                 </div>
@@ -207,6 +226,68 @@ for (const w of workflowMessages) {
           });
           countEl.textContent = shown + ' message' + (shown === 1 ? '' : 's') + ' shown';
         }
+
+        /* Render an email only when its step is opened. The iframe is
+           sandboxed with no script permission — these are other people's
+           templates — but popups are allowed so the CTAs still open. */
+        function mount(step) {
+          var tpl = step.querySelector('[data-email-html]');
+          var slot = step.querySelector('[data-frame]');
+          if (!tpl || !slot || slot.firstChild) return;
+          var f = document.createElement('iframe');
+          /* allow-same-origin WITHOUT allow-scripts: the document still cannot
+             run anything, but this page can read its height and size the frame
+             to the email instead of guessing. */
+          f.setAttribute('sandbox', 'allow-same-origin allow-popups allow-popups-to-escape-sandbox');
+          f.setAttribute('title', 'Email preview');
+
+          function fit() {
+            try {
+              var d = f.contentDocument;
+              if (!d || !d.body) return;
+              /* links inside the frame should leave it, not replace it */
+              [].slice.call(d.querySelectorAll('a[href]')).forEach(function (a) {
+                a.target = '_blank'; a.rel = 'noopener';
+              });
+              var h = Math.max(d.body.scrollHeight, d.documentElement.scrollHeight);
+              if (h > 40) f.style.height = Math.min(h + 24, 4000) + 'px';
+            } catch (e) { /* leave the default height */ }
+          }
+          f.addEventListener('load', function () {
+            fit();
+            /* remote images arrive after load and change the height */
+            setTimeout(fit, 600);
+          });
+
+          /* insert BEFORE setting srcdoc: an iframe assigned srcdoc while still
+             detached loads about:blank on insertion, and the load event we care
+             about never reaches this handler. */
+          slot.appendChild(f);
+          f.srcdoc = tpl.innerHTML;
+        }
+        [].slice.call(document.querySelectorAll('.em-step')).forEach(function (st) {
+          st.addEventListener('toggle', function () { if (st.open) mount(st); });
+        });
+
+        document.addEventListener('click', function (e) {
+          var b = e.target.closest ? e.target.closest('.em-vbtn') : null;
+          if (!b) return;
+          var body = b.closest('.em-body');
+          var tpl = body.querySelector('[data-email-html]');
+          if (b.hasAttribute('data-open')) {
+            /* a blob keeps the preview out of this page's origin */
+            var url = URL.createObjectURL(new Blob([tpl.innerHTML], { type: 'text/html' }));
+            window.open(url, '_blank', 'noopener');
+            setTimeout(function () { URL.revokeObjectURL(url); }, 30000);
+            return;
+          }
+          var rich = b.dataset.view === 'rich';
+          body.querySelector('[data-frame]').hidden = !rich;
+          body.querySelector('[data-plain]').hidden = rich;
+          [].slice.call(body.querySelectorAll('.em-vbtn[data-view]')).forEach(function (o) {
+            o.classList.toggle('is-on', o === b);
+          });
+        });
 
         bar.addEventListener('input', apply);
         issuesOnly.addEventListener('change', apply);
@@ -301,6 +382,17 @@ for (const w of workflowMessages) {
         background: #F7FAFF; border: 1px solid rgba(16,27,47,.08); border-radius: 10px;
         padding: .8rem .9rem; margin: 0; max-height: 26rem; overflow: auto; }
       .em-empty { font-size: .85rem; color: var(--grey); margin: 0; }
+
+      .em-view { display: flex; flex-wrap: wrap; gap: .3rem; margin: 0 0 .6rem; }
+      .em-vbtn { border: 1px solid rgba(16,27,47,.18); background: #fff; border-radius: 7px;
+        padding: .28rem .6rem; font: inherit; font-size: .78rem; font-weight: 700;
+        color: var(--grey); cursor: pointer; }
+      .em-vbtn.is-on { background: var(--ink); border-color: var(--ink); color: #fff; }
+      .em-open { margin-left: auto; color: var(--blue); }
+      .em-frame { border: 1px solid rgba(16,27,47,.12); border-radius: 10px; overflow: hidden;
+        background: var(--mist); }
+      /* height starts modest and is set to the email's own once it loads */
+      .em-frame iframe { display: block; width: 100%; height: 22rem; border: 0; background: #fff; }
       .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden;
         clip: rect(0 0 0 0); white-space: nowrap; }
     </style>

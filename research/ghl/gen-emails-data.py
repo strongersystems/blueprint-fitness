@@ -1,10 +1,12 @@
 """Turn the raw workflow extraction into a site data file.
 
-Email bodies are 8-15KB of table-layout HTML each; 196 of them is well over a
-megabyte, and the /admin page encrypts its whole contents at build time. So the
-copy is reduced to readable text here — headings, paragraphs and list items kept
-as lines, merge fields left visible — and the links are pulled out separately so
-they can be checked rather than hunted for."""
+Each message keeps both forms: the original HTML, so /admin can show the email
+exactly as it is sent, and a readable text reduction, which is what the search
+box matches on (an iframe's contents are not searchable from the page). Links
+are pulled out separately so they can be audited rather than hunted for.
+
+The HTML is bulky and repetitive, but the gate gzips before encrypting, so it
+costs far less over the wire than its raw size suggests."""
 import json, re, sys, html, urllib.parse
 
 src, dst = sys.argv[1], sys.argv[2]
@@ -68,11 +70,15 @@ for w in d['out']:
     steps = []
     for s in w['steps']:
         ls = [{'url': u, 'health': health(u)} for u in links(s['body'])]
+        body = s['body'] or ''
+        # SMS and plain notifications have no layout worth rendering; keeping
+        # their markup would only bloat the page for no gain.
+        rich = s['type'] != 'sms' and '<' in body
         steps.append({
             'type': s['type'], 'name': s['name'], 'subject': s['subject'],
             'from': s['from'], 'template': s['tplName'],
             'missing': bool(s['templateMissing']),
-            'text': to_text(s['body']), 'links': ls,
+            'text': to_text(body), 'html': body if rich else '', 'links': ls,
         })
     wfs.append({'studio': w['studio'], 'workflow': w['workflow'], 'folder': w['folder'],
                 'status': w['status'], 'triggers': w['triggers'], 'steps': steps})
@@ -99,7 +105,11 @@ open(dst, 'w').write(
     "  type: 'email' | 'sms' | 'internal_notification';\n"
     "  name: string; subject: string; from: string;\n"
     "  template: string | null; missing: boolean;\n"
-    "  text: string; links: WfLink[];\n"
+    "  /** readable reduction, used for search and the plain-text view */\n"
+    "  text: string;\n"
+    "  /** the email exactly as it is sent; empty for SMS */\n"
+    "  html: string;\n"
+    "  links: WfLink[];\n"
     "}\n"
     "export interface WfEntry {\n"
     "  studio: string; workflow: string; folder: string; status: string;\n"

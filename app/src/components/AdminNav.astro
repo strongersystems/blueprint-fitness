@@ -1,0 +1,51 @@
+---
+/**
+ * Navigation across the internal pages.
+ *
+ * Both /admin pages sit behind the password gate and neither is linked from
+ * anywhere public, so without this the only way between them is the address
+ * bar. It lives inside the gated slot, which is why it carries its own styles
+ * rather than relying on the members-nav rules.
+ */
+import { url } from '../lib/url';
+
+interface Props {
+  /** key of the page being shown, so it can be marked current */
+  current?: string;
+}
+const { current = '' } = Astro.props;
+
+const links = [
+  { slug: 'directory', href: url('admin/'), label: 'Page directory' },
+  { slug: 'emails', href: url('admin/emails/'), label: 'Workflow emails' },
+];
+---
+<nav class="admin-nav" aria-label="Internal pages">
+  <div class="container admin-nav-row">
+    <a class="admin-back" href={url('')}>
+      <span aria-hidden="true">&larr;</span> Main site
+    </a>
+    <ul>
+      {links.map((l) => (
+        <li>
+          <a href={l.href} aria-current={current === l.slug ? 'page' : undefined}>{l.label}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<style is:global>
+  .admin-nav { background: var(--mist, #EAF1FB); border-bottom: 1px solid rgba(16,27,47,.1); }
+  .admin-nav-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1.1rem;
+    padding-top: .7rem; padding-bottom: .7rem; }
+  .admin-back { font-family: var(--font-display); font-size: .78rem; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--blue, #0072F5);
+    text-decoration: none; }
+  .admin-nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: .35rem;
+    margin: 0 0 0 auto; padding: 0; }
+  .admin-nav li a { display: block; padding: .3rem .7rem; border-radius: 99px;
+    font-size: .84rem; font-weight: 700; color: var(--grey, #3D4A63); text-decoration: none; }
+  .admin-nav li a:hover { background: rgba(16,27,47,.06); }
+  .admin-nav li a[aria-current="page"] { background: var(--ink, #101B2F); color: #fff; }
+</style>

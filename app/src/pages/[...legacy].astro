@@ -1,0 +1,50 @@
+---
+/**
+ * Redirect stubs for old paths still linked from live CRM emails.
+ *
+ * getStaticPaths only emits the paths listed in src/data/legacyRedirects.ts, so
+ * this rest route generates exactly three pages and shadows nothing — Astro
+ * gives static routes priority over dynamic ones, and unlisted paths still fall
+ * through to the 404.
+ *
+ * The hop is meta-refresh first so it works without JavaScript, with
+ * location.replace() as well so the old URL does not land in the back-button
+ * history. Anyone who somehow sees the page still gets a real link.
+ */
+import { legacyRedirects } from '../data/legacyRedirects';
+import { url } from '../lib/url';
+
+export async function getStaticPaths() {
+  return legacyRedirects.map((r) => ({ params: { legacy: r.from }, props: { r } }));
+}
+const { r } = Astro.props;
+const target = url(r.to);
+const absolute = `https://blueprintfitnessldn.com${target}`;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{r.label} — Blueprint Fitness</title>
+    <meta name="robots" content="noindex,follow" />
+    <link rel="canonical" href={absolute} />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <script is:inline define:vars={{ target }}>location.replace(target);</script>
+    <style>
+      body { margin: 0; min-height: 100vh; display: grid; place-items: center;
+        background: #EAF1FB; color: #101B2F; text-align: center; padding: 2rem;
+        font: 16px/1.6 Inter, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+      a { color: #0072F5; font-weight: 700; }
+      p { margin: .4rem 0; }
+      .eyebrow { font-size: .78rem; font-weight: 700; letter-spacing: .12em;
+        text-transform: uppercase; color: #3D4A63; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">{r.label} has moved</p>
+      <p>Taking you there now.</p>
+      <p><a href={target}>Continue to {r.label.toLowerCase()} &rarr;</a></p>
+    </main>
+  </body>
+</html>

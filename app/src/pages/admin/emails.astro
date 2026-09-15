@@ -1,0 +1,308 @@
+---
+/**
+ * Every message the CRM sends, in one place.
+ *
+ * The copy lives in three different stores inside GoHighLevel — email-builder
+ * templates, snippets, and inline bodies on the step itself — spread across
+ * three sub-accounts and sixty workflows, which is why nobody could answer
+ * "what do we actually send?" without clicking through all of it. This page is
+ * that answer, generated from the accounts themselves.
+ *
+ * Password-gated like the rest of /admin. The gate encrypts this whole slot at
+ * build time and re-runs inline scripts when it unlocks, so the filtering
+ * script must be `is:inline` — a hoisted module would run before the content
+ * exists.
+ */
+import Base from '../../layouts/Base.astro';
+import PasswordGate from '../../components/PasswordGate.astro';
+import { workflowMessages } from '../../data/workflowMessages';
+import { url } from '../../lib/url';
+
+const studios = [...new Set(workflowMessages.map((w) => w.studio))].sort();
+const steps = workflowMessages.flatMap((w) => w.steps);
+const count = (t: string) => steps.filter((s) => s.type === t).length;
+const allLinks = steps.flatMap((s) => s.links);
+const redirected = allLinks.filter((l) => l.health === 'redirected');
+const legacy = allLinks.filter((l) => l.health === 'legacy');
+const missing = steps.filter((s) => s.missing);
+
+const TYPE_LABEL: Record<string, string> = {
+  email: 'Email', sms: 'SMS', internal_notification: 'Internal alert',
+};
+
+/** unique problem links, with where they appear */
+const problems = new Map<string, { health: string; where: string[] }>();
+for (const w of workflowMessages) {
+  for (const s of w.steps) {
+    for (const l of s.links) {
+      if (l.health === 'ok') continue;
+      const e = problems.get(l.url) ?? { health: l.health, where: [] };
+      const where = `${w.studio} · ${w.workflow}`;
+      if (!e.where.includes(where)) e.where.push(where);
+      problems.set(l.url, e);
+    }
+  }
+}
+---
+<Base
+  title={'Workflow emails — Blueprint Fitness'}
+  description={'Internal: every email, SMS and internal alert sent by a GoHighLevel workflow.'}
+  noindex>
+
+  <PasswordGate password="blueprint" label="Internal — every message the CRM sends.">
+
+    <section class="section on-dark section-tight">
+      <div class="container">
+        <p class="dim sec-head" style="margin-bottom:1rem">Internal</p>
+        <h1 class="h-display">What we actually <span class="draft-u">send</span></h1>
+        <p class="lede">Every email, SMS and internal alert in every workflow, across all three
+          sub-accounts — pulled straight from GoHighLevel. Use it to check the copy, spot a
+          broken link, or find which workflow is sending the thing a member just asked about.</p>
+        <p style="margin-top:1rem"><a href={url('admin/')} style="color:#5EA2FF;font-weight:700">&larr; Back to the page directory</a></p>
+      </div>
+    </section>
+
+    <section class="section section-tight">
+      <div class="container">
+        <div class="em-stats">
+          <div><b>{workflowMessages.length}</b><span>workflows</span></div>
+          <div><b>{steps.length}</b><span>messages</span></div>
+          <div><b>{count('email')}</b><span>emails</span></div>
+          <div><b>{count('sms')}</b><span>SMS</span></div>
+          <div><b>{count('internal_notification')}</b><span>internal alerts</span></div>
+        </div>
+
+        <div class="em-audit">
+          <h2 class="h-3" style="margin:0 0 .5rem">Link check</h2>
+          {problems.size === 0 ? (
+            <p style="margin:0">Every link in every message resolves. Nothing to fix.</p>
+          ) : (
+            <>
+              <p style="margin:0 0 .8rem;color:var(--grey)">
+                {redirected.length} link{redirected.length === 1 ? '' : 's'} pointed at pages that no
+                longer exist and now redirect to their replacement;
+                {' '}{legacy.length} still use the old <code>go.</code> domain, which works but
+                should move when convenient.
+              </p>
+              <ul class="em-problems">
+                {[...problems.entries()].map(([u, p]) => (
+                  <li>
+                    <span class:list={['em-pill', `em-${p.health}`]}>{p.health === 'redirected' ? 'was 404 — now redirected' : 'old domain'}</span>
+                    <code>{u}</code>
+                    <span class="em-where">{p.where.join(' · ')}</span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+          {missing.length > 0 && (
+            <p style="margin:.9rem 0 0;color:var(--grey)">
+              <strong>{missing.length} email step{missing.length === 1 ? '' : 's'}</strong> reference a
+              template that no longer exists in the account, so the copy could not be read and would
+              send empty. All of them sit in the <code>20 Insights</code> workflow, which is in
+              draft in both South Woodford and Leytonstone and is not sending.
+            </p>
+          )}
+        </div>
+
+        <div class="em-bar" role="group" aria-label="Filter messages">
+          <label class="em-search">
+            <span class="visually-hidden">Search the copy</span>
+            <input type="search" id="em-q" placeholder="Search subjects and copy…" autocomplete="off" />
+          </label>
+          <div class="em-chips">
+            <button type="button" class="em-chip is-on" data-studio="">All studios</button>
+            {studios.map((s) => <button type="button" class="em-chip" data-studio={s}>{s}</button>)}
+          </div>
+          <div class="em-chips">
+            <button type="button" class="em-chip is-on" data-type="">All types</button>
+            <button type="button" class="em-chip" data-type="email">Email</button>
+            <button type="button" class="em-chip" data-type="sms">SMS</button>
+            <button type="button" class="em-chip" data-type="internal_notification">Internal</button>
+          </div>
+          <label class="em-only">
+            <input type="checkbox" id="em-issues" /> <span>Only messages with link issues</span>
+          </label>
+          <p class="em-count" id="em-count" aria-live="polite"></p>
+        </div>
+
+        {workflowMessages.map((w) => (
+          <article class="em-wf" data-studio={w.studio}
+                   data-types={[...new Set(w.steps.map((s) => s.type))].join(' ')}
+                   data-issues={w.steps.some((s) => s.links.some((l) => l.health !== 'ok')) ? '1' : '0'}>
+            <header class="em-wf-head">
+              <span class="em-studio">{w.studio}</span>
+              <h2 class="h-3">{w.workflow}</h2>
+              <span class:list={['em-pill', w.status === 'published' ? 'em-live' : 'em-draft']}>{w.status}</span>
+              {w.folder && <span class="em-folder">{w.folder}</span>}
+              {w.triggers.length > 0 && <span class="em-trig">Trigger: {w.triggers.join(', ')}</span>}
+            </header>
+
+            {w.steps.map((s) => (
+              <details class="em-step" data-type={s.type}
+                       data-issue={s.links.some((l) => l.health !== 'ok') ? '1' : '0'}>
+                <summary>
+                  <span class:list={['em-type', `em-t-${s.type}`]}>{TYPE_LABEL[s.type] ?? s.type}</span>
+                  <span class="em-subject">{s.subject || s.name || '(no subject)'}</span>
+                  {s.missing && <span class="em-pill em-bad">template missing</span>}
+                  {s.links.some((l) => l.health !== 'ok') && <span class="em-pill em-warn">link</span>}
+                </summary>
+                <div class="em-body">
+                  <dl class="em-meta">
+                    {s.name && <><dt>Step</dt><dd>{s.name}</dd></>}
+                    {s.from && <><dt>From</dt><dd>{s.from}</dd></>}
+                    {s.template && <><dt>Template</dt><dd>{s.template}</dd></>}
+                  </dl>
+                  {s.links.length > 0 && (
+                    <ul class="em-links">
+                      {s.links.map((l) => (
+                        <li>
+                          <span class:list={['em-dot', `em-${l.health}`]} aria-hidden="true"></span>
+                          <a href={l.url} target="_blank" rel="noopener">{l.url}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {s.text
+                    ? <pre class="em-copy">{s.text}</pre>
+                    : <p class="em-empty">No copy could be read for this step&nbsp;— its template is
+                        missing from the account.</p>}
+                </div>
+              </details>
+            ))}
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <script is:inline>
+      /* The password gate re-runs this when the page unlocks, so it must be
+         safe to execute more than once and must not assume anything is ready. */
+      (function () {
+        var bar = document.getElementById('em-q');
+        if (!bar || bar.dataset.wired) return;
+        bar.dataset.wired = '1';
+
+        var wfs = [].slice.call(document.querySelectorAll('.em-wf'));
+        var countEl = document.getElementById('em-count');
+        var issuesOnly = document.getElementById('em-issues');
+        var studio = '', type = '';
+
+        function apply() {
+          var q = bar.value.trim().toLowerCase();
+          var shown = 0;
+          wfs.forEach(function (wf) {
+            var okStudio = !studio || wf.dataset.studio === studio;
+            var steps = [].slice.call(wf.querySelectorAll('.em-step'));
+            var any = false;
+            steps.forEach(function (st) {
+              var okType = !type || st.dataset.type === type;
+              var okIssue = !issuesOnly.checked || st.dataset.issue === '1';
+              var okQ = !q || st.textContent.toLowerCase().indexOf(q) > -1;
+              var on = okStudio && okType && okIssue && okQ;
+              st.hidden = !on;
+              if (on) { any = true; shown++; }
+            });
+            wf.hidden = !any;
+          });
+          countEl.textContent = shown + ' message' + (shown === 1 ? '' : 's') + ' shown';
+        }
+
+        bar.addEventListener('input', apply);
+        issuesOnly.addEventListener('change', apply);
+        [].slice.call(document.querySelectorAll('.em-chip')).forEach(function (b) {
+          b.addEventListener('click', function () {
+            var group = b.dataset.studio !== undefined ? 'studio' : 'type';
+            var sel = group === 'studio' ? '[data-studio]' : '[data-type]';
+            [].slice.call(b.parentNode.querySelectorAll(sel)).forEach(function (o) {
+              o.classList.toggle('is-on', o === b);
+            });
+            if (group === 'studio') studio = b.dataset.studio; else type = b.dataset.type;
+            apply();
+          });
+        });
+        apply();
+      })();
+    </script>
+
+    <style is:global>
+      .em-stats { display: flex; flex-wrap: wrap; gap: .8rem; margin-bottom: 1.4rem; }
+      .em-stats div { flex: 1 1 8rem; background: #fff; border: 1px solid rgba(16,27,47,.12);
+        border-radius: 12px; padding: .8rem 1rem; }
+      .em-stats b { display: block; font-family: var(--font-display); font-size: 1.8rem; color: var(--ink); }
+      .em-stats span { font-size: .8rem; font-weight: 700; letter-spacing: .06em;
+        text-transform: uppercase; color: var(--grey); }
+
+      .em-audit { background: var(--mist); border-left: 4px solid var(--blue);
+        border-radius: 0 12px 12px 0; padding: 1.1rem 1.2rem; margin-bottom: 1.6rem; }
+      .em-problems { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+      .em-problems li { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
+      .em-problems code { font-size: .82rem; word-break: break-all; }
+      .em-where { font-size: .78rem; color: var(--grey); }
+
+      .em-bar { position: sticky; top: 0; z-index: 5; background: #fff; padding: .9rem 0;
+        border-bottom: 1px solid rgba(16,27,47,.12); margin-bottom: 1.2rem;
+        display: flex; flex-wrap: wrap; gap: .7rem; align-items: center; }
+      .em-search { flex: 1 1 16rem; }
+      .em-search input { width: 100%; padding: .55rem .7rem; border-radius: 9px;
+        border: 1px solid rgba(16,27,47,.2); font: inherit; }
+      .em-chips { display: flex; flex-wrap: wrap; gap: .35rem; }
+      .em-chip { border: 1px solid rgba(16,27,47,.18); background: #fff; border-radius: 99px;
+        padding: .34rem .75rem; font: inherit; font-size: .82rem; font-weight: 700;
+        color: var(--grey); cursor: pointer; }
+      .em-chip.is-on { background: var(--ink); border-color: var(--ink); color: #fff; }
+      .em-only { display: inline-flex; align-items: center; gap: .4rem; font-size: .84rem;
+        font-weight: 700; color: var(--grey); cursor: pointer; }
+      .em-count { margin: 0 0 0 auto; font-size: .82rem; font-weight: 700; color: var(--grey); }
+
+      .em-wf { border: 1px solid rgba(16,27,47,.12); border-radius: 14px; background: #fff;
+        padding: 1rem 1.1rem; margin-bottom: 1rem; }
+      .em-wf-head { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem;
+        margin-bottom: .6rem; }
+      .em-wf-head .h-3 { margin: 0; }
+      .em-studio { font-size: .72rem; font-weight: 800; letter-spacing: .08em;
+        text-transform: uppercase; color: var(--blue); }
+      .em-folder, .em-trig { font-size: .76rem; color: var(--grey); }
+      .em-trig { flex-basis: 100%; }
+
+      .em-pill { font-size: .68rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase;
+        border-radius: 99px; padding: .16rem .55rem; }
+      .em-live { background: #E6F7EC; color: #0C7A34; }
+      .em-draft { background: rgba(16,27,47,.08); color: var(--grey); }
+      .em-bad { background: #FDE8E8; color: #A81E23; }
+      .em-warn, .em-redirected { background: #FFF3D6; color: #8A5A00; }
+      .em-legacy { background: #EAF1FB; color: #0056bd; }
+
+      .em-step { border-top: 1px solid rgba(16,27,47,.09); }
+      .em-step > summary { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem;
+        padding: .55rem 0; cursor: pointer; list-style: none; }
+      .em-step > summary::-webkit-details-marker { display: none; }
+      .em-step > summary::before { content: '▸'; color: var(--grey); font-size: .8rem; }
+      .em-step[open] > summary::before { content: '▾'; }
+      .em-type { font-size: .68rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase;
+        border-radius: 5px; padding: .16rem .45rem; }
+      .em-t-email { background: var(--mist); color: #0056bd; }
+      .em-t-sms { background: #E9F7F0; color: #0C7A34; }
+      .em-t-internal_notification { background: rgba(16,27,47,.08); color: var(--grey); }
+      .em-subject { font-weight: 700; flex: 1 1 14rem; }
+
+      .em-body { padding: 0 0 .9rem 1.2rem; }
+      .em-meta { display: grid; grid-template-columns: max-content 1fr; gap: .1rem .7rem;
+        margin: 0 0 .6rem; font-size: .82rem; }
+      .em-meta dt { font-weight: 800; color: var(--grey); }
+      .em-meta dd { margin: 0; }
+      .em-links { list-style: none; margin: 0 0 .7rem; padding: 0; display: grid; gap: .25rem; }
+      .em-links li { display: flex; align-items: center; gap: .45rem; font-size: .8rem; }
+      .em-links a { word-break: break-all; }
+      .em-dot { width: .6rem; height: .6rem; border-radius: 50%; flex: none; background: #16C34A; }
+      .em-dot.em-redirected { background: #E8A500; }
+      .em-dot.em-legacy { background: #5EA2FF; }
+      .em-copy { white-space: pre-wrap; font: inherit; font-size: .88rem; line-height: 1.6;
+        background: #F7FAFF; border: 1px solid rgba(16,27,47,.08); border-radius: 10px;
+        padding: .8rem .9rem; margin: 0; max-height: 26rem; overflow: auto; }
+      .em-empty { font-size: .85rem; color: var(--grey); margin: 0; }
+      .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden;
+        clip: rect(0 0 0 0); white-space: nowrap; }
+    </style>
+  </PasswordGate>
+</Base>

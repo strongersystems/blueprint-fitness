@@ -1,0 +1,432 @@
+{
+ "workflow": {
+  "_id": "e6cf59b0-4509-4922-bca5-b8b807b80194",
+  "locationId": "mztjJyXHNWiEotc8ItXP",
+  "name": "1. Signed Up - 30 Day Trial",
+  "status": "published",
+  "version": 9,
+  "allowMultiple": true,
+  "timezone": "account",
+  "removeContactFromLastStep": true,
+  "filePath": "location/mztjJyXHNWiEotc8ItXP/workflows/e6cf59b0-4509-4922-bca5-b8b807b80194/9",
+  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/automation-workflows-production/o/location%2FmztjJyXHNWiEotc8ItXP%2Fworkflows%2Fe6cf59b0-4509-4922-bca5-b8b807b80194%2F9?alt=media&token=12c0ecb9-11a8-4749-ac43-4d156dda38b0",
+  "stopOnResponse": false,
+  "autoMarkAsRead": false,
+  "originId": "707c1c9f-b0e4-405f-94f3-8b86c68b0932",
+  "permission": 380,
+  "type": "workflow",
+  "updatedBy": "kD5eX8SAxDHruPaeEprZ",
+  "createdAt": "2024-10-16T11:49:15.276Z",
+  "updatedAt": "2026-07-21T10:06:52.766Z",
+  "deleted": false,
+  "__v": 0,
+  "allowMultipleOpportunity": false,
+  "dataVersion": 7,
+  "eventStartDate": null,
+  "parentId": "9f2aeda1-fec5-424d-b24c-96c9ac78c2e3",
+  "senderAddress": {
+   "from_email": "{{location.email}}",
+   "from_name": "{{custom_values.sales_and_journey}}"
+  },
+  "triggersFilePath": "location/mztjJyXHNWiEotc8ItXP/workflow-triggers/e6cf59b0-4509-4922-bca5-b8b807b80194/3",
+  "window": null,
+  "workflowNote": {
+   "content": "",
+   "createdBy": "snapshot",
+   "createdByName": "snapshot",
+   "createdAt": "2024-10-16T11:49:18.642Z",
+   "updatedBy": "snapshot",
+   "updatedByName": "snapshot",
+   "updatedAt": "2024-10-16T11:49:18.642Z"
+  },
+  "creationSource": "builder",
+  "companyId": "BHs3MppSlUdmHKGV7DDA",
+  "isTriggerBucketMigrated": false,
+  "id": "e6cf59b0-4509-4922-bca5-b8b807b80194",
+  "workflowData": {
+   "templates": [
+    {
+     "id": "5491eb30-60f3-4a7a-9f15-820f2c270899",
+     "order": 0,
+     "attributes": {
+      "tags": [
+       "human"
+      ]
+     },
+     "name": "Add Tag",
+     "type": "add_contact_tag",
+     "next": "e06abdb2-8fda-46ab-ab67-631f1ff52118"
+    },
+    {
+     "id": "e06abdb2-8fda-46ab-ab67-631f1ff52118",
+     "order": 1,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "minutes",
+       "value": 10,
+       "when": "after"
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "74a25111-d0f2-4d6b-9b2e-996e6b47b22b",
+     "parentKey": "5491eb30-60f3-4a7a-9f15-820f2c270899"
+    },
+    {
+     "id": "74a25111-d0f2-4d6b-9b2e-996e6b47b22b",
+     "order": 2,
+     "attributes": {
+      "type": "remove_from_workflow",
+      "workflow_id": [
+       "41283a60-a1d6-4a47-b006-1bf24e1c1d82"
+      ]
+     },
+     "name": "Remove from Workflow",
+     "type": "remove_from_workflow",
+     "next": "b9e2651f-841c-4549-b440-434dd538c73f",
+     "parentKey": "e06abdb2-8fda-46ab-ab67-631f1ff52118"
+    },
+    {
+     "id": "b9e2651f-841c-4549-b440-434dd538c73f",
+     "order": 3,
+     "attributes": {
+      "tags": [
+       "cancelled",
+       "email subscriber",
+       "existing member",
+       "new lead",
+       "paused member",
+       "intro session complete (28 day challenge)"
+      ],
+      "type": "remove_contact_tag"
+     },
+     "name": "remove new lead tag",
+     "type": "remove_contact_tag",
+     "next": "16037bcf-fde0-461e-8102-6df6c1bf289b",
+     "parentKey": "74a25111-d0f2-4d6b-9b2e-996e6b47b22b"
+    },
+    {
+     "id": "16037bcf-fde0-461e-8102-6df6c1bf289b",
+     "order": 4,
+     "attributes": {
+      "only_unassigned_contact": false,
+      "total_index": 1,
+      "traffic_split": "equally",
+      "traffic_weightage": {
+       "K5v63qmBa7H2sgCd1rWt": 1
+      },
+      "traffic_index": [
+       {
+        "id": "K5v63qmBa7H2sgCd1rWt",
+        "indexes": [
+         1
+        ]
+       }
+      ],
+      "user_list": [
+       "K5v63qmBa7H2sgCd1rWt"
+      ],
+      "type": "assign_user"
+     },
+     "name": "Assign to user",
+     "type": "assign_user",
+     "next": "d2d0f48c-560f-4f78-9a2b-002526e1c208",
+     "parentKey": "b9e2651f-841c-4549-b440-434dd538c73f"
+    },
+    {
+     "id": "d2d0f48c-560f-4f78-9a2b-002526e1c208",
+     "order": 5,
+     "attributes": {
+      "type": "email",
+      "email": {
+       "from_name": "{{location.name}}",
+       "from_email": "{{location.email}}",
+       "userType": "custom_email",
+       "subject": "LEYTONSTONE 30 DAY SIGNUP {{contact.name}}",
+       "html": "<p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;font-family: verdana,geneva,sans-serif;font-size: 16px;\">NEW SIGNUP!<br>{{contact.name}} just signed up for the {{custom_values.challengetrial_name}}</p>",
+       "attachments": [],
+       "to": "{{location.email}}",
+       "cc": ""
+      }
+     },
+     "name": "Internal Notification",
+     "type": "internal_notification",
+     "next": "67ae679b-c0d3-4393-ac42-e738248ac819",
+     "parentKey": "16037bcf-fde0-461e-8102-6df6c1bf289b"
+    },
+    {
+     "id": "67ae679b-c0d3-4393-ac42-e738248ac819",
+     "order": 6,
+     "attributes": {
+      "type": "create_opportunity",
+      "pipeline_id": "UCAsptFiVTdp3Qcs6LP0",
+      "monetary_value": "129",
+      "opportunity_status": "won",
+      "allow_multiple": false,
+      "opportunity_name": "",
+      "opportunity_source": "",
+      "allow_backward": true,
+      "pipeline_stage_id": "35db349f-6d6b-4e80-b93a-27a0acbc4b99",
+      "fields": []
+     },
+     "name": "Update to WON Opportunity",
+     "type": "create_opportunity",
+     "next": "40a86886-3ec1-4d3f-b185-989a8f6a392e",
+     "parentKey": "d2d0f48c-560f-4f78-9a2b-002526e1c208"
+    },
+    {
+     "id": "40a86886-3ec1-4d3f-b185-989a8f6a392e",
+     "order": 7,
+     "attributes": {
+      "type": "create_opportunity",
+      "pipeline_id": "IiQdap8s8IYeGih0Vw5p",
+      "pipeline_stage_id": "b77eda01-3beb-45a9-a366-68f8a7181265",
+      "monetary_value": "",
+      "opportunity_status": "open",
+      "allow_backward": true,
+      "opportunity_name": "",
+      "opportunity_source": "",
+      "allow_multiple": false,
+      "fields": []
+     },
+     "name": "Add to Conversion Pipeline",
+     "type": "create_opportunity",
+     "next": "9ebf36ec-aa9d-4022-9207-cde0303f6de6",
+     "parentKey": "67ae679b-c0d3-4393-ac42-e738248ac819"
+    },
+    {
+     "id": "9ebf36ec-aa9d-4022-9207-cde0303f6de6",
+     "order": 8,
+     "attributes": {
+      "tags": [
+       "challenge signup"
+      ]
+     },
+     "name": "Add Tag - Signed Up",
+     "type": "add_contact_tag",
+     "next": "80783064-bc84-41b8-abb9-944532e26ee2",
+     "parentKey": "40a86886-3ec1-4d3f-b185-989a8f6a392e"
+    },
+    {
+     "id": "80783064-bc84-41b8-abb9-944532e26ee2",
+     "order": 9,
+     "attributes": {
+      "from_name": "Stuart Rook",
+      "from_email": "info@blueprintfitnessldn.com",
+      "subject": "Your Super Quick Guide To Getting Started⚡",
+      "template_id": "670fa8277e1f3091e71e0684",
+      "templatesource": "email-builder",
+      "attachments": [
+       {
+        "url": "https://storage.googleapis.com/highlevel-backend.appspot.com/location/mztjJyXHNWiEotc8ItXP/workflow/e6cf59b0-4509-4922-bca5-b8b807b80194/9584818a-d624-4e82-a661-2534bf47993f.pdf?alt=media&token=0527cea9-0c4e-4f00-82d0-18b4a5c3122f",
+        "name": "Welcome Booklet Leytonstone V1.0.pdf",
+        "size": 17432887
+       }
+      ],
+      "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2FmztjJyXHNWiEotc8ItXP%2Femails%2F670fa8277e1f3091e71e0684%2Findex.html?alt=media&token=bdd6abb6-9ed8-48b5-8643-0932971390b8",
+      "createdAt": "2024-10-16T11:48:56.434Z",
+      "updatedAt": "2025-01-14T16:07:41.698Z"
+     },
+     "name": "Intro - Welcome Email",
+     "type": "email",
+     "parentKey": "9ebf36ec-aa9d-4022-9207-cde0303f6de6"
+    }
+   ]
+  },
+  "permissionMeta": {
+   "canRead": true,
+   "canWrite": true
+  },
+  "scheduledPauseDates": []
+ },
+ "templates": [
+  {
+   "id": "5491eb30-60f3-4a7a-9f15-820f2c270899",
+   "order": 0,
+   "attributes": {
+    "tags": [
+     "human"
+    ]
+   },
+   "name": "Add Tag",
+   "type": "add_contact_tag",
+   "next": "e06abdb2-8fda-46ab-ab67-631f1ff52118"
+  },
+  {
+   "id": "e06abdb2-8fda-46ab-ab67-631f1ff52118",
+   "order": 1,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "minutes",
+     "value": 10,
+     "when": "after"
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "74a25111-d0f2-4d6b-9b2e-996e6b47b22b",
+   "parentKey": "5491eb30-60f3-4a7a-9f15-820f2c270899"
+  },
+  {
+   "id": "74a25111-d0f2-4d6b-9b2e-996e6b47b22b",
+   "order": 2,
+   "attributes": {
+    "type": "remove_from_workflow",
+    "workflow_id": [
+     "41283a60-a1d6-4a47-b006-1bf24e1c1d82"
+    ]
+   },
+   "name": "Remove from Workflow",
+   "type": "remove_from_workflow",
+   "next": "b9e2651f-841c-4549-b440-434dd538c73f",
+   "parentKey": "e06abdb2-8fda-46ab-ab67-631f1ff52118"
+  },
+  {
+   "id": "b9e2651f-841c-4549-b440-434dd538c73f",
+   "order": 3,
+   "attributes": {
+    "tags": [
+     "cancelled",
+     "email subscriber",
+     "existing member",
+     "new lead",
+     "paused member",
+     "intro session complete (28 day challenge)"
+    ],
+    "type": "remove_contact_tag"
+   },
+   "name": "remove new lead tag",
+   "type": "remove_contact_tag",
+   "next": "16037bcf-fde0-461e-8102-6df6c1bf289b",
+   "parentKey": "74a25111-d0f2-4d6b-9b2e-996e6b47b22b"
+  },
+  {
+   "id": "16037bcf-fde0-461e-8102-6df6c1bf289b",
+   "order": 4,
+   "attributes": {
+    "only_unassigned_contact": false,
+    "total_index": 1,
+    "traffic_split": "equally",
+    "traffic_weightage": {
+     "K5v63qmBa7H2sgCd1rWt": 1
+    },
+    "traffic_index": [
+     {
+      "id": "K5v63qmBa7H2sgCd1rWt",
+      "indexes": [
+       1
+      ]
+     }
+    ],
+    "user_list": [
+     "K5v63qmBa7H2sgCd1rWt"
+    ],
+    "type": "assign_user"
+   },
+   "name": "Assign to user",
+   "type": "assign_user",
+   "next": "d2d0f48c-560f-4f78-9a2b-002526e1c208",
+   "parentKey": "b9e2651f-841c-4549-b440-434dd538c73f"
+  },
+  {
+   "id": "d2d0f48c-560f-4f78-9a2b-002526e1c208",
+   "order": 5,
+   "attributes": {
+    "type": "email",
+    "email": {
+     "from_name": "{{location.name}}",
+     "from_email": "{{location.email}}",
+     "userType": "custom_email",
+     "subject": "LEYTONSTONE 30 DAY SIGNUP {{contact.name}}",
+     "html": "<p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;font-family: verdana,geneva,sans-serif;font-size: 16px;\">NEW SIGNUP!<br>{{contact.name}} just signed up for the {{custom_values.challengetrial_name}}</p>",
+     "attachments": [],
+     "to": "{{location.email}}",
+     "cc": ""
+    }
+   },
+   "name": "Internal Notification",
+   "type": "internal_notification",
+   "next": "67ae679b-c0d3-4393-ac42-e738248ac819",
+   "parentKey": "16037bcf-fde0-461e-8102-6df6c1bf289b"
+  },
+  {
+   "id": "67ae679b-c0d3-4393-ac42-e738248ac819",
+   "order": 6,
+   "attributes": {
+    "type": "create_opportunity",
+    "pipeline_id": "UCAsptFiVTdp3Qcs6LP0",
+    "monetary_value": "129",
+    "opportunity_status": "won",
+    "allow_multiple": false,
+    "opportunity_name": "",
+    "opportunity_source": "",
+    "allow_backward": true,
+    "pipeline_stage_id": "35db349f-6d6b-4e80-b93a-27a0acbc4b99",
+    "fields": []
+   },
+   "name": "Update to WON Opportunity",
+   "type": "create_opportunity",
+   "next": "40a86886-3ec1-4d3f-b185-989a8f6a392e",
+   "parentKey": "d2d0f48c-560f-4f78-9a2b-002526e1c208"
+  },
+  {
+   "id": "40a86886-3ec1-4d3f-b185-989a8f6a392e",
+   "order": 7,
+   "attributes": {
+    "type": "create_opportunity",
+    "pipeline_id": "IiQdap8s8IYeGih0Vw5p",
+    "pipeline_stage_id": "b77eda01-3beb-45a9-a366-68f8a7181265",
+    "monetary_value": "",
+    "opportunity_status": "open",
+    "allow_backward": true,
+    "opportunity_name": "",
+    "opportunity_source": "",
+    "allow_multiple": false,
+    "fields": []
+   },
+   "name": "Add to Conversion Pipeline",
+   "type": "create_opportunity",
+   "next": "9ebf36ec-aa9d-4022-9207-cde0303f6de6",
+   "parentKey": "67ae679b-c0d3-4393-ac42-e738248ac819"
+  },
+  {
+   "id": "9ebf36ec-aa9d-4022-9207-cde0303f6de6",
+   "order": 8,
+   "attributes": {
+    "tags": [
+     "challenge signup"
+    ]
+   },
+   "name": "Add Tag - Signed Up",
+   "type": "add_contact_tag",
+   "next": "80783064-bc84-41b8-abb9-944532e26ee2",
+   "parentKey": "40a86886-3ec1-4d3f-b185-989a8f6a392e"
+  },
+  {
+   "id": "80783064-bc84-41b8-abb9-944532e26ee2",
+   "order": 9,
+   "attributes": {
+    "from_name": "Stuart Rook",
+    "from_email": "info@blueprintfitnessldn.com",
+    "subject": "Your Super Quick Guide To Getting Started⚡",
+    "template_id": "670fa8277e1f3091e71e0684",
+    "templatesource": "email-builder",
+    "attachments": [
+     {
+      "url": "https://storage.googleapis.com/highlevel-backend.appspot.com/location/mztjJyXHNWiEotc8ItXP/workflow/e6cf59b0-4509-4922-bca5-b8b807b80194/9584818a-d624-4e82-a661-2534bf47993f.pdf?alt=media&token=0527cea9-0c4e-4f00-82d0-18b4a5c3122f",
+      "name": "Welcome Booklet Leytonstone V1.0.pdf",
+      "size": 17432887
+     }
+    ],
+    "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2FmztjJyXHNWiEotc8ItXP%2Femails%2F670fa8277e1f3091e71e0684%2Findex.html?alt=media&token=bdd6abb6-9ed8-48b5-8643-0932971390b8",
+    "createdAt": "2024-10-16T11:48:56.434Z",
+    "updatedAt": "2025-01-14T16:07:41.698Z"
+   },
+   "name": "Intro - Welcome Email",
+   "type": "email",
+   "parentKey": "9ebf36ec-aa9d-4022-9207-cde0303f6de6"
+  }
+ ]
+}

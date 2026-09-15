@@ -1,0 +1,2360 @@
+{
+ "workflow": {
+  "creationSource": "builder",
+  "_id": "53746513-42ea-4b3b-8305-137698b01ba6",
+  "deleted": false,
+  "timezone": "account",
+  "locationId": "cquQsieyBZx9vRgEqBge",
+  "originId": "290ecb1f-516b-45f1-89e9-1a1c9934b4d9",
+  "name": "20 Insights",
+  "status": "draft",
+  "updatedBy": "copy_workflows",
+  "type": "workflow",
+  "companyId": "BHs3MppSlUdmHKGV7DDA",
+  "createdAt": "2024-02-19T19:53:33.525Z",
+  "updatedAt": "2024-02-19T19:53:33.823Z",
+  "__v": 0,
+  "allowMultiple": false,
+  "autoMarkAsRead": false,
+  "dataVersion": 7,
+  "eventStartDate": null,
+  "filePath": "location/cquQsieyBZx9vRgEqBge/workflows/53746513-42ea-4b3b-8305-137698b01ba6/1",
+  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2FcquQsieyBZx9vRgEqBge%2Fworkflows%2F53746513-42ea-4b3b-8305-137698b01ba6%2F1?alt=media&token=225244c6-133b-475b-b75a-bf7af791b9c4",
+  "meta": null,
+  "permission": 380,
+  "removeContactFromLastStep": true,
+  "senderAddress": {
+   "from_email": "",
+   "from_name": ""
+  },
+  "stopOnResponse": false,
+  "version": 1,
+  "window": null,
+  "id": "53746513-42ea-4b3b-8305-137698b01ba6",
+  "workflowData": {
+   "templates": [
+    {
+     "id": "af0328cb-dca2-4b4b-a258-f84f2a8f45d7",
+     "order": 0,
+     "attributes": {
+      "tags": [
+       "insights"
+      ]
+     },
+     "name": "Add Tag",
+     "type": "add_contact_tag",
+     "next": "a0673f1e-3815-46da-bacc-5f3b92f8f6da"
+    },
+    {
+     "id": "a0673f1e-3815-46da-bacc-5f3b92f8f6da",
+     "order": 1,
+     "attributes": {
+      "template_id": "65d3a629125c9e4f46cf6ce6",
+      "templatesource": "email-builder",
+      "subject": "Why Starting Is Like Climbing a Mountain... Barefoot",
+      "from_email": "",
+      "from_name": "",
+      "attachments": []
+     },
+     "name": "Email 1",
+     "type": "email",
+     "next": "44be34ef-df0b-491a-9166-3ee56a686db0",
+     "stats": {
+      "id": "a0673f1e-3815-46da-bacc-5f3b92f8f6da",
+      "stats": {
+       "delivered": "-",
+       "opened": "-",
+       "clicked": "-",
+       "replied": "-",
+       "bounced": "-",
+       "unsubscribed": "-"
+      }
+     },
+     "parentKey": "af0328cb-dca2-4b4b-a258-f84f2a8f45d7"
+    },
+    {
+     "id": "44be34ef-df0b-491a-9166-3ee56a686db0",
+     "order": 2,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "06:00",
+       "end": "23:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "5243549e-6d1e-445c-8e76-ecdc222c3c64",
+     "parentKey": "a0673f1e-3815-46da-bacc-5f3b92f8f6da"
+    },
+    {
+     "id": "5243549e-6d1e-445c-8e76-ecdc222c3c64",
+     "order": 3,
+     "attributes": {
+      "template_id": "65d3a8d597ce0b6ac9290fc8",
+      "templatesource": "email-builder",
+      "subject": "The Tortoise, The Hare, and Your Fitness Journey",
+      "from_email": "",
+      "from_name": "",
+      "attachments": []
+     },
+     "name": "Email 2",
+     "type": "email",
+     "next": "eebae893-6000-4c9f-be12-bdf7344d56c6",
+     "parentKey": "44be34ef-df0b-491a-9166-3ee56a686db0",
+     "stats": {
+      "id": "5243549e-6d1e-445c-8e76-ecdc222c3c64",
+      "stats": {
+       "delivered": "-",
+       "opened": "-",
+       "clicked": "-",
+       "replied": "-",
+       "bounced": "-",
+       "unsubscribed": "-"
+      }
+     }
+    },
+    {
+     "id": "eebae893-6000-4c9f-be12-bdf7344d56c6",
+     "order": 4,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "06:00",
+       "end": "23:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "229e299d-0bae-44e8-8d5a-e2fea01ac78f",
+     "parentKey": "5243549e-6d1e-445c-8e76-ecdc222c3c64"
+    },
+    {
+     "id": "229e299d-0bae-44e8-8d5a-e2fea01ac78f",
+     "order": 5,
+     "attributes": {
+      "template_id": "65d3a9340e4f3b1e20ff0c8c",
+      "templatesource": "email-builder",
+      "subject": "Your Fitness Journey Isn't a Microwave Dinner",
+      "from_email": "",
+      "from_name": "",
+      "attachments": []
+     },
+     "name": "Email 3",
+     "type": "email",
+     "next": "da1c1383-03c3-4b8b-b59e-e2615b87cb42",
+     "parentKey": "eebae893-6000-4c9f-be12-bdf7344d56c6",
+     "stats": {
+      "id": "229e299d-0bae-44e8-8d5a-e2fea01ac78f",
+      "stats": {
+       "delivered": "-",
+       "opened": "-",
+       "clicked": "-",
+       "replied": "-",
+       "bounced": "-",
+       "unsubscribed": "-"
+      }
+     }
+    },
+    {
+     "id": "da1c1383-03c3-4b8b-b59e-e2615b87cb42",
+     "order": 6,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "06:00",
+       "end": "23:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "f210138d-88dd-4dc8-bccc-ab501b11b5c8",
+     "parentKey": "229e299d-0bae-44e8-8d5a-e2fea01ac78f"
+    },
+    {
+     "id": "f210138d-88dd-4dc8-bccc-ab501b11b5c8",
+     "order": 7,
+     "attributes": {
+      "template_id": "65d3a9790e4f3b8080ff0cb6",
+      "templatesource": "email-builder",
+      "subject": "Your Fitness Journey Isn't a Race Against Anyone Else",
+      "from_email": "",
+      "from_name": "",
+      "attachments": []
+     },
+     "name": "Email 4",
+     "type": "email",
+     "next": "400b6742-8115-4be9-8f45-2c7f40b67c96",
+     "parentKey": "da1c1383-03c3-4b8b-b59e-e2615b87cb42",
+     "stats": {
+      "id": "f210138d-88dd-4dc8-bccc-ab501b11b5c8",
+      "stats": {
+       "delivered": "-",
+       "opened": "-",
+       "clicked": "-",
+       "replied": "-",
+       "bounced": "-",
+       "unsubscribed": "-"
+      }
+     }
+    },
+    {
+     "id": "400b6742-8115-4be9-8f45-2c7f40b67c96",
+     "order": 8,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "06:00",
+       "end": "23:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "b09f91fa-393e-48e5-9719-dfb993c7c815",
+     "parentKey": "f210138d-88dd-4dc8-bccc-ab501b11b5c8"
+    },
+    {
+     "id": "b09f91fa-393e-48e5-9719-dfb993c7c815",
+     "order": 9,
+     "attributes": {
+      "template_id": "65d3a9d097ce0ba1f1291060",
+      "templatesource": "email-builder",
+      "subject": "The Lidl Middle Aisle Syndrome & Your Fitness Goals",
+      "from_email": "",
+      "from_name": "",
+      "attachments": []
+     },
+     "name": "Email 5",
+     "type": "email",
+     "next": "46b1fc36-515a-4e41-8330-dc83eae295c9",
+     "parentKey": "400b6742-8115-4be9-8f45-2c7f40b67c96",
+     "stats": {
+      "id": "b09f91fa-393e-48e5-9719-dfb993c7c815",
+      "stats": {
+       "delivered": "-",
+       "opened": "-",
+       "clicked": "-",
+       "replied": "-",
+       "bounced": "-",
+       "unsubscribed": "-"
+      }
+     }
+    },
+    {
+     "id": "46b1fc36-515a-4e41-8330-dc83eae295c9",
+     "order": 10,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "06:00",
+       "end": "23:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "0be6bbe0-1772-4d20-bdf2-a6d91fd74176",
+     "parentKey": "b09f91fa-393e-48e5-9719-dfb993c7c815"
+    },
+    {
+     "id": "0be6bbe0-1772-4d20-bdf2-a6d91fd74176",
+     "order": 11,
+     "attributes": {
+      "template_id": "65d3aa1d0e4f3b1cbeff0d07",
+      "templatesource": "email-builder",
+      "subject": "The Art of Becoming You",
+      "from_email": "",
+      "from_name": "",
+      "attachments": []
+     },
+     "name": "Email 6",
+     "type": "email",
+     "next": "73e7b324-b765-45b6-89a5-13c377ed8192",
+     "parentKey": "46b1fc36-515a-4e41-8330-dc83eae295c9",
+     "stats": {
+      "id": "0be6bbe0-1772-4d20-bdf2-a6d91fd74176",
+      "stats": {
+       "delivered": "-",
+       "opened": "-",
+       "clicked": "-",
+       "replied": "-",
+       "bounced": "-",
+       "unsubscribed": "-"
+      }
+     }
+    },
+    {
+     "id": "73e7b324-b765-45b6-89a5-13c377ed8192",
+     "order": 12,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "06:00",
+       "end": "23:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "5a685bac-67ae-4a51-bbb4-c576b2737952",
+     "parentKey": "0be6bbe0-1772-4d20-bdf2-a6d91fd74176"
+    },
+    {
+     "id": "5a685bac-67ae-4a51-bbb4-c576b2737952",
+     "order": 13,
+     "attributes": {
+      "template_id": "65d3aa66125c9e94e6cf6f50",
+      "templatesource": "email-builder",
+      "subject": "The Secret Sauce to Your Fitness - No, It's Not More Burpees",
+      "from_email": "",
+      "from_name": "",
+      "attachments": []
+     },
+     "name": "Email 7",
+     "type": "email",
+     "next": "2cd69f64-b7cc-467e-98ea-0364f6b37cda",
+     "parentKey": "73e7b324-b765-45b6-89a5-13c377ed8192",
+     "stats": {
+      "id": "5a685bac-67ae-4a51-bbb4-c576b2737952",
+      "stats": {
+       "delivered": "-",
+       "opened": "-",
+       "clicked": "-",
+       "replied": "-",
+       "bounced": "-",
+       "unsubscribed": "-"
+      }
+     }
+    },
+    {
+     "id": "2cd69f64-b7cc-467e-98ea-0364f6b37cda",
+     "order": 14,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "06:00",
+       "end": "23:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "85dabff2-34be-4907-ad28-023cf33ae166",
+     "parentKey": "5a685bac-67ae-4a51-bbb4-c576b2737952"
+    },
+    {
+     "id": "85dabff2-34be-4907-ad28-023cf33ae166",
+     "order": 15,
+     "attributes": {
+      "template_id": "65d3aab997ce0b44112910e6",
+      "templatesource": "email-builder",
+      "subject": "The REAL Reason We Train After 30",
+      "from_email": "",
+      "from_name": "",
+      "attachments": []
+     },
+     "name": "Email 8",
+     "type": "email",
+     "next": "50636b8c-3c99-4b34-8c52-09371e30351a",
+     "parentKey": "2cd69f64-b7cc-467e-98ea-0364f6b37cda",
+     "stats": {
+      "id": "85dabff2-34be-4907-ad28-023cf33ae166",
+      "stats": {
+       "delivered": "-",
+       "opened": "-",
+       "clicked": "-",
+       "replied": "-",
+       "bounced": "-",
+       "unsubscribed": "-"
+      }
+     }
+    },
+    {
+     "id": "50636b8c-3c99-4b34-8c52-09371e30351a",
+     "order": 16,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "06:00",
+       "end": "23:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "7393de2b-c5de-4302-b5a6-a14eb9465fe9",
+     "parentKey": "85dabff2-34be-4907-ad28-023cf33ae166"
+    },
+    {
+     "id": "7393de2b-c5de-4302-b5a6-a14eb9465fe9",
+     "order": 17,
+     "attributes": {
+      "template_id": "65d3ab100e4f3b35b3ff0d91",
+      "templatesource": "email-builder",
+      "subject": "9. The Truth About Losing Weight - No Treadmill or Hours of Cardio Required",
+      "from_email": "",
+      "from_name": "",
+      "attachments": []
+     },
+     "name": "Email 9",
+     "type": "email",
+     "next": "c586f985-9a13-4816-8cf8-99f32f80eff4",
+     "parentKey": "50636b8c-3c99-4b34-8c52-09371e30351a",
+     "stats": {
+      "id": "7393de2b-c5de-4302-b5a6-a14eb9465fe9",
+      "stats": {
+       "delivered": "-",
+       "opened": "-",
+       "clicked": "-",
+       "replied": "-",
+       "bounced": "-",
+       "unsubscribed": "-"
+      }
+     }
+    },
+    {
+     "id": "c586f985-9a13-4816-8cf8-99f32f80eff4",
+     "order": 18,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "06:00",
+       "end": "23:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "dab4c723-e287-477d-a390-24dd3590a555",
+     "parentKey": "7393de2b-c5de-4302-b5a6-a14eb9465fe9"
+    },
+    {
+     "id": "dab4c723-e287-477d-a390-24dd3590a555",
+     "order": 19,
+     "attributes": {
+      "template_id": "65d3ab50125c9ed4b4cf6ff2",
+      "templatesource": "email-builder",
+      "subject": "10. Overthinkers need to read this.",
+      "from_email": "",
+      "from_name": "",
+      "attachments": []
+     },
+     "name": "Email 10",
+     "type": "email",
+     "next": "239624e7-b401-4746-8a48-c3c2a8680b85",
+     "parentKey": "c586f985-9a13-4816-8cf8-99f32f80eff4",
+     "stats": {
+      "id": "dab4c723-e287-477d-a390-24dd3590a555",
+      "stats": {
+       "delivered": "-",
+       "opened": "-",
+       "clicked": "-",
+       "replied": "-",
+       "bounced": "-",
+       "unsubscribed": "-"
+      }
+     }
+    },
+    {
+     "id": "239624e7-b401-4746-8a48-c3c2a8680b85",
+     "order": 20,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "06:00",
+       "end": "23:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "parentKey": "dab4c723-e287-477d-a390-24dd3590a555",
+     "next": "1fedb3d2-9921-4d97-adad-a2f191e6a97a"
+    },
+    {
+     "id": "1fedb3d2-9921-4d97-adad-a2f191e6a97a",
+     "order": 21,
+     "attributes": {
+      "template_id": "65d3ac640e4f3b8ff1ff0e6f",
+      "templatesource": "email-builder",
+      "subject": "The Unlikely Champion of the Sitting Olympics",
+      "from_email": "",
+      "from_name": "",
+      "attachments": []
+     },
+     "name": "Email 11",
+     "type": "email",
+     "next": "0b163288-95bc-455e-91c6-4f958e73ff00",
+     "parentKey": "239624e7-b401-4746-8a48-c3c2a8680b85"
+    },
+    {
+     "id": "0b163288-95bc-455e-91c6-4f958e73ff00",
+     "order": 22,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "06:00",
+       "end": "23:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "081a8618-088d-4012-9163-a0f660698354",
+     "parentKey": "1fedb3d2-9921-4d97-adad-a2f191e6a97a"
+    },
+    {
+     "id": "081a8618-088d-4012-9163-a0f660698354",
+     "order": 23,
+     "attributes": {
+      "template_id": "65d3acb997ce0bc42a29121f",
+      "templatesource": "email-builder",
+      "subject": "If Your Get Up And Go Got Up And Went…",
+      "from_email": "",
+      "from_name": "",
+      "attachments": []
+     },
+     "name": "Email 12",
+     "type": "email",
+     "next": "e4baa771-c965-4d2e-be7d-8616c03824b3",
+     "parentKey": "0b163288-95bc-455e-91c6-4f958e73ff00"
+    },
+    {
+     "id": "e4baa771-c965-4d2e-be7d-8616c03824b3",
+     "order": 24,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "06:00",
+       "end": "23:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "88bfa37b-3df1-431a-9b46-e1a72526bdca",
+     "parentKey": "081a8618-088d-4012-9163-a0f660698354"
+    },
+    {
+     "id": "88bfa37b-3df1-431a-9b46-e1a72526bdca",
+     "order": 25,
+     "attributes": {
+      "template_id": "65d3ad010e4f3b9688ff0eff",
+      "templatesource": "email-builder",
+      "subject": "Gadgets & Apps: The Fitness Game Changer or Just Shiny Distractions?",
+      "from_email": "",
+      "from_name": "",
+      "attachments": []
+     },
+     "name": "Email 13",
+     "type": "email",
+     "next": "7ecba504-edf0-407e-ab96-80a33c00776f",
+     "parentKey": "e4baa771-c965-4d2e-be7d-8616c03824b3"
+    },
+    {
+     "id": "7ecba504-edf0-407e-ab96-80a33c00776f",
+     "order": 26,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "06:00",
+       "end": "23:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "6cd9fad4-e4ae-44bf-a314-b647b91b8294",
+     "parentKey": "88bfa37b-3df1-431a-9b46-e1a72526bdca"
+    },
+    {
+     "id": "6cd9fad4-e4ae-44bf-a314-b647b91b8294",
+     "order": 27,
+     "attributes": {
+      "template_id": "65d3ad440e4f3b45abff0f26",
+      "templatesource": "email-builder",
+      "subject": "Protein Absorption Is Key",
+      "from_email": "",
+      "from_name": "",
+      "attachments": []
+     },
+     "name": "Email 14",
+     "type": "email",
+     "next": "6af88ddb-be61-47c4-8958-b8e5fe24f857",
+     "parentKey": "7ecba504-edf0-407e-ab96-80a33c00776f"
+    },
+    {
+     "id": "6af88ddb-be61-47c4-8958-b8e5fe24f857",
+     "order": 28,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "06:00",
+       "end": "23:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "abf53cbc-2de4-4e59-bf90-24717fdda22c",
+     "parentKey": "6cd9fad4-e4ae-44bf-a314-b647b91b8294"
+    },
+    {
+     "id": "abf53cbc-2de4-4e59-bf90-24717fdda22c",
+     "order": 29,
+     "attributes": {
+      "template_id": "65d3ad8e97ce0b061c2912d4",
+      "templatesource": "email-builder",
+      "subject": "The 2-Minute Rule: Small Steps, Big Wins",
+      "from_email": "",
+      "from_name": "",
+      "attachments": []
+     },
+     "name": "Email 15",
+     "type": "email",
+     "next": "b46c9734-f76a-40f2-a772-ccd87cf3d3b5",
+     "parentKey": "6af88ddb-be61-47c4-8958-b8e5fe24f857"
+    },
+    {
+     "id": "b46c9734-f76a-40f2-a772-ccd87cf3d3b5",
+     "order": 30,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "06:00",
+       "end": "23:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "f094eaf7-66b2-47bd-9517-1268a93924dc",
+     "parentKey": "abf53cbc-2de4-4e59-bf90-24717fdda22c"
+    },
+    {
+     "id": "f094eaf7-66b2-47bd-9517-1268a93924dc",
+     "order": 31,
+     "attributes": {
+      "template_id": "65d3adcc125c9e0684cf7177",
+      "templatesource": "email-builder",
+      "subject": "Stop Saving the Party Poppers for Retirement",
+      "from_email": "",
+      "from_name": "",
+      "attachments": []
+     },
+     "name": "Email 16",
+     "type": "email",
+     "next": "c196cc33-5c33-4faf-83a7-38fdd12f7cdd",
+     "parentKey": "b46c9734-f76a-40f2-a772-ccd87cf3d3b5"
+    },
+    {
+     "id": "c196cc33-5c33-4faf-83a7-38fdd12f7cdd",
+     "order": 32,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "06:00",
+       "end": "23:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "18c80e1f-2289-4114-914f-29ac9810a42d",
+     "parentKey": "f094eaf7-66b2-47bd-9517-1268a93924dc"
+    },
+    {
+     "id": "18c80e1f-2289-4114-914f-29ac9810a42d",
+     "order": 33,
+     "attributes": {
+      "template_id": "65d3ae180e4f3b2930ff0ffe",
+      "templatesource": "email-builder",
+      "subject": "The Myth of \"No Pain, No Gain\"",
+      "from_email": "",
+      "from_name": "",
+      "attachments": []
+     },
+     "name": "Email 17",
+     "type": "email",
+     "next": "9db855d5-1de7-4f54-a43a-e817d71b6c91",
+     "parentKey": "c196cc33-5c33-4faf-83a7-38fdd12f7cdd"
+    },
+    {
+     "id": "9db855d5-1de7-4f54-a43a-e817d71b6c91",
+     "order": 34,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "06:00",
+       "end": "23:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "eb83ad47-1ca0-4c17-8a33-c37f18b45bbe",
+     "parentKey": "18c80e1f-2289-4114-914f-29ac9810a42d"
+    },
+    {
+     "id": "eb83ad47-1ca0-4c17-8a33-c37f18b45bbe",
+     "order": 35,
+     "attributes": {
+      "template_id": "65d3ae4f125c9e9137cf7224",
+      "templatesource": "email-builder",
+      "subject": "Age Makes Fitness Non-Negotiable",
+      "from_email": "",
+      "from_name": "",
+      "attachments": []
+     },
+     "name": "Email 18",
+     "type": "email",
+     "next": "454ec72f-eee5-4db7-873e-bcc61652690a",
+     "parentKey": "9db855d5-1de7-4f54-a43a-e817d71b6c91"
+    },
+    {
+     "id": "454ec72f-eee5-4db7-873e-bcc61652690a",
+     "order": 36,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "06:00",
+       "end": "23:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "ef907bd1-165e-4d85-ad4b-a78d34377729",
+     "parentKey": "eb83ad47-1ca0-4c17-8a33-c37f18b45bbe"
+    },
+    {
+     "id": "ef907bd1-165e-4d85-ad4b-a78d34377729",
+     "order": 37,
+     "attributes": {
+      "template_id": "65d3ae8797ce0b6e4f2913a4",
+      "templatesource": "email-builder",
+      "subject": "Your Compass",
+      "from_email": "",
+      "from_name": "",
+      "attachments": []
+     },
+     "name": "Email 19",
+     "type": "email",
+     "next": "6581b494-47ea-464e-a331-85ba3e97ac7f",
+     "parentKey": "454ec72f-eee5-4db7-873e-bcc61652690a"
+    },
+    {
+     "id": "6581b494-47ea-464e-a331-85ba3e97ac7f",
+     "order": 38,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "06:00",
+       "end": "23:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "288c6066-1446-48e2-8e9e-4168121ba311",
+     "parentKey": "ef907bd1-165e-4d85-ad4b-a78d34377729"
+    },
+    {
+     "id": "288c6066-1446-48e2-8e9e-4168121ba311",
+     "order": 39,
+     "attributes": {
+      "template_id": "65d3aebfa4360f30e9c36ae2",
+      "templatesource": "email-builder",
+      "subject": "Your Compass",
+      "from_email": "",
+      "from_name": "",
+      "attachments": []
+     },
+     "name": "Email 20",
+     "type": "email",
+     "next": "9b3bb01c-2652-4502-870f-ac3a246854fd",
+     "parentKey": "6581b494-47ea-464e-a331-85ba3e97ac7f"
+    },
+    {
+     "id": "9b3bb01c-2652-4502-870f-ac3a246854fd",
+     "order": 40,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "06:00",
+       "end": "23:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "053545c4-e604-4a38-bb9f-b9cdc13d852c",
+     "parentKey": "288c6066-1446-48e2-8e9e-4168121ba311"
+    },
+    {
+     "id": "053545c4-e604-4a38-bb9f-b9cdc13d852c",
+     "order": 41,
+     "attributes": {
+      "template_id": "65d3b020a4360f3db8c36be6",
+      "templatesource": "email-builder",
+      "subject": "New Levels Unlocked! Your Mission, Should You Choose To Accept...",
+      "from_email": "",
+      "from_name": "",
+      "attachments": []
+     },
+     "name": "Email 21",
+     "type": "email",
+     "parentKey": "9b3bb01c-2652-4502-870f-ac3a246854fd"
+    }
+   ]
+  },
+  "permissionMeta": {
+   "canRead": true,
+   "canWrite": true
+  },
+  "scheduledPauseDates": []
+ },
+ "templates": [
+  {
+   "id": "af0328cb-dca2-4b4b-a258-f84f2a8f45d7",
+   "order": 0,
+   "attributes": {
+    "tags": [
+     "insights"
+    ]
+   },
+   "name": "Add Tag",
+   "type": "add_contact_tag",
+   "next": "a0673f1e-3815-46da-bacc-5f3b92f8f6da"
+  },
+  {
+   "id": "a0673f1e-3815-46da-bacc-5f3b92f8f6da",
+   "order": 1,
+   "attributes": {
+    "template_id": "65d3a629125c9e4f46cf6ce6",
+    "templatesource": "email-builder",
+    "subject": "Why Starting Is Like Climbing a Mountain... Barefoot",
+    "from_email": "",
+    "from_name": "",
+    "attachments": []
+   },
+   "name": "Email 1",
+   "type": "email",
+   "next": "44be34ef-df0b-491a-9166-3ee56a686db0",
+   "stats": {
+    "id": "a0673f1e-3815-46da-bacc-5f3b92f8f6da",
+    "stats": {
+     "delivered": "-",
+     "opened": "-",
+     "clicked": "-",
+     "replied": "-",
+     "bounced": "-",
+     "unsubscribed": "-"
+    }
+   },
+   "parentKey": "af0328cb-dca2-4b4b-a258-f84f2a8f45d7"
+  },
+  {
+   "id": "44be34ef-df0b-491a-9166-3ee56a686db0",
+   "order": 2,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "06:00",
+     "end": "23:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "5243549e-6d1e-445c-8e76-ecdc222c3c64",
+   "parentKey": "a0673f1e-3815-46da-bacc-5f3b92f8f6da"
+  },
+  {
+   "id": "5243549e-6d1e-445c-8e76-ecdc222c3c64",
+   "order": 3,
+   "attributes": {
+    "template_id": "65d3a8d597ce0b6ac9290fc8",
+    "templatesource": "email-builder",
+    "subject": "The Tortoise, The Hare, and Your Fitness Journey",
+    "from_email": "",
+    "from_name": "",
+    "attachments": []
+   },
+   "name": "Email 2",
+   "type": "email",
+   "next": "eebae893-6000-4c9f-be12-bdf7344d56c6",
+   "parentKey": "44be34ef-df0b-491a-9166-3ee56a686db0",
+   "stats": {
+    "id": "5243549e-6d1e-445c-8e76-ecdc222c3c64",
+    "stats": {
+     "delivered": "-",
+     "opened": "-",
+     "clicked": "-",
+     "replied": "-",
+     "bounced": "-",
+     "unsubscribed": "-"
+    }
+   }
+  },
+  {
+   "id": "eebae893-6000-4c9f-be12-bdf7344d56c6",
+   "order": 4,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "06:00",
+     "end": "23:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "229e299d-0bae-44e8-8d5a-e2fea01ac78f",
+   "parentKey": "5243549e-6d1e-445c-8e76-ecdc222c3c64"
+  },
+  {
+   "id": "229e299d-0bae-44e8-8d5a-e2fea01ac78f",
+   "order": 5,
+   "attributes": {
+    "template_id": "65d3a9340e4f3b1e20ff0c8c",
+    "templatesource": "email-builder",
+    "subject": "Your Fitness Journey Isn't a Microwave Dinner",
+    "from_email": "",
+    "from_name": "",
+    "attachments": []
+   },
+   "name": "Email 3",
+   "type": "email",
+   "next": "da1c1383-03c3-4b8b-b59e-e2615b87cb42",
+   "parentKey": "eebae893-6000-4c9f-be12-bdf7344d56c6",
+   "stats": {
+    "id": "229e299d-0bae-44e8-8d5a-e2fea01ac78f",
+    "stats": {
+     "delivered": "-",
+     "opened": "-",
+     "clicked": "-",
+     "replied": "-",
+     "bounced": "-",
+     "unsubscribed": "-"
+    }
+   }
+  },
+  {
+   "id": "da1c1383-03c3-4b8b-b59e-e2615b87cb42",
+   "order": 6,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "06:00",
+     "end": "23:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "f210138d-88dd-4dc8-bccc-ab501b11b5c8",
+   "parentKey": "229e299d-0bae-44e8-8d5a-e2fea01ac78f"
+  },
+  {
+   "id": "f210138d-88dd-4dc8-bccc-ab501b11b5c8",
+   "order": 7,
+   "attributes": {
+    "template_id": "65d3a9790e4f3b8080ff0cb6",
+    "templatesource": "email-builder",
+    "subject": "Your Fitness Journey Isn't a Race Against Anyone Else",
+    "from_email": "",
+    "from_name": "",
+    "attachments": []
+   },
+   "name": "Email 4",
+   "type": "email",
+   "next": "400b6742-8115-4be9-8f45-2c7f40b67c96",
+   "parentKey": "da1c1383-03c3-4b8b-b59e-e2615b87cb42",
+   "stats": {
+    "id": "f210138d-88dd-4dc8-bccc-ab501b11b5c8",
+    "stats": {
+     "delivered": "-",
+     "opened": "-",
+     "clicked": "-",
+     "replied": "-",
+     "bounced": "-",
+     "unsubscribed": "-"
+    }
+   }
+  },
+  {
+   "id": "400b6742-8115-4be9-8f45-2c7f40b67c96",
+   "order": 8,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "06:00",
+     "end": "23:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "b09f91fa-393e-48e5-9719-dfb993c7c815",
+   "parentKey": "f210138d-88dd-4dc8-bccc-ab501b11b5c8"
+  },
+  {
+   "id": "b09f91fa-393e-48e5-9719-dfb993c7c815",
+   "order": 9,
+   "attributes": {
+    "template_id": "65d3a9d097ce0ba1f1291060",
+    "templatesource": "email-builder",
+    "subject": "The Lidl Middle Aisle Syndrome & Your Fitness Goals",
+    "from_email": "",
+    "from_name": "",
+    "attachments": []
+   },
+   "name": "Email 5",
+   "type": "email",
+   "next": "46b1fc36-515a-4e41-8330-dc83eae295c9",
+   "parentKey": "400b6742-8115-4be9-8f45-2c7f40b67c96",
+   "stats": {
+    "id": "b09f91fa-393e-48e5-9719-dfb993c7c815",
+    "stats": {
+     "delivered": "-",
+     "opened": "-",
+     "clicked": "-",
+     "replied": "-",
+     "bounced": "-",
+     "unsubscribed": "-"
+    }
+   }
+  },
+  {
+   "id": "46b1fc36-515a-4e41-8330-dc83eae295c9",
+   "order": 10,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "06:00",
+     "end": "23:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "0be6bbe0-1772-4d20-bdf2-a6d91fd74176",
+   "parentKey": "b09f91fa-393e-48e5-9719-dfb993c7c815"
+  },
+  {
+   "id": "0be6bbe0-1772-4d20-bdf2-a6d91fd74176",
+   "order": 11,
+   "attributes": {
+    "template_id": "65d3aa1d0e4f3b1cbeff0d07",
+    "templatesource": "email-builder",
+    "subject": "The Art of Becoming You",
+    "from_email": "",
+    "from_name": "",
+    "attachments": []
+   },
+   "name": "Email 6",
+   "type": "email",
+   "next": "73e7b324-b765-45b6-89a5-13c377ed8192",
+   "parentKey": "46b1fc36-515a-4e41-8330-dc83eae295c9",
+   "stats": {
+    "id": "0be6bbe0-1772-4d20-bdf2-a6d91fd74176",
+    "stats": {
+     "delivered": "-",
+     "opened": "-",
+     "clicked": "-",
+     "replied": "-",
+     "bounced": "-",
+     "unsubscribed": "-"
+    }
+   }
+  },
+  {
+   "id": "73e7b324-b765-45b6-89a5-13c377ed8192",
+   "order": 12,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "06:00",
+     "end": "23:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "5a685bac-67ae-4a51-bbb4-c576b2737952",
+   "parentKey": "0be6bbe0-1772-4d20-bdf2-a6d91fd74176"
+  },
+  {
+   "id": "5a685bac-67ae-4a51-bbb4-c576b2737952",
+   "order": 13,
+   "attributes": {
+    "template_id": "65d3aa66125c9e94e6cf6f50",
+    "templatesource": "email-builder",
+    "subject": "The Secret Sauce to Your Fitness - No, It's Not More Burpees",
+    "from_email": "",
+    "from_name": "",
+    "attachments": []
+   },
+   "name": "Email 7",
+   "type": "email",
+   "next": "2cd69f64-b7cc-467e-98ea-0364f6b37cda",
+   "parentKey": "73e7b324-b765-45b6-89a5-13c377ed8192",
+   "stats": {
+    "id": "5a685bac-67ae-4a51-bbb4-c576b2737952",
+    "stats": {
+     "delivered": "-",
+     "opened": "-",
+     "clicked": "-",
+     "replied": "-",
+     "bounced": "-",
+     "unsubscribed": "-"
+    }
+   }
+  },
+  {
+   "id": "2cd69f64-b7cc-467e-98ea-0364f6b37cda",
+   "order": 14,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "06:00",
+     "end": "23:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "85dabff2-34be-4907-ad28-023cf33ae166",
+   "parentKey": "5a685bac-67ae-4a51-bbb4-c576b2737952"
+  },
+  {
+   "id": "85dabff2-34be-4907-ad28-023cf33ae166",
+   "order": 15,
+   "attributes": {
+    "template_id": "65d3aab997ce0b44112910e6",
+    "templatesource": "email-builder",
+    "subject": "The REAL Reason We Train After 30",
+    "from_email": "",
+    "from_name": "",
+    "attachments": []
+   },
+   "name": "Email 8",
+   "type": "email",
+   "next": "50636b8c-3c99-4b34-8c52-09371e30351a",
+   "parentKey": "2cd69f64-b7cc-467e-98ea-0364f6b37cda",
+   "stats": {
+    "id": "85dabff2-34be-4907-ad28-023cf33ae166",
+    "stats": {
+     "delivered": "-",
+     "opened": "-",
+     "clicked": "-",
+     "replied": "-",
+     "bounced": "-",
+     "unsubscribed": "-"
+    }
+   }
+  },
+  {
+   "id": "50636b8c-3c99-4b34-8c52-09371e30351a",
+   "order": 16,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "06:00",
+     "end": "23:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "7393de2b-c5de-4302-b5a6-a14eb9465fe9",
+   "parentKey": "85dabff2-34be-4907-ad28-023cf33ae166"
+  },
+  {
+   "id": "7393de2b-c5de-4302-b5a6-a14eb9465fe9",
+   "order": 17,
+   "attributes": {
+    "template_id": "65d3ab100e4f3b35b3ff0d91",
+    "templatesource": "email-builder",
+    "subject": "9. The Truth About Losing Weight - No Treadmill or Hours of Cardio Required",
+    "from_email": "",
+    "from_name": "",
+    "attachments": []
+   },
+   "name": "Email 9",
+   "type": "email",
+   "next": "c586f985-9a13-4816-8cf8-99f32f80eff4",
+   "parentKey": "50636b8c-3c99-4b34-8c52-09371e30351a",
+   "stats": {
+    "id": "7393de2b-c5de-4302-b5a6-a14eb9465fe9",
+    "stats": {
+     "delivered": "-",
+     "opened": "-",
+     "clicked": "-",
+     "replied": "-",
+     "bounced": "-",
+     "unsubscribed": "-"
+    }
+   }
+  },
+  {
+   "id": "c586f985-9a13-4816-8cf8-99f32f80eff4",
+   "order": 18,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "06:00",
+     "end": "23:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "dab4c723-e287-477d-a390-24dd3590a555",
+   "parentKey": "7393de2b-c5de-4302-b5a6-a14eb9465fe9"
+  },
+  {
+   "id": "dab4c723-e287-477d-a390-24dd3590a555",
+   "order": 19,
+   "attributes": {
+    "template_id": "65d3ab50125c9ed4b4cf6ff2",
+    "templatesource": "email-builder",
+    "subject": "10. Overthinkers need to read this.",
+    "from_email": "",
+    "from_name": "",
+    "attachments": []
+   },
+   "name": "Email 10",
+   "type": "email",
+   "next": "239624e7-b401-4746-8a48-c3c2a8680b85",
+   "parentKey": "c586f985-9a13-4816-8cf8-99f32f80eff4",
+   "stats": {
+    "id": "dab4c723-e287-477d-a390-24dd3590a555",
+    "stats": {
+     "delivered": "-",
+     "opened": "-",
+     "clicked": "-",
+     "replied": "-",
+     "bounced": "-",
+     "unsubscribed": "-"
+    }
+   }
+  },
+  {
+   "id": "239624e7-b401-4746-8a48-c3c2a8680b85",
+   "order": 20,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "06:00",
+     "end": "23:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "parentKey": "dab4c723-e287-477d-a390-24dd3590a555",
+   "next": "1fedb3d2-9921-4d97-adad-a2f191e6a97a"
+  },
+  {
+   "id": "1fedb3d2-9921-4d97-adad-a2f191e6a97a",
+   "order": 21,
+   "attributes": {
+    "template_id": "65d3ac640e4f3b8ff1ff0e6f",
+    "templatesource": "email-builder",
+    "subject": "The Unlikely Champion of the Sitting Olympics",
+    "from_email": "",
+    "from_name": "",
+    "attachments": []
+   },
+   "name": "Email 11",
+   "type": "email",
+   "next": "0b163288-95bc-455e-91c6-4f958e73ff00",
+   "parentKey": "239624e7-b401-4746-8a48-c3c2a8680b85"
+  },
+  {
+   "id": "0b163288-95bc-455e-91c6-4f958e73ff00",
+   "order": 22,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "06:00",
+     "end": "23:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "081a8618-088d-4012-9163-a0f660698354",
+   "parentKey": "1fedb3d2-9921-4d97-adad-a2f191e6a97a"
+  },
+  {
+   "id": "081a8618-088d-4012-9163-a0f660698354",
+   "order": 23,
+   "attributes": {
+    "template_id": "65d3acb997ce0bc42a29121f",
+    "templatesource": "email-builder",
+    "subject": "If Your Get Up And Go Got Up And Went…",
+    "from_email": "",
+    "from_name": "",
+    "attachments": []
+   },
+   "name": "Email 12",
+   "type": "email",
+   "next": "e4baa771-c965-4d2e-be7d-8616c03824b3",
+   "parentKey": "0b163288-95bc-455e-91c6-4f958e73ff00"
+  },
+  {
+   "id": "e4baa771-c965-4d2e-be7d-8616c03824b3",
+   "order": 24,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "06:00",
+     "end": "23:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "88bfa37b-3df1-431a-9b46-e1a72526bdca",
+   "parentKey": "081a8618-088d-4012-9163-a0f660698354"
+  },
+  {
+   "id": "88bfa37b-3df1-431a-9b46-e1a72526bdca",
+   "order": 25,
+   "attributes": {
+    "template_id": "65d3ad010e4f3b9688ff0eff",
+    "templatesource": "email-builder",
+    "subject": "Gadgets & Apps: The Fitness Game Changer or Just Shiny Distractions?",
+    "from_email": "",
+    "from_name": "",
+    "attachments": []
+   },
+   "name": "Email 13",
+   "type": "email",
+   "next": "7ecba504-edf0-407e-ab96-80a33c00776f",
+   "parentKey": "e4baa771-c965-4d2e-be7d-8616c03824b3"
+  },
+  {
+   "id": "7ecba504-edf0-407e-ab96-80a33c00776f",
+   "order": 26,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "06:00",
+     "end": "23:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "6cd9fad4-e4ae-44bf-a314-b647b91b8294",
+   "parentKey": "88bfa37b-3df1-431a-9b46-e1a72526bdca"
+  },
+  {
+   "id": "6cd9fad4-e4ae-44bf-a314-b647b91b8294",
+   "order": 27,
+   "attributes": {
+    "template_id": "65d3ad440e4f3b45abff0f26",
+    "templatesource": "email-builder",
+    "subject": "Protein Absorption Is Key",
+    "from_email": "",
+    "from_name": "",
+    "attachments": []
+   },
+   "name": "Email 14",
+   "type": "email",
+   "next": "6af88ddb-be61-47c4-8958-b8e5fe24f857",
+   "parentKey": "7ecba504-edf0-407e-ab96-80a33c00776f"
+  },
+  {
+   "id": "6af88ddb-be61-47c4-8958-b8e5fe24f857",
+   "order": 28,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "06:00",
+     "end": "23:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "abf53cbc-2de4-4e59-bf90-24717fdda22c",
+   "parentKey": "6cd9fad4-e4ae-44bf-a314-b647b91b8294"
+  },
+  {
+   "id": "abf53cbc-2de4-4e59-bf90-24717fdda22c",
+   "order": 29,
+   "attributes": {
+    "template_id": "65d3ad8e97ce0b061c2912d4",
+    "templatesource": "email-builder",
+    "subject": "The 2-Minute Rule: Small Steps, Big Wins",
+    "from_email": "",
+    "from_name": "",
+    "attachments": []
+   },
+   "name": "Email 15",
+   "type": "email",
+   "next": "b46c9734-f76a-40f2-a772-ccd87cf3d3b5",
+   "parentKey": "6af88ddb-be61-47c4-8958-b8e5fe24f857"
+  },
+  {
+   "id": "b46c9734-f76a-40f2-a772-ccd87cf3d3b5",
+   "order": 30,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "06:00",
+     "end": "23:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "f094eaf7-66b2-47bd-9517-1268a93924dc",
+   "parentKey": "abf53cbc-2de4-4e59-bf90-24717fdda22c"
+  },
+  {
+   "id": "f094eaf7-66b2-47bd-9517-1268a93924dc",
+   "order": 31,
+   "attributes": {
+    "template_id": "65d3adcc125c9e0684cf7177",
+    "templatesource": "email-builder",
+    "subject": "Stop Saving the Party Poppers for Retirement",
+    "from_email": "",
+    "from_name": "",
+    "attachments": []
+   },
+   "name": "Email 16",
+   "type": "email",
+   "next": "c196cc33-5c33-4faf-83a7-38fdd12f7cdd",
+   "parentKey": "b46c9734-f76a-40f2-a772-ccd87cf3d3b5"
+  },
+  {
+   "id": "c196cc33-5c33-4faf-83a7-38fdd12f7cdd",
+   "order": 32,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "06:00",
+     "end": "23:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "18c80e1f-2289-4114-914f-29ac9810a42d",
+   "parentKey": "f094eaf7-66b2-47bd-9517-1268a93924dc"
+  },
+  {
+   "id": "18c80e1f-2289-4114-914f-29ac9810a42d",
+   "order": 33,
+   "attributes": {
+    "template_id": "65d3ae180e4f3b2930ff0ffe",
+    "templatesource": "email-builder",
+    "subject": "The Myth of \"No Pain, No Gain\"",
+    "from_email": "",
+    "from_name": "",
+    "attachments": []
+   },
+   "name": "Email 17",
+   "type": "email",
+   "next": "9db855d5-1de7-4f54-a43a-e817d71b6c91",
+   "parentKey": "c196cc33-5c33-4faf-83a7-38fdd12f7cdd"
+  },
+  {
+   "id": "9db855d5-1de7-4f54-a43a-e817d71b6c91",
+   "order": 34,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "06:00",
+     "end": "23:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "eb83ad47-1ca0-4c17-8a33-c37f18b45bbe",
+   "parentKey": "18c80e1f-2289-4114-914f-29ac9810a42d"
+  },
+  {
+   "id": "eb83ad47-1ca0-4c17-8a33-c37f18b45bbe",
+   "order": 35,
+   "attributes": {
+    "template_id": "65d3ae4f125c9e9137cf7224",
+    "templatesource": "email-builder",
+    "subject": "Age Makes Fitness Non-Negotiable",
+    "from_email": "",
+    "from_name": "",
+    "attachments": []
+   },
+   "name": "Email 18",
+   "type": "email",
+   "next": "454ec72f-eee5-4db7-873e-bcc61652690a",
+   "parentKey": "9db855d5-1de7-4f54-a43a-e817d71b6c91"
+  },
+  {
+   "id": "454ec72f-eee5-4db7-873e-bcc61652690a",
+   "order": 36,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "06:00",
+     "end": "23:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "ef907bd1-165e-4d85-ad4b-a78d34377729",
+   "parentKey": "eb83ad47-1ca0-4c17-8a33-c37f18b45bbe"
+  },
+  {
+   "id": "ef907bd1-165e-4d85-ad4b-a78d34377729",
+   "order": 37,
+   "attributes": {
+    "template_id": "65d3ae8797ce0b6e4f2913a4",
+    "templatesource": "email-builder",
+    "subject": "Your Compass",
+    "from_email": "",
+    "from_name": "",
+    "attachments": []
+   },
+   "name": "Email 19",
+   "type": "email",
+   "next": "6581b494-47ea-464e-a331-85ba3e97ac7f",
+   "parentKey": "454ec72f-eee5-4db7-873e-bcc61652690a"
+  },
+  {
+   "id": "6581b494-47ea-464e-a331-85ba3e97ac7f",
+   "order": 38,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "06:00",
+     "end": "23:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "288c6066-1446-48e2-8e9e-4168121ba311",
+   "parentKey": "ef907bd1-165e-4d85-ad4b-a78d34377729"
+  },
+  {
+   "id": "288c6066-1446-48e2-8e9e-4168121ba311",
+   "order": 39,
+   "attributes": {
+    "template_id": "65d3aebfa4360f30e9c36ae2",
+    "templatesource": "email-builder",
+    "subject": "Your Compass",
+    "from_email": "",
+    "from_name": "",
+    "attachments": []
+   },
+   "name": "Email 20",
+   "type": "email",
+   "next": "9b3bb01c-2652-4502-870f-ac3a246854fd",
+   "parentKey": "6581b494-47ea-464e-a331-85ba3e97ac7f"
+  },
+  {
+   "id": "9b3bb01c-2652-4502-870f-ac3a246854fd",
+   "order": 40,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "06:00",
+     "end": "23:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "053545c4-e604-4a38-bb9f-b9cdc13d852c",
+   "parentKey": "288c6066-1446-48e2-8e9e-4168121ba311"
+  },
+  {
+   "id": "053545c4-e604-4a38-bb9f-b9cdc13d852c",
+   "order": 41,
+   "attributes": {
+    "template_id": "65d3b020a4360f3db8c36be6",
+    "templatesource": "email-builder",
+    "subject": "New Levels Unlocked! Your Mission, Should You Choose To Accept...",
+    "from_email": "",
+    "from_name": "",
+    "attachments": []
+   },
+   "name": "Email 21",
+   "type": "email",
+   "parentKey": "9b3bb01c-2652-4502-870f-ac3a246854fd"
+  }
+ ]
+}

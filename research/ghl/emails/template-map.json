@@ -1,0 +1,101 @@
+{
+  "south-woodford": {
+    "locationId": "cquQsieyBZx9vRgEqBge",
+    "folders": {
+      "01 Lead nurture — 30 Day Kickstart": "6aa904b296b1ac2874df4af1",
+      "02 Joined — your first 30 days": "6aa904b27919774ef2521a47",
+      "03 Nutrition": "6aa904b2bbf4cb7988a9f35a",
+      "04 Win-back": "6aa904b28fc016e6506e3f77"
+    },
+    "templates": {
+      "lead-01": "6aa904b29ed784b5df7609a2",
+      "lead-02": "6aa904b3b0cd6d00857f9b51",
+      "lead-03": "6aa904b40bbbc34b5e9349ce",
+      "lead-04": "6aa904b50bbbc34b5e9349fe",
+      "lead-05": "6aa904b607aac9f9aaceae58",
+      "lead-06": "6aa904b707aac9f9aaceae6a",
+      "lead-07": "6aa904b8b0cd6d00857f9bed",
+      "lead-08": "6aa904b907aac9f9aaceae96",
+      "lead-09": "6aa904bab0cd6d00857f9c39",
+      "lead-10": "6aa904bb4531b410840216cd",
+      "join-01": "6aa904bcb0cd6d00857f9c86",
+      "join-02": "6aa904bd7919774ef2521b4a",
+      "join-03": "6aa904be4531b41084021731",
+      "join-04": "6aa904bf9ed784b5df760a82",
+      "join-05": "6aa904c00bbbc34b5e934aca",
+      "join-06": "6aa904c17919774ef2521bbb",
+      "join-07": "6aa904c294dd6178683009bf",
+      "join-08": "6aa904c34531b410840217ad",
+      "nutrition-01": "6aa904c40bbbc34b5e934b38",
+      "winback-01": "6aa904c58fc016e6506e42c8",
+      "winback-02": "6aa904c67919774ef2521c1b",
+      "winback-03": "6aa904c78fc016e6506e42fc"
+    }
+  },
+  "leytonstone": {
+    "locationId": "mztjJyXHNWiEotc8ItXP",
+    "folders": {
+      "01 Lead nurture — 30 Day Kickstart": "6aa904cc9ed784b5df760bd3",
+      "02 Joined — your first 30 days": "6aa904cc94dd617868300af9",
+      "03 Nutrition": "6aa904cc8fc016e6506e438a",
+      "04 Win-back": "6aa904ccbbf4cb7988a9f5e4"
+    },
+    "templates": {
+      "lead-01": "6aa904cdbbf4cb7988a9f5f0",
+      "lead-02": "6aa904ce0bbbc34b5e934c46",
+      "lead-03": "6aa904cf7919774ef2521cb3",
+      "lead-04": "6aa904d007aac9f9aaceb07f",
+      "lead-05": "6aa904d19ed784b5df760c19",
+      "lead-06": "6aa904d20bbbc34b5e934c7f",
+      "lead-07": "6aa904d34531b41084021983",
+      "lead-08": "6aa904d496b1ac2874df4dc1",
+      "lead-09": "6aa904d596b1ac2874df4de5",
+      "lead-10": "6aa904d60bbbc34b5e934ce5",
+      "join-01": "6aa904d794dd617868300b99",
+      "join-02": "6aa904d87919774ef2521d61",
+      "join-03": "6aa904d90bbbc34b5e934d25",
+      "join-04": "6aa904da4531b41084021a09",
+      "join-05": "6aa904db7919774ef2521da1",
+      "join-06": "6aa904dc96b1ac2874df4e8a",
+      "join-07": "6aa904dd9ed784b5df760d0c",
+      "join-08": "6aa904deb0cd6d00857f9efa",
+      "nutrition-01": "6aa904dfbbf4cb7988a9f75b",
+      "winback-01": "6aa904e08fc016e6506e44fb",
+      "winback-02": "6aa904e194dd617868300c5f",
+      "winback-03": "6aa904e2bbf4cb7988a9f79a"
+    }
+  },
+  "hackney": {
+    "locationId": "147m777NnBtnn7yLrsdb",
+    "folders": {
+      "01 Lead nurture — 30 Day Kickstart": "6aa904e60bbbc34b5e934e69",
+      "02 Joined — your first 30 days": "6aa904e60bbbc34b5e934e6b",
+      "03 Nutrition": "6aa904e70bbbc34b5e934e71",
+      "04 Win-back": "6aa904e794dd617868300cee"
+    },
+    "templates": {
+      "lead-01": "6aa904e74531b41084021b3d",
+      "lead-02": "6aa904e89ed784b5df760dee",
+      "lead-03": "6aa904e99ed784b5df760df9",
+      "lead-04": "6aa904ea7919774ef2521ed1",
+      "lead-05": "6aa904ebbbf4cb7988a9f861",
+      "lead-06": "6aa904ecbbf4cb7988a9f874",
+      "lead-07": "6aa904ed07aac9f9aaceb2f8",
+      "lead-08": "6aa904eebbf4cb7988a9f8b3",
+      "lead-09": "6aa904ef8fc016e6506e4652",
+      "lead-10": "6aa904f04531b41084021c0b",
+      "join-01": "6aa904f17919774ef2521f45",
+      "join-02": "6aa904f2b0cd6d00857fa121",
+      "join-03": "6aa904f396b1ac2874df5018",
+      "join-04": "6aa904f496b1ac2874df5039",
+      "join-05": "6aa904f50bbbc34b5e934f89",
+      "join-06": "6aa904f607aac9f9aaceb3ff",
+      "join-07": "6aa904f7b0cd6d00857fa16f",
+      "join-08": "6aa904f89ed784b5df760f45",
+      "nutrition-01": "6aa904f996b1ac2874df5086",
+      "winback-01": "6aa904fa4531b41084021cbe",
+      "winback-02": "6aa904fb07aac9f9aaceb471",
+      "winback-03": "6aa904fcb0cd6d00857fa1d4"
+    }
+  }
+}

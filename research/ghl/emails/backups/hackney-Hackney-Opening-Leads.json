@@ -1,0 +1,966 @@
+{
+ "workflow": {
+  "_id": "be6e606f-57b4-4984-bd0c-8409bf36988a",
+  "locationId": "147m777NnBtnn7yLrsdb",
+  "companyId": "BHs3MppSlUdmHKGV7DDA",
+  "companyAge": 53,
+  "name": "Hackney Opening Leads",
+  "status": "published",
+  "version": 29,
+  "dataVersion": 7,
+  "allowMultiple": true,
+  "timezone": "account",
+  "removeContactFromLastStep": true,
+  "filePath": "location/147m777NnBtnn7yLrsdb/workflows/be6e606f-57b4-4984-bd0c-8409bf36988a/29",
+  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/automation-workflows-production/o/location%2F147m777NnBtnn7yLrsdb%2Fworkflows%2Fbe6e606f-57b4-4984-bd0c-8409bf36988a%2F29?alt=media&token=ca2fa59e-2d52-4249-b44d-d15c70def83b",
+  "stopOnResponse": false,
+  "autoMarkAsRead": false,
+  "permission": 380,
+  "type": "workflow",
+  "parentId": "2f9a4e80-6a5b-4eb7-a825-7127c8c594d3",
+  "meta": {
+   "advanceCanvasMeta": {
+    "enabled": true,
+    "enabledAt": "2026-05-24T21:26:27.832Z"
+   },
+   "stepIndexCounter": {
+    "googlecontact_create_contact": 2
+   }
+  },
+  "updatedBy": "kD5eX8SAxDHruPaeEprZ",
+  "createdAt": "2026-05-12T09:36:13.816Z",
+  "updatedAt": "2026-08-28T08:22:23.584Z",
+  "deleted": false,
+  "allowMultipleOpportunity": true,
+  "creationSource": "builder",
+  "isTriggerBucketMigrated": true,
+  "originType": "user",
+  "__v": 0,
+  "eventStartDate": null,
+  "window": null,
+  "workflowNote": null,
+  "triggersFilePath": "location/147m777NnBtnn7yLrsdb/workflow-triggers/be6e606f-57b4-4984-bd0c-8409bf36988a/28",
+  "id": "be6e606f-57b4-4984-bd0c-8409bf36988a",
+  "workflowData": {
+   "templates": [
+    {
+     "id": "885b75fa-d52e-4fe2-944c-9f5230d8effd",
+     "order": 0,
+     "attributes": {
+      "tags": [
+       "hackney waitlist"
+      ]
+     },
+     "name": "Add Tag",
+     "type": "add_contact_tag",
+     "next": "5422edd0-f623-45f7-a105-fd1a2e884347",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 302,
+       "y": 12
+      }
+     }
+    },
+    {
+     "id": "5422edd0-f623-45f7-a105-fd1a2e884347",
+     "order": 2,
+     "attributes": {
+      "fields": [],
+      "type": "create_opportunity",
+      "pipeline_id": "13rhyJsN1VUAyEnx7qiJ",
+      "pipeline_stage_id": "06899730-4c40-40ed-82d3-97ba0de6783d",
+      "opportunity_name": "WL QR: {{contact.name}}",
+      "opportunity_source": "",
+      "monetary_value": ""
+     },
+     "name": "Create Or Update Opportunity",
+     "type": "create_opportunity",
+     "next": "4be6999f-234f-4b87-808b-5f503873a98e",
+     "parentKey": "885b75fa-d52e-4fe2-944c-9f5230d8effd",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 532,
+       "y": 12
+      }
+     }
+    },
+    {
+     "id": "4be6999f-234f-4b87-808b-5f503873a98e",
+     "order": 4,
+     "attributes": {
+      "type": "email",
+      "email": {
+       "isCloned": false,
+       "html": "<p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;\">{{contact.name}}</p><p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;\">{{contact.phone}}</p>",
+       "to": "hackney@blueprintfitnessldn.com",
+       "userType": "custom_email",
+       "subject": "WL QR: {{contact.name}}",
+       "attachments": []
+      }
+     },
+     "name": "Internal Notification",
+     "type": "internal_notification",
+     "parentKey": "5422edd0-f623-45f7-a105-fd1a2e884347",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 733,
+       "y": 8
+      }
+     },
+     "next": "a723cdfe-a4ce-4ed9-881d-ddc912fe80ad"
+    },
+    {
+     "id": "3e33c5a9-ba46-4f9c-88fb-a72832032a0a",
+     "order": 1,
+     "attributes": {
+      "tags": [
+       "hackney waitlist"
+      ]
+     },
+     "name": "Add Tag",
+     "type": "add_contact_tag",
+     "next": "82f30ef0-f8fd-46c6-9672-1b21c15cdef4",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 300.50694274902344,
+       "y": 212.02777099609375
+      }
+     }
+    },
+    {
+     "id": "82f30ef0-f8fd-46c6-9672-1b21c15cdef4",
+     "order": 3,
+     "attributes": {
+      "fields": [],
+      "type": "create_opportunity",
+      "pipeline_id": "13rhyJsN1VUAyEnx7qiJ",
+      "pipeline_stage_id": "06899730-4c40-40ed-82d3-97ba0de6783d",
+      "opportunity_name": "WL: {{contact.name}}",
+      "opportunity_source": "",
+      "monetary_value": ""
+     },
+     "name": "Create Or Update Opportunity",
+     "type": "create_opportunity",
+     "next": "ed09ed43-0448-4eaa-be7f-da8cc0ee2af6",
+     "parentKey": "3e33c5a9-ba46-4f9c-88fb-a72832032a0a",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 530.5069427490234,
+       "y": 212.02777099609375
+      }
+     }
+    },
+    {
+     "id": "ed09ed43-0448-4eaa-be7f-da8cc0ee2af6",
+     "order": 5,
+     "attributes": {
+      "type": "email",
+      "email": {
+       "isCloned": false,
+       "html": "<p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;\">{{contact.name}}</p><p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;\">{{contact.phone}}</p>",
+       "to": "hackney@blueprintfitnessldn.com",
+       "userType": "custom_email",
+       "subject": "WL FB: {{contact.name}}",
+       "attachments": []
+      }
+     },
+     "name": "Internal Notification",
+     "type": "internal_notification",
+     "parentKey": "82f30ef0-f8fd-46c6-9672-1b21c15cdef4",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 760.5069427490234,
+       "y": 212.02777099609375
+      }
+     },
+     "next": "212c525f-e03e-4a68-bdf4-5cdcfc388221"
+    },
+    {
+     "id": "3516675f-78b6-446f-b54b-13834a3e05d5",
+     "parentKey": "212c525f-e03e-4a68-bdf4-5cdcfc388221",
+     "type": "wait",
+     "name": "Wait",
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "minutes",
+       "value": 5,
+       "when": "after"
+      },
+      "name": "Wait",
+      "cat": "",
+      "timePeriodInputMode": "standard",
+      "unitInputMode": "standard",
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "07:30",
+       "end": "22:30"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      },
+      "isHybridAction": true,
+      "hybridActionType": "wait",
+      "convertToMultipath": false,
+      "transitions": []
+     },
+     "order": 9,
+     "cat": "",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 1220.5069427490234,
+       "y": 212.02777099609375
+      }
+     },
+     "next": "2a4ef1b7-1291-43bb-b922-dfbd7dd73f58"
+    },
+    {
+     "id": "93cdbeea-ed9f-4d7e-976a-ccd1fb017301",
+     "parentKey": "a723cdfe-a4ce-4ed9-881d-ddc912fe80ad",
+     "type": "wait",
+     "name": "Wait",
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "minutes",
+       "value": 5,
+       "when": "after"
+      },
+      "name": "Wait",
+      "cat": "",
+      "timePeriodInputMode": "standard",
+      "unitInputMode": "standard",
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "07:30",
+       "end": "22:30"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      },
+      "isHybridAction": true,
+      "hybridActionType": "wait",
+      "convertToMultipath": false,
+      "transitions": []
+     },
+     "order": 8,
+     "cat": "",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 1029.7610800090677,
+       "y": 8.639209999825624
+      }
+     },
+     "next": "59a7aec4-4701-46b2-9bea-c6fbf1d090dc"
+    },
+    {
+     "id": "b384925f-ee4f-444d-8344-5b4eb7c0f7f0",
+     "order": 12,
+     "attributes": {
+      "assignedEmployeeId": "d0NbV4ejnn7hAgZHopdL",
+      "status": "active",
+      "type": "update_conversation_ai_status",
+      "__customInputs__": {}
+     },
+     "name": "Update conversation AI bot and status",
+     "type": "update_conversation_ai_status",
+     "workflowsActionType": "INTERNAL",
+     "parentKey": "59a7aec4-4701-46b2-9bea-c6fbf1d090dc",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 1506.06407004063,
+       "y": 8.639209999825624
+      }
+     }
+    },
+    {
+     "id": "2a4ef1b7-1291-43bb-b922-dfbd7dd73f58",
+     "order": 11,
+     "attributes": {
+      "type": "facebook_conversion_api",
+      "event_type": "funnel_event",
+      "access_token": "EAARH4JYfTncBQAsLU1coMlqhFEzDlFyz8C68iI7Mufevlw5OREpZC3Pste7E57GHRc6cVLbINA9Pzvc2y7WbxwF3JY1h53q8YaggjMikCHe62ZCHJUpzvziskYZC3F3ONdf4qpT5clplZCX0ZAn3teGKFZCfth397ngcZCyYv7hCvJ6Xa7OZBYyJcPiDWhg9NSrVYQZDZD",
+      "event_name": "Lead",
+      "pixel_id": "698984912008420",
+      "currency": "GBP",
+      "value": "",
+      "test_event_code": "",
+      "connection_type": "INTEGRATION"
+     },
+     "name": "FB Conversion API",
+     "type": "facebook_conversion_api",
+     "parentKey": "3516675f-78b6-446f-b54b-13834a3e05d5",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 1450.5069427490234,
+       "y": 212.02777099609375
+      }
+     },
+     "next": "05972570-c074-48fc-a60f-d5ead30e3827"
+    },
+    {
+     "id": "05972570-c074-48fc-a60f-d5ead30e3827",
+     "order": 13,
+     "attributes": {
+      "from_name": "Blueprint Fitness",
+      "from_email": "{{location.email}}",
+      "subject": "{{location.name}} 30 Day Programme",
+      "template_id": "6a01f5618034fd850b034a80",
+      "templatesource": "email-builder",
+      "attachments": [],
+      "fieldDefaults": {},
+      "trackingOptions": {
+       "hasTrackingLinks": false,
+       "hasUtmTracking": false,
+       "hasTags": false,
+       "sourceId": "be6e606f-57b4-4984-bd0c-8409bf36988a:05972570-c074-48fc-a60f-d5ead30e3827"
+      },
+      "conditions": [],
+      "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2F147m777NnBtnn7yLrsdb%2Femails%2F6a01f5618034fd850b034a80%2Findex.html?alt=media&token=540ae550-395a-42ce-9a36-54f923de1d54?cb=1782821011642",
+      "createdAt": "2026-05-11T15:27:31.236Z",
+      "preHeader": "",
+      "syncEnabled": true
+     },
+     "name": "Intro Program - Application Email",
+     "type": "email",
+     "next": "ca3f5589-91ea-477e-a280-28a44634b208",
+     "parentKey": "2a4ef1b7-1291-43bb-b922-dfbd7dd73f58",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 1680.5069427490234,
+       "y": 212.02777099609375
+      }
+     }
+    },
+    {
+     "id": "212c525f-e03e-4a68-bdf4-5cdcfc388221",
+     "stepIndex": 1,
+     "order": 7,
+     "attributes": {
+      "namePrefix": "",
+      "names": "{{contact.first_name}}",
+      "middleName": "",
+      "lastName": "{{contact.last_name}}",
+      "nameSuffix": "",
+      "organizationName": "",
+      "jobTitle": "",
+      "emailLabel": "",
+      "emailAddress": "",
+      "phoneLabel": "",
+      "phoneNumber": "{{contact.phone}}",
+      "addressLabel": "",
+      "country": "",
+      "poBox": "",
+      "city": "",
+      "postalCode": "",
+      "region": "",
+      "streetAddress": "",
+      "type": "googlecontact_create_contact",
+      "__customInputs__": {}
+     },
+     "name": "Create contact",
+     "type": "googlecontact_create_contact",
+     "next": "3516675f-78b6-446f-b54b-13834a3e05d5",
+     "workflowsActionType": "INTEGRATION_AI",
+     "parentKey": "ed09ed43-0448-4eaa-be7f-da8cc0ee2af6",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 990.5069427490234,
+       "y": 212.02777099609375
+      }
+     }
+    },
+    {
+     "id": "ca3f5589-91ea-477e-a280-28a44634b208",
+     "order": 14,
+     "attributes": {
+      "body": "{Hi|Hey|Hello} {{contact.first_name}}, {thanks so much for checking out|thanks for taking a look at|thanks for registering your interest in|great to see you’re interested in} our 30 Day Kickstart!\n\n{Just to check, are you local to Hackney?|Can I quickly check whether you’re based in or around Hackney?|Are you currently local to Hackney?|Before we go any further, are you based near Hackney?}\n\n{P.S. I’ve attached a quick video from me, Nick, for you to watch.|P.S. I’ve also attached a short video from myself (Nick).|I’ve attached a quick video from me, Nick, so you can learn a little more.|There’s also a short video attached from me, Nick, for you.}",
+      "attachments": [
+       {
+        "name": "Hackney Next Steps.mp4",
+        "url": "https://assets.cdn.filesafe.space/147m777NnBtnn7yLrsdb/media/6a70dd28497cd89d24ed5a0c.mp4",
+        "type": "video/mp4"
+       }
+      ]
+     },
+     "name": "SMS",
+     "type": "sms",
+     "next": "21880bba-f97e-4c14-a3b8-8f507d20a121",
+     "parentKey": "05972570-c074-48fc-a60f-d5ead30e3827",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 1910.5069427490234,
+       "y": 212.02777099609375
+      }
+     }
+    },
+    {
+     "id": "21880bba-f97e-4c14-a3b8-8f507d20a121",
+     "order": 15,
+     "attributes": {
+      "assignedEmployeeId": "d0NbV4ejnn7hAgZHopdL",
+      "status": "active",
+      "type": "update_conversation_ai_status",
+      "__customInputs__": {}
+     },
+     "name": "Update Conversation AI Bot and Status",
+     "type": "update_conversation_ai_status",
+     "workflowsActionType": "INTERNAL",
+     "parentKey": "ca3f5589-91ea-477e-a280-28a44634b208",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 2140.5069427490234,
+       "y": 212.02777099609375
+      }
+     }
+    },
+    {
+     "id": "a723cdfe-a4ce-4ed9-881d-ddc912fe80ad",
+     "stepIndex": 2,
+     "order": 6,
+     "attributes": {
+      "namePrefix": "",
+      "names": "{{contact.first_name}}",
+      "middleName": "",
+      "lastName": "{{contact.last_name}}",
+      "nameSuffix": "",
+      "organizationName": "",
+      "jobTitle": "",
+      "emailLabel": "",
+      "emailAddress": "",
+      "phoneLabel": "",
+      "phoneNumber": "{{contact.phone}}",
+      "addressLabel": "",
+      "country": "",
+      "poBox": "",
+      "city": "",
+      "postalCode": "",
+      "region": "",
+      "streetAddress": "",
+      "type": "googlecontact_create_contact",
+      "__customInputs__": {}
+     },
+     "name": "Create contact",
+     "type": "googlecontact_create_contact",
+     "next": "93cdbeea-ed9f-4d7e-976a-ccd1fb017301",
+     "workflowsActionType": "INTEGRATION_AI",
+     "parentKey": "4be6999f-234f-4b87-808b-5f503873a98e",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 876.4641519555487,
+       "y": -14.53867093949873
+      }
+     }
+    },
+    {
+     "id": "59a7aec4-4701-46b2-9bea-c6fbf1d090dc",
+     "order": 10,
+     "attributes": {
+      "body": "{Hi|Hey|Hello} {{contact.first_name}}, {thanks so much for checking out|thanks for taking a look at|thanks for registering your interest in|great to see you’re interested in} our 30 Day Kickstart!\n\n{Just to check, are you local to Hackney?|Can I quickly check whether you’re based in or around Hackney?|Are you currently local to Hackney?|Before we go any further, are you based near Hackney?}\n\n\n{P.S. I’ve attached a quick video from me, Nick, for you to watch.|P.S. I’ve also attached a short video from myself (Nick).|I’ve attached a quick video from me, Nick, so you can learn a little more.|There’s also a short video attached from me, Nick, for you.}",
+      "attachments": [
+       {
+        "name": "Hackney Next Steps.mp4",
+        "url": "https://assets.cdn.filesafe.space/147m777NnBtnn7yLrsdb/media/6a70dd28497cd89d24ed5a0c.mp4",
+        "type": "video/mp4"
+       }
+      ]
+     },
+     "name": "SMS",
+     "type": "sms",
+     "next": "b384925f-ee4f-444d-8344-5b4eb7c0f7f0",
+     "parentKey": "93cdbeea-ed9f-4d7e-976a-ccd1fb017301",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 1243.8774520026304,
+       "y": -41.754470942986245
+      }
+     }
+    }
+   ]
+  },
+  "permissionMeta": {
+   "canRead": true,
+   "canWrite": true
+  },
+  "scheduledPauseDates": []
+ },
+ "templates": [
+  {
+   "id": "885b75fa-d52e-4fe2-944c-9f5230d8effd",
+   "order": 0,
+   "attributes": {
+    "tags": [
+     "hackney waitlist"
+    ]
+   },
+   "name": "Add Tag",
+   "type": "add_contact_tag",
+   "next": "5422edd0-f623-45f7-a105-fd1a2e884347",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 302,
+     "y": 12
+    }
+   }
+  },
+  {
+   "id": "5422edd0-f623-45f7-a105-fd1a2e884347",
+   "order": 2,
+   "attributes": {
+    "fields": [],
+    "type": "create_opportunity",
+    "pipeline_id": "13rhyJsN1VUAyEnx7qiJ",
+    "pipeline_stage_id": "06899730-4c40-40ed-82d3-97ba0de6783d",
+    "opportunity_name": "WL QR: {{contact.name}}",
+    "opportunity_source": "",
+    "monetary_value": ""
+   },
+   "name": "Create Or Update Opportunity",
+   "type": "create_opportunity",
+   "next": "4be6999f-234f-4b87-808b-5f503873a98e",
+   "parentKey": "885b75fa-d52e-4fe2-944c-9f5230d8effd",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 532,
+     "y": 12
+    }
+   }
+  },
+  {
+   "id": "4be6999f-234f-4b87-808b-5f503873a98e",
+   "order": 4,
+   "attributes": {
+    "type": "email",
+    "email": {
+     "isCloned": false,
+     "html": "<p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;\">{{contact.name}}</p><p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;\">{{contact.phone}}</p>",
+     "to": "hackney@blueprintfitnessldn.com",
+     "userType": "custom_email",
+     "subject": "WL QR: {{contact.name}}",
+     "attachments": []
+    }
+   },
+   "name": "Internal Notification",
+   "type": "internal_notification",
+   "parentKey": "5422edd0-f623-45f7-a105-fd1a2e884347",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 733,
+     "y": 8
+    }
+   },
+   "next": "a723cdfe-a4ce-4ed9-881d-ddc912fe80ad"
+  },
+  {
+   "id": "3e33c5a9-ba46-4f9c-88fb-a72832032a0a",
+   "order": 1,
+   "attributes": {
+    "tags": [
+     "hackney waitlist"
+    ]
+   },
+   "name": "Add Tag",
+   "type": "add_contact_tag",
+   "next": "82f30ef0-f8fd-46c6-9672-1b21c15cdef4",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 300.50694274902344,
+     "y": 212.02777099609375
+    }
+   }
+  },
+  {
+   "id": "82f30ef0-f8fd-46c6-9672-1b21c15cdef4",
+   "order": 3,
+   "attributes": {
+    "fields": [],
+    "type": "create_opportunity",
+    "pipeline_id": "13rhyJsN1VUAyEnx7qiJ",
+    "pipeline_stage_id": "06899730-4c40-40ed-82d3-97ba0de6783d",
+    "opportunity_name": "WL: {{contact.name}}",
+    "opportunity_source": "",
+    "monetary_value": ""
+   },
+   "name": "Create Or Update Opportunity",
+   "type": "create_opportunity",
+   "next": "ed09ed43-0448-4eaa-be7f-da8cc0ee2af6",
+   "parentKey": "3e33c5a9-ba46-4f9c-88fb-a72832032a0a",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 530.5069427490234,
+     "y": 212.02777099609375
+    }
+   }
+  },
+  {
+   "id": "ed09ed43-0448-4eaa-be7f-da8cc0ee2af6",
+   "order": 5,
+   "attributes": {
+    "type": "email",
+    "email": {
+     "isCloned": false,
+     "html": "<p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;\">{{contact.name}}</p><p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;\">{{contact.phone}}</p>",
+     "to": "hackney@blueprintfitnessldn.com",
+     "userType": "custom_email",
+     "subject": "WL FB: {{contact.name}}",
+     "attachments": []
+    }
+   },
+   "name": "Internal Notification",
+   "type": "internal_notification",
+   "parentKey": "82f30ef0-f8fd-46c6-9672-1b21c15cdef4",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 760.5069427490234,
+     "y": 212.02777099609375
+    }
+   },
+   "next": "212c525f-e03e-4a68-bdf4-5cdcfc388221"
+  },
+  {
+   "id": "3516675f-78b6-446f-b54b-13834a3e05d5",
+   "parentKey": "212c525f-e03e-4a68-bdf4-5cdcfc388221",
+   "type": "wait",
+   "name": "Wait",
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "minutes",
+     "value": 5,
+     "when": "after"
+    },
+    "name": "Wait",
+    "cat": "",
+    "timePeriodInputMode": "standard",
+    "unitInputMode": "standard",
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "07:30",
+     "end": "22:30"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    },
+    "isHybridAction": true,
+    "hybridActionType": "wait",
+    "convertToMultipath": false,
+    "transitions": []
+   },
+   "order": 9,
+   "cat": "",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 1220.5069427490234,
+     "y": 212.02777099609375
+    }
+   },
+   "next": "2a4ef1b7-1291-43bb-b922-dfbd7dd73f58"
+  },
+  {
+   "id": "93cdbeea-ed9f-4d7e-976a-ccd1fb017301",
+   "parentKey": "a723cdfe-a4ce-4ed9-881d-ddc912fe80ad",
+   "type": "wait",
+   "name": "Wait",
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "minutes",
+     "value": 5,
+     "when": "after"
+    },
+    "name": "Wait",
+    "cat": "",
+    "timePeriodInputMode": "standard",
+    "unitInputMode": "standard",
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "07:30",
+     "end": "22:30"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    },
+    "isHybridAction": true,
+    "hybridActionType": "wait",
+    "convertToMultipath": false,
+    "transitions": []
+   },
+   "order": 8,
+   "cat": "",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 1029.7610800090677,
+     "y": 8.639209999825624
+    }
+   },
+   "next": "59a7aec4-4701-46b2-9bea-c6fbf1d090dc"
+  },
+  {
+   "id": "b384925f-ee4f-444d-8344-5b4eb7c0f7f0",
+   "order": 12,
+   "attributes": {
+    "assignedEmployeeId": "d0NbV4ejnn7hAgZHopdL",
+    "status": "active",
+    "type": "update_conversation_ai_status",
+    "__customInputs__": {}
+   },
+   "name": "Update conversation AI bot and status",
+   "type": "update_conversation_ai_status",
+   "workflowsActionType": "INTERNAL",
+   "parentKey": "59a7aec4-4701-46b2-9bea-c6fbf1d090dc",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 1506.06407004063,
+     "y": 8.639209999825624
+    }
+   }
+  },
+  {
+   "id": "2a4ef1b7-1291-43bb-b922-dfbd7dd73f58",
+   "order": 11,
+   "attributes": {
+    "type": "facebook_conversion_api",
+    "event_type": "funnel_event",
+    "access_token": "EAARH4JYfTncBQAsLU1coMlqhFEzDlFyz8C68iI7Mufevlw5OREpZC3Pste7E57GHRc6cVLbINA9Pzvc2y7WbxwF3JY1h53q8YaggjMikCHe62ZCHJUpzvziskYZC3F3ONdf4qpT5clplZCX0ZAn3teGKFZCfth397ngcZCyYv7hCvJ6Xa7OZBYyJcPiDWhg9NSrVYQZDZD",
+    "event_name": "Lead",
+    "pixel_id": "698984912008420",
+    "currency": "GBP",
+    "value": "",
+    "test_event_code": "",
+    "connection_type": "INTEGRATION"
+   },
+   "name": "FB Conversion API",
+   "type": "facebook_conversion_api",
+   "parentKey": "3516675f-78b6-446f-b54b-13834a3e05d5",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 1450.5069427490234,
+     "y": 212.02777099609375
+    }
+   },
+   "next": "05972570-c074-48fc-a60f-d5ead30e3827"
+  },
+  {
+   "id": "05972570-c074-48fc-a60f-d5ead30e3827",
+   "order": 13,
+   "attributes": {
+    "from_name": "Blueprint Fitness",
+    "from_email": "{{location.email}}",
+    "subject": "{{location.name}} 30 Day Programme",
+    "template_id": "6a01f5618034fd850b034a80",
+    "templatesource": "email-builder",
+    "attachments": [],
+    "fieldDefaults": {},
+    "trackingOptions": {
+     "hasTrackingLinks": false,
+     "hasUtmTracking": false,
+     "hasTags": false,
+     "sourceId": "be6e606f-57b4-4984-bd0c-8409bf36988a:05972570-c074-48fc-a60f-d5ead30e3827"
+    },
+    "conditions": [],
+    "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2F147m777NnBtnn7yLrsdb%2Femails%2F6a01f5618034fd850b034a80%2Findex.html?alt=media&token=540ae550-395a-42ce-9a36-54f923de1d54?cb=1782821011642",
+    "createdAt": "2026-05-11T15:27:31.236Z",
+    "preHeader": "",
+    "syncEnabled": true
+   },
+   "name": "Intro Program - Application Email",
+   "type": "email",
+   "next": "ca3f5589-91ea-477e-a280-28a44634b208",
+   "parentKey": "2a4ef1b7-1291-43bb-b922-dfbd7dd73f58",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 1680.5069427490234,
+     "y": 212.02777099609375
+    }
+   }
+  },
+  {
+   "id": "212c525f-e03e-4a68-bdf4-5cdcfc388221",
+   "stepIndex": 1,
+   "order": 7,
+   "attributes": {
+    "namePrefix": "",
+    "names": "{{contact.first_name}}",
+    "middleName": "",
+    "lastName": "{{contact.last_name}}",
+    "nameSuffix": "",
+    "organizationName": "",
+    "jobTitle": "",
+    "emailLabel": "",
+    "emailAddress": "",
+    "phoneLabel": "",
+    "phoneNumber": "{{contact.phone}}",
+    "addressLabel": "",
+    "country": "",
+    "poBox": "",
+    "city": "",
+    "postalCode": "",
+    "region": "",
+    "streetAddress": "",
+    "type": "googlecontact_create_contact",
+    "__customInputs__": {}
+   },
+   "name": "Create contact",
+   "type": "googlecontact_create_contact",
+   "next": "3516675f-78b6-446f-b54b-13834a3e05d5",
+   "workflowsActionType": "INTEGRATION_AI",
+   "parentKey": "ed09ed43-0448-4eaa-be7f-da8cc0ee2af6",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 990.5069427490234,
+     "y": 212.02777099609375
+    }
+   }
+  },
+  {
+   "id": "ca3f5589-91ea-477e-a280-28a44634b208",
+   "order": 14,
+   "attributes": {
+    "body": "{Hi|Hey|Hello} {{contact.first_name}}, {thanks so much for checking out|thanks for taking a look at|thanks for registering your interest in|great to see you’re interested in} our 30 Day Kickstart!\n\n{Just to check, are you local to Hackney?|Can I quickly check whether you’re based in or around Hackney?|Are you currently local to Hackney?|Before we go any further, are you based near Hackney?}\n\n{P.S. I’ve attached a quick video from me, Nick, for you to watch.|P.S. I’ve also attached a short video from myself (Nick).|I’ve attached a quick video from me, Nick, so you can learn a little more.|There’s also a short video attached from me, Nick, for you.}",
+    "attachments": [
+     {
+      "name": "Hackney Next Steps.mp4",
+      "url": "https://assets.cdn.filesafe.space/147m777NnBtnn7yLrsdb/media/6a70dd28497cd89d24ed5a0c.mp4",
+      "type": "video/mp4"
+     }
+    ]
+   },
+   "name": "SMS",
+   "type": "sms",
+   "next": "21880bba-f97e-4c14-a3b8-8f507d20a121",
+   "parentKey": "05972570-c074-48fc-a60f-d5ead30e3827",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 1910.5069427490234,
+     "y": 212.02777099609375
+    }
+   }
+  },
+  {
+   "id": "21880bba-f97e-4c14-a3b8-8f507d20a121",
+   "order": 15,
+   "attributes": {
+    "assignedEmployeeId": "d0NbV4ejnn7hAgZHopdL",
+    "status": "active",
+    "type": "update_conversation_ai_status",
+    "__customInputs__": {}
+   },
+   "name": "Update Conversation AI Bot and Status",
+   "type": "update_conversation_ai_status",
+   "workflowsActionType": "INTERNAL",
+   "parentKey": "ca3f5589-91ea-477e-a280-28a44634b208",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 2140.5069427490234,
+     "y": 212.02777099609375
+    }
+   }
+  },
+  {
+   "id": "a723cdfe-a4ce-4ed9-881d-ddc912fe80ad",
+   "stepIndex": 2,
+   "order": 6,
+   "attributes": {
+    "namePrefix": "",
+    "names": "{{contact.first_name}}",
+    "middleName": "",
+    "lastName": "{{contact.last_name}}",
+    "nameSuffix": "",
+    "organizationName": "",
+    "jobTitle": "",
+    "emailLabel": "",
+    "emailAddress": "",
+    "phoneLabel": "",
+    "phoneNumber": "{{contact.phone}}",
+    "addressLabel": "",
+    "country": "",
+    "poBox": "",
+    "city": "",
+    "postalCode": "",
+    "region": "",
+    "streetAddress": "",
+    "type": "googlecontact_create_contact",
+    "__customInputs__": {}
+   },
+   "name": "Create contact",
+   "type": "googlecontact_create_contact",
+   "next": "93cdbeea-ed9f-4d7e-976a-ccd1fb017301",
+   "workflowsActionType": "INTEGRATION_AI",
+   "parentKey": "4be6999f-234f-4b87-808b-5f503873a98e",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 876.4641519555487,
+     "y": -14.53867093949873
+    }
+   }
+  },
+  {
+   "id": "59a7aec4-4701-46b2-9bea-c6fbf1d090dc",
+   "order": 10,
+   "attributes": {
+    "body": "{Hi|Hey|Hello} {{contact.first_name}}, {thanks so much for checking out|thanks for taking a look at|thanks for registering your interest in|great to see you’re interested in} our 30 Day Kickstart!\n\n{Just to check, are you local to Hackney?|Can I quickly check whether you’re based in or around Hackney?|Are you currently local to Hackney?|Before we go any further, are you based near Hackney?}\n\n\n{P.S. I’ve attached a quick video from me, Nick, for you to watch.|P.S. I’ve also attached a short video from myself (Nick).|I’ve attached a quick video from me, Nick, so you can learn a little more.|There’s also a short video attached from me, Nick, for you.}",
+    "attachments": [
+     {
+      "name": "Hackney Next Steps.mp4",
+      "url": "https://assets.cdn.filesafe.space/147m777NnBtnn7yLrsdb/media/6a70dd28497cd89d24ed5a0c.mp4",
+      "type": "video/mp4"
+     }
+    ]
+   },
+   "name": "SMS",
+   "type": "sms",
+   "next": "b384925f-ee4f-444d-8344-5b4eb7c0f7f0",
+   "parentKey": "93cdbeea-ed9f-4d7e-976a-ccd1fb017301",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 1243.8774520026304,
+     "y": -41.754470942986245
+    }
+   }
+  }
+ ]
+}

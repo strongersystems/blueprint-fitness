@@ -121,12 +121,29 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "Intro Program - Application Email",
-    "subject": "{{location.name}} 30 Day Programme",
+    "subject": "Thanks {{contact.first_name}} — here is what happens next",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: 30 Day Email 1",
+    "template": "Lead 01 — We have got your details",
     "missing": false,
-    "text": "Hi {{contact.first_name}}\n\nIt's {{user.first_name}} from {{location.name}}\n\nJust a quick email to let you know we have received your application and promise to be in touch very soon.\n\nHead over to our Instagram Page to find out more about how we can help.\n(Or click the button below)\n\nSpeak soon\n\nNick\n\nInstagram Page\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
-    "links": []
+    "text": "A coach will call you shortly. No hard sell, ever.\n\nThe 30-Day Kickstart · Hackney\n\nHello {{contact.first_name}}, we have got you.\n\nThanks for registering your interest in the 30-Day Kickstart at Blueprint Fitness Hackney. Your details are with us.\n\nA coach will give you a ring shortly for a friendly chat — what you are after, what has worked before, what has not. No hard sell, ever. If it is not right for you, we will say so.\n\n12\n\nCoached sessions\n\n5:1\n\nMax ratio\n\n30\n\nDays\n\nIn the meantime — have a look at what a week actually looks like here. Knowing the sessions exist at times you can make is usually the thing people want to check first.\n\nSee the Hackney timetable\n\nMessage us on WhatsApp\n\nSpeak soon,\n\nNick\n\nBlueprint Fitness Hackney\n\nYour studio\n\nBlueprint Fitness Hackney\n\nArch 195, Morning Lane, Hackney, London, E9 6LJ\n\nMon–Fri 6am–9pm · Sat 8–11am · Closed Sunday\n\nhackney@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/hackney/timetable/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356?text=Hi%20Blueprint%20Fitness%20Hackney%20%E2%80%94%20I",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "sms",
@@ -141,48 +158,99 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "Email 2",
-    "subject": "\"I have no motivation to go to the gym\"",
+    "subject": "The gym is not a motivating place. That is rather the point.",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 2",
+    "template": "Lead 02 — Motivation",
     "missing": false,
-    "text": "\"I have no motivation to go to the gym\"\nI hear this all the time, especially with people who have just applied to Blueprint Fitness.\nThe gym is not a motivating place to be, it’s actually quite the opposite.\nEveryone looks like they know what they’re doing\nEveryone looks confident\nAnd everyone looks super fit, so I can see why it is so off-putting.\nOne of the things which will motivate you the most is when you start to see changes in your body.\nBut that will only happen when you’re going to the gym regularly.\nWe make sure that everyone at Blueprint Fitness is friendly, and are there to help one another.\nWe don’t train people who have an ego or are judgemental.\nYou see, once you are feeling comfortable in your environment, you will go to the gym more often.\nAnd when you go to the gym more often you will:\n✅ Have more energy than ever before because you’re sleeping better and getting fitter\n✅ Begin to feel more confident in your clothes because you will see your body transforming\n✅ Start eating healthier because you will want to fuel your body properly\nIt really is a big snowball effect once you get started, and you can get started with us this week on our 30 Day Trial\n➡️ You will train with us 3 x per week at our private gym with a Personal Trainer showing you exactly what to do\n➡️ You will have your own Personal Coach who will help you on the nutrition side. You can message them any day and get help on what to eat.\n➡️ Personalised meal plan to help you with what to eat and how much to eat.\n➡️ All you have to do is just turn up, and we will do the rest, we plan the session, demonstrate all the exercises and encourage you through the 60 minute workouts.\nTo get started this week then Simply Tap Here and secure your spot on our 30 Day Trial\nStu\nBlueprint Fitness\n\nSecure Your Spot\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "Why we built the opposite of a gym floor.\n\nThe 30-Day Kickstart · Hackney\n\nOn not feeling motivated\n\n“I have no motivation to go to the gym.” We hear it constantly — usually from people who have just got in touch with us.\n\nHere is the thing: a gym floor is not a motivating place. Everyone looks like they know what they are doing. Nobody tells you where to start. You do three exercises you half-remember and leave.\n\nMotivation is not what gets people through the door on a wet Tuesday in February. A time in the diary, a coach expecting you, and four other people who noticed you were not there last week — that is what does it.\n\nThat is the whole design. You book a session, someone has already written it, and a coach runs you through it. You do not have to decide anything.\n\nWhat that looks like\n\n•\n\n12 coached sessions across your first 30 days\n\n•\n\nNever more than five people to a coach, so you always get eyes on you\n\n•\n\nA plan written for you — not a class everyone does at once\n\n•\n\nAn InBody scan at the start, so progress is measured rather than guessed\n\nStart your 30 days at Hackney\n\nSpeak soon,\n\nNick\n\nBlueprint Fitness Hackney\n\nYour studio\n\nBlueprint Fitness Hackney\n\nArch 195, Morning Lane, Hackney, London, E9 6LJ\n\nMon–Fri 6am–9pm · Sat 8–11am · Closed Sunday\n\nhackney@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/signup-hackney/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email 3",
-    "subject": "We focus on these 4 things...",
+    "subject": "What actually happens in a session",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 3",
+    "template": "Lead 03 — What a session is like",
     "missing": false,
-    "text": "Most people that go to the gym are low in confidence and self-esteem, so you would think that gyms would be designed differently.\nInstead they are littered with mirrors, confusing machines, no Personal Trainers, members who love to pose and vending machines.\nAll of the above is not going to do your confident, self-esteem or anxiety any good.\nThat is exactly why at Blueprint Fitness we have:\nNo mirror's or glamorous fitness models on our walls, instead we have Personal Trainers who show you what to do.\n\nNo confusing machines, instead we have weights and Personal Trainers who explain and demonstrate the exercises\n\nPersonal Trainers who walk you through every part of the 60 minute session\n\nA very friendly community of members, in their 30’s-60s who are all on a mission to become fitter and healthier. Whenever we ask for feedback we always get comments on ‘how friendly everyone is’\n\nThe environment is so important to us, and we aim to make our sessions:\n⚡️ Energetic\n😁 Fun/ enjoyable\n😲 Challenging\n💪 Strength and fitness focused\nYou won’t be made to do some ridiculous degrading challenges or be told to run on a treadmill.\nWe meet you where you are now with your strength and fitness and gradually 📈 build you up from there.\nIt really is a big snowball effect once you get started, and you can get started with us this week on our 30 Day Trial.\nYou will train with us 3 x per week at our private gym with a Personal Trainer showing you exactly what to do\n\nAll you have to do is just turn up, and we will do the rest, we plan the session, demonstrate all the exercises and encourage you through the 60 minute workout.\n\nAnd if you struggle with nutrition then we can help with that too with personalised meal plans and a coach you can message daily\n\nTo get started this week then simply Tap Here and secure your spot on our 30 Day Trial.\nStu\nBlueprint Fitness\n\nSecure Your Spot\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "No mirrors, no machines you cannot work out, no guessing.\n\nThe 30-Day Kickstart · Hackney\n\nWhat a session actually looks like\n\nMost gyms are built for people who already know what they are doing. Mirrors everywhere, rows of machines with no explanation, and nobody to ask.\n\nOurs is not. Here is what a session at Hackney is:\n\n•\n\nYou arrive. Your session is already written down.\n\n•\n\nA coach shows you each movement and watches you do it.\n\n•\n\nYou work at a weight that is right for you — not the person next to you.\n\n•\n\nYou leave knowing what you did and why.\n\nMost of our members are in their thirties to sixties, and a good share of them had not trained in years before they started. Nobody is performing for anybody.\n\nWe meet you where your strength and fitness actually are, and build from there. There are no degrading challenges and nobody is getting put on a treadmill for an hour.\n\nLook at the timetable\n\nOr start your 30 days\n\nSpeak soon,\n\nNick\n\nBlueprint Fitness Hackney\n\nYour studio\n\nBlueprint Fitness Hackney\n\nArch 195, Morning Lane, Hackney, London, E9 6LJ\n\nMon–Fri 6am–9pm · Sat 8–11am · Closed Sunday\n\nhackney@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/hackney/timetable/",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com/signup-hackney/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email 4",
-    "subject": "Blueprint is for complete beginners, here's why!",
+    "subject": "Most people who join us are complete beginners",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 4",
+    "template": "Lead 04 — For beginners",
     "missing": false,
-    "text": "Blueprint Fitness is for complete beginners\nYes that is correct, most of the people who join Blueprint Fitness are complete beginners.\nYou see, most people have this idea that everyone is super fit.\nBut the truth is that they all started as complete beginners, and they are now fit because they kept attending our Small Group PT sessions 3 x per week.\nAnd the reason they kept attending 3 x per week was because:\nOur members loved the 60 minute session, and how the session went so quickly - no more clock watching\n\nOur members really enjoy having a trainer with them at every session so that they didn’t feel lost in the gym any more\n\nOur members felt motivated when they came in and managed to really push themselves at every session\n\nOur members don’t feel intimidated or judged in any way because we’ve created a positive welcoming environment.\n\nWe don't accept:\n❌ Negative people who bring the mood down - we need our gym to be a positive environment.\n❌ Time-wasters or people full of excuses - we want people who will 100% commit.\n❌ Egotistical or judgemental people - Blueprint Fitness is focussed on creating a welcoming friendly gym.\nSo if you’re looking to join a gym which is friendly and helps you to become fitter, healthier and stronger then join our 30 Day Trial\nReply back to me here if you have any questions, if not you can sign up here.\nStu\nBlueprint Fitness\n\nSecure Your Spot\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "Including the ones who now look like they never were.\n\nThe 30-Day Kickstart · Hackney\n\nAlmost everyone starts here as a beginner\n\nIt is the most common worry we hear: everyone there will be fitter than me.\n\nMost people who join Blueprint Fitness are complete beginners. The members who look like naturals are simply the ones who kept turning up three times a week for a year. That is the entire secret.\n\nWhat keeps people coming back\n\n•\n\nThe session is planned, so there is no standing about wondering what to do.\n\n•\n\nA coach is with you the whole way — you are never left to work it out.\n\n•\n\nThe group is small enough that people notice you, and say hello.\n\n•\n\nIt gets measurably easier, and you can see it in the numbers.\n\nIf you have a question before you commit — an injury, a schedule, anything at all — just reply to this email. A real person reads it.\n\nStart your 30 days at Hackney\n\nSpeak soon,\n\nNick\n\nBlueprint Fitness Hackney\n\nYour studio\n\nBlueprint Fitness Hackney\n\nArch 195, Morning Lane, Hackney, London, E9 6LJ\n\nMon–Fri 6am–9pm · Sat 8–11am · Closed Sunday\n\nhackney@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/signup-hackney/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email 5",
-    "subject": "Blueprint Success Stories - Michelle and Georgia",
+    "subject": "Two members who started exactly where you are",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 5 - Success Stories",
+    "template": "Lead 05 — Member stories",
     "missing": false,
-    "text": "I’d love to share a couple of inspiring stories from our members at Blueprint Fitness with you {{contact.first_name}}.\nThese stories are a testament to the transformative and supportive environment we foster here. Both Michelle and Georgia started on the 30 Day Trial!🌟\nMeet Michelle\n\nMeet Georgia\n\nStart Your Own Success Story!\nInspired by Michelle and Georgia?\nYou too can start your transformation journey with us.\nOur 30-Day Trial is the perfect way to experience the supportive and energetic environment at Blueprint Fitness .\n➡️ [Click Here to Start Your 30-Day Trial]\nRemember, every fitness journey is unique, and yours is waiting to be written. We’re here to support you every step of the way!\nLooking forward to seeing you soon,\nStu\nBlueprint: Fitness\n\nSecure Your Spot\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
+    "text": "Michelle and Georgia both began on a 30-day trial.\n\nThe 30-Day Kickstart · Hackney\n\nThey started on the same 30 days\n\nHello {{contact.first_name}} — the most useful thing we can show you is not us talking about ourselves. It is members talking about the bit before they started.\n\nMichelle and Georgia both began on a 30-day trial, both having not trained properly in years, and both stayed. Their stories are on the site, in their own words.\n\nWatch the member stories\n\nEvery one of them is unremarkable in the best way: someone busy, a bit apprehensive, who booked a session and then booked another one.\n\nStart your own 30 days\n\nSpeak soon,\n\nNick\n\nBlueprint Fitness Hackney\n\nYour studio\n\nBlueprint Fitness Hackney\n\nArch 195, Morning Lane, Hackney, London, E9 6LJ\n\nMon–Fri 6am–9pm · Sat 8–11am · Closed Sunday\n\nhackney@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://www.youtube.com/watch?v&#x3D;1fWvXYyPAWA",
+      "url": "https://blueprintfitnessldn.com/#member-stories",
       "health": "ok"
      },
      {
-      "url": "https://www.youtube.com/watch?v&#x3D;HTSUYdHnX0c",
+      "url": "https://blueprintfitnessldn.com/signup-hackney/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
       "health": "ok"
      }
     ]
@@ -190,52 +258,133 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "Email 6",
-    "subject": "5 Common Hurdles...",
+    "subject": "The four things that stop people starting",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 6 - Common Fitness Hurdles",
+    "template": "Lead 06 — Common hurdles",
     "missing": false,
-    "text": "Starting a fitness routine is exciting, but it can be hard too. Let’s talk about some usual problems people face and how to beat them.\nNot Enough Time:\nMany say, “I don’t have time to exercise.” But with some planning, you can find time for short and effective workouts. Try working out in the morning or evening when you might be free.\nStaying Consistent:\nKeeping a steady workout routine is tricky. To stay on track, set simple goals and make a workout plan. And remember, it’s okay to take days off. Celebrate small wins to stay motivated!\nFeeling Judged:\nIt’s normal to feel shy or worried about what others think when you’re new. But remember, everyone at the gym is there to work on themselves, just like you.\nConnect with others, and you’ll see everyone has their own worries.\nConfused About Food:\nUnderstanding what to eat can be hard. Eating a mix of foods that give you energy for workouts and help you recover afterward is key. If you’re not sure, consider talking to a coach or nutrition expert for help with meal planning.\nFinal Thoughts:\nBeating these problems may seem hard, but with some grit and the right help, you can do it. Remember, all gym-goers have faced and beaten these challenges. You’re not alone!\nIf you have questions or need help, feel free to reach out.\nStay strong,\nStu\nBlueprint Fitness\n\n30 Day Trial\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "Time, consistency, feeling watched, and food.\n\nThe 30-Day Kickstart · Hackney\n\nThe four things that stop people\n\nAfter a decade of first sessions, the same four things come up. None of them is a good reason not to start.\n\n“I have not got time”\n\nA session is an hour, three times a week, at a time you choose. Mon–Fri 6am–9pm · Sat 8–11am · Closed Sunday. If the timetable does not work around your life, tell us and we will be honest about whether we can fit you in.\n\n“I cannot stay consistent”\n\nWhich is why the sessions are booked, coached and expected. Consistency is much easier when somebody notices you are missing.\n\n“I will feel watched”\n\nFive people, one coach, everyone concentrating on their own work. Nobody is looking at you — they are busy.\n\n“I do not know what to eat”\n\nWe cover that too, with practical guidance rather than a meal plan to buy. Start with training; food follows more easily once you are moving.\n\nStart your 30 days\n\nSpeak soon,\n\nNick\n\nBlueprint Fitness Hackney\n\nYour studio\n\nBlueprint Fitness Hackney\n\nArch 195, Morning Lane, Hackney, London, E9 6LJ\n\nMon–Fri 6am–9pm · Sat 8–11am · Closed Sunday\n\nhackney@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/signup-hackney/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email 7",
-    "subject": "Spot The Blueprint Difference?",
+    "subject": "What is actually different about training here",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 7 - Spot The Difference",
+    "template": "Lead 07 — What makes it different",
     "missing": false,
-    "text": "Ever wondered about Blueprint Fitness unique vibe {{contact.first_name}}?\nAt Blueprint Fitness, you’re never just a number.\nEvery member receives personal attention during each workout.\nYou get help, advice, and answers, always.\nOur community is special.\nIt’s a group of hard-working individuals, all chasing after their goals, just like you.\nThe atmosphere?\nPurely positive and supportive.\nEveryone cheers each other on.\nWe keep equipment simple and easy.\nNo confusing machines or complicated gadgets.\nAnd best yet, our trainers are right there to guide you.\nEvery Session!\nYour goals matter to us.\nWant to get stronger?\nLose weight?\nFeel more energetic?\nWe’re here to support your journey, every step of the way.\nChoosing a gym is a big decision.\nUnderstanding what makes each place special helps.\nAt Blueprint Fitness, it’s about you, the community, simplicity, and your goals.\nGot more questions about life at Blueprint Fitness?\nFeel free to drop us a line.\nStay healthy,\nStu\nBlueprint Fitness\n\n30 Day Trial\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "Small groups, a real plan, and coaches who know your name.\n\nThe 30-Day Kickstart · Hackney\n\nWhat is actually different here\n\nChoosing where to train is a bigger decision than it looks, so here is the honest version of what you get with us — and what you do not.\n\nYou get\n\n•\n\nA coach in the room with you for every session, not on a rota somewhere.\n\n•\n\nA maximum of five people to that coach.\n\n•\n\nA programme that progresses, written around what you can do now.\n\n•\n\nPeople who know your name by week two.\n\nYou do not get\n\n•\n\nA swipe card and good luck.\n\n•\n\nA room of machines and no idea which ones matter.\n\n•\n\nA contract you cannot get out of.\n\nIt is personal training, delivered in a small supportive group. That is the whole idea — the coaching of one-to-one, at a price that is not one-to-one.\n\nSee what membership costs\n\nOr start with 30 days\n\nSpeak soon,\n\nNick\n\nBlueprint Fitness Hackney\n\nYour studio\n\nBlueprint Fitness Hackney\n\nArch 195, Morning Lane, Hackney, London, E9 6LJ\n\nMon–Fri 6am–9pm · Sat 8–11am · Closed Sunday\n\nhackney@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/memberships/",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com/signup-hackney/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email 8",
-    "subject": "Most Common Questions ANSWERED!",
+    "subject": "The questions we get asked most",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 8 - Common Questions",
+    "template": "Lead 08 — Questions answered",
     "missing": false,
-    "text": "Got questions about Blueprint Fitness {{contact.first_name}}?\nYou’re not alone.\nLet’s clear up some common queries we hear.\nWondering about commitment?\nOur 30-Day Trial is just that - a trial.\nNo strings attached, no hidden clauses.\nJust a full month for you to experience everything Blueprint Fitness offers.\nConcerned about your fitness level?\nWe welcome all levels here, from complete beginners to seasoned gym-goers.\nOur trainers are here to meet you where you are and help you grow from there.\nThinking about the atmosphere?\nBlueprint Fitness is all about positivity and support.\nNo judgment, no ego, just a community working together towards their goals.\nWorried about nutrition?\nWe’ve got you covered with personalized meal plans and nutrition advice to fuel your workouts and recovery.\nCurious about our schedule?\nWe’re open 7 days a week with loads of sessions starting from 6am.\nFlexibility is key, and we offer it.\nDealing with injuries?\nOur trainers are skilled in working around and with various injuries to ensure you can exercise safely and effectively.\nConcerned about parking?\nDon’t be. We offer free parking for all our members, making your trip to Blueprint Fitness hassle-free.\nHave more questions?\nWe’re always here to answer them.\nReply, Tap Here, or give us a call.\nUnderstanding is the first step to commitment.\nWe hope this clears up any doubts or concerns you might have about joining the Blueprint Fitness family.\nLooking forward to your curiosity and excitement,\nStu\nBlueprint Fitness\n\n30 Day Trial\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "Commitment, fitness level, injuries and times.\n\nThe 30-Day Kickstart · Hackney\n\nYour questions, answered\n\nHello {{contact.first_name}}. The same handful of questions come up before people start, so here they are with straight answers.\n\nIs the 30 days a contract?\n\nNo. It is thirty days. Most people stay, some do not, and that is genuinely fine.\n\nAm I fit enough?\n\nYes. Everything is scaled to you — that is what having a coach in the room is for.\n\nWhat if I have an injury?\n\nTell us on your first call. Our coaches work around injuries and conditions every day; we would rather know up front than find out later.\n\nWhen are the sessions?\n\nMon–Fri 6am–9pm · Sat 8–11am · Closed Sunday. The full grid is on the site, so you can check before you commit.\n\nCheck the timetable\n\nWhat does it cost?\n\nThe 30-Day Kickstart is £169 — twelve coached sessions, your InBody scan and your plan. No joining fee.\n\nStart your 30 days\n\nSpeak soon,\n\nNick\n\nBlueprint Fitness Hackney\n\nYour studio\n\nBlueprint Fitness Hackney\n\nArch 195, Morning Lane, Hackney, London, E9 6LJ\n\nMon–Fri 6am–9pm · Sat 8–11am · Closed Sunday\n\nhackney@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/hackney/timetable/",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com/signup-hackney/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email 9",
-    "subject": "SURPRISE OFFER! Save £££ Today at Blueprint: Fitness",
+    "subject": "The 30-Day Kickstart, and what £169 covers",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 9 - Surprise!",
+    "template": "Lead 09 — What it costs",
     "missing": false,
-    "text": "Hey {{contact.first_name}},\nGuess what? 😍\nWe’ve got something special for you!\nWe know taking the first step can be the hardest.\nSo, we’re making it a little easier.\nKeep Reading To Find Out! 🙌 For a limited time, we’re offering a special '30 Day Kickstart' discount.\nA little nudge to get started on your fitness journey with us.\nBut here’s the catch - it’s a surprise!\n\nIt’s a good one though, I promise.\nTo find out what’s waiting for you, tap the link below.\n\n[Reveal Your Surprise Offer!]\nThis special offer is only available for you for 24 hours!\nSo, don’t wait too long to uncover it.\nWe’re so excited to welcome you to Blueprint Fitness .\nAnd remember, we’re here to support you every step of the way.\n\nCan’t wait to see you,\nStu\nBlueprint Fitness\n\nReveal 30 Day Trial Offer\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "Twelve coached sessions, an InBody scan, and your plan.\n\nThe 30-Day Kickstart · Hackney\n\nWhat £169 actually covers\n\nNo games and no countdown timers — just what the Kickstart is and what it costs, so you can decide.\n\n12\n\nCoached sessions\n\n5:1\n\nMax ratio\n\n30\n\nDays\n\n£169 for your first 30 days\n\n•\n\n12 coached sessions — three a week, at times you pick\n\n•\n\nAn InBody scan and goal-setting session to start from a real number\n\n•\n\nA plan written around you, progressed as you go\n\n•\n\nPractical nutrition guidance — no meal plans to buy\n\n•\n\nNo joining fee and no contract\n\nBooked as one-to-one personal training, a month like that costs several hundred pounds. It is £169 because you share your coach with four other people.\n\nStart your 30 days at Hackney\n\nSee what happens after the 30 days\n\nSpeak soon,\n\nNick\n\nBlueprint Fitness Hackney\n\nYour studio\n\nBlueprint Fitness Hackney\n\nArch 195, Morning Lane, Hackney, London, E9 6LJ\n\nMon–Fri 6am–9pm · Sat 8–11am · Closed Sunday\n\nhackney@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/signup-hackney/",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com/memberships/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email 10",
-    "subject": "Last Chance {{contact.first_name}}!",
+    "subject": "{{contact.first_name}}, shall we leave it there?",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 10 - Last Chance",
+    "template": "Lead 10 — Last call",
     "missing": false,
-    "text": "Time is ticking {{contact.first_name}}, and we don’t want you to miss out\nYour Special Offer ENDS TODAY!\nThis is your final reminder to join our Blueprint Fitness family and start your fitness journey with a bang.\n\nWe’ve seen so many people transform here,\nnot just in body,\nbut in spirit and confidence too.\n\nWe know taking the first step can be a bit scary, but we promise at Blueprint Fitness,\nyou’ll find a supportive community ready to welcome you with open arms.\n\nYour path to a stronger, healthier you is just a click away.\n\n[Sign Up for Your 30-Day Trial Now]\nThis Offer ENDS TODAY\n\nIf you have any last-minute questions or need a little extra nudge,\nwe’re right here to chat.\n\nHope to see you soon and start this exciting journey together.\nWarm wishes,\nStu\nBlueprint Fitness\n\nSPECIAL OFFER: 30 DAY TRIAL\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "Last email from us — unless you would like to start.\n\nThe 30-Day Kickstart · Hackney\n\nShall we leave it there?\n\nThis is the last email in this sequence, {{contact.first_name}} — we are not going to keep nudging you.\n\nIf the timing is wrong, that is completely fine. Keep us in mind; the door stays open and the offer does not change.\n\nIf you have been meaning to start and simply have not got round to it, this is the reminder. Thirty days, twelve coached sessions, and an honest answer at the end of it about whether this suits you.\n\nStart your 30 days\n\nRather talk to a human first? Message us and a coach at Hackney will reply — no script, no pressure.\n\nAsk us a question\n\nSpeak soon,\n\nNick\n\nBlueprint Fitness Hackney\n\nYour studio\n\nBlueprint Fitness Hackney\n\nArch 195, Morning Lane, Hackney, London, E9 6LJ\n\nMon–Fri 6am–9pm · Sat 8–11am · Closed Sunday\n\nhackney@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/signup-hackney/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356?text=Hi%20Blueprint%20Fitness%20Hackney%20%E2%80%94%20I",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "sms",
@@ -326,32 +475,75 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "Email 1",
-    "subject": "Hey {{contact.first_name}}",
+    "subject": "How have you been, {{contact.first_name}}?",
     "from": "{{custom_values.sales_and_journey}} · {{location.email}}",
-    "template": "Reactivation - Email 1",
+    "template": "Win-back 01 — Checking in",
     "missing": false,
-    "text": "Hi {{contact.first_name}}\n\nJust thought I’d check in and see how you’re getting on since you finished with us?\n\nLet me know if you need help with anything.\n\n{{custom_values.sales_and_journey}}",
-    "links": []
+    "text": "No pitch — just seeing how you got on.\n\nFrom the team · Hackney\n\nHow have you been?\n\nHello {{contact.first_name}}. It has been a little while since you trained with us, and I wanted to see how you have got on.\n\nNo pitch attached to this one. If you found something that works better, genuinely good — that is the point of the whole exercise.\n\nAnd if it all rather tailed off, that happens to almost everybody. It is not a character flaw.\n\nReply on WhatsApp\n\nSpeak soon,\n\nNick\n\nBlueprint Fitness Hackney\n\nYour studio\n\nBlueprint Fitness Hackney\n\nArch 195, Morning Lane, Hackney, London, E9 6LJ\n\nMon–Fri 6am–9pm · Sat 8–11am · Closed Sunday\n\nhackney@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://wa.me/447944690356?text=Hi%20Blueprint%20Fitness%20Hackney%20%E2%80%94%20just%20replying%20to%20your%20email.",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email",
-    "subject": "Hope you're well {{contact.first_name}}",
+    "subject": "Still fancy getting back to it?",
     "from": "{{custom_values.sales_and_journey}} · {{location.email}}",
-    "template": "Reactivation - Email 2",
+    "template": "Win-back 02 — Still thinking about it",
     "missing": false,
-    "text": "Hi {{contact.first_name}}\n\nAre you still looking to get in shape?\n\n{{custom_values.sales_and_journey}}",
-    "links": []
+    "text": "The door is open, and starting again is easier than starting.\n\nFrom the team · Hackney\n\nStill fancy getting back to it?\n\nHello {{contact.first_name}} — a quick one. If getting back into training has been on your list, you would not be starting from scratch. You already know how the sessions work and the coaches already know you.\n\nQuite a lot has changed since you were last in, too. Here is the current timetable at Hackney.\n\nSee what is on now\n\nIf you would rather just ask what has changed, message us — happy to give you the honest version.\n\nAsk us what has changed\n\nSpeak soon,\n\nNick\n\nBlueprint Fitness Hackney\n\nYour studio\n\nBlueprint Fitness Hackney\n\nArch 195, Morning Lane, Hackney, London, E9 6LJ\n\nMon–Fri 6am–9pm · Sat 8–11am · Closed Sunday\n\nhackney@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/hackney/timetable/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356?text=Hi%20Blueprint%20Fitness%20Hackney%20%E2%80%94%20I",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email",
-    "subject": "Hope you're well {{contact.first_name}}",
+    "subject": "Whenever you are ready",
     "from": "{{custom_values.sales_and_journey}} · {{location.email}}",
-    "template": "Reactivation - Email 2",
+    "template": "Win-back 03 — Whenever you are ready",
     "missing": false,
-    "text": "Hi {{contact.first_name}}\n\nAre you still looking to get in shape?\n\n{{custom_values.sales_and_journey}}",
-    "links": []
+    "text": "Last one from us — no hard feelings either way.\n\nFrom the team · Hackney\n\nWhenever you are ready\n\nThis is the last one from us, {{contact.first_name}}, so we do not become the gym that will not stop emailing.\n\nIf and when you want to come back, everything is where you left it. Message the studio and we will pick it up from there — no re-joining fee, no awkwardness about the gap.\n\nAll the best either way.\n\nSee what a month looks like now\n\nSpeak soon,\n\nNick\n\nBlueprint Fitness Hackney\n\nYour studio\n\nBlueprint Fitness Hackney\n\nArch 195, Morning Lane, Hackney, London, E9 6LJ\n\nMon–Fri 6am–9pm · Sat 8–11am · Closed Sunday\n\nhackney@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/hackney/kickstart/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    }
   ]
  },
@@ -418,43 +610,72 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "2 Email - Nutrition Journey",
-    "subject": "Kickstart Your Nutrition Journey",
+    "subject": "The nutrition side, without the faff",
     "from": "{{location.name}} · info@blueprintfitnessldn.com",
-    "template": "2. KICK-START YOUR NUTRITION JOURNEY IN FIVE EASY STEPS",
+    "template": "Joined 02 — Nutrition",
     "missing": false,
-    "text": "Hi {{contact.first_name}},\nAs part of your 30 day trial, you have access to our team of highly qualified nutrition coaches and to our in depth digital nutrition resource platform.\n\nHere are the five steps that we take to get you started - not all stages are essential, bt the more info we have the better place we will be to help you:\n\nInBody\nThis part is absolutely essential in terms of gathering start point data (most importantly, your BMR). If you haven’t done this yet please chat to one of our coaches on the gym floor or ping Stu a message to get set up.\n\nCalorie Calculator\nHead to our resource centre by clicking the big blue button below, then download and fill in the calorie calculator and email it to us at info@blueprintfitnessldn.com. It’ll give you loads of detail regarding your nutrition requirements which we will run through with you during your consultation.\n\nStart Tracking\nThis will give us an idea of your current calorie and protein consumption, and a breakdown of macronutrients - we usually use the MyFitnessPal app - and insight into what your current habits are, and where we may be able to make some changes around the food choices that you make.\n\nBook your 30 minute kick start consultation\nTo help you get started we’ll get you booked in for a 30 minute consultation with either Paul or Louise. This is going to give us the opportunity to get absolutely clear on your goals and accelerate your results. To get this booked, click the link in the members section.\n\nBlueprint Nutrition Coaching\n\nWithin the nutrition section of the website you’ll also find our Signature Nutrition Programme.\n\nIt has all the essential and in-depth information you need to help double down on your nutrition efforts to really get the most out of your training,and accelerate your results.\n\nThere are 20+ videos for you to work through (pictured above) covering all topics from macronutrients, to fat loss, to understanding calories and adherence tactics.\n\nAs you know, we’re here to help you on every step of your journey - so if there is anything else you need, please give us a shout!\n\nSee you soon!\n\nThe Blueprint Fitness Team\n\nNutrition Video Series\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
+    "text": "A 22-part video series and a coach, both included.\n\nYour first 30 days · Hackney\n\nTraining is half of it\n\nHello {{contact.first_name}}. You do not need to overhaul your diet to get results in your first month — but a few honest changes go a very long way.\n\nTwo things are included with your membership, and both are worth using.\n\nThe Nutrition Video Series\n\nTwenty-two short lessons, in the order that actually matters — calories, adherence, habits, and what to do when progress stalls. Watch one a day and you will understand more than most people who have been dieting for years.\n\nStart the video series\n\nA consultation with a coach\n\nWhen you want it applied to you specifically rather than in general, request a consultation. Bring your InBody results and a few honest days of food — that tells us far more than any questionnaire.\n\nRequest a consultation\n\nNo fad diets and nothing to buy. Just practical guidance built around how you actually live.\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness Hackney\n\nYour studio\n\nBlueprint Fitness Hackney\n\nArch 195, Morning Lane, Hackney, London, E9 6LJ\n\nMon–Fri 6am–9pm · Sat 8–11am · Closed Sunday\n\nhackney@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://www.blueprintfitnessldn.com/nutrition-coaching",
-      "health": "redirected"
+      "url": "https://blueprintfitnessldn.com/members/nutrition-course/",
+      "health": "ok"
      },
      {
-      "url": "https://www.blueprintfitnessldn.com/nutrition-series-videos",
-      "health": "redirected"
+      "url": "https://blueprintfitnessldn.com/members/nutrition-request/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
      }
     ]
    },
    {
     "type": "email",
     "name": "5 Email - Referral Hoodie",
-    "subject": "Here's a FREE 30 day kick-start for a friend {{contact.first_name}}?",
+    "subject": "Know someone who would get on well here?",
     "from": "{{location.name}} · info@blueprintfitnessldn.com",
-    "template": "5. REFER A FRIEND FOR FREE AND WIN A HOODIE!",
+    "template": "Joined 05 — Refer a friend",
     "missing": false,
-    "text": "Hi {{contact.first_name}},\n\nWe hope you're enjoying your time at Blueprint:Fitness and making the most of your 30-day trial. As a trialist, you've taken the first step towards reaching your fitness goals and as you know, we're here to support you every step of the way.\n\nAnd because we love our trialists, we've got a special treat for you: the \"Golden Ticket\". This is your chance to spread the love and share the fitness feels with someone you care about. That's right; you can gift a free 30-day trial membership to a friend, family member, or colleague.\n\nThey'll have access to all the same perks you have:\n\n· 12 SGPT sessions\n\n· Unlimited TEAM classes\n\n· Inbody composition testing\n\n· Access tour nutrition course\n\n· Any additional support and guidance they need!\n\nImagine how much more fun your workouts will be when you've got your BFF (best fitness friend) by your side… because we all know that friends who train together stay motivated and achieve better results!\n\nTo redeem your Golden Ticket, simply drop us a message with your friend's details and we'll take care of the rest….AND… If your friend decides to sign up as a member after their trial, we’ll give you an exclusive Blueprint:Fitness hoodie! Yay!!\nThank you for being a part of our awesome community, and we can't wait to see you both soon!\nThe Blueprint:Fitness Team\n{{location.email}}\n{{location.phone}}\nblueprintfitnessldn.com\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
-    "links": []
+    "text": "Send them a 30-Day Kickstart.\n\nYour first 30 days · Hackney\n\nBring someone with you\n\nHello {{contact.first_name}} — training is easier when someone you know is doing it too. It is also how most of our members found us.\n\nIf there is someone who has been saying they should do something about it, send them this and let them have a look at what a month here involves.\n\nSend them the 30-Day Kickstart\n\nMention it to a coach when they start, so we know who to thank.\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness Hackney\n\nYour studio\n\nBlueprint Fitness Hackney\n\nArch 195, Morning Lane, Hackney, London, E9 6LJ\n\nMon–Fri 6am–9pm · Sat 8–11am · Closed Sunday\n\nhackney@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/hackney/kickstart/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "4 Email - Socials",
-    "subject": "Here's why the socials are just as fun as our sessions",
+    "subject": "The bit that keeps people here",
     "from": "{{location.name}} · info@blueprintfitnessldn.com",
-    "template": "4. WE’RE MORE THAN JUST A GYM… THE SOCIALS ARE JUST AS FUN AS OUR SESSIONS!",
+    "template": "Joined 04 — The community",
     "missing": false,
-    "text": "Dear {{contact.first_name}}\n\nWe’ve got quite the social scene here at Blueprint:Fitness – and contrary to popular belief, it’s not just people getting on the lash (but a lot of the time it kinda is…)\n\nWe're here to take your fitness journey to the next level! Not only will you be crushing your goals and seeing results, but you'll also have a blast doing it.\n\nHere's a sneak peek of the other epic social activities we have in store for you:\n\n· RESULTS ACCELERATORS: A few times a year, we're all about pushing ourselves to the limit with 50-day challenges and months dedicated to reaching big personal milestones, such as \"March Madness\" or \"Smash-tember\".\n\n· ADVENTURE CLUB: This one is for more fitness focused excursions. We’ll be conquering Tough Mudder, Nuclear Races, and half marathons all year round! And you guessed it, we'll be toasting our victories with beers.\n\n· SUMMER GAMES & XMAS GAMES: Get ready to team up and unleash your competitive side! This month-long series of games and challenges will bring out your inner athlete, with a leader board and tons of fun!\n\n· SPORTS DAYS: We're talking golf society days and 7-a-side football comps, all ending with a cold beer in hand.\n\n· PARTIES: Whether it's for Christmas, summer, a members' birthday or just a random Saturday, we're always down for a good party! And what better way to celebrate than with a few beers and good company?\n\n· LIVE DJ SESSIONS: Get ready to sweat it out to some sick beats as we bring in a DJ to crank up the tunes during your workouts.\n\n· RUNNING GROUP: This one is for the runners, we plot out and share local running routes and have member meet ups and the annual big group run on Boxing Day.\n\nWe have various groups for these events as they arise but this is the main group for social activity… its run by the members and is generally where all the fun stuff happens:\n\nJoin the socials group!\n\nSo, what are you waiting for? Join us and get ready to have a blast!\nSee you soon!\nThe Blueprint:Fitness Team\n{{location.email}}\n{{location.phone}}\nblueprintfitnessldn.com\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
+    "text": "The socials are genuinely half the reason people stay.\n\nYour first 30 days · Hackney\n\nThe bit nobody expects\n\nMost people join for the training. A surprising number stay for everyone else.\n\nThere are socials, events and a fair amount of nonsense in the group chat. You are welcome at all of it, and there is no obligation to any of it.\n\nIf you have been coming a couple of weeks and have not met many people yet, tell a coach. Introducing people is genuinely part of the job here.\n\nYour members area\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness Hackney\n\nYour studio\n\nBlueprint Fitness Hackney\n\nArch 195, Morning Lane, Hackney, London, E9 6LJ\n\nMon–Fri 6am–9pm · Sat 8–11am · Closed Sunday\n\nhackney@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://chat.whatsapp.com/HceQ7PUzCT94kSUOfOFMfp",
+      "url": "https://blueprintfitnessldn.com/members/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
       "health": "ok"
      }
     ]
@@ -462,18 +683,22 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "3 Email - Best Results?",
-    "subject": "Which of our sessions and programmes will get you the best results?",
+    "subject": "Which sessions will get you the results you want?",
     "from": "{{location.name}} · info@blueprintfitnessldn.com",
-    "template": "3. WHICH OF OUR PROGRAMS WILL GET YOU THE BEST RESULTS?",
+    "template": "Joined 03 — Which sessions to pick",
     "missing": false,
-    "text": "Hi {{contact.first_name}},\nYou may have noticed different members following different programs, which may look a little confusing – but there is method (mainly science) to the madness.\nOur priority with programming is to create an environment that helps our members achieve the best results. So whatever the goal may be, in terms of fat loss, strength, general fitness, getting leaner, dropping a dress size, or for performance… We have a pathway that will absolutely get you there.\nIt’s important for you to know, and to understand everything about the programs and the classes so that you can make informed decisions regarding which sessions and which pathway will maximise your results.\nHaving two SGPT programs options that run side by side is how we truly bespoke your Blueprint journey, and as the old saying goes; “The problem with the one size fits all approach is that everyone ends up with the wrong trousers”\nThey are called ‘Shape’ and ‘Strength. Here’s the lowdown:\nThe Shape program focuses on body composition, and the primary aim is to simultaneously reduce muscle mass whilst maintaining or increasing muscle mass therefore making you look more athletic, or ‘toned’.\nShape cycles through different protocols of resistance training, such as hypertrophy (3-4 sets of 8-12 reps), high volume (more sets and/or 12-15 reps) or might follow a TUT (time under tension) protocol where we play around with different tempos per rep.\nThe Strength program is geared towards people that want to build muscle, reduce body fat and generally get as strong as an ox.\nHere we focus on lower rep ranges (usually 4-6) so that we can lift heavier and increase strength through the big compound moves like deadlifts, squats, bench press and pull ups.\nThere are two videos here to watch that will tell you everything there is to know about SGPT and TEAM training programming and sessions:\n1. Programming overview\nThis one takes you through a whole years’ worth of programming, how the 12 week cycles play out and are broken down onto phases and – most importantly – why this is beneficial to you.\nCLICK HERE FOR THE PROGRAM VIDEO!\n2. TEAM training\nThis one gives you an insight into the six different formats of TEAM classes that we run, will breakdown the objectives for each session and how to work them in alongside the SGPT sessions.\nCLICK HERE FOR THE TEAM TRAINING GUIDE!\nIf you have any questions please give us a shout. But rest assured, now that you’re part of the Blueprint community, the days of aimlessly walking into a gym and not knowing what to do are well and truly behind you!\nSee you soon!\nThe Blueprint:Fitness Team\n{{location.email}}\n{{location.phone}}\nblueprintfitnessldn.com\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
+    "text": "SGPT, and how the classes fit around it.\n\nYour first 30 days · Hackney\n\nWhich sessions should you book?\n\nShort answer: your coached SGPT sessions are the backbone. Everything else is a bonus on top.\n\nSGPT — your three a week\n\nThis is the one that moves the needle. Strength work, progressed week to week, with a coach watching. If you only ever do these three, you will still get where you are going.\n\nThe classes\n\nConditioning sessions you can add on when you fancy them. They are not a replacement for your coached sessions — they are for the weeks when you want a fourth thing to do.\n\nSee what is on at Hackney\n\nNot sure what to book? Ask your coach at your next session. They know what you are working on.\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness Hackney\n\nYour studio\n\nBlueprint Fitness Hackney\n\nArch 195, Morning Lane, Hackney, London, E9 6LJ\n\nMon–Fri 6am–9pm · Sat 8–11am · Closed Sunday\n\nhackney@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://youtu.be/hNFiW_psTcM",
+      "url": "https://blueprintfitnessldn.com/hackney/timetable/",
       "health": "ok"
      },
      {
-      "url": "https://youtu.be/65rLPUtKjYA",
+      "url": "https://wa.me/447944690356",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
       "health": "ok"
      }
     ]
@@ -481,14 +706,22 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "6. Price List",
-    "subject": "What happens after your trial?",
+    "subject": "What happens when your 30 days are up",
     "from": "Stuart Rook · hackney@blueprintfitnessldn.com",
-    "template": "6. WHAT HAPPENS AFTER YOUR TRIAL?",
+    "template": "Joined 07 — What happens after 30 days",
     "missing": false,
-    "text": "Hey there, {{contact.first_name}}!\n\nWe hope you've been enjoying your 30-day trial at Blueprint:Fitness! As your trial period is coming towards the end, we wanted to reach out and give you a quick reminder about a couple of things;\n\nFirstly, if you haven't already, it's time to start thinking about becoming a full time member of our awesome fitness community. We offer a range of memberships to suit your goals, your lifestyle and your budget. Stu and/or Paul will be happy to guide you through our membership options and help you choose the best one for you:\n\nIf you’re ready to join, simply click this:\n\nJoin Blueprint:Fitness\n\nSecondly, we'd like to remind you about your results check-in. We're all about tracking progress and celebrating achievements here at Blueprint:Fitness, so don't forget to book your InBody review with one of our coaches!\nWe love seeing people who come to us initially looking for body composition changes and the gradual increases in strength, fitness, confidence and mentality… but this check in is a great opportunity to reflect on how far you've come, set new goals, and get some expert advice on how to continue making progress.\nSo what are you waiting for? Take the next step and become a member of our awesome fitness community today!\nThank you for choosing Blueprint:Fitness for your fitness journey, and we hope to see you soon!\nThe Blueprint:Fitness Team\n{{location.email}}\n{{location.phone}}\nblueprintfitnessldn.com\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
+    "text": "Your options, and what each one costs.\n\nYour first 30 days · Hackney\n\nWhat happens after your 30 days\n\nYou are most of the way through, so here is what comes next — no surprises at the till.\n\nMemberships are simply a question of how many coached sessions a month suit your life. Same coaching, same small groups, same plan.\n\n•\n\nSGPT 12 — £239 a month. Three a week, and what most members settle on.\n\n•\n\nSGPT 8 — £219 a month. Two a week with room for a third.\n\n•\n\nSGPT 4 — £189 a month. One a week, steady and sustainable.\n\nAll of them include unlimited classes, your monthly check-in, InBody tracking and the nutrition resources.\n\nCompare the memberships\n\nThere is a 10% discount for couples in the same household, NHS and services. Ask your coach, or just reply to this.\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness Hackney\n\nYour studio\n\nBlueprint Fitness Hackney\n\nArch 195, Morning Lane, Hackney, London, E9 6LJ\n\nMon–Fri 6am–9pm · Sat 8–11am · Closed Sunday\n\nhackney@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://goteamup.com/p/13219223-blueprint-fitness-hackney/memberships/",
+      "url": "https://blueprintfitnessldn.com/memberships/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
       "health": "ok"
      }
     ]
@@ -496,22 +729,22 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "7. Email",
-    "subject": "What is it like to be a full time Blueprint Fitness member?",
+    "subject": "What it is actually like once the 30 days are over",
     "from": "{{location.name}} · hackney@blueprintfitnessldn.com",
-    "template": "7. WHAT IS IT LIKE TO BE A FULL TIME BLUEPRINT:FITNESS MEMBER",
+    "template": "Joined 06 — Life as a full member",
     "missing": false,
-    "text": "Dear {{contact.first_name}},\n\nNow that you’re getting deep into your trial period and are fully integrated into Blueprint way of life, you might be wondering how it feels to be a long term member.\n\nThe 30-day trial period is the perfect amount of time for you to test-drive the classes and the coaches, and most importantly to get into the habit of (and enjoying) regular exercise… don't worry, we won't hold it against you if you've been secretly crying in the corner during burpees (we've all been there).\n\nWhen we jump back onto the inbody, we’ll definitely see some progress but the big composition, health and fitness changes – the truly sustainable results - come from consistency and long term behaviour change, which can be summed up nicely in this excellent quote:\n\n“The key – if you want to build habits that last – is to join a group where your desired behaviour, is their normal behaviour” – JAMES CLEAR, Atomic Habits\n\nNo-one is better qualified to tell you about the longer term B:F experience than our members. So here is a google review from Kiran:\n\nBlueprint: “a detailed outline or plan of action: a blueprint for success”\n\n“I joined Blueprint Fitness exactly a year ago and wanted to write a review of my experience. I am not one to write reviews frequently, only when something truly warrants it.\n\nHaving been a member of David Lloyds and Virgin Active for many years previously, Blueprint Fitness came as a total surprise to me.\n\nTrust me, this gym hits different in so many ways. The classes are made up of small group personal training sessions as well as other fantastic classes such as METCON, Sweat and Tough Guy. Each aspect of the training sessions is very well thought out, so when you walk through those doors, you know that you are in good hands. There are plenty of time slots to choose from during the day so it’s easy to fit into your life.\n\nI have learnt so much about the importance of good form, progressive overloading, strength training etc. Aside from the exercise, I have learnt a whole bunch of other stuff. The coaches really assist you with nutrition, which is very important if you want to get good results. I have learnt about body composition which again, I had no clue of. We use an Inbody machine at Blueprint to determine your percentage body fat, muscle mass etc. The coaches are at hand to help you decipher the results and to help you improve upon them.\n\nDuring the course of the year there are so many fun activities such as the summer games, hikes, winter games as well as the 50 Day challenges that really help you hone in on the targets that you wish to achieve.\n\nI have met so many wonderful people at Blueprint that inspire me to do better and encourage me. We have accountability groups, and this is so helpful as we can swap ideas etc. There are many socials that go on during the year that it makes you feel included. The Coaches are absolutely fantastic and very encouraging. The owners have put their blood and sweat (literally) into making it a very special experience for all members. They work tirelessly to ensure that you are getting the most out of your membership. They really do care about you reaching your goals and are very knowledgeable. You will never get the same experience at a generic gym.\n\nMy results have also been epic. I have lost 11% of my percentage body fat and over 6kg in weight during the past year. My mind-set has also completely changed as my lifestyle has changed. I take any opportunity to walk and lift heavy things (outside of the gym) which I would never dream of doing before. I am far more active than I have ever been because I feel motivated when I leave the gym. As a result of joining Blueprint, I am more focused in other aspects of my life. My husband and kids are astounded by the difference and my eldest son who is a gym freak now gives me kudos, which is a result in itself!\n\nIf you want excellent results and have fun whilst achieving the them, then this is the gym for you. One warning though, it’s addictive! You will feel the buzz and the energy (which is really important to me) when you enter the gym and guaranteed, you will leave with a smile and a spring in your step for the rest of the day.\n\nIt is no surprise to me that the gym has been shortlisted for the best gym in the area and I hope that we win!”\n\nIf you’d like to see what our members say about us, CLICK HERE to see a few more google reviews.\n\nSee you soon!\n\nThe Blueprint:Fitness Team\n\ninfo@blueprintfitnessldn.com\n\n07736 033 985 // 07855 353 798\n\nblueprintfitnessldn.com\n\nJoin Blueprint:Fitness\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
+    "text": "Same coaching, same small groups, just no end date.\n\nYour first 30 days · Hackney\n\nLife after the Kickstart\n\nHello {{contact.first_name}} — people often ask what changes when the 30 days finish. Honestly: not much, and that is rather the point.\n\nSame coaches, same small groups, same plan carrying on from where you got to. What changes is that you stop thinking about it as a trial and start thinking about it as the thing you do on Mondays, Wednesdays and Fridays.\n\nWhat members get on top\n\n•\n\nUnlimited classes alongside your coached sessions\n\n•\n\nA monthly check-in with your coach, whenever you want one\n\n•\n\nInBody tracking, so progress stays measured\n\n•\n\nThe nutrition resources and our clinics and workshops\n\n•\n\nEvery social and event going\n\nMost people find the second month easier than the first. The hard part was becoming someone who turns up, and you have already done that.\n\nSee the memberships\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness Hackney\n\nYour studio\n\nBlueprint Fitness Hackney\n\nArch 195, Morning Lane, Hackney, London, E9 6LJ\n\nMon–Fri 6am–9pm · Sat 8–11am · Closed Sunday\n\nhackney@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://www.google.com/search?sa=X&rlz=1C1CHBF_en-GBGB886GB886&sxsrf=AJOqlzVpomZirZw4TL8XZFxrjPoY9wMwSA:1677187001407&q=blueprint%20fitness%20google%20reviews&ved=2ahUKEwi9hsO7yKz9AhVhSEEAHbxmD3oQvS56BAhDEAE&biw=1366&bih=657&dpr=1&tbs=lf:1,lf_ui:14&tbm=lcl&rflfq=1&num=10&rldimm=16491884207935991094&lqi=CiBibHVlcHJpbnQgZml0bmVzcyBnb29nbGUgcmV2aWV3cyIFOAGIAQFIi8ydiIqrgIAIWhsQABABGAAYASIRYmx1ZXByaW50IGZpdG5lc3OSARBwZXJzb25hbF90cmFpbmVymgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVVJQYzBwVU0waG5FQUU&rlst=f#rlfi=hd:;si:16491884207935991094,l,CiBibHVlcHJpbnQgZml0bmVzcyBnb29nbGUgcmV2aWV3cyIFOAGIAQFIi8ydiIqrgIAIWhsQABABGAAYASIRYmx1ZXByaW50IGZpdG5lc3OSARBwZXJzb25hbF90cmFpbmVymgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVVJQYzBwVU0waG5FQUU;mv:[[51.6727992,0.049006999999999995],[51.5904283,-0.1894718]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:14",
+      "url": "https://blueprintfitnessldn.com/memberships/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356",
       "health": "ok"
      },
      {
       "url": "https://blueprintfitnessldn.com",
-      "health": "ok"
-     },
-     {
-      "url": "https://goteamup.com/p/13219223-blueprint-fitness-hackney/memberships/",
       "health": "ok"
      }
     ]
@@ -519,14 +752,26 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "8. Email Thankyou Legend",
-    "subject": "Thankyou for taking on our 30 Day Trial, you absolute legend!",
+    "subject": "Thirty days done, {{contact.first_name}}",
     "from": "{{location.name}} · hackney@blueprintfitnessldn.com",
-    "template": "8. THANK YOU!",
+    "template": "Joined 08 — Thank you",
     "missing": false,
-    "text": "Hi {{contact.first_name}},\n\nWhere on earth have these last 30 days gone?\n\nWe hope that you've been feeling the results of your hard work – after all, with all the blood, sweat, and burpees you've been putting in, you're practically superhuman by now! You've pushed through the pain, embraced the grind, and come out the other side with buns of steel and guns of iron. Bravo, my friend!\n\nAs your trial draws to a close, we'd like to remind you about the InBody check that you have access to. This will give us a better understanding of how your body has changed over the past 30 days and help us tailor our training program to your needs moving forwards.\n\nWe want to say a big thank you for choosing Blueprint Fitness and entrusting us with your fitness journey. We hope that you've enjoyed the blood, sweat, and burpees as much as we have (or at least tolerated them), and we can't wait to see you continue to smash your goals with us.\n\nIf you have any questions or concerns, please don't hesitate to reach out – we're always here to help. Now go enjoy a well-deserved protein shake (or a pint, we won't judge).\n\nAnd lastly, if you’re ready to sign up as s full member here’s that link again:\n\nClick here to join!\n\nSee you soon!\nThe Blueprint:Fitness Team\n{{location.email}}\n{{location.phone}}\nblueprintfitnessldn.com\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
+    "text": "You turned up. That is the hard part.\n\nYour first 30 days · Hackney\n\nThirty days. Done.\n\nWhatever the numbers say, you did the difficult bit: you kept turning up. Most people never get past the first week.\n\nHave a look at your InBody comparison with your coach — a month is long enough for the numbers to have moved, and it is a good deal more satisfying than guessing.\n\nWhatever you decide about carrying on, thank you for giving it a proper go. It has been a pleasure having you in.\n\nCarry on with a membership\n\nTalk it through with us\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness Hackney\n\nYour studio\n\nBlueprint Fitness Hackney\n\nArch 195, Morning Lane, Hackney, London, E9 6LJ\n\nMon–Fri 6am–9pm · Sat 8–11am · Closed Sunday\n\nhackney@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://goteamup.com/p/13219223-blueprint-fitness-hackney/memberships/",
+      "url": "https://blueprintfitnessldn.com/memberships/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356?text=Hi%20Blueprint%20Fitness%20Hackney%20%E2%80%94%20I",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
       "health": "ok"
      }
     ]
@@ -671,12 +916,29 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "Intro Program - Application Email",
-    "subject": "{{location.name}} 30 Day Programme",
+    "subject": "Thanks {{contact.first_name}} — here is what happens next",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: 30 Day Email 1",
+    "template": "Lead 01 — We have got your details",
     "missing": false,
-    "text": "Hi {{contact.first_name}}\n\nIt's {{user.first_name}} from {{location.name}}\n\nJust a quick email to let you know we have received your application and promise to be in touch very soon.\n\nHead over to our Instagram Page to find out more about how we can help.\n(Or click the button below)\n\nSpeak soon\n\nNick\n\nInstagram Page\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
-    "links": []
+    "text": "A coach will call you shortly. No hard sell, ever.\n\nThe 30-Day Kickstart · Hackney\n\nHello {{contact.first_name}}, we have got you.\n\nThanks for registering your interest in the 30-Day Kickstart at Blueprint Fitness Hackney. Your details are with us.\n\nA coach will give you a ring shortly for a friendly chat — what you are after, what has worked before, what has not. No hard sell, ever. If it is not right for you, we will say so.\n\n12\n\nCoached sessions\n\n5:1\n\nMax ratio\n\n30\n\nDays\n\nIn the meantime — have a look at what a week actually looks like here. Knowing the sessions exist at times you can make is usually the thing people want to check first.\n\nSee the Hackney timetable\n\nMessage us on WhatsApp\n\nSpeak soon,\n\nNick\n\nBlueprint Fitness Hackney\n\nYour studio\n\nBlueprint Fitness Hackney\n\nArch 195, Morning Lane, Hackney, London, E9 6LJ\n\nMon–Fri 6am–9pm · Sat 8–11am · Closed Sunday\n\nhackney@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/hackney/timetable/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356?text=Hi%20Blueprint%20Fitness%20Hackney%20%E2%80%94%20I",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "sms",
@@ -822,18 +1084,26 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "Email",
-    "subject": "Nutrition Consultation Request",
+    "subject": "Your nutrition consultation — what to bring",
     "from": "Blueprint Fitness Nutrition Team · info@blueprintfitnessldn.com",
-    "template": "Nutrition Consultation Request Response",
+    "template": "Nutrition — Consultation requested",
     "missing": false,
-    "text": "Hi {{contact.first_name}}\n\nWe have received your request for nutritional help as part of your 30 Day trial with Blueprint Fitness & will be delighted to help you!\n\nAs part of your trial you get a 30 minute consultation where we can talk through your goal and plan a strategy to help achieve results.\n\nWe can do this consultation via Zoom or face to face but there is a lot more availability if we do this via Zoom. In order to maximise your time during the consultation there are some things you can prior to this by following the nutrition pathway on our website here\n\nBF Nutrition Coaching\n\nIt involves making sure the following have been completed\n\nInbody machine in HQ - You will require the Inbody App\n\nCalorie calculator spreadsheet from the website\n\nFood diary - setting up with Nutracheck and recording 3 to 5 days of food and drinks\n\nGoal setting - Starting to build up a set of both body comp and fitness goals to work towards\n\nStep tracking - Using either a phone or wearable to measure activity via steps\n\nSleep tracking - a basic diary of how much sleep you are getting\n\nIt isn't compulsary to have completed the above before your consultation, but the more details you provide us with intially the better your stratery / plan can be.\n\nIf you have completed the above and are ready to start then please reply to this email and we will book you in!",
+    "text": "We have got your request. Here is how to make it count.\n\nNutrition · Hackney\n\nWe have got your request\n\nHello {{contact.first_name}} — thanks for asking for nutrition help. A coach will be in touch to book you in.\n\nTwo things that make it far more useful\n\n•\n\nYour InBody results. The scan from your intro gives us your real starting point, including your BMR.\n\n•\n\nA few honest days of food. Not perfect — honest. It tells us more than any questionnaire.\n\nNot got either yet? Say so and we will sort it together. Nobody here is judging.\n\nWhile you wait, the Nutrition Video Series covers the principles we will be applying. Lessons 5 to 8 on calories are the ones most people wish they had watched sooner.\n\nWatch the video series\n\nUpdate your request\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness Hackney\n\nYour studio\n\nBlueprint Fitness Hackney\n\nArch 195, Morning Lane, Hackney, London, E9 6LJ\n\nMon–Fri 6am–9pm · Sat 8–11am · Closed Sunday\n\nhackney@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://www.blueprintfitnessldn.com/nutrition-coaching",
-      "health": "redirected"
+      "url": "https://blueprintfitnessldn.com/members/nutrition-course/",
+      "health": "ok"
      },
      {
-      "url": "https://www.nutracheck.co.uk/Home",
+      "url": "https://blueprintfitnessldn.com/members/nutrition-request/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447944690356",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
       "health": "ok"
      }
     ]
@@ -1052,12 +1322,29 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "Intro Program - Application Email",
-    "subject": "{{location.name}} 30 Day Programme",
+    "subject": "Thanks {{contact.first_name}} — here is what happens next",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: 30 Day Email 1",
+    "template": "Lead 01 — We have got your details",
     "missing": false,
-    "text": "Hi {{contact.first_name}}\n\nIt's {{user.first_name}} from {{location.name}}\n\nJust a quick email to let you know we have received your application and promise to be in touch very soon.\n\nHead over to our Instagram Page to find out more about how we can help.\n(Or click the button below)\n\nSpeak soon\n\nStu\n\nInstagram Page\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "A coach will call you shortly. No hard sell, ever.\n\nThe 30-Day Kickstart · Leytonstone\n\nHello {{contact.first_name}}, we have got you.\n\nThanks for registering your interest in the 30-Day Kickstart at Blueprint Fitness Leytonstone. Your details are with us.\n\nA coach will give you a ring shortly for a friendly chat — what you are after, what has worked before, what has not. No hard sell, ever. If it is not right for you, we will say so.\n\n12\n\nCoached sessions\n\n5:1\n\nMax ratio\n\n30\n\nDays\n\nIn the meantime — have a look at what a week actually looks like here. Knowing the sessions exist at times you can make is usually the thing people want to check first.\n\nSee the Leytonstone timetable\n\nMessage us on WhatsApp\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness Leytonstone\n\nYour studio\n\nBlueprint Fitness Leytonstone\n\nUnit 3, Hitchcock Business Centre, Leytonstone, E11 4RE\n\nOpen early ’til late, 7 days a week\n\nleytonstone@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/leytonstone/timetable/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447947790035?text=Hi%20Blueprint%20Fitness%20Leytonstone%20%E2%80%94%20I",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447947790035",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "sms",
@@ -1072,48 +1359,99 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "Email 2",
-    "subject": "\"I have no motivation to go to the gym\"",
+    "subject": "The gym is not a motivating place. That is rather the point.",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 2",
+    "template": "Lead 02 — Motivation",
     "missing": false,
-    "text": "\"I have no motivation to go to the gym\"\nI hear this all the time, especially with people who have just applied to Blueprint Fitness.\nThe gym is not a motivating place to be, it’s actually quite the opposite.\nEveryone looks like they know what they’re doing\nEveryone looks confident\nAnd everyone looks super fit, so I can see why it is so off-putting.\nOne of the things which will motivate you the most is when you start to see changes in your body.\nBut that will only happen when you’re going to the gym regularly.\nWe make sure that everyone at Blueprint Fitness is friendly, and are there to help one another.\nWe don’t train people who have an ego or are judgemental.\nYou see, once you are feeling comfortable in your environment, you will go to the gym more often.\nAnd when you go to the gym more often you will:\n✅ Have more energy than ever before because you’re sleeping better and getting fitter\n✅ Begin to feel more confident in your clothes because you will see your body transforming\n✅ Start eating healthier because you will want to fuel your body properly\nIt really is a big snowball effect once you get started, and you can get started with us this week on our 30 Day Trial\n➡️ You will train with us 3 x per week at our private gym with a Personal Trainer showing you exactly what to do\n➡️ You will have your own Personal Coach who will help you on the nutrition side. You can message them any day and get help on what to eat.\n➡️ Personalised meal plan to help you with what to eat and how much to eat.\n➡️ All you have to do is just turn up, and we will do the rest, we plan the session, demonstrate all the exercises and encourage you through the 60 minute workouts.\nTo get started this week then Simply Tap Here and secure your spot on our 30 Day Trial\nStu\nBlueprint Fitness\n\nSecure Your Spot\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "Why we built the opposite of a gym floor.\n\nThe 30-Day Kickstart · Leytonstone\n\nOn not feeling motivated\n\n“I have no motivation to go to the gym.” We hear it constantly — usually from people who have just got in touch with us.\n\nHere is the thing: a gym floor is not a motivating place. Everyone looks like they know what they are doing. Nobody tells you where to start. You do three exercises you half-remember and leave.\n\nMotivation is not what gets people through the door on a wet Tuesday in February. A time in the diary, a coach expecting you, and four other people who noticed you were not there last week — that is what does it.\n\nThat is the whole design. You book a session, someone has already written it, and a coach runs you through it. You do not have to decide anything.\n\nWhat that looks like\n\n•\n\n12 coached sessions across your first 30 days\n\n•\n\nNever more than five people to a coach, so you always get eyes on you\n\n•\n\nA plan written for you — not a class everyone does at once\n\n•\n\nAn InBody scan at the start, so progress is measured rather than guessed\n\nStart your 30 days at Leytonstone\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness Leytonstone\n\nYour studio\n\nBlueprint Fitness Leytonstone\n\nUnit 3, Hitchcock Business Centre, Leytonstone, E11 4RE\n\nOpen early ’til late, 7 days a week\n\nleytonstone@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/signup-leytonstone/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447947790035",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email 3",
-    "subject": "We focus on these 4 things...",
+    "subject": "What actually happens in a session",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 3",
+    "template": "Lead 03 — What a session is like",
     "missing": false,
-    "text": "Most people that go to the gym are low in confidence and self-esteem, so you would think that gyms would be designed differently.\nInstead they are littered with mirrors, confusing machines, no Personal Trainers, members who love to pose and vending machines.\nAll of the above is not going to do your confident, self-esteem or anxiety any good.\nThat is exactly why at Blueprint Fitness we have:\nNo mirror's or glamorous fitness models on our walls, instead we have Personal Trainers who show you what to do.\n\nNo confusing machines, instead we have weights and Personal Trainers who explain and demonstrate the exercises\n\nPersonal Trainers who walk you through every part of the 60 minute session\n\nA very friendly community of members, in their 30’s-60s who are all on a mission to become fitter and healthier. Whenever we ask for feedback we always get comments on ‘how friendly everyone is’\n\nThe environment is so important to us, and we aim to make our sessions:\n⚡️ Energetic\n😁 Fun/ enjoyable\n😲 Challenging\n💪 Strength and fitness focused\nYou won’t be made to do some ridiculous degrading challenges or be told to run on a treadmill.\nWe meet you where you are now with your strength and fitness and gradually 📈 build you up from there.\nIt really is a big snowball effect once you get started, and you can get started with us this week on our 30 Day Trial.\nYou will train with us 3 x per week at our private gym with a Personal Trainer showing you exactly what to do\n\nAll you have to do is just turn up, and we will do the rest, we plan the session, demonstrate all the exercises and encourage you through the 60 minute workout.\n\nAnd if you struggle with nutrition then we can help with that too with personalised meal plans and a coach you can message daily\n\nTo get started this week then simply Tap Here and secure your spot on our 30 Day Trial.\nStu\nBlueprint Fitness\n\nSecure Your Spot\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "No mirrors, no machines you cannot work out, no guessing.\n\nThe 30-Day Kickstart · Leytonstone\n\nWhat a session actually looks like\n\nMost gyms are built for people who already know what they are doing. Mirrors everywhere, rows of machines with no explanation, and nobody to ask.\n\nOurs is not. Here is what a session at Leytonstone is:\n\n•\n\nYou arrive. Your session is already written down.\n\n•\n\nA coach shows you each movement and watches you do it.\n\n•\n\nYou work at a weight that is right for you — not the person next to you.\n\n•\n\nYou leave knowing what you did and why.\n\nMost of our members are in their thirties to sixties, and a good share of them had not trained in years before they started. Nobody is performing for anybody.\n\nWe meet you where your strength and fitness actually are, and build from there. There are no degrading challenges and nobody is getting put on a treadmill for an hour.\n\nLook at the timetable\n\nOr start your 30 days\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness Leytonstone\n\nYour studio\n\nBlueprint Fitness Leytonstone\n\nUnit 3, Hitchcock Business Centre, Leytonstone, E11 4RE\n\nOpen early ’til late, 7 days a week\n\nleytonstone@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/leytonstone/timetable/",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com/signup-leytonstone/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447947790035",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email 4",
-    "subject": "Blueprint is for complete beginners, here's why!",
+    "subject": "Most people who join us are complete beginners",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 4",
+    "template": "Lead 04 — For beginners",
     "missing": false,
-    "text": "Blueprint Fitness is for complete beginners\nYes that is correct, most of the people who join Blueprint Fitness are complete beginners.\nYou see, most people have this idea that everyone is super fit.\nBut the truth is that they all started as complete beginners, and they are now fit because they kept attending our Small Group PT sessions 3 x per week.\nAnd the reason they kept attending 3 x per week was because:\nOur members loved the 60 minute session, and how the session went so quickly - no more clock watching\n\nOur members really enjoy having a trainer with them at every session so that they didn’t feel lost in the gym any more\n\nOur members felt motivated when they came in and managed to really push themselves at every session\n\nOur members don’t feel intimidated or judged in any way because we’ve created a positive welcoming environment.\n\nWe don't accept:\n❌ Negative people who bring the mood down - we need our gym to be a positive environment.\n❌ Time-wasters or people full of excuses - we want people who will 100% commit.\n❌ Egotistical or judgemental people - Blueprint Fitness is focussed on creating a welcoming friendly gym.\nSo if you’re looking to join a gym which is friendly and helps you to become fitter, healthier and stronger then join our 30 Day Trial\nReply back to me here if you have any questions, if not you can sign up here.\nStu\nBlueprint Fitness\n\nSecure Your Spot\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "Including the ones who now look like they never were.\n\nThe 30-Day Kickstart · Leytonstone\n\nAlmost everyone starts here as a beginner\n\nIt is the most common worry we hear: everyone there will be fitter than me.\n\nMost people who join Blueprint Fitness are complete beginners. The members who look like naturals are simply the ones who kept turning up three times a week for a year. That is the entire secret.\n\nWhat keeps people coming back\n\n•\n\nThe session is planned, so there is no standing about wondering what to do.\n\n•\n\nA coach is with you the whole way — you are never left to work it out.\n\n•\n\nThe group is small enough that people notice you, and say hello.\n\n•\n\nIt gets measurably easier, and you can see it in the numbers.\n\nIf you have a question before you commit — an injury, a schedule, anything at all — just reply to this email. A real person reads it.\n\nStart your 30 days at Leytonstone\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness Leytonstone\n\nYour studio\n\nBlueprint Fitness Leytonstone\n\nUnit 3, Hitchcock Business Centre, Leytonstone, E11 4RE\n\nOpen early ’til late, 7 days a week\n\nleytonstone@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/signup-leytonstone/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447947790035",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email 5",
-    "subject": "Blueprint Success Stories - Michelle and Georgia",
+    "subject": "Two members who started exactly where you are",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 5 - Success Stories",
+    "template": "Lead 05 — Member stories",
     "missing": false,
-    "text": "I’d love to share a couple of inspiring stories from our members at Blueprint Fitness with you {{contact.first_name}}.\nThese stories are a testament to the transformative and supportive environment we foster here. Both Michelle and Georgia started on the 30 Day Trial!🌟\nMeet Michelle\n\nMeet Georgia\n\nStart Your Own Success Story!\nInspired by Michelle and Georgia?\nYou too can start your transformation journey with us.\nOur 30-Day Trial is the perfect way to experience the supportive and energetic environment at Blueprint Fitness .\n➡️ [Click Here to Start Your 30-Day Trial]\nRemember, every fitness journey is unique, and yours is waiting to be written. We’re here to support you every step of the way!\nLooking forward to seeing you soon,\nStu\nBlueprint: Fitness\n\nSecure Your Spot\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
+    "text": "Michelle and Georgia both began on a 30-day trial.\n\nThe 30-Day Kickstart · Leytonstone\n\nThey started on the same 30 days\n\nHello {{contact.first_name}} — the most useful thing we can show you is not us talking about ourselves. It is members talking about the bit before they started.\n\nMichelle and Georgia both began on a 30-day trial, both having not trained properly in years, and both stayed. Their stories are on the site, in their own words.\n\nWatch the member stories\n\nEvery one of them is unremarkable in the best way: someone busy, a bit apprehensive, who booked a session and then booked another one.\n\nStart your own 30 days\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness Leytonstone\n\nYour studio\n\nBlueprint Fitness Leytonstone\n\nUnit 3, Hitchcock Business Centre, Leytonstone, E11 4RE\n\nOpen early ’til late, 7 days a week\n\nleytonstone@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://www.youtube.com/watch?v&#x3D;1fWvXYyPAWA",
+      "url": "https://blueprintfitnessldn.com/#member-stories",
       "health": "ok"
      },
      {
-      "url": "https://www.youtube.com/watch?v&#x3D;HTSUYdHnX0c",
+      "url": "https://blueprintfitnessldn.com/signup-leytonstone/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447947790035",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
       "health": "ok"
      }
     ]
@@ -1121,52 +1459,133 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "Email 6",
-    "subject": "5 Common Hurdles...",
+    "subject": "The four things that stop people starting",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 6 - Common Fitness Hurdles",
+    "template": "Lead 06 — Common hurdles",
     "missing": false,
-    "text": "Starting a fitness routine is exciting, but it can be hard too. Let’s talk about some usual problems people face and how to beat them.\nNot Enough Time:\nMany say, “I don’t have time to exercise.” But with some planning, you can find time for short and effective workouts. Try working out in the morning or evening when you might be free.\nStaying Consistent:\nKeeping a steady workout routine is tricky. To stay on track, set simple goals and make a workout plan. And remember, it’s okay to take days off. Celebrate small wins to stay motivated!\nFeeling Judged:\nIt’s normal to feel shy or worried about what others think when you’re new. But remember, everyone at the gym is there to work on themselves, just like you.\nConnect with others, and you’ll see everyone has their own worries.\nConfused About Food:\nUnderstanding what to eat can be hard. Eating a mix of foods that give you energy for workouts and help you recover afterward is key. If you’re not sure, consider talking to a coach or nutrition expert for help with meal planning.\nFinal Thoughts:\nBeating these problems may seem hard, but with some grit and the right help, you can do it. Remember, all gym-goers have faced and beaten these challenges. You’re not alone!\nIf you have questions or need help, feel free to reach out.\nStay strong,\nStu\nBlueprint Fitness\n\n30 Day Trial\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "Time, consistency, feeling watched, and food.\n\nThe 30-Day Kickstart · Leytonstone\n\nThe four things that stop people\n\nAfter a decade of first sessions, the same four things come up. None of them is a good reason not to start.\n\n“I have not got time”\n\nA session is an hour, three times a week, at a time you choose. Open early ’til late, 7 days a week. If the timetable does not work around your life, tell us and we will be honest about whether we can fit you in.\n\n“I cannot stay consistent”\n\nWhich is why the sessions are booked, coached and expected. Consistency is much easier when somebody notices you are missing.\n\n“I will feel watched”\n\nFive people, one coach, everyone concentrating on their own work. Nobody is looking at you — they are busy.\n\n“I do not know what to eat”\n\nWe cover that too, with practical guidance rather than a meal plan to buy. Start with training; food follows more easily once you are moving.\n\nStart your 30 days\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness Leytonstone\n\nYour studio\n\nBlueprint Fitness Leytonstone\n\nUnit 3, Hitchcock Business Centre, Leytonstone, E11 4RE\n\nOpen early ’til late, 7 days a week\n\nleytonstone@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/signup-leytonstone/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447947790035",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email 7",
-    "subject": "Spot The Blueprint Difference?",
+    "subject": "What is actually different about training here",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 7 - Spot The Difference",
+    "template": "Lead 07 — What makes it different",
     "missing": false,
-    "text": "Ever wondered about Blueprint Fitness unique vibe {{contact.first_name}}?\nAt Blueprint Fitness, you’re never just a number.\nEvery member receives personal attention during each workout.\nYou get help, advice, and answers, always.\nOur community is special.\nIt’s a group of hard-working individuals, all chasing after their goals, just like you.\nThe atmosphere?\nPurely positive and supportive.\nEveryone cheers each other on.\nWe keep equipment simple and easy.\nNo confusing machines or complicated gadgets.\nAnd best yet, our trainers are right there to guide you.\nEvery Session!\nYour goals matter to us.\nWant to get stronger?\nLose weight?\nFeel more energetic?\nWe’re here to support your journey, every step of the way.\nChoosing a gym is a big decision.\nUnderstanding what makes each place special helps.\nAt Blueprint Fitness, it’s about you, the community, simplicity, and your goals.\nGot more questions about life at Blueprint Fitness?\nFeel free to drop us a line.\nStay healthy,\nStu\nBlueprint Fitness\n\n30 Day Trial\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "Small groups, a real plan, and coaches who know your name.\n\nThe 30-Day Kickstart · Leytonstone\n\nWhat is actually different here\n\nChoosing where to train is a bigger decision than it looks, so here is the honest version of what you get with us — and what you do not.\n\nYou get\n\n•\n\nA coach in the room with you for every session, not on a rota somewhere.\n\n•\n\nA maximum of five people to that coach.\n\n•\n\nA programme that progresses, written around what you can do now.\n\n•\n\nPeople who know your name by week two.\n\nYou do not get\n\n•\n\nA swipe card and good luck.\n\n•\n\nA room of machines and no idea which ones matter.\n\n•\n\nA contract you cannot get out of.\n\nIt is personal training, delivered in a small supportive group. That is the whole idea — the coaching of one-to-one, at a price that is not one-to-one.\n\nSee what membership costs\n\nOr start with 30 days\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness Leytonstone\n\nYour studio\n\nBlueprint Fitness Leytonstone\n\nUnit 3, Hitchcock Business Centre, Leytonstone, E11 4RE\n\nOpen early ’til late, 7 days a week\n\nleytonstone@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/memberships/",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com/signup-leytonstone/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447947790035",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email 8",
-    "subject": "Most Common Questions ANSWERED!",
+    "subject": "The questions we get asked most",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 8 - Common Questions",
+    "template": "Lead 08 — Questions answered",
     "missing": false,
-    "text": "Got questions about Blueprint Fitness {{contact.first_name}}?\nYou’re not alone.\nLet’s clear up some common queries we hear.\nWondering about commitment?\nOur 30-Day Trial is just that - a trial.\nNo strings attached, no hidden clauses.\nJust a full month for you to experience everything Blueprint Fitness offers.\nConcerned about your fitness level?\nWe welcome all levels here, from complete beginners to seasoned gym-goers.\nOur trainers are here to meet you where you are and help you grow from there.\nThinking about the atmosphere?\nBlueprint Fitness is all about positivity and support.\nNo judgment, no ego, just a community working together towards their goals.\nWorried about nutrition?\nWe’ve got you covered with personalized meal plans and nutrition advice to fuel your workouts and recovery.\nCurious about our schedule?\nWe’re open 7 days a week with loads of sessions starting from 6am.\nFlexibility is key, and we offer it.\nDealing with injuries?\nOur trainers are skilled in working around and with various injuries to ensure you can exercise safely and effectively.\nConcerned about parking?\nDon’t be. We offer free parking for all our members, making your trip to Blueprint Fitness hassle-free.\nHave more questions?\nWe’re always here to answer them.\nReply, Tap Here, or give us a call.\nUnderstanding is the first step to commitment.\nWe hope this clears up any doubts or concerns you might have about joining the Blueprint Fitness family.\nLooking forward to your curiosity and excitement,\nStu\nBlueprint Fitness\n\n30 Day Trial\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "Commitment, fitness level, injuries and times.\n\nThe 30-Day Kickstart · Leytonstone\n\nYour questions, answered\n\nHello {{contact.first_name}}. The same handful of questions come up before people start, so here they are with straight answers.\n\nIs the 30 days a contract?\n\nNo. It is thirty days. Most people stay, some do not, and that is genuinely fine.\n\nAm I fit enough?\n\nYes. Everything is scaled to you — that is what having a coach in the room is for.\n\nWhat if I have an injury?\n\nTell us on your first call. Our coaches work around injuries and conditions every day; we would rather know up front than find out later.\n\nWhen are the sessions?\n\nOpen early ’til late, 7 days a week. The full grid is on the site, so you can check before you commit.\n\nCheck the timetable\n\nWhat does it cost?\n\nThe 30-Day Kickstart is £169 — twelve coached sessions, your InBody scan and your plan. No joining fee.\n\nStart your 30 days\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness Leytonstone\n\nYour studio\n\nBlueprint Fitness Leytonstone\n\nUnit 3, Hitchcock Business Centre, Leytonstone, E11 4RE\n\nOpen early ’til late, 7 days a week\n\nleytonstone@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/leytonstone/timetable/",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com/signup-leytonstone/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447947790035",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email 9",
-    "subject": "SURPRISE OFFER! Save £££ Today at Blueprint: Fitness",
+    "subject": "The 30-Day Kickstart, and what £169 covers",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 9 - Surprise!",
+    "template": "Lead 09 — What it costs",
     "missing": false,
-    "text": "Hey {{contact.first_name}},\nGuess what? 😍\nWe’ve got something special for you!\nWe know taking the first step can be the hardest.\nSo, we’re making it a little easier.\nKeep Reading To Find Out! 🙌 For a limited time, we’re offering a special '30 Day Kickstart' discount.\nA little nudge to get started on your fitness journey with us.\nBut here’s the catch - it’s a surprise!\n\nIt’s a good one though, I promise.\nTo find out what’s waiting for you, tap the link below.\n\n[Reveal Your Surprise Offer!]\nThis special offer is only available for you for 24 hours!\nSo, don’t wait too long to uncover it.\nWe’re so excited to welcome you to Blueprint Fitness .\nAnd remember, we’re here to support you every step of the way.\n\nCan’t wait to see you,\nStu\nBlueprint Fitness\n\nReveal 30 Day Trial Offer\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "Twelve coached sessions, an InBody scan, and your plan.\n\nThe 30-Day Kickstart · Leytonstone\n\nWhat £169 actually covers\n\nNo games and no countdown timers — just what the Kickstart is and what it costs, so you can decide.\n\n12\n\nCoached sessions\n\n5:1\n\nMax ratio\n\n30\n\nDays\n\n£169 for your first 30 days\n\n•\n\n12 coached sessions — three a week, at times you pick\n\n•\n\nAn InBody scan and goal-setting session to start from a real number\n\n•\n\nA plan written around you, progressed as you go\n\n•\n\nPractical nutrition guidance — no meal plans to buy\n\n•\n\nNo joining fee and no contract\n\nBooked as one-to-one personal training, a month like that costs several hundred pounds. It is £169 because you share your coach with four other people.\n\nStart your 30 days at Leytonstone\n\nSee what happens after the 30 days\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness Leytonstone\n\nYour studio\n\nBlueprint Fitness Leytonstone\n\nUnit 3, Hitchcock Business Centre, Leytonstone, E11 4RE\n\nOpen early ’til late, 7 days a week\n\nleytonstone@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/signup-leytonstone/",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com/memberships/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447947790035",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email 10",
-    "subject": "Last Chance {{contact.first_name}}!",
+    "subject": "{{contact.first_name}}, shall we leave it there?",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 10 - Last Chance",
+    "template": "Lead 10 — Last call",
     "missing": false,
-    "text": "Time is ticking {{contact.first_name}}, and we don’t want you to miss out\nYour Special Offer ENDS TODAY!\nThis is your final reminder to join our Blueprint Fitness family and start your fitness journey with a bang.\n\nWe’ve seen so many people transform here,\nnot just in body,\nbut in spirit and confidence too.\n\nWe know taking the first step can be a bit scary, but we promise at Blueprint Fitness,\nyou’ll find a supportive community ready to welcome you with open arms.\n\nYour path to a stronger, healthier you is just a click away.\n\n[Sign Up for Your 30-Day Trial Now]\nThis Offer ENDS TODAY\n\nIf you have any last-minute questions or need a little extra nudge,\nwe’re right here to chat.\n\nHope to see you soon and start this exciting journey together.\nWarm wishes,\nStu\nBlueprint Fitness\n\nSPECIAL OFFER: 30 DAY TRIAL\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "Last email from us — unless you would like to start.\n\nThe 30-Day Kickstart · Leytonstone\n\nShall we leave it there?\n\nThis is the last email in this sequence, {{contact.first_name}} — we are not going to keep nudging you.\n\nIf the timing is wrong, that is completely fine. Keep us in mind; the door stays open and the offer does not change.\n\nIf you have been meaning to start and simply have not got round to it, this is the reminder. Thirty days, twelve coached sessions, and an honest answer at the end of it about whether this suits you.\n\nStart your 30 days\n\nRather talk to a human first? Message us and a coach at Leytonstone will reply — no script, no pressure.\n\nAsk us a question\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness Leytonstone\n\nYour studio\n\nBlueprint Fitness Leytonstone\n\nUnit 3, Hitchcock Business Centre, Leytonstone, E11 4RE\n\nOpen early ’til late, 7 days a week\n\nleytonstone@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/signup-leytonstone/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447947790035?text=Hi%20Blueprint%20Fitness%20Leytonstone%20%E2%80%94%20I",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447947790035",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "sms",
@@ -1203,19 +1622,23 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "Intro - Welcome Email",
-    "subject": "Your Super Quick Guide To Getting Started⚡",
+    "subject": "Welcome to Blueprint Leytonstone — your first steps",
     "from": "Stuart Rook · info@blueprintfitnessldn.com",
-    "template": "1. YOUR SUPER QUICK GUIDE TO GETTING STARTED",
+    "template": "Joined 01 — Welcome and getting started",
     "missing": false,
-    "text": "We're thrilled to have you onboard!\n\nDear {{contact.first_name}},\nWe're thrilled to have you on board with Blueprint:Fitness!\nOver the next 30 days, you'll have the chance to experience all we have to offer and see just how far you can go. With our help, you'll make positive changes in your health and wellness and connect with amazing people along the way.\nWhat's next, you may ask?\nThe first step is to get setup on TeamUp (the booking system)\nhttps://goteamup.com/p/9748082-blueprint-fitness-leytons/\n\n1. Admin: We'll verify your account set up in TeamUp and provide you with an overview of our classes so you know what to expect when you book.\n2. Inbody Body Composition Testing: We'll use the Inbody tracker to gather some baseline data about your muscle mass, body fat mass and percentage, BMR, BMI, and visceral fat. We have 1 InBody machine between our Leytonstone and South Woodford Gyms - ask a coach at your first session where you can next get yours done.\n3. Please take a moment to review our booking system guidelines to ensure fairness for all members. The guidelines can be found by clicking HERE.\n4. If you are Post Natal, have specific injuries or conditions we should be aware of, please notify us on our WhatsApp\nWhatsApp Number: 07947 790035\nWe've attached your welcome pack to this email, which has more information about our business, classes, and community.\nThank you for joining us. We can't wait to see you on the gym floor soon!\nBest regards,\nThe Blueprint:Fitness Team\ninfo@blueprintfitnessldn.com\n07736 033 985 // 07855 353 798\nblueprintfitnessldn.com\nP.S. Staying connected is essential, so we've created a WhatsApp group for all members. This is where you'll find important updates and information about sessions, classes, social events, general fitness and nutrition.\n\nHere’s the invite:\n\nJoin WhatsApp Group\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
+    "text": "Three things to get sorted before session one.\n\nYou’re in · Leytonstone\n\nWelcome, {{contact.first_name}}.\n\nLovely to have you. Over the next thirty days you will train properly, meet a few people, and find out what you are actually capable of. Here is what happens first.\n\n1. Your intro call\n\nA coach will ring you to book your first session and get to know you. If you would rather sort it now, message us and we will get it in the diary.\n\nBook your intro on WhatsApp\n\n2. Your InBody scan\n\nWe take a baseline — muscle mass, body fat, BMR — so that in thirty days we are comparing numbers rather than impressions. It takes a couple of minutes.\n\n3. Booking your sessions\n\nSessions are booked through TeamUp. Have a quick read of how booking and cancelling work, so you never lose a session to the cut-off.\n\nHow booking works\n\nAnything at all — injuries, nerves, a week away — just tell us. It is much easier to plan around something we know about.\n\nSee the timetable\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness Leytonstone\n\nYour studio\n\nBlueprint Fitness Leytonstone\n\nUnit 3, Hitchcock Business Centre, Leytonstone, E11 4RE\n\nOpen early ’til late, 7 days a week\n\nleytonstone@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://goteamup.com/p/9748082-blueprint-fitness-leytons/",
+      "url": "https://wa.me/447947790035?text=Hi%20Blueprint%20Fitness%20Leytonstone%20%E2%80%94%20I",
       "health": "ok"
      },
      {
-      "url": "https://www.blueprintfitnessldn.com/teamup",
-      "health": "redirected"
+      "url": "https://blueprintfitnessldn.com/members/bookings-cancellations/",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com/leytonstone/timetable/",
+      "health": "ok"
      },
      {
       "url": "https://wa.me/447947790035",
@@ -1223,10 +1646,6 @@ export const workflowMessages: WfEntry[] = [
      },
      {
       "url": "https://blueprintfitnessldn.com",
-      "health": "ok"
-     },
-     {
-      "url": "https://chat.whatsapp.com/C5sR6x0WORVFUXEiSoLudO",
       "health": "ok"
      }
     ]
@@ -1245,32 +1664,75 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "Email 1",
-    "subject": "Hey {{contact.first_name}}",
+    "subject": "How have you been, {{contact.first_name}}?",
     "from": "{{custom_values.sales_and_journey}} · {{location.email}}",
-    "template": "Reactivation - Email 1",
+    "template": "Win-back 01 — Checking in",
     "missing": false,
-    "text": "Hi {{contact.first_name}}\n\nJust thought I’d check in and see how you’re getting on since you finished with us?\n\nLet me know if you need help with anything.\n\n{{custom_values.sales_and_journey}}",
-    "links": []
+    "text": "No pitch — just seeing how you got on.\n\nFrom the team · Leytonstone\n\nHow have you been?\n\nHello {{contact.first_name}}. It has been a little while since you trained with us, and I wanted to see how you have got on.\n\nNo pitch attached to this one. If you found something that works better, genuinely good — that is the point of the whole exercise.\n\nAnd if it all rather tailed off, that happens to almost everybody. It is not a character flaw.\n\nReply on WhatsApp\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness Leytonstone\n\nYour studio\n\nBlueprint Fitness Leytonstone\n\nUnit 3, Hitchcock Business Centre, Leytonstone, E11 4RE\n\nOpen early ’til late, 7 days a week\n\nleytonstone@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://wa.me/447947790035?text=Hi%20Blueprint%20Fitness%20Leytonstone%20%E2%80%94%20just%20replying%20to%20your%20email.",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447947790035",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email",
-    "subject": "Hope you're well {{contact.first_name}}",
+    "subject": "Still fancy getting back to it?",
     "from": "{{custom_values.sales_and_journey}} · {{location.email}}",
-    "template": "Reactivation - Email 2",
+    "template": "Win-back 02 — Still thinking about it",
     "missing": false,
-    "text": "Hi {{contact.first_name}}\n\nAre you still looking to get in shape?\n\n{{custom_values.sales_and_journey}}",
-    "links": []
+    "text": "The door is open, and starting again is easier than starting.\n\nFrom the team · Leytonstone\n\nStill fancy getting back to it?\n\nHello {{contact.first_name}} — a quick one. If getting back into training has been on your list, you would not be starting from scratch. You already know how the sessions work and the coaches already know you.\n\nQuite a lot has changed since you were last in, too. Here is the current timetable at Leytonstone.\n\nSee what is on now\n\nIf you would rather just ask what has changed, message us — happy to give you the honest version.\n\nAsk us what has changed\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness Leytonstone\n\nYour studio\n\nBlueprint Fitness Leytonstone\n\nUnit 3, Hitchcock Business Centre, Leytonstone, E11 4RE\n\nOpen early ’til late, 7 days a week\n\nleytonstone@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/leytonstone/timetable/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447947790035?text=Hi%20Blueprint%20Fitness%20Leytonstone%20%E2%80%94%20I",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447947790035",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email",
-    "subject": "Hope you're well {{contact.first_name}}",
+    "subject": "Whenever you are ready",
     "from": "{{custom_values.sales_and_journey}} · {{location.email}}",
-    "template": "Reactivation - Email 2",
+    "template": "Win-back 03 — Whenever you are ready",
     "missing": false,
-    "text": "Hi {{contact.first_name}}\n\nAre you still looking to get in shape?\n\n{{custom_values.sales_and_journey}}",
-    "links": []
+    "text": "Last one from us — no hard feelings either way.\n\nFrom the team · Leytonstone\n\nWhenever you are ready\n\nThis is the last one from us, {{contact.first_name}}, so we do not become the gym that will not stop emailing.\n\nIf and when you want to come back, everything is where you left it. Message the studio and we will pick it up from there — no re-joining fee, no awkwardness about the gap.\n\nAll the best either way.\n\nSee what a month looks like now\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness Leytonstone\n\nYour studio\n\nBlueprint Fitness Leytonstone\n\nUnit 3, Hitchcock Business Centre, Leytonstone, E11 4RE\n\nOpen early ’til late, 7 days a week\n\nleytonstone@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/leytonstone/kickstart/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447947790035",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    }
   ]
  },
@@ -1412,225 +1874,6 @@ export const workflowMessages: WfEntry[] = [
  },
  {
   "studio": "Leytonstone",
-  "workflow": "20 Insights",
-  "folder": "",
-  "status": "draft",
-  "triggers": [],
-  "steps": [
-   {
-    "type": "email",
-    "name": "Email 1",
-    "subject": "Why Starting Is Like Climbing a Mountain... Barefoot",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 2",
-    "subject": "The Tortoise, The Hare, and Your Fitness Journey",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 3",
-    "subject": "Your Fitness Journey Isn't a Microwave Dinner",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 4",
-    "subject": "Your Fitness Journey Isn't a Race Against Anyone Else",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 5",
-    "subject": "The Lidl Middle Aisle Syndrome & Your Fitness Goals",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 6",
-    "subject": "The Art of Becoming You",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 7",
-    "subject": "The Secret Sauce to Your Fitness - No, It's Not More Burpees",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 8",
-    "subject": "The REAL Reason We Train After 30",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 9",
-    "subject": "9. The Truth About Losing Weight - No Treadmill or Hours of Cardio Required",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 10",
-    "subject": "10. Overthinkers need to read this.",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 11",
-    "subject": "The Unlikely Champion of the Sitting Olympics",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 12",
-    "subject": "If Your Get Up And Go Got Up And Went…",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 13",
-    "subject": "Gadgets & Apps: The Fitness Game Changer or Just Shiny Distractions?",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 14",
-    "subject": "Protein Absorption Is Key",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 15",
-    "subject": "The 2-Minute Rule: Small Steps, Big Wins",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 16",
-    "subject": "Stop Saving the Party Poppers for Retirement",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 17",
-    "subject": "The Myth of \"No Pain, No Gain\"",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 18",
-    "subject": "Age Makes Fitness Non-Negotiable",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 19",
-    "subject": "Your Compass",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 20",
-    "subject": "Your Compass",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 21",
-    "subject": "New Levels Unlocked! Your Mission, Should You Choose To Accept...",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   }
-  ]
- },
- {
-  "studio": "Leytonstone",
   "workflow": "30 Day Email Sequence",
   "folder": "2. Challenge",
   "status": "published",
@@ -1641,43 +1884,72 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "2 Email - Nutrition Journey",
-    "subject": "Kickstart Your Nutrition Journey",
+    "subject": "The nutrition side, without the faff",
     "from": "{{location.name}} · info@blueprintfitnessldn.com",
-    "template": "2. KICK-START YOUR NUTRITION JOURNEY IN FIVE EASY STEPS",
+    "template": "Joined 02 — Nutrition",
     "missing": false,
-    "text": "Hi {{contact.first_name}},\nAs part of your 30 day trial, you have access to our team of highly qualified nutrition coaches and to our in depth digital nutrition resource platform.\n\nHere are the five steps that we take to get you started - not all stages are essential, bt the more info we have the better place we will be to help you:\n\nInBody\nThis part is absolutely essential in terms of gathering start point data (most importantly, your BMR). If you haven’t done this yet please chat to one of our coaches on the gym floor or ping Stu a message to get set up.\n\nCalorie Calculator\nHead to our resource centre by clicking the big blue button below, then download and fill in the calorie calculator and email it to us at info@blueprintfitnessldn.com. It’ll give you loads of detail regarding your nutrition requirements which we will run through with you during your consultation.\n\nStart Tracking\nThis will give us an idea of your current calorie and protein consumption, and a breakdown of macronutrients - we usually use the MyFitnessPal app - and insight into what your current habits are, and where we may be able to make some changes around the food choices that you make.\n\nBook your 30 minute kick start consultation\nTo help you get started we’ll get you booked in for a 30 minute consultation with either Paul or Louise. This is going to give us the opportunity to get absolutely clear on your goals and accelerate your results. To get this booked, click the link in the members section.\n\nBlueprint Nutrition Coaching\n\nWithin the nutrition section of the website you’ll also find our Signature Nutrition Programme.\n\nIt has all the essential and in-depth information you need to help double down on your nutrition efforts to really get the most out of your training,and accelerate your results.\n\nThere are 20+ videos for you to work through (pictured above) covering all topics from macronutrients, to fat loss, to understanding calories and adherence tactics.\n\nAs you know, we’re here to help you on every step of your journey - so if there is anything else you need, please give us a shout!\n\nSee you soon!\n\nThe Blueprint Fitness Team\n\nNutrition Video Series\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
+    "text": "A 22-part video series and a coach, both included.\n\nYour first 30 days · Leytonstone\n\nTraining is half of it\n\nHello {{contact.first_name}}. You do not need to overhaul your diet to get results in your first month — but a few honest changes go a very long way.\n\nTwo things are included with your membership, and both are worth using.\n\nThe Nutrition Video Series\n\nTwenty-two short lessons, in the order that actually matters — calories, adherence, habits, and what to do when progress stalls. Watch one a day and you will understand more than most people who have been dieting for years.\n\nStart the video series\n\nA consultation with a coach\n\nWhen you want it applied to you specifically rather than in general, request a consultation. Bring your InBody results and a few honest days of food — that tells us far more than any questionnaire.\n\nRequest a consultation\n\nNo fad diets and nothing to buy. Just practical guidance built around how you actually live.\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness Leytonstone\n\nYour studio\n\nBlueprint Fitness Leytonstone\n\nUnit 3, Hitchcock Business Centre, Leytonstone, E11 4RE\n\nOpen early ’til late, 7 days a week\n\nleytonstone@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://www.blueprintfitnessldn.com/nutrition-coaching",
-      "health": "redirected"
+      "url": "https://blueprintfitnessldn.com/members/nutrition-course/",
+      "health": "ok"
      },
      {
-      "url": "https://www.blueprintfitnessldn.com/nutrition-series-videos",
-      "health": "redirected"
+      "url": "https://blueprintfitnessldn.com/members/nutrition-request/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447947790035",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
      }
     ]
    },
    {
     "type": "email",
     "name": "5 Email - Referral Hoodie",
-    "subject": "Here's a FREE 30 day kick-start for a friend {{contact.first_name}}?",
+    "subject": "Know someone who would get on well here?",
     "from": "{{location.name}} · info@blueprintfitnessldn.com",
-    "template": "5. REFER A FRIEND FOR FREE AND WIN A HOODIE?",
+    "template": "Joined 05 — Refer a friend",
     "missing": false,
-    "text": "Hi {{contact.first_name}},\n\nWe hope you're enjoying your time at Blueprint:Fitness and making the most of your 30-day trial. As a trialist, you've taken the first step towards reaching your fitness goals and as you know, we're here to support you every step of the way.\n\nAnd because we love our trialists, we've got a special treat for you: the \"Golden Ticket\". This is your chance to spread the love and share the fitness feels with someone you care about. That's right; you can gift a free 30-day trial membership to a friend, family member, or colleague.\n\nThey'll have access to all the same perks you have:\n\n· 12 SGPT sessions\n\n· Unlimited TEAM classes\n\n· Inbody composition testing\n\n· Access tour nutrition course\n\n· Any additional support and guidance they need!\n\nImagine how much more fun your workouts will be when you've got your BFF (best fitness friend) by your side… because we all know that friends who train together stay motivated and achieve better results!\n\nTo redeem your Golden Ticket, simply drop us a message with your friend's details and we'll take care of the rest….AND… If your friend decides to sign up as a member after their trial, we’ll give you an exclusive Blueprint:Fitness hoodie! Yay!!\nThank you for being a part of our awesome community, and we can't wait to see you both soon!\nThe Blueprint:Fitness Team\n{{location.email}}\n{{location.phone}}\nblueprintfitnessldn.com\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
-    "links": []
+    "text": "Send them a 30-Day Kickstart.\n\nYour first 30 days · Leytonstone\n\nBring someone with you\n\nHello {{contact.first_name}} — training is easier when someone you know is doing it too. It is also how most of our members found us.\n\nIf there is someone who has been saying they should do something about it, send them this and let them have a look at what a month here involves.\n\nSend them the 30-Day Kickstart\n\nMention it to a coach when they start, so we know who to thank.\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness Leytonstone\n\nYour studio\n\nBlueprint Fitness Leytonstone\n\nUnit 3, Hitchcock Business Centre, Leytonstone, E11 4RE\n\nOpen early ’til late, 7 days a week\n\nleytonstone@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/leytonstone/kickstart/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447947790035",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "4 Email - Socials",
-    "subject": "Here's why the socials are just as fun as our sessions",
+    "subject": "The bit that keeps people here",
     "from": "{{location.name}} · info@blueprintfitnessldn.com",
-    "template": "4. WE’RE MORE THAN JUST A GYM… THE SOCIALS ARE JUST AS FUN AS OUR SESSIONS!",
+    "template": "Joined 04 — The community",
     "missing": false,
-    "text": "Dear {{contact.first_name}}\n\nWe’ve got quite the social scene here at Blueprint:Fitness – and contrary to popular belief, it’s not just people getting on the lash (but a lot of the time it kinda is…)\n\nWe're here to take your fitness journey to the next level! Not only will you be crushing your goals and seeing results, but you'll also have a blast doing it.\n\nHere's a sneak peek of the other epic social activities we have in store for you:\n\n· RESULTS ACCELERATORS: A few times a year, we're all about pushing ourselves to the limit with 50-day challenges and months dedicated to reaching big personal milestones, such as \"March Madness\" or \"Smash-tember\".\n\n· ADVENTURE CLUB: This one is for more fitness focused excursions. We’ll be conquering Tough Mudder, Nuclear Races, and half marathons all year round! And you guessed it, we'll be toasting our victories with beers.\n\n· SUMMER GAMES & XMAS GAMES: Get ready to team up and unleash your competitive side! This month-long series of games and challenges will bring out your inner athlete, with a leader board and tons of fun!\n\n· SPORTS DAYS: We're talking golf society days and 7-a-side football comps, all ending with a cold beer in hand.\n\n· PARTIES: Whether it's for Christmas, summer, a members' birthday or just a random Saturday, we're always down for a good party! And what better way to celebrate than with a few beers and good company?\n\n· LIVE DJ SESSIONS: Get ready to sweat it out to some sick beats as we bring in a DJ to crank up the tunes during your workouts.\n\n· RUNNING GROUP: This one is for the runners, we plot out and share local running routes and have member meet ups and the annual big group run on Boxing Day.\n\nWe have various groups for these events as they arise but this is the main group for social activity… its run by the members and is generally where all the fun stuff happens:\n\nJoin the socials group!\n\nSo, what are you waiting for? Join us and get ready to have a blast!\nSee you soon!\nThe Blueprint:Fitness Team\n{{location.email}}\n{{location.phone}}\nblueprintfitnessldn.com\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
+    "text": "The socials are genuinely half the reason people stay.\n\nYour first 30 days · Leytonstone\n\nThe bit nobody expects\n\nMost people join for the training. A surprising number stay for everyone else.\n\nThere are socials, events and a fair amount of nonsense in the group chat. You are welcome at all of it, and there is no obligation to any of it.\n\nIf you have been coming a couple of weeks and have not met many people yet, tell a coach. Introducing people is genuinely part of the job here.\n\nYour members area\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness Leytonstone\n\nYour studio\n\nBlueprint Fitness Leytonstone\n\nUnit 3, Hitchcock Business Centre, Leytonstone, E11 4RE\n\nOpen early ’til late, 7 days a week\n\nleytonstone@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://chat.whatsapp.com/HceQ7PUzCT94kSUOfOFMfp",
+      "url": "https://blueprintfitnessldn.com/members/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447947790035",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
       "health": "ok"
      }
     ]
@@ -1685,18 +1957,22 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "3 Email - Best Results?",
-    "subject": "Which of our sessions and programmes will get you the best results?",
+    "subject": "Which sessions will get you the results you want?",
     "from": "{{location.name}} · info@blueprintfitnessldn.com",
-    "template": "3. WHICH OF OUR PROGRAMS WILL GET YOU THE BEST RESULTS?",
+    "template": "Joined 03 — Which sessions to pick",
     "missing": false,
-    "text": "Hi {{contact.first_name}},\nYou may have noticed some variations in how our members are approaching their training. This might look a little different at times – but rest assured, there’s a solid method (and plenty of science) behind it.\nOur priority with programming is to create an environment that helps our members achieve the best results. Whether your goal is fat loss, strength, general fitness, getting leaner, dropping a dress size, or improving performance… we have a tailored pathway to get you there.\nIt’s important for you to understand everything about the programs and classes so you can make informed decisions on the best way to maximise your results.\nAt Blueprint Fitness, we utilise two forms of programming to create a truly bespoke journey for you.\nSometimes we’ll focus on one,\nSometimes the other,\nOccasionally, you’ll have the opportunity to choose.\nThe flexibility allows us to adapt to your needs, but everyone always works within the same structured framework – so no confusion!\nHere’s a quick overview of the two pathways:\nShape Program\nThis program focuses on body composition, aiming to reduce body fat while maintaining or increasing muscle mass to achieve a more athletic, ‘toned’ look. Training protocols include hypertrophy (3-4 sets of 8-12 reps), high volume (12-15 reps), or TUT (time under tension) to play with tempo and resistance.\n\nStrength Program\nFor those who want to build muscle, reduce body fat, and get seriously strong, this program focuses on heavier lifts with lower rep ranges (usually 4-6 reps). The big compound moves – deadlifts, squats, bench press, and pull-ups – are the foundation here.\n\nWe’ve created two videos that will tell you everything you need to know about the programming and classes:\nProgramming Overview\nThis video covers a year’s worth of programming, explains how 12-week cycles are broken into phases, and – most importantly – why this approach benefits you.\nCLICK HERE FOR THE PROGRAM VIDEO!\n\nTEAM Training\nThis video dives into the six different TEAM class formats we offer, explains the objectives of each, and shows how to combine these sessions with SGPT to achieve your goals.\nCLICK HERE FOR THE TEAM TRAINING GUIDE!\n\nIf you have any questions, don’t hesitate to reach out. Now that you’re part of the Blueprint community, you can say goodbye to aimlessly wandering around a gym – and hello to structured, effective training!\nSee you soon!\nThe Blueprint:Fitness Team\n{{location.email}}\n{{location.phone}}\nblueprintfitnessldn.com\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
+    "text": "SGPT, and how the classes fit around it.\n\nYour first 30 days · Leytonstone\n\nWhich sessions should you book?\n\nShort answer: your coached SGPT sessions are the backbone. Everything else is a bonus on top.\n\nSGPT — your three a week\n\nThis is the one that moves the needle. Strength work, progressed week to week, with a coach watching. If you only ever do these three, you will still get where you are going.\n\nThe classes\n\nConditioning sessions you can add on when you fancy them. They are not a replacement for your coached sessions — they are for the weeks when you want a fourth thing to do.\n\nSee what is on at Leytonstone\n\nNot sure what to book? Ask your coach at your next session. They know what you are working on.\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness Leytonstone\n\nYour studio\n\nBlueprint Fitness Leytonstone\n\nUnit 3, Hitchcock Business Centre, Leytonstone, E11 4RE\n\nOpen early ’til late, 7 days a week\n\nleytonstone@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://youtu.be/hNFiW_psTcM",
+      "url": "https://blueprintfitnessldn.com/leytonstone/timetable/",
       "health": "ok"
      },
      {
-      "url": "https://youtu.be/65rLPUtKjYA",
+      "url": "https://wa.me/447947790035",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
       "health": "ok"
      }
     ]
@@ -1704,18 +1980,22 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "6. Price List",
-    "subject": "What happens after your trial?",
+    "subject": "What happens when your 30 days are up",
     "from": "{{location.name}} · info@blueprintfitnessldn.com",
-    "template": "6. WHAT HAPPENS AFTER YOUR TRIAL?",
+    "template": "Joined 07 — What happens after 30 days",
     "missing": false,
-    "text": "Hey there, {{contact.first_name}}!\nWe hope you've been enjoying your 30-day trial at Blueprint:Fitness! As your trial period is coming towards the end, we wanted to reach out and give you a quick reminder about a couple of things;\nFirstly, if you haven't already, it's time to start thinking about becoming a full time member of our awesome fitness community. We offer a range of memberships to suit your goals, your lifestyle and your budget. Stu and/or Paul will be happy to guide you through our membership options and help you choose the best one for you:\n\nIf you’re ready to join, simply click the button below:\n\nJoin Blueprint:Fitness\n\nSecondly, we'd like to remind you about your results check-in. We're all about tracking progress and celebrating achievements here at Blueprint:Fitness, so don't forget to book your InBody review with one of our coaches!\nWe love seeing people who come to us initially looking for body composition changes and the gradual increases in strength, fitness, confidence and mentality… but this check in is a great opportunity to reflect on how far you've come, set new goals, and get some expert advice on how to continue making progress.\nSo what are you waiting for? Take the next step and become a member of our awesome fitness community today!\nThank you for choosing Blueprint:Fitness for your fitness journey, and we hope to see you soon!\n\nThe Blueprint:Fitness Team\n{{location.email}}\n{{location.phone}}\nblueprintfitnessldn.com\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
+    "text": "Your options, and what each one costs.\n\nYour first 30 days · Leytonstone\n\nWhat happens after your 30 days\n\nYou are most of the way through, so here is what comes next — no surprises at the till.\n\nMemberships are simply a question of how many coached sessions a month suit your life. Same coaching, same small groups, same plan.\n\n•\n\nSGPT 12 — £239 a month. Three a week, and what most members settle on.\n\n•\n\nSGPT 8 — £219 a month. Two a week with room for a third.\n\n•\n\nSGPT 4 — £189 a month. One a week, steady and sustainable.\n\nAll of them include unlimited classes, your monthly check-in, InBody tracking and the nutrition resources.\n\nCompare the memberships\n\nThere is a 10% discount for couples in the same household, NHS and services. Ask your coach, or just reply to this.\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness Leytonstone\n\nYour studio\n\nBlueprint Fitness Leytonstone\n\nUnit 3, Hitchcock Business Centre, Leytonstone, E11 4RE\n\nOpen early ’til late, 7 days a week\n\nleytonstone@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://goteamup.com/w3662065/p/3662065-blueprint-fitness/memberships/",
+      "url": "https://blueprintfitnessldn.com/memberships/",
       "health": "ok"
      },
      {
-      "url": "https://goteamup.com/providers/configure/memberships/",
+      "url": "https://wa.me/447947790035",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
       "health": "ok"
      }
     ]
@@ -1723,33 +2003,49 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "7. Email",
-    "subject": "What is it like to be a full time Blueprint Fitness member?",
+    "subject": "What it is actually like once the 30 days are over",
     "from": "{{location.name}} · info@blueprintfitnessldn.com",
-    "template": "7. WHAT IS IT LIKE TO BE A FULL TIME BLUEPRINT:FITNESS MEMBER",
+    "template": "Joined 06 — Life as a full member",
     "missing": false,
-    "text": "Dear {{contact.first_name}},\nNow that you’re getting deep into your trial period and are fully integrated into Blueprint way of life, you might be wondering how it feels to be a long term member.\nThe 30-day trial period is the perfect amount of time for you to test-drive the classes and the coaches, and most importantly to get into the habit of (and enjoying) regular exercise… don't worry, we won't hold it against you if you've been secretly crying in the corner during burpees (we've all been there).\nWhen we jump back onto the inbody, we’ll definitely see some progress but the big composition, health and fitness changes – the truly sustainable results - come from consistency and long term behaviour change, which can be summed up nicely in this excellent quote:\n“The key – if you want to build habits that last – is to join a group where your desired behaviour, is their normal behaviour” – JAMES CLEAR, Atomic Habits\nNo-one is better qualified to tell you about the longer term B:F experience than our members. So here is a google review from Kiran:\nBlueprint: “a detailed outline or plan of action: a blueprint for success”\n“I joined Blueprint Fitness exactly a year ago and wanted to write a review of my experience. I am not one to write reviews frequently, only when something truly warrants it.\nHaving been a member of David Lloyds and Virgin Active for many years previously, Blueprint Fitness came as a total surprise to me.\nTrust me, this gym hits different in so many ways. The classes are made up of small group personal training sessions as well as other fantastic classes such as METCON, Sweat and Tough Guy. Each aspect of the training sessions is very well thought out, so when you walk through those doors, you know that you are in good hands. There are plenty of time slots to choose from during the day so it’s easy to fit into your life.\nI have learnt so much about the importance of good form, progressive overloading, strength training etc. Aside from the exercise, I have learnt a whole bunch of other stuff. The coaches really assist you with nutrition, which is very important if you want to get good results. I have learnt about body composition which again, I had no clue of. We use an Inbody machine at Blueprint to determine your percentage body fat, muscle mass etc. The coaches are at hand to help you decipher the results and to help you improve upon them.\nDuring the course of the year there are so many fun activities such as the summer games, hikes, winter games as well as the 50 Day challenges that really help you hone in on the targets that you wish to achieve.\nI have met so many wonderful people at Blueprint that inspire me to do better and encourage me. We have accountability groups, and this is so helpful as we can swap ideas etc. There are many socials that go on during the year that it makes you feel included. The Coaches are absolutely fantastic and very encouraging. The owners have put their blood and sweat (literally) into making it a very special experience for all members. They work tirelessly to ensure that you are getting the most out of your membership. They really do care about you reaching your goals and are very knowledgeable. You will never get the same experience at a generic gym.\nMy results have also been epic. I have lost 11% of my percentage body fat and over 6kg in weight during the past year. My mind-set has also completely changed as my lifestyle has changed. I take any opportunity to walk and lift heavy things (outside of the gym) which I would never dream of doing before. I am far more active than I have ever been because I feel motivated when I leave the gym. As a result of joining Blueprint, I am more focused in other aspects of my life. My husband and kids are astounded by the difference and my eldest son who is a gym freak now gives me kudos, which is a result in itself!\nIf you want excellent results and have fun whilst achieving the them, then this is the gym for you. One warning though, it’s addictive! You will feel the buzz and the energy (which is really important to me) when you enter the gym and guaranteed, you will leave with a smile and a spring in your step for the rest of the day.\nIt is no surprise to me that the gym has been shortlisted for the best gym in the area and I hope that we win!”\nIf you’d like to see what our members say about us, CLICK HERE to see a few more google reviews.\nSee you soon!\nThe Blueprint:Fitness Team\n{{location.email}}\n{{location.phone}}\nblueprintfitnessldn.com\n\nJoin Blueprint:Fitness\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
+    "text": "Same coaching, same small groups, just no end date.\n\nYour first 30 days · Leytonstone\n\nLife after the Kickstart\n\nHello {{contact.first_name}} — people often ask what changes when the 30 days finish. Honestly: not much, and that is rather the point.\n\nSame coaches, same small groups, same plan carrying on from where you got to. What changes is that you stop thinking about it as a trial and start thinking about it as the thing you do on Mondays, Wednesdays and Fridays.\n\nWhat members get on top\n\n•\n\nUnlimited classes alongside your coached sessions\n\n•\n\nA monthly check-in with your coach, whenever you want one\n\n•\n\nInBody tracking, so progress stays measured\n\n•\n\nThe nutrition resources and our clinics and workshops\n\n•\n\nEvery social and event going\n\nMost people find the second month easier than the first. The hard part was becoming someone who turns up, and you have already done that.\n\nSee the memberships\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness Leytonstone\n\nYour studio\n\nBlueprint Fitness Leytonstone\n\nUnit 3, Hitchcock Business Centre, Leytonstone, E11 4RE\n\nOpen early ’til late, 7 days a week\n\nleytonstone@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://www.google.com/search?sa=X&rlz=1C1CHBF_en-GBGB886GB886&sxsrf=AJOqlzVpomZirZw4TL8XZFxrjPoY9wMwSA:1677187001407&q=blueprint%20fitness%20google%20reviews&ved=2ahUKEwi9hsO7yKz9AhVhSEEAHbxmD3oQvS56BAhDEAE&biw=1366&bih=657&dpr=1&tbs=lf:1,lf_ui:14&tbm=lcl&rflfq=1&num=10&rldimm=16491884207935991094&lqi=CiBibHVlcHJpbnQgZml0bmVzcyBnb29nbGUgcmV2aWV3cyIFOAGIAQFIi8ydiIqrgIAIWhsQABABGAAYASIRYmx1ZXByaW50IGZpdG5lc3OSARBwZXJzb25hbF90cmFpbmVymgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVVJQYzBwVU0waG5FQUU&rlst=f#rlfi=hd:;si:16491884207935991094,l,CiBibHVlcHJpbnQgZml0bmVzcyBnb29nbGUgcmV2aWV3cyIFOAGIAQFIi8ydiIqrgIAIWhsQABABGAAYASIRYmx1ZXByaW50IGZpdG5lc3OSARBwZXJzb25hbF90cmFpbmVymgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVVJQYzBwVU0waG5FQUU;mv:[[51.6727992,0.049006999999999995],[51.5904283,-0.1894718]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:14",
+      "url": "https://blueprintfitnessldn.com/memberships/",
       "health": "ok"
      },
      {
-      "url": "https://go.blueprintfitnessldn.com/join",
-      "health": "legacy"
+      "url": "https://wa.me/447947790035",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
      }
     ]
    },
    {
     "type": "email",
     "name": "8. Email Thankyou Legend",
-    "subject": "Thankyou for taking on our 30 Day Trial, you absolute legend!",
+    "subject": "Thirty days done, {{contact.first_name}}",
     "from": "{{location.name}} · info@blueprintfitnessldn.com",
-    "template": "8. THANK YOU!",
+    "template": "Joined 08 — Thank you",
     "missing": false,
-    "text": "Hi {{contact.first_name}},\n\nWhere on earth have these last 30 days gone?\n\nWe hope that you've been feeling the results of your hard work – after all, with all the blood, sweat, and burpees you've been putting in, you're practically superhuman by now! You've pushed through the pain, embraced the grind, and come out the other side with buns of steel and guns of iron. Bravo, my friend!\n\nAs your trial draws to a close, we'd like to remind you about the InBody check that you have access to. This will give us a better understanding of how your body has changed over the past 30 days and help us tailor our training program to your needs moving forwards.\n\nWe want to say a big thank you for choosing Blueprint Fitness and entrusting us with your fitness journey. We hope that you've enjoyed the blood, sweat, and burpees as much as we have (or at least tolerated them), and we can't wait to see you continue to smash your goals with us.\n\nIf you have any questions or concerns, please don't hesitate to reach out – we're always here to help. Now go enjoy a well-deserved protein shake (or a pint, we won't judge).\n\nAnd lastly, if you’re ready to sign up as s full member here’s that link again:\n\nClick here to join!\n\nSee you soon!\nThe Blueprint:Fitness Team\n{{location.email}}\n{{location.phone}}\nblueprintfitnessldn.com\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
+    "text": "You turned up. That is the hard part.\n\nYour first 30 days · Leytonstone\n\nThirty days. Done.\n\nWhatever the numbers say, you did the difficult bit: you kept turning up. Most people never get past the first week.\n\nHave a look at your InBody comparison with your coach — a month is long enough for the numbers to have moved, and it is a good deal more satisfying than guessing.\n\nWhatever you decide about carrying on, thank you for giving it a proper go. It has been a pleasure having you in.\n\nCarry on with a membership\n\nTalk it through with us\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness Leytonstone\n\nYour studio\n\nBlueprint Fitness Leytonstone\n\nUnit 3, Hitchcock Business Centre, Leytonstone, E11 4RE\n\nOpen early ’til late, 7 days a week\n\nleytonstone@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://goteamup.com/p/9748082-blueprint-fitness-leytons/memberships/",
+      "url": "https://blueprintfitnessldn.com/memberships/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447947790035?text=Hi%20Blueprint%20Fitness%20Leytonstone%20%E2%80%94%20I",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447947790035",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
       "health": "ok"
      }
     ]
@@ -1976,18 +2272,26 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "Email",
-    "subject": "Nutrition Consultation Request",
+    "subject": "Your nutrition consultation — what to bring",
     "from": "Blueprint Fitness Nutrition Team · info@blueprintfitnessldn.com",
-    "template": "Nutrition Consultation Request Response",
+    "template": "Nutrition — Consultation requested",
     "missing": false,
-    "text": "Hi {{contact.first_name}}\n\nWe have received your request for nutritional help as part of your 30 Day trial with Blueprint Fitness & will be delighted to help you!\n\nAs part of your trial you get a 30 minute consultation where we can talk through your goal and plan a strategy to help achieve results.\n\nWe can do this consultation via Zoom or face to face but there is a lot more availability if we do this via Zoom. In order to maximise your time during the consultation there are some things you can prior to this by following the nutrition pathway on our website here\n\nBF Nutrition Coaching\n\nIt involves making sure the following have been completed\n\nInbody machine in HQ - You will require the Inbody App\n\nCalorie calculator spreadsheet from the website\n\nFood diary - setting up with Nutracheck and recording 3 to 5 days of food and drinks\n\nGoal setting - Starting to build up a set of both body comp and fitness goals to work towards\n\nStep tracking - Using either a phone or wearable to measure activity via steps\n\nSleep tracking - a basic diary of how much sleep you are getting\n\nIt isn't compulsary to have completed the above before your consultation, but the more details you provide us with intially the better your stratery / plan can be.\n\nIf you have completed the above and are ready to start then please reply to this email and we will book you in!",
+    "text": "We have got your request. Here is how to make it count.\n\nNutrition · Leytonstone\n\nWe have got your request\n\nHello {{contact.first_name}} — thanks for asking for nutrition help. A coach will be in touch to book you in.\n\nTwo things that make it far more useful\n\n•\n\nYour InBody results. The scan from your intro gives us your real starting point, including your BMR.\n\n•\n\nA few honest days of food. Not perfect — honest. It tells us more than any questionnaire.\n\nNot got either yet? Say so and we will sort it together. Nobody here is judging.\n\nWhile you wait, the Nutrition Video Series covers the principles we will be applying. Lessons 5 to 8 on calories are the ones most people wish they had watched sooner.\n\nWatch the video series\n\nUpdate your request\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness Leytonstone\n\nYour studio\n\nBlueprint Fitness Leytonstone\n\nUnit 3, Hitchcock Business Centre, Leytonstone, E11 4RE\n\nOpen early ’til late, 7 days a week\n\nleytonstone@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://www.blueprintfitnessldn.com/nutrition-coaching",
-      "health": "redirected"
+      "url": "https://blueprintfitnessldn.com/members/nutrition-course/",
+      "health": "ok"
      },
      {
-      "url": "https://www.nutracheck.co.uk/Home",
+      "url": "https://blueprintfitnessldn.com/members/nutrition-request/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447947790035",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
       "health": "ok"
      }
     ]
@@ -2251,12 +2555,29 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "Intro Program - Application Email",
-    "subject": "{{location.name}} 30 Day Programme",
+    "subject": "Thanks {{contact.first_name}} — here is what happens next",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: 30 Day Email 1",
+    "template": "Lead 01 — We have got your details",
     "missing": false,
-    "text": "Hi {{contact.first_name}}\n\nIt's {{user.first_name}} from {{location.name}}\n\nJust a quick email to let you know we have received your application and promise to be in touch very soon.\n\nHead over to our Instagram Page to find out more about how we can help.\n(Or click the button below)\n\nSpeak soon\n\nStu\n\nInstagram Page\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "A coach will call you shortly. No hard sell, ever.\n\nThe 30-Day Kickstart · South Woodford\n\nHello {{contact.first_name}}, we have got you.\n\nThanks for registering your interest in the 30-Day Kickstart at Blueprint Fitness South Woodford. Your details are with us.\n\nA coach will give you a ring shortly for a friendly chat — what you are after, what has worked before, what has not. No hard sell, ever. If it is not right for you, we will say so.\n\n12\n\nCoached sessions\n\n5:1\n\nMax ratio\n\n30\n\nDays\n\nIn the meantime — have a look at what a week actually looks like here. Knowing the sessions exist at times you can make is usually the thing people want to check first.\n\nSee the South Woodford timetable\n\nMessage us on WhatsApp\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness South Woodford\n\nYour studio\n\nBlueprint Fitness South Woodford\n\n4 Raven Road, South Woodford, London, E18 1HB\n\nOpen 6am–9pm, every day\n\nsouthwoodford@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/south-woodford/timetable/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447538298457?text=Hi%20Blueprint%20Fitness%20South%20Woodford%20%E2%80%94%20I",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447538298457",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "sms",
@@ -2271,48 +2592,99 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "Email 2",
-    "subject": "\"I have no motivation to go to the gym\"",
+    "subject": "The gym is not a motivating place. That is rather the point.",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 2",
+    "template": "Lead 02 — Motivation",
     "missing": false,
-    "text": "\"I have no motivation to go to the gym\"\nI hear this all the time, especially with people who have just applied to Blueprint Fitness.\nThe gym is not a motivating place to be, it’s actually quite the opposite.\nEveryone looks like they know what they’re doing\nEveryone looks confident\nAnd everyone looks super fit, so I can see why it is so off-putting.\nOne of the things which will motivate you the most is when you start to see changes in your body.\nBut that will only happen when you’re going to the gym regularly.\nWe make sure that everyone at Blueprint Fitness is friendly, and are there to help one another.\nWe don’t train people who have an ego or are judgemental.\nYou see, once you are feeling comfortable in your environment, you will go to the gym more often.\nAnd when you go to the gym more often you will:\n✅ Have more energy than ever before because you’re sleeping better and getting fitter\n✅ Begin to feel more confident in your clothes because you will see your body transforming\n✅ Start eating healthier because you will want to fuel your body properly\nIt really is a big snowball effect once you get started, and you can get started with us this week on our 30 Day Trial\n➡️ You will train with us 3 x per week at our private gym with a Personal Trainer showing you exactly what to do\n➡️ You will have your own Personal Coach who will help you on the nutrition side. You can message them any day and get help on what to eat.\n➡️ Personalised meal plan to help you with what to eat and how much to eat.\n➡️ All you have to do is just turn up, and we will do the rest, we plan the session, demonstrate all the exercises and encourage you through the 60 minute workouts.\nTo get started this week then Simply Tap Here and secure your spot on our 30 Day Trial\nStu\nBlueprint Fitness\n\nSecure Your Spot\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "Why we built the opposite of a gym floor.\n\nThe 30-Day Kickstart · South Woodford\n\nOn not feeling motivated\n\n“I have no motivation to go to the gym.” We hear it constantly — usually from people who have just got in touch with us.\n\nHere is the thing: a gym floor is not a motivating place. Everyone looks like they know what they are doing. Nobody tells you where to start. You do three exercises you half-remember and leave.\n\nMotivation is not what gets people through the door on a wet Tuesday in February. A time in the diary, a coach expecting you, and four other people who noticed you were not there last week — that is what does it.\n\nThat is the whole design. You book a session, someone has already written it, and a coach runs you through it. You do not have to decide anything.\n\nWhat that looks like\n\n•\n\n12 coached sessions across your first 30 days\n\n•\n\nNever more than five people to a coach, so you always get eyes on you\n\n•\n\nA plan written for you — not a class everyone does at once\n\n•\n\nAn InBody scan at the start, so progress is measured rather than guessed\n\nStart your 30 days at South Woodford\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness South Woodford\n\nYour studio\n\nBlueprint Fitness South Woodford\n\n4 Raven Road, South Woodford, London, E18 1HB\n\nOpen 6am–9pm, every day\n\nsouthwoodford@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/signup-southwoodford/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447538298457",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email 3",
-    "subject": "We focus on these 4 things...",
+    "subject": "What actually happens in a session",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 3",
+    "template": "Lead 03 — What a session is like",
     "missing": false,
-    "text": "Most people that go to the gym are low in confidence and self-esteem, so you would think that gyms would be designed differently.\nInstead they are littered with mirrors, confusing machines, no Personal Trainers, members who love to pose and vending machines.\nAll of the above is not going to do your confident, self-esteem or anxiety any good.\nThat is exactly why at Blueprint Fitness we have:\nNo mirror's or glamorous fitness models on our walls, instead we have Personal Trainers who show you what to do.\n\nNo confusing machines, instead we have weights and Personal Trainers who explain and demonstrate the exercises\n\nPersonal Trainers who walk you through every part of the 60 minute session\n\nA very friendly community of members, in their 30’s-60s who are all on a mission to become fitter and healthier. Whenever we ask for feedback we always get comments on ‘how friendly everyone is’\n\nThe environment is so important to us, and we aim to make our sessions:\n⚡️ Energetic\n😁 Fun/ enjoyable\n😲 Challenging\n💪 Strength and fitness focused\nYou won’t be made to do some ridiculous degrading challenges or be told to run on a treadmill.\nWe meet you where you are now with your strength and fitness and gradually 📈 build you up from there.\nIt really is a big snowball effect once you get started, and you can get started with us this week on our 30 Day Trial.\nYou will train with us 3 x per week at our private gym with a Personal Trainer showing you exactly what to do\n\nAll you have to do is just turn up, and we will do the rest, we plan the session, demonstrate all the exercises and encourage you through the 60 minute workout.\n\nAnd if you struggle with nutrition then we can help with that too with personalised meal plans and a coach you can message daily\n\nTo get started this week then simply Tap Here and secure your spot on our 30 Day Trial.\nStu\nBlueprint Fitness\n\nSecure Your Spot\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "No mirrors, no machines you cannot work out, no guessing.\n\nThe 30-Day Kickstart · South Woodford\n\nWhat a session actually looks like\n\nMost gyms are built for people who already know what they are doing. Mirrors everywhere, rows of machines with no explanation, and nobody to ask.\n\nOurs is not. Here is what a session at South Woodford is:\n\n•\n\nYou arrive. Your session is already written down.\n\n•\n\nA coach shows you each movement and watches you do it.\n\n•\n\nYou work at a weight that is right for you — not the person next to you.\n\n•\n\nYou leave knowing what you did and why.\n\nMost of our members are in their thirties to sixties, and a good share of them had not trained in years before they started. Nobody is performing for anybody.\n\nWe meet you where your strength and fitness actually are, and build from there. There are no degrading challenges and nobody is getting put on a treadmill for an hour.\n\nLook at the timetable\n\nOr start your 30 days\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness South Woodford\n\nYour studio\n\nBlueprint Fitness South Woodford\n\n4 Raven Road, South Woodford, London, E18 1HB\n\nOpen 6am–9pm, every day\n\nsouthwoodford@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/south-woodford/timetable/",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com/signup-southwoodford/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447538298457",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email 4",
-    "subject": "Blueprint is for complete beginners, here's why!",
+    "subject": "Most people who join us are complete beginners",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 4",
+    "template": "Lead 04 — For beginners",
     "missing": false,
-    "text": "Blueprint Fitness is for complete beginners\nYes that is correct, most of the people who join Blueprint Fitness are complete beginners.\nYou see, most people have this idea that everyone is super fit.\nBut the truth is that they all started as complete beginners, and they are now fit because they kept attending our Small Group PT sessions 3 x per week.\nAnd the reason they kept attending 3 x per week was because:\nOur members loved the 60 minute session, and how the session went so quickly - no more clock watching\n\nOur members really enjoy having a trainer with them at every session so that they didn’t feel lost in the gym any more\n\nOur members felt motivated when they came in and managed to really push themselves at every session\n\nOur members don’t feel intimidated or judged in any way because we’ve created a positive welcoming environment.\n\nWe don't accept:\n❌ Negative people who bring the mood down - we need our gym to be a positive environment.\n❌ Time-wasters or people full of excuses - we want people who will 100% commit.\n❌ Egotistical or judgemental people - Blueprint Fitness is focussed on creating a welcoming friendly gym.\nSo if you’re looking to join a gym which is friendly and helps you to become fitter, healthier and stronger then join our 30 Day Trial\nReply back to me here if you have any questions, if not you can sign up here.\nStu\nBlueprint Fitness\n\nSecure Your Spot\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "Including the ones who now look like they never were.\n\nThe 30-Day Kickstart · South Woodford\n\nAlmost everyone starts here as a beginner\n\nIt is the most common worry we hear: everyone there will be fitter than me.\n\nMost people who join Blueprint Fitness are complete beginners. The members who look like naturals are simply the ones who kept turning up three times a week for a year. That is the entire secret.\n\nWhat keeps people coming back\n\n•\n\nThe session is planned, so there is no standing about wondering what to do.\n\n•\n\nA coach is with you the whole way — you are never left to work it out.\n\n•\n\nThe group is small enough that people notice you, and say hello.\n\n•\n\nIt gets measurably easier, and you can see it in the numbers.\n\nIf you have a question before you commit — an injury, a schedule, anything at all — just reply to this email. A real person reads it.\n\nStart your 30 days at South Woodford\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness South Woodford\n\nYour studio\n\nBlueprint Fitness South Woodford\n\n4 Raven Road, South Woodford, London, E18 1HB\n\nOpen 6am–9pm, every day\n\nsouthwoodford@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/signup-southwoodford/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447538298457",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email 5",
-    "subject": "Blueprint Success Stories - Michelle and Georgia",
+    "subject": "Two members who started exactly where you are",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 5 - Success Stories",
+    "template": "Lead 05 — Member stories",
     "missing": false,
-    "text": "I’d love to share a couple of inspiring stories from our members at Blueprint Fitness with you {{contact.first_name}}.\nThese stories are a testament to the transformative and supportive environment we foster here. Both Michelle and Georgia started on the 30 Day Trial!🌟\nMeet Michelle\n\nMeet Georgia\n\nStart Your Own Success Story!\nInspired by Michelle and Georgia?\nYou too can start your transformation journey with us.\nOur 30-Day Trial is the perfect way to experience the supportive and energetic environment at Blueprint Fitness .\n➡️ [Click Here to Start Your 30-Day Trial]\nRemember, every fitness journey is unique, and yours is waiting to be written. We’re here to support you every step of the way!\nLooking forward to seeing you soon,\nStu\nBlueprint: Fitness\n\nSecure Your Spot\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
+    "text": "Michelle and Georgia both began on a 30-day trial.\n\nThe 30-Day Kickstart · South Woodford\n\nThey started on the same 30 days\n\nHello {{contact.first_name}} — the most useful thing we can show you is not us talking about ourselves. It is members talking about the bit before they started.\n\nMichelle and Georgia both began on a 30-day trial, both having not trained properly in years, and both stayed. Their stories are on the site, in their own words.\n\nWatch the member stories\n\nEvery one of them is unremarkable in the best way: someone busy, a bit apprehensive, who booked a session and then booked another one.\n\nStart your own 30 days\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness South Woodford\n\nYour studio\n\nBlueprint Fitness South Woodford\n\n4 Raven Road, South Woodford, London, E18 1HB\n\nOpen 6am–9pm, every day\n\nsouthwoodford@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://www.youtube.com/watch?v&#x3D;1fWvXYyPAWA",
+      "url": "https://blueprintfitnessldn.com/#member-stories",
       "health": "ok"
      },
      {
-      "url": "https://www.youtube.com/watch?v&#x3D;HTSUYdHnX0c",
+      "url": "https://blueprintfitnessldn.com/signup-southwoodford/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447538298457",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
       "health": "ok"
      }
     ]
@@ -2320,52 +2692,133 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "Email 6",
-    "subject": "5 Common Hurdles...",
+    "subject": "The four things that stop people starting",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 6 - Common Fitness Hurdles",
+    "template": "Lead 06 — Common hurdles",
     "missing": false,
-    "text": "Starting a fitness routine is exciting, but it can be hard too. Let’s talk about some usual problems people face and how to beat them.\nNot Enough Time:\nMany say, “I don’t have time to exercise.” But with some planning, you can find time for short and effective workouts. Try working out in the morning or evening when you might be free.\nStaying Consistent:\nKeeping a steady workout routine is tricky. To stay on track, set simple goals and make a workout plan. And remember, it’s okay to take days off. Celebrate small wins to stay motivated!\nFeeling Judged:\nIt’s normal to feel shy or worried about what others think when you’re new. But remember, everyone at the gym is there to work on themselves, just like you.\nConnect with others, and you’ll see everyone has their own worries.\nConfused About Food:\nUnderstanding what to eat can be hard. Eating a mix of foods that give you energy for workouts and help you recover afterward is key. If you’re not sure, consider talking to a coach or nutrition expert for help with meal planning.\nFinal Thoughts:\nBeating these problems may seem hard, but with some grit and the right help, you can do it. Remember, all gym-goers have faced and beaten these challenges. You’re not alone!\nIf you have questions or need help, feel free to reach out.\nStay strong,\nStu\nBlueprint Fitness\n\n30 Day Trial\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "Time, consistency, feeling watched, and food.\n\nThe 30-Day Kickstart · South Woodford\n\nThe four things that stop people\n\nAfter a decade of first sessions, the same four things come up. None of them is a good reason not to start.\n\n“I have not got time”\n\nA session is an hour, three times a week, at a time you choose. Open 6am–9pm, every day. If the timetable does not work around your life, tell us and we will be honest about whether we can fit you in.\n\n“I cannot stay consistent”\n\nWhich is why the sessions are booked, coached and expected. Consistency is much easier when somebody notices you are missing.\n\n“I will feel watched”\n\nFive people, one coach, everyone concentrating on their own work. Nobody is looking at you — they are busy.\n\n“I do not know what to eat”\n\nWe cover that too, with practical guidance rather than a meal plan to buy. Start with training; food follows more easily once you are moving.\n\nStart your 30 days\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness South Woodford\n\nYour studio\n\nBlueprint Fitness South Woodford\n\n4 Raven Road, South Woodford, London, E18 1HB\n\nOpen 6am–9pm, every day\n\nsouthwoodford@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/signup-southwoodford/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447538298457",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email 7",
-    "subject": "Spot The Blueprint Difference?",
+    "subject": "What is actually different about training here",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 7 - Spot The Difference",
+    "template": "Lead 07 — What makes it different",
     "missing": false,
-    "text": "Ever wondered about Blueprint Fitness unique vibe {{contact.first_name}}?\nAt Blueprint Fitness, you’re never just a number.\nEvery member receives personal attention during each workout.\nYou get help, advice, and answers, always.\nOur community is special.\nIt’s a group of hard-working individuals, all chasing after their goals, just like you.\nThe atmosphere?\nPurely positive and supportive.\nEveryone cheers each other on.\nWe keep equipment simple and easy.\nNo confusing machines or complicated gadgets.\nAnd best yet, our trainers are right there to guide you.\nEvery Session!\nYour goals matter to us.\nWant to get stronger?\nLose weight?\nFeel more energetic?\nWe’re here to support your journey, every step of the way.\nChoosing a gym is a big decision.\nUnderstanding what makes each place special helps.\nAt Blueprint Fitness, it’s about you, the community, simplicity, and your goals.\nGot more questions about life at Blueprint Fitness?\nFeel free to drop us a line.\nStay healthy,\nStu\nBlueprint Fitness\n\n30 Day Trial\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "Small groups, a real plan, and coaches who know your name.\n\nThe 30-Day Kickstart · South Woodford\n\nWhat is actually different here\n\nChoosing where to train is a bigger decision than it looks, so here is the honest version of what you get with us — and what you do not.\n\nYou get\n\n•\n\nA coach in the room with you for every session, not on a rota somewhere.\n\n•\n\nA maximum of five people to that coach.\n\n•\n\nA programme that progresses, written around what you can do now.\n\n•\n\nPeople who know your name by week two.\n\nYou do not get\n\n•\n\nA swipe card and good luck.\n\n•\n\nA room of machines and no idea which ones matter.\n\n•\n\nA contract you cannot get out of.\n\nIt is personal training, delivered in a small supportive group. That is the whole idea — the coaching of one-to-one, at a price that is not one-to-one.\n\nSee what membership costs\n\nOr start with 30 days\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness South Woodford\n\nYour studio\n\nBlueprint Fitness South Woodford\n\n4 Raven Road, South Woodford, London, E18 1HB\n\nOpen 6am–9pm, every day\n\nsouthwoodford@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/memberships/",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com/signup-southwoodford/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447538298457",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email 8",
-    "subject": "Most Common Questions ANSWERED!",
+    "subject": "The questions we get asked most",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 8 - Common Questions",
+    "template": "Lead 08 — Questions answered",
     "missing": false,
-    "text": "Got questions about Blueprint Fitness {{contact.first_name}}?\nYou’re not alone.\nLet’s clear up some common queries we hear.\nWondering about commitment?\nOur 30-Day Trial is just that - a trial.\nNo strings attached, no hidden clauses.\nJust a full month for you to experience everything Blueprint Fitness offers.\nConcerned about your fitness level?\nWe welcome all levels here, from complete beginners to seasoned gym-goers.\nOur trainers are here to meet you where you are and help you grow from there.\nThinking about the atmosphere?\nBlueprint Fitness is all about positivity and support.\nNo judgment, no ego, just a community working together towards their goals.\nWorried about nutrition?\nWe’ve got you covered with personalized meal plans and nutrition advice to fuel your workouts and recovery.\nCurious about our schedule?\nWe’re open 7 days a week with loads of sessions starting from 6am.\nFlexibility is key, and we offer it.\nDealing with injuries?\nOur trainers are skilled in working around and with various injuries to ensure you can exercise safely and effectively.\nConcerned about parking?\nDon’t be. We offer free parking for all our members, making your trip to Blueprint Fitness hassle-free.\nHave more questions?\nWe’re always here to answer them.\nReply, Tap Here, or give us a call.\nUnderstanding is the first step to commitment.\nWe hope this clears up any doubts or concerns you might have about joining the Blueprint Fitness family.\nLooking forward to your curiosity and excitement,\nStu\nBlueprint Fitness\n\n30 Day Trial\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "Commitment, fitness level, injuries and times.\n\nThe 30-Day Kickstart · South Woodford\n\nYour questions, answered\n\nHello {{contact.first_name}}. The same handful of questions come up before people start, so here they are with straight answers.\n\nIs the 30 days a contract?\n\nNo. It is thirty days. Most people stay, some do not, and that is genuinely fine.\n\nAm I fit enough?\n\nYes. Everything is scaled to you — that is what having a coach in the room is for.\n\nWhat if I have an injury?\n\nTell us on your first call. Our coaches work around injuries and conditions every day; we would rather know up front than find out later.\n\nWhen are the sessions?\n\nOpen 6am–9pm, every day. The full grid is on the site, so you can check before you commit.\n\nCheck the timetable\n\nWhat does it cost?\n\nThe 30-Day Kickstart is £169 — twelve coached sessions, your InBody scan and your plan. No joining fee.\n\nStart your 30 days\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness South Woodford\n\nYour studio\n\nBlueprint Fitness South Woodford\n\n4 Raven Road, South Woodford, London, E18 1HB\n\nOpen 6am–9pm, every day\n\nsouthwoodford@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/south-woodford/timetable/",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com/signup-southwoodford/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447538298457",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email 9",
-    "subject": "SURPRISE OFFER! Save £££ Today at Blueprint: Fitness",
+    "subject": "The 30-Day Kickstart, and what £169 covers",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 9 - Surprise!",
+    "template": "Lead 09 — What it costs",
     "missing": false,
-    "text": "24 Hours Only!\n\nHey {{contact.first_name}},\nGuess what? 😍\nWe’ve got something special for you!\nWe know taking the first step can be the hardest.\nSo, we’re making it a little easier.\nKeep Reading To Find Out! 🙌 For a limited time, we’re offering a special '30 Day Kickstart' discount.\nA little nudge to get started on your fitness journey with us.\nBut here’s the catch - it’s a surprise!\n\nIt’s a good one though, I promise.\nTo find out what’s waiting for you, tap the link below.\n\n[Reveal Your Surprise Offer!]\nThis special offer is only available for you for 24 hours!\nSo, don’t wait too long to uncover it.\nWe’re so excited to welcome you to Blueprint Fitness .\nAnd remember, we’re here to support you every step of the way.\n\nCan’t wait to see you,\nStu\nBlueprint Fitness\n\nReveal 30 Day Trial Offer\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "Twelve coached sessions, an InBody scan, and your plan.\n\nThe 30-Day Kickstart · South Woodford\n\nWhat £169 actually covers\n\nNo games and no countdown timers — just what the Kickstart is and what it costs, so you can decide.\n\n12\n\nCoached sessions\n\n5:1\n\nMax ratio\n\n30\n\nDays\n\n£169 for your first 30 days\n\n•\n\n12 coached sessions — three a week, at times you pick\n\n•\n\nAn InBody scan and goal-setting session to start from a real number\n\n•\n\nA plan written around you, progressed as you go\n\n•\n\nPractical nutrition guidance — no meal plans to buy\n\n•\n\nNo joining fee and no contract\n\nBooked as one-to-one personal training, a month like that costs several hundred pounds. It is £169 because you share your coach with four other people.\n\nStart your 30 days at South Woodford\n\nSee what happens after the 30 days\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness South Woodford\n\nYour studio\n\nBlueprint Fitness South Woodford\n\n4 Raven Road, South Woodford, London, E18 1HB\n\nOpen 6am–9pm, every day\n\nsouthwoodford@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/signup-southwoodford/",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com/memberships/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447538298457",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email 10",
-    "subject": "Last Chance {{contact.first_name}}!",
+    "subject": "{{contact.first_name}}, shall we leave it there?",
     "from": "Blueprint Fitness · {{location.email}}",
-    "template": "Applied: Email 10 - Last Chance",
+    "template": "Lead 10 — Last call",
     "missing": false,
-    "text": "Ends Today...\n\nTime is ticking {{contact.first_name}}, and we don’t want you to miss out\nYour Special Offer ENDS TODAY!\nThis is your final reminder to join our Blueprint Fitness family and start your fitness journey with a bang.\n\nWe’ve seen so many people transform here,\nnot just in body,\nbut in spirit and confidence too.\n\nWe know taking the first step can be a bit scary, but we promise at Blueprint Fitness,\nyou’ll find a supportive community ready to welcome you with open arms.\n\nYour path to a stronger, healthier you is just a click away.\n\n[Sign Up for Your 30-Day Trial Now]\nThis Offer ENDS TODAY\n\nIf you have any last-minute questions or need a little extra nudge,\nwe’re right here to chat.\n\nHope to see you soon and start this exciting journey together.\nWarm wishes,\nStu\nBlueprint Fitness\n\nSPECIAL OFFER: 30 DAY TRIAL\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list.",
-    "links": []
+    "text": "Last email from us — unless you would like to start.\n\nThe 30-Day Kickstart · South Woodford\n\nShall we leave it there?\n\nThis is the last email in this sequence, {{contact.first_name}} — we are not going to keep nudging you.\n\nIf the timing is wrong, that is completely fine. Keep us in mind; the door stays open and the offer does not change.\n\nIf you have been meaning to start and simply have not got round to it, this is the reminder. Thirty days, twelve coached sessions, and an honest answer at the end of it about whether this suits you.\n\nStart your 30 days\n\nRather talk to a human first? Message us and a coach at South Woodford will reply — no script, no pressure.\n\nAsk us a question\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness South Woodford\n\nYour studio\n\nBlueprint Fitness South Woodford\n\n4 Raven Road, South Woodford, London, E18 1HB\n\nOpen 6am–9pm, every day\n\nsouthwoodford@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/signup-southwoodford/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447538298457?text=Hi%20Blueprint%20Fitness%20South%20Woodford%20%E2%80%94%20I",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447538298457",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "sms",
@@ -2449,32 +2902,75 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "Email 1",
-    "subject": "Hey {{contact.first_name}}",
+    "subject": "How have you been, {{contact.first_name}}?",
     "from": "{{custom_values.sales_and_journey}} · {{location.email}}",
-    "template": "Reactivation - Email 1",
+    "template": "Win-back 01 — Checking in",
     "missing": false,
-    "text": "Hi {{contact.first_name}}\n\nJust thought I’d check in and see how you’re getting on since you finished with us?\n\nLet me know if you need help with anything.\n\n{{custom_values.sales_and_journey}}",
-    "links": []
+    "text": "No pitch — just seeing how you got on.\n\nFrom the team · South Woodford\n\nHow have you been?\n\nHello {{contact.first_name}}. It has been a little while since you trained with us, and I wanted to see how you have got on.\n\nNo pitch attached to this one. If you found something that works better, genuinely good — that is the point of the whole exercise.\n\nAnd if it all rather tailed off, that happens to almost everybody. It is not a character flaw.\n\nReply on WhatsApp\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness South Woodford\n\nYour studio\n\nBlueprint Fitness South Woodford\n\n4 Raven Road, South Woodford, London, E18 1HB\n\nOpen 6am–9pm, every day\n\nsouthwoodford@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://wa.me/447538298457?text=Hi%20Blueprint%20Fitness%20South%20Woodford%20%E2%80%94%20just%20replying%20to%20your%20email.",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447538298457",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email",
-    "subject": "Hope you're well {{contact.first_name}}",
+    "subject": "Still fancy getting back to it?",
     "from": "{{custom_values.sales_and_journey}} · {{location.email}}",
-    "template": "Reactivation - Email 2",
+    "template": "Win-back 02 — Still thinking about it",
     "missing": false,
-    "text": "Hi {{contact.first_name}}\n\nAre you still looking to get in shape?\n\n{{custom_values.sales_and_journey}}",
-    "links": []
+    "text": "The door is open, and starting again is easier than starting.\n\nFrom the team · South Woodford\n\nStill fancy getting back to it?\n\nHello {{contact.first_name}} — a quick one. If getting back into training has been on your list, you would not be starting from scratch. You already know how the sessions work and the coaches already know you.\n\nQuite a lot has changed since you were last in, too. Here is the current timetable at South Woodford.\n\nSee what is on now\n\nIf you would rather just ask what has changed, message us — happy to give you the honest version.\n\nAsk us what has changed\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness South Woodford\n\nYour studio\n\nBlueprint Fitness South Woodford\n\n4 Raven Road, South Woodford, London, E18 1HB\n\nOpen 6am–9pm, every day\n\nsouthwoodford@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/south-woodford/timetable/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447538298457?text=Hi%20Blueprint%20Fitness%20South%20Woodford%20%E2%80%94%20I",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447538298457",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "Email",
-    "subject": "Hope you're well {{contact.first_name}}",
+    "subject": "Whenever you are ready",
     "from": "{{custom_values.sales_and_journey}} · {{location.email}}",
-    "template": "Reactivation - Email 2",
+    "template": "Win-back 03 — Whenever you are ready",
     "missing": false,
-    "text": "Hi {{contact.first_name}}\n\nAre you still looking to get in shape?\n\n{{custom_values.sales_and_journey}}",
-    "links": []
+    "text": "Last one from us — no hard feelings either way.\n\nFrom the team · South Woodford\n\nWhenever you are ready\n\nThis is the last one from us, {{contact.first_name}}, so we do not become the gym that will not stop emailing.\n\nIf and when you want to come back, everything is where you left it. Message the studio and we will pick it up from there — no re-joining fee, no awkwardness about the gap.\n\nAll the best either way.\n\nSee what a month looks like now\n\nSpeak soon,\n\nStu\n\nBlueprint Fitness South Woodford\n\nYour studio\n\nBlueprint Fitness South Woodford\n\n4 Raven Road, South Woodford, London, E18 1HB\n\nOpen 6am–9pm, every day\n\nsouthwoodford@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/south-woodford/kickstart/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447538298457",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    }
   ]
  },
@@ -2718,225 +3214,6 @@ export const workflowMessages: WfEntry[] = [
  },
  {
   "studio": "South Woodford",
-  "workflow": "20 Insights",
-  "folder": "",
-  "status": "draft",
-  "triggers": [],
-  "steps": [
-   {
-    "type": "email",
-    "name": "Email 1",
-    "subject": "Why Starting Is Like Climbing a Mountain... Barefoot",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 2",
-    "subject": "The Tortoise, The Hare, and Your Fitness Journey",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 3",
-    "subject": "Your Fitness Journey Isn't a Microwave Dinner",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 4",
-    "subject": "Your Fitness Journey Isn't a Race Against Anyone Else",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 5",
-    "subject": "The Lidl Middle Aisle Syndrome & Your Fitness Goals",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 6",
-    "subject": "The Art of Becoming You",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 7",
-    "subject": "The Secret Sauce to Your Fitness - No, It's Not More Burpees",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 8",
-    "subject": "The REAL Reason We Train After 30",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 9",
-    "subject": "9. The Truth About Losing Weight - No Treadmill or Hours of Cardio Required",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 10",
-    "subject": "10. Overthinkers need to read this.",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 11",
-    "subject": "The Unlikely Champion of the Sitting Olympics",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 12",
-    "subject": "If Your Get Up And Go Got Up And Went…",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 13",
-    "subject": "Gadgets & Apps: The Fitness Game Changer or Just Shiny Distractions?",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 14",
-    "subject": "Protein Absorption Is Key",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 15",
-    "subject": "The 2-Minute Rule: Small Steps, Big Wins",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 16",
-    "subject": "Stop Saving the Party Poppers for Retirement",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 17",
-    "subject": "The Myth of \"No Pain, No Gain\"",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 18",
-    "subject": "Age Makes Fitness Non-Negotiable",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 19",
-    "subject": "Your Compass",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 20",
-    "subject": "Your Compass",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   },
-   {
-    "type": "email",
-    "name": "Email 21",
-    "subject": "New Levels Unlocked! Your Mission, Should You Choose To Accept...",
-    "from": "",
-    "template": null,
-    "missing": true,
-    "text": "",
-    "links": []
-   }
-  ]
- },
- {
-  "studio": "South Woodford",
   "workflow": "30 Day Email Sequence",
   "folder": "2. Challenge",
   "status": "published",
@@ -2947,47 +3224,72 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "2 Email - Nutrition Journey",
-    "subject": "Kickstart Your Nutrition Journey",
+    "subject": "The nutrition side, without the faff",
     "from": "{{location.name}} · info@blueprintfitnessldn.com",
-    "template": "2. KICK-START YOUR NUTRITION JOURNEY IN FOUR EASY STEPS",
+    "template": "Joined 02 — Nutrition",
     "missing": false,
-    "text": "Hi {{contact.first_name}},\nAs part of your 30-Day Trial, you’ll have access to our team of highly qualified nutrition coaches, as well as our in-depth digital nutrition resource platform.\nHere are the five steps we use to get you started. Not every stage is essential, but the more information we have, the better placed we’ll be to give you useful, personalised advice.\n1. InBody\nThis one is essential. Your InBody scan gives us important starting-point data — particularly your BMR (Basal Metabolic Rate) — which helps us understand your individual energy requirements.\nIf you haven’t had your scan yet, speak to one of our coaches on the gym floor or ping Stu a message and we’ll get you booked in.\n2. Calorie Calculator\nDownload and complete the Calorie Calculator.\nHandy vid explainer here >> https://youtu.be/4Por91yLhYU\nOnce you’ve filled it in, email it over to info@blueprintfitnessldn.com.\nIt’ll give us a much clearer picture of your individual nutrition requirements and provides a great starting point for your consultation, where we’ll run through everything with you and answer any questions.As part of your 30-Day Trial, you’ll have access to our team of highly qualified nutrition coaches, as well as our in-depth digital nutrition resource platform.\n\nCalorie Calculator\n\n3. Start Tracking\nThis gives us a clear picture of what your nutrition currently looks like — including your calorie and protein intake, as well as the overall breakdown of your macronutrients.\nWe usually recommend using either NutriCheck or the MyFitnessPal app to track your food for a few days.\nThe aim isn’t to judge what you’re eating or expect you to be perfect. It simply gives us an insight into your current habits, so we can identify where a few realistic changes to your food choices could make the biggest difference.\n4. Book Your 30-Minute Kick-Start Consultation\nTo help you get started, we’ll get you booked in for a 30-minute consultation with either Paul or Louise.\nThis gives us the opportunity to get really clear on your goals, look through the information you’ve gathered so far, and identify the areas we can focus on to help you get the best possible results from your trial.\n\nBook your consultation here\n\nWithin the nutrition section of the website you’ll also find our Signature Nutrition Programme.\nIt has all the essential and in-depth information you need to help double down on your nutrition efforts to really get the most out of your training,and accelerate your results.\nThere are 20+ videos for you to work through (pictured above) covering all topics from macronutrients, to fat loss, to understanding calories and adherence tactics.\nAs you know, we’re here to help you on every step of your journey - so if there is anything else you need, please give us a shout!\nSee you soon!\nThe Blueprint Fitness Team\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
+    "text": "A 22-part video series and a coach, both included.\n\nYour first 30 days · South Woodford\n\nTraining is half of it\n\nHello {{contact.first_name}}. You do not need to overhaul your diet to get results in your first month — but a few honest changes go a very long way.\n\nTwo things are included with your membership, and both are worth using.\n\nThe Nutrition Video Series\n\nTwenty-two short lessons, in the order that actually matters — calories, adherence, habits, and what to do when progress stalls. Watch one a day and you will understand more than most people who have been dieting for years.\n\nStart the video series\n\nA consultation with a coach\n\nWhen you want it applied to you specifically rather than in general, request a consultation. Bring your InBody results and a few honest days of food — that tells us far more than any questionnaire.\n\nRequest a consultation\n\nNo fad diets and nothing to buy. Just practical guidance built around how you actually live.\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness South Woodford\n\nYour studio\n\nBlueprint Fitness South Woodford\n\n4 Raven Road, South Woodford, London, E18 1HB\n\nOpen 6am–9pm, every day\n\nsouthwoodford@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://youtu.be/4Por91yLhYU",
+      "url": "https://blueprintfitnessldn.com/members/nutrition-course/",
       "health": "ok"
      },
      {
-      "url": "https://docs.google.com/spreadsheets/d/1xC9Ke52efPTilXrBWeEE-8awKO8NBbuI/edit?gid=1306492243#gid=1306492243",
+      "url": "https://blueprintfitnessldn.com/members/nutrition-request/",
       "health": "ok"
      },
      {
-      "url": "https://go.blueprintfitnessldn.com/nutritionrequest",
-      "health": "legacy"
+      "url": "https://wa.me/447538298457",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
      }
     ]
    },
    {
     "type": "email",
     "name": "5 Email - Referral Hoodie",
-    "subject": "Here's a FREE 30 day kick-start for a friend {{contact.first_name}}?",
+    "subject": "Know someone who would get on well here?",
     "from": "{{location.name}} · info@blueprintfitnessldn.com",
-    "template": "5. REFER A FRIEND FOR FREE AND WIN A HOODIE!",
+    "template": "Joined 05 — Refer a friend",
     "missing": false,
-    "text": "Hi {{contact.first_name}},\n\nWe hope you're enjoying your time at Blueprint:Fitness and making the most of your 30-day trial. As a trialist, you've taken the first step towards reaching your fitness goals and as you know, we're here to support you every step of the way.\n\nAnd because we love our trialists, we've got a special treat for you: the \"Golden Ticket\". This is your chance to spread the love and share the fitness feels with someone you care about. That's right; you can gift a free 30-day trial membership to a friend, family member, or colleague.\n\nThey'll have access to all the same perks you have:\n\n· 12 SGPT sessions\n\n· Unlimited TEAM classes\n\n· Inbody composition testing\n\n· Access tour nutrition course\n\n· Any additional support and guidance they need!\n\nImagine how much more fun your workouts will be when you've got your BFF (best fitness friend) by your side… because we all know that friends who train together stay motivated and achieve better results!\n\nTo redeem your Golden Ticket, simply drop us a message with your friend's details and we'll take care of the rest….AND… If your friend decides to sign up as a member after their trial, we’ll give you an exclusive Blueprint:Fitness hoodie! Yay!!\nThank you for being a part of our awesome community, and we can't wait to see you both soon!\nThe Blueprint:Fitness Team\n{{location.email}}\n{{location.phone}}\nblueprintfitnessldn.com\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
-    "links": []
+    "text": "Send them a 30-Day Kickstart.\n\nYour first 30 days · South Woodford\n\nBring someone with you\n\nHello {{contact.first_name}} — training is easier when someone you know is doing it too. It is also how most of our members found us.\n\nIf there is someone who has been saying they should do something about it, send them this and let them have a look at what a month here involves.\n\nSend them the 30-Day Kickstart\n\nMention it to a coach when they start, so we know who to thank.\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness South Woodford\n\nYour studio\n\nBlueprint Fitness South Woodford\n\n4 Raven Road, South Woodford, London, E18 1HB\n\nOpen 6am–9pm, every day\n\nsouthwoodford@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
+    "links": [
+     {
+      "url": "https://blueprintfitnessldn.com/south-woodford/kickstart/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447538298457",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
+     }
+    ]
    },
    {
     "type": "email",
     "name": "4 Email - Socials",
-    "subject": "Here's why the socials are just as fun as our sessions",
+    "subject": "The bit that keeps people here",
     "from": "{{location.name}} · info@blueprintfitnessldn.com",
-    "template": "4. WE’RE MORE THAN JUST A GYM… THE SOCIALS ARE JUST AS FUN AS OUR SESSIONS!",
+    "template": "Joined 04 — The community",
     "missing": false,
-    "text": "Dear {{contact.first_name}}\n\nWe’ve got quite the social scene here at Blueprint:Fitness – and contrary to popular belief, it’s not just people getting on the lash (but a lot of the time it kinda is…)\n\nWe're here to take your fitness journey to the next level! Not only will you be crushing your goals and seeing results, but you'll also have a blast doing it.\n\nHere's a sneak peek of the other epic social activities we have in store for you:\n\n· RESULTS ACCELERATORS: A few times a year, we're all about pushing ourselves to the limit with 50-day challenges and months dedicated to reaching big personal milestones, such as \"March Madness\" or \"Smash-tember\".\n\n· ADVENTURE CLUB: This one is for more fitness focused excursions. We’ll be conquering Tough Mudder, Nuclear Races, and half marathons all year round! And you guessed it, we'll be toasting our victories with beers.\n\n· SUMMER GAMES & XMAS GAMES: Get ready to team up and unleash your competitive side! This month-long series of games and challenges will bring out your inner athlete, with a leader board and tons of fun!\n\n· SPORTS DAYS: We're talking golf society days and 7-a-side football comps, all ending with a cold beer in hand.\n\n· PARTIES: Whether it's for Christmas, summer, a members' birthday or just a random Saturday, we're always down for a good party! And what better way to celebrate than with a few beers and good company?\n\n· LIVE DJ SESSIONS: Get ready to sweat it out to some sick beats as we bring in a DJ to crank up the tunes during your workouts.\n\n· RUNNING GROUP: This one is for the runners, we plot out and share local running routes and have member meet ups and the annual big group run on Boxing Day.\n\nWe have various groups for these events as they arise but this is the main group for social activity… its run by the members and is generally where all the fun stuff happens:\n\nJoin the socials group!\n\nSo, what are you waiting for? Join us and get ready to have a blast!\n\nThe Blueprint:Fitness Team\n{{location.email}}\n{{location.phone}}\nblueprintfitnessldn.com\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
+    "text": "The socials are genuinely half the reason people stay.\n\nYour first 30 days · South Woodford\n\nThe bit nobody expects\n\nMost people join for the training. A surprising number stay for everyone else.\n\nThere are socials, events and a fair amount of nonsense in the group chat. You are welcome at all of it, and there is no obligation to any of it.\n\nIf you have been coming a couple of weeks and have not met many people yet, tell a coach. Introducing people is genuinely part of the job here.\n\nYour members area\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness South Woodford\n\nYour studio\n\nBlueprint Fitness South Woodford\n\n4 Raven Road, South Woodford, London, E18 1HB\n\nOpen 6am–9pm, every day\n\nsouthwoodford@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://chat.whatsapp.com/HceQ7PUzCT94kSUOfOFMfp",
+      "url": "https://blueprintfitnessldn.com/members/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447538298457",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
       "health": "ok"
      }
     ]
@@ -2995,18 +3297,22 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "3 Email - Best Results?",
-    "subject": "Which of our sessions and programmes will get you the best results?",
+    "subject": "Which sessions will get you the results you want?",
     "from": "{{location.name}} · info@blueprintfitnessldn.com",
-    "template": "3. WHICH OF OUR PROGRAMS WILL GET YOU THE BEST RESULTS?",
+    "template": "Joined 03 — Which sessions to pick",
     "missing": false,
-    "text": "Hi {{contact.first_name}},\nYou may have noticed different members following different programs, which may look a little confusing – but there is method (mainly science) to the madness.\nOur priority with programming is to create an environment that helps our members achieve the best results. So whatever the goal may be, in terms of fat loss, strength, general fitness, getting leaner, dropping a dress size, or for performance… We have a pathway that will absolutely get you there.\nIt’s important for you to know, and to understand everything about the programs and the classes so that you can make informed decisions regarding which sessions and which pathway will maximise your results.\nHaving two SGPT programs options that run side by side is how we truly bespoke your Blueprint journey, and as the old saying goes; “The problem with the one size fits all approach is that everyone ends up with the wrong trousers”\nThey are called ‘Shape’ and ‘Strength. Here’s the lowdown:\nThe Shape program focuses on body composition, and the primary aim is to simultaneously reduce muscle mass whilst maintaining or increasing muscle mass therefore making you look more athletic, or ‘toned’.\nShape cycles through different protocols of resistance training, such as hypertrophy (3-4 sets of 8-12 reps), high volume (more sets and/or 12-15 reps) or might follow a TUT (time under tension) protocol where we play around with different tempos per rep.\nThe Strength program is geared towards people that want to build muscle, reduce body fat and generally get as strong as an ox.\nHere we focus on lower rep ranges (usually 4-6) so that we can lift heavier and increase strength through the big compound moves like deadlifts, squats, bench press and pull ups.\nThere are two videos here to watch that will tell you everything there is to know about SGPT and TEAM training programming and sessions:\n1. Programming overview\nThis one takes you through a whole years’ worth of programming, how the 12 week cycles play out and are broken down onto phases and – most importantly – why this is beneficial to you.\nCLICK HERE FOR THE PROGRAM VIDEO!\n2. TEAM training\nThis one gives you an insight into the six different formats of TEAM classes that we run, will breakdown the objectives for each session and how to work them in alongside the SGPT sessions.\nCLICK HERE FOR THE TEAM TRAINING GUIDE!\nIf you have any questions please give us a shout. But rest assured, now that you’re part of the Blueprint community, the days of aimlessly walking into a gym and not knowing what to do are well and truly behind you!\nSee you soon!\nThe Blueprint:Fitness Team\n{{location.email}}\n{{location.phone}}\nblueprintfitnessldn.com\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
+    "text": "SGPT, and how the classes fit around it.\n\nYour first 30 days · South Woodford\n\nWhich sessions should you book?\n\nShort answer: your coached SGPT sessions are the backbone. Everything else is a bonus on top.\n\nSGPT — your three a week\n\nThis is the one that moves the needle. Strength work, progressed week to week, with a coach watching. If you only ever do these three, you will still get where you are going.\n\nThe classes\n\nConditioning sessions you can add on when you fancy them. They are not a replacement for your coached sessions — they are for the weeks when you want a fourth thing to do.\n\nSee what is on at South Woodford\n\nNot sure what to book? Ask your coach at your next session. They know what you are working on.\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness South Woodford\n\nYour studio\n\nBlueprint Fitness South Woodford\n\n4 Raven Road, South Woodford, London, E18 1HB\n\nOpen 6am–9pm, every day\n\nsouthwoodford@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://youtu.be/hNFiW_psTcM",
+      "url": "https://blueprintfitnessldn.com/south-woodford/timetable/",
       "health": "ok"
      },
      {
-      "url": "https://youtu.be/65rLPUtKjYA",
+      "url": "https://wa.me/447538298457",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
       "health": "ok"
      }
     ]
@@ -3014,14 +3320,22 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "6. Price List",
-    "subject": "What happens after your trial?",
+    "subject": "What happens when your 30 days are up",
     "from": "{{location.name}} · info@blueprintfitnessldn.com",
-    "template": "6. WHAT HAPPENS AFTER YOUR TRIAL?",
+    "template": "Joined 07 — What happens after 30 days",
     "missing": false,
-    "text": "Hey there, {{contact.first_name}}!\n\nWe hope you've been enjoying your 30-day trial at Blueprint:Fitness! As your trial period is coming towards the end, we wanted to reach out and give you a quick reminder about a couple of things;\n\nFirstly, if you haven't already, it's time to start thinking about becoming a full time member of our awesome fitness community. We offer a range of memberships to suit your goals, your lifestyle and your budget. Stu and/or Paul will be happy to guide you through our membership options and help you choose the best one for you:\n\nIf you’re ready to join, simply click this:\n\nJoin Blueprint:Fitness\n\nSecondly, we'd like to remind you about your results check-in. We're all about tracking progress and celebrating achievements here at Blueprint:Fitness, so don't forget to book your InBody review with one of our coaches!\nWe love seeing people who come to us initially looking for body composition changes and the gradual increases in strength, fitness, confidence and mentality… but this check in is a great opportunity to reflect on how far you've come, set new goals, and get some expert advice on how to continue making progress.\nSo what are you waiting for? Take the next step and become a member of our awesome fitness community today!\nThank you for choosing Blueprint:Fitness for your fitness journey, and we hope to see you soon!\nThe Blueprint:Fitness Team\n{{location.email}}\n{{location.phone}}\nblueprintfitnessldn.com\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
+    "text": "Your options, and what each one costs.\n\nYour first 30 days · South Woodford\n\nWhat happens after your 30 days\n\nYou are most of the way through, so here is what comes next — no surprises at the till.\n\nMemberships are simply a question of how many coached sessions a month suit your life. Same coaching, same small groups, same plan.\n\n•\n\nSGPT 12 — £239 a month. Three a week, and what most members settle on.\n\n•\n\nSGPT 8 — £219 a month. Two a week with room for a third.\n\n•\n\nSGPT 4 — £189 a month. One a week, steady and sustainable.\n\nAll of them include unlimited classes, your monthly check-in, InBody tracking and the nutrition resources.\n\nCompare the memberships\n\nThere is a 10% discount for couples in the same household, NHS and services. Ask your coach, or just reply to this.\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness South Woodford\n\nYour studio\n\nBlueprint Fitness South Woodford\n\n4 Raven Road, South Woodford, London, E18 1HB\n\nOpen 6am–9pm, every day\n\nsouthwoodford@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://goteamup.com/w3662065/p/3662065-blueprint-fitness/memberships/",
+      "url": "https://blueprintfitnessldn.com/memberships/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447538298457",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
       "health": "ok"
      }
     ]
@@ -3029,33 +3343,49 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "7. Email",
-    "subject": "What is it like to be a full time Blueprint Fitness member?",
+    "subject": "What it is actually like once the 30 days are over",
     "from": "{{location.name}} · info@blueprintfitnessldn.com",
-    "template": "7. WHAT IS IT LIKE TO BE A FULL TIME BLUEPRINT:FITNESS MEMBER",
+    "template": "Joined 06 — Life as a full member",
     "missing": false,
-    "text": "Dear {{contact.first_name}},\nNow that you’re getting deep into your trial period and are fully integrated into Blueprint way of life, you might be wondering how it feels to be a long term member.\nThe 30-day trial period is the perfect amount of time for you to test-drive the classes and the coaches, and most importantly to get into the habit of (and enjoying) regular exercise… don't worry, we won't hold it against you if you've been secretly crying in the corner during burpees (we've all been there).\nWhen we jump back onto the inbody, we’ll definitely see some progress but the big composition, health and fitness changes – the truly sustainable results - come from consistency and long term behaviour change, which can be summed up nicely in this excellent quote:\n“The key – if you want to build habits that last – is to join a group where your desired behaviour, is their normal behaviour” – JAMES CLEAR, Atomic Habits\nNo-one is better qualified to tell you about the longer term B:F experience than our members. So here is a google review from Kiran:\nBlueprint: “a detailed outline or plan of action: a blueprint for success”\n“I joined Blueprint Fitness exactly a year ago and wanted to write a review of my experience. I am not one to write reviews frequently, only when something truly warrants it.\nHaving been a member of David Lloyds and Virgin Active for many years previously, Blueprint Fitness came as a total surprise to me.\nTrust me, this gym hits different in so many ways. The classes are made up of small group personal training sessions as well as other fantastic classes such as METCON, Sweat and Tough Guy. Each aspect of the training sessions is very well thought out, so when you walk through those doors, you know that you are in good hands. There are plenty of time slots to choose from during the day so it’s easy to fit into your life.\nI have learnt so much about the importance of good form, progressive overloading, strength training etc. Aside from the exercise, I have learnt a whole bunch of other stuff. The coaches really assist you with nutrition, which is very important if you want to get good results. I have learnt about body composition which again, I had no clue of. We use an Inbody machine at Blueprint to determine your percentage body fat, muscle mass etc. The coaches are at hand to help you decipher the results and to help you improve upon them.\nDuring the course of the year there are so many fun activities such as the summer games, hikes, winter games as well as the 50 Day challenges that really help you hone in on the targets that you wish to achieve.\nI have met so many wonderful people at Blueprint that inspire me to do better and encourage me. We have accountability groups, and this is so helpful as we can swap ideas etc. There are many socials that go on during the year that it makes you feel included. The Coaches are absolutely fantastic and very encouraging. The owners have put their blood and sweat (literally) into making it a very special experience for all members. They work tirelessly to ensure that you are getting the most out of your membership. They really do care about you reaching your goals and are very knowledgeable. You will never get the same experience at a generic gym.\nMy results have also been epic. I have lost 11% of my percentage body fat and over 6kg in weight during the past year. My mind-set has also completely changed as my lifestyle has changed. I take any opportunity to walk and lift heavy things (outside of the gym) which I would never dream of doing before. I am far more active than I have ever been because I feel motivated when I leave the gym. As a result of joining Blueprint, I am more focused in other aspects of my life. My husband and kids are astounded by the difference and my eldest son who is a gym freak now gives me kudos, which is a result in itself!\nIf you want excellent results and have fun whilst achieving the them, then this is the gym for you. One warning though, it’s addictive! You will feel the buzz and the energy (which is really important to me) when you enter the gym and guaranteed, you will leave with a smile and a spring in your step for the rest of the day.\nIt is no surprise to me that the gym has been shortlisted for the best gym in the area and I hope that we win!”\nIf you’d like to see what our members say about us, CLICK HERE to see a few more google reviews.\nSee you soon!\nThe Blueprint:Fitness Team\n{{location.email}}\n{{location.phone}}\nblueprintfitnessldn.com\n\nJoin Blueprint:Fitness\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
+    "text": "Same coaching, same small groups, just no end date.\n\nYour first 30 days · South Woodford\n\nLife after the Kickstart\n\nHello {{contact.first_name}} — people often ask what changes when the 30 days finish. Honestly: not much, and that is rather the point.\n\nSame coaches, same small groups, same plan carrying on from where you got to. What changes is that you stop thinking about it as a trial and start thinking about it as the thing you do on Mondays, Wednesdays and Fridays.\n\nWhat members get on top\n\n•\n\nUnlimited classes alongside your coached sessions\n\n•\n\nA monthly check-in with your coach, whenever you want one\n\n•\n\nInBody tracking, so progress stays measured\n\n•\n\nThe nutrition resources and our clinics and workshops\n\n•\n\nEvery social and event going\n\nMost people find the second month easier than the first. The hard part was becoming someone who turns up, and you have already done that.\n\nSee the memberships\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness South Woodford\n\nYour studio\n\nBlueprint Fitness South Woodford\n\n4 Raven Road, South Woodford, London, E18 1HB\n\nOpen 6am–9pm, every day\n\nsouthwoodford@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://www.google.com/search?sa=X&rlz=1C1CHBF_en-GBGB886GB886&sxsrf=AJOqlzVpomZirZw4TL8XZFxrjPoY9wMwSA:1677187001407&q=blueprint%20fitness%20google%20reviews&ved=2ahUKEwi9hsO7yKz9AhVhSEEAHbxmD3oQvS56BAhDEAE&biw=1366&bih=657&dpr=1&tbs=lf:1,lf_ui:14&tbm=lcl&rflfq=1&num=10&rldimm=16491884207935991094&lqi=CiBibHVlcHJpbnQgZml0bmVzcyBnb29nbGUgcmV2aWV3cyIFOAGIAQFIi8ydiIqrgIAIWhsQABABGAAYASIRYmx1ZXByaW50IGZpdG5lc3OSARBwZXJzb25hbF90cmFpbmVymgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVVJQYzBwVU0waG5FQUU&rlst=f#rlfi=hd:;si:16491884207935991094,l,CiBibHVlcHJpbnQgZml0bmVzcyBnb29nbGUgcmV2aWV3cyIFOAGIAQFIi8ydiIqrgIAIWhsQABABGAAYASIRYmx1ZXByaW50IGZpdG5lc3OSARBwZXJzb25hbF90cmFpbmVymgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVVJQYzBwVU0waG5FQUU;mv:[[51.6727992,0.049006999999999995],[51.5904283,-0.1894718]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:14",
+      "url": "https://blueprintfitnessldn.com/memberships/",
       "health": "ok"
      },
      {
-      "url": "https://go.blueprintfitnessldn.com/join",
-      "health": "legacy"
+      "url": "https://wa.me/447538298457",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
+      "health": "ok"
      }
     ]
    },
    {
     "type": "email",
     "name": "8. Email Thankyou Legend",
-    "subject": "Thankyou for taking on our 30 Day Trial, you absolute legend!",
+    "subject": "Thirty days done, {{contact.first_name}}",
     "from": "Stuart Rook · info@blueprintfitnessldn.com",
-    "template": "8. THANK YOU!",
+    "template": "Joined 08 — Thank you",
     "missing": false,
-    "text": "Hi {{contact.first_name}},\n\nWhere on earth have these last 30 days gone?\n\nWe hope that you've been feeling the results of your hard work – after all, with all the blood, sweat, and burpees you've been putting in, you're practically superhuman by now! You've pushed through the pain, embraced the grind, and come out the other side with buns of steel and guns of iron. Bravo, my friend!\n\nAs your trial draws to a close, we'd like to remind you about the InBody check that you have access to. This will give us a better understanding of how your body has changed over the past 30 days and help us tailor our training program to your needs moving forwards.\n\nWe want to say a big thank you for choosing Blueprint Fitness and entrusting us with your fitness journey. We hope that you've enjoyed the blood, sweat, and burpees as much as we have (or at least tolerated them), and we can't wait to see you continue to smash your goals with us.\n\nIf you have any questions or concerns, please don't hesitate to reach out – we're always here to help. Now go enjoy a well-deserved protein shake (or a pint, we won't judge).\n\nAnd lastly, if you’re ready to sign up as s full member here’s that link again:\n\nClick here to join!\n\nSee you soon!\nThe Blueprint:Fitness Team\n{{location.email}}\n{{location.phone}}\nblueprintfitnessldn.com\n\nCopyright © {{right_now.year}} {{location.name}}, All rights reserved.\n\nOur mailing address is:\n{{location.email}}\n\nWant to change how you receive these emails?\nYou can unsubscribe from this list or Manage your preference.",
+    "text": "You turned up. That is the hard part.\n\nYour first 30 days · South Woodford\n\nThirty days. Done.\n\nWhatever the numbers say, you did the difficult bit: you kept turning up. Most people never get past the first week.\n\nHave a look at your InBody comparison with your coach — a month is long enough for the numbers to have moved, and it is a good deal more satisfying than guessing.\n\nWhatever you decide about carrying on, thank you for giving it a proper go. It has been a pleasure having you in.\n\nCarry on with a membership\n\nTalk it through with us\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness South Woodford\n\nYour studio\n\nBlueprint Fitness South Woodford\n\n4 Raven Road, South Woodford, London, E18 1HB\n\nOpen 6am–9pm, every day\n\nsouthwoodford@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://goteamup.com/w3662065/p/3662065-blueprint-fitness/memberships/",
+      "url": "https://blueprintfitnessldn.com/memberships/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447538298457?text=Hi%20Blueprint%20Fitness%20South%20Woodford%20%E2%80%94%20I",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447538298457",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
       "health": "ok"
      }
     ]
@@ -3313,18 +3643,26 @@ export const workflowMessages: WfEntry[] = [
    {
     "type": "email",
     "name": "Email",
-    "subject": "Nutrition Consultation Request",
+    "subject": "Your nutrition consultation — what to bring",
     "from": "Blueprint Fitness Nutrition Team · info@blueprintfitnessldn.com",
-    "template": "Nutrition Consultation Request Response",
+    "template": "Nutrition — Consultation requested",
     "missing": false,
-    "text": "Hi {{contact.first_name}}\n\nWe have received your request for nutritional help as part of your 30 Day trial with Blueprint Fitness & will be delighted to help you!\n\nAs part of your trial you get a 30 minute consultation where we can talk through your goal and plan a strategy to help achieve results.\n\nWe can do this consultation via Zoom or face to face but there is a lot more availability if we do this via Zoom. In order to maximise your time during the consultation there are some things you can prior to this by following the nutrition pathway on our website here\n\nBF Nutrition Coaching\n\nIt involves making sure the following have been completed\n\nInbody machine in HQ - You will require the Inbody App\n\nCalorie calculator spreadsheet from the website\n\nFood diary - setting up with Nutracheck and recording 3 to 5 days of food and drinks\n\nGoal setting - Starting to build up a set of both body comp and fitness goals to work towards\n\nStep tracking - Using either a phone or wearable to measure activity via steps\n\nSleep tracking - a basic diary of how much sleep you are getting\n\nIt isn't compulsary to have completed the above before your consultation, but the more details you provide us with intially the better your stratery / plan can be.\n\nIf you have completed the above and are ready to start then please reply to this email and we will book you in!",
+    "text": "We have got your request. Here is how to make it count.\n\nNutrition · South Woodford\n\nWe have got your request\n\nHello {{contact.first_name}} — thanks for asking for nutrition help. A coach will be in touch to book you in.\n\nTwo things that make it far more useful\n\n•\n\nYour InBody results. The scan from your intro gives us your real starting point, including your BMR.\n\n•\n\nA few honest days of food. Not perfect — honest. It tells us more than any questionnaire.\n\nNot got either yet? Say so and we will sort it together. Nobody here is judging.\n\nWhile you wait, the Nutrition Video Series covers the principles we will be applying. Lessons 5 to 8 on calories are the ones most people wish they had watched sooner.\n\nWatch the video series\n\nUpdate your request\n\nSpeak soon,\n\nThe team\n\nBlueprint Fitness South Woodford\n\nYour studio\n\nBlueprint Fitness South Woodford\n\n4 Raven Road, South Woodford, London, E18 1HB\n\nOpen 6am–9pm, every day\n\nsouthwoodford@blueprintfitnessldn.com\n·\nWhatsApp\n\nYou are getting this because you are on the list at\nblueprintfitnessldn.com.\n\nUnsubscribe ·\n© {{right_now.year}} Blueprint Fitness",
     "links": [
      {
-      "url": "https://www.blueprintfitnessldn.com/nutrition-coaching",
-      "health": "redirected"
+      "url": "https://blueprintfitnessldn.com/members/nutrition-course/",
+      "health": "ok"
      },
      {
-      "url": "https://www.nutracheck.co.uk/Home",
+      "url": "https://blueprintfitnessldn.com/members/nutrition-request/",
+      "health": "ok"
+     },
+     {
+      "url": "https://wa.me/447538298457",
+      "health": "ok"
+     },
+     {
+      "url": "https://blueprintfitnessldn.com",
       "health": "ok"
      }
     ]

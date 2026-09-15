@@ -1,0 +1,426 @@
+{
+ "workflow": {
+  "_id": "707c1c9f-b0e4-405f-94f3-8b86c68b0932",
+  "locationId": "cquQsieyBZx9vRgEqBge",
+  "companyId": "BHs3MppSlUdmHKGV7DDA",
+  "companyAge": 13,
+  "name": "1. Signed Up - 30 Day Trial",
+  "status": "published",
+  "version": 31,
+  "dataVersion": 7,
+  "allowMultiple": true,
+  "senderAddress": {
+   "from_email": "{{location.email}}",
+   "from_name": "{{custom_values.sales_and_journey}}"
+  },
+  "removeContactFromLastStep": true,
+  "filePath": "location/cquQsieyBZx9vRgEqBge/workflows/707c1c9f-b0e4-405f-94f3-8b86c68b0932/31",
+  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/automation-workflows-production/o/location%2FcquQsieyBZx9vRgEqBge%2Fworkflows%2F707c1c9f-b0e4-405f-94f3-8b86c68b0932%2F31?alt=media&token=475cd487-d229-431a-a164-c989a5f41c64",
+  "stopOnResponse": false,
+  "autoMarkAsRead": false,
+  "originId": "5368c200-7a3a-425b-841a-8f62ebeb3456",
+  "permission": 380,
+  "type": "workflow",
+  "parentId": "2a12cec0-bff3-427f-81c6-094fbc85cbdf",
+  "createdAt": "2023-01-03T15:29:09.538Z",
+  "updatedAt": "2026-07-21T10:29:37.906Z",
+  "deleted": false,
+  "__v": 0,
+  "eventStartDate": null,
+  "triggersFilePath": "location/cquQsieyBZx9vRgEqBge/workflow-triggers/707c1c9f-b0e4-405f-94f3-8b86c68b0932/28",
+  "updatedBy": "kD5eX8SAxDHruPaeEprZ",
+  "window": null,
+  "timezone": "account",
+  "reason": "",
+  "allowMultipleOpportunity": false,
+  "creationSource": "builder",
+  "workflowNote": null,
+  "isTriggerBucketMigrated": true,
+  "id": "707c1c9f-b0e4-405f-94f3-8b86c68b0932",
+  "workflowData": {
+   "templates": [
+    {
+     "id": "5491eb30-60f3-4a7a-9f15-820f2c270899",
+     "order": 0,
+     "attributes": {
+      "tags": [
+       "human"
+      ]
+     },
+     "name": "Add Tag",
+     "type": "add_contact_tag",
+     "next": "e06abdb2-8fda-46ab-ab67-631f1ff52118"
+    },
+    {
+     "id": "e06abdb2-8fda-46ab-ab67-631f1ff52118",
+     "order": 1,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "minutes",
+       "value": 10,
+       "when": "after"
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "74a25111-d0f2-4d6b-9b2e-996e6b47b22b",
+     "parentKey": "5491eb30-60f3-4a7a-9f15-820f2c270899"
+    },
+    {
+     "id": "74a25111-d0f2-4d6b-9b2e-996e6b47b22b",
+     "order": 2,
+     "attributes": {
+      "type": "remove_from_workflow",
+      "workflow_id": "1107c4db-a01d-4409-bb18-5fff3b0d9859"
+     },
+     "name": "Remove from Workflow",
+     "type": "remove_from_workflow",
+     "next": "b9e2651f-841c-4549-b440-434dd538c73f",
+     "parentKey": "e06abdb2-8fda-46ab-ab67-631f1ff52118"
+    },
+    {
+     "id": "b9e2651f-841c-4549-b440-434dd538c73f",
+     "order": 3,
+     "attributes": {
+      "tags": [
+       "cancelled",
+       "email subscriber",
+       "existing member",
+       "new lead",
+       "paused member",
+       "intro session complete (28 day challenge)"
+      ]
+     },
+     "name": "remove new lead tag",
+     "type": "remove_contact_tag",
+     "next": "16037bcf-fde0-461e-8102-6df6c1bf289b",
+     "parentKey": "74a25111-d0f2-4d6b-9b2e-996e6b47b22b"
+    },
+    {
+     "id": "16037bcf-fde0-461e-8102-6df6c1bf289b",
+     "order": 4,
+     "attributes": {
+      "only_unassigned_contact": false,
+      "total_index": 1,
+      "traffic_split": "equally",
+      "traffic_weightage": {
+       "K5v63qmBa7H2sgCd1rWt": 1
+      },
+      "traffic_index": [
+       {
+        "id": "K5v63qmBa7H2sgCd1rWt",
+        "indexes": [
+         1
+        ]
+       }
+      ],
+      "user_list": [
+       "K5v63qmBa7H2sgCd1rWt"
+      ],
+      "type": "assign_user"
+     },
+     "name": "Assign to user",
+     "type": "assign_user",
+     "next": "d2d0f48c-560f-4f78-9a2b-002526e1c208",
+     "parentKey": "b9e2651f-841c-4549-b440-434dd538c73f"
+    },
+    {
+     "id": "d2d0f48c-560f-4f78-9a2b-002526e1c208",
+     "order": 5,
+     "attributes": {
+      "type": "email",
+      "email": {
+       "from_name": "DASH",
+       "from_email": "info@dashaio.com",
+       "userType": "custom_email",
+       "subject": "NEW CHALLENGE SIGNUP {{contact.name}}",
+       "html": "<p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;\">NEW SIGNUP!<br>{{contact.name}} just signed up for the {{custom_values.challengetrial_name}}</p>",
+       "attachments": [],
+       "to": "southwoodford@blueprintfitnessldn.com",
+       "cc": ""
+      }
+     },
+     "name": "Internal Notification",
+     "type": "internal_notification",
+     "next": "67ae679b-c0d3-4393-ac42-e738248ac819",
+     "parentKey": "16037bcf-fde0-461e-8102-6df6c1bf289b"
+    },
+    {
+     "id": "67ae679b-c0d3-4393-ac42-e738248ac819",
+     "order": 6,
+     "attributes": {
+      "type": "create_opportunity",
+      "pipeline_id": "pvnaXstksEawcEjD9z7u",
+      "monetary_value": "129",
+      "opportunity_status": "won",
+      "allow_multiple": false,
+      "opportunity_name": "",
+      "opportunity_source": "",
+      "allow_backward": true,
+      "pipeline_stage_id": "3a4856dd-a3c6-4b28-af60-005e73b18e4e",
+      "fields": []
+     },
+     "name": "Update to WON Opportunity",
+     "type": "create_opportunity",
+     "next": "40a86886-3ec1-4d3f-b185-989a8f6a392e",
+     "parentKey": "d2d0f48c-560f-4f78-9a2b-002526e1c208"
+    },
+    {
+     "id": "40a86886-3ec1-4d3f-b185-989a8f6a392e",
+     "order": 7,
+     "attributes": {
+      "type": "create_opportunity",
+      "pipeline_id": "OchGur7i1XUzldMXkE6K",
+      "pipeline_stage_id": "26105a2d-bc5e-45b2-9774-d9ecf55a67bd",
+      "monetary_value": "",
+      "opportunity_status": "open",
+      "allow_backward": true,
+      "opportunity_name": "",
+      "opportunity_source": "",
+      "allow_multiple": false
+     },
+     "name": "Add to Conversion Pipeline",
+     "type": "create_opportunity",
+     "next": "9ebf36ec-aa9d-4022-9207-cde0303f6de6",
+     "parentKey": "67ae679b-c0d3-4393-ac42-e738248ac819"
+    },
+    {
+     "id": "9ebf36ec-aa9d-4022-9207-cde0303f6de6",
+     "order": 8,
+     "attributes": {
+      "tags": [
+       "challenge signup"
+      ]
+     },
+     "name": "Add Tag - Signed Up",
+     "type": "add_contact_tag",
+     "next": "80783064-bc84-41b8-abb9-944532e26ee2",
+     "parentKey": "40a86886-3ec1-4d3f-b185-989a8f6a392e"
+    },
+    {
+     "id": "80783064-bc84-41b8-abb9-944532e26ee2",
+     "order": 9,
+     "attributes": {
+      "from_name": "Blueprint Fitness",
+      "from_email": "{{location.email}}",
+      "subject": "Your Super Quick Guide To Getting Started⚡",
+      "template_id": "63f6298d26329a5edd5890e2",
+      "templatesource": "email-builder",
+      "attachments": [],
+      "fieldDefaults": {},
+      "trackingOptions": {
+       "hasTrackingLinks": false,
+       "hasUtmTracking": false,
+       "hasTags": false,
+       "sourceId": "707c1c9f-b0e4-405f-94f3-8b86c68b0932:80783064-bc84-41b8-abb9-944532e26ee2"
+      },
+      "conditions": [],
+      "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2FcquQsieyBZx9vRgEqBge%2Femails%2F63f6298d26329a5edd5890e2%2Findex.html?alt=media&token=9896a354-d972-4065-83ab-6f75f98fe985?cb=1784629768890",
+      "createdAt": "2023-02-22T14:41:17.714Z",
+      "updatedAt": "2024-08-06T09:13:14.311Z",
+      "preHeader": "We're thrilled to have you onboard!",
+      "syncEnabled": true
+     },
+     "name": "Intro - Welcome Email",
+     "type": "email",
+     "parentKey": "9ebf36ec-aa9d-4022-9207-cde0303f6de6"
+    }
+   ]
+  },
+  "permissionMeta": {
+   "canRead": true,
+   "canWrite": true
+  },
+  "scheduledPauseDates": []
+ },
+ "templates": [
+  {
+   "id": "5491eb30-60f3-4a7a-9f15-820f2c270899",
+   "order": 0,
+   "attributes": {
+    "tags": [
+     "human"
+    ]
+   },
+   "name": "Add Tag",
+   "type": "add_contact_tag",
+   "next": "e06abdb2-8fda-46ab-ab67-631f1ff52118"
+  },
+  {
+   "id": "e06abdb2-8fda-46ab-ab67-631f1ff52118",
+   "order": 1,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "minutes",
+     "value": 10,
+     "when": "after"
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "74a25111-d0f2-4d6b-9b2e-996e6b47b22b",
+   "parentKey": "5491eb30-60f3-4a7a-9f15-820f2c270899"
+  },
+  {
+   "id": "74a25111-d0f2-4d6b-9b2e-996e6b47b22b",
+   "order": 2,
+   "attributes": {
+    "type": "remove_from_workflow",
+    "workflow_id": "1107c4db-a01d-4409-bb18-5fff3b0d9859"
+   },
+   "name": "Remove from Workflow",
+   "type": "remove_from_workflow",
+   "next": "b9e2651f-841c-4549-b440-434dd538c73f",
+   "parentKey": "e06abdb2-8fda-46ab-ab67-631f1ff52118"
+  },
+  {
+   "id": "b9e2651f-841c-4549-b440-434dd538c73f",
+   "order": 3,
+   "attributes": {
+    "tags": [
+     "cancelled",
+     "email subscriber",
+     "existing member",
+     "new lead",
+     "paused member",
+     "intro session complete (28 day challenge)"
+    ]
+   },
+   "name": "remove new lead tag",
+   "type": "remove_contact_tag",
+   "next": "16037bcf-fde0-461e-8102-6df6c1bf289b",
+   "parentKey": "74a25111-d0f2-4d6b-9b2e-996e6b47b22b"
+  },
+  {
+   "id": "16037bcf-fde0-461e-8102-6df6c1bf289b",
+   "order": 4,
+   "attributes": {
+    "only_unassigned_contact": false,
+    "total_index": 1,
+    "traffic_split": "equally",
+    "traffic_weightage": {
+     "K5v63qmBa7H2sgCd1rWt": 1
+    },
+    "traffic_index": [
+     {
+      "id": "K5v63qmBa7H2sgCd1rWt",
+      "indexes": [
+       1
+      ]
+     }
+    ],
+    "user_list": [
+     "K5v63qmBa7H2sgCd1rWt"
+    ],
+    "type": "assign_user"
+   },
+   "name": "Assign to user",
+   "type": "assign_user",
+   "next": "d2d0f48c-560f-4f78-9a2b-002526e1c208",
+   "parentKey": "b9e2651f-841c-4549-b440-434dd538c73f"
+  },
+  {
+   "id": "d2d0f48c-560f-4f78-9a2b-002526e1c208",
+   "order": 5,
+   "attributes": {
+    "type": "email",
+    "email": {
+     "from_name": "DASH",
+     "from_email": "info@dashaio.com",
+     "userType": "custom_email",
+     "subject": "NEW CHALLENGE SIGNUP {{contact.name}}",
+     "html": "<p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;\">NEW SIGNUP!<br>{{contact.name}} just signed up for the {{custom_values.challengetrial_name}}</p>",
+     "attachments": [],
+     "to": "southwoodford@blueprintfitnessldn.com",
+     "cc": ""
+    }
+   },
+   "name": "Internal Notification",
+   "type": "internal_notification",
+   "next": "67ae679b-c0d3-4393-ac42-e738248ac819",
+   "parentKey": "16037bcf-fde0-461e-8102-6df6c1bf289b"
+  },
+  {
+   "id": "67ae679b-c0d3-4393-ac42-e738248ac819",
+   "order": 6,
+   "attributes": {
+    "type": "create_opportunity",
+    "pipeline_id": "pvnaXstksEawcEjD9z7u",
+    "monetary_value": "129",
+    "opportunity_status": "won",
+    "allow_multiple": false,
+    "opportunity_name": "",
+    "opportunity_source": "",
+    "allow_backward": true,
+    "pipeline_stage_id": "3a4856dd-a3c6-4b28-af60-005e73b18e4e",
+    "fields": []
+   },
+   "name": "Update to WON Opportunity",
+   "type": "create_opportunity",
+   "next": "40a86886-3ec1-4d3f-b185-989a8f6a392e",
+   "parentKey": "d2d0f48c-560f-4f78-9a2b-002526e1c208"
+  },
+  {
+   "id": "40a86886-3ec1-4d3f-b185-989a8f6a392e",
+   "order": 7,
+   "attributes": {
+    "type": "create_opportunity",
+    "pipeline_id": "OchGur7i1XUzldMXkE6K",
+    "pipeline_stage_id": "26105a2d-bc5e-45b2-9774-d9ecf55a67bd",
+    "monetary_value": "",
+    "opportunity_status": "open",
+    "allow_backward": true,
+    "opportunity_name": "",
+    "opportunity_source": "",
+    "allow_multiple": false
+   },
+   "name": "Add to Conversion Pipeline",
+   "type": "create_opportunity",
+   "next": "9ebf36ec-aa9d-4022-9207-cde0303f6de6",
+   "parentKey": "67ae679b-c0d3-4393-ac42-e738248ac819"
+  },
+  {
+   "id": "9ebf36ec-aa9d-4022-9207-cde0303f6de6",
+   "order": 8,
+   "attributes": {
+    "tags": [
+     "challenge signup"
+    ]
+   },
+   "name": "Add Tag - Signed Up",
+   "type": "add_contact_tag",
+   "next": "80783064-bc84-41b8-abb9-944532e26ee2",
+   "parentKey": "40a86886-3ec1-4d3f-b185-989a8f6a392e"
+  },
+  {
+   "id": "80783064-bc84-41b8-abb9-944532e26ee2",
+   "order": 9,
+   "attributes": {
+    "from_name": "Blueprint Fitness",
+    "from_email": "{{location.email}}",
+    "subject": "Your Super Quick Guide To Getting Started⚡",
+    "template_id": "63f6298d26329a5edd5890e2",
+    "templatesource": "email-builder",
+    "attachments": [],
+    "fieldDefaults": {},
+    "trackingOptions": {
+     "hasTrackingLinks": false,
+     "hasUtmTracking": false,
+     "hasTags": false,
+     "sourceId": "707c1c9f-b0e4-405f-94f3-8b86c68b0932:80783064-bc84-41b8-abb9-944532e26ee2"
+    },
+    "conditions": [],
+    "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2FcquQsieyBZx9vRgEqBge%2Femails%2F63f6298d26329a5edd5890e2%2Findex.html?alt=media&token=9896a354-d972-4065-83ab-6f75f98fe985?cb=1784629768890",
+    "createdAt": "2023-02-22T14:41:17.714Z",
+    "updatedAt": "2024-08-06T09:13:14.311Z",
+    "preHeader": "We're thrilled to have you onboard!",
+    "syncEnabled": true
+   },
+   "name": "Intro - Welcome Email",
+   "type": "email",
+   "parentKey": "9ebf36ec-aa9d-4022-9207-cde0303f6de6"
+  }
+ ]
+}

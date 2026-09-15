@@ -1,0 +1,3374 @@
+{
+ "workflow": {
+  "_id": "1107c4db-a01d-4409-bb18-5fff3b0d9859",
+  "locationId": "cquQsieyBZx9vRgEqBge",
+  "companyId": "BHs3MppSlUdmHKGV7DDA",
+  "companyAge": 20,
+  "name": "1. New Lead - 30 Day Kickstart",
+  "status": "published",
+  "version": 54,
+  "dataVersion": 7,
+  "allowMultiple": true,
+  "eventStartDate": null,
+  "senderAddress": null,
+  "window": null,
+  "timezone": "account",
+  "removeContactFromLastStep": true,
+  "filePath": "location/cquQsieyBZx9vRgEqBge/workflows/1107c4db-a01d-4409-bb18-5fff3b0d9859/54",
+  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/automation-workflows-production/o/location%2FcquQsieyBZx9vRgEqBge%2Fworkflows%2F1107c4db-a01d-4409-bb18-5fff3b0d9859%2F54?alt=media&token=b5ed99d6-728a-49cd-9e08-f788d246fee7",
+  "triggersFilePath": "location/cquQsieyBZx9vRgEqBge/workflow-triggers/1107c4db-a01d-4409-bb18-5fff3b0d9859/53",
+  "stopOnResponse": false,
+  "autoMarkAsRead": false,
+  "permission": 380,
+  "type": "workflow",
+  "parentId": "3b9fd3f0-b134-4b8a-8270-e96d74945be0",
+  "meta": {
+   "advanceCanvasMeta": {
+    "enabled": true,
+    "enabledAt": "2026-02-05T15:17:54.951Z"
+   }
+  },
+  "createdAt": "2023-08-14T13:36:53.638Z",
+  "updatedAt": "2026-09-15T08:43:41.589Z",
+  "deleted": false,
+  "__v": 0,
+  "updatedBy": "kD5eX8SAxDHruPaeEprZ",
+  "allowMultipleOpportunity": false,
+  "reason": "",
+  "workflowNote": null,
+  "creationSource": "builder",
+  "isTriggerBucketMigrated": true,
+  "id": "1107c4db-a01d-4409-bb18-5fff3b0d9859",
+  "workflowData": {
+   "templates": [
+    {
+     "id": "54cd3d38-0b1c-4eb6-97cf-724f14808d0f",
+     "order": 0,
+     "attributes": {
+      "method": "POST",
+      "url": "https://hooks.zapier.com/hooks/catch/1870659/3xcbe0f/",
+      "customData": [],
+      "headers": []
+     },
+     "name": "Webhook",
+     "type": "webhook",
+     "next": "2fa4cba9-fbc9-4cf8-aae4-7547561b0f45",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 302,
+       "y": 464.5
+      }
+     }
+    },
+    {
+     "id": "2fa4cba9-fbc9-4cf8-aae4-7547561b0f45",
+     "order": 1,
+     "attributes": {
+      "type": "facebook_conversion_api",
+      "event_type": "funnel_event",
+      "access_token": "EAARH4JYfTncBQAsLU1coMlqhFEzDlFyz8C68iI7Mufevlw5OREpZC3Pste7E57GHRc6cVLbINA9Pzvc2y7WbxwF3JY1h53q8YaggjMikCHe62ZCHJUpzvziskYZC3F3ONdf4qpT5clplZCX0ZAn3teGKFZCfth397ngcZCyYv7hCvJ6Xa7OZBYyJcPiDWhg9NSrVYQZDZD",
+      "event_name": "Lead",
+      "pixel_id": "698984912008420",
+      "currency": "GBP",
+      "value": "",
+      "test_event_code": "",
+      "connection_type": "INTEGRATION"
+     },
+     "name": "FB Conversion API",
+     "type": "facebook_conversion_api",
+     "next": "94058038-3f1a-42d7-9f8e-53b05e0b7ed9",
+     "parentKey": "54cd3d38-0b1c-4eb6-97cf-724f14808d0f",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 532,
+       "y": 464.5
+      }
+     }
+    },
+    {
+     "id": "94058038-3f1a-42d7-9f8e-53b05e0b7ed9",
+     "order": 2,
+     "attributes": {
+      "tags": [
+       "chatbot"
+      ]
+     },
+     "name": "Add Tag",
+     "type": "add_contact_tag",
+     "next": "09f7271f-de0e-4923-8777-8e449ab9b038",
+     "parentKey": "2fa4cba9-fbc9-4cf8-aae4-7547561b0f45",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 762,
+       "y": 464.5
+      }
+     }
+    },
+    {
+     "id": "09f7271f-de0e-4923-8777-8e449ab9b038",
+     "order": 3,
+     "attributes": {
+      "batchSize": 1,
+      "interval": {
+       "timeUnit": "minutes",
+       "value": 1
+      },
+      "type": "drip",
+      "configuredAt": "2026-07-21T10:10:57.856Z"
+     },
+     "name": "Drip Mode",
+     "type": "drip",
+     "next": "e78cdab8-7d8d-4a69-9b51-1b2fbbc23285",
+     "parentKey": "94058038-3f1a-42d7-9f8e-53b05e0b7ed9",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 992,
+       "y": 464.5
+      }
+     }
+    },
+    {
+     "id": "e78cdab8-7d8d-4a69-9b51-1b2fbbc23285",
+     "order": 4,
+     "attributes": {
+      "currentRecipeType": "CUSTOM",
+      "branches": [
+       {
+        "id": "d7fa835b-202a-46e1-9c30-efe244171163",
+        "name": "Web Form",
+        "segments": [
+         {
+          "__segmentId": "aeae1577-15c1-46ab-b8b1-49fb6c02c633",
+          "operator": "and",
+          "conditions": [
+           {
+            "conditionType": "trigger",
+            "conditionSubType": "trigger",
+            "conditionOperator": "==",
+            "conditionValue": "BdGNsBaBWyms7IjYY6M7",
+            "__conditionId": "c9d20ae7-654b-404a-864f-fca8cba9d757",
+            "ifElseNodeId": "",
+            "__customFieldType__": "standard",
+            "isWait": false,
+            "nestedDropdownTypes": [
+             "inboundWebhookRequest",
+             "sheet",
+             "datetime_formatter",
+             "custom_webhook",
+             "array_functions",
+             "ivr_gather",
+             "ivr_connect_call",
+             "custom_code",
+             "ai_agent",
+             "task-notification"
+            ],
+            "allowIsOperatorTypes": [
+             "contact_reply",
+             "inboundWebhookRequest",
+             "custom_webhook",
+             "custom_code",
+             "ai_agent",
+             "contact_detail",
+             "array_functions",
+             "appointment",
+             "service_booking",
+             "rental_booking"
+            ]
+           }
+          ]
+         }
+        ],
+        "operator": "or",
+        "showErrors": false,
+        "branchNameError": "Branch name cannot be empty!"
+       },
+       {
+        "id": "a07187ae-2c81-4fd0-b6a0-ce5d4fa3ad14",
+        "name": "FB Form",
+        "segments": [
+         {
+          "__segmentId": "1f0316d3-4cc8-4873-89a2-5c0010b89901",
+          "operator": "and",
+          "conditions": [
+           {
+            "conditionType": "trigger",
+            "conditionSubType": "trigger",
+            "conditionOperator": "==",
+            "conditionValue": "Au27aIxBzUAa31MZeFRv",
+            "__conditionId": "b6f7822a-1962-4c15-8285-34d39a9da063",
+            "ifElseNodeId": "",
+            "__customFieldType__": "standard",
+            "isWait": false,
+            "nestedDropdownTypes": [
+             "inboundWebhookRequest",
+             "sheet",
+             "datetime_formatter",
+             "custom_webhook",
+             "array_functions",
+             "ivr_gather",
+             "ivr_connect_call",
+             "custom_code",
+             "ai_agent",
+             "task-notification"
+            ],
+            "allowIsOperatorTypes": [
+             "contact_reply",
+             "inboundWebhookRequest",
+             "custom_webhook",
+             "custom_code",
+             "ai_agent",
+             "contact_detail",
+             "array_functions",
+             "appointment",
+             "service_booking",
+             "rental_booking"
+            ]
+           }
+          ]
+         }
+        ],
+        "operator": "and",
+        "showErrors": false,
+        "branchNameError": "Branch name cannot be empty!"
+       },
+       {
+        "id": "c1d7313f-8822-4525-a11d-1f62f77d8078",
+        "name": "Tagged New Lead",
+        "segments": [
+         {
+          "__segmentId": "84aa770e-6c8b-42e4-8440-e80aa0c102b7",
+          "operator": "and",
+          "conditions": [
+           {
+            "conditionType": "trigger",
+            "conditionSubType": "trigger",
+            "conditionOperator": "==",
+            "conditionValue": "TzxErJ4hwXOo1sUY91uB",
+            "__conditionId": "32a28bf2-2b74-47e9-a67a-a7d4b56a9f08",
+            "ifElseNodeId": "",
+            "__customFieldType__": "standard",
+            "isWait": false,
+            "nestedDropdownTypes": [
+             "inboundWebhookRequest",
+             "sheet",
+             "datetime_formatter",
+             "custom_webhook",
+             "array_functions",
+             "ivr_gather",
+             "ivr_connect_call",
+             "custom_code",
+             "ai_agent",
+             "task-notification"
+            ],
+            "allowIsOperatorTypes": [
+             "contact_reply",
+             "inboundWebhookRequest",
+             "custom_webhook",
+             "custom_code",
+             "ai_agent",
+             "contact_detail",
+             "array_functions",
+             "appointment",
+             "service_booking",
+             "rental_booking"
+            ]
+           }
+          ]
+         }
+        ],
+        "operator": "and",
+        "showErrors": false,
+        "branchNameError": "Branch name cannot be empty!"
+       }
+      ],
+      "operator": "and",
+      "if": true,
+      "conditionName": "Source",
+      "version": 2,
+      "noneBranchName": "None"
+     },
+     "name": "yes",
+     "type": "if_else",
+     "cat": "conditions",
+     "next": [
+      "d7fa835b-202a-46e1-9c30-efe244171163",
+      "a07187ae-2c81-4fd0-b6a0-ce5d4fa3ad14",
+      "c1d7313f-8822-4525-a11d-1f62f77d8078",
+      "088d6ef0-45a9-4887-8440-a56d06dc94f4"
+     ],
+     "comments": [],
+     "nodeType": "condition-node",
+     "parentKey": "09f7271f-de0e-4923-8777-8e449ab9b038",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 1222,
+       "y": 464.5
+      }
+     }
+    },
+    {
+     "id": "d7fa835b-202a-46e1-9c30-efe244171163",
+     "parent": "e78cdab8-7d8d-4a69-9b51-1b2fbbc23285",
+     "order": 5,
+     "attributes": {
+      "if": false,
+      "conditionName": "Condition",
+      "operator": "and",
+      "branches": []
+     },
+     "name": "Web Form",
+     "type": "if_else",
+     "cat": "conditions",
+     "next": "debddc00-e0b1-4623-8fc3-ab4039e4974b",
+     "sibling": [
+      "a07187ae-2c81-4fd0-b6a0-ce5d4fa3ad14",
+      "c1d7313f-8822-4525-a11d-1f62f77d8078",
+      "088d6ef0-45a9-4887-8440-a56d06dc94f4"
+     ],
+     "comments": [],
+     "nodeType": "branch-yes",
+     "parentKey": "e78cdab8-7d8d-4a69-9b51-1b2fbbc23285",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 1452,
+       "y": 111.99999999999999
+      }
+     }
+    },
+    {
+     "id": "debddc00-e0b1-4623-8fc3-ab4039e4974b",
+     "parent": "d7fa835b-202a-46e1-9c30-efe244171163",
+     "order": 9,
+     "attributes": {
+      "tags": [
+       "new lead",
+       "web lead",
+       "30 day kickstart lead"
+      ]
+     },
+     "name": "Add Tag - New Lead",
+     "type": "add_contact_tag",
+     "next": "55c716f8-4309-4077-85e3-23b1b65e9fdc",
+     "parentKey": "d7fa835b-202a-46e1-9c30-efe244171163",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 1872,
+       "y": 119.49999999999999
+      }
+     }
+    },
+    {
+     "id": "55c716f8-4309-4077-85e3-23b1b65e9fdc",
+     "order": 13,
+     "attributes": {
+      "type": "create_opportunity",
+      "pipeline_id": "pvnaXstksEawcEjD9z7u",
+      "pipeline_stage_id": "7561e524-53d5-4378-aa61-88c5ed2049ff",
+      "opportunity_name": "30 Day (Web Form): {{contact.name}}",
+      "opportunity_source": "{{contact.lastAttributionSource.sessionSource}}",
+      "monetary_value": "129",
+      "opportunity_status": "open",
+      "allow_multiple": false,
+      "allow_backward": true,
+      "fields": []
+     },
+     "name": "Create Opportunity",
+     "type": "create_opportunity",
+     "next": "6bd296ae-70c0-45c7-9f4c-6dbdb2329d28",
+     "parent": "d7fa835b-202a-46e1-9c30-efe244171163",
+     "parentKey": "debddc00-e0b1-4623-8fc3-ab4039e4974b",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 2132,
+       "y": 119.49999999999999
+      }
+     }
+    },
+    {
+     "id": "6bd296ae-70c0-45c7-9f4c-6dbdb2329d28",
+     "parent": "d7fa835b-202a-46e1-9c30-efe244171163",
+     "order": 16,
+     "attributes": {
+      "type": "email",
+      "email": {
+       "from_name": "",
+       "from_email": "",
+       "userType": "custom_email",
+       "subject": "30 DAY LEAD (web form): {{contact.name}}",
+       "html": "<p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;\">New Lead for 30 Day Trial<br>First Name: {{contact.first_name}}<br>Last Name: {{contact.last_name}}<br>Email: {{contact.email}}<br>Phone: {{contact.phone}}<br>Main Goal: {{contact.main_goal}}</p>",
+       "attachments": [],
+       "to": "southwoodford@blueprintfitnessldn.com"
+      }
+     },
+     "name": "Internal Notification",
+     "type": "internal_notification",
+     "next": "a0bb153a-af8f-49a7-bd64-763413170cac",
+     "parentKey": "55c716f8-4309-4077-85e3-23b1b65e9fdc",
+     "stats": {
+      "id": "6bd296ae-70c0-45c7-9f4c-6dbdb2329d28",
+      "stats": {
+       "delivered": "-",
+       "opened": "-",
+       "clicked": "-",
+       "replied": "-",
+       "bounced": "-",
+       "unsubscribed": "-"
+      }
+     },
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 2362,
+       "y": 119.49999999999999
+      }
+     }
+    },
+    {
+     "id": "a0bb153a-af8f-49a7-bd64-763413170cac",
+     "order": 19,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "minutes",
+       "value": 1,
+       "when": "after"
+      }
+     },
+     "name": "Wait 1 Minute",
+     "type": "wait",
+     "next": "02a190cf-37d1-45d3-a203-a89f71d9e078",
+     "parent": "d7fa835b-202a-46e1-9c30-efe244171163",
+     "parentKey": "6bd296ae-70c0-45c7-9f4c-6dbdb2329d28",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 2622,
+       "y": 119.49999999999999
+      }
+     }
+    },
+    {
+     "id": "02a190cf-37d1-45d3-a203-a89f71d9e078",
+     "parent": "d7fa835b-202a-46e1-9c30-efe244171163",
+     "order": 22,
+     "attributes": {
+      "from_name": "Blueprint Fitness",
+      "from_email": "{{location.email}}",
+      "subject": "Thanks {{contact.first_name}} — here is what happens next",
+      "template_id": "6aa904b29ed784b5df7609a2",
+      "templatesource": "email-builder",
+      "attachments": []
+     },
+     "name": "Intro Program - Application Email",
+     "type": "email",
+     "next": "053a1516-8c37-4922-80a3-c9340ef21ae2",
+     "parentKey": "a0bb153a-af8f-49a7-bd64-763413170cac",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 2882,
+       "y": 119.49999999999999
+      }
+     }
+    },
+    {
+     "id": "053a1516-8c37-4922-80a3-c9340ef21ae2",
+     "parentKey": "02a190cf-37d1-45d3-a203-a89f71d9e078",
+     "parent": "d7fa835b-202a-46e1-9c30-efe244171163",
+     "type": "wait",
+     "name": "Wait 15s",
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "minutes",
+       "value": 0.25,
+       "when": "after"
+      },
+      "name": "Wait 15s",
+      "cat": "",
+      "isHybridAction": true,
+      "hybridActionType": "wait",
+      "convertToMultipath": false,
+      "transitions": []
+     },
+     "order": 23,
+     "cat": "",
+     "next": "f19dd3d3-ab1d-4f67-94ec-742399805ad2",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 3112,
+       "y": 119.49999999999999
+      }
+     }
+    },
+    {
+     "id": "f19dd3d3-ab1d-4f67-94ec-742399805ad2",
+     "parent": "d7fa835b-202a-46e1-9c30-efe244171163",
+     "order": 24,
+     "attributes": {
+      "body": "Hi {{contact.first_name}} thanks so much for checking out our 30 Day Kickstart! Just to confirm, are you local to South Woodford?\n\nPS. I've attached a video with one of the owners (Stu) for you",
+      "attachments": [
+       {
+        "url": "https://storage.googleapis.com/highlevel-backend.appspot.com/location/cquQsieyBZx9vRgEqBge/workflow/1107c4db-a01d-4409-bb18-5fff3b0d9859/25b29f84-488e-4c98-b828-0ff8052ac92b.mp4?alt=media&token=aa1d7ca6-e121-46ad-87aa-99393909843d",
+        "name": "30 Day Welcome Video WA.mp4",
+        "size": 11757714
+       }
+      ]
+     },
+     "name": "SMS",
+     "type": "sms",
+     "next": "e178a169-3172-4b38-a1d3-07ffdda3eb9f",
+     "parentKey": "053a1516-8c37-4922-80a3-c9340ef21ae2",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 3342,
+       "y": 119.49999999999999
+      }
+     }
+    },
+    {
+     "id": "e178a169-3172-4b38-a1d3-07ffdda3eb9f",
+     "parent": "d7fa835b-202a-46e1-9c30-efe244171163",
+     "order": 25,
+     "attributes": {
+      "assignedEmployeeId": "QjDlMFuZOTHgzJagWdJj",
+      "status": "active",
+      "type": "update_conversation_ai_status",
+      "__customInputs__": {}
+     },
+     "name": "Update Conversation AI Bot and Status",
+     "type": "update_conversation_ai_status",
+     "next": "074d978b-1e5d-4825-9177-ed70db3fc29a",
+     "workflowsActionType": "INTERNAL",
+     "parentKey": "f19dd3d3-ab1d-4f67-94ec-742399805ad2",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 3572,
+       "y": 119.49999999999999
+      }
+     }
+    },
+    {
+     "id": "074d978b-1e5d-4825-9177-ed70db3fc29a",
+     "parentKey": "e178a169-3172-4b38-a1d3-07ffdda3eb9f",
+     "parent": "d7fa835b-202a-46e1-9c30-efe244171163",
+     "type": "wait",
+     "name": "wait",
+     "attributes": {
+      "type": "reply",
+      "startAfter": {
+       "type": "minutes",
+       "value": 60,
+       "when": "after"
+      },
+      "name": "Wait",
+      "cat": "multi-path",
+      "reply": [
+       "f19dd3d3-ab1d-4f67-94ec-742399805ad2"
+      ],
+      "replyLabel": [
+       "SMS"
+      ],
+      "isHybridAction": true,
+      "hybridActionType": "wait",
+      "convertToMultipath": true,
+      "transitions": [
+       {
+        "id": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+        "name": "wait",
+        "condition": "primary",
+        "conditionType": "user-defined",
+        "isPrimaryBranch": true,
+        "description": "",
+        "attributes": {
+         "type": "wait_reply",
+         "description": "What will happen when a contact replies on SMS"
+        }
+       },
+       {
+        "id": "ab4ffa7f-45ea-4b5c-acb7-bc8a93b49bad",
+        "name": "timeout",
+        "condition": "timeout",
+        "conditionType": "user-defined",
+        "isPrimaryBranch": false,
+        "description": "",
+        "attributes": {
+         "type": "wait_timeout",
+         "description": "What will happen after 60 minutes"
+        }
+       }
+      ]
+     },
+     "order": 26,
+     "cat": "multi-path",
+     "next": [
+      "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+      "ab4ffa7f-45ea-4b5c-acb7-bc8a93b49bad"
+     ],
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 3820,
+       "y": 119.49999999999999
+      }
+     }
+    },
+    {
+     "id": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+     "parentKey": "074d978b-1e5d-4825-9177-ed70db3fc29a",
+     "parent": "074d978b-1e5d-4825-9177-ed70db3fc29a",
+     "type": "transition",
+     "name": "wait",
+     "attributes": {
+      "type": "wait_reply",
+      "description": "What will happen when a contact replies on SMS"
+     },
+     "order": 27,
+     "cat": "transition",
+     "next": "495b9478-88ab-47b6-bb53-f34ede19ab05",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 4050,
+       "y": 22.5
+      }
+     }
+    },
+    {
+     "id": "495b9478-88ab-47b6-bb53-f34ede19ab05",
+     "order": 29,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "09:00",
+       "end": "17:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait 1 Day",
+     "type": "wait",
+     "next": "8ef9d101-1e1e-4076-913c-ed7259f5452a",
+     "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+     "parentKey": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 4440,
+       "y": 12
+      }
+     }
+    },
+    {
+     "id": "8ef9d101-1e1e-4076-913c-ed7259f5452a",
+     "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+     "order": 31,
+     "attributes": {
+      "template_id": "6aa904b3b0cd6d00857f9b51",
+      "templatesource": "email-builder",
+      "subject": "The gym is not a motivating place. That is rather the point.",
+      "from_email": "{{location.email}}",
+      "from_name": "Blueprint Fitness",
+      "attachments": []
+     },
+     "name": "Email 2",
+     "type": "email",
+     "next": "f1474616-9ec0-4bef-a1b0-a8cae6472e49",
+     "stats": {
+      "id": "8ef9d101-1e1e-4076-913c-ed7259f5452a",
+      "stats": {
+       "delivered": "97.47%",
+       "opened": "40.51%",
+       "clicked": "2.53%",
+       "replied": "0%",
+       "bounced": "2.53%",
+       "unsubscribed": "1.27%"
+      },
+      "total": 79
+     },
+     "parentKey": "495b9478-88ab-47b6-bb53-f34ede19ab05",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 4700,
+       "y": 12
+      }
+     }
+    },
+    {
+     "id": "f1474616-9ec0-4bef-a1b0-a8cae6472e49",
+     "order": 33,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 6,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "09:00",
+       "end": "17:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait 6 Day",
+     "type": "wait",
+     "next": "6737ce21-b7cf-4cbc-9df0-452310fb1738",
+     "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+     "parentKey": "8ef9d101-1e1e-4076-913c-ed7259f5452a",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 4960,
+       "y": 12
+      }
+     }
+    },
+    {
+     "id": "6737ce21-b7cf-4cbc-9df0-452310fb1738",
+     "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+     "order": 35,
+     "attributes": {
+      "template_id": "6aa904b40bbbc34b5e9349ce",
+      "templatesource": "email-builder",
+      "subject": "What actually happens in a session",
+      "from_email": "{{location.email}}",
+      "from_name": "Blueprint Fitness",
+      "attachments": []
+     },
+     "name": "Email 3",
+     "type": "email",
+     "next": "5b62913b-59ae-4669-b73f-2da7a8378f72",
+     "stats": {
+      "id": "6737ce21-b7cf-4cbc-9df0-452310fb1738",
+      "stats": {
+       "delivered": "97.53%",
+       "opened": "39.51%",
+       "clicked": "3.70%",
+       "replied": "1.23%",
+       "bounced": "2.47%",
+       "unsubscribed": "0%"
+      },
+      "total": 81
+     },
+     "parentKey": "f1474616-9ec0-4bef-a1b0-a8cae6472e49",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 5190,
+       "y": 12
+      }
+     }
+    },
+    {
+     "id": "5b62913b-59ae-4669-b73f-2da7a8378f72",
+     "order": 36,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 6,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "09:00",
+       "end": "17:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait 6 Day",
+     "type": "wait",
+     "next": "db926388-62c1-4607-9cfc-db520575a1be",
+     "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+     "parentKey": "6737ce21-b7cf-4cbc-9df0-452310fb1738",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 5420,
+       "y": 12
+      }
+     }
+    },
+    {
+     "id": "db926388-62c1-4607-9cfc-db520575a1be",
+     "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+     "order": 37,
+     "attributes": {
+      "template_id": "6aa904b50bbbc34b5e9349fe",
+      "templatesource": "email-builder",
+      "subject": "Most people who join us are complete beginners",
+      "from_email": "{{location.email}}",
+      "from_name": "Blueprint Fitness",
+      "attachments": []
+     },
+     "name": "Email 4",
+     "type": "email",
+     "next": "ca563176-63ae-44de-9de3-ac838b50b87d",
+     "stats": {
+      "id": "db926388-62c1-4607-9cfc-db520575a1be",
+      "stats": {
+       "delivered": "98.68%",
+       "opened": "34.21%",
+       "clicked": "1.32%",
+       "replied": "0%",
+       "bounced": "1.32%",
+       "unsubscribed": "1.32%"
+      },
+      "total": 76
+     },
+     "parentKey": "5b62913b-59ae-4669-b73f-2da7a8378f72",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 5650,
+       "y": 12
+      }
+     }
+    },
+    {
+     "id": "ca563176-63ae-44de-9de3-ac838b50b87d",
+     "order": 38,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 6,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "09:00",
+       "end": "17:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait 6 Day",
+     "type": "wait",
+     "next": "e4aea33a-46cb-4d27-bc35-903d58c258bf",
+     "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+     "parentKey": "db926388-62c1-4607-9cfc-db520575a1be",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 5880,
+       "y": 12
+      }
+     }
+    },
+    {
+     "id": "e4aea33a-46cb-4d27-bc35-903d58c258bf",
+     "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+     "order": 39,
+     "attributes": {
+      "template_id": "6aa904b607aac9f9aaceae58",
+      "templatesource": "email-builder",
+      "subject": "Two members who started exactly where you are",
+      "from_email": "{{location.email}}",
+      "from_name": "Blueprint Fitness",
+      "attachments": []
+     },
+     "name": "Email 5",
+     "type": "email",
+     "next": "f9177b01-f1dc-491e-a5fd-5d4877458d23",
+     "stats": {
+      "id": "e4aea33a-46cb-4d27-bc35-903d58c258bf",
+      "stats": {
+       "delivered": "100.00%",
+       "opened": "34.94%",
+       "clicked": "3.61%",
+       "replied": "0%",
+       "bounced": "0%",
+       "unsubscribed": "0%"
+      },
+      "total": 83
+     },
+     "parentKey": "ca563176-63ae-44de-9de3-ac838b50b87d",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 6110,
+       "y": 12
+      }
+     }
+    },
+    {
+     "id": "f9177b01-f1dc-491e-a5fd-5d4877458d23",
+     "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+     "order": 40,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 6,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "09:00",
+       "end": "17:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait 6 Day",
+     "type": "wait",
+     "next": "dac8805a-64f6-4813-8aa9-b4da163b3972",
+     "parentKey": "e4aea33a-46cb-4d27-bc35-903d58c258bf",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 6340,
+       "y": 12
+      }
+     }
+    },
+    {
+     "id": "dac8805a-64f6-4813-8aa9-b4da163b3972",
+     "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+     "order": 41,
+     "attributes": {
+      "template_id": "6aa904b707aac9f9aaceae6a",
+      "templatesource": "email-builder",
+      "subject": "The four things that stop people starting",
+      "from_email": "{{location.email}}",
+      "from_name": "Blueprint Fitness",
+      "attachments": []
+     },
+     "name": "Email 6",
+     "type": "email",
+     "next": "d1057d8f-09dd-4697-82f3-af55242d945e",
+     "stats": {
+      "id": "dac8805a-64f6-4813-8aa9-b4da163b3972",
+      "stats": {
+       "delivered": "100.00%",
+       "opened": "46.43%",
+       "clicked": "3.57%",
+       "replied": "0%",
+       "bounced": "0%",
+       "unsubscribed": "0%"
+      },
+      "total": 84
+     },
+     "parentKey": "f9177b01-f1dc-491e-a5fd-5d4877458d23",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 6570,
+       "y": 12
+      }
+     }
+    },
+    {
+     "id": "d1057d8f-09dd-4697-82f3-af55242d945e",
+     "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+     "order": 42,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 6,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "09:00",
+       "end": "17:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait 6 Day",
+     "type": "wait",
+     "next": "cdece564-dcc5-4224-86df-19371c744a2b",
+     "parentKey": "dac8805a-64f6-4813-8aa9-b4da163b3972",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 6800,
+       "y": 12
+      }
+     }
+    },
+    {
+     "id": "cdece564-dcc5-4224-86df-19371c744a2b",
+     "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+     "order": 43,
+     "attributes": {
+      "template_id": "6aa904b8b0cd6d00857f9bed",
+      "templatesource": "email-builder",
+      "subject": "What is actually different about training here",
+      "from_email": "{{location.email}}",
+      "from_name": "Blueprint Fitness",
+      "attachments": []
+     },
+     "name": "Email 7",
+     "type": "email",
+     "next": "ba7e425e-1c2c-44b8-9fa1-f10886e93654",
+     "stats": {
+      "id": "cdece564-dcc5-4224-86df-19371c744a2b",
+      "stats": {
+       "delivered": "100.00%",
+       "opened": "32.91%",
+       "clicked": "1.27%",
+       "replied": "0%",
+       "bounced": "0%",
+       "unsubscribed": "1.27%"
+      },
+      "total": 79
+     },
+     "parentKey": "d1057d8f-09dd-4697-82f3-af55242d945e",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 7030,
+       "y": 12
+      }
+     }
+    },
+    {
+     "id": "ba7e425e-1c2c-44b8-9fa1-f10886e93654",
+     "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+     "order": 44,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 6,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "09:00",
+       "end": "17:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait 6 Day",
+     "type": "wait",
+     "next": "783d8f8d-101a-4a19-a591-9b655027beab",
+     "parentKey": "cdece564-dcc5-4224-86df-19371c744a2b",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 7260,
+       "y": 12
+      }
+     }
+    },
+    {
+     "id": "783d8f8d-101a-4a19-a591-9b655027beab",
+     "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+     "order": 45,
+     "attributes": {
+      "template_id": "6aa904b907aac9f9aaceae96",
+      "templatesource": "email-builder",
+      "subject": "The questions we get asked most",
+      "from_email": "{{location.email}}",
+      "from_name": "Blueprint Fitness",
+      "attachments": []
+     },
+     "name": "Email 8",
+     "type": "email",
+     "next": "957ed5f3-58e8-4e30-ac3a-549c70f746b0",
+     "stats": {
+      "id": "783d8f8d-101a-4a19-a591-9b655027beab",
+      "stats": {
+       "delivered": "98.59%",
+       "opened": "30.99%",
+       "clicked": "0%",
+       "replied": "0%",
+       "bounced": "1.41%",
+       "unsubscribed": "0%"
+      },
+      "total": 71
+     },
+     "parentKey": "ba7e425e-1c2c-44b8-9fa1-f10886e93654",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 7490,
+       "y": 12
+      }
+     }
+    },
+    {
+     "id": "957ed5f3-58e8-4e30-ac3a-549c70f746b0",
+     "order": 46,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 6,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "09:00",
+       "end": "17:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait 6 Day",
+     "type": "wait",
+     "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+     "next": "8180fcb3-b216-45cb-abbc-fc0099f2076d",
+     "parentKey": "783d8f8d-101a-4a19-a591-9b655027beab",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 7720,
+       "y": 12
+      }
+     }
+    },
+    {
+     "id": "8180fcb3-b216-45cb-abbc-fc0099f2076d",
+     "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+     "order": 47,
+     "attributes": {
+      "template_id": "6aa904bab0cd6d00857f9c39",
+      "templatesource": "email-builder",
+      "subject": "The 30-Day Kickstart, and what £169 covers",
+      "from_email": "{{location.email}}",
+      "from_name": "Blueprint Fitness",
+      "attachments": []
+     },
+     "name": "Email 9",
+     "type": "email",
+     "next": "d979605d-d97f-4773-a07c-5d04990924e8",
+     "stats": {
+      "id": "8180fcb3-b216-45cb-abbc-fc0099f2076d",
+      "stats": {
+       "delivered": "98.67%",
+       "opened": "32.00%",
+       "clicked": "2.67%",
+       "replied": "0%",
+       "bounced": "1.33%",
+       "unsubscribed": "0%"
+      },
+      "total": 75
+     },
+     "parentKey": "957ed5f3-58e8-4e30-ac3a-549c70f746b0",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 7950,
+       "y": 12
+      }
+     }
+    },
+    {
+     "id": "d979605d-d97f-4773-a07c-5d04990924e8",
+     "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+     "order": 48,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 6,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "09:00",
+       "end": "17:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait 6 Day",
+     "type": "wait",
+     "next": "b6032fe6-4fa6-4374-bf3b-0dfa96747b34",
+     "parentKey": "8180fcb3-b216-45cb-abbc-fc0099f2076d",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 8180,
+       "y": 12
+      }
+     }
+    },
+    {
+     "id": "b6032fe6-4fa6-4374-bf3b-0dfa96747b34",
+     "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+     "order": 49,
+     "attributes": {
+      "template_id": "6aa904bb4531b410840216cd",
+      "templatesource": "email-builder",
+      "subject": "{{contact.first_name}}, shall we leave it there?",
+      "from_email": "{{location.email}}",
+      "from_name": "Blueprint Fitness",
+      "attachments": []
+     },
+     "name": "Email 10",
+     "type": "email",
+     "stats": {
+      "id": "b6032fe6-4fa6-4374-bf3b-0dfa96747b34",
+      "stats": {
+       "delivered": "96.55%",
+       "opened": "27.59%",
+       "clicked": "1.72%",
+       "replied": "0%",
+       "bounced": "3.45%",
+       "unsubscribed": "0%"
+      },
+      "total": 58
+     },
+     "parentKey": "d979605d-d97f-4773-a07c-5d04990924e8",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 8410,
+       "y": 12
+      }
+     }
+    },
+    {
+     "id": "ab4ffa7f-45ea-4b5c-acb7-bc8a93b49bad",
+     "parentKey": "074d978b-1e5d-4825-9177-ed70db3fc29a",
+     "parent": "074d978b-1e5d-4825-9177-ed70db3fc29a",
+     "type": "transition",
+     "name": "timeout",
+     "attributes": {
+      "type": "wait_timeout",
+      "description": "What will happen after 60 minutes"
+     },
+     "order": 28,
+     "cat": "transition",
+     "next": "66bf7a7d-ca15-4827-8ff5-7ff7accda3a5",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 4050,
+       "y": 237.5
+      }
+     }
+    },
+    {
+     "id": "66bf7a7d-ca15-4827-8ff5-7ff7accda3a5",
+     "parent": "ab4ffa7f-45ea-4b5c-acb7-bc8a93b49bad",
+     "order": 30,
+     "attributes": {
+      "body": "Just checking we got the right number for you {{contact.first_name}}? 🤞🤞",
+      "attachments": []
+     },
+     "name": "SMS",
+     "type": "sms",
+     "next": "1a55593c-962f-4ee5-be0b-493a393d1b85",
+     "parentKey": "ab4ffa7f-45ea-4b5c-acb7-bc8a93b49bad",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 4440,
+       "y": 227
+      }
+     }
+    },
+    {
+     "id": "1a55593c-962f-4ee5-be0b-493a393d1b85",
+     "parent": "ab4ffa7f-45ea-4b5c-acb7-bc8a93b49bad",
+     "order": 32,
+     "attributes": {
+      "assignedEmployeeId": "QjDlMFuZOTHgzJagWdJj",
+      "status": "active",
+      "type": "update_conversation_ai_status",
+      "__customInputs__": {}
+     },
+     "name": "Update Conversation AI Bot and Status",
+     "type": "update_conversation_ai_status",
+     "next": "f08d30b1-9e94-4b02-bc4e-16e1ab88b211",
+     "workflowsActionType": "INTERNAL",
+     "parentKey": "66bf7a7d-ca15-4827-8ff5-7ff7accda3a5",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 4670,
+       "y": 227
+      }
+     }
+    },
+    {
+     "id": "f08d30b1-9e94-4b02-bc4e-16e1ab88b211",
+     "parent": "ab4ffa7f-45ea-4b5c-acb7-bc8a93b49bad",
+     "order": 34,
+     "attributes": {
+      "targetNodeId": "495b9478-88ab-47b6-bb53-f34ede19ab05",
+      "type": "goto"
+     },
+     "name": "Go To",
+     "type": "goto",
+     "parentKey": "1a55593c-962f-4ee5-be0b-493a393d1b85",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 4918,
+       "y": 227
+      }
+     }
+    },
+    {
+     "id": "a07187ae-2c81-4fd0-b6a0-ce5d4fa3ad14",
+     "parent": "e78cdab8-7d8d-4a69-9b51-1b2fbbc23285",
+     "order": 6,
+     "attributes": {
+      "if": false,
+      "conditionName": "Condition",
+      "operator": "and",
+      "branches": []
+     },
+     "name": "FB Form",
+     "type": "if_else",
+     "cat": "conditions",
+     "next": "bb537477-d5ec-475e-bfd3-f9d0e125a41c",
+     "sibling": [
+      "d7fa835b-202a-46e1-9c30-efe244171163",
+      "c1d7313f-8822-4525-a11d-1f62f77d8078",
+      "088d6ef0-45a9-4887-8440-a56d06dc94f4"
+     ],
+     "comments": [],
+     "nodeType": "branch-yes",
+     "parentKey": "e78cdab8-7d8d-4a69-9b51-1b2fbbc23285",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 1452,
+       "y": 342
+      }
+     }
+    },
+    {
+     "id": "bb537477-d5ec-475e-bfd3-f9d0e125a41c",
+     "parent": "a07187ae-2c81-4fd0-b6a0-ce5d4fa3ad14",
+     "order": 10,
+     "attributes": {
+      "tags": [
+       "30 day kickstart lead",
+       "new lead",
+       "facebook lead"
+      ]
+     },
+     "name": "Add Tag - New Lead",
+     "type": "add_contact_tag",
+     "next": "ee0f9e3e-1aee-4b7b-82f9-9687c358203d",
+     "parentKey": "a07187ae-2c81-4fd0-b6a0-ce5d4fa3ad14",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 1872,
+       "y": 349.5
+      }
+     }
+    },
+    {
+     "id": "ee0f9e3e-1aee-4b7b-82f9-9687c358203d",
+     "parent": "a07187ae-2c81-4fd0-b6a0-ce5d4fa3ad14",
+     "order": 14,
+     "attributes": {
+      "type": "create_opportunity",
+      "pipeline_id": "pvnaXstksEawcEjD9z7u",
+      "pipeline_stage_id": "7561e524-53d5-4378-aa61-88c5ed2049ff",
+      "opportunity_name": "30 Day (FB Form): {{contact.name}}",
+      "opportunity_source": "{{contact.lastAttributionSource.sessionSource}}",
+      "monetary_value": "129",
+      "opportunity_status": "open",
+      "allow_multiple": false,
+      "allow_backward": true,
+      "fields": []
+     },
+     "name": "Create Opportunity",
+     "type": "create_opportunity",
+     "next": "496888a0-f598-4724-8215-f1773345384b",
+     "parentKey": "bb537477-d5ec-475e-bfd3-f9d0e125a41c",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 2132,
+       "y": 349.5
+      }
+     }
+    },
+    {
+     "id": "496888a0-f598-4724-8215-f1773345384b",
+     "parent": "a07187ae-2c81-4fd0-b6a0-ce5d4fa3ad14",
+     "order": 17,
+     "attributes": {
+      "type": "email",
+      "email": {
+       "from_name": "",
+       "from_email": "",
+       "userType": "custom_email",
+       "subject": "30 DAY LEAD (FB Form): {{contact.name}}",
+       "html": "<p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;\">New Lead for 30 Day Trial<br>First Name: {{contact.first_name}}<br>Last Name: {{contact.last_name}}<br>Email: {{contact.email}}<br>Phone: {{contact.phone}}<br>Main Goal: {{contact.main_goal}}</p>",
+       "attachments": [],
+       "to": "southwoodford@blueprintfitnessldn.com"
+      }
+     },
+     "name": "Internal Notification",
+     "type": "internal_notification",
+     "next": "a93621b9-764a-4cc8-b05d-53ad864c91c4",
+     "parentKey": "ee0f9e3e-1aee-4b7b-82f9-9687c358203d",
+     "stats": {
+      "id": "496888a0-f598-4724-8215-f1773345384b",
+      "stats": {
+       "delivered": "100.00%",
+       "opened": "86.88%",
+       "clicked": "0%",
+       "replied": "0%",
+       "bounced": "0%",
+       "unsubscribed": "0%"
+      },
+      "total": 160
+     },
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 2362,
+       "y": 349.5
+      }
+     }
+    },
+    {
+     "id": "a93621b9-764a-4cc8-b05d-53ad864c91c4",
+     "parent": "a07187ae-2c81-4fd0-b6a0-ce5d4fa3ad14",
+     "order": 20,
+     "attributes": {
+      "targetNodeId": "a0bb153a-af8f-49a7-bd64-763413170cac",
+      "type": "goto"
+     },
+     "name": "Go To",
+     "type": "goto",
+     "parentKey": "496888a0-f598-4724-8215-f1773345384b",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 2592,
+       "y": 349.5
+      }
+     }
+    },
+    {
+     "id": "c1d7313f-8822-4525-a11d-1f62f77d8078",
+     "parent": "e78cdab8-7d8d-4a69-9b51-1b2fbbc23285",
+     "order": 7,
+     "attributes": {
+      "if": false,
+      "conditionName": "Condition",
+      "operator": "and",
+      "branches": []
+     },
+     "name": "Tagged New Lead",
+     "type": "if_else",
+     "cat": "conditions",
+     "next": "6a308dd7-ff80-41f4-a9f5-d2f046b3836d",
+     "sibling": [
+      "d7fa835b-202a-46e1-9c30-efe244171163",
+      "a07187ae-2c81-4fd0-b6a0-ce5d4fa3ad14",
+      "088d6ef0-45a9-4887-8440-a56d06dc94f4"
+     ],
+     "comments": [],
+     "nodeType": "branch-yes",
+     "parentKey": "e78cdab8-7d8d-4a69-9b51-1b2fbbc23285",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 1452,
+       "y": 572
+      }
+     }
+    },
+    {
+     "id": "6a308dd7-ff80-41f4-a9f5-d2f046b3836d",
+     "parent": "c1d7313f-8822-4525-a11d-1f62f77d8078",
+     "order": 11,
+     "attributes": {
+      "tags": [
+       "new lead",
+       "manual lead"
+      ]
+     },
+     "name": "Add Tag - New Lead",
+     "type": "add_contact_tag",
+     "next": "05f122c0-c00b-4bbc-8ca8-69bdb8415d91",
+     "parentKey": "c1d7313f-8822-4525-a11d-1f62f77d8078",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 1872,
+       "y": 579.5
+      }
+     }
+    },
+    {
+     "id": "05f122c0-c00b-4bbc-8ca8-69bdb8415d91",
+     "parent": "c1d7313f-8822-4525-a11d-1f62f77d8078",
+     "order": 15,
+     "attributes": {
+      "type": "create_opportunity",
+      "pipeline_id": "pvnaXstksEawcEjD9z7u",
+      "pipeline_stage_id": "7561e524-53d5-4378-aa61-88c5ed2049ff",
+      "opportunity_name": "30 Day (Manual Tag): {{contact.name}}",
+      "opportunity_source": "{{contact.lastAttributionSource.sessionSource}}",
+      "monetary_value": "129",
+      "opportunity_status": "open",
+      "allow_multiple": false,
+      "allow_backward": true,
+      "fields": []
+     },
+     "name": "Create Opportunity",
+     "type": "create_opportunity",
+     "next": "959cb5c5-47be-49fb-93fb-bc2a8e78b407",
+     "parentKey": "6a308dd7-ff80-41f4-a9f5-d2f046b3836d",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 2132,
+       "y": 579.5
+      }
+     }
+    },
+    {
+     "id": "959cb5c5-47be-49fb-93fb-bc2a8e78b407",
+     "parent": "c1d7313f-8822-4525-a11d-1f62f77d8078",
+     "order": 18,
+     "attributes": {
+      "type": "email",
+      "email": {
+       "from_name": "",
+       "from_email": "",
+       "userType": "custom_email",
+       "subject": "30 DAY LEAD (Manual Tag): {{contact.name}}",
+       "html": "<p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;\">New Lead for 30 Day Trial<br>First Name: {{contact.first_name}}<br>Last Name: {{contact.last_name}}<br>Email: {{contact.email}}<br>Phone: {{contact.phone}}<br>Main Goal: {{contact.main_goal}}</p>",
+       "attachments": [],
+       "to": "southwoodford@blueprintfitnessldn.com"
+      }
+     },
+     "name": "Internal Notification",
+     "type": "internal_notification",
+     "next": "4e5fbac2-c0c8-46b6-b0b2-397d6224d793",
+     "parentKey": "05f122c0-c00b-4bbc-8ca8-69bdb8415d91",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 2362,
+       "y": 579.5
+      }
+     }
+    },
+    {
+     "id": "4e5fbac2-c0c8-46b6-b0b2-397d6224d793",
+     "parent": "c1d7313f-8822-4525-a11d-1f62f77d8078",
+     "order": 21,
+     "attributes": {
+      "targetNodeId": "a0bb153a-af8f-49a7-bd64-763413170cac",
+      "type": "goto"
+     },
+     "name": "Go To",
+     "type": "goto",
+     "parentKey": "959cb5c5-47be-49fb-93fb-bc2a8e78b407",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 2592,
+       "y": 579.5
+      }
+     }
+    },
+    {
+     "id": "088d6ef0-45a9-4887-8440-a56d06dc94f4",
+     "parent": "e78cdab8-7d8d-4a69-9b51-1b2fbbc23285",
+     "order": 8,
+     "attributes": {
+      "else": true
+     },
+     "name": "None",
+     "type": "if_else",
+     "cat": "conditions",
+     "sibling": [
+      "d7fa835b-202a-46e1-9c30-efe244171163",
+      "a07187ae-2c81-4fd0-b6a0-ce5d4fa3ad14",
+      "c1d7313f-8822-4525-a11d-1f62f77d8078"
+     ],
+     "comments": [],
+     "nodeType": "branch-no",
+     "next": "cb31b7eb-50da-4394-b6c8-ab2b56f914aa",
+     "parentKey": "e78cdab8-7d8d-4a69-9b51-1b2fbbc23285",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 1452,
+       "y": 802
+      }
+     }
+    },
+    {
+     "id": "cb31b7eb-50da-4394-b6c8-ab2b56f914aa",
+     "parent": "088d6ef0-45a9-4887-8440-a56d06dc94f4",
+     "order": 12,
+     "attributes": {
+      "targetNodeId": "debddc00-e0b1-4623-8fc3-ab4039e4974b",
+      "type": "goto"
+     },
+     "name": "Go To",
+     "type": "goto",
+     "parentKey": "088d6ef0-45a9-4887-8440-a56d06dc94f4",
+     "advanceCanvasMeta": {
+      "position": {
+       "x": 1842,
+       "y": 809.5
+      }
+     }
+    }
+   ]
+  },
+  "permissionMeta": {
+   "canRead": true,
+   "canWrite": true
+  },
+  "scheduledPauseDates": []
+ },
+ "templates": [
+  {
+   "id": "54cd3d38-0b1c-4eb6-97cf-724f14808d0f",
+   "order": 0,
+   "attributes": {
+    "method": "POST",
+    "url": "https://hooks.zapier.com/hooks/catch/1870659/3xcbe0f/",
+    "customData": [],
+    "headers": []
+   },
+   "name": "Webhook",
+   "type": "webhook",
+   "next": "2fa4cba9-fbc9-4cf8-aae4-7547561b0f45",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 302,
+     "y": 464.5
+    }
+   }
+  },
+  {
+   "id": "2fa4cba9-fbc9-4cf8-aae4-7547561b0f45",
+   "order": 1,
+   "attributes": {
+    "type": "facebook_conversion_api",
+    "event_type": "funnel_event",
+    "access_token": "EAARH4JYfTncBQAsLU1coMlqhFEzDlFyz8C68iI7Mufevlw5OREpZC3Pste7E57GHRc6cVLbINA9Pzvc2y7WbxwF3JY1h53q8YaggjMikCHe62ZCHJUpzvziskYZC3F3ONdf4qpT5clplZCX0ZAn3teGKFZCfth397ngcZCyYv7hCvJ6Xa7OZBYyJcPiDWhg9NSrVYQZDZD",
+    "event_name": "Lead",
+    "pixel_id": "698984912008420",
+    "currency": "GBP",
+    "value": "",
+    "test_event_code": "",
+    "connection_type": "INTEGRATION"
+   },
+   "name": "FB Conversion API",
+   "type": "facebook_conversion_api",
+   "next": "94058038-3f1a-42d7-9f8e-53b05e0b7ed9",
+   "parentKey": "54cd3d38-0b1c-4eb6-97cf-724f14808d0f",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 532,
+     "y": 464.5
+    }
+   }
+  },
+  {
+   "id": "94058038-3f1a-42d7-9f8e-53b05e0b7ed9",
+   "order": 2,
+   "attributes": {
+    "tags": [
+     "chatbot"
+    ]
+   },
+   "name": "Add Tag",
+   "type": "add_contact_tag",
+   "next": "09f7271f-de0e-4923-8777-8e449ab9b038",
+   "parentKey": "2fa4cba9-fbc9-4cf8-aae4-7547561b0f45",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 762,
+     "y": 464.5
+    }
+   }
+  },
+  {
+   "id": "09f7271f-de0e-4923-8777-8e449ab9b038",
+   "order": 3,
+   "attributes": {
+    "batchSize": 1,
+    "interval": {
+     "timeUnit": "minutes",
+     "value": 1
+    },
+    "type": "drip",
+    "configuredAt": "2026-07-21T10:10:57.856Z"
+   },
+   "name": "Drip Mode",
+   "type": "drip",
+   "next": "e78cdab8-7d8d-4a69-9b51-1b2fbbc23285",
+   "parentKey": "94058038-3f1a-42d7-9f8e-53b05e0b7ed9",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 992,
+     "y": 464.5
+    }
+   }
+  },
+  {
+   "id": "e78cdab8-7d8d-4a69-9b51-1b2fbbc23285",
+   "order": 4,
+   "attributes": {
+    "currentRecipeType": "CUSTOM",
+    "branches": [
+     {
+      "id": "d7fa835b-202a-46e1-9c30-efe244171163",
+      "name": "Web Form",
+      "segments": [
+       {
+        "__segmentId": "aeae1577-15c1-46ab-b8b1-49fb6c02c633",
+        "operator": "and",
+        "conditions": [
+         {
+          "conditionType": "trigger",
+          "conditionSubType": "trigger",
+          "conditionOperator": "==",
+          "conditionValue": "BdGNsBaBWyms7IjYY6M7",
+          "__conditionId": "c9d20ae7-654b-404a-864f-fca8cba9d757",
+          "ifElseNodeId": "",
+          "__customFieldType__": "standard",
+          "isWait": false,
+          "nestedDropdownTypes": [
+           "inboundWebhookRequest",
+           "sheet",
+           "datetime_formatter",
+           "custom_webhook",
+           "array_functions",
+           "ivr_gather",
+           "ivr_connect_call",
+           "custom_code",
+           "ai_agent",
+           "task-notification"
+          ],
+          "allowIsOperatorTypes": [
+           "contact_reply",
+           "inboundWebhookRequest",
+           "custom_webhook",
+           "custom_code",
+           "ai_agent",
+           "contact_detail",
+           "array_functions",
+           "appointment",
+           "service_booking",
+           "rental_booking"
+          ]
+         }
+        ]
+       }
+      ],
+      "operator": "or",
+      "showErrors": false,
+      "branchNameError": "Branch name cannot be empty!"
+     },
+     {
+      "id": "a07187ae-2c81-4fd0-b6a0-ce5d4fa3ad14",
+      "name": "FB Form",
+      "segments": [
+       {
+        "__segmentId": "1f0316d3-4cc8-4873-89a2-5c0010b89901",
+        "operator": "and",
+        "conditions": [
+         {
+          "conditionType": "trigger",
+          "conditionSubType": "trigger",
+          "conditionOperator": "==",
+          "conditionValue": "Au27aIxBzUAa31MZeFRv",
+          "__conditionId": "b6f7822a-1962-4c15-8285-34d39a9da063",
+          "ifElseNodeId": "",
+          "__customFieldType__": "standard",
+          "isWait": false,
+          "nestedDropdownTypes": [
+           "inboundWebhookRequest",
+           "sheet",
+           "datetime_formatter",
+           "custom_webhook",
+           "array_functions",
+           "ivr_gather",
+           "ivr_connect_call",
+           "custom_code",
+           "ai_agent",
+           "task-notification"
+          ],
+          "allowIsOperatorTypes": [
+           "contact_reply",
+           "inboundWebhookRequest",
+           "custom_webhook",
+           "custom_code",
+           "ai_agent",
+           "contact_detail",
+           "array_functions",
+           "appointment",
+           "service_booking",
+           "rental_booking"
+          ]
+         }
+        ]
+       }
+      ],
+      "operator": "and",
+      "showErrors": false,
+      "branchNameError": "Branch name cannot be empty!"
+     },
+     {
+      "id": "c1d7313f-8822-4525-a11d-1f62f77d8078",
+      "name": "Tagged New Lead",
+      "segments": [
+       {
+        "__segmentId": "84aa770e-6c8b-42e4-8440-e80aa0c102b7",
+        "operator": "and",
+        "conditions": [
+         {
+          "conditionType": "trigger",
+          "conditionSubType": "trigger",
+          "conditionOperator": "==",
+          "conditionValue": "TzxErJ4hwXOo1sUY91uB",
+          "__conditionId": "32a28bf2-2b74-47e9-a67a-a7d4b56a9f08",
+          "ifElseNodeId": "",
+          "__customFieldType__": "standard",
+          "isWait": false,
+          "nestedDropdownTypes": [
+           "inboundWebhookRequest",
+           "sheet",
+           "datetime_formatter",
+           "custom_webhook",
+           "array_functions",
+           "ivr_gather",
+           "ivr_connect_call",
+           "custom_code",
+           "ai_agent",
+           "task-notification"
+          ],
+          "allowIsOperatorTypes": [
+           "contact_reply",
+           "inboundWebhookRequest",
+           "custom_webhook",
+           "custom_code",
+           "ai_agent",
+           "contact_detail",
+           "array_functions",
+           "appointment",
+           "service_booking",
+           "rental_booking"
+          ]
+         }
+        ]
+       }
+      ],
+      "operator": "and",
+      "showErrors": false,
+      "branchNameError": "Branch name cannot be empty!"
+     }
+    ],
+    "operator": "and",
+    "if": true,
+    "conditionName": "Source",
+    "version": 2,
+    "noneBranchName": "None"
+   },
+   "name": "yes",
+   "type": "if_else",
+   "cat": "conditions",
+   "next": [
+    "d7fa835b-202a-46e1-9c30-efe244171163",
+    "a07187ae-2c81-4fd0-b6a0-ce5d4fa3ad14",
+    "c1d7313f-8822-4525-a11d-1f62f77d8078",
+    "088d6ef0-45a9-4887-8440-a56d06dc94f4"
+   ],
+   "comments": [],
+   "nodeType": "condition-node",
+   "parentKey": "09f7271f-de0e-4923-8777-8e449ab9b038",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 1222,
+     "y": 464.5
+    }
+   }
+  },
+  {
+   "id": "d7fa835b-202a-46e1-9c30-efe244171163",
+   "parent": "e78cdab8-7d8d-4a69-9b51-1b2fbbc23285",
+   "order": 5,
+   "attributes": {
+    "if": false,
+    "conditionName": "Condition",
+    "operator": "and",
+    "branches": []
+   },
+   "name": "Web Form",
+   "type": "if_else",
+   "cat": "conditions",
+   "next": "debddc00-e0b1-4623-8fc3-ab4039e4974b",
+   "sibling": [
+    "a07187ae-2c81-4fd0-b6a0-ce5d4fa3ad14",
+    "c1d7313f-8822-4525-a11d-1f62f77d8078",
+    "088d6ef0-45a9-4887-8440-a56d06dc94f4"
+   ],
+   "comments": [],
+   "nodeType": "branch-yes",
+   "parentKey": "e78cdab8-7d8d-4a69-9b51-1b2fbbc23285",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 1452,
+     "y": 111.99999999999999
+    }
+   }
+  },
+  {
+   "id": "debddc00-e0b1-4623-8fc3-ab4039e4974b",
+   "parent": "d7fa835b-202a-46e1-9c30-efe244171163",
+   "order": 9,
+   "attributes": {
+    "tags": [
+     "new lead",
+     "web lead",
+     "30 day kickstart lead"
+    ]
+   },
+   "name": "Add Tag - New Lead",
+   "type": "add_contact_tag",
+   "next": "55c716f8-4309-4077-85e3-23b1b65e9fdc",
+   "parentKey": "d7fa835b-202a-46e1-9c30-efe244171163",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 1872,
+     "y": 119.49999999999999
+    }
+   }
+  },
+  {
+   "id": "55c716f8-4309-4077-85e3-23b1b65e9fdc",
+   "order": 13,
+   "attributes": {
+    "type": "create_opportunity",
+    "pipeline_id": "pvnaXstksEawcEjD9z7u",
+    "pipeline_stage_id": "7561e524-53d5-4378-aa61-88c5ed2049ff",
+    "opportunity_name": "30 Day (Web Form): {{contact.name}}",
+    "opportunity_source": "{{contact.lastAttributionSource.sessionSource}}",
+    "monetary_value": "129",
+    "opportunity_status": "open",
+    "allow_multiple": false,
+    "allow_backward": true,
+    "fields": []
+   },
+   "name": "Create Opportunity",
+   "type": "create_opportunity",
+   "next": "6bd296ae-70c0-45c7-9f4c-6dbdb2329d28",
+   "parent": "d7fa835b-202a-46e1-9c30-efe244171163",
+   "parentKey": "debddc00-e0b1-4623-8fc3-ab4039e4974b",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 2132,
+     "y": 119.49999999999999
+    }
+   }
+  },
+  {
+   "id": "6bd296ae-70c0-45c7-9f4c-6dbdb2329d28",
+   "parent": "d7fa835b-202a-46e1-9c30-efe244171163",
+   "order": 16,
+   "attributes": {
+    "type": "email",
+    "email": {
+     "from_name": "",
+     "from_email": "",
+     "userType": "custom_email",
+     "subject": "30 DAY LEAD (web form): {{contact.name}}",
+     "html": "<p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;\">New Lead for 30 Day Trial<br>First Name: {{contact.first_name}}<br>Last Name: {{contact.last_name}}<br>Email: {{contact.email}}<br>Phone: {{contact.phone}}<br>Main Goal: {{contact.main_goal}}</p>",
+     "attachments": [],
+     "to": "southwoodford@blueprintfitnessldn.com"
+    }
+   },
+   "name": "Internal Notification",
+   "type": "internal_notification",
+   "next": "a0bb153a-af8f-49a7-bd64-763413170cac",
+   "parentKey": "55c716f8-4309-4077-85e3-23b1b65e9fdc",
+   "stats": {
+    "id": "6bd296ae-70c0-45c7-9f4c-6dbdb2329d28",
+    "stats": {
+     "delivered": "-",
+     "opened": "-",
+     "clicked": "-",
+     "replied": "-",
+     "bounced": "-",
+     "unsubscribed": "-"
+    }
+   },
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 2362,
+     "y": 119.49999999999999
+    }
+   }
+  },
+  {
+   "id": "a0bb153a-af8f-49a7-bd64-763413170cac",
+   "order": 19,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "minutes",
+     "value": 1,
+     "when": "after"
+    }
+   },
+   "name": "Wait 1 Minute",
+   "type": "wait",
+   "next": "02a190cf-37d1-45d3-a203-a89f71d9e078",
+   "parent": "d7fa835b-202a-46e1-9c30-efe244171163",
+   "parentKey": "6bd296ae-70c0-45c7-9f4c-6dbdb2329d28",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 2622,
+     "y": 119.49999999999999
+    }
+   }
+  },
+  {
+   "id": "02a190cf-37d1-45d3-a203-a89f71d9e078",
+   "parent": "d7fa835b-202a-46e1-9c30-efe244171163",
+   "order": 22,
+   "attributes": {
+    "from_name": "Blueprint Fitness",
+    "from_email": "{{location.email}}",
+    "subject": "Thanks {{contact.first_name}} — here is what happens next",
+    "template_id": "6aa904b29ed784b5df7609a2",
+    "templatesource": "email-builder",
+    "attachments": []
+   },
+   "name": "Intro Program - Application Email",
+   "type": "email",
+   "next": "053a1516-8c37-4922-80a3-c9340ef21ae2",
+   "parentKey": "a0bb153a-af8f-49a7-bd64-763413170cac",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 2882,
+     "y": 119.49999999999999
+    }
+   }
+  },
+  {
+   "id": "053a1516-8c37-4922-80a3-c9340ef21ae2",
+   "parentKey": "02a190cf-37d1-45d3-a203-a89f71d9e078",
+   "parent": "d7fa835b-202a-46e1-9c30-efe244171163",
+   "type": "wait",
+   "name": "Wait 15s",
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "minutes",
+     "value": 0.25,
+     "when": "after"
+    },
+    "name": "Wait 15s",
+    "cat": "",
+    "isHybridAction": true,
+    "hybridActionType": "wait",
+    "convertToMultipath": false,
+    "transitions": []
+   },
+   "order": 23,
+   "cat": "",
+   "next": "f19dd3d3-ab1d-4f67-94ec-742399805ad2",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 3112,
+     "y": 119.49999999999999
+    }
+   }
+  },
+  {
+   "id": "f19dd3d3-ab1d-4f67-94ec-742399805ad2",
+   "parent": "d7fa835b-202a-46e1-9c30-efe244171163",
+   "order": 24,
+   "attributes": {
+    "body": "Hi {{contact.first_name}} thanks so much for checking out our 30 Day Kickstart! Just to confirm, are you local to South Woodford?\n\nPS. I've attached a video with one of the owners (Stu) for you",
+    "attachments": [
+     {
+      "url": "https://storage.googleapis.com/highlevel-backend.appspot.com/location/cquQsieyBZx9vRgEqBge/workflow/1107c4db-a01d-4409-bb18-5fff3b0d9859/25b29f84-488e-4c98-b828-0ff8052ac92b.mp4?alt=media&token=aa1d7ca6-e121-46ad-87aa-99393909843d",
+      "name": "30 Day Welcome Video WA.mp4",
+      "size": 11757714
+     }
+    ]
+   },
+   "name": "SMS",
+   "type": "sms",
+   "next": "e178a169-3172-4b38-a1d3-07ffdda3eb9f",
+   "parentKey": "053a1516-8c37-4922-80a3-c9340ef21ae2",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 3342,
+     "y": 119.49999999999999
+    }
+   }
+  },
+  {
+   "id": "e178a169-3172-4b38-a1d3-07ffdda3eb9f",
+   "parent": "d7fa835b-202a-46e1-9c30-efe244171163",
+   "order": 25,
+   "attributes": {
+    "assignedEmployeeId": "QjDlMFuZOTHgzJagWdJj",
+    "status": "active",
+    "type": "update_conversation_ai_status",
+    "__customInputs__": {}
+   },
+   "name": "Update Conversation AI Bot and Status",
+   "type": "update_conversation_ai_status",
+   "next": "074d978b-1e5d-4825-9177-ed70db3fc29a",
+   "workflowsActionType": "INTERNAL",
+   "parentKey": "f19dd3d3-ab1d-4f67-94ec-742399805ad2",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 3572,
+     "y": 119.49999999999999
+    }
+   }
+  },
+  {
+   "id": "074d978b-1e5d-4825-9177-ed70db3fc29a",
+   "parentKey": "e178a169-3172-4b38-a1d3-07ffdda3eb9f",
+   "parent": "d7fa835b-202a-46e1-9c30-efe244171163",
+   "type": "wait",
+   "name": "wait",
+   "attributes": {
+    "type": "reply",
+    "startAfter": {
+     "type": "minutes",
+     "value": 60,
+     "when": "after"
+    },
+    "name": "Wait",
+    "cat": "multi-path",
+    "reply": [
+     "f19dd3d3-ab1d-4f67-94ec-742399805ad2"
+    ],
+    "replyLabel": [
+     "SMS"
+    ],
+    "isHybridAction": true,
+    "hybridActionType": "wait",
+    "convertToMultipath": true,
+    "transitions": [
+     {
+      "id": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+      "name": "wait",
+      "condition": "primary",
+      "conditionType": "user-defined",
+      "isPrimaryBranch": true,
+      "description": "",
+      "attributes": {
+       "type": "wait_reply",
+       "description": "What will happen when a contact replies on SMS"
+      }
+     },
+     {
+      "id": "ab4ffa7f-45ea-4b5c-acb7-bc8a93b49bad",
+      "name": "timeout",
+      "condition": "timeout",
+      "conditionType": "user-defined",
+      "isPrimaryBranch": false,
+      "description": "",
+      "attributes": {
+       "type": "wait_timeout",
+       "description": "What will happen after 60 minutes"
+      }
+     }
+    ]
+   },
+   "order": 26,
+   "cat": "multi-path",
+   "next": [
+    "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+    "ab4ffa7f-45ea-4b5c-acb7-bc8a93b49bad"
+   ],
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 3820,
+     "y": 119.49999999999999
+    }
+   }
+  },
+  {
+   "id": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+   "parentKey": "074d978b-1e5d-4825-9177-ed70db3fc29a",
+   "parent": "074d978b-1e5d-4825-9177-ed70db3fc29a",
+   "type": "transition",
+   "name": "wait",
+   "attributes": {
+    "type": "wait_reply",
+    "description": "What will happen when a contact replies on SMS"
+   },
+   "order": 27,
+   "cat": "transition",
+   "next": "495b9478-88ab-47b6-bb53-f34ede19ab05",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 4050,
+     "y": 22.5
+    }
+   }
+  },
+  {
+   "id": "495b9478-88ab-47b6-bb53-f34ede19ab05",
+   "order": 29,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "09:00",
+     "end": "17:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait 1 Day",
+   "type": "wait",
+   "next": "8ef9d101-1e1e-4076-913c-ed7259f5452a",
+   "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+   "parentKey": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 4440,
+     "y": 12
+    }
+   }
+  },
+  {
+   "id": "8ef9d101-1e1e-4076-913c-ed7259f5452a",
+   "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+   "order": 31,
+   "attributes": {
+    "template_id": "6aa904b3b0cd6d00857f9b51",
+    "templatesource": "email-builder",
+    "subject": "The gym is not a motivating place. That is rather the point.",
+    "from_email": "{{location.email}}",
+    "from_name": "Blueprint Fitness",
+    "attachments": []
+   },
+   "name": "Email 2",
+   "type": "email",
+   "next": "f1474616-9ec0-4bef-a1b0-a8cae6472e49",
+   "stats": {
+    "id": "8ef9d101-1e1e-4076-913c-ed7259f5452a",
+    "stats": {
+     "delivered": "97.47%",
+     "opened": "40.51%",
+     "clicked": "2.53%",
+     "replied": "0%",
+     "bounced": "2.53%",
+     "unsubscribed": "1.27%"
+    },
+    "total": 79
+   },
+   "parentKey": "495b9478-88ab-47b6-bb53-f34ede19ab05",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 4700,
+     "y": 12
+    }
+   }
+  },
+  {
+   "id": "f1474616-9ec0-4bef-a1b0-a8cae6472e49",
+   "order": 33,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 6,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "09:00",
+     "end": "17:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait 6 Day",
+   "type": "wait",
+   "next": "6737ce21-b7cf-4cbc-9df0-452310fb1738",
+   "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+   "parentKey": "8ef9d101-1e1e-4076-913c-ed7259f5452a",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 4960,
+     "y": 12
+    }
+   }
+  },
+  {
+   "id": "6737ce21-b7cf-4cbc-9df0-452310fb1738",
+   "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+   "order": 35,
+   "attributes": {
+    "template_id": "6aa904b40bbbc34b5e9349ce",
+    "templatesource": "email-builder",
+    "subject": "What actually happens in a session",
+    "from_email": "{{location.email}}",
+    "from_name": "Blueprint Fitness",
+    "attachments": []
+   },
+   "name": "Email 3",
+   "type": "email",
+   "next": "5b62913b-59ae-4669-b73f-2da7a8378f72",
+   "stats": {
+    "id": "6737ce21-b7cf-4cbc-9df0-452310fb1738",
+    "stats": {
+     "delivered": "97.53%",
+     "opened": "39.51%",
+     "clicked": "3.70%",
+     "replied": "1.23%",
+     "bounced": "2.47%",
+     "unsubscribed": "0%"
+    },
+    "total": 81
+   },
+   "parentKey": "f1474616-9ec0-4bef-a1b0-a8cae6472e49",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 5190,
+     "y": 12
+    }
+   }
+  },
+  {
+   "id": "5b62913b-59ae-4669-b73f-2da7a8378f72",
+   "order": 36,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 6,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "09:00",
+     "end": "17:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait 6 Day",
+   "type": "wait",
+   "next": "db926388-62c1-4607-9cfc-db520575a1be",
+   "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+   "parentKey": "6737ce21-b7cf-4cbc-9df0-452310fb1738",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 5420,
+     "y": 12
+    }
+   }
+  },
+  {
+   "id": "db926388-62c1-4607-9cfc-db520575a1be",
+   "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+   "order": 37,
+   "attributes": {
+    "template_id": "6aa904b50bbbc34b5e9349fe",
+    "templatesource": "email-builder",
+    "subject": "Most people who join us are complete beginners",
+    "from_email": "{{location.email}}",
+    "from_name": "Blueprint Fitness",
+    "attachments": []
+   },
+   "name": "Email 4",
+   "type": "email",
+   "next": "ca563176-63ae-44de-9de3-ac838b50b87d",
+   "stats": {
+    "id": "db926388-62c1-4607-9cfc-db520575a1be",
+    "stats": {
+     "delivered": "98.68%",
+     "opened": "34.21%",
+     "clicked": "1.32%",
+     "replied": "0%",
+     "bounced": "1.32%",
+     "unsubscribed": "1.32%"
+    },
+    "total": 76
+   },
+   "parentKey": "5b62913b-59ae-4669-b73f-2da7a8378f72",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 5650,
+     "y": 12
+    }
+   }
+  },
+  {
+   "id": "ca563176-63ae-44de-9de3-ac838b50b87d",
+   "order": 38,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 6,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "09:00",
+     "end": "17:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait 6 Day",
+   "type": "wait",
+   "next": "e4aea33a-46cb-4d27-bc35-903d58c258bf",
+   "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+   "parentKey": "db926388-62c1-4607-9cfc-db520575a1be",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 5880,
+     "y": 12
+    }
+   }
+  },
+  {
+   "id": "e4aea33a-46cb-4d27-bc35-903d58c258bf",
+   "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+   "order": 39,
+   "attributes": {
+    "template_id": "6aa904b607aac9f9aaceae58",
+    "templatesource": "email-builder",
+    "subject": "Two members who started exactly where you are",
+    "from_email": "{{location.email}}",
+    "from_name": "Blueprint Fitness",
+    "attachments": []
+   },
+   "name": "Email 5",
+   "type": "email",
+   "next": "f9177b01-f1dc-491e-a5fd-5d4877458d23",
+   "stats": {
+    "id": "e4aea33a-46cb-4d27-bc35-903d58c258bf",
+    "stats": {
+     "delivered": "100.00%",
+     "opened": "34.94%",
+     "clicked": "3.61%",
+     "replied": "0%",
+     "bounced": "0%",
+     "unsubscribed": "0%"
+    },
+    "total": 83
+   },
+   "parentKey": "ca563176-63ae-44de-9de3-ac838b50b87d",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 6110,
+     "y": 12
+    }
+   }
+  },
+  {
+   "id": "f9177b01-f1dc-491e-a5fd-5d4877458d23",
+   "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+   "order": 40,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 6,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "09:00",
+     "end": "17:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait 6 Day",
+   "type": "wait",
+   "next": "dac8805a-64f6-4813-8aa9-b4da163b3972",
+   "parentKey": "e4aea33a-46cb-4d27-bc35-903d58c258bf",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 6340,
+     "y": 12
+    }
+   }
+  },
+  {
+   "id": "dac8805a-64f6-4813-8aa9-b4da163b3972",
+   "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+   "order": 41,
+   "attributes": {
+    "template_id": "6aa904b707aac9f9aaceae6a",
+    "templatesource": "email-builder",
+    "subject": "The four things that stop people starting",
+    "from_email": "{{location.email}}",
+    "from_name": "Blueprint Fitness",
+    "attachments": []
+   },
+   "name": "Email 6",
+   "type": "email",
+   "next": "d1057d8f-09dd-4697-82f3-af55242d945e",
+   "stats": {
+    "id": "dac8805a-64f6-4813-8aa9-b4da163b3972",
+    "stats": {
+     "delivered": "100.00%",
+     "opened": "46.43%",
+     "clicked": "3.57%",
+     "replied": "0%",
+     "bounced": "0%",
+     "unsubscribed": "0%"
+    },
+    "total": 84
+   },
+   "parentKey": "f9177b01-f1dc-491e-a5fd-5d4877458d23",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 6570,
+     "y": 12
+    }
+   }
+  },
+  {
+   "id": "d1057d8f-09dd-4697-82f3-af55242d945e",
+   "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+   "order": 42,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 6,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "09:00",
+     "end": "17:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait 6 Day",
+   "type": "wait",
+   "next": "cdece564-dcc5-4224-86df-19371c744a2b",
+   "parentKey": "dac8805a-64f6-4813-8aa9-b4da163b3972",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 6800,
+     "y": 12
+    }
+   }
+  },
+  {
+   "id": "cdece564-dcc5-4224-86df-19371c744a2b",
+   "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+   "order": 43,
+   "attributes": {
+    "template_id": "6aa904b8b0cd6d00857f9bed",
+    "templatesource": "email-builder",
+    "subject": "What is actually different about training here",
+    "from_email": "{{location.email}}",
+    "from_name": "Blueprint Fitness",
+    "attachments": []
+   },
+   "name": "Email 7",
+   "type": "email",
+   "next": "ba7e425e-1c2c-44b8-9fa1-f10886e93654",
+   "stats": {
+    "id": "cdece564-dcc5-4224-86df-19371c744a2b",
+    "stats": {
+     "delivered": "100.00%",
+     "opened": "32.91%",
+     "clicked": "1.27%",
+     "replied": "0%",
+     "bounced": "0%",
+     "unsubscribed": "1.27%"
+    },
+    "total": 79
+   },
+   "parentKey": "d1057d8f-09dd-4697-82f3-af55242d945e",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 7030,
+     "y": 12
+    }
+   }
+  },
+  {
+   "id": "ba7e425e-1c2c-44b8-9fa1-f10886e93654",
+   "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+   "order": 44,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 6,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "09:00",
+     "end": "17:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait 6 Day",
+   "type": "wait",
+   "next": "783d8f8d-101a-4a19-a591-9b655027beab",
+   "parentKey": "cdece564-dcc5-4224-86df-19371c744a2b",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 7260,
+     "y": 12
+    }
+   }
+  },
+  {
+   "id": "783d8f8d-101a-4a19-a591-9b655027beab",
+   "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+   "order": 45,
+   "attributes": {
+    "template_id": "6aa904b907aac9f9aaceae96",
+    "templatesource": "email-builder",
+    "subject": "The questions we get asked most",
+    "from_email": "{{location.email}}",
+    "from_name": "Blueprint Fitness",
+    "attachments": []
+   },
+   "name": "Email 8",
+   "type": "email",
+   "next": "957ed5f3-58e8-4e30-ac3a-549c70f746b0",
+   "stats": {
+    "id": "783d8f8d-101a-4a19-a591-9b655027beab",
+    "stats": {
+     "delivered": "98.59%",
+     "opened": "30.99%",
+     "clicked": "0%",
+     "replied": "0%",
+     "bounced": "1.41%",
+     "unsubscribed": "0%"
+    },
+    "total": 71
+   },
+   "parentKey": "ba7e425e-1c2c-44b8-9fa1-f10886e93654",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 7490,
+     "y": 12
+    }
+   }
+  },
+  {
+   "id": "957ed5f3-58e8-4e30-ac3a-549c70f746b0",
+   "order": 46,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 6,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "09:00",
+     "end": "17:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait 6 Day",
+   "type": "wait",
+   "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+   "next": "8180fcb3-b216-45cb-abbc-fc0099f2076d",
+   "parentKey": "783d8f8d-101a-4a19-a591-9b655027beab",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 7720,
+     "y": 12
+    }
+   }
+  },
+  {
+   "id": "8180fcb3-b216-45cb-abbc-fc0099f2076d",
+   "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+   "order": 47,
+   "attributes": {
+    "template_id": "6aa904bab0cd6d00857f9c39",
+    "templatesource": "email-builder",
+    "subject": "The 30-Day Kickstart, and what £169 covers",
+    "from_email": "{{location.email}}",
+    "from_name": "Blueprint Fitness",
+    "attachments": []
+   },
+   "name": "Email 9",
+   "type": "email",
+   "next": "d979605d-d97f-4773-a07c-5d04990924e8",
+   "stats": {
+    "id": "8180fcb3-b216-45cb-abbc-fc0099f2076d",
+    "stats": {
+     "delivered": "98.67%",
+     "opened": "32.00%",
+     "clicked": "2.67%",
+     "replied": "0%",
+     "bounced": "1.33%",
+     "unsubscribed": "0%"
+    },
+    "total": 75
+   },
+   "parentKey": "957ed5f3-58e8-4e30-ac3a-549c70f746b0",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 7950,
+     "y": 12
+    }
+   }
+  },
+  {
+   "id": "d979605d-d97f-4773-a07c-5d04990924e8",
+   "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+   "order": 48,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 6,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "09:00",
+     "end": "17:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait 6 Day",
+   "type": "wait",
+   "next": "b6032fe6-4fa6-4374-bf3b-0dfa96747b34",
+   "parentKey": "8180fcb3-b216-45cb-abbc-fc0099f2076d",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 8180,
+     "y": 12
+    }
+   }
+  },
+  {
+   "id": "b6032fe6-4fa6-4374-bf3b-0dfa96747b34",
+   "parent": "8e48424c-345a-42ad-95b1-8f5d8a62bc8f",
+   "order": 49,
+   "attributes": {
+    "template_id": "6aa904bb4531b410840216cd",
+    "templatesource": "email-builder",
+    "subject": "{{contact.first_name}}, shall we leave it there?",
+    "from_email": "{{location.email}}",
+    "from_name": "Blueprint Fitness",
+    "attachments": []
+   },
+   "name": "Email 10",
+   "type": "email",
+   "stats": {
+    "id": "b6032fe6-4fa6-4374-bf3b-0dfa96747b34",
+    "stats": {
+     "delivered": "96.55%",
+     "opened": "27.59%",
+     "clicked": "1.72%",
+     "replied": "0%",
+     "bounced": "3.45%",
+     "unsubscribed": "0%"
+    },
+    "total": 58
+   },
+   "parentKey": "d979605d-d97f-4773-a07c-5d04990924e8",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 8410,
+     "y": 12
+    }
+   }
+  },
+  {
+   "id": "ab4ffa7f-45ea-4b5c-acb7-bc8a93b49bad",
+   "parentKey": "074d978b-1e5d-4825-9177-ed70db3fc29a",
+   "parent": "074d978b-1e5d-4825-9177-ed70db3fc29a",
+   "type": "transition",
+   "name": "timeout",
+   "attributes": {
+    "type": "wait_timeout",
+    "description": "What will happen after 60 minutes"
+   },
+   "order": 28,
+   "cat": "transition",
+   "next": "66bf7a7d-ca15-4827-8ff5-7ff7accda3a5",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 4050,
+     "y": 237.5
+    }
+   }
+  },
+  {
+   "id": "66bf7a7d-ca15-4827-8ff5-7ff7accda3a5",
+   "parent": "ab4ffa7f-45ea-4b5c-acb7-bc8a93b49bad",
+   "order": 30,
+   "attributes": {
+    "body": "Just checking we got the right number for you {{contact.first_name}}? 🤞🤞",
+    "attachments": []
+   },
+   "name": "SMS",
+   "type": "sms",
+   "next": "1a55593c-962f-4ee5-be0b-493a393d1b85",
+   "parentKey": "ab4ffa7f-45ea-4b5c-acb7-bc8a93b49bad",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 4440,
+     "y": 227
+    }
+   }
+  },
+  {
+   "id": "1a55593c-962f-4ee5-be0b-493a393d1b85",
+   "parent": "ab4ffa7f-45ea-4b5c-acb7-bc8a93b49bad",
+   "order": 32,
+   "attributes": {
+    "assignedEmployeeId": "QjDlMFuZOTHgzJagWdJj",
+    "status": "active",
+    "type": "update_conversation_ai_status",
+    "__customInputs__": {}
+   },
+   "name": "Update Conversation AI Bot and Status",
+   "type": "update_conversation_ai_status",
+   "next": "f08d30b1-9e94-4b02-bc4e-16e1ab88b211",
+   "workflowsActionType": "INTERNAL",
+   "parentKey": "66bf7a7d-ca15-4827-8ff5-7ff7accda3a5",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 4670,
+     "y": 227
+    }
+   }
+  },
+  {
+   "id": "f08d30b1-9e94-4b02-bc4e-16e1ab88b211",
+   "parent": "ab4ffa7f-45ea-4b5c-acb7-bc8a93b49bad",
+   "order": 34,
+   "attributes": {
+    "targetNodeId": "495b9478-88ab-47b6-bb53-f34ede19ab05",
+    "type": "goto"
+   },
+   "name": "Go To",
+   "type": "goto",
+   "parentKey": "1a55593c-962f-4ee5-be0b-493a393d1b85",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 4918,
+     "y": 227
+    }
+   }
+  },
+  {
+   "id": "a07187ae-2c81-4fd0-b6a0-ce5d4fa3ad14",
+   "parent": "e78cdab8-7d8d-4a69-9b51-1b2fbbc23285",
+   "order": 6,
+   "attributes": {
+    "if": false,
+    "conditionName": "Condition",
+    "operator": "and",
+    "branches": []
+   },
+   "name": "FB Form",
+   "type": "if_else",
+   "cat": "conditions",
+   "next": "bb537477-d5ec-475e-bfd3-f9d0e125a41c",
+   "sibling": [
+    "d7fa835b-202a-46e1-9c30-efe244171163",
+    "c1d7313f-8822-4525-a11d-1f62f77d8078",
+    "088d6ef0-45a9-4887-8440-a56d06dc94f4"
+   ],
+   "comments": [],
+   "nodeType": "branch-yes",
+   "parentKey": "e78cdab8-7d8d-4a69-9b51-1b2fbbc23285",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 1452,
+     "y": 342
+    }
+   }
+  },
+  {
+   "id": "bb537477-d5ec-475e-bfd3-f9d0e125a41c",
+   "parent": "a07187ae-2c81-4fd0-b6a0-ce5d4fa3ad14",
+   "order": 10,
+   "attributes": {
+    "tags": [
+     "30 day kickstart lead",
+     "new lead",
+     "facebook lead"
+    ]
+   },
+   "name": "Add Tag - New Lead",
+   "type": "add_contact_tag",
+   "next": "ee0f9e3e-1aee-4b7b-82f9-9687c358203d",
+   "parentKey": "a07187ae-2c81-4fd0-b6a0-ce5d4fa3ad14",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 1872,
+     "y": 349.5
+    }
+   }
+  },
+  {
+   "id": "ee0f9e3e-1aee-4b7b-82f9-9687c358203d",
+   "parent": "a07187ae-2c81-4fd0-b6a0-ce5d4fa3ad14",
+   "order": 14,
+   "attributes": {
+    "type": "create_opportunity",
+    "pipeline_id": "pvnaXstksEawcEjD9z7u",
+    "pipeline_stage_id": "7561e524-53d5-4378-aa61-88c5ed2049ff",
+    "opportunity_name": "30 Day (FB Form): {{contact.name}}",
+    "opportunity_source": "{{contact.lastAttributionSource.sessionSource}}",
+    "monetary_value": "129",
+    "opportunity_status": "open",
+    "allow_multiple": false,
+    "allow_backward": true,
+    "fields": []
+   },
+   "name": "Create Opportunity",
+   "type": "create_opportunity",
+   "next": "496888a0-f598-4724-8215-f1773345384b",
+   "parentKey": "bb537477-d5ec-475e-bfd3-f9d0e125a41c",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 2132,
+     "y": 349.5
+    }
+   }
+  },
+  {
+   "id": "496888a0-f598-4724-8215-f1773345384b",
+   "parent": "a07187ae-2c81-4fd0-b6a0-ce5d4fa3ad14",
+   "order": 17,
+   "attributes": {
+    "type": "email",
+    "email": {
+     "from_name": "",
+     "from_email": "",
+     "userType": "custom_email",
+     "subject": "30 DAY LEAD (FB Form): {{contact.name}}",
+     "html": "<p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;\">New Lead for 30 Day Trial<br>First Name: {{contact.first_name}}<br>Last Name: {{contact.last_name}}<br>Email: {{contact.email}}<br>Phone: {{contact.phone}}<br>Main Goal: {{contact.main_goal}}</p>",
+     "attachments": [],
+     "to": "southwoodford@blueprintfitnessldn.com"
+    }
+   },
+   "name": "Internal Notification",
+   "type": "internal_notification",
+   "next": "a93621b9-764a-4cc8-b05d-53ad864c91c4",
+   "parentKey": "ee0f9e3e-1aee-4b7b-82f9-9687c358203d",
+   "stats": {
+    "id": "496888a0-f598-4724-8215-f1773345384b",
+    "stats": {
+     "delivered": "100.00%",
+     "opened": "86.88%",
+     "clicked": "0%",
+     "replied": "0%",
+     "bounced": "0%",
+     "unsubscribed": "0%"
+    },
+    "total": 160
+   },
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 2362,
+     "y": 349.5
+    }
+   }
+  },
+  {
+   "id": "a93621b9-764a-4cc8-b05d-53ad864c91c4",
+   "parent": "a07187ae-2c81-4fd0-b6a0-ce5d4fa3ad14",
+   "order": 20,
+   "attributes": {
+    "targetNodeId": "a0bb153a-af8f-49a7-bd64-763413170cac",
+    "type": "goto"
+   },
+   "name": "Go To",
+   "type": "goto",
+   "parentKey": "496888a0-f598-4724-8215-f1773345384b",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 2592,
+     "y": 349.5
+    }
+   }
+  },
+  {
+   "id": "c1d7313f-8822-4525-a11d-1f62f77d8078",
+   "parent": "e78cdab8-7d8d-4a69-9b51-1b2fbbc23285",
+   "order": 7,
+   "attributes": {
+    "if": false,
+    "conditionName": "Condition",
+    "operator": "and",
+    "branches": []
+   },
+   "name": "Tagged New Lead",
+   "type": "if_else",
+   "cat": "conditions",
+   "next": "6a308dd7-ff80-41f4-a9f5-d2f046b3836d",
+   "sibling": [
+    "d7fa835b-202a-46e1-9c30-efe244171163",
+    "a07187ae-2c81-4fd0-b6a0-ce5d4fa3ad14",
+    "088d6ef0-45a9-4887-8440-a56d06dc94f4"
+   ],
+   "comments": [],
+   "nodeType": "branch-yes",
+   "parentKey": "e78cdab8-7d8d-4a69-9b51-1b2fbbc23285",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 1452,
+     "y": 572
+    }
+   }
+  },
+  {
+   "id": "6a308dd7-ff80-41f4-a9f5-d2f046b3836d",
+   "parent": "c1d7313f-8822-4525-a11d-1f62f77d8078",
+   "order": 11,
+   "attributes": {
+    "tags": [
+     "new lead",
+     "manual lead"
+    ]
+   },
+   "name": "Add Tag - New Lead",
+   "type": "add_contact_tag",
+   "next": "05f122c0-c00b-4bbc-8ca8-69bdb8415d91",
+   "parentKey": "c1d7313f-8822-4525-a11d-1f62f77d8078",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 1872,
+     "y": 579.5
+    }
+   }
+  },
+  {
+   "id": "05f122c0-c00b-4bbc-8ca8-69bdb8415d91",
+   "parent": "c1d7313f-8822-4525-a11d-1f62f77d8078",
+   "order": 15,
+   "attributes": {
+    "type": "create_opportunity",
+    "pipeline_id": "pvnaXstksEawcEjD9z7u",
+    "pipeline_stage_id": "7561e524-53d5-4378-aa61-88c5ed2049ff",
+    "opportunity_name": "30 Day (Manual Tag): {{contact.name}}",
+    "opportunity_source": "{{contact.lastAttributionSource.sessionSource}}",
+    "monetary_value": "129",
+    "opportunity_status": "open",
+    "allow_multiple": false,
+    "allow_backward": true,
+    "fields": []
+   },
+   "name": "Create Opportunity",
+   "type": "create_opportunity",
+   "next": "959cb5c5-47be-49fb-93fb-bc2a8e78b407",
+   "parentKey": "6a308dd7-ff80-41f4-a9f5-d2f046b3836d",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 2132,
+     "y": 579.5
+    }
+   }
+  },
+  {
+   "id": "959cb5c5-47be-49fb-93fb-bc2a8e78b407",
+   "parent": "c1d7313f-8822-4525-a11d-1f62f77d8078",
+   "order": 18,
+   "attributes": {
+    "type": "email",
+    "email": {
+     "from_name": "",
+     "from_email": "",
+     "userType": "custom_email",
+     "subject": "30 DAY LEAD (Manual Tag): {{contact.name}}",
+     "html": "<p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;\">New Lead for 30 Day Trial<br>First Name: {{contact.first_name}}<br>Last Name: {{contact.last_name}}<br>Email: {{contact.email}}<br>Phone: {{contact.phone}}<br>Main Goal: {{contact.main_goal}}</p>",
+     "attachments": [],
+     "to": "southwoodford@blueprintfitnessldn.com"
+    }
+   },
+   "name": "Internal Notification",
+   "type": "internal_notification",
+   "next": "4e5fbac2-c0c8-46b6-b0b2-397d6224d793",
+   "parentKey": "05f122c0-c00b-4bbc-8ca8-69bdb8415d91",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 2362,
+     "y": 579.5
+    }
+   }
+  },
+  {
+   "id": "4e5fbac2-c0c8-46b6-b0b2-397d6224d793",
+   "parent": "c1d7313f-8822-4525-a11d-1f62f77d8078",
+   "order": 21,
+   "attributes": {
+    "targetNodeId": "a0bb153a-af8f-49a7-bd64-763413170cac",
+    "type": "goto"
+   },
+   "name": "Go To",
+   "type": "goto",
+   "parentKey": "959cb5c5-47be-49fb-93fb-bc2a8e78b407",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 2592,
+     "y": 579.5
+    }
+   }
+  },
+  {
+   "id": "088d6ef0-45a9-4887-8440-a56d06dc94f4",
+   "parent": "e78cdab8-7d8d-4a69-9b51-1b2fbbc23285",
+   "order": 8,
+   "attributes": {
+    "else": true
+   },
+   "name": "None",
+   "type": "if_else",
+   "cat": "conditions",
+   "sibling": [
+    "d7fa835b-202a-46e1-9c30-efe244171163",
+    "a07187ae-2c81-4fd0-b6a0-ce5d4fa3ad14",
+    "c1d7313f-8822-4525-a11d-1f62f77d8078"
+   ],
+   "comments": [],
+   "nodeType": "branch-no",
+   "next": "cb31b7eb-50da-4394-b6c8-ab2b56f914aa",
+   "parentKey": "e78cdab8-7d8d-4a69-9b51-1b2fbbc23285",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 1452,
+     "y": 802
+    }
+   }
+  },
+  {
+   "id": "cb31b7eb-50da-4394-b6c8-ab2b56f914aa",
+   "parent": "088d6ef0-45a9-4887-8440-a56d06dc94f4",
+   "order": 12,
+   "attributes": {
+    "targetNodeId": "debddc00-e0b1-4623-8fc3-ab4039e4974b",
+    "type": "goto"
+   },
+   "name": "Go To",
+   "type": "goto",
+   "parentKey": "088d6ef0-45a9-4887-8440-a56d06dc94f4",
+   "advanceCanvasMeta": {
+    "position": {
+     "x": 1842,
+     "y": 809.5
+    }
+   }
+  }
+ ]
+}

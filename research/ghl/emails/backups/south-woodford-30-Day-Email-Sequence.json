@@ -1,0 +1,919 @@
+{
+ "workflow": {
+  "_id": "6227a15b-7572-49c1-8ba4-c3f5fa895f88",
+  "locationId": "cquQsieyBZx9vRgEqBge",
+  "companyId": "BHs3MppSlUdmHKGV7DDA",
+  "companyAge": 14,
+  "name": "30 Day Email Sequence",
+  "status": "published",
+  "version": 11,
+  "dataVersion": 7,
+  "allowMultiple": false,
+  "removeContactFromLastStep": true,
+  "filePath": "location/cquQsieyBZx9vRgEqBge/workflows/6227a15b-7572-49c1-8ba4-c3f5fa895f88/11",
+  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/automation-workflows-production/o/location%2FcquQsieyBZx9vRgEqBge%2Fworkflows%2F6227a15b-7572-49c1-8ba4-c3f5fa895f88%2F11?alt=media&token=905ec7cf-67c2-40b6-8ea8-7d198e4fcd55",
+  "stopOnResponse": false,
+  "autoMarkAsRead": false,
+  "permission": 380,
+  "type": "workflow",
+  "parentId": "2a12cec0-bff3-427f-81c6-094fbc85cbdf",
+  "updatedBy": "kD5eX8SAxDHruPaeEprZ",
+  "createdAt": "2023-02-23T16:11:32.555Z",
+  "updatedAt": "2026-07-21T10:43:03.990Z",
+  "deleted": false,
+  "__v": 0,
+  "eventStartDate": null,
+  "triggersFilePath": "location/cquQsieyBZx9vRgEqBge/workflow-triggers/6227a15b-7572-49c1-8ba4-c3f5fa895f88/6",
+  "window": null,
+  "timezone": "account",
+  "reason": "",
+  "allowMultipleOpportunity": false,
+  "workflowNote": null,
+  "creationSource": "builder",
+  "isTriggerBucketMigrated": false,
+  "id": "6227a15b-7572-49c1-8ba4-c3f5fa895f88",
+  "workflowData": {
+   "templates": [
+    {
+     "id": "626d1121-dafe-46f0-84e0-2e810e1fc12d",
+     "order": 0,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "09:00",
+       "end": "17:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "3c13f729-2b0b-4da9-a8ff-50cd2bcc0d12"
+    },
+    {
+     "id": "3c13f729-2b0b-4da9-a8ff-50cd2bcc0d12",
+     "order": 1,
+     "attributes": {
+      "template_id": "63f6631c78f95f34c3983aac",
+      "templatesource": "email-builder",
+      "subject": "Kickstart Your Nutrition Journey",
+      "from_email": "info@blueprintfitnessldn.com",
+      "from_name": "{{location.name}}",
+      "attachments": [],
+      "fieldDefaults": {},
+      "trackingOptions": {
+       "hasTrackingLinks": false,
+       "hasUtmTracking": false,
+       "hasTags": false,
+       "sourceId": "6227a15b-7572-49c1-8ba4-c3f5fa895f88:3c13f729-2b0b-4da9-a8ff-50cd2bcc0d12"
+      },
+      "conditions": [],
+      "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2FcquQsieyBZx9vRgEqBge%2Femails%2F63f6631c78f95f34c3983aac%2Findex.html?alt=media&token=5cb01f4b-02f0-4a39-8ef9-1432f23039d2?cb=1784630573223",
+      "createdAt": "2023-02-22T18:46:53.536Z",
+      "preHeader": "Your Access To The Blueprint Nutrition Programme",
+      "syncEnabled": true,
+      "updatedAt": "2026-07-21T10:42:24.326Z"
+     },
+     "name": "2 Email - Nutrition Journey",
+     "type": "email",
+     "next": "a78cc6c4-f3eb-43f3-9e6b-90b0cf3f933c",
+     "parentKey": "626d1121-dafe-46f0-84e0-2e810e1fc12d"
+    },
+    {
+     "id": "a78cc6c4-f3eb-43f3-9e6b-90b0cf3f933c",
+     "order": 2,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 2,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "09:00",
+       "end": "17:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait 2 Days",
+     "type": "wait",
+     "next": "4d893fc2-9145-42ec-8f5a-7e428f20b76a",
+     "parentKey": "3c13f729-2b0b-4da9-a8ff-50cd2bcc0d12"
+    },
+    {
+     "id": "4d893fc2-9145-42ec-8f5a-7e428f20b76a",
+     "order": 3,
+     "attributes": {
+      "template_id": "63f6679707bd105bb121c8b9",
+      "templatesource": "email-builder",
+      "subject": "Here's a FREE 30 day kick-start for a friend {{contact.first_name}}?",
+      "from_email": "info@blueprintfitnessldn.com",
+      "from_name": "{{location.name}}",
+      "attachments": [],
+      "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2FcquQsieyBZx9vRgEqBge%2Femails%2F63f6679707bd105bb121c8b9%2Findex.html?alt=media&token=07613fcb-a405-469c-ad08-c013be1b1246?cb=1784630501421",
+      "createdAt": "2023-02-22T19:05:59.757Z",
+      "fieldDefaults": {},
+      "trackingOptions": {
+       "hasTrackingLinks": false,
+       "hasUtmTracking": false,
+       "hasTags": false,
+       "sourceId": "6227a15b-7572-49c1-8ba4-c3f5fa895f88:4d893fc2-9145-42ec-8f5a-7e428f20b76a"
+      },
+      "conditions": [],
+      "preHeader": "Whilst they last!",
+      "syncEnabled": true
+     },
+     "name": "5 Email - Referral Hoodie",
+     "type": "email",
+     "next": "bc68115f-05bf-4c1a-a2d9-8b229008a7b5",
+     "parentKey": "a78cc6c4-f3eb-43f3-9e6b-90b0cf3f933c"
+    },
+    {
+     "id": "bc68115f-05bf-4c1a-a2d9-8b229008a7b5",
+     "order": 4,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 4,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "09:00",
+       "end": "17:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait 4 Days",
+     "type": "wait",
+     "next": "05577fa8-94b3-481c-ade0-31100733183a",
+     "parentKey": "4d893fc2-9145-42ec-8f5a-7e428f20b76a"
+    },
+    {
+     "id": "05577fa8-94b3-481c-ade0-31100733183a",
+     "order": 5,
+     "attributes": {
+      "template_id": "63f666d618580c50daeb560c",
+      "templatesource": "email-builder",
+      "subject": "Here's why the socials are just as fun as our sessions",
+      "from_email": "info@blueprintfitnessldn.com",
+      "from_name": "{{location.name}}",
+      "attachments": [],
+      "fieldDefaults": {},
+      "trackingOptions": {
+       "hasTrackingLinks": false,
+       "hasUtmTracking": false,
+       "hasTags": false,
+       "sourceId": "6227a15b-7572-49c1-8ba4-c3f5fa895f88:05577fa8-94b3-481c-ade0-31100733183a"
+      },
+      "conditions": [],
+      "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2FcquQsieyBZx9vRgEqBge%2Femails%2F63f666d618580c50daeb560c%2Findex.html?alt=media&token=c8bc5fe0-f5af-4452-bebe-3a23e48fc243?cb=1784630520704",
+      "createdAt": "2023-02-22T19:02:46.913Z",
+      "preHeader": "Social Life Just Levelled Up Too!",
+      "syncEnabled": true
+     },
+     "name": "4 Email - Socials",
+     "type": "email",
+     "next": "49f5622a-19f3-49af-b086-f638212d1b51",
+     "parentKey": "bc68115f-05bf-4c1a-a2d9-8b229008a7b5"
+    },
+    {
+     "id": "49f5622a-19f3-49af-b086-f638212d1b51",
+     "order": 6,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 6,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "09:00",
+       "end": "17:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait 6 Days",
+     "type": "wait",
+     "next": "fb037f6e-a5e2-4fe1-a1b9-adfab226f948",
+     "parentKey": "05577fa8-94b3-481c-ade0-31100733183a"
+    },
+    {
+     "id": "fb037f6e-a5e2-4fe1-a1b9-adfab226f948",
+     "order": 7,
+     "attributes": {
+      "template_id": "63f664d284163d8784823958",
+      "templatesource": "email-builder",
+      "subject": "Which of our sessions and programmes will get you the best results?",
+      "from_email": "info@blueprintfitnessldn.com",
+      "from_name": "{{location.name}}",
+      "attachments": [],
+      "fieldDefaults": {},
+      "trackingOptions": {
+       "hasTrackingLinks": false,
+       "hasUtmTracking": false,
+       "hasTags": false,
+       "sourceId": "6227a15b-7572-49c1-8ba4-c3f5fa895f88:fb037f6e-a5e2-4fe1-a1b9-adfab226f948"
+      },
+      "conditions": [],
+      "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2FcquQsieyBZx9vRgEqBge%2Femails%2F63f664d284163d8784823958%2Findex.html?alt=media&token=0e77f5a1-9a61-4972-9c0b-0d5ebd4bdaaf?cb=1784630441401",
+      "createdAt": "2023-02-22T18:54:11.006Z",
+      "preHeader": "Strength or Shape?",
+      "syncEnabled": true
+     },
+     "name": "3 Email - Best Results?",
+     "type": "email",
+     "next": "ac8bd65b-6f1b-4d4d-a23f-8045196d307e",
+     "parentKey": "49f5622a-19f3-49af-b086-f638212d1b51"
+    },
+    {
+     "id": "ac8bd65b-6f1b-4d4d-a23f-8045196d307e",
+     "order": 8,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 6,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "09:00",
+       "end": "17:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait 6 Days",
+     "type": "wait",
+     "next": "2422af9f-dd67-4ac2-a27b-ad61a5f300c2",
+     "parentKey": "fb037f6e-a5e2-4fe1-a1b9-adfab226f948"
+    },
+    {
+     "id": "2422af9f-dd67-4ac2-a27b-ad61a5f300c2",
+     "order": 9,
+     "attributes": {
+      "template_id": "63f6682d36d46f535032db7f",
+      "templatesource": "email-builder",
+      "subject": "What happens after your trial?",
+      "from_email": "info@blueprintfitnessldn.com",
+      "from_name": "{{location.name}}",
+      "attachments": [
+       {
+        "url": "https://storage.googleapis.com/highlevel-backend.appspot.com/location/cquQsieyBZx9vRgEqBge/workflow/6227a15b-7572-49c1-8ba4-c3f5fa895f88/8bd05e66-4012-4a4e-af3c-929fc90b1733.pdf?alt=media&token=d4f16567-d966-44c1-89f6-34450deb630d",
+        "name": "BF Membership List 2024.pdf",
+        "size": 4420264
+       }
+      ],
+      "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2FcquQsieyBZx9vRgEqBge%2Femails%2F63f6682d36d46f535032db7f%2Findex.html?alt=media&token=de191c42-bceb-4191-92e4-bbdce316860e?cb=1784630464966",
+      "createdAt": "2023-02-22T19:08:29.922Z",
+      "updatedAt": "2026-07-21T10:39:39.784Z",
+      "fieldDefaults": {},
+      "trackingOptions": {
+       "hasTrackingLinks": false,
+       "hasUtmTracking": false,
+       "hasTags": false,
+       "sourceId": "6227a15b-7572-49c1-8ba4-c3f5fa895f88:2422af9f-dd67-4ac2-a27b-ad61a5f300c2"
+      },
+      "conditions": [],
+      "preHeader": "How to join...",
+      "syncEnabled": true
+     },
+     "name": "6. Price List",
+     "type": "email",
+     "next": "2eea8267-6bdf-42da-adfd-697b60153c03",
+     "parentKey": "ac8bd65b-6f1b-4d4d-a23f-8045196d307e"
+    },
+    {
+     "id": "2eea8267-6bdf-42da-adfd-697b60153c03",
+     "order": 10,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "09:00",
+       "end": "17:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait 1 Days",
+     "type": "wait",
+     "next": "9306630e-e681-4630-9fb9-a16ebd3e87da",
+     "parentKey": "2422af9f-dd67-4ac2-a27b-ad61a5f300c2"
+    },
+    {
+     "id": "9306630e-e681-4630-9fb9-a16ebd3e87da",
+     "order": 11,
+     "attributes": {
+      "template_id": "63f66a322bc6b80e0ffd262d",
+      "templatesource": "email-builder",
+      "subject": "What is it like to be a full time Blueprint Fitness member?",
+      "from_email": "info@blueprintfitnessldn.com",
+      "from_name": "{{location.name}}",
+      "attachments": [],
+      "fieldDefaults": {},
+      "trackingOptions": {
+       "hasTrackingLinks": false,
+       "hasUtmTracking": false,
+       "hasTags": false,
+       "sourceId": "6227a15b-7572-49c1-8ba4-c3f5fa895f88:9306630e-e681-4630-9fb9-a16ebd3e87da"
+      },
+      "conditions": [],
+      "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2FcquQsieyBZx9vRgEqBge%2Femails%2F63f66a322bc6b80e0ffd262d%2Findex.html?alt=media&token=ef39b011-1e74-4653-8b58-4d9dc1f4062c?cb=1784630468159",
+      "createdAt": "2023-02-22T19:17:07.211Z",
+      "updatedAt": "2026-07-21T10:39:15.643Z",
+      "preHeader": "Straight from the horse's mouth...",
+      "syncEnabled": true
+     },
+     "name": "7. Email",
+     "type": "email",
+     "next": "e2e87e6b-f3f7-4f5f-a7b4-18767bbab4c5",
+     "parentKey": "2eea8267-6bdf-42da-adfd-697b60153c03"
+    },
+    {
+     "id": "e2e87e6b-f3f7-4f5f-a7b4-18767bbab4c5",
+     "order": 12,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 8,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "09:00",
+       "end": "17:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait 8 Days",
+     "type": "wait",
+     "next": "08b769ba-969c-4545-8fc8-0e7c0c3f46e4",
+     "parentKey": "9306630e-e681-4630-9fb9-a16ebd3e87da"
+    },
+    {
+     "id": "08b769ba-969c-4545-8fc8-0e7c0c3f46e4",
+     "order": 13,
+     "attributes": {
+      "template_id": "63f66ac226329a248d589c82",
+      "templatesource": "email-builder",
+      "subject": "Thankyou for taking on our 30 Day Trial, you absolute legend!",
+      "from_email": "info@blueprintfitnessldn.com",
+      "from_name": "Stuart Rook",
+      "attachments": []
+     },
+     "name": "8. Email Thankyou Legend",
+     "type": "email",
+     "parentKey": "e2e87e6b-f3f7-4f5f-a7b4-18767bbab4c5"
+    }
+   ]
+  },
+  "permissionMeta": {
+   "canRead": true,
+   "canWrite": true
+  },
+  "scheduledPauseDates": []
+ },
+ "templates": [
+  {
+   "id": "626d1121-dafe-46f0-84e0-2e810e1fc12d",
+   "order": 0,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "09:00",
+     "end": "17:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "3c13f729-2b0b-4da9-a8ff-50cd2bcc0d12"
+  },
+  {
+   "id": "3c13f729-2b0b-4da9-a8ff-50cd2bcc0d12",
+   "order": 1,
+   "attributes": {
+    "template_id": "63f6631c78f95f34c3983aac",
+    "templatesource": "email-builder",
+    "subject": "Kickstart Your Nutrition Journey",
+    "from_email": "info@blueprintfitnessldn.com",
+    "from_name": "{{location.name}}",
+    "attachments": [],
+    "fieldDefaults": {},
+    "trackingOptions": {
+     "hasTrackingLinks": false,
+     "hasUtmTracking": false,
+     "hasTags": false,
+     "sourceId": "6227a15b-7572-49c1-8ba4-c3f5fa895f88:3c13f729-2b0b-4da9-a8ff-50cd2bcc0d12"
+    },
+    "conditions": [],
+    "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2FcquQsieyBZx9vRgEqBge%2Femails%2F63f6631c78f95f34c3983aac%2Findex.html?alt=media&token=5cb01f4b-02f0-4a39-8ef9-1432f23039d2?cb=1784630573223",
+    "createdAt": "2023-02-22T18:46:53.536Z",
+    "preHeader": "Your Access To The Blueprint Nutrition Programme",
+    "syncEnabled": true,
+    "updatedAt": "2026-07-21T10:42:24.326Z"
+   },
+   "name": "2 Email - Nutrition Journey",
+   "type": "email",
+   "next": "a78cc6c4-f3eb-43f3-9e6b-90b0cf3f933c",
+   "parentKey": "626d1121-dafe-46f0-84e0-2e810e1fc12d"
+  },
+  {
+   "id": "a78cc6c4-f3eb-43f3-9e6b-90b0cf3f933c",
+   "order": 2,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 2,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "09:00",
+     "end": "17:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait 2 Days",
+   "type": "wait",
+   "next": "4d893fc2-9145-42ec-8f5a-7e428f20b76a",
+   "parentKey": "3c13f729-2b0b-4da9-a8ff-50cd2bcc0d12"
+  },
+  {
+   "id": "4d893fc2-9145-42ec-8f5a-7e428f20b76a",
+   "order": 3,
+   "attributes": {
+    "template_id": "63f6679707bd105bb121c8b9",
+    "templatesource": "email-builder",
+    "subject": "Here's a FREE 30 day kick-start for a friend {{contact.first_name}}?",
+    "from_email": "info@blueprintfitnessldn.com",
+    "from_name": "{{location.name}}",
+    "attachments": [],
+    "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2FcquQsieyBZx9vRgEqBge%2Femails%2F63f6679707bd105bb121c8b9%2Findex.html?alt=media&token=07613fcb-a405-469c-ad08-c013be1b1246?cb=1784630501421",
+    "createdAt": "2023-02-22T19:05:59.757Z",
+    "fieldDefaults": {},
+    "trackingOptions": {
+     "hasTrackingLinks": false,
+     "hasUtmTracking": false,
+     "hasTags": false,
+     "sourceId": "6227a15b-7572-49c1-8ba4-c3f5fa895f88:4d893fc2-9145-42ec-8f5a-7e428f20b76a"
+    },
+    "conditions": [],
+    "preHeader": "Whilst they last!",
+    "syncEnabled": true
+   },
+   "name": "5 Email - Referral Hoodie",
+   "type": "email",
+   "next": "bc68115f-05bf-4c1a-a2d9-8b229008a7b5",
+   "parentKey": "a78cc6c4-f3eb-43f3-9e6b-90b0cf3f933c"
+  },
+  {
+   "id": "bc68115f-05bf-4c1a-a2d9-8b229008a7b5",
+   "order": 4,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 4,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "09:00",
+     "end": "17:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait 4 Days",
+   "type": "wait",
+   "next": "05577fa8-94b3-481c-ade0-31100733183a",
+   "parentKey": "4d893fc2-9145-42ec-8f5a-7e428f20b76a"
+  },
+  {
+   "id": "05577fa8-94b3-481c-ade0-31100733183a",
+   "order": 5,
+   "attributes": {
+    "template_id": "63f666d618580c50daeb560c",
+    "templatesource": "email-builder",
+    "subject": "Here's why the socials are just as fun as our sessions",
+    "from_email": "info@blueprintfitnessldn.com",
+    "from_name": "{{location.name}}",
+    "attachments": [],
+    "fieldDefaults": {},
+    "trackingOptions": {
+     "hasTrackingLinks": false,
+     "hasUtmTracking": false,
+     "hasTags": false,
+     "sourceId": "6227a15b-7572-49c1-8ba4-c3f5fa895f88:05577fa8-94b3-481c-ade0-31100733183a"
+    },
+    "conditions": [],
+    "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2FcquQsieyBZx9vRgEqBge%2Femails%2F63f666d618580c50daeb560c%2Findex.html?alt=media&token=c8bc5fe0-f5af-4452-bebe-3a23e48fc243?cb=1784630520704",
+    "createdAt": "2023-02-22T19:02:46.913Z",
+    "preHeader": "Social Life Just Levelled Up Too!",
+    "syncEnabled": true
+   },
+   "name": "4 Email - Socials",
+   "type": "email",
+   "next": "49f5622a-19f3-49af-b086-f638212d1b51",
+   "parentKey": "bc68115f-05bf-4c1a-a2d9-8b229008a7b5"
+  },
+  {
+   "id": "49f5622a-19f3-49af-b086-f638212d1b51",
+   "order": 6,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 6,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "09:00",
+     "end": "17:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait 6 Days",
+   "type": "wait",
+   "next": "fb037f6e-a5e2-4fe1-a1b9-adfab226f948",
+   "parentKey": "05577fa8-94b3-481c-ade0-31100733183a"
+  },
+  {
+   "id": "fb037f6e-a5e2-4fe1-a1b9-adfab226f948",
+   "order": 7,
+   "attributes": {
+    "template_id": "63f664d284163d8784823958",
+    "templatesource": "email-builder",
+    "subject": "Which of our sessions and programmes will get you the best results?",
+    "from_email": "info@blueprintfitnessldn.com",
+    "from_name": "{{location.name}}",
+    "attachments": [],
+    "fieldDefaults": {},
+    "trackingOptions": {
+     "hasTrackingLinks": false,
+     "hasUtmTracking": false,
+     "hasTags": false,
+     "sourceId": "6227a15b-7572-49c1-8ba4-c3f5fa895f88:fb037f6e-a5e2-4fe1-a1b9-adfab226f948"
+    },
+    "conditions": [],
+    "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2FcquQsieyBZx9vRgEqBge%2Femails%2F63f664d284163d8784823958%2Findex.html?alt=media&token=0e77f5a1-9a61-4972-9c0b-0d5ebd4bdaaf?cb=1784630441401",
+    "createdAt": "2023-02-22T18:54:11.006Z",
+    "preHeader": "Strength or Shape?",
+    "syncEnabled": true
+   },
+   "name": "3 Email - Best Results?",
+   "type": "email",
+   "next": "ac8bd65b-6f1b-4d4d-a23f-8045196d307e",
+   "parentKey": "49f5622a-19f3-49af-b086-f638212d1b51"
+  },
+  {
+   "id": "ac8bd65b-6f1b-4d4d-a23f-8045196d307e",
+   "order": 8,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 6,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "09:00",
+     "end": "17:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait 6 Days",
+   "type": "wait",
+   "next": "2422af9f-dd67-4ac2-a27b-ad61a5f300c2",
+   "parentKey": "fb037f6e-a5e2-4fe1-a1b9-adfab226f948"
+  },
+  {
+   "id": "2422af9f-dd67-4ac2-a27b-ad61a5f300c2",
+   "order": 9,
+   "attributes": {
+    "template_id": "63f6682d36d46f535032db7f",
+    "templatesource": "email-builder",
+    "subject": "What happens after your trial?",
+    "from_email": "info@blueprintfitnessldn.com",
+    "from_name": "{{location.name}}",
+    "attachments": [
+     {
+      "url": "https://storage.googleapis.com/highlevel-backend.appspot.com/location/cquQsieyBZx9vRgEqBge/workflow/6227a15b-7572-49c1-8ba4-c3f5fa895f88/8bd05e66-4012-4a4e-af3c-929fc90b1733.pdf?alt=media&token=d4f16567-d966-44c1-89f6-34450deb630d",
+      "name": "BF Membership List 2024.pdf",
+      "size": 4420264
+     }
+    ],
+    "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2FcquQsieyBZx9vRgEqBge%2Femails%2F63f6682d36d46f535032db7f%2Findex.html?alt=media&token=de191c42-bceb-4191-92e4-bbdce316860e?cb=1784630464966",
+    "createdAt": "2023-02-22T19:08:29.922Z",
+    "updatedAt": "2026-07-21T10:39:39.784Z",
+    "fieldDefaults": {},
+    "trackingOptions": {
+     "hasTrackingLinks": false,
+     "hasUtmTracking": false,
+     "hasTags": false,
+     "sourceId": "6227a15b-7572-49c1-8ba4-c3f5fa895f88:2422af9f-dd67-4ac2-a27b-ad61a5f300c2"
+    },
+    "conditions": [],
+    "preHeader": "How to join...",
+    "syncEnabled": true
+   },
+   "name": "6. Price List",
+   "type": "email",
+   "next": "2eea8267-6bdf-42da-adfd-697b60153c03",
+   "parentKey": "ac8bd65b-6f1b-4d4d-a23f-8045196d307e"
+  },
+  {
+   "id": "2eea8267-6bdf-42da-adfd-697b60153c03",
+   "order": 10,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "09:00",
+     "end": "17:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait 1 Days",
+   "type": "wait",
+   "next": "9306630e-e681-4630-9fb9-a16ebd3e87da",
+   "parentKey": "2422af9f-dd67-4ac2-a27b-ad61a5f300c2"
+  },
+  {
+   "id": "9306630e-e681-4630-9fb9-a16ebd3e87da",
+   "order": 11,
+   "attributes": {
+    "template_id": "63f66a322bc6b80e0ffd262d",
+    "templatesource": "email-builder",
+    "subject": "What is it like to be a full time Blueprint Fitness member?",
+    "from_email": "info@blueprintfitnessldn.com",
+    "from_name": "{{location.name}}",
+    "attachments": [],
+    "fieldDefaults": {},
+    "trackingOptions": {
+     "hasTrackingLinks": false,
+     "hasUtmTracking": false,
+     "hasTags": false,
+     "sourceId": "6227a15b-7572-49c1-8ba4-c3f5fa895f88:9306630e-e681-4630-9fb9-a16ebd3e87da"
+    },
+    "conditions": [],
+    "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2FcquQsieyBZx9vRgEqBge%2Femails%2F63f66a322bc6b80e0ffd262d%2Findex.html?alt=media&token=ef39b011-1e74-4653-8b58-4d9dc1f4062c?cb=1784630468159",
+    "createdAt": "2023-02-22T19:17:07.211Z",
+    "updatedAt": "2026-07-21T10:39:15.643Z",
+    "preHeader": "Straight from the horse's mouth...",
+    "syncEnabled": true
+   },
+   "name": "7. Email",
+   "type": "email",
+   "next": "e2e87e6b-f3f7-4f5f-a7b4-18767bbab4c5",
+   "parentKey": "2eea8267-6bdf-42da-adfd-697b60153c03"
+  },
+  {
+   "id": "e2e87e6b-f3f7-4f5f-a7b4-18767bbab4c5",
+   "order": 12,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 8,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "09:00",
+     "end": "17:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait 8 Days",
+   "type": "wait",
+   "next": "08b769ba-969c-4545-8fc8-0e7c0c3f46e4",
+   "parentKey": "9306630e-e681-4630-9fb9-a16ebd3e87da"
+  },
+  {
+   "id": "08b769ba-969c-4545-8fc8-0e7c0c3f46e4",
+   "order": 13,
+   "attributes": {
+    "template_id": "63f66ac226329a248d589c82",
+    "templatesource": "email-builder",
+    "subject": "Thankyou for taking on our 30 Day Trial, you absolute legend!",
+    "from_email": "info@blueprintfitnessldn.com",
+    "from_name": "Stuart Rook",
+    "attachments": []
+   },
+   "name": "8. Email Thankyou Legend",
+   "type": "email",
+   "parentKey": "e2e87e6b-f3f7-4f5f-a7b4-18767bbab4c5"
+  }
+ ]
+}

@@ -1,0 +1,290 @@
+{
+ "workflow": {
+  "creationSource": "builder",
+  "_id": "bfe3b47a-7061-425b-aa25-21860a0b781f",
+  "locationId": "mztjJyXHNWiEotc8ItXP",
+  "name": "Nutrition Consult",
+  "status": "published",
+  "version": 2,
+  "allowMultiple": true,
+  "timezone": "account",
+  "removeContactFromLastStep": true,
+  "filePath": "location/mztjJyXHNWiEotc8ItXP/workflows/bfe3b47a-7061-425b-aa25-21860a0b781f/2",
+  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2FmztjJyXHNWiEotc8ItXP%2Fworkflows%2Fbfe3b47a-7061-425b-aa25-21860a0b781f%2F2?alt=media&token=4105e88d-013f-45c9-8cc1-17dc25cd3abc",
+  "stopOnResponse": false,
+  "autoMarkAsRead": false,
+  "originId": "de67f276-2f54-44ad-93a9-bbe27d8126c7",
+  "permission": 380,
+  "type": "workflow",
+  "meta": null,
+  "updatedBy": "snapshot",
+  "createdAt": "2024-10-16T11:49:16.492Z",
+  "updatedAt": "2024-10-16T11:49:20.947Z",
+  "deleted": false,
+  "__v": 0,
+  "allowMultipleOpportunity": false,
+  "dataVersion": 7,
+  "eventStartDate": null,
+  "senderAddress": {
+   "from_email": "",
+   "from_name": ""
+  },
+  "triggersFilePath": "location/mztjJyXHNWiEotc8ItXP/workflow-triggers/bfe3b47a-7061-425b-aa25-21860a0b781f/2",
+  "window": null,
+  "workflowNote": {
+   "content": "",
+   "createdBy": "snapshot",
+   "createdByName": "snapshot",
+   "createdAt": "2024-10-16T11:49:20.510Z",
+   "updatedBy": "snapshot",
+   "updatedByName": "snapshot",
+   "updatedAt": "2024-10-16T11:49:20.510Z"
+  },
+  "id": "bfe3b47a-7061-425b-aa25-21860a0b781f",
+  "workflowData": {
+   "templates": [
+    {
+     "id": "363863da-fd96-4c72-84e1-de788ee7a824",
+     "order": 0,
+     "attributes": {
+      "method": "POST",
+      "url": "https://hooks.zapier.com/hooks/catch/1870659/30v8m4f/",
+      "customData": [],
+      "headers": []
+     },
+     "name": "Webhook",
+     "type": "webhook",
+     "next": "e2b6b0e0-bad3-4507-ae84-395cd0bbccf0"
+    },
+    {
+     "id": "e2b6b0e0-bad3-4507-ae84-395cd0bbccf0",
+     "order": 1,
+     "attributes": {
+      "type": "email",
+      "email": {
+       "from_name": "Blueprint Fitness",
+       "from_email": "no-reply@blueprintfitnessldn.com",
+       "selectedUser": [],
+       "userType": "user",
+       "subject": "Nutrition Consult Request: {{contact.name}}",
+       "html": "Nutrition Consult Request: {{contact.name}}<br />{{contact.email}}<br />{{contact.phone}}<br /><br />InBody Results: {{contact.do_you_have_your_inbody_results}}<br /><br />Food Diary?:<br />{{contact.have_you_started_a_food_diary}}<br /><br />Goal:<br />{{contact.what_is_your_overall_goal}}<br /><br />Struggles:{{contact.what_is_your_biggest_struggle_with_regards_to_nutrition}}<br /><br />Preference:<br />{{contact.who_would_you_like_a_consultation_with}}",
+       "attachments": []
+      }
+     },
+     "name": "Internal Notification",
+     "type": "internal_notification",
+     "next": "c893e9dd-d6b7-45c6-b7ab-bdc4410b0080",
+     "parentKey": "363863da-fd96-4c72-84e1-de788ee7a824",
+     "stats": {
+      "id": "e2b6b0e0-bad3-4507-ae84-395cd0bbccf0",
+      "stats": {
+       "delivered": "100.00%",
+       "opened": "85.00%",
+       "clicked": "5.00%",
+       "replied": "5.00%",
+       "bounced": "0%",
+       "unsubscribed": "0%"
+      },
+      "total": 20
+     }
+    },
+    {
+     "id": "c893e9dd-d6b7-45c6-b7ab-bdc4410b0080",
+     "order": 2,
+     "attributes": {
+      "type": "email",
+      "email": {
+       "from_name": "Blueprint Fitness",
+       "from_email": "no-reply@blueprintfitnessldn.com",
+       "userType": "custom_email",
+       "subject": "Nutrition Consult Request: {{contact.name}}",
+       "html": "Nutrition Consult Request: {{contact.name}}<br />{{contact.email}}<br />{{contact.phone}}<br /><br />InBody Results: {{contact.do_you_have_your_inbody_results}}<br /><br />Food Diary?:<br />{{contact.have_you_started_a_food_diary}}<br /><br />Goal:<br />{{contact.what_is_your_overall_goal}}<br /><br />Struggles:{{contact.what_is_your_biggest_struggle_with_regards_to_nutrition}}<br /><br />Preference:<br />{{contact.who_would_you_like_a_consultation_with}}",
+       "attachments": [],
+       "to": "louiseboucek@gmail.com"
+      }
+     },
+     "name": "Internal Notification",
+     "type": "internal_notification",
+     "next": "5920ed73-bd7d-408a-b58a-9cbce6d67508",
+     "parentKey": "e2b6b0e0-bad3-4507-ae84-395cd0bbccf0",
+     "stats": {
+      "id": "c893e9dd-d6b7-45c6-b7ab-bdc4410b0080",
+      "stats": {
+       "delivered": "100.00%",
+       "opened": "100.00%",
+       "clicked": "0%",
+       "replied": "0%",
+       "bounced": "0%",
+       "unsubscribed": "0%"
+      },
+      "total": 10
+     }
+    },
+    {
+     "id": "5920ed73-bd7d-408a-b58a-9cbce6d67508",
+     "order": 3,
+     "attributes": {
+      "from_name": "Blueprint Fitness Nutrition Team",
+      "from_email": "info@blueprintfitnessldn.com",
+      "subject": "Nutrition Consultation Request",
+      "template_id": "7CtesP02UIJeN82bSs1t",
+      "templatesource": "other",
+      "attachments": []
+     },
+     "name": "Email",
+     "type": "email",
+     "next": "95416b21-a58d-4d4c-9333-fa2a8ddb3ed7",
+     "parentKey": "c893e9dd-d6b7-45c6-b7ab-bdc4410b0080",
+     "stats": {
+      "id": "5920ed73-bd7d-408a-b58a-9cbce6d67508",
+      "stats": {
+       "delivered": "100.00%",
+       "opened": "80.00%",
+       "clicked": "30.00%",
+       "replied": "0%",
+       "bounced": "0%",
+       "unsubscribed": "0%"
+      },
+      "total": 10
+     }
+    },
+    {
+     "id": "95416b21-a58d-4d4c-9333-fa2a8ddb3ed7",
+     "order": 4,
+     "attributes": {
+      "tags": [
+       "nutrition consult request"
+      ]
+     },
+     "name": "Add Tag",
+     "type": "add_contact_tag",
+     "parentKey": "5920ed73-bd7d-408a-b58a-9cbce6d67508"
+    }
+   ]
+  },
+  "permissionMeta": {
+   "canRead": true,
+   "canWrite": true
+  },
+  "scheduledPauseDates": []
+ },
+ "templates": [
+  {
+   "id": "363863da-fd96-4c72-84e1-de788ee7a824",
+   "order": 0,
+   "attributes": {
+    "method": "POST",
+    "url": "https://hooks.zapier.com/hooks/catch/1870659/30v8m4f/",
+    "customData": [],
+    "headers": []
+   },
+   "name": "Webhook",
+   "type": "webhook",
+   "next": "e2b6b0e0-bad3-4507-ae84-395cd0bbccf0"
+  },
+  {
+   "id": "e2b6b0e0-bad3-4507-ae84-395cd0bbccf0",
+   "order": 1,
+   "attributes": {
+    "type": "email",
+    "email": {
+     "from_name": "Blueprint Fitness",
+     "from_email": "no-reply@blueprintfitnessldn.com",
+     "selectedUser": [],
+     "userType": "user",
+     "subject": "Nutrition Consult Request: {{contact.name}}",
+     "html": "Nutrition Consult Request: {{contact.name}}<br />{{contact.email}}<br />{{contact.phone}}<br /><br />InBody Results: {{contact.do_you_have_your_inbody_results}}<br /><br />Food Diary?:<br />{{contact.have_you_started_a_food_diary}}<br /><br />Goal:<br />{{contact.what_is_your_overall_goal}}<br /><br />Struggles:{{contact.what_is_your_biggest_struggle_with_regards_to_nutrition}}<br /><br />Preference:<br />{{contact.who_would_you_like_a_consultation_with}}",
+     "attachments": []
+    }
+   },
+   "name": "Internal Notification",
+   "type": "internal_notification",
+   "next": "c893e9dd-d6b7-45c6-b7ab-bdc4410b0080",
+   "parentKey": "363863da-fd96-4c72-84e1-de788ee7a824",
+   "stats": {
+    "id": "e2b6b0e0-bad3-4507-ae84-395cd0bbccf0",
+    "stats": {
+     "delivered": "100.00%",
+     "opened": "85.00%",
+     "clicked": "5.00%",
+     "replied": "5.00%",
+     "bounced": "0%",
+     "unsubscribed": "0%"
+    },
+    "total": 20
+   }
+  },
+  {
+   "id": "c893e9dd-d6b7-45c6-b7ab-bdc4410b0080",
+   "order": 2,
+   "attributes": {
+    "type": "email",
+    "email": {
+     "from_name": "Blueprint Fitness",
+     "from_email": "no-reply@blueprintfitnessldn.com",
+     "userType": "custom_email",
+     "subject": "Nutrition Consult Request: {{contact.name}}",
+     "html": "Nutrition Consult Request: {{contact.name}}<br />{{contact.email}}<br />{{contact.phone}}<br /><br />InBody Results: {{contact.do_you_have_your_inbody_results}}<br /><br />Food Diary?:<br />{{contact.have_you_started_a_food_diary}}<br /><br />Goal:<br />{{contact.what_is_your_overall_goal}}<br /><br />Struggles:{{contact.what_is_your_biggest_struggle_with_regards_to_nutrition}}<br /><br />Preference:<br />{{contact.who_would_you_like_a_consultation_with}}",
+     "attachments": [],
+     "to": "louiseboucek@gmail.com"
+    }
+   },
+   "name": "Internal Notification",
+   "type": "internal_notification",
+   "next": "5920ed73-bd7d-408a-b58a-9cbce6d67508",
+   "parentKey": "e2b6b0e0-bad3-4507-ae84-395cd0bbccf0",
+   "stats": {
+    "id": "c893e9dd-d6b7-45c6-b7ab-bdc4410b0080",
+    "stats": {
+     "delivered": "100.00%",
+     "opened": "100.00%",
+     "clicked": "0%",
+     "replied": "0%",
+     "bounced": "0%",
+     "unsubscribed": "0%"
+    },
+    "total": 10
+   }
+  },
+  {
+   "id": "5920ed73-bd7d-408a-b58a-9cbce6d67508",
+   "order": 3,
+   "attributes": {
+    "from_name": "Blueprint Fitness Nutrition Team",
+    "from_email": "info@blueprintfitnessldn.com",
+    "subject": "Nutrition Consultation Request",
+    "template_id": "7CtesP02UIJeN82bSs1t",
+    "templatesource": "other",
+    "attachments": []
+   },
+   "name": "Email",
+   "type": "email",
+   "next": "95416b21-a58d-4d4c-9333-fa2a8ddb3ed7",
+   "parentKey": "c893e9dd-d6b7-45c6-b7ab-bdc4410b0080",
+   "stats": {
+    "id": "5920ed73-bd7d-408a-b58a-9cbce6d67508",
+    "stats": {
+     "delivered": "100.00%",
+     "opened": "80.00%",
+     "clicked": "30.00%",
+     "replied": "0%",
+     "bounced": "0%",
+     "unsubscribed": "0%"
+    },
+    "total": 10
+   }
+  },
+  {
+   "id": "95416b21-a58d-4d4c-9333-fa2a8ddb3ed7",
+   "order": 4,
+   "attributes": {
+    "tags": [
+     "nutrition consult request"
+    ]
+   },
+   "name": "Add Tag",
+   "type": "add_contact_tag",
+   "parentKey": "5920ed73-bd7d-408a-b58a-9cbce6d67508"
+  }
+ ]
+}

@@ -1,0 +1,671 @@
+{
+ "workflow": {
+  "creationSource": "builder",
+  "_id": "b5695eb9-8c6c-4492-8b96-cbb18ce16478",
+  "locationId": "mztjJyXHNWiEotc8ItXP",
+  "name": "2. Cancelled (TeamUp)",
+  "status": "published",
+  "version": 2,
+  "allowMultiple": false,
+  "timezone": "account",
+  "removeContactFromLastStep": true,
+  "filePath": "location/mztjJyXHNWiEotc8ItXP/workflows/b5695eb9-8c6c-4492-8b96-cbb18ce16478/2",
+  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2FmztjJyXHNWiEotc8ItXP%2Fworkflows%2Fb5695eb9-8c6c-4492-8b96-cbb18ce16478%2F2?alt=media&token=53c6ee9d-d3f4-4e18-902a-49dd1a07d3cd",
+  "stopOnResponse": false,
+  "autoMarkAsRead": false,
+  "originId": "a15a03d2-f15f-4eb3-ad12-d50e72965c55",
+  "permission": 380,
+  "type": "workflow",
+  "meta": null,
+  "updatedBy": "snapshot",
+  "createdAt": "2024-10-16T11:49:15.277Z",
+  "updatedAt": "2024-10-16T11:49:19.348Z",
+  "deleted": false,
+  "__v": 0,
+  "allowMultipleOpportunity": false,
+  "dataVersion": 7,
+  "eventStartDate": null,
+  "parentId": "2d69f0f1-892b-4835-8750-c9358b8645e3",
+  "senderAddress": {
+   "from_email": "",
+   "from_name": ""
+  },
+  "triggersFilePath": "location/mztjJyXHNWiEotc8ItXP/workflow-triggers/b5695eb9-8c6c-4492-8b96-cbb18ce16478/2",
+  "window": null,
+  "workflowNote": {
+   "content": "",
+   "createdBy": "snapshot",
+   "createdByName": "snapshot",
+   "createdAt": "2024-10-16T11:49:18.641Z",
+   "updatedBy": "snapshot",
+   "updatedByName": "snapshot",
+   "updatedAt": "2024-10-16T11:49:18.641Z"
+  },
+  "id": "b5695eb9-8c6c-4492-8b96-cbb18ce16478",
+  "workflowData": {
+   "templates": [
+    {
+     "id": "1d255c5d-c820-44a8-8d89-6422aebcf921",
+     "order": 0,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 30,
+       "when": "after"
+      },
+      "window": {
+       "condition": "exact",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "09:00"
+      },
+      "windowCondition": {
+       "field": "day_month",
+       "operator": "==",
+       "value": 28
+      }
+     },
+     "name": "Wait 30 days until end of the month",
+     "type": "wait",
+     "next": "51bbf958-5206-4409-8610-9b6b5dbc518a"
+    },
+    {
+     "id": "51bbf958-5206-4409-8610-9b6b5dbc518a",
+     "order": 1,
+     "attributes": {
+      "currentRecipeType": "CUSTOM",
+      "branches": [
+       {
+        "id": "638760a0-9154-41e5-90d1-375cbdb33e83",
+        "name": "Still Tagged Cancelled",
+        "segments": [
+         {
+          "__segmentId": "4933b5aa-0d29-41ad-a0b0-f62636119172",
+          "operator": "and",
+          "conditions": [
+           {
+            "conditionType": "contact_detail",
+            "conditionSubType": "tags",
+            "conditionOperator": "index-of-true",
+            "conditionValue": [
+             "cancelled"
+            ],
+            "__conditionId": "7c0c1028-a005-40ae-a964-f849c6e3b30a",
+            "ifElseNodeId": "",
+            "isWait": false,
+            "nestedDropdownTypes": [
+             "inboundWebhookRequest",
+             "sheet",
+             "datetime_formatter",
+             "custom_webhook",
+             "array_functions",
+             "ivr_gather",
+             "ivr_connect_call",
+             "custom_code"
+            ],
+            "allowIsOperatorTypes": [
+             "contact_reply",
+             "inboundWebhookRequest",
+             "custom_webhook",
+             "custom_code",
+             "contact_detail",
+             "array_functions"
+            ]
+           }
+          ]
+         }
+        ],
+        "operator": "and",
+        "showErrors": false,
+        "branchNameError": "Branch name cannot be empty!"
+       }
+      ],
+      "operator": "and",
+      "if": true,
+      "conditionName": "Condition",
+      "version": 2,
+      "noneBranchName": "Not Tagged Cancelled"
+     },
+     "name": "yes",
+     "type": "if_else",
+     "cat": "conditions",
+     "next": [
+      "638760a0-9154-41e5-90d1-375cbdb33e83",
+      "297d5909-5c41-4696-bd6a-4d4e1178f46a"
+     ],
+     "comments": [],
+     "nodeType": "condition-node",
+     "parentKey": "1d255c5d-c820-44a8-8d89-6422aebcf921"
+    },
+    {
+     "id": "638760a0-9154-41e5-90d1-375cbdb33e83",
+     "parent": "51bbf958-5206-4409-8610-9b6b5dbc518a",
+     "order": 2,
+     "attributes": {
+      "if": false,
+      "conditionName": "Condition",
+      "operator": "and",
+      "branches": []
+     },
+     "name": "Still Tagged Cancelled",
+     "type": "if_else",
+     "cat": "conditions",
+     "next": "89429bd5-6d90-44f5-9050-5798225b1262",
+     "sibling": [
+      "297d5909-5c41-4696-bd6a-4d4e1178f46a"
+     ],
+     "comments": [],
+     "nodeType": "branch-yes",
+     "parentKey": "51bbf958-5206-4409-8610-9b6b5dbc518a"
+    },
+    {
+     "id": "89429bd5-6d90-44f5-9050-5798225b1262",
+     "parent": "638760a0-9154-41e5-90d1-375cbdb33e83",
+     "order": 0,
+     "attributes": {
+      "fields": [],
+      "type": "create_opportunity",
+      "pipeline_id": "bnsrCzFCvi5tZDGr4vn4",
+      "pipeline_stage_id": "745c5c88-0b03-47c9-ac21-ff61b9238803",
+      "opportunity_status": "lost",
+      "opportunity_name": "",
+      "opportunity_source": "",
+      "monetary_value": ""
+     },
+     "name": "Member Tracker - Cancelled and Lost",
+     "type": "create_opportunity",
+     "next": "68a60507-76f8-41c4-8832-f9dd71236ed7",
+     "parentKey": "638760a0-9154-41e5-90d1-375cbdb33e83"
+    },
+    {
+     "id": "68a60507-76f8-41c4-8832-f9dd71236ed7",
+     "order": 1,
+     "attributes": {
+      "includeCurrent": false,
+      "type": "remove_from_workflow"
+     },
+     "name": "Remove from all workflows",
+     "type": "remove_from_workflow",
+     "next": "a976eaa3-4ffc-488c-809e-27a691a7f542",
+     "parentKey": "89429bd5-6d90-44f5-9050-5798225b1262",
+     "parent": "638760a0-9154-41e5-90d1-375cbdb33e83"
+    },
+    {
+     "id": "a976eaa3-4ffc-488c-809e-27a691a7f542",
+     "order": 2,
+     "attributes": {
+      "tags": [
+       "existing member",
+       "member",
+       "paused member",
+       "active ex-members",
+       "challenge signup",
+       "challenge 2 signup"
+      ],
+      "type": "remove_contact_tag"
+     },
+     "name": "remove contact tag",
+     "type": "remove_contact_tag",
+     "next": "e4278470-8a28-445f-bf3c-b6298e1a1846",
+     "parentKey": "68a60507-76f8-41c4-8832-f9dd71236ed7",
+     "parent": "638760a0-9154-41e5-90d1-375cbdb33e83"
+    },
+    {
+     "id": "e4278470-8a28-445f-bf3c-b6298e1a1846",
+     "order": 3,
+     "attributes": {
+      "tags": [
+       "email subscriber",
+       "cancelled"
+      ]
+     },
+     "name": "add contact tag",
+     "type": "add_contact_tag",
+     "next": "70fa493a-17da-4b8a-893b-79e9ded4e448",
+     "parentKey": "a976eaa3-4ffc-488c-809e-27a691a7f542",
+     "parent": "638760a0-9154-41e5-90d1-375cbdb33e83"
+    },
+    {
+     "id": "70fa493a-17da-4b8a-893b-79e9ded4e448",
+     "order": 4,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 28,
+       "when": "after"
+      }
+     },
+     "name": "Wait 28d",
+     "type": "wait",
+     "next": "a8a077bd-8bbe-4e2d-bed3-1bf307859b89",
+     "parentKey": "e4278470-8a28-445f-bf3c-b6298e1a1846",
+     "parent": "638760a0-9154-41e5-90d1-375cbdb33e83"
+    },
+    {
+     "id": "a8a077bd-8bbe-4e2d-bed3-1bf307859b89",
+     "order": 5,
+     "attributes": {
+      "template_id": "670fa8217e1f30efff1e0676",
+      "templatesource": "email-builder",
+      "subject": "Hey {{contact.first_name}}",
+      "from_email": "{{location.email}}",
+      "from_name": "{{custom_values.sales_and_journey}}",
+      "attachments": []
+     },
+     "name": "Email 1",
+     "type": "email",
+     "next": "effca54a-7af6-49b3-9458-e0d4b6e8e1fd",
+     "parentKey": "70fa493a-17da-4b8a-893b-79e9ded4e448",
+     "parent": "638760a0-9154-41e5-90d1-375cbdb33e83"
+    },
+    {
+     "id": "effca54a-7af6-49b3-9458-e0d4b6e8e1fd",
+     "order": 6,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 56,
+       "when": "after"
+      }
+     },
+     "name": "Wait56d",
+     "type": "wait",
+     "next": "40bfb3fa-4f71-4a0e-9e3b-eb68f4b845fa",
+     "parentKey": "a8a077bd-8bbe-4e2d-bed3-1bf307859b89",
+     "parent": "638760a0-9154-41e5-90d1-375cbdb33e83"
+    },
+    {
+     "id": "40bfb3fa-4f71-4a0e-9e3b-eb68f4b845fa",
+     "order": 7,
+     "attributes": {
+      "template_id": "670fa81621340c8320572a62",
+      "templatesource": "email-builder",
+      "subject": "Hope you're well {{contact.first_name}}",
+      "from_email": "{{location.email}}",
+      "from_name": "{{custom_values.sales_and_journey}}",
+      "attachments": []
+     },
+     "name": "Email",
+     "type": "email",
+     "next": "91b7bfa1-a8b3-4179-a0bc-fa210bd1dd6f",
+     "parentKey": "effca54a-7af6-49b3-9458-e0d4b6e8e1fd",
+     "parent": "638760a0-9154-41e5-90d1-375cbdb33e83"
+    },
+    {
+     "id": "91b7bfa1-a8b3-4179-a0bc-fa210bd1dd6f",
+     "order": 8,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 60,
+       "when": "after"
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "a1254452-d4ed-4990-8bc0-04591cbbf050",
+     "parentKey": "40bfb3fa-4f71-4a0e-9e3b-eb68f4b845fa",
+     "parent": "638760a0-9154-41e5-90d1-375cbdb33e83"
+    },
+    {
+     "id": "a1254452-d4ed-4990-8bc0-04591cbbf050",
+     "order": 9,
+     "attributes": {
+      "template_id": "670fa81621340c8320572a62",
+      "templatesource": "email-builder",
+      "subject": "Hope you're well {{contact.first_name}}",
+      "from_email": "{{location.email}}",
+      "from_name": "{{custom_values.sales_and_journey}}",
+      "attachments": []
+     },
+     "name": "Email",
+     "type": "email",
+     "parentKey": "91b7bfa1-a8b3-4179-a0bc-fa210bd1dd6f",
+     "parent": "638760a0-9154-41e5-90d1-375cbdb33e83"
+    },
+    {
+     "id": "297d5909-5c41-4696-bd6a-4d4e1178f46a",
+     "parent": "51bbf958-5206-4409-8610-9b6b5dbc518a",
+     "order": 2,
+     "attributes": {
+      "else": true
+     },
+     "name": "Not Tagged Cancelled",
+     "type": "if_else",
+     "cat": "conditions",
+     "sibling": [
+      "638760a0-9154-41e5-90d1-375cbdb33e83"
+     ],
+     "comments": [],
+     "nodeType": "branch-no",
+     "parentKey": "51bbf958-5206-4409-8610-9b6b5dbc518a"
+    }
+   ]
+  },
+  "permissionMeta": {
+   "canRead": true,
+   "canWrite": true
+  },
+  "scheduledPauseDates": []
+ },
+ "templates": [
+  {
+   "id": "1d255c5d-c820-44a8-8d89-6422aebcf921",
+   "order": 0,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 30,
+     "when": "after"
+    },
+    "window": {
+     "condition": "exact",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "09:00"
+    },
+    "windowCondition": {
+     "field": "day_month",
+     "operator": "==",
+     "value": 28
+    }
+   },
+   "name": "Wait 30 days until end of the month",
+   "type": "wait",
+   "next": "51bbf958-5206-4409-8610-9b6b5dbc518a"
+  },
+  {
+   "id": "51bbf958-5206-4409-8610-9b6b5dbc518a",
+   "order": 1,
+   "attributes": {
+    "currentRecipeType": "CUSTOM",
+    "branches": [
+     {
+      "id": "638760a0-9154-41e5-90d1-375cbdb33e83",
+      "name": "Still Tagged Cancelled",
+      "segments": [
+       {
+        "__segmentId": "4933b5aa-0d29-41ad-a0b0-f62636119172",
+        "operator": "and",
+        "conditions": [
+         {
+          "conditionType": "contact_detail",
+          "conditionSubType": "tags",
+          "conditionOperator": "index-of-true",
+          "conditionValue": [
+           "cancelled"
+          ],
+          "__conditionId": "7c0c1028-a005-40ae-a964-f849c6e3b30a",
+          "ifElseNodeId": "",
+          "isWait": false,
+          "nestedDropdownTypes": [
+           "inboundWebhookRequest",
+           "sheet",
+           "datetime_formatter",
+           "custom_webhook",
+           "array_functions",
+           "ivr_gather",
+           "ivr_connect_call",
+           "custom_code"
+          ],
+          "allowIsOperatorTypes": [
+           "contact_reply",
+           "inboundWebhookRequest",
+           "custom_webhook",
+           "custom_code",
+           "contact_detail",
+           "array_functions"
+          ]
+         }
+        ]
+       }
+      ],
+      "operator": "and",
+      "showErrors": false,
+      "branchNameError": "Branch name cannot be empty!"
+     }
+    ],
+    "operator": "and",
+    "if": true,
+    "conditionName": "Condition",
+    "version": 2,
+    "noneBranchName": "Not Tagged Cancelled"
+   },
+   "name": "yes",
+   "type": "if_else",
+   "cat": "conditions",
+   "next": [
+    "638760a0-9154-41e5-90d1-375cbdb33e83",
+    "297d5909-5c41-4696-bd6a-4d4e1178f46a"
+   ],
+   "comments": [],
+   "nodeType": "condition-node",
+   "parentKey": "1d255c5d-c820-44a8-8d89-6422aebcf921"
+  },
+  {
+   "id": "638760a0-9154-41e5-90d1-375cbdb33e83",
+   "parent": "51bbf958-5206-4409-8610-9b6b5dbc518a",
+   "order": 2,
+   "attributes": {
+    "if": false,
+    "conditionName": "Condition",
+    "operator": "and",
+    "branches": []
+   },
+   "name": "Still Tagged Cancelled",
+   "type": "if_else",
+   "cat": "conditions",
+   "next": "89429bd5-6d90-44f5-9050-5798225b1262",
+   "sibling": [
+    "297d5909-5c41-4696-bd6a-4d4e1178f46a"
+   ],
+   "comments": [],
+   "nodeType": "branch-yes",
+   "parentKey": "51bbf958-5206-4409-8610-9b6b5dbc518a"
+  },
+  {
+   "id": "89429bd5-6d90-44f5-9050-5798225b1262",
+   "parent": "638760a0-9154-41e5-90d1-375cbdb33e83",
+   "order": 0,
+   "attributes": {
+    "fields": [],
+    "type": "create_opportunity",
+    "pipeline_id": "bnsrCzFCvi5tZDGr4vn4",
+    "pipeline_stage_id": "745c5c88-0b03-47c9-ac21-ff61b9238803",
+    "opportunity_status": "lost",
+    "opportunity_name": "",
+    "opportunity_source": "",
+    "monetary_value": ""
+   },
+   "name": "Member Tracker - Cancelled and Lost",
+   "type": "create_opportunity",
+   "next": "68a60507-76f8-41c4-8832-f9dd71236ed7",
+   "parentKey": "638760a0-9154-41e5-90d1-375cbdb33e83"
+  },
+  {
+   "id": "68a60507-76f8-41c4-8832-f9dd71236ed7",
+   "order": 1,
+   "attributes": {
+    "includeCurrent": false,
+    "type": "remove_from_workflow"
+   },
+   "name": "Remove from all workflows",
+   "type": "remove_from_workflow",
+   "next": "a976eaa3-4ffc-488c-809e-27a691a7f542",
+   "parentKey": "89429bd5-6d90-44f5-9050-5798225b1262",
+   "parent": "638760a0-9154-41e5-90d1-375cbdb33e83"
+  },
+  {
+   "id": "a976eaa3-4ffc-488c-809e-27a691a7f542",
+   "order": 2,
+   "attributes": {
+    "tags": [
+     "existing member",
+     "member",
+     "paused member",
+     "active ex-members",
+     "challenge signup",
+     "challenge 2 signup"
+    ],
+    "type": "remove_contact_tag"
+   },
+   "name": "remove contact tag",
+   "type": "remove_contact_tag",
+   "next": "e4278470-8a28-445f-bf3c-b6298e1a1846",
+   "parentKey": "68a60507-76f8-41c4-8832-f9dd71236ed7",
+   "parent": "638760a0-9154-41e5-90d1-375cbdb33e83"
+  },
+  {
+   "id": "e4278470-8a28-445f-bf3c-b6298e1a1846",
+   "order": 3,
+   "attributes": {
+    "tags": [
+     "email subscriber",
+     "cancelled"
+    ]
+   },
+   "name": "add contact tag",
+   "type": "add_contact_tag",
+   "next": "70fa493a-17da-4b8a-893b-79e9ded4e448",
+   "parentKey": "a976eaa3-4ffc-488c-809e-27a691a7f542",
+   "parent": "638760a0-9154-41e5-90d1-375cbdb33e83"
+  },
+  {
+   "id": "70fa493a-17da-4b8a-893b-79e9ded4e448",
+   "order": 4,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 28,
+     "when": "after"
+    }
+   },
+   "name": "Wait 28d",
+   "type": "wait",
+   "next": "a8a077bd-8bbe-4e2d-bed3-1bf307859b89",
+   "parentKey": "e4278470-8a28-445f-bf3c-b6298e1a1846",
+   "parent": "638760a0-9154-41e5-90d1-375cbdb33e83"
+  },
+  {
+   "id": "a8a077bd-8bbe-4e2d-bed3-1bf307859b89",
+   "order": 5,
+   "attributes": {
+    "template_id": "670fa8217e1f30efff1e0676",
+    "templatesource": "email-builder",
+    "subject": "Hey {{contact.first_name}}",
+    "from_email": "{{location.email}}",
+    "from_name": "{{custom_values.sales_and_journey}}",
+    "attachments": []
+   },
+   "name": "Email 1",
+   "type": "email",
+   "next": "effca54a-7af6-49b3-9458-e0d4b6e8e1fd",
+   "parentKey": "70fa493a-17da-4b8a-893b-79e9ded4e448",
+   "parent": "638760a0-9154-41e5-90d1-375cbdb33e83"
+  },
+  {
+   "id": "effca54a-7af6-49b3-9458-e0d4b6e8e1fd",
+   "order": 6,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 56,
+     "when": "after"
+    }
+   },
+   "name": "Wait56d",
+   "type": "wait",
+   "next": "40bfb3fa-4f71-4a0e-9e3b-eb68f4b845fa",
+   "parentKey": "a8a077bd-8bbe-4e2d-bed3-1bf307859b89",
+   "parent": "638760a0-9154-41e5-90d1-375cbdb33e83"
+  },
+  {
+   "id": "40bfb3fa-4f71-4a0e-9e3b-eb68f4b845fa",
+   "order": 7,
+   "attributes": {
+    "template_id": "670fa81621340c8320572a62",
+    "templatesource": "email-builder",
+    "subject": "Hope you're well {{contact.first_name}}",
+    "from_email": "{{location.email}}",
+    "from_name": "{{custom_values.sales_and_journey}}",
+    "attachments": []
+   },
+   "name": "Email",
+   "type": "email",
+   "next": "91b7bfa1-a8b3-4179-a0bc-fa210bd1dd6f",
+   "parentKey": "effca54a-7af6-49b3-9458-e0d4b6e8e1fd",
+   "parent": "638760a0-9154-41e5-90d1-375cbdb33e83"
+  },
+  {
+   "id": "91b7bfa1-a8b3-4179-a0bc-fa210bd1dd6f",
+   "order": 8,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 60,
+     "when": "after"
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "a1254452-d4ed-4990-8bc0-04591cbbf050",
+   "parentKey": "40bfb3fa-4f71-4a0e-9e3b-eb68f4b845fa",
+   "parent": "638760a0-9154-41e5-90d1-375cbdb33e83"
+  },
+  {
+   "id": "a1254452-d4ed-4990-8bc0-04591cbbf050",
+   "order": 9,
+   "attributes": {
+    "template_id": "670fa81621340c8320572a62",
+    "templatesource": "email-builder",
+    "subject": "Hope you're well {{contact.first_name}}",
+    "from_email": "{{location.email}}",
+    "from_name": "{{custom_values.sales_and_journey}}",
+    "attachments": []
+   },
+   "name": "Email",
+   "type": "email",
+   "parentKey": "91b7bfa1-a8b3-4179-a0bc-fa210bd1dd6f",
+   "parent": "638760a0-9154-41e5-90d1-375cbdb33e83"
+  },
+  {
+   "id": "297d5909-5c41-4696-bd6a-4d4e1178f46a",
+   "parent": "51bbf958-5206-4409-8610-9b6b5dbc518a",
+   "order": 2,
+   "attributes": {
+    "else": true
+   },
+   "name": "Not Tagged Cancelled",
+   "type": "if_else",
+   "cat": "conditions",
+   "sibling": [
+    "638760a0-9154-41e5-90d1-375cbdb33e83"
+   ],
+   "comments": [],
+   "nodeType": "branch-no",
+   "parentKey": "51bbf958-5206-4409-8610-9b6b5dbc518a"
+  }
+ ]
+}

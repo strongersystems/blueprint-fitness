@@ -1,0 +1,1289 @@
+{
+ "workflow": {
+  "_id": "fc8e0889-9f02-4a2a-bd9a-fa89eed0bd74",
+  "locationId": "147m777NnBtnn7yLrsdb",
+  "name": "2. Intro Complete Main Flow",
+  "status": "published",
+  "version": 12,
+  "allowMultiple": true,
+  "timezone": "account",
+  "removeContactFromLastStep": true,
+  "filePath": "location/147m777NnBtnn7yLrsdb/workflows/fc8e0889-9f02-4a2a-bd9a-fa89eed0bd74/12",
+  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/automation-workflows-production/o/location%2F147m777NnBtnn7yLrsdb%2Fworkflows%2Ffc8e0889-9f02-4a2a-bd9a-fa89eed0bd74%2F12?alt=media&token=8992f607-4736-4e14-8e51-82a0e27ab56f",
+  "stopOnResponse": false,
+  "autoMarkAsRead": false,
+  "originId": "38cb4dc9-a773-475c-839d-a4c05ffaf8bf",
+  "permission": 380,
+  "type": "workflow",
+  "updatedBy": "kD5eX8SAxDHruPaeEprZ",
+  "createdAt": "2026-05-11T15:27:38.181Z",
+  "updatedAt": "2026-08-24T13:54:21.817Z",
+  "deleted": false,
+  "creationSource": "builder",
+  "isTriggerBucketMigrated": true,
+  "originType": "snapshot",
+  "__v": 0,
+  "allowMultipleOpportunity": false,
+  "dataVersion": 7,
+  "eventStartDate": null,
+  "parentId": "bcd342c8-1a76-4252-a1a5-612c65bbbc79",
+  "triggersFilePath": "location/147m777NnBtnn7yLrsdb/workflow-triggers/fc8e0889-9f02-4a2a-bd9a-fa89eed0bd74/4",
+  "window": null,
+  "workflowNote": {
+   "content": "",
+   "createdBy": "snapshot",
+   "createdByName": "snapshot",
+   "createdAt": "2026-05-11T15:27:46.206Z",
+   "updatedBy": "snapshot",
+   "updatedByName": "snapshot",
+   "updatedAt": "2026-05-11T15:27:46.206Z"
+  },
+  "companyId": "BHs3MppSlUdmHKGV7DDA",
+  "id": "fc8e0889-9f02-4a2a-bd9a-fa89eed0bd74",
+  "workflowData": {
+   "templates": [
+    {
+     "id": "39d58e07-b508-4276-bb96-3ac75e164aac",
+     "order": 0,
+     "attributes": {
+      "type": "create_opportunity",
+      "pipeline_id": "7XkeC9PXQPGWL2VF1XxD",
+      "pipeline_stage_id": "b0d28d77-7bcf-4c87-90c1-7cf059e9ae5e",
+      "opportunity_name": "",
+      "opportunity_source": "",
+      "monetary_value": "",
+      "fields": []
+     },
+     "name": "Move to Check In 1",
+     "type": "create_opportunity",
+     "next": "bb1a3e44-d87d-4deb-8e31-dfa0fb043853"
+    },
+    {
+     "id": "bb1a3e44-d87d-4deb-8e31-dfa0fb043853",
+     "order": 1,
+     "attributes": {
+      "only_unassigned_contact": false,
+      "total_index": 1,
+      "traffic_split": "equally",
+      "traffic_weightage": {
+       "z4Rq9Mh3nAzqQZRFdxLW": 1
+      },
+      "traffic_index": [
+       {
+        "id": "z4Rq9Mh3nAzqQZRFdxLW",
+        "indexes": [
+         1
+        ]
+       }
+      ],
+      "user_list": [
+       "z4Rq9Mh3nAzqQZRFdxLW"
+      ],
+      "type": "assign_user"
+     },
+     "name": "Assign to user",
+     "type": "assign_user",
+     "next": "c521b02b-93b3-499d-b080-3760ffa451e7",
+     "parentKey": "39d58e07-b508-4276-bb96-3ac75e164aac"
+    },
+    {
+     "id": "c521b02b-93b3-499d-b080-3760ffa451e7",
+     "order": 2,
+     "attributes": {
+      "tags": [
+       "intro session complete"
+      ]
+     },
+     "name": "Add Intro Complete tag",
+     "type": "add_contact_tag",
+     "next": "e1367b6f-34bc-4c9f-9d1a-63130cea601f",
+     "parentKey": "bb1a3e44-d87d-4deb-8e31-dfa0fb043853"
+    },
+    {
+     "id": "e1367b6f-34bc-4c9f-9d1a-63130cea601f",
+     "order": 3,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      },
+      "window": {
+       "condition": "when",
+       "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "start": "09:00",
+       "end": "17:00"
+      },
+      "windowCondition": {
+       "field": "",
+       "operator": "",
+       "value": ""
+      }
+     },
+     "name": "Wait 1 Day",
+     "type": "wait",
+     "next": "a17bf0da-63d3-42fd-bd03-956d74788581",
+     "parentKey": "c521b02b-93b3-499d-b080-3760ffa451e7"
+    },
+    {
+     "id": "a17bf0da-63d3-42fd-bd03-956d74788581",
+     "order": 4,
+     "attributes": {
+      "body": "Hi {{contact.first_name}}! Well done on getting started. How are you feeling so far? If you have any questions or need help, let me know here. We are excited to have you onboard! {{user.first_name}}",
+      "attachments": []
+     },
+     "name": "Intro Complete SMS",
+     "type": "sms",
+     "next": "c68be9e1-c7bd-4051-bc95-396a31d597b6",
+     "parentKey": "e1367b6f-34bc-4c9f-9d1a-63130cea601f"
+    },
+    {
+     "id": "c68be9e1-c7bd-4051-bc95-396a31d597b6",
+     "order": 5,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 6,
+       "when": "after"
+      }
+     },
+     "name": "Wait 6 days",
+     "type": "wait",
+     "next": "15ffdb8d-691a-470f-9d33-8499a42db230",
+     "parentKey": "a17bf0da-63d3-42fd-bd03-956d74788581"
+    },
+    {
+     "id": "15ffdb8d-691a-470f-9d33-8499a42db230",
+     "order": 6,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 1,
+       "when": "after"
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "dfdc0881-d0bd-40aa-a87e-48bda15096b5",
+     "parentKey": "c68be9e1-c7bd-4051-bc95-396a31d597b6"
+    },
+    {
+     "id": "dfdc0881-d0bd-40aa-a87e-48bda15096b5",
+     "order": 7,
+     "attributes": {
+      "type": "create_opportunity",
+      "pipeline_id": "7XkeC9PXQPGWL2VF1XxD",
+      "pipeline_stage_id": "ec6df19b-ab2e-47bc-ac58-fe4ffb30b5e8",
+      "opportunity_name": "",
+      "opportunity_source": "",
+      "monetary_value": ""
+     },
+     "name": "Move to Check In 1",
+     "type": "create_opportunity",
+     "next": "7accd9af-8d11-4bcb-8338-2df991c8ff49",
+     "parentKey": "15ffdb8d-691a-470f-9d33-8499a42db230"
+    },
+    {
+     "id": "7accd9af-8d11-4bcb-8338-2df991c8ff49",
+     "order": 8,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 7,
+       "when": "after"
+      }
+     },
+     "name": "Wait 1 Week",
+     "type": "wait",
+     "next": "85819222-5d6c-4956-82db-485d0ba2a777",
+     "parentKey": "dfdc0881-d0bd-40aa-a87e-48bda15096b5"
+    },
+    {
+     "id": "85819222-5d6c-4956-82db-485d0ba2a777",
+     "order": 9,
+     "attributes": {
+      "type": "create_opportunity",
+      "pipeline_id": "7XkeC9PXQPGWL2VF1XxD",
+      "pipeline_stage_id": "9ec806b5-a73e-4733-bb25-d942da7bac80",
+      "opportunity_name": "",
+      "opportunity_source": "",
+      "monetary_value": ""
+     },
+     "name": "Create Opportunity",
+     "type": "create_opportunity",
+     "next": "2793ec22-d657-41f3-9fed-f577b5ab3610",
+     "parentKey": "7accd9af-8d11-4bcb-8338-2df991c8ff49"
+    },
+    {
+     "id": "2793ec22-d657-41f3-9fed-f577b5ab3610",
+     "order": 10,
+     "attributes": {
+      "body": "Hi {{contact.first_name}},\nI just wanted to say well done again! What's been the best thing about starting your journey with us so far?",
+      "attachments": []
+     },
+     "name": "2 Weeks SMS",
+     "type": "sms",
+     "next": "247561d8-a9c2-4318-b36c-43e22ed53458",
+     "parentKey": "85819222-5d6c-4956-82db-485d0ba2a777",
+     "advanceCanvasMeta": {
+      "isDisabled": true
+     }
+    },
+    {
+     "id": "247561d8-a9c2-4318-b36c-43e22ed53458",
+     "order": 11,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 7,
+       "when": "after"
+      }
+     },
+     "name": "Wait 1 Week",
+     "type": "wait",
+     "next": "99c86211-c814-4847-ab63-13de0887d154",
+     "parentKey": "2793ec22-d657-41f3-9fed-f577b5ab3610"
+    },
+    {
+     "id": "99c86211-c814-4847-ab63-13de0887d154",
+     "order": 12,
+     "attributes": {
+      "type": "create_opportunity",
+      "pipeline_id": "7XkeC9PXQPGWL2VF1XxD",
+      "pipeline_stage_id": "5eac5a0e-0229-424f-ab06-e81d0543bbbc",
+      "opportunity_status": "open",
+      "opportunity_name": "",
+      "opportunity_source": "",
+      "monetary_value": ""
+     },
+     "name": "Move To Day 21",
+     "type": "create_opportunity",
+     "next": "e6f9f166-14f0-4b7b-af7d-d95e41539885",
+     "parentKey": "247561d8-a9c2-4318-b36c-43e22ed53458"
+    },
+    {
+     "id": "e6f9f166-14f0-4b7b-af7d-d95e41539885",
+     "order": 13,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 4,
+       "when": "after"
+      }
+     },
+     "name": "Wait Until Day 25",
+     "type": "wait",
+     "next": "7a730443-4fdd-4282-ab31-0b4ac883a537",
+     "parentKey": "99c86211-c814-4847-ab63-13de0887d154"
+    },
+    {
+     "id": "7a730443-4fdd-4282-ab31-0b4ac883a537",
+     "order": 14,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 3,
+       "when": "after"
+      }
+     },
+     "name": "Wait Until Day 28",
+     "type": "wait",
+     "next": "bc423665-7f87-4392-8928-967699a865b6",
+     "parentKey": "e6f9f166-14f0-4b7b-af7d-d95e41539885"
+    },
+    {
+     "id": "bc423665-7f87-4392-8928-967699a865b6",
+     "order": 15,
+     "attributes": {
+      "type": "create_opportunity",
+      "pipeline_id": "7XkeC9PXQPGWL2VF1XxD",
+      "pipeline_stage_id": "bf099426-da28-4080-953a-13b3f453581a",
+      "opportunity_status": "open",
+      "opportunity_name": "",
+      "opportunity_source": "",
+      "monetary_value": ""
+     },
+     "name": "Move To Day 28",
+     "type": "create_opportunity",
+     "next": "e4318d56-09c2-4db6-b7f6-faa83be63a82",
+     "parentKey": "7a730443-4fdd-4282-ab31-0b4ac883a537"
+    },
+    {
+     "id": "e4318d56-09c2-4db6-b7f6-faa83be63a82",
+     "order": 16,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 4,
+       "when": "after"
+      }
+     },
+     "name": "Wait until Day 32",
+     "type": "wait",
+     "next": "82571228-9690-4763-87a7-32d07a60ca9d",
+     "parentKey": "bc423665-7f87-4392-8928-967699a865b6"
+    },
+    {
+     "id": "82571228-9690-4763-87a7-32d07a60ca9d",
+     "order": 17,
+     "attributes": {
+      "type": "create_opportunity",
+      "pipeline_id": "7XkeC9PXQPGWL2VF1XxD",
+      "pipeline_stage_id": "9f824f3b-7c4d-4fd8-91e0-3b39a184f10b",
+      "opportunity_status": "open",
+      "opportunity_name": "",
+      "opportunity_source": "",
+      "monetary_value": ""
+     },
+     "name": "Move To Trial Complete",
+     "type": "create_opportunity",
+     "next": "ec28d690-ffaf-4e12-be51-334196c3b5a7",
+     "parentKey": "e4318d56-09c2-4db6-b7f6-faa83be63a82"
+    },
+    {
+     "id": "ec28d690-ffaf-4e12-be51-334196c3b5a7",
+     "parentKey": "82571228-9690-4763-87a7-32d07a60ca9d",
+     "type": "wait",
+     "name": "wait",
+     "attributes": {
+      "type": "condition",
+      "startAfter": {
+       "type": "days",
+       "value": 21,
+       "when": "after"
+      },
+      "name": "Wait",
+      "cat": "multi-path",
+      "condition": {
+       "currentRecipeType": "CUSTOM",
+       "branches": [
+        {
+         "id": "9bec6a33-e9d8-43ab-89e2-c0b246aef2b5",
+         "name": "Branch",
+         "segments": [
+          {
+           "__segmentId": "586998e9-c4f6-4944-8ae6-fcef9c8d4a66",
+           "operator": "and",
+           "conditions": [
+            {
+             "conditionType": "contact_detail",
+             "conditionSubType": "tags",
+             "conditionOperator": "index-of-true",
+             "conditionValue": [
+              "member"
+             ],
+             "__conditionId": "5d2f4ccd-0e93-403f-a79e-e9e9bfe47035",
+             "ifElseNodeId": "",
+             "isWait": true,
+             "nestedDropdownTypes": [
+              "inboundWebhookRequest",
+              "sheet",
+              "datetime_formatter",
+              "custom_webhook",
+              "array_functions",
+              "ivr_gather",
+              "ivr_connect_call",
+              "custom_code"
+             ],
+             "allowIsOperatorTypes": [
+              "contact_reply",
+              "inboundWebhookRequest",
+              "custom_webhook",
+              "custom_code",
+              "contact_detail",
+              "array_functions"
+             ]
+            }
+           ]
+          }
+         ],
+         "operator": "and",
+         "showErrors": false,
+         "branchNameError": "Branch name cannot be empty!"
+        }
+       ],
+       "operator": "and",
+       "if": true,
+       "conditionName": "",
+       "version": 2,
+       "noneBranchName": "None"
+      },
+      "isHybridAction": true,
+      "hybridActionType": "wait",
+      "convertToMultipath": true,
+      "transitions": [
+       {
+        "id": "2e33841c-90ee-45c1-b320-1db257fe5392",
+        "name": "wait",
+        "condition": "primary",
+        "conditionType": "user-defined",
+        "isPrimaryBranch": true,
+        "description": "",
+        "attributes": {
+         "type": "wait_condition",
+         "description": "What will happen when specified conditions are met"
+        }
+       },
+       {
+        "id": "8c14e505-3b94-450f-b4b3-f6420e201072",
+        "name": "timeout",
+        "condition": "timeout",
+        "conditionType": "user-defined",
+        "isPrimaryBranch": false,
+        "description": "",
+        "attributes": {
+         "type": "wait_timeout",
+         "description": "What will happen after 21 days"
+        }
+       }
+      ]
+     },
+     "order": 18,
+     "cat": "multi-path",
+     "next": [
+      "2e33841c-90ee-45c1-b320-1db257fe5392",
+      "8c14e505-3b94-450f-b4b3-f6420e201072"
+     ]
+    },
+    {
+     "id": "2e33841c-90ee-45c1-b320-1db257fe5392",
+     "parentKey": "ec28d690-ffaf-4e12-be51-334196c3b5a7",
+     "parent": "ec28d690-ffaf-4e12-be51-334196c3b5a7",
+     "type": "transition",
+     "name": "wait",
+     "attributes": {
+      "type": "wait_condition",
+      "description": "What will happen when specified conditions are met"
+     },
+     "order": 19,
+     "cat": "transition",
+     "next": "3d962f11-4f95-4df9-b838-929b72558ae0"
+    },
+    {
+     "id": "3d962f11-4f95-4df9-b838-929b72558ae0",
+     "parent": "2e33841c-90ee-45c1-b320-1db257fe5392",
+     "order": 0,
+     "attributes": {
+      "fields": [],
+      "type": "create_opportunity",
+      "pipeline_id": "7XkeC9PXQPGWL2VF1XxD",
+      "pipeline_stage_id": "7e1c4919-3e44-4fad-a282-30b9e601595b",
+      "opportunity_status": "won",
+      "opportunity_name": "",
+      "opportunity_source": "",
+      "monetary_value": ""
+     },
+     "name": "Create Or Update Opportunity",
+     "type": "create_opportunity",
+     "next": "1d1f452f-dc9e-4a11-b7af-c493377a247f",
+     "parentKey": "2e33841c-90ee-45c1-b320-1db257fe5392"
+    },
+    {
+     "id": "1d1f452f-dc9e-4a11-b7af-c493377a247f",
+     "parent": "2e33841c-90ee-45c1-b320-1db257fe5392",
+     "order": 1,
+     "attributes": {
+      "type": "remove_from_workflow",
+      "workflow_id": "fc8e0889-9f02-4a2a-bd9a-fa89eed0bd74"
+     },
+     "name": "remove from workflow",
+     "type": "remove_from_workflow",
+     "parentKey": "3d962f11-4f95-4df9-b838-929b72558ae0"
+    },
+    {
+     "id": "8c14e505-3b94-450f-b4b3-f6420e201072",
+     "parentKey": "ec28d690-ffaf-4e12-be51-334196c3b5a7",
+     "parent": "ec28d690-ffaf-4e12-be51-334196c3b5a7",
+     "type": "transition",
+     "name": "timeout",
+     "attributes": {
+      "type": "wait_timeout",
+      "description": "What will happen after 21 days"
+     },
+     "order": 19,
+     "cat": "transition",
+     "next": "8a9c31a2-e998-40ef-b38e-361a3af6d319"
+    },
+    {
+     "id": "8a9c31a2-e998-40ef-b38e-361a3af6d319",
+     "parent": "8c14e505-3b94-450f-b4b3-f6420e201072",
+     "order": 0,
+     "attributes": {
+      "tags": [
+       "email subscriber",
+       "lapsed challenge"
+      ]
+     },
+     "name": "add contact tag",
+     "type": "add_contact_tag",
+     "next": "2fe486c3-e198-4cad-b71f-5a7f4752ace7",
+     "parentKey": "8c14e505-3b94-450f-b4b3-f6420e201072"
+    },
+    {
+     "id": "2fe486c3-e198-4cad-b71f-5a7f4752ace7",
+     "parent": "8c14e505-3b94-450f-b4b3-f6420e201072",
+     "order": 1,
+     "attributes": {
+      "tags": [
+       "new lead",
+       "intro session complete"
+      ],
+      "type": "remove_contact_tag"
+     },
+     "name": "remove contact tag",
+     "type": "remove_contact_tag",
+     "next": "a02b6743-3002-4611-bf29-3ea1d9b47953",
+     "parentKey": "8a9c31a2-e998-40ef-b38e-361a3af6d319"
+    },
+    {
+     "id": "a02b6743-3002-4611-bf29-3ea1d9b47953",
+     "parent": "8c14e505-3b94-450f-b4b3-f6420e201072",
+     "order": 2,
+     "attributes": {
+      "type": "create_opportunity",
+      "pipeline_id": "7XkeC9PXQPGWL2VF1XxD",
+      "pipeline_stage_id": "9f824f3b-7c4d-4fd8-91e0-3b39a184f10b",
+      "opportunity_status": "lost",
+      "allow_backward": true,
+      "opportunity_name": "",
+      "opportunity_source": "",
+      "monetary_value": "",
+      "fields": []
+     },
+     "name": "Create Opportunity",
+     "type": "create_opportunity",
+     "next": "7c7b85cf-bc81-435b-8762-58c162e33e8d",
+     "parentKey": "2fe486c3-e198-4cad-b71f-5a7f4752ace7"
+    },
+    {
+     "id": "7c7b85cf-bc81-435b-8762-58c162e33e8d",
+     "parent": "8c14e505-3b94-450f-b4b3-f6420e201072",
+     "order": 3,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 28,
+       "when": "after"
+      },
+      "name": "Wait",
+      "cat": "",
+      "isHybridAction": true,
+      "hybridActionType": "wait",
+      "transitions": []
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "9579aa7e-bcd9-4305-bd86-f1efdcbfdea9",
+     "parentKey": "a02b6743-3002-4611-bf29-3ea1d9b47953"
+    },
+    {
+     "id": "9579aa7e-bcd9-4305-bd86-f1efdcbfdea9",
+     "parent": "8c14e505-3b94-450f-b4b3-f6420e201072",
+     "order": 4,
+     "attributes": {
+      "subject": "I hope you're well {{contact.first_name}} 😊",
+      "from_email": "{{location.email}}",
+      "from_name": "{{custom_values.sales_and_journey}}",
+      "attachments": [],
+      "html": "<p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;font-family: verdana,geneva,sans-serif;font-size: 16px;\">Hi {{contact.first_name}}</p><p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;font-family: verdana,geneva,sans-serif;font-size: 16px;\">It's been a while but just checking in again to see how you're doing,</p><p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;font-family: verdana,geneva,sans-serif;font-size: 16px;\">If you ever fancy dropping in over the next couple of months just reply to this email to let me know you're alive and well and I'll add 5 free classes to your account you can use.</p><p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;font-family: verdana,geneva,sans-serif;font-size: 16px;\">The door is alway open if you want to reboot things!</p><p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;font-family: verdana,geneva,sans-serif;font-size: 16px;\">Nick</p>",
+      "fieldDefaults": {},
+      "htmlDefaults": {},
+      "trackingOptions": {
+       "hasTrackingLinks": false,
+       "hasUtmTracking": false,
+       "hasTags": false,
+       "sourceId": "fc8e0889-9f02-4a2a-bd9a-fa89eed0bd74:9579aa7e-bcd9-4305-bd86-f1efdcbfdea9"
+      },
+      "conditions": []
+     },
+     "name": "Email",
+     "type": "email",
+     "next": "450a53f1-2440-4039-a550-96b528a97d29",
+     "parentKey": "7c7b85cf-bc81-435b-8762-58c162e33e8d"
+    },
+    {
+     "id": "450a53f1-2440-4039-a550-96b528a97d29",
+     "parent": "8c14e505-3b94-450f-b4b3-f6420e201072",
+     "order": 5,
+     "attributes": {
+      "type": "time",
+      "startAfter": {
+       "type": "days",
+       "value": 56,
+       "when": "after"
+      }
+     },
+     "name": "Wait",
+     "type": "wait",
+     "next": "e2cceeb0-7c4d-4bde-8cd3-c124244a2998",
+     "parentKey": "9579aa7e-bcd9-4305-bd86-f1efdcbfdea9"
+    },
+    {
+     "id": "e2cceeb0-7c4d-4bde-8cd3-c124244a2998",
+     "parent": "8c14e505-3b94-450f-b4b3-f6420e201072",
+     "order": 6,
+     "attributes": {
+      "subject": "I hope you're well {{contact.first_name}} 😊",
+      "from_email": "{{location.email}}",
+      "from_name": "{{custom_values.sales_and_journey}}",
+      "attachments": [],
+      "html": "<p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;font-family: verdana,geneva,sans-serif;font-size: 16px;\">Hi {{contact.first_name}}</p><p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;font-family: verdana,geneva,sans-serif;font-size: 16px;\">It's been about 3 months since you finished with us, so I just wanted to make sure you're still taking good care of your health.</p><p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;font-family: verdana,geneva,sans-serif;font-size: 16px;\">The offer of some free classes is still there if you want to get moving again and feel ready?<br><br>What do you think?</p><p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;font-family: verdana,geneva,sans-serif;font-size: 16px;\">Nick</p>",
+      "fieldDefaults": {},
+      "htmlDefaults": {},
+      "trackingOptions": {
+       "hasTrackingLinks": false,
+       "hasUtmTracking": false,
+       "hasTags": false,
+       "sourceId": "fc8e0889-9f02-4a2a-bd9a-fa89eed0bd74:e2cceeb0-7c4d-4bde-8cd3-c124244a2998"
+      },
+      "conditions": []
+     },
+     "name": "Email",
+     "type": "email",
+     "parentKey": "450a53f1-2440-4039-a550-96b528a97d29"
+    }
+   ]
+  },
+  "permissionMeta": {
+   "canRead": true,
+   "canWrite": true
+  },
+  "scheduledPauseDates": []
+ },
+ "templates": [
+  {
+   "id": "39d58e07-b508-4276-bb96-3ac75e164aac",
+   "order": 0,
+   "attributes": {
+    "type": "create_opportunity",
+    "pipeline_id": "7XkeC9PXQPGWL2VF1XxD",
+    "pipeline_stage_id": "b0d28d77-7bcf-4c87-90c1-7cf059e9ae5e",
+    "opportunity_name": "",
+    "opportunity_source": "",
+    "monetary_value": "",
+    "fields": []
+   },
+   "name": "Move to Check In 1",
+   "type": "create_opportunity",
+   "next": "bb1a3e44-d87d-4deb-8e31-dfa0fb043853"
+  },
+  {
+   "id": "bb1a3e44-d87d-4deb-8e31-dfa0fb043853",
+   "order": 1,
+   "attributes": {
+    "only_unassigned_contact": false,
+    "total_index": 1,
+    "traffic_split": "equally",
+    "traffic_weightage": {
+     "z4Rq9Mh3nAzqQZRFdxLW": 1
+    },
+    "traffic_index": [
+     {
+      "id": "z4Rq9Mh3nAzqQZRFdxLW",
+      "indexes": [
+       1
+      ]
+     }
+    ],
+    "user_list": [
+     "z4Rq9Mh3nAzqQZRFdxLW"
+    ],
+    "type": "assign_user"
+   },
+   "name": "Assign to user",
+   "type": "assign_user",
+   "next": "c521b02b-93b3-499d-b080-3760ffa451e7",
+   "parentKey": "39d58e07-b508-4276-bb96-3ac75e164aac"
+  },
+  {
+   "id": "c521b02b-93b3-499d-b080-3760ffa451e7",
+   "order": 2,
+   "attributes": {
+    "tags": [
+     "intro session complete"
+    ]
+   },
+   "name": "Add Intro Complete tag",
+   "type": "add_contact_tag",
+   "next": "e1367b6f-34bc-4c9f-9d1a-63130cea601f",
+   "parentKey": "bb1a3e44-d87d-4deb-8e31-dfa0fb043853"
+  },
+  {
+   "id": "e1367b6f-34bc-4c9f-9d1a-63130cea601f",
+   "order": 3,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    },
+    "window": {
+     "condition": "when",
+     "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "start": "09:00",
+     "end": "17:00"
+    },
+    "windowCondition": {
+     "field": "",
+     "operator": "",
+     "value": ""
+    }
+   },
+   "name": "Wait 1 Day",
+   "type": "wait",
+   "next": "a17bf0da-63d3-42fd-bd03-956d74788581",
+   "parentKey": "c521b02b-93b3-499d-b080-3760ffa451e7"
+  },
+  {
+   "id": "a17bf0da-63d3-42fd-bd03-956d74788581",
+   "order": 4,
+   "attributes": {
+    "body": "Hi {{contact.first_name}}! Well done on getting started. How are you feeling so far? If you have any questions or need help, let me know here. We are excited to have you onboard! {{user.first_name}}",
+    "attachments": []
+   },
+   "name": "Intro Complete SMS",
+   "type": "sms",
+   "next": "c68be9e1-c7bd-4051-bc95-396a31d597b6",
+   "parentKey": "e1367b6f-34bc-4c9f-9d1a-63130cea601f"
+  },
+  {
+   "id": "c68be9e1-c7bd-4051-bc95-396a31d597b6",
+   "order": 5,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 6,
+     "when": "after"
+    }
+   },
+   "name": "Wait 6 days",
+   "type": "wait",
+   "next": "15ffdb8d-691a-470f-9d33-8499a42db230",
+   "parentKey": "a17bf0da-63d3-42fd-bd03-956d74788581"
+  },
+  {
+   "id": "15ffdb8d-691a-470f-9d33-8499a42db230",
+   "order": 6,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 1,
+     "when": "after"
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "dfdc0881-d0bd-40aa-a87e-48bda15096b5",
+   "parentKey": "c68be9e1-c7bd-4051-bc95-396a31d597b6"
+  },
+  {
+   "id": "dfdc0881-d0bd-40aa-a87e-48bda15096b5",
+   "order": 7,
+   "attributes": {
+    "type": "create_opportunity",
+    "pipeline_id": "7XkeC9PXQPGWL2VF1XxD",
+    "pipeline_stage_id": "ec6df19b-ab2e-47bc-ac58-fe4ffb30b5e8",
+    "opportunity_name": "",
+    "opportunity_source": "",
+    "monetary_value": ""
+   },
+   "name": "Move to Check In 1",
+   "type": "create_opportunity",
+   "next": "7accd9af-8d11-4bcb-8338-2df991c8ff49",
+   "parentKey": "15ffdb8d-691a-470f-9d33-8499a42db230"
+  },
+  {
+   "id": "7accd9af-8d11-4bcb-8338-2df991c8ff49",
+   "order": 8,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 7,
+     "when": "after"
+    }
+   },
+   "name": "Wait 1 Week",
+   "type": "wait",
+   "next": "85819222-5d6c-4956-82db-485d0ba2a777",
+   "parentKey": "dfdc0881-d0bd-40aa-a87e-48bda15096b5"
+  },
+  {
+   "id": "85819222-5d6c-4956-82db-485d0ba2a777",
+   "order": 9,
+   "attributes": {
+    "type": "create_opportunity",
+    "pipeline_id": "7XkeC9PXQPGWL2VF1XxD",
+    "pipeline_stage_id": "9ec806b5-a73e-4733-bb25-d942da7bac80",
+    "opportunity_name": "",
+    "opportunity_source": "",
+    "monetary_value": ""
+   },
+   "name": "Create Opportunity",
+   "type": "create_opportunity",
+   "next": "2793ec22-d657-41f3-9fed-f577b5ab3610",
+   "parentKey": "7accd9af-8d11-4bcb-8338-2df991c8ff49"
+  },
+  {
+   "id": "2793ec22-d657-41f3-9fed-f577b5ab3610",
+   "order": 10,
+   "attributes": {
+    "body": "Hi {{contact.first_name}},\nI just wanted to say well done again! What's been the best thing about starting your journey with us so far?",
+    "attachments": []
+   },
+   "name": "2 Weeks SMS",
+   "type": "sms",
+   "next": "247561d8-a9c2-4318-b36c-43e22ed53458",
+   "parentKey": "85819222-5d6c-4956-82db-485d0ba2a777",
+   "advanceCanvasMeta": {
+    "isDisabled": true
+   }
+  },
+  {
+   "id": "247561d8-a9c2-4318-b36c-43e22ed53458",
+   "order": 11,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 7,
+     "when": "after"
+    }
+   },
+   "name": "Wait 1 Week",
+   "type": "wait",
+   "next": "99c86211-c814-4847-ab63-13de0887d154",
+   "parentKey": "2793ec22-d657-41f3-9fed-f577b5ab3610"
+  },
+  {
+   "id": "99c86211-c814-4847-ab63-13de0887d154",
+   "order": 12,
+   "attributes": {
+    "type": "create_opportunity",
+    "pipeline_id": "7XkeC9PXQPGWL2VF1XxD",
+    "pipeline_stage_id": "5eac5a0e-0229-424f-ab06-e81d0543bbbc",
+    "opportunity_status": "open",
+    "opportunity_name": "",
+    "opportunity_source": "",
+    "monetary_value": ""
+   },
+   "name": "Move To Day 21",
+   "type": "create_opportunity",
+   "next": "e6f9f166-14f0-4b7b-af7d-d95e41539885",
+   "parentKey": "247561d8-a9c2-4318-b36c-43e22ed53458"
+  },
+  {
+   "id": "e6f9f166-14f0-4b7b-af7d-d95e41539885",
+   "order": 13,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 4,
+     "when": "after"
+    }
+   },
+   "name": "Wait Until Day 25",
+   "type": "wait",
+   "next": "7a730443-4fdd-4282-ab31-0b4ac883a537",
+   "parentKey": "99c86211-c814-4847-ab63-13de0887d154"
+  },
+  {
+   "id": "7a730443-4fdd-4282-ab31-0b4ac883a537",
+   "order": 14,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 3,
+     "when": "after"
+    }
+   },
+   "name": "Wait Until Day 28",
+   "type": "wait",
+   "next": "bc423665-7f87-4392-8928-967699a865b6",
+   "parentKey": "e6f9f166-14f0-4b7b-af7d-d95e41539885"
+  },
+  {
+   "id": "bc423665-7f87-4392-8928-967699a865b6",
+   "order": 15,
+   "attributes": {
+    "type": "create_opportunity",
+    "pipeline_id": "7XkeC9PXQPGWL2VF1XxD",
+    "pipeline_stage_id": "bf099426-da28-4080-953a-13b3f453581a",
+    "opportunity_status": "open",
+    "opportunity_name": "",
+    "opportunity_source": "",
+    "monetary_value": ""
+   },
+   "name": "Move To Day 28",
+   "type": "create_opportunity",
+   "next": "e4318d56-09c2-4db6-b7f6-faa83be63a82",
+   "parentKey": "7a730443-4fdd-4282-ab31-0b4ac883a537"
+  },
+  {
+   "id": "e4318d56-09c2-4db6-b7f6-faa83be63a82",
+   "order": 16,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 4,
+     "when": "after"
+    }
+   },
+   "name": "Wait until Day 32",
+   "type": "wait",
+   "next": "82571228-9690-4763-87a7-32d07a60ca9d",
+   "parentKey": "bc423665-7f87-4392-8928-967699a865b6"
+  },
+  {
+   "id": "82571228-9690-4763-87a7-32d07a60ca9d",
+   "order": 17,
+   "attributes": {
+    "type": "create_opportunity",
+    "pipeline_id": "7XkeC9PXQPGWL2VF1XxD",
+    "pipeline_stage_id": "9f824f3b-7c4d-4fd8-91e0-3b39a184f10b",
+    "opportunity_status": "open",
+    "opportunity_name": "",
+    "opportunity_source": "",
+    "monetary_value": ""
+   },
+   "name": "Move To Trial Complete",
+   "type": "create_opportunity",
+   "next": "ec28d690-ffaf-4e12-be51-334196c3b5a7",
+   "parentKey": "e4318d56-09c2-4db6-b7f6-faa83be63a82"
+  },
+  {
+   "id": "ec28d690-ffaf-4e12-be51-334196c3b5a7",
+   "parentKey": "82571228-9690-4763-87a7-32d07a60ca9d",
+   "type": "wait",
+   "name": "wait",
+   "attributes": {
+    "type": "condition",
+    "startAfter": {
+     "type": "days",
+     "value": 21,
+     "when": "after"
+    },
+    "name": "Wait",
+    "cat": "multi-path",
+    "condition": {
+     "currentRecipeType": "CUSTOM",
+     "branches": [
+      {
+       "id": "9bec6a33-e9d8-43ab-89e2-c0b246aef2b5",
+       "name": "Branch",
+       "segments": [
+        {
+         "__segmentId": "586998e9-c4f6-4944-8ae6-fcef9c8d4a66",
+         "operator": "and",
+         "conditions": [
+          {
+           "conditionType": "contact_detail",
+           "conditionSubType": "tags",
+           "conditionOperator": "index-of-true",
+           "conditionValue": [
+            "member"
+           ],
+           "__conditionId": "5d2f4ccd-0e93-403f-a79e-e9e9bfe47035",
+           "ifElseNodeId": "",
+           "isWait": true,
+           "nestedDropdownTypes": [
+            "inboundWebhookRequest",
+            "sheet",
+            "datetime_formatter",
+            "custom_webhook",
+            "array_functions",
+            "ivr_gather",
+            "ivr_connect_call",
+            "custom_code"
+           ],
+           "allowIsOperatorTypes": [
+            "contact_reply",
+            "inboundWebhookRequest",
+            "custom_webhook",
+            "custom_code",
+            "contact_detail",
+            "array_functions"
+           ]
+          }
+         ]
+        }
+       ],
+       "operator": "and",
+       "showErrors": false,
+       "branchNameError": "Branch name cannot be empty!"
+      }
+     ],
+     "operator": "and",
+     "if": true,
+     "conditionName": "",
+     "version": 2,
+     "noneBranchName": "None"
+    },
+    "isHybridAction": true,
+    "hybridActionType": "wait",
+    "convertToMultipath": true,
+    "transitions": [
+     {
+      "id": "2e33841c-90ee-45c1-b320-1db257fe5392",
+      "name": "wait",
+      "condition": "primary",
+      "conditionType": "user-defined",
+      "isPrimaryBranch": true,
+      "description": "",
+      "attributes": {
+       "type": "wait_condition",
+       "description": "What will happen when specified conditions are met"
+      }
+     },
+     {
+      "id": "8c14e505-3b94-450f-b4b3-f6420e201072",
+      "name": "timeout",
+      "condition": "timeout",
+      "conditionType": "user-defined",
+      "isPrimaryBranch": false,
+      "description": "",
+      "attributes": {
+       "type": "wait_timeout",
+       "description": "What will happen after 21 days"
+      }
+     }
+    ]
+   },
+   "order": 18,
+   "cat": "multi-path",
+   "next": [
+    "2e33841c-90ee-45c1-b320-1db257fe5392",
+    "8c14e505-3b94-450f-b4b3-f6420e201072"
+   ]
+  },
+  {
+   "id": "2e33841c-90ee-45c1-b320-1db257fe5392",
+   "parentKey": "ec28d690-ffaf-4e12-be51-334196c3b5a7",
+   "parent": "ec28d690-ffaf-4e12-be51-334196c3b5a7",
+   "type": "transition",
+   "name": "wait",
+   "attributes": {
+    "type": "wait_condition",
+    "description": "What will happen when specified conditions are met"
+   },
+   "order": 19,
+   "cat": "transition",
+   "next": "3d962f11-4f95-4df9-b838-929b72558ae0"
+  },
+  {
+   "id": "3d962f11-4f95-4df9-b838-929b72558ae0",
+   "parent": "2e33841c-90ee-45c1-b320-1db257fe5392",
+   "order": 0,
+   "attributes": {
+    "fields": [],
+    "type": "create_opportunity",
+    "pipeline_id": "7XkeC9PXQPGWL2VF1XxD",
+    "pipeline_stage_id": "7e1c4919-3e44-4fad-a282-30b9e601595b",
+    "opportunity_status": "won",
+    "opportunity_name": "",
+    "opportunity_source": "",
+    "monetary_value": ""
+   },
+   "name": "Create Or Update Opportunity",
+   "type": "create_opportunity",
+   "next": "1d1f452f-dc9e-4a11-b7af-c493377a247f",
+   "parentKey": "2e33841c-90ee-45c1-b320-1db257fe5392"
+  },
+  {
+   "id": "1d1f452f-dc9e-4a11-b7af-c493377a247f",
+   "parent": "2e33841c-90ee-45c1-b320-1db257fe5392",
+   "order": 1,
+   "attributes": {
+    "type": "remove_from_workflow",
+    "workflow_id": "fc8e0889-9f02-4a2a-bd9a-fa89eed0bd74"
+   },
+   "name": "remove from workflow",
+   "type": "remove_from_workflow",
+   "parentKey": "3d962f11-4f95-4df9-b838-929b72558ae0"
+  },
+  {
+   "id": "8c14e505-3b94-450f-b4b3-f6420e201072",
+   "parentKey": "ec28d690-ffaf-4e12-be51-334196c3b5a7",
+   "parent": "ec28d690-ffaf-4e12-be51-334196c3b5a7",
+   "type": "transition",
+   "name": "timeout",
+   "attributes": {
+    "type": "wait_timeout",
+    "description": "What will happen after 21 days"
+   },
+   "order": 19,
+   "cat": "transition",
+   "next": "8a9c31a2-e998-40ef-b38e-361a3af6d319"
+  },
+  {
+   "id": "8a9c31a2-e998-40ef-b38e-361a3af6d319",
+   "parent": "8c14e505-3b94-450f-b4b3-f6420e201072",
+   "order": 0,
+   "attributes": {
+    "tags": [
+     "email subscriber",
+     "lapsed challenge"
+    ]
+   },
+   "name": "add contact tag",
+   "type": "add_contact_tag",
+   "next": "2fe486c3-e198-4cad-b71f-5a7f4752ace7",
+   "parentKey": "8c14e505-3b94-450f-b4b3-f6420e201072"
+  },
+  {
+   "id": "2fe486c3-e198-4cad-b71f-5a7f4752ace7",
+   "parent": "8c14e505-3b94-450f-b4b3-f6420e201072",
+   "order": 1,
+   "attributes": {
+    "tags": [
+     "new lead",
+     "intro session complete"
+    ],
+    "type": "remove_contact_tag"
+   },
+   "name": "remove contact tag",
+   "type": "remove_contact_tag",
+   "next": "a02b6743-3002-4611-bf29-3ea1d9b47953",
+   "parentKey": "8a9c31a2-e998-40ef-b38e-361a3af6d319"
+  },
+  {
+   "id": "a02b6743-3002-4611-bf29-3ea1d9b47953",
+   "parent": "8c14e505-3b94-450f-b4b3-f6420e201072",
+   "order": 2,
+   "attributes": {
+    "type": "create_opportunity",
+    "pipeline_id": "7XkeC9PXQPGWL2VF1XxD",
+    "pipeline_stage_id": "9f824f3b-7c4d-4fd8-91e0-3b39a184f10b",
+    "opportunity_status": "lost",
+    "allow_backward": true,
+    "opportunity_name": "",
+    "opportunity_source": "",
+    "monetary_value": "",
+    "fields": []
+   },
+   "name": "Create Opportunity",
+   "type": "create_opportunity",
+   "next": "7c7b85cf-bc81-435b-8762-58c162e33e8d",
+   "parentKey": "2fe486c3-e198-4cad-b71f-5a7f4752ace7"
+  },
+  {
+   "id": "7c7b85cf-bc81-435b-8762-58c162e33e8d",
+   "parent": "8c14e505-3b94-450f-b4b3-f6420e201072",
+   "order": 3,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 28,
+     "when": "after"
+    },
+    "name": "Wait",
+    "cat": "",
+    "isHybridAction": true,
+    "hybridActionType": "wait",
+    "transitions": []
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "9579aa7e-bcd9-4305-bd86-f1efdcbfdea9",
+   "parentKey": "a02b6743-3002-4611-bf29-3ea1d9b47953"
+  },
+  {
+   "id": "9579aa7e-bcd9-4305-bd86-f1efdcbfdea9",
+   "parent": "8c14e505-3b94-450f-b4b3-f6420e201072",
+   "order": 4,
+   "attributes": {
+    "subject": "I hope you're well {{contact.first_name}} 😊",
+    "from_email": "{{location.email}}",
+    "from_name": "{{custom_values.sales_and_journey}}",
+    "attachments": [],
+    "html": "<p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;font-family: verdana,geneva,sans-serif;font-size: 16px;\">Hi {{contact.first_name}}</p><p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;font-family: verdana,geneva,sans-serif;font-size: 16px;\">It's been a while but just checking in again to see how you're doing,</p><p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;font-family: verdana,geneva,sans-serif;font-size: 16px;\">If you ever fancy dropping in over the next couple of months just reply to this email to let me know you're alive and well and I'll add 5 free classes to your account you can use.</p><p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;font-family: verdana,geneva,sans-serif;font-size: 16px;\">The door is alway open if you want to reboot things!</p><p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;font-family: verdana,geneva,sans-serif;font-size: 16px;\">Nick</p>",
+    "fieldDefaults": {},
+    "htmlDefaults": {},
+    "trackingOptions": {
+     "hasTrackingLinks": false,
+     "hasUtmTracking": false,
+     "hasTags": false,
+     "sourceId": "fc8e0889-9f02-4a2a-bd9a-fa89eed0bd74:9579aa7e-bcd9-4305-bd86-f1efdcbfdea9"
+    },
+    "conditions": []
+   },
+   "name": "Email",
+   "type": "email",
+   "next": "450a53f1-2440-4039-a550-96b528a97d29",
+   "parentKey": "7c7b85cf-bc81-435b-8762-58c162e33e8d"
+  },
+  {
+   "id": "450a53f1-2440-4039-a550-96b528a97d29",
+   "parent": "8c14e505-3b94-450f-b4b3-f6420e201072",
+   "order": 5,
+   "attributes": {
+    "type": "time",
+    "startAfter": {
+     "type": "days",
+     "value": 56,
+     "when": "after"
+    }
+   },
+   "name": "Wait",
+   "type": "wait",
+   "next": "e2cceeb0-7c4d-4bde-8cd3-c124244a2998",
+   "parentKey": "9579aa7e-bcd9-4305-bd86-f1efdcbfdea9"
+  },
+  {
+   "id": "e2cceeb0-7c4d-4bde-8cd3-c124244a2998",
+   "parent": "8c14e505-3b94-450f-b4b3-f6420e201072",
+   "order": 6,
+   "attributes": {
+    "subject": "I hope you're well {{contact.first_name}} 😊",
+    "from_email": "{{location.email}}",
+    "from_name": "{{custom_values.sales_and_journey}}",
+    "attachments": [],
+    "html": "<p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;font-family: verdana,geneva,sans-serif;font-size: 16px;\">Hi {{contact.first_name}}</p><p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;font-family: verdana,geneva,sans-serif;font-size: 16px;\">It's been about 3 months since you finished with us, so I just wanted to make sure you're still taking good care of your health.</p><p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;font-family: verdana,geneva,sans-serif;font-size: 16px;\">The offer of some free classes is still there if you want to get moving again and feel ready?<br><br>What do you think?</p><p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;font-family: verdana,geneva,sans-serif;font-size: 16px;\">Nick</p>",
+    "fieldDefaults": {},
+    "htmlDefaults": {},
+    "trackingOptions": {
+     "hasTrackingLinks": false,
+     "hasUtmTracking": false,
+     "hasTags": false,
+     "sourceId": "fc8e0889-9f02-4a2a-bd9a-fa89eed0bd74:e2cceeb0-7c4d-4bde-8cd3-c124244a2998"
+    },
+    "conditions": []
+   },
+   "name": "Email",
+   "type": "email",
+   "parentKey": "450a53f1-2440-4039-a550-96b528a97d29"
+  }
+ ]
+}

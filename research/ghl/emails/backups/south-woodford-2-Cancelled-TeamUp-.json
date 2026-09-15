@@ -6,7 +6,7 @@
   "companyAge": 13,
   "name": "2. Cancelled (TeamUp)",
   "status": "published",
-  "version": 6,
+  "version": 7,
   "dataVersion": 7,
   "allowMultiple": false,
   "senderAddress": {
@@ -14,8 +14,8 @@
    "from_name": ""
   },
   "removeContactFromLastStep": true,
-  "filePath": "location/cquQsieyBZx9vRgEqBge/workflows/a15a03d2-f15f-4eb3-ad12-d50e72965c55/6",
-  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/automation-workflows-production/o/location%2FcquQsieyBZx9vRgEqBge%2Fworkflows%2Fa15a03d2-f15f-4eb3-ad12-d50e72965c55%2F6?alt=media&token=75a48353-3605-4838-9eea-8ce2bf250268",
+  "filePath": "location/cquQsieyBZx9vRgEqBge/workflows/a15a03d2-f15f-4eb3-ad12-d50e72965c55/7",
+  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/automation-workflows-production/o/location%2FcquQsieyBZx9vRgEqBge%2Fworkflows%2Fa15a03d2-f15f-4eb3-ad12-d50e72965c55%2F7?alt=media&token=15fa13eb-f1e5-4c19-8e11-877d3aaeecd2",
   "stopOnResponse": false,
   "autoMarkAsRead": false,
   "originId": "93b9ceb3-eea9-463d-8f36-9f09cb228285",
@@ -23,7 +23,7 @@
   "type": "workflow",
   "parentId": "cc784558-4d32-4ac9-b354-23e332b2c3cd",
   "createdAt": "2023-01-03T15:29:09.527Z",
-  "updatedAt": "2026-09-15T08:44:19.990Z",
+  "updatedAt": "2026-09-15T08:54:21.549Z",
   "deleted": false,
   "__v": 0,
   "triggersFilePath": "location/cquQsieyBZx9vRgEqBge/workflow-triggers/a15a03d2-f15f-4eb3-ad12-d50e72965c55/2",

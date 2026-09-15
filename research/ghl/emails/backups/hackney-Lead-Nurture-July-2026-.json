@@ -1,0 +1,839 @@
+{
+ "workflow": {
+  "_id": "98945d3a-a1bb-4ece-9467-5fa46a5c7ffc",
+  "locationId": "147m777NnBtnn7yLrsdb",
+  "companyId": "BHs3MppSlUdmHKGV7DDA",
+  "companyAge": 55,
+  "name": "Lead Nurture (July 2026)",
+  "status": "published",
+  "version": 6,
+  "dataVersion": 7,
+  "allowMultiple": true,
+  "timezone": "account",
+  "removeContactFromLastStep": true,
+  "filePath": "location/147m777NnBtnn7yLrsdb/workflows/98945d3a-a1bb-4ece-9467-5fa46a5c7ffc/6",
+  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/automation-workflows-production/o/location%2F147m777NnBtnn7yLrsdb%2Fworkflows%2F98945d3a-a1bb-4ece-9467-5fa46a5c7ffc%2F6?alt=media&token=e274e451-822c-4d63-a5aa-0cad6b2e0096",
+  "stopOnResponse": false,
+  "autoMarkAsRead": false,
+  "permission": 380,
+  "type": "workflow",
+  "parentId": "2f9a4e80-6a5b-4eb7-a825-7127c8c594d3",
+  "updatedBy": "z4Rq9Mh3nAzqQZRFdxLW",
+  "createdAt": "2026-06-30T12:06:38.996Z",
+  "updatedAt": "2026-06-30T12:38:11.828Z",
+  "deleted": false,
+  "allowMultipleOpportunity": true,
+  "creationSource": "builder",
+  "isTriggerBucketMigrated": true,
+  "originType": "user",
+  "__v": 0,
+  "eventStartDate": null,
+  "window": null,
+  "workflowNote": null,
+  "triggersFilePath": null,
+  "id": "98945d3a-a1bb-4ece-9467-5fa46a5c7ffc",
+  "workflowData": {
+   "templates": [
+    {
+     "id": "de13ddce-8bab-4f87-9303-9d040b3d345b",
+     "order": 0,
+     "attributes": {
+      "fieldDefaults": {},
+      "trackingOptions": {
+       "hasTrackingLinks": false,
+       "hasUtmTracking": false,
+       "hasTags": false,
+       "sourceId": "98945d3a-a1bb-4ece-9467-5fa46a5c7ffc:de13ddce-8bab-4f87-9303-9d040b3d345b"
+      },
+      "conditions": [],
+      "subject": "A quick hello from {{custom_values.staff_leads}} 👋",
+      "preHeader": "I just wanted to introduce myself and see if I can help.",
+      "from_email": "{{location.email}}",
+      "from_name": "{{location.name}}",
+      "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2F147m777NnBtnn7yLrsdb%2Femails%2F6a43b1a5a12887215841a86b%2Findex.html?alt=media&token=817c2c81-815b-49ec-94ee-defeb6b5169f?cb=1782822098520",
+      "createdAt": "2026-06-30T12:08:06.177Z",
+      "templateCreationMode": "existing",
+      "template_id": "6a43b1a5a12887215841a86b",
+      "templatesource": "email-builder",
+      "syncEnabled": false,
+      "attachments": []
+     },
+     "name": "Email 1",
+     "type": "email",
+     "next": "0b788d19-4324-4774-a5ee-6aaefe498483"
+    },
+    {
+     "id": "0b788d19-4324-4774-a5ee-6aaefe498483",
+     "parentKey": "de13ddce-8bab-4f87-9303-9d040b3d345b",
+     "type": "wait",
+     "name": "Wait Until Thursday",
+     "attributes": {
+      "type": "recurring_schedule",
+      "name": "Wait Until Thursday",
+      "cat": "",
+      "recurringFrequency": "weekly",
+      "recurringWeeklyDays": [
+       4
+      ],
+      "recurringMonthlyMode": "day",
+      "recurringMonthlyDay": 1,
+      "recurringMonthlyWeek": "1st",
+      "recurringMonthlyWeekday": 2,
+      "recurringMonths": [
+       1
+      ],
+      "recurringYearlyMonth": 1,
+      "recurringYearlyDay": 1,
+      "recurringTimeHour": 9,
+      "recurringTimeMinute": 0,
+      "recurringTimePeriod": "AM",
+      "recurringProceed": "on",
+      "recurringOffsetDays": 0,
+      "recurringOffsetHours": 0,
+      "recurringOffsetMinutes": 0,
+      "isHybridAction": true,
+      "hybridActionType": "wait",
+      "convertToMultipath": false,
+      "transitions": []
+     },
+     "order": 1,
+     "cat": "",
+     "next": "fa0f1fcc-44d4-402a-b518-bc95e4e5a328"
+    },
+    {
+     "id": "fa0f1fcc-44d4-402a-b518-bc95e4e5a328",
+     "order": 2,
+     "attributes": {
+      "fieldDefaults": {},
+      "trackingOptions": {
+       "hasTrackingLinks": false,
+       "hasUtmTracking": false,
+       "hasTags": false,
+       "sourceId": "98945d3a-a1bb-4ece-9467-5fa46a5c7ffc:fa0f1fcc-44d4-402a-b518-bc95e4e5a328"
+      },
+      "conditions": [],
+      "subject": "That moment you realise something's changed",
+      "preHeader": "It usually starts with something small...",
+      "from_email": "{{location.email}}",
+      "from_name": "{{location.name}}",
+      "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2F147m777NnBtnn7yLrsdb%2Femails%2F6a43b22ca12887215841b353%2Findex.html?alt=media&token=cb0d7f39-7d41-4c5f-9f8b-4df24d2c045c?cb=1782822120868",
+      "createdAt": "2026-06-30T12:10:21.084Z",
+      "templateCreationMode": "existing",
+      "template_id": "6a43b22ca12887215841b353",
+      "templatesource": "email-builder",
+      "syncEnabled": false,
+      "attachments": []
+     },
+     "name": "Email 2",
+     "type": "email",
+     "next": "b158937f-39e5-4a2a-b88a-229fd45bf88d",
+     "parentKey": "0b788d19-4324-4774-a5ee-6aaefe498483"
+    },
+    {
+     "id": "b158937f-39e5-4a2a-b88a-229fd45bf88d",
+     "order": 3,
+     "attributes": {
+      "type": "recurring_schedule",
+      "name": "Wait Until Tuesday",
+      "cat": "",
+      "recurringFrequency": "weekly",
+      "recurringWeeklyDays": [
+       2
+      ],
+      "recurringMonthlyMode": "day",
+      "recurringMonthlyDay": 1,
+      "recurringMonthlyWeek": "1st",
+      "recurringMonthlyWeekday": 2,
+      "recurringMonths": [
+       1
+      ],
+      "recurringYearlyMonth": 1,
+      "recurringYearlyDay": 1,
+      "recurringTimeHour": 9,
+      "recurringTimeMinute": 0,
+      "recurringTimePeriod": "AM",
+      "recurringProceed": "on",
+      "recurringOffsetDays": 0,
+      "recurringOffsetHours": 0,
+      "recurringOffsetMinutes": 0,
+      "isHybridAction": true,
+      "hybridActionType": "wait",
+      "convertToMultipath": false,
+      "transitions": []
+     },
+     "name": "Wait Until Tuesday",
+     "type": "wait",
+     "cat": "",
+     "next": "f4457ef9-b9ef-471d-b88d-118cf900584a",
+     "parentKey": "fa0f1fcc-44d4-402a-b518-bc95e4e5a328"
+    },
+    {
+     "id": "f4457ef9-b9ef-471d-b88d-118cf900584a",
+     "order": 4,
+     "attributes": {
+      "fieldDefaults": {},
+      "trackingOptions": {
+       "hasTrackingLinks": false,
+       "hasUtmTracking": false,
+       "hasTags": false,
+       "sourceId": "98945d3a-a1bb-4ece-9467-5fa46a5c7ffc:f4457ef9-b9ef-471d-b88d-118cf900584a"
+      },
+      "conditions": [],
+      "subject": "The 3 things that actually matter after 40",
+      "preHeader": "Forget the noise. Here's what actually works.",
+      "from_email": "{{location.email}}",
+      "from_name": "{{location.name}}",
+      "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2F147m777NnBtnn7yLrsdb%2Femails%2F6a43b266bdbdac41102cf49f%2Findex.html?alt=media&token=bdcf85ec-e3c9-4d43-a4fa-4857b00bf34c?cb=1782822184102",
+      "createdAt": "2026-06-30T12:11:19.363Z",
+      "templateCreationMode": "existing",
+      "template_id": "6a43b266bdbdac41102cf49f",
+      "templatesource": "email-builder",
+      "syncEnabled": false,
+      "attachments": []
+     },
+     "name": "Email 3",
+     "type": "email",
+     "next": "10d6fa10-ab4a-4293-8472-8a1f895febdc",
+     "parentKey": "b158937f-39e5-4a2a-b88a-229fd45bf88d"
+    },
+    {
+     "id": "10d6fa10-ab4a-4293-8472-8a1f895febdc",
+     "order": 5,
+     "attributes": {
+      "type": "recurring_schedule",
+      "name": "Wait Until Thursday",
+      "cat": "",
+      "recurringFrequency": "weekly",
+      "recurringWeeklyDays": [
+       4
+      ],
+      "recurringMonthlyMode": "day",
+      "recurringMonthlyDay": 1,
+      "recurringMonthlyWeek": "1st",
+      "recurringMonthlyWeekday": 2,
+      "recurringMonths": [
+       1
+      ],
+      "recurringYearlyMonth": 1,
+      "recurringYearlyDay": 1,
+      "recurringTimeHour": 9,
+      "recurringTimeMinute": 0,
+      "recurringTimePeriod": "AM",
+      "recurringProceed": "on",
+      "recurringOffsetDays": 0,
+      "recurringOffsetHours": 0,
+      "recurringOffsetMinutes": 0,
+      "isHybridAction": true,
+      "hybridActionType": "wait",
+      "convertToMultipath": false,
+      "transitions": []
+     },
+     "name": "Wait Until Thursday",
+     "type": "wait",
+     "next": "98556e54-34c3-4f90-91e1-a49240668dfb",
+     "parentKey": "f4457ef9-b9ef-471d-b88d-118cf900584a"
+    },
+    {
+     "id": "98556e54-34c3-4f90-91e1-a49240668dfb",
+     "order": 6,
+     "attributes": {
+      "fieldDefaults": {},
+      "trackingOptions": {
+       "hasTrackingLinks": false,
+       "hasUtmTracking": false,
+       "hasTags": false,
+       "sourceId": "98945d3a-a1bb-4ece-9467-5fa46a5c7ffc:98556e54-34c3-4f90-91e1-a49240668dfb"
+      },
+      "conditions": [],
+      "subject": "\"I wish I'd done this years ago\"",
+      "preHeader": "We hear this phrase more than almost any other.",
+      "from_email": "{{location.email}}",
+      "from_name": "{{location.name}}",
+      "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2F147m777NnBtnn7yLrsdb%2Femails%2F6a43b266bdbdac41102cf49d%2Findex.html?alt=media&token=d61e997e-f506-40ee-8a19-f96de9c1322e?cb=1782822211263",
+      "createdAt": "2026-06-30T12:11:19.309Z",
+      "templateCreationMode": "existing",
+      "template_id": "6a43b266bdbdac41102cf49d",
+      "templatesource": "email-builder",
+      "syncEnabled": false,
+      "attachments": []
+     },
+     "name": "Email 4",
+     "type": "email",
+     "next": "d234aa83-3411-4f95-8d27-0f20dc40489e",
+     "parentKey": "10d6fa10-ab4a-4293-8472-8a1f895febdc"
+    },
+    {
+     "id": "d234aa83-3411-4f95-8d27-0f20dc40489e",
+     "order": 7,
+     "attributes": {
+      "type": "recurring_schedule",
+      "name": "Wait Until Tuesday",
+      "cat": "",
+      "recurringFrequency": "weekly",
+      "recurringWeeklyDays": [
+       2
+      ],
+      "recurringMonthlyMode": "day",
+      "recurringMonthlyDay": 1,
+      "recurringMonthlyWeek": "1st",
+      "recurringMonthlyWeekday": 2,
+      "recurringMonths": [
+       1
+      ],
+      "recurringYearlyMonth": 1,
+      "recurringYearlyDay": 1,
+      "recurringTimeHour": 9,
+      "recurringTimeMinute": 0,
+      "recurringTimePeriod": "AM",
+      "recurringProceed": "on",
+      "recurringOffsetDays": 0,
+      "recurringOffsetHours": 0,
+      "recurringOffsetMinutes": 0,
+      "isHybridAction": true,
+      "hybridActionType": "wait",
+      "convertToMultipath": false,
+      "transitions": []
+     },
+     "name": "Wait Until Tuesday",
+     "type": "wait",
+     "parentKey": "98556e54-34c3-4f90-91e1-a49240668dfb",
+     "next": "c5f2abbc-7313-44fe-922f-6e57ac647be0"
+    },
+    {
+     "id": "c5f2abbc-7313-44fe-922f-6e57ac647be0",
+     "order": 8,
+     "attributes": {
+      "fieldDefaults": {},
+      "trackingOptions": {
+       "hasTrackingLinks": false,
+       "hasUtmTracking": false,
+       "hasTags": false,
+       "sourceId": "98945d3a-a1bb-4ece-9467-5fa46a5c7ffc:c5f2abbc-7313-44fe-922f-6e57ac647be0"
+      },
+      "conditions": [],
+      "subject": "\"I wouldn't know where to start\"",
+      "preHeader": "That's the number one thing people tell us before they join.",
+      "from_email": "{{location.email}}",
+      "from_name": "{{location.name}}",
+      "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2F147m777NnBtnn7yLrsdb%2Femails%2F6a43b756c245151e661b2fec%2Findex.html?alt=media&token=4ec94ea6-5f57-4ced-8e02-695940df577a",
+      "createdAt": "2026-06-30T12:32:22.580Z",
+      "templateCreationMode": "existing",
+      "template_id": "6a43b756c245151e661b2fec",
+      "templatesource": "email-builder",
+      "syncEnabled": false,
+      "attachments": []
+     },
+     "name": "Email 5",
+     "type": "email",
+     "next": "ca975c55-9c73-4e77-9d60-d0e4091859a5",
+     "parentKey": "d234aa83-3411-4f95-8d27-0f20dc40489e"
+    },
+    {
+     "id": "ca975c55-9c73-4e77-9d60-d0e4091859a5",
+     "order": 9,
+     "attributes": {
+      "type": "recurring_schedule",
+      "name": "Wait Until Thursday",
+      "cat": "",
+      "recurringFrequency": "weekly",
+      "recurringWeeklyDays": [
+       4
+      ],
+      "recurringMonthlyMode": "day",
+      "recurringMonthlyDay": 1,
+      "recurringMonthlyWeek": "1st",
+      "recurringMonthlyWeekday": 2,
+      "recurringMonths": [
+       1
+      ],
+      "recurringYearlyMonth": 1,
+      "recurringYearlyDay": 1,
+      "recurringTimeHour": 9,
+      "recurringTimeMinute": 0,
+      "recurringTimePeriod": "AM",
+      "recurringProceed": "on",
+      "recurringOffsetDays": 0,
+      "recurringOffsetHours": 0,
+      "recurringOffsetMinutes": 0,
+      "isHybridAction": true,
+      "hybridActionType": "wait",
+      "convertToMultipath": false,
+      "transitions": []
+     },
+     "name": "Wait Until Thursday",
+     "type": "wait",
+     "next": "064cb498-cf64-4dd5-8b36-dbc9bb27124d",
+     "parentKey": "c5f2abbc-7313-44fe-922f-6e57ac647be0"
+    },
+    {
+     "id": "064cb498-cf64-4dd5-8b36-dbc9bb27124d",
+     "order": 10,
+     "attributes": {
+      "fieldDefaults": {},
+      "trackingOptions": {
+       "hasTrackingLinks": false,
+       "hasUtmTracking": false,
+       "hasTags": false,
+       "sourceId": "98945d3a-a1bb-4ece-9467-5fa46a5c7ffc:064cb498-cf64-4dd5-8b36-dbc9bb27124d"
+      },
+      "conditions": [],
+      "subject": "Why this isn't a \"normal gym\"",
+      "preHeader": "Rows of machines and people in headphones? That's not us.",
+      "from_email": "{{location.email}}",
+      "from_name": "{{location.name}}",
+      "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2F147m777NnBtnn7yLrsdb%2Femails%2F6a43b855d80a54e0ea4d7c3a%2Findex.html?alt=media&token=f3602c60-2f4d-400a-bf26-dd448e5dbe7c",
+      "createdAt": "2026-06-30T12:36:37.954Z",
+      "templateCreationMode": "existing",
+      "template_id": "6a43b855d80a54e0ea4d7c3a",
+      "templatesource": "email-builder",
+      "syncEnabled": false,
+      "attachments": []
+     },
+     "name": "Email 6",
+     "type": "email",
+     "next": "780c69cb-8a09-47f4-b323-8b1abb8cb165",
+     "parentKey": "ca975c55-9c73-4e77-9d60-d0e4091859a5"
+    },
+    {
+     "id": "780c69cb-8a09-47f4-b323-8b1abb8cb165",
+     "order": 11,
+     "attributes": {
+      "type": "recurring_schedule",
+      "name": "Wait Until Tuesday",
+      "cat": "",
+      "recurringFrequency": "weekly",
+      "recurringWeeklyDays": [
+       2
+      ],
+      "recurringMonthlyMode": "day",
+      "recurringMonthlyDay": 1,
+      "recurringMonthlyWeek": "1st",
+      "recurringMonthlyWeekday": 2,
+      "recurringMonths": [
+       1
+      ],
+      "recurringYearlyMonth": 1,
+      "recurringYearlyDay": 1,
+      "recurringTimeHour": 9,
+      "recurringTimeMinute": 0,
+      "recurringTimePeriod": "AM",
+      "recurringProceed": "on",
+      "recurringOffsetDays": 0,
+      "recurringOffsetHours": 0,
+      "recurringOffsetMinutes": 0,
+      "isHybridAction": true,
+      "hybridActionType": "wait",
+      "convertToMultipath": false,
+      "transitions": []
+     },
+     "name": "Wait Until Tuesday",
+     "type": "wait",
+     "parentKey": "064cb498-cf64-4dd5-8b36-dbc9bb27124d"
+    }
+   ]
+  },
+  "permissionMeta": {
+   "canRead": true,
+   "canWrite": true
+  },
+  "scheduledPauseDates": []
+ },
+ "templates": [
+  {
+   "id": "de13ddce-8bab-4f87-9303-9d040b3d345b",
+   "order": 0,
+   "attributes": {
+    "fieldDefaults": {},
+    "trackingOptions": {
+     "hasTrackingLinks": false,
+     "hasUtmTracking": false,
+     "hasTags": false,
+     "sourceId": "98945d3a-a1bb-4ece-9467-5fa46a5c7ffc:de13ddce-8bab-4f87-9303-9d040b3d345b"
+    },
+    "conditions": [],
+    "subject": "A quick hello from {{custom_values.staff_leads}} 👋",
+    "preHeader": "I just wanted to introduce myself and see if I can help.",
+    "from_email": "{{location.email}}",
+    "from_name": "{{location.name}}",
+    "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2F147m777NnBtnn7yLrsdb%2Femails%2F6a43b1a5a12887215841a86b%2Findex.html?alt=media&token=817c2c81-815b-49ec-94ee-defeb6b5169f?cb=1782822098520",
+    "createdAt": "2026-06-30T12:08:06.177Z",
+    "templateCreationMode": "existing",
+    "template_id": "6a43b1a5a12887215841a86b",
+    "templatesource": "email-builder",
+    "syncEnabled": false,
+    "attachments": []
+   },
+   "name": "Email 1",
+   "type": "email",
+   "next": "0b788d19-4324-4774-a5ee-6aaefe498483"
+  },
+  {
+   "id": "0b788d19-4324-4774-a5ee-6aaefe498483",
+   "parentKey": "de13ddce-8bab-4f87-9303-9d040b3d345b",
+   "type": "wait",
+   "name": "Wait Until Thursday",
+   "attributes": {
+    "type": "recurring_schedule",
+    "name": "Wait Until Thursday",
+    "cat": "",
+    "recurringFrequency": "weekly",
+    "recurringWeeklyDays": [
+     4
+    ],
+    "recurringMonthlyMode": "day",
+    "recurringMonthlyDay": 1,
+    "recurringMonthlyWeek": "1st",
+    "recurringMonthlyWeekday": 2,
+    "recurringMonths": [
+     1
+    ],
+    "recurringYearlyMonth": 1,
+    "recurringYearlyDay": 1,
+    "recurringTimeHour": 9,
+    "recurringTimeMinute": 0,
+    "recurringTimePeriod": "AM",
+    "recurringProceed": "on",
+    "recurringOffsetDays": 0,
+    "recurringOffsetHours": 0,
+    "recurringOffsetMinutes": 0,
+    "isHybridAction": true,
+    "hybridActionType": "wait",
+    "convertToMultipath": false,
+    "transitions": []
+   },
+   "order": 1,
+   "cat": "",
+   "next": "fa0f1fcc-44d4-402a-b518-bc95e4e5a328"
+  },
+  {
+   "id": "fa0f1fcc-44d4-402a-b518-bc95e4e5a328",
+   "order": 2,
+   "attributes": {
+    "fieldDefaults": {},
+    "trackingOptions": {
+     "hasTrackingLinks": false,
+     "hasUtmTracking": false,
+     "hasTags": false,
+     "sourceId": "98945d3a-a1bb-4ece-9467-5fa46a5c7ffc:fa0f1fcc-44d4-402a-b518-bc95e4e5a328"
+    },
+    "conditions": [],
+    "subject": "That moment you realise something's changed",
+    "preHeader": "It usually starts with something small...",
+    "from_email": "{{location.email}}",
+    "from_name": "{{location.name}}",
+    "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2F147m777NnBtnn7yLrsdb%2Femails%2F6a43b22ca12887215841b353%2Findex.html?alt=media&token=cb0d7f39-7d41-4c5f-9f8b-4df24d2c045c?cb=1782822120868",
+    "createdAt": "2026-06-30T12:10:21.084Z",
+    "templateCreationMode": "existing",
+    "template_id": "6a43b22ca12887215841b353",
+    "templatesource": "email-builder",
+    "syncEnabled": false,
+    "attachments": []
+   },
+   "name": "Email 2",
+   "type": "email",
+   "next": "b158937f-39e5-4a2a-b88a-229fd45bf88d",
+   "parentKey": "0b788d19-4324-4774-a5ee-6aaefe498483"
+  },
+  {
+   "id": "b158937f-39e5-4a2a-b88a-229fd45bf88d",
+   "order": 3,
+   "attributes": {
+    "type": "recurring_schedule",
+    "name": "Wait Until Tuesday",
+    "cat": "",
+    "recurringFrequency": "weekly",
+    "recurringWeeklyDays": [
+     2
+    ],
+    "recurringMonthlyMode": "day",
+    "recurringMonthlyDay": 1,
+    "recurringMonthlyWeek": "1st",
+    "recurringMonthlyWeekday": 2,
+    "recurringMonths": [
+     1
+    ],
+    "recurringYearlyMonth": 1,
+    "recurringYearlyDay": 1,
+    "recurringTimeHour": 9,
+    "recurringTimeMinute": 0,
+    "recurringTimePeriod": "AM",
+    "recurringProceed": "on",
+    "recurringOffsetDays": 0,
+    "recurringOffsetHours": 0,
+    "recurringOffsetMinutes": 0,
+    "isHybridAction": true,
+    "hybridActionType": "wait",
+    "convertToMultipath": false,
+    "transitions": []
+   },
+   "name": "Wait Until Tuesday",
+   "type": "wait",
+   "cat": "",
+   "next": "f4457ef9-b9ef-471d-b88d-118cf900584a",
+   "parentKey": "fa0f1fcc-44d4-402a-b518-bc95e4e5a328"
+  },
+  {
+   "id": "f4457ef9-b9ef-471d-b88d-118cf900584a",
+   "order": 4,
+   "attributes": {
+    "fieldDefaults": {},
+    "trackingOptions": {
+     "hasTrackingLinks": false,
+     "hasUtmTracking": false,
+     "hasTags": false,
+     "sourceId": "98945d3a-a1bb-4ece-9467-5fa46a5c7ffc:f4457ef9-b9ef-471d-b88d-118cf900584a"
+    },
+    "conditions": [],
+    "subject": "The 3 things that actually matter after 40",
+    "preHeader": "Forget the noise. Here's what actually works.",
+    "from_email": "{{location.email}}",
+    "from_name": "{{location.name}}",
+    "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2F147m777NnBtnn7yLrsdb%2Femails%2F6a43b266bdbdac41102cf49f%2Findex.html?alt=media&token=bdcf85ec-e3c9-4d43-a4fa-4857b00bf34c?cb=1782822184102",
+    "createdAt": "2026-06-30T12:11:19.363Z",
+    "templateCreationMode": "existing",
+    "template_id": "6a43b266bdbdac41102cf49f",
+    "templatesource": "email-builder",
+    "syncEnabled": false,
+    "attachments": []
+   },
+   "name": "Email 3",
+   "type": "email",
+   "next": "10d6fa10-ab4a-4293-8472-8a1f895febdc",
+   "parentKey": "b158937f-39e5-4a2a-b88a-229fd45bf88d"
+  },
+  {
+   "id": "10d6fa10-ab4a-4293-8472-8a1f895febdc",
+   "order": 5,
+   "attributes": {
+    "type": "recurring_schedule",
+    "name": "Wait Until Thursday",
+    "cat": "",
+    "recurringFrequency": "weekly",
+    "recurringWeeklyDays": [
+     4
+    ],
+    "recurringMonthlyMode": "day",
+    "recurringMonthlyDay": 1,
+    "recurringMonthlyWeek": "1st",
+    "recurringMonthlyWeekday": 2,
+    "recurringMonths": [
+     1
+    ],
+    "recurringYearlyMonth": 1,
+    "recurringYearlyDay": 1,
+    "recurringTimeHour": 9,
+    "recurringTimeMinute": 0,
+    "recurringTimePeriod": "AM",
+    "recurringProceed": "on",
+    "recurringOffsetDays": 0,
+    "recurringOffsetHours": 0,
+    "recurringOffsetMinutes": 0,
+    "isHybridAction": true,
+    "hybridActionType": "wait",
+    "convertToMultipath": false,
+    "transitions": []
+   },
+   "name": "Wait Until Thursday",
+   "type": "wait",
+   "next": "98556e54-34c3-4f90-91e1-a49240668dfb",
+   "parentKey": "f4457ef9-b9ef-471d-b88d-118cf900584a"
+  },
+  {
+   "id": "98556e54-34c3-4f90-91e1-a49240668dfb",
+   "order": 6,
+   "attributes": {
+    "fieldDefaults": {},
+    "trackingOptions": {
+     "hasTrackingLinks": false,
+     "hasUtmTracking": false,
+     "hasTags": false,
+     "sourceId": "98945d3a-a1bb-4ece-9467-5fa46a5c7ffc:98556e54-34c3-4f90-91e1-a49240668dfb"
+    },
+    "conditions": [],
+    "subject": "\"I wish I'd done this years ago\"",
+    "preHeader": "We hear this phrase more than almost any other.",
+    "from_email": "{{location.email}}",
+    "from_name": "{{location.name}}",
+    "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2F147m777NnBtnn7yLrsdb%2Femails%2F6a43b266bdbdac41102cf49d%2Findex.html?alt=media&token=d61e997e-f506-40ee-8a19-f96de9c1322e?cb=1782822211263",
+    "createdAt": "2026-06-30T12:11:19.309Z",
+    "templateCreationMode": "existing",
+    "template_id": "6a43b266bdbdac41102cf49d",
+    "templatesource": "email-builder",
+    "syncEnabled": false,
+    "attachments": []
+   },
+   "name": "Email 4",
+   "type": "email",
+   "next": "d234aa83-3411-4f95-8d27-0f20dc40489e",
+   "parentKey": "10d6fa10-ab4a-4293-8472-8a1f895febdc"
+  },
+  {
+   "id": "d234aa83-3411-4f95-8d27-0f20dc40489e",
+   "order": 7,
+   "attributes": {
+    "type": "recurring_schedule",
+    "name": "Wait Until Tuesday",
+    "cat": "",
+    "recurringFrequency": "weekly",
+    "recurringWeeklyDays": [
+     2
+    ],
+    "recurringMonthlyMode": "day",
+    "recurringMonthlyDay": 1,
+    "recurringMonthlyWeek": "1st",
+    "recurringMonthlyWeekday": 2,
+    "recurringMonths": [
+     1
+    ],
+    "recurringYearlyMonth": 1,
+    "recurringYearlyDay": 1,
+    "recurringTimeHour": 9,
+    "recurringTimeMinute": 0,
+    "recurringTimePeriod": "AM",
+    "recurringProceed": "on",
+    "recurringOffsetDays": 0,
+    "recurringOffsetHours": 0,
+    "recurringOffsetMinutes": 0,
+    "isHybridAction": true,
+    "hybridActionType": "wait",
+    "convertToMultipath": false,
+    "transitions": []
+   },
+   "name": "Wait Until Tuesday",
+   "type": "wait",
+   "parentKey": "98556e54-34c3-4f90-91e1-a49240668dfb",
+   "next": "c5f2abbc-7313-44fe-922f-6e57ac647be0"
+  },
+  {
+   "id": "c5f2abbc-7313-44fe-922f-6e57ac647be0",
+   "order": 8,
+   "attributes": {
+    "fieldDefaults": {},
+    "trackingOptions": {
+     "hasTrackingLinks": false,
+     "hasUtmTracking": false,
+     "hasTags": false,
+     "sourceId": "98945d3a-a1bb-4ece-9467-5fa46a5c7ffc:c5f2abbc-7313-44fe-922f-6e57ac647be0"
+    },
+    "conditions": [],
+    "subject": "\"I wouldn't know where to start\"",
+    "preHeader": "That's the number one thing people tell us before they join.",
+    "from_email": "{{location.email}}",
+    "from_name": "{{location.name}}",
+    "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2F147m777NnBtnn7yLrsdb%2Femails%2F6a43b756c245151e661b2fec%2Findex.html?alt=media&token=4ec94ea6-5f57-4ced-8e02-695940df577a",
+    "createdAt": "2026-06-30T12:32:22.580Z",
+    "templateCreationMode": "existing",
+    "template_id": "6a43b756c245151e661b2fec",
+    "templatesource": "email-builder",
+    "syncEnabled": false,
+    "attachments": []
+   },
+   "name": "Email 5",
+   "type": "email",
+   "next": "ca975c55-9c73-4e77-9d60-d0e4091859a5",
+   "parentKey": "d234aa83-3411-4f95-8d27-0f20dc40489e"
+  },
+  {
+   "id": "ca975c55-9c73-4e77-9d60-d0e4091859a5",
+   "order": 9,
+   "attributes": {
+    "type": "recurring_schedule",
+    "name": "Wait Until Thursday",
+    "cat": "",
+    "recurringFrequency": "weekly",
+    "recurringWeeklyDays": [
+     4
+    ],
+    "recurringMonthlyMode": "day",
+    "recurringMonthlyDay": 1,
+    "recurringMonthlyWeek": "1st",
+    "recurringMonthlyWeekday": 2,
+    "recurringMonths": [
+     1
+    ],
+    "recurringYearlyMonth": 1,
+    "recurringYearlyDay": 1,
+    "recurringTimeHour": 9,
+    "recurringTimeMinute": 0,
+    "recurringTimePeriod": "AM",
+    "recurringProceed": "on",
+    "recurringOffsetDays": 0,
+    "recurringOffsetHours": 0,
+    "recurringOffsetMinutes": 0,
+    "isHybridAction": true,
+    "hybridActionType": "wait",
+    "convertToMultipath": false,
+    "transitions": []
+   },
+   "name": "Wait Until Thursday",
+   "type": "wait",
+   "next": "064cb498-cf64-4dd5-8b36-dbc9bb27124d",
+   "parentKey": "c5f2abbc-7313-44fe-922f-6e57ac647be0"
+  },
+  {
+   "id": "064cb498-cf64-4dd5-8b36-dbc9bb27124d",
+   "order": 10,
+   "attributes": {
+    "fieldDefaults": {},
+    "trackingOptions": {
+     "hasTrackingLinks": false,
+     "hasUtmTracking": false,
+     "hasTags": false,
+     "sourceId": "98945d3a-a1bb-4ece-9467-5fa46a5c7ffc:064cb498-cf64-4dd5-8b36-dbc9bb27124d"
+    },
+    "conditions": [],
+    "subject": "Why this isn't a \"normal gym\"",
+    "preHeader": "Rows of machines and people in headphones? That's not us.",
+    "from_email": "{{location.email}}",
+    "from_name": "{{location.name}}",
+    "previewUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2F147m777NnBtnn7yLrsdb%2Femails%2F6a43b855d80a54e0ea4d7c3a%2Findex.html?alt=media&token=f3602c60-2f4d-400a-bf26-dd448e5dbe7c",
+    "createdAt": "2026-06-30T12:36:37.954Z",
+    "templateCreationMode": "existing",
+    "template_id": "6a43b855d80a54e0ea4d7c3a",
+    "templatesource": "email-builder",
+    "syncEnabled": false,
+    "attachments": []
+   },
+   "name": "Email 6",
+   "type": "email",
+   "next": "780c69cb-8a09-47f4-b323-8b1abb8cb165",
+   "parentKey": "ca975c55-9c73-4e77-9d60-d0e4091859a5"
+  },
+  {
+   "id": "780c69cb-8a09-47f4-b323-8b1abb8cb165",
+   "order": 11,
+   "attributes": {
+    "type": "recurring_schedule",
+    "name": "Wait Until Tuesday",
+    "cat": "",
+    "recurringFrequency": "weekly",
+    "recurringWeeklyDays": [
+     2
+    ],
+    "recurringMonthlyMode": "day",
+    "recurringMonthlyDay": 1,
+    "recurringMonthlyWeek": "1st",
+    "recurringMonthlyWeekday": 2,
+    "recurringMonths": [
+     1
+    ],
+    "recurringYearlyMonth": 1,
+    "recurringYearlyDay": 1,
+    "recurringTimeHour": 9,
+    "recurringTimeMinute": 0,
+    "recurringTimePeriod": "AM",
+    "recurringProceed": "on",
+    "recurringOffsetDays": 0,
+    "recurringOffsetHours": 0,
+    "recurringOffsetMinutes": 0,
+    "isHybridAction": true,
+    "hybridActionType": "wait",
+    "convertToMultipath": false,
+    "transitions": []
+   },
+   "name": "Wait Until Tuesday",
+   "type": "wait",
+   "parentKey": "064cb498-cf64-4dd5-8b36-dbc9bb27124d"
+  }
+ ]
+}

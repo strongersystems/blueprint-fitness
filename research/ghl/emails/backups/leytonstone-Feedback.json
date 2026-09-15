@@ -1,0 +1,120 @@
+{
+ "workflow": {
+  "creationSource": "builder",
+  "_id": "54590148-c449-4d92-8411-07cc979c0482",
+  "locationId": "mztjJyXHNWiEotc8ItXP",
+  "name": "Feedback",
+  "status": "published",
+  "version": 2,
+  "allowMultiple": true,
+  "timezone": "account",
+  "removeContactFromLastStep": true,
+  "filePath": "location/mztjJyXHNWiEotc8ItXP/workflows/54590148-c449-4d92-8411-07cc979c0482/2",
+  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2FmztjJyXHNWiEotc8ItXP%2Fworkflows%2F54590148-c449-4d92-8411-07cc979c0482%2F2?alt=media&token=afeb8d3f-3f68-4c35-811e-8bb417d86f0a",
+  "stopOnResponse": false,
+  "autoMarkAsRead": false,
+  "originId": "7f73fda8-c572-407f-b807-ad3a8dec40a9",
+  "permission": 380,
+  "type": "workflow",
+  "meta": null,
+  "updatedBy": "snapshot",
+  "createdAt": "2024-10-16T11:49:16.199Z",
+  "updatedAt": "2024-10-16T11:49:20.934Z",
+  "deleted": false,
+  "__v": 0,
+  "allowMultipleOpportunity": false,
+  "dataVersion": 7,
+  "eventStartDate": null,
+  "senderAddress": {
+   "from_email": "",
+   "from_name": ""
+  },
+  "triggersFilePath": "location/mztjJyXHNWiEotc8ItXP/workflow-triggers/54590148-c449-4d92-8411-07cc979c0482/2",
+  "window": null,
+  "workflowNote": {
+   "content": "",
+   "createdBy": "snapshot",
+   "createdByName": "snapshot",
+   "createdAt": "2024-10-16T11:49:20.489Z",
+   "updatedBy": "snapshot",
+   "updatedByName": "snapshot",
+   "updatedAt": "2024-10-16T11:49:20.489Z"
+  },
+  "id": "54590148-c449-4d92-8411-07cc979c0482",
+  "workflowData": {
+   "templates": [
+    {
+     "id": "340d05cb-bfd1-4bbc-8f25-6e169802e6ab",
+     "order": 0,
+     "attributes": {
+      "type": "email",
+      "email": {
+       "userType": "custom_email",
+       "html": "Name: {{contact.name}}<br />Email: {{contact.email}}<br />Rating: {{contact.how_would_you_rate_your_experience}}<br />Experience: {{contact.feedback_describe_your_experience}}<br />Improvements?:<br />Do Well: {{contact.feedback_what_are_we_doing_well}}<br />Improve On: {{contact.feedback_what_could_we_improve_on}}",
+       "to": "info@blueprintfitnessldn.com",
+       "subject": "Feedback: {{contact.name}}",
+       "attachments": [],
+       "from_name": "DASH",
+       "from_email": "no-reply@blueprintfitnessldn.com"
+      }
+     },
+     "name": "Internal Notification",
+     "type": "internal_notification",
+     "next": "38e6f877-19a1-4be1-b213-c5feb6ce1ddf"
+    },
+    {
+     "id": "38e6f877-19a1-4be1-b213-c5feb6ce1ddf",
+     "order": 1,
+     "attributes": {
+      "from_name": "Paul Stafford",
+      "from_email": "info@blueprintfitnessldn.com",
+      "subject": "Thankyou {{contact.name}}!",
+      "html": "Hey {{contact.first_name}},<br />Thankyou for your feedback!<br />We really appreciate it 🙌😊<br />Paul",
+      "attachments": []
+     },
+     "name": "Email",
+     "type": "email"
+    }
+   ]
+  },
+  "permissionMeta": {
+   "canRead": true,
+   "canWrite": true
+  },
+  "scheduledPauseDates": []
+ },
+ "templates": [
+  {
+   "id": "340d05cb-bfd1-4bbc-8f25-6e169802e6ab",
+   "order": 0,
+   "attributes": {
+    "type": "email",
+    "email": {
+     "userType": "custom_email",
+     "html": "Name: {{contact.name}}<br />Email: {{contact.email}}<br />Rating: {{contact.how_would_you_rate_your_experience}}<br />Experience: {{contact.feedback_describe_your_experience}}<br />Improvements?:<br />Do Well: {{contact.feedback_what_are_we_doing_well}}<br />Improve On: {{contact.feedback_what_could_we_improve_on}}",
+     "to": "info@blueprintfitnessldn.com",
+     "subject": "Feedback: {{contact.name}}",
+     "attachments": [],
+     "from_name": "DASH",
+     "from_email": "no-reply@blueprintfitnessldn.com"
+    }
+   },
+   "name": "Internal Notification",
+   "type": "internal_notification",
+   "next": "38e6f877-19a1-4be1-b213-c5feb6ce1ddf"
+  },
+  {
+   "id": "38e6f877-19a1-4be1-b213-c5feb6ce1ddf",
+   "order": 1,
+   "attributes": {
+    "from_name": "Paul Stafford",
+    "from_email": "info@blueprintfitnessldn.com",
+    "subject": "Thankyou {{contact.name}}!",
+    "html": "Hey {{contact.first_name}},<br />Thankyou for your feedback!<br />We really appreciate it 🙌😊<br />Paul",
+    "attachments": []
+   },
+   "name": "Email",
+   "type": "email"
+  }
+ ]
+}

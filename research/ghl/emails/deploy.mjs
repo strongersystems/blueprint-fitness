@@ -25,7 +25,7 @@
  *
  *   node deploy.mjs <out.json> [--dry] [--studio south-woodford]
  */
-import { writeFileSync } from 'node:fs';
+import { writeFileSync, existsSync, readFileSync } from 'node:fs';
 import { makeClient } from '/home/user/stronger-web-1/ghl-internal-mcp/nurture/src/client.mjs';
 import { STUDIOS } from './render.mjs';
 import { build, FOLDERS } from './content.mjs';
@@ -56,17 +56,25 @@ async function docOf(locationId, id) {
   return r.ok ? r.data : null;
 }
 
+/* The builder listing cannot see inside folders, so the previously written map
+   is the only record of what already exists. Ids in it are reused and their
+   bodies rewritten; anything new is created. Without this a re-run silently
+   duplicates every template. */
+const prior = existsSync(process.argv[2]) ? JSON.parse(readFileSync(process.argv[2], 'utf8')) : {};
+
 const out = {};
 for (const [slug, locationId] of Object.entries(LOCS)) {
   if (only && slug !== only) continue;
   const studio = STUDIOS[slug];
   const emails = build(studio);
   const seen = await existing(locationId);
-  const folders = {};
+  const was = prior[slug] || { folders: {}, templates: {} };
+  const folders = { ...was.folders };
 
   console.log(`\n=== ${studio.name}`);
 
   for (const name of FOLDERS) {
+    if (folders[name]) { console.log(`  folder  (exists) ${name}`); continue; }
     if (seen.has(name)) { folders[name] = seen.get(name); console.log(`  folder  (exists) ${name}`); continue; }
     if (DRY) { folders[name] = '(dry)'; console.log(`  folder  (would create) ${name}`); continue; }
     const r = await client.rawRequest({ method: 'POST', path: '/emails/builder',
@@ -82,7 +90,8 @@ for (const [slug, locationId] of Object.entries(LOCS)) {
     const parentId = folders[e.folder];
     if (DRY) { console.log(`  tpl     (would write) ${e.name}`); out[slug].templates[e.key] = '(dry)'; continue; }
 
-    let id = seen.get(e.name);
+    let id = was.templates[e.key] || seen.get(e.name);
+    const reused = !!id;
     if (id) {
       const up = await client.rawRequest({ method: 'POST', path: '/emails/builder/data',
         body: { locationId, templateId: id, html: e.html, editorType: 'html', updatedBy: USER } });
@@ -99,7 +108,7 @@ for (const [slug, locationId] of Object.entries(LOCS)) {
       if (!up.ok) throw new Error(`fill "${e.name}": ${up.status} ${JSON.stringify(up.data).slice(0, 200)}`);
     }
     out[slug].templates[e.key] = id;
-    console.log(`  tpl     ${seen.has(e.name) ? 'updated' : 'created'} ${e.key.padEnd(12)} ${id}  ${e.name}`);
+    console.log(`  tpl     ${reused ? 'updated' : 'created'} ${e.key.padEnd(14)} ${id}  ${e.name}`);
   }
 
   /* verify: read every template back and confirm the copy actually landed */

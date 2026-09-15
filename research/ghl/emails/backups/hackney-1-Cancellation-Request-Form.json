@@ -1,0 +1,123 @@
+{
+ "workflow": {
+  "_id": "c193de18-ae00-43be-975a-499a8d345cea",
+  "locationId": "147m777NnBtnn7yLrsdb",
+  "name": "1. Cancellation Request Form",
+  "status": "published",
+  "version": 3,
+  "allowMultiple": false,
+  "timezone": "account",
+  "removeContactFromLastStep": true,
+  "filePath": "location/147m777NnBtnn7yLrsdb/workflows/c193de18-ae00-43be-975a-499a8d345cea/3",
+  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/automation-workflows-production/o/location%2F147m777NnBtnn7yLrsdb%2Fworkflows%2Fc193de18-ae00-43be-975a-499a8d345cea%2F3?alt=media&token=1982b2fb-54ca-4e90-a8cf-5f908b64b116",
+  "stopOnResponse": false,
+  "autoMarkAsRead": false,
+  "originId": "a5a6d88e-aa81-457a-bd85-56dce77235dd",
+  "permission": 380,
+  "type": "workflow",
+  "meta": null,
+  "updatedBy": "snapshot",
+  "createdAt": "2026-05-11T15:27:35.658Z",
+  "updatedAt": "2026-05-11T15:27:46.504Z",
+  "deleted": false,
+  "creationSource": "builder",
+  "isTriggerBucketMigrated": true,
+  "originType": "snapshot",
+  "__v": 0,
+  "allowMultipleOpportunity": false,
+  "dataVersion": 7,
+  "eventStartDate": null,
+  "parentId": "ff6a1740-b1a0-4cc9-af97-a4d741ab327c",
+  "senderAddress": {
+   "from_email": "",
+   "from_name": ""
+  },
+  "triggersFilePath": "location/147m777NnBtnn7yLrsdb/workflow-triggers/c193de18-ae00-43be-975a-499a8d345cea/3",
+  "window": null,
+  "workflowNote": {
+   "content": "",
+   "createdBy": "snapshot",
+   "createdByName": "snapshot",
+   "createdAt": "2026-05-11T15:27:46.107Z",
+   "updatedBy": "snapshot",
+   "updatedByName": "snapshot",
+   "updatedAt": "2026-05-11T15:27:46.107Z"
+  },
+  "id": "c193de18-ae00-43be-975a-499a8d345cea",
+  "workflowData": {
+   "templates": [
+    {
+     "id": "556614f9-b33a-4f87-8f44-13b461c10481",
+     "order": 0,
+     "attributes": {
+      "type": "email",
+      "email": {
+       "from_name": "DASH",
+       "from_email": "no-reply@blueprintfitnessldn.com",
+       "userType": "custom_email",
+       "subject": "CANCELLATION REQUEST: {{contact.name}}",
+       "html": "Cancellation REQUEST Submitted<br /><br />{{contact.first_name}} {{contact.last_name}}<br /><br />Please cancel payments accordingly on TeamUp using the CANCEL MEMBERSHIP button.<br />Select the correct end date.",
+       "attachments": [],
+       "to": "{{location.email}}"
+      }
+     },
+     "name": "Internal Notification",
+     "type": "internal_notification",
+     "next": "a02b11d7-44f5-471a-89d4-9cf9b450ba8f"
+    },
+    {
+     "id": "a02b11d7-44f5-471a-89d4-9cf9b450ba8f",
+     "order": 1,
+     "attributes": {
+      "from_name": "{{custom_values.sales_and_journey}}",
+      "from_email": "{{location.email}}",
+      "subject": "Cancellation Request Receieved",
+      "html": "Dear {{contact.first_name}},<br /><br />This is just a quick email to confirm we have receieved your cancellation request.<br /><br />We will be in touch to confirm your final payment (date &amp; amount) and membership end date.<br /><br />We'll be sad to see you go!<br />Yours in Fitness,<br />{{custom_values.sales_and_journey}}",
+      "attachments": []
+     },
+     "name": "Email",
+     "type": "email"
+    }
+   ]
+  },
+  "permissionMeta": {
+   "canRead": true,
+   "canWrite": true
+  },
+  "scheduledPauseDates": []
+ },
+ "templates": [
+  {
+   "id": "556614f9-b33a-4f87-8f44-13b461c10481",
+   "order": 0,
+   "attributes": {
+    "type": "email",
+    "email": {
+     "from_name": "DASH",
+     "from_email": "no-reply@blueprintfitnessldn.com",
+     "userType": "custom_email",
+     "subject": "CANCELLATION REQUEST: {{contact.name}}",
+     "html": "Cancellation REQUEST Submitted<br /><br />{{contact.first_name}} {{contact.last_name}}<br /><br />Please cancel payments accordingly on TeamUp using the CANCEL MEMBERSHIP button.<br />Select the correct end date.",
+     "attachments": [],
+     "to": "{{location.email}}"
+    }
+   },
+   "name": "Internal Notification",
+   "type": "internal_notification",
+   "next": "a02b11d7-44f5-471a-89d4-9cf9b450ba8f"
+  },
+  {
+   "id": "a02b11d7-44f5-471a-89d4-9cf9b450ba8f",
+   "order": 1,
+   "attributes": {
+    "from_name": "{{custom_values.sales_and_journey}}",
+    "from_email": "{{location.email}}",
+    "subject": "Cancellation Request Receieved",
+    "html": "Dear {{contact.first_name}},<br /><br />This is just a quick email to confirm we have receieved your cancellation request.<br /><br />We will be in touch to confirm your final payment (date &amp; amount) and membership end date.<br /><br />We'll be sad to see you go!<br />Yours in Fitness,<br />{{custom_values.sales_and_journey}}",
+    "attachments": []
+   },
+   "name": "Email",
+   "type": "email"
+  }
+ ]
+}

@@ -29,6 +29,7 @@ export const FOLDERS = [
   '02 Joined — your first 30 days',
   '03 Nutrition',
   '04 Win-back',
+  '05 Service emails',
 ];
 
 export function build(s) {
@@ -411,6 +412,204 @@ export function build(s) {
       p(`All the best either way.`),
       cta(L.kickstart, 'See what a month looks like now'),
     ]);
+
+  /* ===================== 04 · WIN-BACK — POST-TRIAL CHECK-INS =========== */
+  /* These run in "2. Intro Complete Main Flow" for people whose trial ended
+     without them joining. The originals were unstyled inline HTML offering
+     "5 free classes"; the offer is kept, the formatting is not. */
+
+  add(F4, 'checkin-28', 'Win-back — 28 day check-in',
+    `How did you get on, ${FIRST}?`,
+    'Five sessions on us if you fancy dropping back in.',
+    'From the team', 'How did you get on?',
+    [
+      p(`Hello ${FIRST} — it has been about a month since your trial finished, and I wanted to see how you have been getting on.`),
+      p(`If you have kept it going somewhere else, genuinely well done. That is the point of the whole thing.`),
+      panel(`<strong>And if it tailed off</strong> — which happens to most people — reply to this email and I will put <strong>five free sessions</strong> on your account to get you moving again. No catch, no sales call.`),
+      p(`The door is always open if you want to reboot things.`),
+      cta(L.timetable, `See what is on at ${s.name}`),
+      ctaGhost(wa(`Hi Blueprint Fitness ${s.name} — I'd like to take you up on the five sessions.`), 'Claim it on WhatsApp'),
+    ]);
+
+  add(F4, 'checkin-90', 'Win-back — 3 month check-in',
+    `Still taking care of yourself, ${FIRST}?`,
+    'The five sessions are still there if you want them.',
+    'From the team', 'Three months on',
+    [
+      p(`Hello ${FIRST}. It has been about three months since you finished with us, so this is just a quick one to check you are still looking after yourself.`),
+      p(`No pitch. But the offer of <strong>five free sessions</strong> has not gone anywhere, if you are ready to get moving again.`),
+      p(`Starting again is far easier than starting. You already know how the sessions work, and the coaches already know you.`),
+      cta(wa(`Hi Blueprint Fitness ${s.name} — I think I'm ready to come back.`), 'Have a chat with us'),
+      rule(),
+      p(`Or just have a look at what is running now — quite a lot has changed.`),
+      ctaGhost(L.timetable, 'See the current timetable'),
+    ]);
+
+  /* ===================== 02 · WHAT HAPPENS AFTER THE TRIAL =============== */
+  /* Replaces an email still selling a 14-day trial at £129 with a £59
+     extension to £118 — none of which matches what is sold today. */
+
+  add(F2, 'post-trial', 'Joined 09 — What happens when your trial ends',
+    'Your trial is nearly up — here are your options',
+    'Carry on, or do not. Both are fine.',
+    'Your first 30 days', 'Your trial is nearly up',
+    [
+      p(`Hello ${FIRST} — you are near the end of your trial, so here is what happens next, with no surprises at the till.`),
+      p(`Before you decide, book your InBody review with a coach. A month is long enough for the numbers to have moved, and comparing them is a good deal more useful than going on how you feel.`),
+      ctaGhost(wa(`Hi Blueprint Fitness ${s.name} — could I book my InBody review?`), 'Book your InBody review'),
+      h('If you want to carry on'),
+      p(`Memberships come down to how many coached sessions a month suit your life — 12, 8 or 4. Same coaching, same small groups, same plan carrying on from where you got to.`),
+      cta(L.memberships, 'See the memberships'),
+      h('If you do not'),
+      p(`That is genuinely fine, and there is nothing to cancel — a trial just ends. You will leave fitter than you arrived either way, and you would be welcome back whenever.`),
+    ], team);
+
+  /* ============================== 05 · SERVICE EMAILS ==================== */
+  const F5 = FOLDERS[4];
+
+  add(F5, 'svc-enquiry', 'Service — Website enquiry confirmation',
+    `Hello ${FIRST} — quick question about your 30 Day Kickstart`,
+    'We have your details. Just one thing to check.',
+    'The 30-Day Kickstart', `Hello ${FIRST}, you’re on the list.`,
+    [
+      p(`Thanks for registering your interest in our 30 Day Kickstart at <strong style="color:#101B2F">Blueprint Fitness ${s.name}</strong>. A coach will give you a ring shortly for a friendly chat — no hard sell, ever.`),
+      panel(`<strong>Just to check &mdash; are you local to ${s.name}?</strong><br>Reply to this email or message us on WhatsApp and we&rsquo;ll get your first session booked in.`),
+      KICK_STATS,
+      cta(L.signup, 'Start your 30 days'),
+      ctaGhost(wa(`Hi Blueprint Fitness ${s.name} — I've registered my interest in the 30 Day Kickstart.`), `Message ${s.name} on WhatsApp`),
+    ]);
+
+  add(F5, 'svc-cancellation', 'Service — Cancellation request received',
+    'We have got your cancellation request',
+    'Confirming what happens next.',
+    'Membership', 'Request received',
+    [
+      p(`Hello ${FIRST} — this is just to confirm we have received your cancellation request.`),
+      p(`We will be in touch to confirm your final payment date and amount, and your membership end date. Nothing else is needed from you in the meantime.`),
+      panel(`Your notice period is 30 days, so you can keep training right up to your end date. Do use it.`),
+      p(`We will be sorry to see you go. If something specific prompted it — a time that stopped working, a niggle, the cost — do tell us. We would genuinely rather know.`),
+      ctaGhost(wa(`Hi Blueprint Fitness ${s.name} — about my cancellation.`), 'Tell us what prompted it'),
+      rule(),
+      p(`And if you change your mind before the end date, just say and we will stop it.`),
+    ], team);
+
+  add(F5, 'svc-feedback', 'Service — Thanks for your feedback',
+    'Thanks for the feedback',
+    'Genuinely read, and genuinely useful.',
+    'Feedback', 'Thank you',
+    [
+      p(`Hello ${FIRST} — thanks for taking the time to send that over. A coach reads every piece of feedback that comes in, and it is what most of the changes around here start from.`),
+      p(`If you raised something that needs an answer, we will come back to you shortly.`),
+      rule(),
+      p(`If you have a minute and you would be happy to say something publicly, a Google review genuinely helps other people work out whether this is for them.`),
+      ctaGhost(L.kickstart, `See what we are running at ${s.name}`),
+    ], team);
+
+  /* ============ 01 · HACKNEY INTRODUCTION SERIES (Hackney only) ========== */
+  /* Reworked from "Lead Nurture (July 2026)". The angles were good; the facts
+     were not. Two emails claimed sessions are "capped at hundreds of people"
+     — the exact opposite of 5:1, and the strongest thing the business has to
+     say. One testimonial was attributed to Mark in one paragraph and Janet in
+     the next. Both fixed; the voice is kept. */
+  if (s.slug === 'hackney') {
+    const coach = '{{custom_values.staff_leads}}';
+
+    add(F1, 'nurture-01', 'Nurture 01 — A quick hello',
+      `A quick hello from ${coach}`,
+      'No pitch — just saying hello.',
+      'Introduction', 'A quick hello',
+      [
+        p(`Hello ${FIRST}, I know inboxes are busy so I will keep this short.`),
+        p(`My name is ${coach} and I run Blueprint Fitness ${s.name}. I am not writing to sell you anything today — I genuinely just wanted to introduce myself.`),
+        p(`We work with people who want to get stronger, move better and feel more confident in their body. Most of our members are everyday people rather than athletes: teachers, parents, office workers, retirees — people who decided they wanted more energy and fewer aches.`),
+        panel(`<strong>So, one question.</strong> What is the one thing you would change about your health or fitness right now?<br>Hit reply and tell me. I read every reply myself.`),
+        ctaGhost(wa(`Hi Blueprint Fitness ${s.name} — replying to your email.`), 'Or message us on WhatsApp'),
+      ], { name: coach, role: `Head Coach, Blueprint Fitness ${s.name}` });
+
+    add(F1, 'nurture-02', 'Nurture 02 — When something changes',
+      'That moment you realise something has changed',
+      'It usually starts with something small.',
+      'Introduction', 'It usually starts small',
+      [
+        p(`${FIRST}, it usually starts with something small.`),
+        list([
+          `You bend down to pick something up and your back reminds you it is there.`,
+          `You take the stairs at work and arrive at the top out of breath.`,
+          `You play with the kids — or the grandkids — and feel it in your knees the next morning.`,
+        ]),
+        p(`None of it is dramatic. None of it sends you to the doctor. But quietly, you know things are not what they were.`),
+        p(`Most people do nothing, assume it is just getting older, and carry on. It does not have to go that way. Strength training two or three times a week genuinely reverses a lot of this — not with punishing workouts, just the right movements done consistently, with someone watching your technique.`),
+        p(`That is the whole job here. Members regularly tell us they feel years younger within a few months, not because of anything magic, but because they finally started moving with purpose.`),
+        cta(L.kickstart, 'See how the 30 days work'),
+      ], { name: coach, role: `Blueprint Fitness ${s.name}` });
+
+    add(F1, 'nurture-03', 'Nurture 03 — What matters after 40',
+      'The three things that actually matter after 40',
+      'No fads, no gimmicks — just the three that count.',
+      'Introduction', 'Three things that actually matter',
+      [
+        p(`${FIRST}, there is a lot of noise about health and fitness — new diets weekly, trendy workouts, miracle supplements. So let me cut through it.`),
+        p(`If you are over 40 and want to stay active, independent and injury-free, three things matter.`),
+        h('1. Build and keep muscle'),
+        p(`After 30 you lose roughly 3–5% of your muscle mass a decade if you do nothing about it. That is biology, not a scare tactic — and strength training at any age slows, stops or reverses it.`),
+        h('2. Move through your full range'),
+        p(`If you cannot comfortably squat down, reach overhead, or turn to check your blind spot, your body is tightening up. Moving through full ranges regularly keeps you capable.`),
+        h('3. Be consistent, not intense'),
+        p(`Two or three good sessions a week beats one brutal session followed by a week on the sofa. Every time.`),
+        panel(`Every session we run is built around those three. The coaches handle the programme — you just turn up.`),
+        cta(L.timetable, `See what is on at ${s.name}`),
+      ], { name: coach, role: `Blueprint Fitness ${s.name}` });
+
+    add(F1, 'nurture-04', 'Nurture 04 — I wish I had done this sooner',
+      '“I wish I had done this years ago”',
+      'The thing we hear more than anything else.',
+      'Introduction', 'The thing we hear most',
+      [
+        p(`${FIRST}, we hear one phrase more than any other: <em>I wish I had done this years ago.</em>`),
+        p(`Mark said exactly that a few weeks in. What he told us:`),
+        panel(`&ldquo;Before I joined I had not exercised properly in years. I had tried gyms and always felt lost, then quit after a month. This was completely different — the coaches knew my name, showed me what to do, and made me feel like I belonged from day one.<br><br>I am stronger now than I was in my thirties. I sleep better. My back pain has basically gone. And I actually look forward to going, which I never thought I would say about exercise.&rdquo;`),
+        p(`That is not an unusual story here. The difference is the environment, the coaching, and a programme built for real people rather than fitness fanatics.`),
+        p(`If you have been putting it off, Mark's advice was simply: just start.`),
+        cta(L.kickstart, 'Have a look at the 30 days'),
+      ], { name: coach, role: `Blueprint Fitness ${s.name}` });
+
+    add(F1, 'nurture-05', 'Nurture 05 — Not knowing where to start',
+      '“I would not know where to start”',
+      'The most common reason people put it off.',
+      'Introduction', '“I would not know where to start”',
+      [
+        p(`${FIRST}, if you have ever thought <em>I would love to get fitter, but I would not know where to start</em> — this one is for you.`),
+        p(`It is the number one thing people tell us. Not the cost, not the time. Just: I do not know what I am doing.`),
+        p(`Which is fair. Most gyms hand you a laminated induction sheet and leave you to it.`),
+        h('How this works instead'),
+        list([
+          `<strong>Every session is coached.</strong> A qualified coach runs it, demonstrates each exercise and adjusts it to your level.`,
+          `<strong>No experience needed.</strong> Plenty of our members had never picked up a barbell before they started.`,
+          `<strong>Small groups, never more than five to a coach</strong> — so you always get attention and feedback.`,
+          `<strong>No shouting, no egos, no judgement.</strong> Just people working hard and getting on with it.`,
+        ]),
+        p(`The not-knowing feeling disappears in your first session. We have watched it happen hundreds of times.`),
+        cta(L.signup, 'Start your 30 days'),
+      ], { name: coach, role: `Blueprint Fitness ${s.name}` });
+
+    add(F1, 'nurture-06', 'Nurture 06 — Not a normal gym',
+      'Why this is not a “normal gym”',
+      'Built for people who did not get on with gyms.',
+      'Introduction', 'Not a normal gym',
+      [
+        p(`${FIRST}, when you hear the word gym, what comes to mind? Rows of machines, people in headphones, a mirror wall and some grunting in the corner.`),
+        p(`That is exactly what this is not.`),
+        h('Coached, not self-guided'),
+        p(`Every session is led by a qualified coach. You do not wander around guessing — you follow a programme written by people who know your name, your goals and what your knee does.`),
+        h('Small groups, never more than five'),
+        p(`Five people to a coach, maximum. You will train alongside people much like you, and you will know everyone's name inside a week.`),
+        h('Programmed, not random'),
+        p(`No workout-of-the-day roulette. Every session is part of a progression built around strength, mobility and moving well, so you actually get somewhere.`),
+        panel(`We are not for everyone, and that is deliberate. This was built for people who want expert guidance and a supportive room — usually people who tried a normal gym and hated it.`),
+        cta(L.kickstart, 'See if it sounds like you'),
+        ctaGhost(wa(`Hi Blueprint Fitness ${s.name} — could we have a chat?`), 'Or just have a chat with us'),
+      ], { name: coach, role: `Blueprint Fitness ${s.name}` });
+  }
 
   return out;
 }

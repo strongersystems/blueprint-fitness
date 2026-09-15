@@ -64,7 +64,39 @@ const PLAN = {
     /* two steps share the name "Email", so this one goes by order */
     byOrder: ['winback-01', 'winback-02', 'winback-03'],
   },
+  '1. Cancellation Request Form': { byName: { 'Email': 'svc-cancellation' } },
+  'Feedback': { byName: { 'Email': 'svc-feedback' } },
+  'Website Enquiry — South Woodford': { byName: { 'Confirmation email': 'svc-enquiry' } },
+  'Website Enquiry — Leytonstone': { byName: { 'Confirmation email': 'svc-enquiry' } },
+  'Website Enquiry — Hackney': { byName: { 'Confirmation email': 'svc-enquiry' } },
+  'Lead Nurture (July 2026)': {
+    byName: {
+      'Email 1': 'nurture-01', 'Email 2': 'nurture-02', 'Email 3': 'nurture-03',
+      'Email 4': 'nurture-04', 'Email 5': 'nurture-05', 'Email 6': 'nurture-06',
+    },
+  },
+  '2. Intro Complete Main Flow': {
+    /* Every email step here is called "Email" and they sit in different
+       branches in a different order per studio, so neither name nor position
+       is safe. Match on what the email actually says instead. */
+    byBody: (text) => {
+      if (/what happens next after your trial|14[- ]day trial/i.test(text)) return 'post-trial';
+      if (/3 months since you finished|about 3 months/i.test(text)) return 'checkin-90';
+      if (/been a while but just checking in/i.test(text)) return 'checkin-28';
+      return null;
+    },
+  },
 };
+
+/** a template-backed step has no inline body; its subject is the next best clue */
+function subjectOf(step) { return (step.attributes && step.attributes.subject) || ''; }
+
+/** the copy an email step currently carries, whether inline or from a template */
+function stepText(step, tplText) {
+  const a = step.attributes || {};
+  const raw = a.html || tplText || '';
+  return String(raw).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+}
 
 let changed = 0, skipped = 0, saved = 0;
 const failures = [];
@@ -94,7 +126,9 @@ for (const [slug, entry] of Object.entries(MAP)) {
       const steps = templates.filter((s) => s.type === 'email');
       let n = 0;
       steps.forEach((s, i) => {
-        const key = plan.byName ? plan.byName[s.name] : plan.byOrder[i];
+        const key = plan.byBody ? plan.byBody(stepText(s, subjectOf(s)))
+                  : plan.byName ? plan.byName[s.name]
+                  : plan.byOrder[i];
         if (!key) { console.log(`     · left alone: ${w.name} / ${s.name}`); skipped++; return; }
         const newId = tpl[key];
         const e = bySubject[key];

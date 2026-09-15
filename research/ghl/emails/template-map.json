@@ -5,7 +5,8 @@
       "01 Lead nurture — 30 Day Kickstart": "6aa904b296b1ac2874df4af1",
       "02 Joined — your first 30 days": "6aa904b27919774ef2521a47",
       "03 Nutrition": "6aa904b2bbf4cb7988a9f35a",
-      "04 Win-back": "6aa904b28fc016e6506e3f77"
+      "04 Win-back": "6aa904b28fc016e6506e3f77",
+      "05 Service emails": "6aa9652f90487a2533ef735f"
     },
     "templates": {
       "lead-01": "6aa904b29ed784b5df7609a2",
@@ -29,7 +30,13 @@
       "nutrition-01": "6aa904c40bbbc34b5e934b38",
       "winback-01": "6aa904c58fc016e6506e42c8",
       "winback-02": "6aa904c67919774ef2521c1b",
-      "winback-03": "6aa904c78fc016e6506e42fc"
+      "winback-03": "6aa904c78fc016e6506e42fc",
+      "checkin-28": "6aa9653d94dd6178683a6f44",
+      "checkin-90": "6aa9653f96b1ac2874e9a4e7",
+      "post-trial": "6aa9654007aac9f9aad8ee27",
+      "svc-enquiry": "6aa96541bbf4cb7988b44a52",
+      "svc-cancellation": "6aa96542b1a9b275e35d6faf",
+      "svc-feedback": "6aa96543b40c9f3a4fe8007d"
     }
   },
   "leytonstone": {
@@ -38,7 +45,8 @@
       "01 Lead nurture — 30 Day Kickstart": "6aa904cc9ed784b5df760bd3",
       "02 Joined — your first 30 days": "6aa904cc94dd617868300af9",
       "03 Nutrition": "6aa904cc8fc016e6506e438a",
-      "04 Win-back": "6aa904ccbbf4cb7988a9f5e4"
+      "04 Win-back": "6aa904ccbbf4cb7988a9f5e4",
+      "05 Service emails": "6aa9654a9ed784b5df80649b"
     },
     "templates": {
       "lead-01": "6aa904cdbbf4cb7988a9f5f0",
@@ -62,7 +70,13 @@
       "nutrition-01": "6aa904dfbbf4cb7988a9f75b",
       "winback-01": "6aa904e08fc016e6506e44fb",
       "winback-02": "6aa904e194dd617868300c5f",
-      "winback-03": "6aa904e2bbf4cb7988a9f79a"
+      "winback-03": "6aa904e2bbf4cb7988a9f79a",
+      "checkin-28": "6aa965580bbbc34b5e9db795",
+      "checkin-90": "6aa96559e686ab50485d630e",
+      "post-trial": "6aa9655ae686ab50485d6337",
+      "svc-enquiry": "6aa9655bb40c9f3a4fe80443",
+      "svc-cancellation": "6aa9655c9ed784b5df80672a",
+      "svc-feedback": "6aa9655dbbf4cb7988b44e08"
     }
   },
   "hackney": {
@@ -71,7 +85,8 @@
       "01 Lead nurture — 30 Day Kickstart": "6aa904e60bbbc34b5e934e69",
       "02 Joined — your first 30 days": "6aa904e60bbbc34b5e934e6b",
       "03 Nutrition": "6aa904e70bbbc34b5e934e71",
-      "04 Win-back": "6aa904e794dd617868300cee"
+      "04 Win-back": "6aa904e794dd617868300cee",
+      "05 Service emails": "6aa965640bbbc34b5e9db961"
     },
     "templates": {
       "lead-01": "6aa904e74531b41084021b3d",
@@ -95,7 +110,19 @@
       "nutrition-01": "6aa904f996b1ac2874df5086",
       "winback-01": "6aa904fa4531b41084021cbe",
       "winback-02": "6aa904fb07aac9f9aaceb471",
-      "winback-03": "6aa904fcb0cd6d00857fa1d4"
+      "winback-03": "6aa904fcb0cd6d00857fa1d4",
+      "checkin-28": "6aa9657290487a2533ef7d1e",
+      "checkin-90": "6aa96573bbf4cb7988b45087",
+      "post-trial": "6aa9657496b1ac2874e9ac7d",
+      "svc-enquiry": "6aa965757919774ef25c89ad",
+      "svc-cancellation": "6aa96576e686ab50485d66e6",
+      "svc-feedback": "6aa9657707aac9f9aad8f5a7",
+      "nurture-01": "6aa96578b40c9f3a4fe80868",
+      "nurture-02": "6aa965790bbbc34b5e9dbbee",
+      "nurture-03": "6aa9657a7919774ef25c8a12",
+      "nurture-04": "6aa9657b0bbbc34b5e9dbc25",
+      "nurture-05": "6aa9657c7919774ef25c8a45",
+      "nurture-06": "6aa9657db1a9b275e35d7764"
     }
   }
 }

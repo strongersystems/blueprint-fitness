@@ -1,0 +1,136 @@
+{
+ "workflow": {
+  "_id": "a64a7857-c2f2-4115-95a6-726b3062831d",
+  "locationId": "mztjJyXHNWiEotc8ItXP",
+  "name": "1. Cancellation Request Form",
+  "status": "published",
+  "version": 6,
+  "allowMultiple": false,
+  "timezone": "account",
+  "removeContactFromLastStep": true,
+  "filePath": "location/mztjJyXHNWiEotc8ItXP/workflows/a64a7857-c2f2-4115-95a6-726b3062831d/6",
+  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/automation-workflows-production/o/location%2FmztjJyXHNWiEotc8ItXP%2Fworkflows%2Fa64a7857-c2f2-4115-95a6-726b3062831d%2F6?alt=media&token=f9e5669f-8fb0-4680-a616-0f981b3f3712",
+  "stopOnResponse": false,
+  "autoMarkAsRead": false,
+  "originId": "a5a6d88e-aa81-457a-bd85-56dce77235dd",
+  "permission": 380,
+  "type": "workflow",
+  "updatedBy": "kD5eX8SAxDHruPaeEprZ",
+  "createdAt": "2024-10-16T11:49:14.946Z",
+  "updatedAt": "2026-07-21T10:24:46.136Z",
+  "deleted": false,
+  "__v": 0,
+  "allowMultipleOpportunity": false,
+  "dataVersion": 7,
+  "eventStartDate": null,
+  "parentId": "2d69f0f1-892b-4835-8750-c9358b8645e3",
+  "triggersFilePath": "location/mztjJyXHNWiEotc8ItXP/workflow-triggers/a64a7857-c2f2-4115-95a6-726b3062831d/2",
+  "window": null,
+  "workflowNote": {
+   "content": "",
+   "createdBy": "snapshot",
+   "createdByName": "snapshot",
+   "createdAt": "2024-10-16T11:49:18.636Z",
+   "updatedBy": "snapshot",
+   "updatedByName": "snapshot",
+   "updatedAt": "2024-10-16T11:49:18.636Z"
+  },
+  "creationSource": "builder",
+  "companyId": "BHs3MppSlUdmHKGV7DDA",
+  "isTriggerBucketMigrated": false,
+  "id": "a64a7857-c2f2-4115-95a6-726b3062831d",
+  "workflowData": {
+   "templates": [
+    {
+     "id": "556614f9-b33a-4f87-8f44-13b461c10481",
+     "order": 0,
+     "attributes": {
+      "type": "email",
+      "email": {
+       "from_name": "DASH",
+       "from_email": "no-reply@blueprintfitnessldn.com",
+       "userType": "custom_email",
+       "subject": "CANCELLATION REQUEST: {{contact.name}}",
+       "html": "<p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;\">Cancellation REQUEST Submitted<br><br>{{contact.first_name}} {{contact.last_name}}<br><br>Please cancel payments accordingly on TeamUp using the CANCEL MEMBERSHIP button.<br>Select the correct end date.</p>",
+       "attachments": [],
+       "to": "{{location.email}}"
+      }
+     },
+     "name": "Internal Notification",
+     "type": "internal_notification",
+     "next": "a02b11d7-44f5-471a-89d4-9cf9b450ba8f"
+    },
+    {
+     "id": "a02b11d7-44f5-471a-89d4-9cf9b450ba8f",
+     "order": 1,
+     "attributes": {
+      "from_name": "{{custom_values.sales_and_journey}}",
+      "from_email": "{{location.email}}",
+      "subject": "Cancellation Request Receieved",
+      "html": "<p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;font-family: verdana,geneva,sans-serif;font-size: 16px;\">Dear {{contact.first_name}},<br><br>This is just a quick email to confirm we have receieved your cancellation request.<br><br>We will be in touch to confirm your final payment (date &amp; amount) and membership end date.<br><br>We'll be sad to see you go!<br><br>{{custom_values.sales_and_journey}}</p>",
+      "attachments": [],
+      "fieldDefaults": {},
+      "htmlDefaults": {},
+      "trackingOptions": {
+       "hasTrackingLinks": false,
+       "hasUtmTracking": false,
+       "hasTags": false,
+       "sourceId": "a64a7857-c2f2-4115-95a6-726b3062831d:a02b11d7-44f5-471a-89d4-9cf9b450ba8f"
+      },
+      "conditions": []
+     },
+     "name": "Email",
+     "type": "email"
+    }
+   ]
+  },
+  "permissionMeta": {
+   "canRead": true,
+   "canWrite": true
+  },
+  "scheduledPauseDates": []
+ },
+ "templates": [
+  {
+   "id": "556614f9-b33a-4f87-8f44-13b461c10481",
+   "order": 0,
+   "attributes": {
+    "type": "email",
+    "email": {
+     "from_name": "DASH",
+     "from_email": "no-reply@blueprintfitnessldn.com",
+     "userType": "custom_email",
+     "subject": "CANCELLATION REQUEST: {{contact.name}}",
+     "html": "<p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;\">Cancellation REQUEST Submitted<br><br>{{contact.first_name}} {{contact.last_name}}<br><br>Please cancel payments accordingly on TeamUp using the CANCEL MEMBERSHIP button.<br>Select the correct end date.</p>",
+     "attachments": [],
+     "to": "{{location.email}}"
+    }
+   },
+   "name": "Internal Notification",
+   "type": "internal_notification",
+   "next": "a02b11d7-44f5-471a-89d4-9cf9b450ba8f"
+  },
+  {
+   "id": "a02b11d7-44f5-471a-89d4-9cf9b450ba8f",
+   "order": 1,
+   "attributes": {
+    "from_name": "{{custom_values.sales_and_journey}}",
+    "from_email": "{{location.email}}",
+    "subject": "Cancellation Request Receieved",
+    "html": "<p style=\"margin:0px;font-family:verdana,geneva,sans-serif;font-size:16px; padding-left: 0px!important;margin: 0px;font-family: verdana,geneva,sans-serif;font-size: 16px;\">Dear {{contact.first_name}},<br><br>This is just a quick email to confirm we have receieved your cancellation request.<br><br>We will be in touch to confirm your final payment (date &amp; amount) and membership end date.<br><br>We'll be sad to see you go!<br><br>{{custom_values.sales_and_journey}}</p>",
+    "attachments": [],
+    "fieldDefaults": {},
+    "htmlDefaults": {},
+    "trackingOptions": {
+     "hasTrackingLinks": false,
+     "hasUtmTracking": false,
+     "hasTags": false,
+     "sourceId": "a64a7857-c2f2-4115-95a6-726b3062831d:a02b11d7-44f5-471a-89d4-9cf9b450ba8f"
+    },
+    "conditions": []
+   },
+   "name": "Email",
+   "type": "email"
+  }
+ ]
+}

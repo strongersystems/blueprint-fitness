@@ -1,0 +1,385 @@
+{
+ "workflow": {
+  "_id": "5377f08d-c78b-4075-82cf-78a19b021888",
+  "locationId": "147m777NnBtnn7yLrsdb",
+  "companyId": "BHs3MppSlUdmHKGV7DDA",
+  "name": "Website Enquiry — Hackney",
+  "status": "published",
+  "version": 13,
+  "dataVersion": 7,
+  "allowMultiple": true,
+  "timezone": "account",
+  "removeContactFromLastStep": true,
+  "filePath": "location/147m777NnBtnn7yLrsdb/workflows/5377f08d-c78b-4075-82cf-78a19b021888/13",
+  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/automation-workflows-production/o/location%2F147m777NnBtnn7yLrsdb%2Fworkflows%2F5377f08d-c78b-4075-82cf-78a19b021888%2F13?alt=media&token=76bb7711-957f-4569-b7ca-e63035212f15",
+  "stopOnResponse": false,
+  "autoMarkAsRead": false,
+  "permission": 380,
+  "type": "workflow",
+  "parentId": null,
+  "updatedBy": "kD5eX8SAxDHruPaeEprZ",
+  "createdAt": "2026-09-04T18:01:35.316Z",
+  "updatedAt": "2026-09-04T19:43:26.946Z",
+  "deleted": false,
+  "allowMultipleOpportunity": true,
+  "creationSource": "builder",
+  "isTriggerBucketMigrated": true,
+  "originType": "user",
+  "__v": 0,
+  "eventStartDate": null,
+  "senderAddress": null,
+  "window": null,
+  "workflowNote": null,
+  "triggersFilePath": "location/147m777NnBtnn7yLrsdb/workflow-triggers/5377f08d-c78b-4075-82cf-78a19b021888/13",
+  "id": "5377f08d-c78b-4075-82cf-78a19b021888",
+  "workflowData": {
+   "templates": [
+    {
+     "id": "949ee766-1988-4cb6-a9d0-6e4900afa932",
+     "order": 0,
+     "name": "Is this a Hackney enquiry?",
+     "type": "if_else",
+     "cat": "conditions",
+     "next": [
+      "0a364f5f-56b8-47f3-a971-23247bc9f3e0",
+      "f57083e3-1504-418f-b588-226e96a1008d"
+     ],
+     "comments": [],
+     "nodeType": "condition-node",
+     "attributes": {
+      "currentRecipeType": "CUSTOM",
+      "branches": [
+       {
+        "id": "0a364f5f-56b8-47f3-a971-23247bc9f3e0",
+        "name": "Location is Hackney",
+        "segments": [
+         {
+          "__segmentId": "cfa742d4-e2ec-4c44-9299-400fa9d0ad6f",
+          "operator": "and",
+          "conditions": [
+           {
+            "conditionType": "contact_detail",
+            "conditionSubType": "pjUy3JEvtGrYO2GoL3J5",
+            "conditionOperator": "==",
+            "conditionValue": "Hackney",
+            "__conditionId": "2066d2d3-d2ac-456a-8b3d-c05c09d097fb",
+            "ifElseNodeId": "",
+            "isWait": false,
+            "nestedDropdownTypes": [
+             "inboundWebhookRequest",
+             "sheet",
+             "datetime_formatter",
+             "custom_webhook",
+             "array_functions",
+             "ivr_gather",
+             "ivr_connect_call",
+             "custom_code"
+            ],
+            "allowIsOperatorTypes": [
+             "contact_reply",
+             "inboundWebhookRequest",
+             "custom_webhook",
+             "custom_code",
+             "contact_detail",
+             "array_functions",
+             "appointment"
+            ]
+           }
+          ]
+         }
+        ],
+        "operator": "and",
+        "showErrors": false,
+        "branchNameError": "Branch name cannot be empty!"
+       }
+      ],
+      "operator": "and",
+      "if": true,
+      "conditionName": "Condition",
+      "version": 2,
+      "noneBranchName": "None"
+     }
+    },
+    {
+     "id": "0a364f5f-56b8-47f3-a971-23247bc9f3e0",
+     "parent": "949ee766-1988-4cb6-a9d0-6e4900afa932",
+     "order": 1,
+     "name": "Location is Hackney",
+     "type": "if_else",
+     "cat": "conditions",
+     "sibling": [
+      "f57083e3-1504-418f-b588-226e96a1008d"
+     ],
+     "comments": [],
+     "nodeType": "branch-yes",
+     "parentKey": "949ee766-1988-4cb6-a9d0-6e4900afa932",
+     "attributes": {
+      "if": false,
+      "conditionName": "Condition",
+      "operator": "and",
+      "branches": []
+     },
+     "next": "6132a5e2-2e9a-4a0e-a04a-f511b61f2486"
+    },
+    {
+     "id": "f57083e3-1504-418f-b588-226e96a1008d",
+     "parent": "949ee766-1988-4cb6-a9d0-6e4900afa932",
+     "order": 1,
+     "name": "None",
+     "type": "if_else",
+     "cat": "conditions",
+     "sibling": [
+      "0a364f5f-56b8-47f3-a971-23247bc9f3e0"
+     ],
+     "comments": [],
+     "nodeType": "branch-no",
+     "parentKey": "949ee766-1988-4cb6-a9d0-6e4900afa932",
+     "attributes": {
+      "else": true
+     }
+    },
+    {
+     "id": "6132a5e2-2e9a-4a0e-a04a-f511b61f2486",
+     "type": "email",
+     "name": "Confirmation email",
+     "attributes": {
+      "from_name": "Blueprint Fitness Hackney",
+      "from_email": "hackney@blueprintfitnessldn.com",
+      "subject": "Hello {{contact.first_name}} — quick question about your 30 Day Kickstart",
+      "html": "<!doctype html>\n<html lang=\"en\"><head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n<meta name=\"x-apple-disable-message-reformatting\">\n<title>Your 30-Day Kickstart at Blueprint Fitness Hackney</title>\n</head>\n<body style=\"margin:0;padding:0;background:#EAF1FB;-webkit-font-smoothing:antialiased\">\n<div style=\"display:none;max-height:0;overflow:hidden;opacity:0\">Thanks for registering your interest — one quick question before we book you in.</div>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"background:#EAF1FB\">\n <tr><td align=\"center\" style=\"padding:28px 0\">\n\n  <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"width:100%;max-width:600px;background:#ffffff;border-radius:14px;overflow:hidden\">\n\n   <!-- header: ink with the blueprint grid -->\n   <tr><td style=\"background:#101B2F;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:32px 32px;padding:26px 32px\">\n     <img src=\"https://blueprintfitnessldn.com/img/logo-horizontal-blue.png\" width=\"200\" alt=\"Blueprint Fitness\"\n          style=\"display:block;border:0;outline:none;text-decoration:none;width:200px;max-width:200px;height:auto\">\n   </td></tr>\n\n   <!-- headline -->\n   <tr><td style=\"padding:34px 32px 0\">\n     <p style=\"margin:0 0 10px;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#0072F5\">The 30-Day Kickstart &middot; Hackney</p>\n     <h1 style=\"margin:0 0 18px;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:30px;line-height:1.15;font-weight:800;color:#101B2F\">Hello {{contact.first_name}}, you&rsquo;re on the list.</h1>\n     <p style=\"margin:0 0 16px;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#3D4A63\">Thanks for registering your interest in our 30&nbsp;Day Kickstart at <strong style=\"color:#101B2F\">Blueprint Fitness Hackney</strong>. A coach will give you a ring shortly for a friendly chat &mdash; no hard sell, ever.</p>\n   </td></tr>\n\n   <!-- the one question -->\n   <tr><td style=\"padding:6px 32px 0\">\n     <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"background:#EAF1FB;border-left:4px solid #0072F5;border-radius:0 10px 10px 0\">\n      <tr><td style=\"padding:18px 20px\">\n        <p style=\"margin:0;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:17px;line-height:1.55;font-weight:700;color:#101B2F\">Just to check &mdash; are you local to Hackney?</p>\n        <p style=\"margin:8px 0 0;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:#3D4A63\">Reply to this email or message us on WhatsApp and we&rsquo;ll get your first session booked in.</p>\n      </td></tr>\n     </table>\n   </td></tr>\n\n   <!-- what the 30 days include -->\n   <tr><td style=\"padding:28px 32px 0\">\n     <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">\n      <tr>\n       <td width=\"32%\" align=\"center\" style=\"padding:14px 6px;background:#F5F9FF;border-radius:10px\">\n         <p style=\"margin:0;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:24px;font-weight:800;color:#0072F5\">12</p>\n         <p style=\"margin:2px 0 0;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#3D4A63\">Coached sessions</p>\n       </td>\n       <td width=\"2%\">&nbsp;</td>\n       <td width=\"32%\" align=\"center\" style=\"padding:14px 6px;background:#F5F9FF;border-radius:10px\">\n         <p style=\"margin:0;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:24px;font-weight:800;color:#0072F5\">5:1</p>\n         <p style=\"margin:2px 0 0;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#3D4A63\">Max ratio</p>\n       </td>\n       <td width=\"2%\">&nbsp;</td>\n       <td width=\"32%\" align=\"center\" style=\"padding:14px 6px;background:#F5F9FF;border-radius:10px\">\n         <p style=\"margin:0;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:24px;font-weight:800;color:#0072F5\">100+</p>\n         <p style=\"margin:2px 0 0;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#3D4A63\">Sessions a week</p>\n       </td>\n      </tr>\n     </table>\n   </td></tr>\n\n   <!-- CTAs: table-cell buttons so Outlook renders them -->\n   <tr><td style=\"padding:26px 32px 0\">\n     <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\">\n      <tr><td align=\"center\" style=\"background:#0072F5;border-radius:9px\">\n        <a href=\"https://blueprintfitnessldn.com/signup-hackney/\" style=\"display:block;padding:15px 24px;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#ffffff;text-decoration:none\">Start your 30 days &rarr;</a>\n      </td></tr>\n      <tr><td height=\"10\" style=\"height:10px;line-height:10px\">&nbsp;</td></tr>\n      <tr><td align=\"center\" style=\"border:1.5px solid #0072F5;border-radius:9px\">\n        <a href=\"https://wa.me/447944690356?text=Hi%20Blueprint%20Fitness%20Hackney%20%E2%80%94%20I've%20just%20registered%20my%20interest%20in%20the%2030%20Day%20Kickstart.\" style=\"display:block;padding:13px 24px;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;font-weight:700;color:#0072F5;text-decoration:none\">Message Hackney on WhatsApp</a>\n      </td></tr>\n     </table>\n   </td></tr>\n\n   <!-- sign-off -->\n   <tr><td style=\"padding:28px 32px 0\">\n     <p style=\"margin:0 0 3px;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#3D4A63\">Speak soon,</p>\n     <p style=\"margin:0;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:800;color:#101B2F\">Nick</p>\n     <p style=\"margin:2px 0 0;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;color:#3D4A63\">Blueprint Fitness Hackney</p>\n   </td></tr>\n\n   <tr><td style=\"padding:26px 32px 0\"><div style=\"height:1px;background:#EAF1FB;line-height:1px\">&nbsp;</div></td></tr>\n\n   <!-- studio details -->\n   <tr><td style=\"padding:20px 32px 32px\">\n     <p style=\"margin:0 0 6px;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#0072F5\">Your studio</p>\n     <p style=\"margin:0 0 3px;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;font-weight:700;color:#101B2F\">Blueprint Fitness Hackney</p>\n     <p style=\"margin:0 0 3px;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.6;color:#3D4A63\">Arch 195, Morning Lane, Hackney Central, London, E9 6LJ</p>\n     <p style=\"margin:0 0 3px;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.6;color:#3D4A63\">Mon–Fri 6am–9pm · Sat–Sun 8am–4pm</p>\n     <p style=\"margin:0;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.6\"><a href=\"mailto:hackney@blueprintfitnessldn.com\" style=\"color:#0072F5;text-decoration:none\">hackney@blueprintfitnessldn.com</a></p>\n   </td></tr>\n\n  </table>\n\n  <p style=\"margin:16px auto 0;max-width:600px;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:1.6;color:#3D4A63;text-align:center\">\n    You&rsquo;re getting this because you registered your interest at\n    <a href=\"https://blueprintfitnessldn.com\" style=\"color:#0072F5;text-decoration:none\">blueprintfitnessldn.com</a>.\n  </p>\n\n </td></tr>\n</table>\n</body></html>",
+      "attachments": []
+     },
+     "order": 2,
+     "parentKey": "0a364f5f-56b8-47f3-a971-23247bc9f3e0",
+     "next": "f23b82b1-5552-4145-aea1-f05e7ae54748"
+    },
+    {
+     "id": "f23b82b1-5552-4145-aea1-f05e7ae54748",
+     "type": "sms",
+     "name": "Confirmation SMS",
+     "attributes": {
+      "body": "Hello {{contact.first_name}}, thanks for registering your interest in our 30 Day Kickstart!\n\nJust to check, are you local to Hackney?\n\nNick",
+      "attachments": []
+     },
+     "order": 3,
+     "parentKey": "6132a5e2-2e9a-4a0e-a04a-f511b61f2486",
+     "next": "9eb73054-020f-4d7a-89d0-0550df739cfb"
+    },
+    {
+     "id": "9eb73054-020f-4d7a-89d0-0550df739cfb",
+     "type": "internal_notification",
+     "name": "Notify the studio",
+     "attributes": {
+      "type": "email",
+      "email": {
+       "from_email": "hackney@blueprintfitnessldn.com",
+       "from_name": "Blueprint Fitness Hackney",
+       "userType": "custom_email",
+       "subject": "New website enquiry (Hackney): {{contact.name}}",
+       "html": "<p style=\"margin:0;font-family:verdana,geneva,sans-serif;font-size:16px\">\n<strong>New website enquiry &mdash; Hackney</strong><br><br>\nName: {{contact.name}}<br>\nPhone: {{contact.phone}}<br>\nEmail: {{contact.email}}<br><br>\nCame in from the Blueprint Fitness website.\n</p>",
+       "attachments": [],
+       "to": "{{location.email}}"
+      }
+     },
+     "order": 4,
+     "parentKey": "f23b82b1-5552-4145-aea1-f05e7ae54748",
+     "next": "5ad1288c-764a-42ba-8f90-63c0a6d1c586"
+    },
+    {
+     "id": "5ad1288c-764a-42ba-8f90-63c0a6d1c586",
+     "type": "create_opportunity",
+     "name": "Create Or Update Opportunity",
+     "attributes": {
+      "fields": [],
+      "type": "create_opportunity",
+      "pipeline_id": "13rhyJsN1VUAyEnx7qiJ",
+      "pipeline_stage_id": "06899730-4c40-40ed-82d3-97ba0de6783d",
+      "opportunity_name": "WEBSITE ENQUIRY: {{contact.name}}",
+      "allow_backward": true,
+      "opportunity_status": "open",
+      "opportunity_source": "",
+      "monetary_value": ""
+     },
+     "order": 5,
+     "parentKey": "9eb73054-020f-4d7a-89d0-0550df739cfb"
+    }
+   ]
+  },
+  "permissionMeta": {
+   "canRead": true,
+   "canWrite": true
+  },
+  "scheduledPauseDates": []
+ },
+ "templates": [
+  {
+   "id": "949ee766-1988-4cb6-a9d0-6e4900afa932",
+   "order": 0,
+   "name": "Is this a Hackney enquiry?",
+   "type": "if_else",
+   "cat": "conditions",
+   "next": [
+    "0a364f5f-56b8-47f3-a971-23247bc9f3e0",
+    "f57083e3-1504-418f-b588-226e96a1008d"
+   ],
+   "comments": [],
+   "nodeType": "condition-node",
+   "attributes": {
+    "currentRecipeType": "CUSTOM",
+    "branches": [
+     {
+      "id": "0a364f5f-56b8-47f3-a971-23247bc9f3e0",
+      "name": "Location is Hackney",
+      "segments": [
+       {
+        "__segmentId": "cfa742d4-e2ec-4c44-9299-400fa9d0ad6f",
+        "operator": "and",
+        "conditions": [
+         {
+          "conditionType": "contact_detail",
+          "conditionSubType": "pjUy3JEvtGrYO2GoL3J5",
+          "conditionOperator": "==",
+          "conditionValue": "Hackney",
+          "__conditionId": "2066d2d3-d2ac-456a-8b3d-c05c09d097fb",
+          "ifElseNodeId": "",
+          "isWait": false,
+          "nestedDropdownTypes": [
+           "inboundWebhookRequest",
+           "sheet",
+           "datetime_formatter",
+           "custom_webhook",
+           "array_functions",
+           "ivr_gather",
+           "ivr_connect_call",
+           "custom_code"
+          ],
+          "allowIsOperatorTypes": [
+           "contact_reply",
+           "inboundWebhookRequest",
+           "custom_webhook",
+           "custom_code",
+           "contact_detail",
+           "array_functions",
+           "appointment"
+          ]
+         }
+        ]
+       }
+      ],
+      "operator": "and",
+      "showErrors": false,
+      "branchNameError": "Branch name cannot be empty!"
+     }
+    ],
+    "operator": "and",
+    "if": true,
+    "conditionName": "Condition",
+    "version": 2,
+    "noneBranchName": "None"
+   }
+  },
+  {
+   "id": "0a364f5f-56b8-47f3-a971-23247bc9f3e0",
+   "parent": "949ee766-1988-4cb6-a9d0-6e4900afa932",
+   "order": 1,
+   "name": "Location is Hackney",
+   "type": "if_else",
+   "cat": "conditions",
+   "sibling": [
+    "f57083e3-1504-418f-b588-226e96a1008d"
+   ],
+   "comments": [],
+   "nodeType": "branch-yes",
+   "parentKey": "949ee766-1988-4cb6-a9d0-6e4900afa932",
+   "attributes": {
+    "if": false,
+    "conditionName": "Condition",
+    "operator": "and",
+    "branches": []
+   },
+   "next": "6132a5e2-2e9a-4a0e-a04a-f511b61f2486"
+  },
+  {
+   "id": "f57083e3-1504-418f-b588-226e96a1008d",
+   "parent": "949ee766-1988-4cb6-a9d0-6e4900afa932",
+   "order": 1,
+   "name": "None",
+   "type": "if_else",
+   "cat": "conditions",
+   "sibling": [
+    "0a364f5f-56b8-47f3-a971-23247bc9f3e0"
+   ],
+   "comments": [],
+   "nodeType": "branch-no",
+   "parentKey": "949ee766-1988-4cb6-a9d0-6e4900afa932",
+   "attributes": {
+    "else": true
+   }
+  },
+  {
+   "id": "6132a5e2-2e9a-4a0e-a04a-f511b61f2486",
+   "type": "email",
+   "name": "Confirmation email",
+   "attributes": {
+    "from_name": "Blueprint Fitness Hackney",
+    "from_email": "hackney@blueprintfitnessldn.com",
+    "subject": "Hello {{contact.first_name}} — quick question about your 30 Day Kickstart",
+    "html": "<!doctype html>\n<html lang=\"en\"><head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n<meta name=\"x-apple-disable-message-reformatting\">\n<title>Your 30-Day Kickstart at Blueprint Fitness Hackney</title>\n</head>\n<body style=\"margin:0;padding:0;background:#EAF1FB;-webkit-font-smoothing:antialiased\">\n<div style=\"display:none;max-height:0;overflow:hidden;opacity:0\">Thanks for registering your interest — one quick question before we book you in.</div>\n\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"background:#EAF1FB\">\n <tr><td align=\"center\" style=\"padding:28px 0\">\n\n  <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"width:100%;max-width:600px;background:#ffffff;border-radius:14px;overflow:hidden\">\n\n   <!-- header: ink with the blueprint grid -->\n   <tr><td style=\"background:#101B2F;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:32px 32px;padding:26px 32px\">\n     <img src=\"https://blueprintfitnessldn.com/img/logo-horizontal-blue.png\" width=\"200\" alt=\"Blueprint Fitness\"\n          style=\"display:block;border:0;outline:none;text-decoration:none;width:200px;max-width:200px;height:auto\">\n   </td></tr>\n\n   <!-- headline -->\n   <tr><td style=\"padding:34px 32px 0\">\n     <p style=\"margin:0 0 10px;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#0072F5\">The 30-Day Kickstart &middot; Hackney</p>\n     <h1 style=\"margin:0 0 18px;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:30px;line-height:1.15;font-weight:800;color:#101B2F\">Hello {{contact.first_name}}, you&rsquo;re on the list.</h1>\n     <p style=\"margin:0 0 16px;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#3D4A63\">Thanks for registering your interest in our 30&nbsp;Day Kickstart at <strong style=\"color:#101B2F\">Blueprint Fitness Hackney</strong>. A coach will give you a ring shortly for a friendly chat &mdash; no hard sell, ever.</p>\n   </td></tr>\n\n   <!-- the one question -->\n   <tr><td style=\"padding:6px 32px 0\">\n     <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"background:#EAF1FB;border-left:4px solid #0072F5;border-radius:0 10px 10px 0\">\n      <tr><td style=\"padding:18px 20px\">\n        <p style=\"margin:0;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:17px;line-height:1.55;font-weight:700;color:#101B2F\">Just to check &mdash; are you local to Hackney?</p>\n        <p style=\"margin:8px 0 0;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:#3D4A63\">Reply to this email or message us on WhatsApp and we&rsquo;ll get your first session booked in.</p>\n      </td></tr>\n     </table>\n   </td></tr>\n\n   <!-- what the 30 days include -->\n   <tr><td style=\"padding:28px 32px 0\">\n     <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">\n      <tr>\n       <td width=\"32%\" align=\"center\" style=\"padding:14px 6px;background:#F5F9FF;border-radius:10px\">\n         <p style=\"margin:0;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:24px;font-weight:800;color:#0072F5\">12</p>\n         <p style=\"margin:2px 0 0;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#3D4A63\">Coached sessions</p>\n       </td>\n       <td width=\"2%\">&nbsp;</td>\n       <td width=\"32%\" align=\"center\" style=\"padding:14px 6px;background:#F5F9FF;border-radius:10px\">\n         <p style=\"margin:0;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:24px;font-weight:800;color:#0072F5\">5:1</p>\n         <p style=\"margin:2px 0 0;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#3D4A63\">Max ratio</p>\n       </td>\n       <td width=\"2%\">&nbsp;</td>\n       <td width=\"32%\" align=\"center\" style=\"padding:14px 6px;background:#F5F9FF;border-radius:10px\">\n         <p style=\"margin:0;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:24px;font-weight:800;color:#0072F5\">100+</p>\n         <p style=\"margin:2px 0 0;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#3D4A63\">Sessions a week</p>\n       </td>\n      </tr>\n     </table>\n   </td></tr>\n\n   <!-- CTAs: table-cell buttons so Outlook renders them -->\n   <tr><td style=\"padding:26px 32px 0\">\n     <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\">\n      <tr><td align=\"center\" style=\"background:#0072F5;border-radius:9px\">\n        <a href=\"https://blueprintfitnessldn.com/signup-hackney/\" style=\"display:block;padding:15px 24px;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#ffffff;text-decoration:none\">Start your 30 days &rarr;</a>\n      </td></tr>\n      <tr><td height=\"10\" style=\"height:10px;line-height:10px\">&nbsp;</td></tr>\n      <tr><td align=\"center\" style=\"border:1.5px solid #0072F5;border-radius:9px\">\n        <a href=\"https://wa.me/447944690356?text=Hi%20Blueprint%20Fitness%20Hackney%20%E2%80%94%20I've%20just%20registered%20my%20interest%20in%20the%2030%20Day%20Kickstart.\" style=\"display:block;padding:13px 24px;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;font-weight:700;color:#0072F5;text-decoration:none\">Message Hackney on WhatsApp</a>\n      </td></tr>\n     </table>\n   </td></tr>\n\n   <!-- sign-off -->\n   <tr><td style=\"padding:28px 32px 0\">\n     <p style=\"margin:0 0 3px;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#3D4A63\">Speak soon,</p>\n     <p style=\"margin:0;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:800;color:#101B2F\">Nick</p>\n     <p style=\"margin:2px 0 0;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;color:#3D4A63\">Blueprint Fitness Hackney</p>\n   </td></tr>\n\n   <tr><td style=\"padding:26px 32px 0\"><div style=\"height:1px;background:#EAF1FB;line-height:1px\">&nbsp;</div></td></tr>\n\n   <!-- studio details -->\n   <tr><td style=\"padding:20px 32px 32px\">\n     <p style=\"margin:0 0 6px;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#0072F5\">Your studio</p>\n     <p style=\"margin:0 0 3px;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;font-weight:700;color:#101B2F\">Blueprint Fitness Hackney</p>\n     <p style=\"margin:0 0 3px;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.6;color:#3D4A63\">Arch 195, Morning Lane, Hackney Central, London, E9 6LJ</p>\n     <p style=\"margin:0 0 3px;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.6;color:#3D4A63\">Mon–Fri 6am–9pm · Sat–Sun 8am–4pm</p>\n     <p style=\"margin:0;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.6\"><a href=\"mailto:hackney@blueprintfitnessldn.com\" style=\"color:#0072F5;text-decoration:none\">hackney@blueprintfitnessldn.com</a></p>\n   </td></tr>\n\n  </table>\n\n  <p style=\"margin:16px auto 0;max-width:600px;font-family:Inter,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12px;line-height:1.6;color:#3D4A63;text-align:center\">\n    You&rsquo;re getting this because you registered your interest at\n    <a href=\"https://blueprintfitnessldn.com\" style=\"color:#0072F5;text-decoration:none\">blueprintfitnessldn.com</a>.\n  </p>\n\n </td></tr>\n</table>\n</body></html>",
+    "attachments": []
+   },
+   "order": 2,
+   "parentKey": "0a364f5f-56b8-47f3-a971-23247bc9f3e0",
+   "next": "f23b82b1-5552-4145-aea1-f05e7ae54748"
+  },
+  {
+   "id": "f23b82b1-5552-4145-aea1-f05e7ae54748",
+   "type": "sms",
+   "name": "Confirmation SMS",
+   "attributes": {
+    "body": "Hello {{contact.first_name}}, thanks for registering your interest in our 30 Day Kickstart!\n\nJust to check, are you local to Hackney?\n\nNick",
+    "attachments": []
+   },
+   "order": 3,
+   "parentKey": "6132a5e2-2e9a-4a0e-a04a-f511b61f2486",
+   "next": "9eb73054-020f-4d7a-89d0-0550df739cfb"
+  },
+  {
+   "id": "9eb73054-020f-4d7a-89d0-0550df739cfb",
+   "type": "internal_notification",
+   "name": "Notify the studio",
+   "attributes": {
+    "type": "email",
+    "email": {
+     "from_email": "hackney@blueprintfitnessldn.com",
+     "from_name": "Blueprint Fitness Hackney",
+     "userType": "custom_email",
+     "subject": "New website enquiry (Hackney): {{contact.name}}",
+     "html": "<p style=\"margin:0;font-family:verdana,geneva,sans-serif;font-size:16px\">\n<strong>New website enquiry &mdash; Hackney</strong><br><br>\nName: {{contact.name}}<br>\nPhone: {{contact.phone}}<br>\nEmail: {{contact.email}}<br><br>\nCame in from the Blueprint Fitness website.\n</p>",
+     "attachments": [],
+     "to": "{{location.email}}"
+    }
+   },
+   "order": 4,
+   "parentKey": "f23b82b1-5552-4145-aea1-f05e7ae54748",
+   "next": "5ad1288c-764a-42ba-8f90-63c0a6d1c586"
+  },
+  {
+   "id": "5ad1288c-764a-42ba-8f90-63c0a6d1c586",
+   "type": "create_opportunity",
+   "name": "Create Or Update Opportunity",
+   "attributes": {
+    "fields": [],
+    "type": "create_opportunity",
+    "pipeline_id": "13rhyJsN1VUAyEnx7qiJ",
+    "pipeline_stage_id": "06899730-4c40-40ed-82d3-97ba0de6783d",
+    "opportunity_name": "WEBSITE ENQUIRY: {{contact.name}}",
+    "allow_backward": true,
+    "opportunity_status": "open",
+    "opportunity_source": "",
+    "monetary_value": ""
+   },
+   "order": 5,
+   "parentKey": "9eb73054-020f-4d7a-89d0-0550df739cfb"
+  }
+ ]
+}

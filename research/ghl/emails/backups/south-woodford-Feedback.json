@@ -1,0 +1,113 @@
+{
+ "workflow": {
+  "timezone": "account",
+  "creationSource": "builder",
+  "_id": "7f73fda8-c572-407f-b807-ad3a8dec40a9",
+  "locationId": "cquQsieyBZx9vRgEqBge",
+  "companyId": "BHs3MppSlUdmHKGV7DDA",
+  "companyAge": 13,
+  "name": "Feedback",
+  "status": "published",
+  "version": 5,
+  "dataVersion": 7,
+  "allowMultiple": true,
+  "senderAddress": {
+   "from_email": "",
+   "from_name": ""
+  },
+  "removeContactFromLastStep": true,
+  "filePath": "location/cquQsieyBZx9vRgEqBge/workflows/7f73fda8-c572-407f-b807-ad3a8dec40a9/5",
+  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/location%2FcquQsieyBZx9vRgEqBge%2Fworkflows%2F7f73fda8-c572-407f-b807-ad3a8dec40a9%2F5?alt=media&token=c27dc2b9-3615-48ba-bee3-6e5fa0dfb292",
+  "stopOnResponse": false,
+  "autoMarkAsRead": false,
+  "permission": 380,
+  "type": "workflow",
+  "parentId": null,
+  "updatedBy": "kD5eX8SAxDHruPaeEprZ",
+  "createdAt": "2023-01-16T15:09:39.442Z",
+  "updatedAt": "2024-11-03T13:42:34.978Z",
+  "deleted": false,
+  "__v": 0,
+  "eventStartDate": null,
+  "triggersFilePath": "location/cquQsieyBZx9vRgEqBge/workflow-triggers/7f73fda8-c572-407f-b807-ad3a8dec40a9/2",
+  "window": null,
+  "meta": null,
+  "reason": "",
+  "id": "7f73fda8-c572-407f-b807-ad3a8dec40a9",
+  "workflowData": {
+   "templates": [
+    {
+     "id": "340d05cb-bfd1-4bbc-8f25-6e169802e6ab",
+     "order": 0,
+     "attributes": {
+      "type": "email",
+      "email": {
+       "userType": "custom_email",
+       "html": "Name: {{contact.name}}<br />Email: {{contact.email}}<br />Rating: {{contact.how_would_you_rate_your_experience}}<br />Experience: {{contact.feedback_describe_your_experience}}<br />Improvements?:<br />Do Well: {{contact.feedback_what_are_we_doing_well}}<br />Improve On: {{contact.feedback_what_could_we_improve_on}}",
+       "to": "info@blueprintfitnessldn.com",
+       "subject": "Feedback: {{contact.name}}",
+       "attachments": [],
+       "from_name": "DASH",
+       "from_email": "no-reply@blueprintfitnessldn.com"
+      }
+     },
+     "name": "Internal Notification",
+     "type": "internal_notification",
+     "next": "38e6f877-19a1-4be1-b213-c5feb6ce1ddf"
+    },
+    {
+     "id": "38e6f877-19a1-4be1-b213-c5feb6ce1ddf",
+     "order": 1,
+     "attributes": {
+      "from_name": "Paul Stafford",
+      "from_email": "info@blueprintfitnessldn.com",
+      "subject": "Thankyou {{contact.name}}!",
+      "html": "Hey {{contact.first_name}},<br />Thankyou for your feedback!<br />We really appreciate it 🙌😊<br />Paul",
+      "attachments": []
+     },
+     "name": "Email",
+     "type": "email"
+    }
+   ]
+  },
+  "permissionMeta": {
+   "canRead": true,
+   "canWrite": true
+  },
+  "scheduledPauseDates": []
+ },
+ "templates": [
+  {
+   "id": "340d05cb-bfd1-4bbc-8f25-6e169802e6ab",
+   "order": 0,
+   "attributes": {
+    "type": "email",
+    "email": {
+     "userType": "custom_email",
+     "html": "Name: {{contact.name}}<br />Email: {{contact.email}}<br />Rating: {{contact.how_would_you_rate_your_experience}}<br />Experience: {{contact.feedback_describe_your_experience}}<br />Improvements?:<br />Do Well: {{contact.feedback_what_are_we_doing_well}}<br />Improve On: {{contact.feedback_what_could_we_improve_on}}",
+     "to": "info@blueprintfitnessldn.com",
+     "subject": "Feedback: {{contact.name}}",
+     "attachments": [],
+     "from_name": "DASH",
+     "from_email": "no-reply@blueprintfitnessldn.com"
+    }
+   },
+   "name": "Internal Notification",
+   "type": "internal_notification",
+   "next": "38e6f877-19a1-4be1-b213-c5feb6ce1ddf"
+  },
+  {
+   "id": "38e6f877-19a1-4be1-b213-c5feb6ce1ddf",
+   "order": 1,
+   "attributes": {
+    "from_name": "Paul Stafford",
+    "from_email": "info@blueprintfitnessldn.com",
+    "subject": "Thankyou {{contact.name}}!",
+    "html": "Hey {{contact.first_name}},<br />Thankyou for your feedback!<br />We really appreciate it 🙌😊<br />Paul",
+    "attachments": []
+   },
+   "name": "Email",
+   "type": "email"
+  }
+ ]
+}

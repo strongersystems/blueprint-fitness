@@ -1,0 +1,122 @@
+{
+ "workflow": {
+  "_id": "1f39337c-2ffd-4a7e-9d73-652315b29d5a",
+  "locationId": "147m777NnBtnn7yLrsdb",
+  "name": "Feedback",
+  "status": "published",
+  "version": 3,
+  "allowMultiple": true,
+  "timezone": "account",
+  "removeContactFromLastStep": true,
+  "filePath": "location/147m777NnBtnn7yLrsdb/workflows/1f39337c-2ffd-4a7e-9d73-652315b29d5a/3",
+  "fileUrl": "https://firebasestorage.googleapis.com/v0/b/automation-workflows-production/o/location%2F147m777NnBtnn7yLrsdb%2Fworkflows%2F1f39337c-2ffd-4a7e-9d73-652315b29d5a%2F3?alt=media&token=f805ce97-129f-4c38-adee-962d2621220e",
+  "stopOnResponse": false,
+  "autoMarkAsRead": false,
+  "originId": "7f73fda8-c572-407f-b807-ad3a8dec40a9",
+  "permission": 380,
+  "type": "workflow",
+  "meta": null,
+  "updatedBy": "snapshot",
+  "createdAt": "2026-05-11T15:27:41.530Z",
+  "updatedAt": "2026-05-11T15:27:47.848Z",
+  "deleted": false,
+  "creationSource": "builder",
+  "isTriggerBucketMigrated": true,
+  "originType": "snapshot",
+  "__v": 0,
+  "allowMultipleOpportunity": false,
+  "dataVersion": 7,
+  "eventStartDate": null,
+  "senderAddress": {
+   "from_email": "",
+   "from_name": ""
+  },
+  "triggersFilePath": "location/147m777NnBtnn7yLrsdb/workflow-triggers/1f39337c-2ffd-4a7e-9d73-652315b29d5a/3",
+  "window": null,
+  "workflowNote": {
+   "content": "",
+   "createdBy": "snapshot",
+   "createdByName": "snapshot",
+   "createdAt": "2026-05-11T15:27:47.437Z",
+   "updatedBy": "snapshot",
+   "updatedByName": "snapshot",
+   "updatedAt": "2026-05-11T15:27:47.437Z"
+  },
+  "id": "1f39337c-2ffd-4a7e-9d73-652315b29d5a",
+  "workflowData": {
+   "templates": [
+    {
+     "id": "340d05cb-bfd1-4bbc-8f25-6e169802e6ab",
+     "order": 0,
+     "attributes": {
+      "type": "email",
+      "email": {
+       "userType": "custom_email",
+       "html": "Name: {{contact.name}}<br />Email: {{contact.email}}<br />Rating: {{contact.how_would_you_rate_your_experience}}<br />Experience: {{contact.feedback_describe_your_experience}}<br />Improvements?:<br />Do Well: {{contact.feedback_what_are_we_doing_well}}<br />Improve On: {{contact.feedback_what_could_we_improve_on}}",
+       "to": "info@blueprintfitnessldn.com",
+       "subject": "Feedback: {{contact.name}}",
+       "attachments": [],
+       "from_name": "DASH",
+       "from_email": "no-reply@blueprintfitnessldn.com"
+      }
+     },
+     "name": "Internal Notification",
+     "type": "internal_notification",
+     "next": "38e6f877-19a1-4be1-b213-c5feb6ce1ddf"
+    },
+    {
+     "id": "38e6f877-19a1-4be1-b213-c5feb6ce1ddf",
+     "order": 1,
+     "attributes": {
+      "from_name": "Paul Stafford",
+      "from_email": "info@blueprintfitnessldn.com",
+      "subject": "Thankyou {{contact.name}}!",
+      "html": "Hey {{contact.first_name}},<br />Thankyou for your feedback!<br />We really appreciate it 🙌😊<br />Paul",
+      "attachments": []
+     },
+     "name": "Email",
+     "type": "email"
+    }
+   ]
+  },
+  "permissionMeta": {
+   "canRead": true,
+   "canWrite": true
+  },
+  "scheduledPauseDates": []
+ },
+ "templates": [
+  {
+   "id": "340d05cb-bfd1-4bbc-8f25-6e169802e6ab",
+   "order": 0,
+   "attributes": {
+    "type": "email",
+    "email": {
+     "userType": "custom_email",
+     "html": "Name: {{contact.name}}<br />Email: {{contact.email}}<br />Rating: {{contact.how_would_you_rate_your_experience}}<br />Experience: {{contact.feedback_describe_your_experience}}<br />Improvements?:<br />Do Well: {{contact.feedback_what_are_we_doing_well}}<br />Improve On: {{contact.feedback_what_could_we_improve_on}}",
+     "to": "info@blueprintfitnessldn.com",
+     "subject": "Feedback: {{contact.name}}",
+     "attachments": [],
+     "from_name": "DASH",
+     "from_email": "no-reply@blueprintfitnessldn.com"
+    }
+   },
+   "name": "Internal Notification",
+   "type": "internal_notification",
+   "next": "38e6f877-19a1-4be1-b213-c5feb6ce1ddf"
+  },
+  {
+   "id": "38e6f877-19a1-4be1-b213-c5feb6ce1ddf",
+   "order": 1,
+   "attributes": {
+    "from_name": "Paul Stafford",
+    "from_email": "info@blueprintfitnessldn.com",
+    "subject": "Thankyou {{contact.name}}!",
+    "html": "Hey {{contact.first_name}},<br />Thankyou for your feedback!<br />We really appreciate it 🙌😊<br />Paul",
+    "attachments": []
+   },
+   "name": "Email",
+   "type": "email"
+  }
+ ]
+}

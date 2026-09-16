@@ -35,7 +35,12 @@ export const FOLDERS = [
 export function build(s) {
   const L = links(s);
   const sign = { name: s.coach, role: `Blueprint Fitness ${s.name}` };
-  const team = { name: 'The team', role: `Blueprint Fitness ${s.name}` };
+  /* Hackney signs off from Nick, at the studio's request — the generic "the
+     team" voice is only used at the other two, where Stu already signs the
+     coach-voiced emails. The eyebrow follows the signature so the two agree. */
+  const team = s.slug === 'hackney' ? sign
+             : { name: 'The team', role: `Blueprint Fitness ${s.name}` };
+  const FROM_TEAM = s.slug === 'hackney' ? `From ${s.coach}` : 'From the team';
   const wa = (t) => L.whatsapp(t);
 
   /** Every studio keeps its own ratio line; the number is 5:1, never 6:1. */
@@ -381,7 +386,7 @@ export function build(s) {
   add(F4, 'winback-01', 'Win-back 01 — Checking in',
     `How have you been, ${FIRST}?`,
     'No pitch — just seeing how you got on.',
-    'From the team', `How have you been?`,
+    FROM_TEAM, `How have you been?`,
     [
       p(`Hello ${FIRST}. It has been a little while since you trained with us, and I wanted to see how you have got on.`),
       p(`No pitch attached to this one. If you found something that works better, genuinely good — that is the point of the whole exercise.`),
@@ -392,7 +397,7 @@ export function build(s) {
   add(F4, 'winback-02', 'Win-back 02 — Still thinking about it',
     'Still fancy getting back to it?',
     'The door is open, and starting again is easier than starting.',
-    'From the team', 'Still fancy getting back to it?',
+    FROM_TEAM, 'Still fancy getting back to it?',
     [
       p(`Hello ${FIRST} — a quick one. If getting back into training has been on your list, you would not be starting from scratch. You already know how the sessions work and the coaches already know you.`),
       p(`Quite a lot has changed since you were last in, too. Here is the current timetable at ${s.name}.`),
@@ -405,7 +410,7 @@ export function build(s) {
   add(F4, 'winback-03', 'Win-back 03 — Whenever you are ready',
     'Whenever you are ready',
     'Last one from us — no hard feelings either way.',
-    'From the team', 'Whenever you are ready',
+    FROM_TEAM, 'Whenever you are ready',
     [
       p(`This is the last one from us, ${FIRST}, so we do not become the gym that will not stop emailing.`),
       p(`If and when you want to come back, everything is where you left it. Message the studio and we will pick it up from there — no re-joining fee, no awkwardness about the gap.`),
@@ -421,7 +426,7 @@ export function build(s) {
   add(F4, 'checkin-28', 'Win-back — 28 day check-in',
     `How did you get on, ${FIRST}?`,
     'Five sessions on us if you fancy dropping back in.',
-    'From the team', 'How did you get on?',
+    FROM_TEAM, 'How did you get on?',
     [
       p(`Hello ${FIRST} — it has been about a month since your trial finished, and I wanted to see how you have been getting on.`),
       p(`If you have kept it going somewhere else, genuinely well done. That is the point of the whole thing.`),
@@ -434,7 +439,7 @@ export function build(s) {
   add(F4, 'checkin-90', 'Win-back — 3 month check-in',
     `Still taking care of yourself, ${FIRST}?`,
     'The five sessions are still there if you want them.',
-    'From the team', 'Three months on',
+    FROM_TEAM, 'Three months on',
     [
       p(`Hello ${FIRST}. It has been about three months since you finished with us, so this is just a quick one to check you are still looking after yourself.`),
       p(`No pitch. But the offer of <strong>five free sessions</strong> has not gone anywhere, if you are ready to get moving again.`),

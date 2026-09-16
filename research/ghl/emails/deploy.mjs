@@ -62,7 +62,12 @@ async function docOf(locationId, id) {
    duplicates every template. */
 const prior = existsSync(process.argv[2]) ? JSON.parse(readFileSync(process.argv[2], 'utf8')) : {};
 
-const out = {};
+/* Seeded from the prior map, not empty: with --studio the loop skips the other
+   two sub-accounts, and writing a fresh object would drop their ids from the
+   file — the only record of them, since the builder listing cannot see into
+   folders. Recovering that means re-creating 56 templates and repointing every
+   workflow step at the new ids. */
+const out = { ...prior };
 for (const [slug, locationId] of Object.entries(LOCS)) {
   if (only && slug !== only) continue;
   const studio = STUDIOS[slug];

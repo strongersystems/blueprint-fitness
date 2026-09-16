@@ -15,7 +15,7 @@
  * Add a line here and the route builds itself.
  */
 export interface LegacyRedirect {
-  /** the old path, without slashes */
+  /** the old path, without leading or trailing slashes */
   from: string;
   /** where it should land now, site-relative */
   to: string;
@@ -43,5 +43,26 @@ export const legacyRedirects: LegacyRedirect[] = [
     to: 'members/bookings-cancellations/',
     label: 'Booking system guidelines',
     linkedFrom: '“Your Super Quick Guide To Getting Started” welcome email',
+  },
+  /* The per-studio price pages briefly lived at /<studio>/memberships/ before
+     moving under /memberships/. The CRM templates carried that shape for a few
+     hours, so anything sent in that window is already in an inbox. */
+  {
+    from: 'south-woodford/memberships',
+    to: 'memberships/south-woodford/',
+    label: 'South Woodford memberships',
+    linkedFrom: 'the price email, for the few hours the templates carried this path',
+  },
+  {
+    from: 'leytonstone/memberships',
+    to: 'memberships/leytonstone/',
+    label: 'Leytonstone memberships',
+    linkedFrom: 'the price email, for the few hours the templates carried this path',
+  },
+  {
+    from: 'hackney/memberships',
+    to: 'memberships/hackney/',
+    label: 'Hackney memberships',
+    linkedFrom: 'the price email, for the few hours the templates carried this path',
   },
 ];

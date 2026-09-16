@@ -15,6 +15,7 @@ const paths = [
   '/memberships/',
   ...studios.map((s) => `/${s.slug}/kickstart/`),
   ...studios.map((s) => `/${s.slug}/timetable/`),
+  ...studios.map((s) => `/memberships/${s.slug}/`),
 ];
 
 export const GET: APIRoute = () => {

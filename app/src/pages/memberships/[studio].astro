@@ -1,0 +1,118 @@
+---
+/**
+ * Membership prices for one studio.
+ *
+ * Prices are not the same across the three — Hackney is dearer at every tier —
+ * so a single shared price list was wrong for a third of the business. Each
+ * studio gets its own page and /memberships/ becomes the chooser.
+ */
+import Base from '../../layouts/Base.astro';
+import { studios } from '../../data/studios';
+import { tiers, included, terms, priceOf } from '../../data/memberships';
+import { url } from '../../lib/url';
+
+export async function getStaticPaths() {
+  return studios.map((studio) => ({ params: { studio: studio.slug }, props: { studio } }));
+}
+const { studio } = Astro.props;
+const wa = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
+  `Hi Blueprint Fitness ${studio.name} — I'd like to ask about memberships.`)}`;
+---
+<Base
+  title={`Memberships — Blueprint Fitness ${studio.name}`}
+  description={`Membership prices at Blueprint Fitness ${studio.name}: SGPT 12, 8 and 4. Small group personal training, never more than five people per coach.`}
+  current="Locations"
+  trackStudios={[studio.slug]}
+>
+  <section class="section on-dark section-tight">
+    <div class="container">
+      <p class="dim sec-head" style="margin-bottom:1rem">Memberships &middot; {studio.name}</p>
+      <h1 class="h-display">Coached. Structured. <span class="draft-u">Real results.</span></h1>
+      <p class="lede">Small group personal training at our {studio.name} studio. Every membership is
+        the same coaching and the same small groups &mdash; the only question is how many sessions a
+        month suit your life.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-3 stagger">
+        {tiers.map((t) => (
+          <article class="card" style={t.featured ? 'outline:2px solid var(--blue);outline-offset:-2px' : ''}>
+            <p class="annotation" style="margin:0 0 .3rem">{t.featured ? 'Most popular' : ' '}</p>
+            <h2 class="h-3" style="margin:0 0 .2rem">{t.name}</h2>
+            <p style="margin:0 0 .1rem">
+              <span style="font-family:var(--font-display);font-size:2.4rem;font-weight:800;color:var(--ink)">{priceOf(studio, t)}</span>
+              <span style="color:var(--grey)"> a month</span>
+            </p>
+            <p style="font-weight:700;margin:.5rem 0 .3rem">{t.sessions}</p>
+            <p style="color:var(--grey)">{t.note}</p>
+            <p class="card-cta"><a class="btn btn-primary" href={url(`${studio.signupPath}/`)}>Join {t.name}</a></p>
+          </article>
+        ))}
+      </div>
+      <p class="small" style="margin-top:1.2rem;color:var(--grey)">Prices shown are per month at
+        {studio.name} and are set by this studio &mdash;
+        <a href={url('memberships/')} style="color:var(--blue)">the other studios</a> differ.</p>
+    </div>
+  </section>
+
+  <section class="section on-mist">
+    <div class="container grid-2" style="align-items:start">
+      <div>
+        <div class="sec-head">
+          <p class="dim">Memberships include</p>
+          <h2 class="h-1">What you <span class="draft-u hl">get</span></h2>
+        </div>
+        <ul class="check-list">
+          {included.map((i) => <li>{i}</li>)}
+        </ul>
+      </div>
+      <div>
+        <div class="sec-head">
+          <p class="dim">The small print</p>
+          <h2 class="h-1">Terms</h2>
+        </div>
+        <ul class="check-list">
+          {terms.map((i) => <li>{i}</li>)}
+        </ul>
+        <p style="margin-top:1rem"><a href={url('members/terms/')}>Read the full membership terms &rarr;</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-2" style="align-items:center">
+      <div>
+        <div class="sec-head">
+          <p class="dim">Your studio</p>
+          <h2 class="h-1">Blueprint Fitness <span class="draft-u">{studio.name}</span></h2>
+        </div>
+        <ul class="check-list">
+          <li>{studio.addressLines.join(', ')} {studio.postcode}</li>
+          <li>{studio.hours}</li>
+          <li>{studio.email}</li>
+        </ul>
+        <div class="btn-row" style="margin-top:1.2rem">
+          <a class="btn btn-ghost" href={url(`${studio.slug}/timetable/`)}>See the timetable</a>
+          <a class="btn btn-ghost" href={wa} rel="noopener" target="_blank">Ask a question</a>
+        </div>
+      </div>
+      <div class="plan-frame reveal" style="aspect-ratio:4/3">
+        <img src={url(studio.heroImage)} alt={studio.heroImageAlt} loading="lazy" width="1400" height="1050" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-dark">
+    <div class="container" style="text-align:center;max-width:42rem">
+      <h2 class="h-1">Not sure yet? <span class="draft-u">Try 30 days.</span></h2>
+      <p class="lede" style="margin-inline:auto">Twelve coached sessions and an InBody scan, with no
+        commitment beyond the month. Most people know by week two.</p>
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn btn-primary" href={url(`${studio.slug}/kickstart/`)}>The 30-Day Kickstart</a>
+        <a class="btn btn-ghost" href={url('contact/')}>Talk to us first</a>
+      </div>
+    </div>
+  </section>
+</Base>

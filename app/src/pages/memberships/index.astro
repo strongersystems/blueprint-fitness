@@ -1,0 +1,80 @@
+---
+/**
+ * Membership chooser.
+ *
+ * Prices are not the same at every studio — Hackney is dearer at every tier —
+ * so this page does one job: pick a studio. The figures live on
+ * /memberships/<studio>, which is also where the CRM emails link.
+ */
+import Base from '../../layouts/Base.astro';
+import { studios } from '../../data/studios';
+import { included } from '../../data/memberships';
+import { url } from '../../lib/url';
+---
+<Base
+  title="Memberships — Blueprint Fitness"
+  description="Membership options at Blueprint Fitness South Woodford, Leytonstone and Hackney. Small group personal training — never more than five people per coach."
+  current="Locations"
+  trackAll
+>
+  <section class="section on-dark section-tight">
+    <div class="container">
+      <p class="dim sec-head" style="margin-bottom:1rem">Memberships</p>
+      <h1 class="h-display">Coached. Structured. <span class="draft-u">Real results.</span></h1>
+      <p class="lede">Same coaching, same small groups, same plan at all three studios &mdash; with
+        prices set at each one. Pick your studio for its figures.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="sec-head">
+        <p class="dim">Pick your studio</p>
+        <h2 class="h-1">Where will you <span class="draft-u hl">train?</span></h2>
+      </div>
+      <div class="grid-3 stagger">
+        {studios.map((s) => (
+          <article class="card">
+            <p class="annotation" style="margin:0 0 .3rem">{s.postcode}</p>
+            <h3 class="h-3">{s.name}</h3>
+            <p class="studio-addr">{s.addressLines.join(', ')}</p>
+            <p>{s.hours}</p>
+            <p class="card-cta">
+              <a class="btn btn-primary" href={url(`memberships/${s.slug}/`)}>{s.name} memberships</a>
+            </p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-mist">
+    <div class="container grid-2" style="align-items:center">
+      <div>
+        <div class="sec-head">
+          <p class="dim">Whichever you pick</p>
+          <h2 class="h-1">Every membership <span class="draft-u">includes</span></h2>
+        </div>
+        <ul class="check-list">
+          {included.map((i) => <li>{i}</li>)}
+        </ul>
+      </div>
+      <div class="plan-frame reveal" style="aspect-ratio:4/3">
+        <img src={url('img/bf-coach-bench.jpg')} alt="A Blueprint coach working with a member"
+             loading="lazy" width="1400" height="1050" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-dark">
+    <div class="container" style="text-align:center;max-width:42rem">
+      <h2 class="h-1">Not sure yet? <span class="draft-u">Try 30 days.</span></h2>
+      <p class="lede" style="margin-inline:auto">Twelve coached sessions and an InBody scan, with
+        no commitment beyond the month. Most people know by week two.</p>
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn btn-primary" href={url('kickstart/')}>The 30-Day Kickstart</a>
+        <a class="btn btn-ghost" href={url('contact/')}>Talk to us first</a>
+      </div>
+    </div>
+  </section>
+</Base>

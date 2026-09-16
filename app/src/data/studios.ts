@@ -42,6 +42,12 @@ export interface Studio {
   classesLine: string;
   /** the reassurance headline on the next-steps page */
   reassure: { emphasis: string; tail: string };
+  /**
+   * Monthly membership prices. They are NOT the same at every studio — Hackney
+   * is dearer across the board — which is why each studio has its own
+   * memberships page rather than one shared price list.
+   */
+  memberships: { sgpt12: string; sgpt8: string; sgpt4: string };
   /** short line used as the eyebrow on studio pages */
   eyebrow: string;
   blurb: string;
@@ -83,6 +89,7 @@ export const studios: Studio[] = [
     weeklySessions: '100+',
     classesLine: 'Unlimited classes on top — 100+ a week',
     reassure: { emphasis: 'Good.', tail: 'That’s day one.' },
+    memberships: { sgpt12: '£239', sgpt8: '£219', sgpt4: '£189' },
     eyebrow: 'Where it all started',
     blurb:
       'The original Blueprint. A premium training space with a thriving community, expert coaching, and structured group training focused on strength, conditioning and consistency.',
@@ -114,6 +121,7 @@ export const studios: Studio[] = [
     weeklySessions: '100+',
     classesLine: 'Unlimited classes on top — 100+ a week',
     reassure: { emphasis: 'Good.', tail: 'That’s day one.' },
+    memberships: { sgpt12: '£239', sgpt8: '£219', sgpt4: '£189' },
     eyebrow: 'Progress you can measure',
     blurb:
       'Small group coaching built around measurable progress and long-term development — expertly designed programmes, delivered by coaches who genuinely care how you’re getting on.',
@@ -145,6 +153,7 @@ export const studios: Studio[] = [
     weeklySessions: null,
     classesLine: 'Unlimited classes on top',
     reassure: { emphasis: 'That’s okay.', tail: 'We can help you from here!' },
+    memberships: { sgpt12: '£279', sgpt8: '£239', sgpt4: '£199' },
     eyebrow: 'The newest one — now open',
     blurb:
       'Our newest studio, tucked into a railway arch just off Morning Lane. A brand-new space built for structured training and community-led coaching — same warm welcome, box-fresh kit.',

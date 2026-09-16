@@ -26,6 +26,7 @@ export const STUDIOS = {
     email: 'southwoodford@blueprintfitnessldn.com', whatsapp: '447538298457',
     address: '4 Raven Road, South Woodford, London', postcode: 'E18 1HB',
     hours: 'Open 6am–9pm, every day', signup: 'signup-southwoodford',
+    prices: { sgpt12: '£239', sgpt8: '£219', sgpt4: '£189' },
     teamup: 'https://goteamup.com/p/3662065-blueprint-fitness-south-w/memberships/',
   },
   leytonstone: {
@@ -33,6 +34,7 @@ export const STUDIOS = {
     email: 'leytonstone@blueprintfitnessldn.com', whatsapp: '447947790035',
     address: 'Unit 3, Hitchcock Business Centre, Leytonstone', postcode: 'E11 4RE',
     hours: 'Open early ’til late, 7 days a week', signup: 'signup-leytonstone',
+    prices: { sgpt12: '£239', sgpt8: '£219', sgpt4: '£189' },
     teamup: 'https://goteamup.com/p/9748082-blueprint-fitness-leytons/memberships/',
   },
   hackney: {
@@ -42,6 +44,9 @@ export const STUDIOS = {
     /* Hackney is closed on Sundays and has no 100+ weekly session count —
        the old templates claimed both, for every studio. */
     hours: 'Mon–Fri 6am–9pm · Sat 8–11am · Closed Sunday', signup: 'signup-hackney',
+    /* Hackney is dearer at every tier — this is why the site has a memberships
+       page per studio rather than one shared price list. */
+    prices: { sgpt12: '£279', sgpt8: '£239', sgpt4: '£199' },
     teamup: null,
   },
 };
@@ -50,9 +55,9 @@ const esc = (s) => String(s).replace(/&(?![a-z#0-9]+;)/gi, '&amp;').replace(/</g
 
 export const links = (s) => ({
   kickstart: `${SITE}/${s.slug}/kickstart/`,
+  memberships: `${SITE}/memberships/${s.slug}/`,
   signup: `${SITE}/${s.signup}/`,
   timetable: `${SITE}/${s.slug}/timetable/`,
-  memberships: `${SITE}/memberships/`,
   nutritionCourse: `${SITE}/members/nutrition-course/`,
   nutritionRequest: `${SITE}/members/nutrition-request/`,
   bookings: `${SITE}/members/bookings-cancellations/`,
@@ -141,8 +146,11 @@ export function email({ studio, eyebrow, headline, blocks, preheader, signoff })
   <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;background:#ffffff;border-radius:14px;overflow:hidden">
 
    <tr><td style="background:${INK};background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:32px 32px;padding:26px 32px">
-     <img src="${SITE}/img/logo-horizontal-blue.png" width="200" alt="Blueprint Fitness"
-          style="display:block;border:0;outline:none;text-decoration:none;width:200px;max-width:200px;height:auto">
+     <!-- the stacked white lockup, which is the one on the studio membership
+          cards; the blue horizontal version was a different mark and read as a
+          thin outline against this header -->
+     <img src="${SITE}/img/logo-bf-stacked-white.png" width="150" alt="Blueprint Fitness"
+          style="display:block;border:0;outline:none;text-decoration:none;width:150px;max-width:150px;height:auto">
    </td></tr>
 
    <tr><td style="padding:34px 32px 0">

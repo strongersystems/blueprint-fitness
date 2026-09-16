@@ -8,7 +8,7 @@
  */
 import Base from '../../layouts/Base.astro';
 import { studios } from '../../data/studios';
-import { included } from '../../data/memberships';
+import { included, fromPrice } from '../../data/memberships';
 import { url } from '../../lib/url';
 ---
 <Base
@@ -35,9 +35,13 @@ import { url } from '../../lib/url';
       <div class="grid-3 stagger">
         {studios.map((s) => (
           <article class="card">
-            <p class="annotation" style="margin:0 0 .3rem">{s.postcode}</p>
-            <h3 class="h-3">{s.name}</h3>
-            <p class="studio-addr">{s.addressLines.join(', ')}</p>
+            <h3 class="h-3" style="margin:0 0 .2rem">{s.name}</h3>
+            <p style="margin:0 0 .8rem">
+              <span style="color:var(--grey)">From </span>
+              <span style="font-family:var(--font-display);font-size:1.8rem;font-weight:800;color:var(--ink)">{fromPrice(s)}</span>
+              <span style="color:var(--grey)"> a month</span>
+            </p>
+            <p class="studio-addr">{s.addressLines.join(', ')} {s.postcode}</p>
             <p>{s.hours}</p>
             <p class="card-cta">
               <a class="btn btn-primary" href={url(`memberships/${s.slug}/`)}>{s.name} memberships</a>

@@ -39,7 +39,9 @@ const wa = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
       <div class="grid-3 stagger">
         {tiers.map((t) => (
           <article class="card" style={t.featured ? 'outline:2px solid var(--blue);outline-offset:-2px' : ''}>
-            <p class="annotation" style="margin:0 0 .3rem">{t.featured ? 'Most popular' : ' '}</p>
+            {/* the badge row is always there, empty or not, so the three tier
+                names sit on the same line across the row */}
+            <p class="tier-badge">{t.featured && <span class="annotation-hl">Most popular</span>}</p>
             <h2 class="h-3" style="margin:0 0 .2rem">{t.name}</h2>
             <p style="margin:0 0 .1rem">
               <span style="font-family:var(--font-display);font-size:2.4rem;font-weight:800;color:var(--ink)">{priceOf(studio, t)}</span>
@@ -116,3 +118,9 @@ const wa = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
     </div>
   </section>
 </Base>
+
+<style>
+  /* reserves the badge line on every card, so a card without one still lines
+     its tier name up with the featured card's */
+  .tier-badge { min-height: 1.7rem; margin: 0 0 .6rem; }
+</style>

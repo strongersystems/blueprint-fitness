@@ -1,0 +1,93 @@
+---
+/**
+ * schema.org JSON-LD.
+ *
+ * A three-studio gym is exactly the case structured data exists for: it is how
+ * Google ties a page to a physical place, and it feeds the local pack and the
+ * knowledge panel. The site had none at all, so every address, opening time and
+ * geo point on it was only ever prose that a crawler had to guess at.
+ *
+ * Every fact here is read from studios.ts rather than written out again, so
+ * there is no second copy to drift. Nothing is invented: a studio with no
+ * confirmed opening times simply omits the property (Leytonstone's hours read
+ * "early 'til late", which is not a time), and no aggregateRating is emitted
+ * because the review counts on the site are transcribed from the old pages
+ * rather than collected here — marking up a rating we do not own is exactly
+ * what Google penalises.
+ *
+ *   <Schema studio={studio} />   one studio, on that studio's pages
+ *   <Schema organization />      the business itself, on the home page
+ *   <Schema studios />           all three, on /locations/
+ */
+import type { Studio } from '../data/studios';
+import { studios as allStudios } from '../data/studios';
+import { site } from '../data/site';
+
+interface Props {
+  studio?: Studio;
+  organization?: boolean;
+  studios?: boolean;
+}
+const { studio, organization = false, studios = false } = Astro.props;
+
+const SITE = 'https://blueprintfitnessldn.com';
+const ID = `${SITE}/#organization`;
+
+/** One studio as an ExerciseGym, the narrowest type that fits. */
+const gym = (s: Studio) => ({
+  '@type': 'ExerciseGym',
+  '@id': `${SITE}/#${s.slug}`,
+  name: `Blueprint Fitness ${s.name}`,
+  url: `${SITE}/memberships/${s.slug}/`,
+  image: `${SITE}/${s.heroImage}`,
+  email: s.email,
+  telephone: `+${s.whatsapp}`,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: s.addressLines[0],
+    addressLocality: 'London',
+    addressRegion: 'Greater London',
+    postalCode: s.postcode,
+    addressCountry: 'GB',
+  },
+  geo: { '@type': 'GeoCoordinates', latitude: s.lat, longitude: s.lng },
+  ...(s.openingHours && {
+    openingHoursSpecification: s.openingHours.map((h) => ({
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: h.days,
+      opens: h.opens,
+      closes: h.closes,
+    })),
+  }),
+  parentOrganization: { '@id': ID },
+  priceRange: '££',
+});
+
+const org = {
+  '@type': 'Organization',
+  '@id': ID,
+  name: 'Blueprint Fitness',
+  url: `${SITE}/`,
+  logo: `${SITE}/img/logo-bf-stacked-white.png`,
+  description: 'Small group personal training across three East London studios — never more than five people per coach.',
+  email: site.email,
+  areaServed: 'East London',
+  sameAs: [site.instagram, site.facebook].filter(Boolean),
+};
+
+/* The org node ships on every page, whether or not `organization` was asked
+   for: each gym carries parentOrganization -> #organization, and a reference to
+   a node that is not in the same graph is a dangling one. `organization` now
+   only adds the WebSite node, which belongs on the home page. */
+const graph = [
+  org,
+  ...(organization ? [{
+    '@type': 'WebSite', '@id': `${SITE}/#website`,
+    url: `${SITE}/`, name: 'Blueprint Fitness', publisher: { '@id': ID },
+  }] : []),
+  ...(studio ? [gym(studio)] : []),
+  ...(studios ? allStudios.map(gym) : []),
+];
+const json = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
+---
+<script type="application/ld+json" is:inline set:html={json} />

@@ -10,6 +10,14 @@
  * The hop is meta-refresh first so it works without JavaScript, with
  * location.replace() as well so the old URL does not land in the back-button
  * history. Anyone who somehow sees the page still gets a real link.
+ *
+ * Whether a stub is noindexed follows its target, and nothing else — see the
+ * `noindex` field in legacyRedirects.ts. GitHub Pages cannot send a 301, so the
+ * canonical below is the only way to say "this is the same page as that one",
+ * and a blanket noindex alongside it said the opposite. That contradiction is
+ * what put "Excluded by 'noindex' tag" in Search Console: these are real URLs
+ * from the old site that Google still has indexed, and noindexing them threw
+ * their history away instead of passing it to the page that replaced them.
  */
 import { legacyRedirects } from '../data/legacyRedirects';
 import { url } from '../lib/url';
@@ -21,13 +29,13 @@ const { r } = Astro.props;
 const target = url(r.to);
 const absolute = `https://blueprintfitnessldn.com${target}`;
 ---
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{r.label} — Blueprint Fitness</title>
-    <meta name="robots" content="noindex,follow" />
     <link rel="canonical" href={absolute} />
+    {r.noindex && <meta name="robots" content="noindex,follow" />}
     <meta http-equiv="refresh" content={`0; url=${target}`} />
     <script is:inline define:vars={{ target }}>location.replace(target);</script>
     <style>

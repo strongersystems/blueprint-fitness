@@ -23,6 +23,20 @@ export interface LegacyRedirect {
   label: string;
   /** where it is linked from, so nobody deletes this without checking */
   linkedFrom: string;
+  /**
+   * Whether the stub itself should carry noindex.
+   *
+   * The rule is simply: match the target. A stub canonicalises to its target,
+   * so the two must agree — telling Google "index this, but the real version is
+   * over there" while the real version says "do not index me" is a
+   * contradiction, and contradictions are what get pages reported as problems.
+   *
+   * A stub pointing at a public page is left indexable: the canonical then
+   * consolidates the old URL into the new one and carries its history across.
+   * A stub pointing into the members area is noindexed, because that is what
+   * the target says about itself.
+   */
+  noindex: boolean;
 }
 
 export const legacyRedirects: LegacyRedirect[] = [
@@ -31,18 +45,21 @@ export const legacyRedirects: LegacyRedirect[] = [
     to: 'members/nutrition-request/',
     label: 'Nutrition coaching',
     linkedFrom: 'Nutrition Consult email (all three studios) and the 30 Day Email Sequence',
+    noindex: true,
   },
   {
     from: 'nutrition-series-videos',
     to: 'members/nutrition-course/',
     label: 'The Nutrition Video Series',
     linkedFrom: '“Kickstart Your Nutrition Journey” in the 30 Day Email Sequence',
+    noindex: true,
   },
   {
     from: 'teamup',
     to: 'members/bookings-cancellations/',
     label: 'Booking system guidelines',
     linkedFrom: '“Your Super Quick Guide To Getting Started” welcome email',
+    noindex: true,
   },
   /* The per-studio price pages briefly lived at /<studio>/memberships/ before
      moving under /memberships/. The CRM templates carried that shape for a few
@@ -52,17 +69,20 @@ export const legacyRedirects: LegacyRedirect[] = [
     to: 'memberships/south-woodford/',
     label: 'South Woodford memberships',
     linkedFrom: 'the price email, for the few hours the templates carried this path',
+    noindex: false,
   },
   {
     from: 'leytonstone/memberships',
     to: 'memberships/leytonstone/',
     label: 'Leytonstone memberships',
     linkedFrom: 'the price email, for the few hours the templates carried this path',
+    noindex: false,
   },
   {
     from: 'hackney/memberships',
     to: 'memberships/hackney/',
     label: 'Hackney memberships',
     linkedFrom: 'the price email, for the few hours the templates carried this path',
+    noindex: false,
   },
 ];

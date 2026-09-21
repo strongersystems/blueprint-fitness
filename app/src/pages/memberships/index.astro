@@ -7,6 +7,7 @@
  * /memberships/<studio>, which is also where the CRM emails link.
  */
 import Base from '../../layouts/Base.astro';
+import Schema from "../../components/Schema.astro";
 import { studios } from '../../data/studios';
 import { included, fromPrice } from '../../data/memberships';
 import { url } from '../../lib/url';
@@ -17,6 +18,7 @@ import { url } from '../../lib/url';
   current="Locations"
   trackAll
 >
+  <Schema slot="head" organization studios />
   <section class="section on-dark section-tight">
     <div class="container">
       <p class="dim sec-head" style="margin-bottom:1rem">Memberships</p>

@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import Schema from "../components/Schema.astro";
 import { url } from "../lib/url";
 import { studios, mapEmbed } from "../data/studios";
 
@@ -13,6 +14,7 @@ const sw = byslug["south-woodford"], ls = byslug["leytonstone"], hk = byslug["ha
   trackAll>
 
 
+  <Schema slot="head" organization studios />
   <!-- ===== hero: the drafting board — the page opens as a sheet
        being drawn, with their real footage pinned to it ===== -->
   <section class="hero hero-draft" data-cta-sentinel>

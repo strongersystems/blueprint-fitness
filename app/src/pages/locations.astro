@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import Schema from "../components/Schema.astro";
 import { url } from "../lib/url";
 import { studios, mapEmbed, mapLink } from "../data/studios";
 
@@ -13,6 +14,7 @@ const sw = byslug["south-woodford"], ls = byslug["leytonstone"], hk = byslug["ha
   trackAll>
 
 
+  <Schema slot="head" organization studios />
   <section class="section on-dark section-tight">
     <div class="container">
       <p class="dim sec-head" style="margin-bottom:1rem">Our London facilities</p>

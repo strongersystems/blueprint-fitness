@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import Schema from "../components/Schema.astro";
 import EnquiryLightbox from "../components/EnquiryLightbox.tsx";
 import { studios } from "../data/studios";
 import { url } from "../lib/url";
@@ -12,6 +13,7 @@ import { url } from "../lib/url";
   trackAll>
 
 
+  <Schema slot="head" organization studios />
   <!-- ===== pain hook hero: the drafting board ===== -->
   <section class="hero hero-draft" data-cta-sentinel>
     <div class="hero-inner container hero-draft-grid">

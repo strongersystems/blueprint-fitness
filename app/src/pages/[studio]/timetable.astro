@@ -8,6 +8,7 @@
  * a designer.
  */
 import Base from '../../layouts/Base.astro';
+import Schema from "../../components/Schema.astro";
 import { studios } from '../../data/studios';
 import { timetables, typesUsed, classTypes } from '../../data/timetables';
 import { url } from '../../lib/url';
@@ -28,6 +29,7 @@ const wa = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
   current="Locations"
   trackStudios={[studio.slug]}
 >
+  <Schema slot="head" studio={studio} />
   <section class="section on-dark section-tight">
     <div class="container">
       <p class="dim sec-head" style="margin-bottom:1rem">{studio.name} · {studio.postcode}</p>

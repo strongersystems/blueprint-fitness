@@ -30,6 +30,14 @@ export interface Studio {
   whatsapp: string;
   hours: string;
   /**
+   * Opening hours in schema.org form, for the LocalBusiness JSON-LD. Only
+   * stated where the studio's own `hours` line gives real times — Leytonstone's
+   * reads "early 'til late", which is not a time, and guessing it from the
+   * class timetable would be inventing a fact about a business. null omits the
+   * property rather than publishing a number nobody has confirmed.
+   */
+  openingHours: { days: string[]; opens: string; closes: string }[] | null;
+  /**
    * Per-studio facts that used to be written into the templates as if they
    * were true everywhere. They are not: Hackney is closed on Sundays and has
    * no 100+ weekly session count to stand behind.
@@ -85,6 +93,9 @@ export const studios: Studio[] = [
     email: 'southwoodford@blueprintfitnessldn.com',
     whatsapp: '447538298457',
     hours: 'Open 6am–9pm, every day — 100+ sessions a week',
+    openingHours: [
+      { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: '06:00', closes: '21:00' },
+    ],
     openDaysLine: '7 days a week',
     weeklySessions: '100+',
     classesLine: 'Unlimited classes on top — 100+ a week',
@@ -117,6 +128,8 @@ export const studios: Studio[] = [
     email: 'leytonstone@blueprintfitnessldn.com',
     whatsapp: '447947790035',
     hours: 'Open early ’til late, 7 days a week',
+    /* "early 'til late" is not a time; the team need to confirm the real ones. */
+    openingHours: null,
     openDaysLine: '7 days a week',
     weeklySessions: '100+',
     classesLine: 'Unlimited classes on top — 100+ a week',
@@ -149,6 +162,10 @@ export const studios: Studio[] = [
     email: 'hackney@blueprintfitnessldn.com',
     whatsapp: '447944690356',
     hours: 'Mon–Fri 6am–9pm · Sat 8–11am · Closed Sunday',
+    openingHours: [
+      { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '06:00', closes: '21:00' },
+      { days: ['Saturday'], opens: '08:00', closes: '11:00' },
+    ],
     openDaysLine: 'Monday to Saturday',
     weeklySessions: null,
     classesLine: 'Unlimited classes on top',

@@ -17,7 +17,11 @@
 export interface LegacyRedirect {
   /** the old path, without leading or trailing slashes */
   from: string;
-  /** where it should land now, site-relative */
+  /**
+   * Where it should land now, site-relative. May carry a #fragment: the hop
+   * uses the whole thing, and the canonical drops the fragment, since a
+   * canonical names a page and a fragment is a position within one.
+   */
   to: string;
   /** what the old page was, so the stub can say something true while it waits */
   label: string;
@@ -83,6 +87,30 @@ export const legacyRedirects: LegacyRedirect[] = [
     to: 'memberships/hackney/',
     label: 'Hackney memberships',
     linkedFrom: 'the price email, for the few hours the templates carried this path',
+    noindex: false,
+  },
+  /* The bare studio URLs. Nothing on the site linked to them, but they are what
+     a person types and what the studios' own printed material tends to use, and
+     all three 404'd. Each lands on its own block of the locations page. */
+  {
+    from: 'south-woodford',
+    to: 'locations/#south-woodford',
+    label: 'South Woodford',
+    linkedFrom: 'typed, guessed, and any printed material using the bare studio URL',
+    noindex: false,
+  },
+  {
+    from: 'leytonstone',
+    to: 'locations/#leytonstone',
+    label: 'Leytonstone',
+    linkedFrom: 'typed, guessed, and any printed material using the bare studio URL',
+    noindex: false,
+  },
+  {
+    from: 'hackney',
+    to: 'locations/#hackney',
+    label: 'Hackney',
+    linkedFrom: 'typed, guessed, and any printed material using the bare studio URL',
     noindex: false,
   },
 ];

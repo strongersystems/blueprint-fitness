@@ -47,6 +47,10 @@
 /* ---------- reset-ish ---------- */
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
+/* The header is sticky, so an element jumped to via #anchor lands underneath
+   it. Anything that is a jump target keeps that much clearance above it —
+   .site-header's .nav-row is 4.1rem plus its border. */
+html{scroll-padding-top:4.6rem}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
 }
@@ -101,6 +105,17 @@ p{margin:0 0 1em}
 .grid-2{display:grid;gap:clamp(1.5rem,4vw,4rem);grid-template-columns:1fr}
 .grid-3{display:grid;gap:1.25rem;grid-template-columns:1fr}
 .grid-4{display:grid;gap:1.25rem;grid-template-columns:1fr}
+/* Below the two-column breakpoint the locations page stacks, and the media
+   column comes first in source order — which put a photo and a map above the
+   studio's own name. It matters most to someone arriving at /hackney/, which
+   lands them on that section: they saw a picture and had to scroll to find out
+   which studio it was. The text goes first when stacked. */
+@media(max-width:699px){
+  .loc-row .loc-media{order:2}
+  /* the decorative row number sat over the image before the text moved up;
+     over the eyebrow it just reads as clutter, so it goes on narrow screens */
+  .loc-row .ghost-num{display:none}
+}
 @media(min-width:700px){
   .grid-2{grid-template-columns:1fr 1fr;align-items:center}
   .grid-3{grid-template-columns:repeat(3,1fr)}

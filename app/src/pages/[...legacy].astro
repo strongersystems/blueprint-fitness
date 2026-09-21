@@ -27,7 +27,9 @@ export async function getStaticPaths() {
 }
 const { r } = Astro.props;
 const target = url(r.to);
-const absolute = `https://blueprintfitnessldn.com${target}`;
+/* The canonical names a page, so it never carries the fragment — a fragment is
+   a position within a page, and Google discards it anyway. The hop keeps it. */
+const absolute = `https://blueprintfitnessldn.com${target.split('#')[0]}`;
 ---
 <html lang="en-GB">
   <head>
@@ -50,9 +52,11 @@ const absolute = `https://blueprintfitnessldn.com${target}`;
   </head>
   <body>
     <main>
-      <p class="eyebrow">{r.label} has moved</p>
-      <p>Taking you there now.</p>
-      <p><a href={target}>Continue to {r.label.toLowerCase()} &rarr;</a></p>
+      {/* phrased to suit both kinds of stub: an old page that really did move,
+          and a bare studio URL that never had a page of its own */}
+      <p class="eyebrow">Taking you to {r.label}</p>
+      <p>One moment.</p>
+      <p><a href={target}>Continue to {r.label} &rarr;</a></p>
     </main>
   </body>
 </html>

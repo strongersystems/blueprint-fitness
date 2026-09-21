@@ -13,6 +13,19 @@ export interface Studio {
   /** value submitted as "location" on the general enquiry form */
   formValue: string;
   addressLines: string[];
+  /**
+   * The same address again, split the way schema.org wants it. Derived is not
+   * good enough here: addressLines is written for a human to read, and its
+   * second line is a locality at two studios but a road at Leytonstone, so
+   * splitting it by position dropped "Leytonstone High Road" from that
+   * studio's structured address entirely.
+   *
+   * `locality` is the district, not "London". All three ARE in London, but
+   * saying so three times tells Google nothing about which one is near you —
+   * the district is the whole local signal.
+   */
+  streetAddress: string;
+  locality: string;
   postcode: string;
   /**
    * Exact door coordinates, so the map drops a single pin instead of running a
@@ -87,6 +100,8 @@ export const studios: Studio[] = [
     name: 'South Woodford',
     formValue: 'South Woodford',
     addressLines: ['4 Raven Road', 'South Woodford, London'],
+    streetAddress: '4 Raven Road',
+    locality: 'South Woodford',
     postcode: 'E18 1HB',
     lat: 51.594893,
     lng: 0.036263,
@@ -122,6 +137,8 @@ export const studios: Studio[] = [
     name: 'Leytonstone',
     formValue: 'Leytonstone',
     addressLines: ['Unit 3, Hitchcock Business Centre', 'Leytonstone High Road, London'],
+    streetAddress: 'Unit 3, Hitchcock Business Centre, Leytonstone High Road',
+    locality: 'Leytonstone',
     postcode: 'E11 4RE',
     lat: 51.563245,
     lng: 0.009025,
@@ -156,6 +173,8 @@ export const studios: Studio[] = [
     name: 'Hackney',
     formValue: 'Hackney',
     addressLines: ['Arch 195, Morning Lane', 'Hackney, London'],
+    streetAddress: 'Arch 195, Morning Lane',
+    locality: 'Hackney',
     postcode: 'E9 6LJ',
     lat: 51.547289,
     lng: -0.050239,

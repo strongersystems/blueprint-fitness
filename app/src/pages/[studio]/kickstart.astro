@@ -19,7 +19,7 @@ const { studio } = Astro.props;
   trackStudios={[studio.slug]}
   ogImage={studio.heroImage}
 >
-  <Schema slot="head" studio={studio} />
+  <Schema slot="head" studio={studio} crumbs={[{ name: 'Locations', path: '/locations/' }, { name: studio.name, path: `/locations/#${studio.slug}` }, { name: '30-Day Kickstart', path: `/${studio.slug}/kickstart/` }]} />
   <section class="hero hero-draft" data-cta-sentinel>
     <div class="hero-inner container hero-draft-grid">
       <div>

@@ -18,7 +18,7 @@ import { url } from '../../lib/url';
   current="Locations"
   trackAll
 >
-  <Schema slot="head" organization studios />
+  <Schema slot="head" organization studios crumbs={[{ name: 'Memberships', path: '/memberships/' }]} />
   <section class="section on-dark section-tight">
     <div class="container">
       <p class="dim sec-head" style="margin-bottom:1rem">Memberships</p>

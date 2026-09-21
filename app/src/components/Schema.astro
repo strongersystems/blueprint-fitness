@@ -20,15 +20,18 @@
  *   <Schema studios />           all three, on /locations/
  */
 import type { Studio } from '../data/studios';
-import { studios as allStudios } from '../data/studios';
+import { studios as allStudios, mapLink } from '../data/studios';
+import { tiers, priceOf } from '../data/memberships';
 import { site } from '../data/site';
 
 interface Props {
   studio?: Studio;
   organization?: boolean;
   studios?: boolean;
+  /** trail for a BreadcrumbList, in order, excluding Home */
+  crumbs?: { name: string; path: string }[];
 }
-const { studio, organization = false, studios = false } = Astro.props;
+const { studio, organization = false, studios = false, crumbs = [] } = Astro.props;
 
 const SITE = 'https://blueprintfitnessldn.com';
 const ID = `${SITE}/#organization`;
@@ -44,13 +47,16 @@ const gym = (s: Studio) => ({
   telephone: `+${s.whatsapp}`,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: s.addressLines[0],
-    addressLocality: 'London',
-    addressRegion: 'Greater London',
+    streetAddress: s.streetAddress,
+    addressLocality: s.locality,
+    addressRegion: 'London',
     postalCode: s.postcode,
     addressCountry: 'GB',
   },
   geo: { '@type': 'GeoCoordinates', latitude: s.lat, longitude: s.lng },
+  /* the same pinned Maps link the locations page uses, so the entity and the
+     pin on the page point at one place rather than two */
+  hasMap: mapLink(s),
   ...(s.openingHours && {
     openingHoursSpecification: s.openingHours.map((h) => ({
       '@type': 'OpeningHoursSpecification',
@@ -60,7 +66,42 @@ const gym = (s: Studio) => ({
     })),
   }),
   parentOrganization: { '@id': ID },
-  priceRange: '££',
+  priceRange: `${s.memberships.sgpt4}-${s.memberships.sgpt12} per month`,
+  /* Real, published prices — the same figures as that studio's memberships
+     page, read from the same place, so the two cannot disagree. Prices differ
+     per studio, which is the whole reason each has its own page. */
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: `Memberships at Blueprint Fitness ${s.name}`,
+    itemListElement: tiers.map((t) => ({
+      '@type': 'Offer',
+      name: t.name,
+      description: t.sessions,
+      url: `${SITE}/memberships/${s.slug}/`,
+      priceCurrency: 'GBP',
+      price: priceOf(s, t).replace(/[^0-9.]/g, ''),
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        priceCurrency: 'GBP',
+        price: priceOf(s, t).replace(/[^0-9.]/g, ''),
+        billingDuration: 1,
+        billingIncrement: 1,
+        unitCode: 'MON',
+      },
+      availableAtOrFrom: { '@id': `${SITE}/#${s.slug}` },
+    })),
+  },
+});
+
+/** Where this page sits, so results can show a trail rather than a bare URL. */
+const breadcrumb = (trail: { name: string; path: string }[]) => ({
+  '@type': 'BreadcrumbList',
+  itemListElement: [{ name: 'Home', path: '/' }, ...trail].map((c, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: c.name,
+    item: `${SITE}${c.path}`,
+  })),
 });
 
 const org = {
@@ -87,6 +128,7 @@ const graph = [
   }] : []),
   ...(studio ? [gym(studio)] : []),
   ...(studios ? allStudios.map(gym) : []),
+  ...(crumbs.length ? [breadcrumb(crumbs)] : []),
 ];
 const json = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
 ---

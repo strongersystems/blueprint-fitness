@@ -29,7 +29,7 @@ const wa = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
   current="Locations"
   trackStudios={[studio.slug]}
 >
-  <Schema slot="head" studio={studio} />
+  <Schema slot="head" studio={studio} crumbs={[{ name: 'Locations', path: '/locations/' }, { name: studio.name, path: `/locations/#${studio.slug}` }, { name: 'Timetable', path: `/${studio.slug}/timetable/` }]} />
   <section class="section on-dark section-tight">
     <div class="container">
       <p class="dim sec-head" style="margin-bottom:1rem">{studio.name} · {studio.postcode}</p>

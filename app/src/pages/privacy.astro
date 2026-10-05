@@ -1,0 +1,212 @@
+---
+/**
+ * Privacy policy.
+ *
+ * Written from what the site actually does rather than from a template: every
+ * third party named below is one this build genuinely loads or submits to —
+ * the HighLevel forms and tracking script, Google Fonts, the Maps embeds, the
+ * YouTube embeds in the members' nutrition course, the WhatsApp links, and
+ * GitHub Pages as the host. If an embed is ever removed, the matching
+ * paragraph should go with it.
+ *
+ * Indexable on purpose: a privacy policy people cannot find does not do its
+ * job, and Google expects a business site to have one it can reach.
+ */
+import Base from '../layouts/Base.astro';
+import Schema from '../components/Schema.astro';
+import { studios } from '../data/studios';
+import { site } from '../data/site';
+import { url } from '../lib/url';
+
+/* Bump this whenever the policy changes in substance. It is shown to the
+   reader, so it must mean something — not the build date. */
+const updated = '5 October 2026';
+---
+<Base
+  title="Privacy policy — Blueprint Fitness"
+  description="How Blueprint Fitness collects, uses and protects your personal information, and the rights you have over it under UK data protection law."
+  current=""
+>
+  <Schema slot="head" crumbs={[{ name: 'Privacy policy', path: '/privacy/' }]} />
+  <section class="section on-dark section-tight">
+    <div class="container">
+      <p class="dim sec-head" style="margin-bottom:1rem">Your data, in plain English</p>
+      <h1 class="h-display">Privacy <span class="draft-u">policy</span></h1>
+      <p class="lede">What we collect when you enquire, sign up or train with us, what we do
+        with it, who else sees it, and how to get it changed or deleted.</p>
+      <p style="margin-top:1rem;color:var(--sky);font-weight:700">Last updated {updated}</p>
+      <div class="onpage reveal">
+        <p>On this page</p>
+        <ol>
+          <li><a href="#who">1. Who we are</a></li>
+          <li><a href="#what">2. What we collect</a></li>
+          <li><a href="#why">3. Why we use it</a></li>
+          <li><a href="#sharing">4. Who else sees it</a></li>
+          <li><a href="#cookies">5. Cookies and tracking</a></li>
+          <li><a href="#keeping">6. How long we keep it</a></li>
+          <li><a href="#rights">7. Your rights</a></li>
+          <li><a href="#changes">8. Changes to this policy</a></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="policy">
+
+        <div class="callout">
+          <p>This policy covers blueprintfitnessldn.com and the three Blueprint Fitness studios.
+            The data controller is <strong>PRS Coaching Ltd</strong>, trading as Blueprint
+            Fitness, registered in England &amp; Wales.</p>
+        </div>
+
+        <h2 class="h-2" id="who">1. Who we are</h2>
+        <p>Blueprint Fitness is a small group personal training business with three studios in
+          East London. PRS Coaching Ltd is responsible for the personal information described
+          here.</p>
+        <p>For anything about your data &mdash; a question, a correction, or a request to delete
+          it &mdash; email <a href={`mailto:${site.email}`}>{site.email}</a>. If it is specific to
+          one studio you can email that studio directly:</p>
+        <ul>
+          {studios.map((s) => (
+            <li>{s.name} &mdash; <a href={`mailto:${s.email}`}>{s.email}</a></li>
+          ))}
+        </ul>
+
+        <h2 class="h-2" id="what">2. What we collect</h2>
+
+        <h3>2.1 When you get in touch or enquire</h3>
+        <p>The forms on this site &mdash; the enquiry form, the 30-Day Kickstart sign-up, the
+          nutrition consultation request, the member check-in and the cancellation request
+          &mdash; ask for some or all of: your first name, email address, phone number, which
+          studio you are interested in, and whatever you write in the message box.</p>
+
+        <h3>2.2 When you become a member</h3>
+        <p>We hold the details needed to run your membership: your contact details, your chosen
+          membership and start date, your payment details and payment history, your attendance
+          and bookings, and the notes your coach keeps on your training.</p>
+
+        <h3>2.3 Health information</h3>
+        <p>If you tell us about an injury, a condition or anything else that affects how you
+          should train, we record it so your coach can keep you safe. This is health data, which
+          the law treats as a special category &mdash; we only use it to deliver your training
+          safely, we do not use it for marketing, and we never share it outside the coaching
+          team without your permission.</p>
+
+        <h3>2.4 When you use the website</h3>
+        <p>Our host keeps standard server logs, which include IP addresses, for security and to
+          keep the site running. Our CRM sets an identifier in your browser so that if you
+          enquire later we can tell which page or advert brought you here &mdash; see
+          <a href="#cookies">section 5</a>.</p>
+
+        <h3>2.5 Photos and video</h3>
+        <p>We sometimes photograph or film in the studios for social media and the website. We
+          ask first, and you can say no, or change your mind later and ask us to take something
+          down.</p>
+
+        <h2 class="h-2" id="why">3. Why we use it</h2>
+        <p>Under UK data protection law we need a lawful basis for everything we do with your
+          information. Ours are:</p>
+        <ul>
+          <li><strong>To run your membership</strong> &mdash; taking payment, booking you into
+            sessions, programming your training, contacting you about your membership. The basis
+            is that we have a contract with you.</li>
+          <li><strong>To reply to you</strong> &mdash; answering an enquiry, arranging a taster
+            session, following up after you have been in. The basis is our legitimate interest
+            in responding to someone who has asked to hear from us.</li>
+          <li><strong>To train you safely</strong> &mdash; using the health information you give
+            us. The basis is your explicit consent, which you give by telling us, and you can
+            withdraw it at any time.</li>
+          <li><strong>To send you marketing</strong> &mdash; emails and texts about offers,
+            events and the Kickstart. The basis is your consent, and every message has an
+            unsubscribe link. Stopping marketing does not affect the emails we have to send you
+            about your membership.</li>
+          <li><strong>To keep our accounts</strong> &mdash; the basis is our legal obligation to
+            retain financial records.</li>
+        </ul>
+
+        <h2 class="h-2" id="sharing">4. Who else sees it</h2>
+        <p>We do not sell your information, and we do not share it for anyone else's marketing.
+          We do use these companies to run the business, and they process data on our
+          instructions:</p>
+        <ul>
+          <li><strong>GoHighLevel</strong> &mdash; our CRM. It powers every form on this site,
+            stores your contact record, and sends our emails and texts.</li>
+          <li><strong>Our payment provider</strong> &mdash; membership payments are taken through
+            the sign-up forms. Your card details go straight to the payment provider; we never
+            see or store a full card number.</li>
+          <li><strong>TeamUp</strong> &mdash; the booking system at South Woodford and
+            Leytonstone, which holds your bookings and attendance.</li>
+          <li><strong>Google</strong> &mdash; the fonts and the studio maps on this site are
+            served by Google, so Google receives your IP address when a page loads.</li>
+          <li><strong>YouTube</strong> &mdash; the nutrition videos in the members' area are
+            hosted on YouTube in its no-cookie mode, so nothing is set unless you press play.</li>
+          <li><strong>GitHub</strong> &mdash; hosts this website.</li>
+        </ul>
+        <p>If you message us on WhatsApp, that conversation is on Meta's platform and subject to
+          their privacy policy as well as ours.</p>
+        <p>We will also share information where the law requires it &mdash; for example with HMRC,
+          or if we are ever obliged to by a court.</p>
+        <p>Some of these companies are based outside the UK. Where that is the case, the transfer
+          is covered by the safeguards UK data protection law requires.</p>
+
+        <h2 class="h-2" id="cookies">5. Cookies and tracking</h2>
+        <p>This site does not use advertising cookies and there is no analytics suite tracking
+          you around it. Two things do store something in your browser:</p>
+        <ul>
+          <li><strong>Our CRM's tracking script</strong>, which runs on every page and sets an
+            identifier so that an enquiry can be matched to the page or advert you arrived
+            from.</li>
+          <li><strong>Embedded content</strong> &mdash; the Google Maps on the studio pages, and
+            the YouTube videos in the members' area if you play one. These set their own cookies,
+            which are governed by Google's privacy policy rather than this one.</li>
+        </ul>
+        <p>You can block or delete cookies in your browser settings. Doing so will not stop you
+          using the site, though the maps and videos may not work.</p>
+
+        <h2 class="h-2" id="keeping">6. How long we keep it</h2>
+        <ul>
+          <li><strong>Enquiries that do not become memberships</strong> &mdash; kept for up to
+            24 months, then deleted.</li>
+          <li><strong>Member records</strong> &mdash; kept while you are a member and for 24
+            months afterwards, so that rejoining is simple.</li>
+          <li><strong>Financial records</strong> &mdash; kept for six years after the end of the
+            relevant tax year, because we are legally required to.</li>
+          <li><strong>Health information</strong> &mdash; deleted when you stop training with us,
+            unless you ask us to keep it for a future return.</li>
+        </ul>
+        <p>You can ask us to delete your information sooner than any of the above, and we will
+          unless the law requires us to keep it.</p>
+
+        <h2 class="h-2" id="rights">7. Your rights</h2>
+        <p>Under UK GDPR you have the right to:</p>
+        <ul>
+          <li>ask for a copy of the information we hold about you;</li>
+          <li>have anything inaccurate corrected;</li>
+          <li>have your information deleted;</li>
+          <li>object to how we are using it, or ask us to restrict its use;</li>
+          <li>withdraw consent at any time, for marketing or for anything else you consented
+            to;</li>
+          <li>ask us to send your information to you or another provider in a portable
+            format.</li>
+        </ul>
+        <p>Email <a href={`mailto:${site.email}`}>{site.email}</a> and we will respond within one
+          month. There is no charge.</p>
+        <p>If you are not happy with how we have handled your information, you can complain to
+          the Information Commissioner's Office at
+          <a href="https://ico.org.uk/make-a-complaint/" rel="noopener" target="_blank">ico.org.uk</a>
+          or on 0303 123 1113. We would rather you came to us first so we can put it right.</p>
+
+        <h2 class="h-2" id="changes">8. Changes to this policy</h2>
+        <p>If we change how we use your information we will update this page and change the date
+          at the top. If the change is significant we will tell members directly rather than rely
+          on you checking.</p>
+
+        <p style="margin-top:2rem"><a href={url('members/terms/')}>Membership terms &amp;
+          conditions &rarr;</a></p>
+
+      </div>
+    </div>
+  </section>
+</Base>

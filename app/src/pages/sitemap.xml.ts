@@ -20,6 +20,7 @@ const paths = [
   '/kickstart/',
   '/locations/',
   '/contact/',
+  '/privacy/',
   '/memberships/',
   ...studios.map((s) => `/${s.slug}/kickstart/`),
   ...studios.map((s) => `/${s.slug}/timetable/`),

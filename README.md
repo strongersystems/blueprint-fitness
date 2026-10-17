@@ -203,7 +203,7 @@ The live preview is a Higgsfield-hosted static deploy. To update it:
   confirmed the true max is **5 per coach** — the whole site now says 5:1
   ("no more than five people per coach" / "share your coach with four
   others"). Their own ad copy should be updated to match.
-- Kickstart is **£149** at South Woodford and Leytonstone and **£169** at Hackney (set per studio in `app/src/data/studios.ts`). The Hackney £129 founders
+- Kickstart is **£149** at South Woodford and Leytonstone and **£129** at Hackney while the founders offer runs, **£169** after (set per studio in `app/src/data/studios.ts`). The Hackney £129 founders
   offer and 15%-for-life live only on the client's own Hackney landing page —
   deliberately excluded here per client direction.
 - "5/5 on Google, 200+ reviews", "100+ sessions/week", "6am–9pm, 7 days" are

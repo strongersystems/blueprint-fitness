@@ -49,7 +49,8 @@ export const STUDIOS = {
     /* Hackney is dearer at every tier — this is why the site has a memberships
        page per studio rather than one shared price list. */
     prices: { sgpt12: '£279', sgpt8: '£239', sgpt4: '£199' },
-    kickstartPrice: '£169',
+    /* founders offer — £169 when it ends; keep in step with app/src/data/studios.ts */
+    kickstartPrice: '£129',
     teamup: null,
   },
 };

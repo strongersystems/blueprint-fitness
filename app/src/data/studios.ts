@@ -200,7 +200,11 @@ export const studios: Studio[] = [
     classesLine: 'Unlimited classes on top',
     reassure: { emphasis: 'That’s okay.', tail: 'We can help you from here!' },
     memberships: { sgpt12: '£279', sgpt8: '£239', sgpt4: '£199' },
-    kickstartPrice: '£169',
+    /* Founders offer, matching the £129 price on the Hackney sign-up form's
+       product. When the offer ends this goes to '£169' — change it here AND in
+       research/ghl/emails/render.mjs, then redeploy the Hackney templates and
+       update the form's product price in GHL so all three agree. */
+    kickstartPrice: '£129',
     eyebrow: 'The newest one — now open',
     blurb:
       'Our newest studio, tucked into a railway arch just off Morning Lane. A brand-new space built for structured training and community-led coaching — same warm welcome, box-fresh kit.',

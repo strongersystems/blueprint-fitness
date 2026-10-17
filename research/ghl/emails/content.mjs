@@ -19,7 +19,9 @@
  */
 import { email, p, h, list, cta, ctaGhost, panel, stats, rule, links, SITE } from './render.mjs';
 
-const PRICE = '£169';
+/* No module-level Kickstart price: it differs per studio (render.mjs STUDIOS).
+   One shared £169 here sent the wrong figure to every South Woodford and
+   Leytonstone lead. */
 const RATIO = '5:1';
 const FIRST = '{{contact.first_name}}';
 
@@ -197,18 +199,18 @@ export function build(s) {
       p(`${s.hours}. The full grid is on the site, so you can check before you commit.`),
       cta(L.timetable, 'Check the timetable'),
       h('What does it cost?'),
-      p(`The 30-Day Kickstart is ${PRICE} — twelve coached sessions, your InBody scan and your plan. No joining fee.`),
+      p(`The 30-Day Kickstart is ${s.kickstartPrice} — twelve coached sessions, your InBody scan and your plan. No joining fee.`),
       ctaGhost(L.signup, 'Start your 30 days'),
     ]);
 
   add(F1, 'lead-09', 'Lead 09 — What it costs',
-    `The 30-Day Kickstart, and what ${PRICE} covers`,
+    `The 30-Day Kickstart, and what ${s.kickstartPrice} covers`,
     'Twelve coached sessions, an InBody scan, and your plan.',
-    'The 30-Day Kickstart', `What ${PRICE} actually covers`,
+    'The 30-Day Kickstart', `What ${s.kickstartPrice} actually covers`,
     [
       p(`No games and no countdown timers — just what the Kickstart is and what it costs, so you can decide.`),
       KICK_STATS,
-      h(`${PRICE} for your first 30 days`),
+      h(`${s.kickstartPrice} for your first 30 days`),
       list([
         `<strong>12 coached sessions</strong> — three a week, at times you pick`,
         `<strong>An InBody scan and goal-setting session</strong> to start from a real number`,
@@ -216,7 +218,7 @@ export function build(s) {
         `<strong>Practical nutrition guidance</strong> — no meal plans to buy`,
         `<strong>No joining fee and no contract</strong>`,
       ]),
-      p(`Booked as one-to-one personal training, a month like that costs several hundred pounds. It is ${PRICE} because you share your coach with four other people.`),
+      p(`Booked as one-to-one personal training, a month like that costs several hundred pounds. It is ${s.kickstartPrice} because you share your coach with four other people.`),
       cta(L.signup, `Start your 30 days at ${s.name}`),
       ctaGhost(L.memberships, 'See what happens after the 30 days'),
     ]);

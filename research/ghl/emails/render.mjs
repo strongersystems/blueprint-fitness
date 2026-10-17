@@ -27,6 +27,7 @@ export const STUDIOS = {
     address: '4 Raven Road, South Woodford, London', postcode: 'E18 1HB',
     hours: 'Open 6am–9pm, every day', signup: 'signup-southwoodford',
     prices: { sgpt12: '£239', sgpt8: '£219', sgpt4: '£189' },
+    kickstartPrice: '£149',
     teamup: 'https://goteamup.com/p/3662065-blueprint-fitness-south-w/memberships/',
   },
   leytonstone: {
@@ -35,6 +36,7 @@ export const STUDIOS = {
     address: 'Unit 3, Hitchcock Business Centre, Leytonstone', postcode: 'E11 4RE',
     hours: 'Open early ’til late, 7 days a week', signup: 'signup-leytonstone',
     prices: { sgpt12: '£239', sgpt8: '£219', sgpt4: '£189' },
+    kickstartPrice: '£149',
     teamup: 'https://goteamup.com/p/9748082-blueprint-fitness-leytons/memberships/',
   },
   hackney: {
@@ -47,6 +49,7 @@ export const STUDIOS = {
     /* Hackney is dearer at every tier — this is why the site has a memberships
        page per studio rather than one shared price list. */
     prices: { sgpt12: '£279', sgpt8: '£239', sgpt4: '£199' },
+    kickstartPrice: '£169',
     teamup: null,
   },
 };

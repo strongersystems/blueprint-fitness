@@ -69,6 +69,14 @@ export interface Studio {
    * memberships page rather than one shared price list.
    */
   memberships: { sgpt12: string; sgpt8: string; sgpt4: string };
+  /**
+   * The 30-Day Kickstart price at this studio. It is NOT the same everywhere,
+   * and it used to be one site-wide £169, which overstated it at South
+   * Woodford and Leytonstone. This must match what the studio's sign-up form
+   * actually charges (`signupFormId` — the price is on its GHL product), or
+   * the page advertises one figure and the card is charged another.
+   */
+  kickstartPrice: string;
   /** short line used as the eyebrow on studio pages */
   eyebrow: string;
   blurb: string;
@@ -116,6 +124,7 @@ export const studios: Studio[] = [
     classesLine: 'Unlimited classes on top — 100+ a week',
     reassure: { emphasis: 'Good.', tail: 'That’s day one.' },
     memberships: { sgpt12: '£239', sgpt8: '£219', sgpt4: '£189' },
+    kickstartPrice: '£149',
     eyebrow: 'Where it all started',
     blurb:
       'The original Blueprint. A premium training space with a thriving community, expert coaching, and structured group training focused on strength, conditioning and consistency.',
@@ -152,6 +161,7 @@ export const studios: Studio[] = [
     classesLine: 'Unlimited classes on top — 100+ a week',
     reassure: { emphasis: 'Good.', tail: 'That’s day one.' },
     memberships: { sgpt12: '£239', sgpt8: '£219', sgpt4: '£189' },
+    kickstartPrice: '£149',
     eyebrow: 'Progress you can measure',
     blurb:
       'Small group coaching built around measurable progress and long-term development — expertly designed programmes, delivered by coaches who genuinely care how you’re getting on.',
@@ -190,6 +200,7 @@ export const studios: Studio[] = [
     classesLine: 'Unlimited classes on top',
     reassure: { emphasis: 'That’s okay.', tail: 'We can help you from here!' },
     memberships: { sgpt12: '£279', sgpt8: '£239', sgpt4: '£199' },
+    kickstartPrice: '£169',
     eyebrow: 'The newest one — now open',
     blurb:
       'Our newest studio, tucked into a railway arch just off Morning Lane. A brand-new space built for structured training and community-led coaching — same warm welcome, box-fresh kit.',
@@ -228,3 +239,25 @@ export function mapEmbed(s: Studio, zoom = 17): string {
 export function mapLink(s: Studio): string {
   return `https://www.google.com/maps/search/?api=1&query=${s.lat}%2C${s.lng}`;
 }
+
+/** Kickstart price as a number, for arithmetic. */
+export const kickstartPounds = (s: Studio) => Number(s.kickstartPrice.replace(/[^0-9.]/g, ''));
+
+/** "under £5 a day" — worked out from the price, so it cannot outlive a price change. */
+export const kickstartPerDay = (s: Studio) => `under £${Math.ceil(kickstartPounds(s) / 30)} a day`;
+
+/**
+ * The Kickstart price across every studio, in words, for pages that are not
+ * about one studio: "£149 at South Woodford and Leytonstone, and £169 at
+ * Hackney". Grouped by price so two studios on the same figure read as one.
+ */
+export function kickstartPriceLine(): string {
+  const byPrice = new Map<string, string[]>();
+  for (const s of studios) byPrice.set(s.kickstartPrice, [...(byPrice.get(s.kickstartPrice) ?? []), s.name]);
+  const and = (xs: string[]) => xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs[xs.length - 1]}`;
+  const parts = [...byPrice].map(([price, names]) => `${price} at ${and(names)}`);
+  return parts.length < 2 ? parts.join('') : `${parts.slice(0, -1).join(', ')}, and ${parts[parts.length - 1]}`;
+}
+
+/** The lowest Kickstart price, for "from £x". */
+export const kickstartFrom = () => `£${Math.min(...studios.map(kickstartPounds))}`;

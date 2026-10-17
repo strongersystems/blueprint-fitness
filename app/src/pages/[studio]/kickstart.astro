@@ -3,7 +3,7 @@ import Base from '../../layouts/Base.astro';
 import Schema from "../../components/Schema.astro";
 import VideoTestimonials from '../../components/VideoTestimonials.astro';
 import EnquiryLightbox from '../../components/EnquiryLightbox.tsx';
-import { studios } from '../../data/studios';
+import { studios, kickstartPerDay } from '../../data/studios';
 import { site } from '../../data/site';
 import { url } from '../../lib/url';
 
@@ -78,7 +78,7 @@ const { studio } = Astro.props;
         </div>
         <p class="lede">Booked as one-to-one personal training, a month like this would cost
           several hundred pounds. Because you share your coach with four others, the whole
-          Kickstart is {site.kickstartPrice} — under £6 a day for a month where everything is
+          Kickstart is {studio.kickstartPrice} — {kickstartPerDay(studio)} for a month where everything is
           done for you:</p>
         <ul class="check-list" style="margin:1.3rem 0 0">
           <li>Your beginners’ intro session — an InBody scan and a proper chat about your goals</li>

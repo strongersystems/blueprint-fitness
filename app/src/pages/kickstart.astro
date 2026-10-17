@@ -2,7 +2,7 @@
 import Base from "../layouts/Base.astro";
 import Schema from "../components/Schema.astro";
 import EnquiryLightbox from "../components/EnquiryLightbox.tsx";
-import { studios } from "../data/studios";
+import { studios, kickstartPriceLine } from "../data/studios";
 import { url } from "../lib/url";
 ---
 <Base
@@ -313,8 +313,8 @@ import { url } from "../lib/url";
       </div>
       <p class="lede">Booked as one-to-one personal training, a month like this would cost
         several hundred pounds. Because you share your coach with four others, the whole
-        Kickstart is &pound;169 &mdash; under &pound;6 a day for a month where everything is
-        done for you:</p>
+        Kickstart is {kickstartPriceLine()} &mdash; around &pound;5 a day for a month where
+        everything is done for you:</p>
       <ul class="check-list" style="margin:1.3rem 0 0">
         <li>Your beginners&rsquo; intro session &mdash; an InBody scan and a proper chat about your goals</li>
         <li>12 coached PT sessions &mdash; never more than five of you to a coach</li>
@@ -477,7 +477,7 @@ import { url } from "../lib/url";
             <span>How much is the Kickstart?</span>
             <span class="chev" aria-hidden="true">+</span>
           </button>
-          <div class="faq-a"><p>&pound;169 for the whole month, everything included &mdash; less
+          <div class="faq-a"><p>It&rsquo;s {kickstartPriceLine()}, for the whole month and everything included &mdash; less
             than a quarter of what the same coaching would cost one-to-one. No joining fee, no
             hidden extras, and no long contract at the end of it.</p></div>
         </div>

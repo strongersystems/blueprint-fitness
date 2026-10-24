@@ -25,7 +25,7 @@ const wa = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
 ---
 <Base
   title={`Class timetable — Blueprint Fitness ${studio.name}`}
-  description={`The weekly class timetable at Blueprint Fitness ${studio.name}: small group personal training and classes, ${studio.hours.replace(/^Open /, '')}.`}
+  description={`The weekly class timetable at Blueprint Fitness ${studio.name}: small group personal training${studio.teamSessions ? ' and classes' : ''}, ${studio.hours.replace(/^Open /, '')}.`}
   current="Locations"
   trackStudios={[studio.slug]}
 >

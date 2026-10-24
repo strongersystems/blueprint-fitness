@@ -29,9 +29,11 @@ export const tiers: Tier[] = [
     note: 'A great way to stay on track.', featured: false },
 ];
 
+const TEAM = 'Unlimited TEAM sessions';
+
 export const included = [
   'Allocated number of SGPT sessions per month (12/8/4)',
-  'Unlimited TEAM sessions',
+  TEAM,
   '1x check-in per month (upon request)',
   'Progress reviews and goal-setting',
   'Access to the nutrition resource centre',
@@ -51,3 +53,9 @@ export const priceOf = (studio: Studio, t: Tier) => studio.memberships[t.key];
 
 /** The cheapest price at a studio, for "from £x" on the overview. */
 export const fromPrice = (studio: Studio) => studio.memberships.sgpt4;
+
+/** What a membership includes at one studio. Hackney runs no TEAM classes. */
+export const includedAt = (studio: Studio) => included.filter((i) => i !== TEAM || studio.teamSessions);
+
+/** What is included at EVERY studio — for pages that are not about one studio. */
+export const includedEverywhere = included.filter((i) => i !== TEAM);

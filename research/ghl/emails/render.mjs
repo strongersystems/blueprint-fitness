@@ -27,6 +27,8 @@ export const STUDIOS = {
     address: '4 Raven Road, South Woodford, London', postcode: 'E18 1HB',
     hours: 'Open 6am–9pm, every day', signup: 'signup-southwoodford',
     prices: { sgpt12: '£239', sgpt8: '£219', sgpt4: '£189' },
+    pricingNote: null,
+    teamSessions: true,
     kickstartPrice: '£149',
     teamup: 'https://goteamup.com/p/3662065-blueprint-fitness-south-w/memberships/',
   },
@@ -36,6 +38,8 @@ export const STUDIOS = {
     address: 'Unit 3, Hitchcock Business Centre, Leytonstone', postcode: 'E11 4RE',
     hours: 'Open early ’til late, 7 days a week', signup: 'signup-leytonstone',
     prices: { sgpt12: '£239', sgpt8: '£219', sgpt4: '£189' },
+    pricingNote: null,
+    teamSessions: true,
     kickstartPrice: '£149',
     teamup: 'https://goteamup.com/p/9748082-blueprint-fitness-leytons/memberships/',
   },
@@ -48,7 +52,12 @@ export const STUDIOS = {
     hours: 'Mon–Fri 6am–9pm · Sat 8–11am · Closed Sunday', signup: 'signup-hackney',
     /* Hackney is dearer at every tier — this is why the site has a memberships
        page per studio rather than one shared price list. */
-    prices: { sgpt12: '£279', sgpt8: '£239', sgpt4: '£199' },
+    /* founders' rates (Nick, Oct 2026); £279/£239/£199 after the offer. Keep in
+       step with app/src/data/studios.ts */
+    prices: { sgpt12: '£237', sgpt8: '£203', sgpt4: '£169' },
+    pricingNote: 'These are our founders’ prices, for as long as the founders offer runs.',
+    /* SGPT only — Hackney runs no TEAM classes */
+    teamSessions: false,
     /* founders offer — £169 when it ends; keep in step with app/src/data/studios.ts */
     kickstartPrice: '£129',
     teamup: null,

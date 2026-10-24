@@ -9,7 +9,7 @@
 import Base from '../../layouts/Base.astro';
 import Schema from "../../components/Schema.astro";
 import { studios } from '../../data/studios';
-import { included, fromPrice } from '../../data/memberships';
+import { includedEverywhere, fromPrice } from '../../data/memberships';
 import { url } from '../../lib/url';
 ---
 <Base
@@ -62,7 +62,8 @@ import { url } from '../../lib/url';
           <h2 class="h-1">Every membership <span class="draft-u">includes</span></h2>
         </div>
         <ul class="check-list">
-          {included.map((i) => <li>{i}</li>)}
+          {includedEverywhere.map((i) => <li>{i}</li>)}
+          <li>Unlimited TEAM sessions at {studios.filter((s) => s.teamSessions).map((s) => s.name).join(' and ')}</li>
         </ul>
       </div>
       <div class="plan-frame reveal" style="aspect-ratio:4/3">

@@ -9,7 +9,7 @@
 import Base from '../../layouts/Base.astro';
 import Schema from "../../components/Schema.astro";
 import { studios } from '../../data/studios';
-import { tiers, included, terms, priceOf } from '../../data/memberships';
+import { tiers, includedAt, terms, priceOf } from '../../data/memberships';
 import { url } from '../../lib/url';
 
 export async function getStaticPaths() {
@@ -55,6 +55,7 @@ const wa = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
           </article>
         ))}
       </div>
+      {studio.pricingNote && <p style="margin-top:1.2rem;font-weight:700;color:var(--blue)">{studio.pricingNote}</p>}
       <p class="small" style="margin-top:1.2rem;color:var(--grey)">Prices shown are per month at
         {studio.name} and are set by this studio &mdash;
         <a href={url('memberships/')} style="color:var(--blue)">the other studios</a> differ.</p>
@@ -69,7 +70,7 @@ const wa = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
           <h2 class="h-1">What you <span class="draft-u hl">get</span></h2>
         </div>
         <ul class="check-list">
-          {included.map((i) => <li>{i}</li>)}
+          {includedAt(studio).map((i) => <li>{i}</li>)}
         </ul>
       </div>
       <div>

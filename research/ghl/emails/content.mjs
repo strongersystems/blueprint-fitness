@@ -277,15 +277,22 @@ export function build(s) {
 
   add(F2, 'join-03', 'Joined 03 — Which sessions to pick',
     'Which sessions will get you the results you want?',
-    'SGPT, and how the classes fit around it.',
+    s.teamSessions ? 'SGPT, and how the classes fit around it.' : 'How to get the most out of your coached sessions.',
     'Your first 30 days', 'Which sessions should you book?',
     [
       p(`Short answer: your coached SGPT sessions are the backbone. Everything else is a bonus on top.`),
       h('SGPT — your three a week'),
       p(`This is the one that moves the needle. Strength work, progressed week to week, with a coach watching. If you only ever do these three, you will still get where you are going.`),
-      h('The classes'),
-      p(`Conditioning sessions you can add on when you fancy them. They are not a replacement for your coached sessions — they are for the weeks when you want a fourth thing to do.`),
-      cta(L.timetable, `See what is on at ${s.name}`),
+      ...(s.teamSessions ? [
+        h('The classes'),
+        p(`Conditioning sessions you can add on when you fancy them. They are not a replacement for your coached sessions — they are for the weeks when you want a fourth thing to do.`),
+        cta(L.timetable, `See what is on at ${s.name}`),
+      ] : [
+        /* Hackney is SGPT only — no classes to book around it */
+        h('Getting the most from each one'),
+        p(`Book the same slots each week if you can. Consistency beats intensity, and your coach can progress you properly when they see you regularly.`),
+        p(`Tell your coach how you are recovering. If you are sore, tired or short on sleep, they will adjust the session — that is what the small group is for.`),
+      ]),
       rule(),
       p(`Not sure what to book? Ask your coach at your next session. They know what you are working on.`),
     ], team);
@@ -322,7 +329,7 @@ export function build(s) {
       p(`Same coaches, same small groups, same plan carrying on from where you got to. What changes is that you stop thinking about it as a trial and start thinking about it as the thing you do on Mondays, Wednesdays and Fridays.`),
       h('What members get on top'),
       list([
-        `<strong>Unlimited classes</strong> alongside your coached sessions`,
+        ...(s.teamSessions ? [`<strong>Unlimited classes</strong> alongside your coached sessions`] : []),
         `<strong>A monthly check-in</strong> with your coach, whenever you want one`,
         `<strong>InBody tracking</strong>, so progress stays measured`,
         `<strong>The nutrition resources</strong> and our clinics and workshops`,
@@ -344,7 +351,8 @@ export function build(s) {
         `<strong>SGPT 8</strong> — ${s.prices.sgpt8} a month. Two a week with room for a third.`,
         `<strong>SGPT 4</strong> — ${s.prices.sgpt4} a month. One a week, steady and sustainable.`,
       ]),
-      p(`All of them include unlimited TEAM sessions, your monthly check-in on request, progress reviews, InBody tracking, the nutrition resource centre and the BF workout tracking app.`),
+      ...(s.pricingNote ? [p(s.pricingNote)] : []),
+      p(`All of them include ${s.teamSessions ? 'unlimited TEAM sessions, ' : ''}your monthly check-in on request, progress reviews, InBody tracking, the nutrition resource centre and the BF workout tracking app.`),
       cta(L.memberships, 'Compare the memberships'),
       rule(),
       p(`There is a 10% discount for couples in the same household, NHS and services. Ask your coach, or just reply to this.`),

@@ -59,8 +59,17 @@ export interface Studio {
   openDaysLine: string;
   /** weekly session-count claim for the hero stat; null = omit the stat */
   weeklySessions: string | null;
-  /** the "unlimited classes" line on the sign-up page */
-  classesLine: string;
+  /** the "unlimited classes" line on the sign-up page; null where there are no classes */
+  classesLine: string | null;
+  /**
+   * Whether the studio runs TEAM (group conditioning) classes alongside SGPT.
+   * Hackney does not — it is SGPT only — and every "unlimited classes" or
+   * "unlimited TEAM sessions" promise on its pages and emails was copied from
+   * the other two studios. Copy that mentions classes checks this.
+   */
+  teamSessions: boolean;
+  /** shown with the membership prices where they are a time-limited rate; null otherwise */
+  pricingNote: string | null;
   /** the reassurance headline on the next-steps page */
   reassure: { emphasis: string; tail: string };
   /**
@@ -122,6 +131,8 @@ export const studios: Studio[] = [
     openDaysLine: '7 days a week',
     weeklySessions: '100+',
     classesLine: 'Unlimited classes on top — 100+ a week',
+    teamSessions: true,
+    pricingNote: null,
     reassure: { emphasis: 'Good.', tail: 'That’s day one.' },
     memberships: { sgpt12: '£239', sgpt8: '£219', sgpt4: '£189' },
     kickstartPrice: '£149',
@@ -159,6 +170,8 @@ export const studios: Studio[] = [
     openDaysLine: '7 days a week',
     weeklySessions: '100+',
     classesLine: 'Unlimited classes on top — 100+ a week',
+    teamSessions: true,
+    pricingNote: null,
     reassure: { emphasis: 'Good.', tail: 'That’s day one.' },
     memberships: { sgpt12: '£239', sgpt8: '£219', sgpt4: '£189' },
     kickstartPrice: '£149',
@@ -197,9 +210,15 @@ export const studios: Studio[] = [
     ],
     openDaysLine: 'Monday to Saturday',
     weeklySessions: null,
-    classesLine: 'Unlimited classes on top',
+    /* SGPT only — no TEAM classes at Hackney, so no classes line */
+    classesLine: null,
+    teamSessions: false,
+    pricingNote: 'Founders’ prices — the rate while the founders offer runs.',
     reassure: { emphasis: 'That’s okay.', tail: 'We can help you from here!' },
-    memberships: { sgpt12: '£279', sgpt8: '£239', sgpt4: '£199' },
+    /* Founders' rates, per Nick (Oct 2026). The standard rates after the offer
+       were £279 / £239 / £199. Change here AND in research/ghl/emails/render.mjs,
+       then redeploy the Hackney templates. */
+    memberships: { sgpt12: '£237', sgpt8: '£203', sgpt4: '£169' },
     /* Founders offer, matching the £129 price on the Hackney sign-up form's
        product. When the offer ends this goes to '£169' — change it here AND in
        research/ghl/emails/render.mjs, then redeploy the Hackney templates and

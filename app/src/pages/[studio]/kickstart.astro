@@ -35,7 +35,7 @@ const { studio } = Astro.props;
           <a class="btn btn-primary btn-big" data-enquiry-trigger href="#register">Tap to get started</a>
         </div>
         <p class="hold-hint" style="margin-top:.9rem;color:#5EA2FF">
-          12 coached sessions · unlimited classes · your plan written for you</p>
+          12 coached sessions · {studio.teamSessions ? 'unlimited classes · ' : ''}your plan written for you</p>
         <div class="hero-stats" aria-label="The Kickstart in numbers">
           <div class="stat"><span class="n">30</span><span class="l">days, planned</span></div>
           <div class="stat"><span class="n">{site.ratio}</span><span class="l">max ratio</span></div>
@@ -83,7 +83,7 @@ const { studio } = Astro.props;
         <ul class="check-list" style="margin:1.3rem 0 0">
           <li>Your beginners’ intro session — an InBody scan and a proper chat about your goals</li>
           <li>12 coached PT sessions — never more than five of you to a coach</li>
-          <li>Unlimited conditioning classes, {studio.openDaysLine}</li>
+          {studio.teamSessions && <li>Unlimited conditioning classes, {studio.openDaysLine}</li>}
           <li>A 1-to-1 check-in with your head coach every week</li>
           <li>Practical nutrition guidance — no fad diets, no meal plans to buy</li>
           <li>No joining fee, no contract, nothing else to pay</li>

@@ -7,9 +7,8 @@
  * cannot be searched, and needs a designer every time a class moves — so the
  * grid lives here as data and the page renders itself.
  *
- * Hackney has no timetable: none exists in any of the three sub-accounts, and
- * its "Schedule" snippet was pointing members at the South Woodford grid.
- * `slots` is empty until the team supply the real times.
+ * Hackney's grid was supplied by the team as an image in November 2026; until
+ * then its "Schedule" snippet was pointing members at the South Woodford grid.
  */
 
 export interface ClassType {
@@ -103,11 +102,27 @@ const ls: Timetable = {
 const hackney: Timetable = {
   weekdayCols: WEEKDAYS,
   weekendCols: ['Sat'],   /* closed Sunday */
-  weekdays: [],
-  weekend: [],
-  note: 'The Hackney grid is being finalised. Sessions run 6am–9pm Monday to Friday and ' +
-    '8–11am on Saturday; the studio is closed on Sunday. Message us and we will tell you ' +
-    'exactly what is on, and when.',
+  /* Transcribed from the Hackney timetable image the team supplied (Nov 2026). */
+  weekdays: [
+    { time: '6:00am',  days: { Mon: ['metcon'], Tue: ['sgpt'], Wed: ['sgpt'], Thu: ['sgpt'], Fri: ['sgpt'] } },
+    { time: '7:00am',  days: { Mon: ['sgpt'], Tue: ['sgpt'], Wed: ['sgpt'], Thu: ['sgpt'], Fri: ['sgpt'] } },
+    { time: '8:00am',  days: { Mon: ['sgpt'], Tue: ['sgpt'], Wed: ['sgpt'], Thu: ['sgpt'], Fri: ['sgpt'] } },
+    { time: '9:00am',  days: { Mon: ['metcon'], Tue: ['sgpt'], Wed: ['sgpt'], Thu: ['sgpt'], Fri: ['sgpt'] } },
+    { time: '10:00am', days: { Mon: ['sgpt'], Tue: ['sgpt'], Wed: ['sgpt'], Thu: ['metcon'], Fri: ['sgpt'] } },
+    { time: '11:00am', days: { Mon: ['sgpt'], Tue: ['sgpt'], Wed: ['sgpt'], Thu: ['sgpt'], Fri: ['sgpt'] } },
+    { time: '12:00pm', days: { Mon: ['sgpt'], Tue: ['metcon'], Wed: ['metcon'], Thu: ['sgpt'], Fri: ['sweat'] } },
+    { time: '1:00pm',  days: { Mon: ['sgpt'], Tue: ['sgpt'], Wed: ['sgpt'], Thu: ['sgpt'], Fri: ['sgpt'] } },
+    { time: '5:00pm',  days: { Mon: ['sgpt'], Tue: ['sgpt'], Wed: ['sgpt'], Thu: ['sgpt'], Fri: ['sgpt'] } },
+    { time: '6:00pm',  days: { Mon: ['sweat'], Tue: ['sgpt'], Wed: ['sgpt'], Thu: ['sgpt'], Fri: ['metcon'] } },
+    { time: '7:00pm',  days: { Mon: ['sgpt'], Tue: ['sgpt'], Wed: ['sgpt'], Thu: ['sgpt'], Fri: ['sgpt'] } },
+    { time: '8:00pm',  days: { Mon: ['sgpt'], Tue: ['sgpt'], Wed: ['sgpt'], Thu: ['sgpt'], Fri: [] } },
+  ],
+  weekend: [
+    { time: '7:00am',  days: { Sat: ['sgpt'] } },
+    { time: '8:00am',  days: { Sat: ['sgpt'] } },
+    { time: '9:00am',  days: { Sat: ['sgpt'] } },
+    { time: '10:00am', days: { Sat: ['sgpt'] } },
+  ],
 };
 
 export const timetables: Record<string, Timetable> = {

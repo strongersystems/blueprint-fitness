@@ -21,13 +21,13 @@ export interface ClassType {
 
 /** The class types, in the order they appear in the printed legend. */
 export const classTypes: Record<string, ClassType> = {
-  sgpt:    { key: 'sgpt',    label: 'SGPT',         colour: '#1F82CE', blurb: 'Small group personal training — max 5 per coach.' },
+  sgpt:    { key: 'sgpt',    label: 'SGPT',         colour: '#1F82CE', blurb: 'Small group personal training, with max 5 per coach.' },
   sweat:   { key: 'sweat',   label: 'Sweat',        colour: '#A81E23', blurb: 'Conditioning: heart rate up, held there.' },
-  metcon:  { key: 'metcon',  label: 'Metcon',       colour: '#16C34A', blurb: 'Metabolic conditioning — mixed-modal work.' },
+  metcon:  { key: 'metcon',  label: 'Metcon',       colour: '#16C34A', blurb: 'Metabolic conditioning with mixed-modal work.' },
   barbell: { key: 'barbell', label: 'Barbell Club', colour: '#9B27B0', blurb: 'Technical barbell work: squat, press, pull.' },
   recover: { key: 'recover', label: 'Recover',      colour: '#F2D024', blurb: 'Mobility, breathing and soft-tissue work.' },
   boxing:  { key: 'boxing',  label: 'Boxing',       colour: '#F58220', blurb: 'Pad work, footwork and conditioning.' },
-  tough:   { key: 'tough',   label: 'Tough Guy',    colour: '#575757', blurb: 'The hard one. Bring a towel.' },
+  tough:   { key: 'tough',   label: 'Tough Guy',    colour: '#575757', blurb: 'The hard one, so bring a towel.' },
 };
 
 /** A timetable is a list of rows; each row is a time with a class list per day. */

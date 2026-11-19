@@ -22,7 +22,7 @@ export interface Tier {
 
 export const tiers: Tier[] = [
   { name: 'SGPT 12', key: 'sgpt12', sessions: '12 sessions per month',
-    note: 'Our most popular option. Consistent training, faster progress.', featured: true },
+    note: 'Our most popular option, for consistent training and faster progress.', featured: true },
   { name: 'SGPT 8', key: 'sgpt8', sessions: '8 sessions per month',
     note: 'Flexible training around a busy schedule.', featured: false },
   { name: 'SGPT 4', key: 'sgpt4', sessions: '4 sessions per month',
@@ -43,7 +43,7 @@ export const included = [
 ];
 
 export const terms = [
-  '10% discount for couples (same household), NHS and services — SGPT memberships only',
+  '10% off for couples (same household), NHS and services, on SGPT memberships only',
   'Minimum three-month commitment, then monthly rolling',
   '30 days’ notice to cancel',
 ];

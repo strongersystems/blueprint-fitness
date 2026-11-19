@@ -21,7 +21,7 @@ const t = timetables[studio.slug];
 const legend = typesUsed(t);
 const hasGrid = t.weekdays.length > 0;
 const wa = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
-  `Hi Blueprint Fitness ${studio.name} — could you send me the current class timetable?`)}`;
+  `Hi Blueprint Fitness ${studio.name}, could you send me the current class timetable?`)}`;
 ---
 <Base
   title={`Class timetable — Blueprint Fitness ${studio.name}`}
@@ -34,8 +34,8 @@ const wa = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
     <div class="container">
       <p class="dim sec-head" style="margin-bottom:1rem">{studio.name} · {studio.postcode}</p>
       <h1 class="h-display">Class <span class="draft-u">timetable</span></h1>
-      <p class="lede">Every session is coached. Small groups, never more than five people per
-        coach — so you always get eyes on you.</p>
+      <p class="lede">Every session is coached, with never more than five people per coach, so
+        there’s always someone keeping an eye on you.</p>
       <div class="btn-row">
         <a class="btn btn-primary" href={url(`${studio.slug}/kickstart/`)}>Try us for 30 days</a>
         <a class="btn btn-ghost" href={wa} rel="noopener" target="_blank">Message {studio.name}</a>
@@ -163,7 +163,7 @@ const wa = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
     <div class="container" style="text-align:center;max-width:42rem">
       <h2 class="h-1">Come and try it for <span class="draft-u">30 days</span></h2>
       <p class="lede" style="margin-inline:auto">Twelve coached sessions, an InBody scan and a
-        plan that is actually yours. See if it fits.</p>
+        plan written for you.</p>
       <div class="btn-row" style="justify-content:center">
         <a class="btn btn-primary" href={url(`${studio.slug}/kickstart/`)}>Start your 30 days</a>
         <a class="btn btn-ghost" href={url('locations/')}>All three studios</a>

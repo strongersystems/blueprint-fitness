@@ -27,9 +27,8 @@ import { url } from '../../lib/url';
     <div class="container">
       <p class="dim sec-head" style="margin-bottom:1rem">Members &middot; Nutrition</p>
       <h1 class="h-display">The Nutrition <span class="draft-u">Video Series</span></h1>
-      <p class="lede">{lessons.length} short lessons, in the order that actually matters &mdash;
-        starting with the things that move the needle most. Watch one a day, or work through a
-        module at a time. Your place is remembered on this device.</p>
+      <p class="lede">{lessons.length} short lessons, starting with what makes the biggest
+        difference, and your place is saved on this device.</p>
       <div class="btn-row" style="margin-top:1.2rem">
         <a class="btn btn-primary" href="#watch" data-course-start>Start the series</a>
         <a class="btn btn-ghost" href={url('members/nutrition-request/')}>Book a consultation</a>
@@ -45,7 +44,7 @@ import { url } from '../../lib/url';
           <div class="course-stage" id="stage" data-empty="true">
             <div class="course-placeholder">
               <p class="course-eyebrow">Ready when you are</p>
-              <p style="margin:0">Pick a lesson from the list and it will play here.</p>
+              <p style="margin:0">Pick a lesson to start watching.</p>
             </div>
           </div>
 
@@ -106,9 +105,9 @@ import { url } from '../../lib/url';
           <h2 class="h-1">Watch it in <span class="draft-u hl">order</span></h2>
         </div>
         <ul class="check-list">
-          <li>The order is deliberate &mdash; the early lessons are the ones that matter most</li>
-          <li>Nothing here needs a notebook. Watch, then change one thing</li>
-          <li>Stuck on something? Bring it to your next check-in</li>
+          <li>The early lessons matter most, so start at the top</li>
+          <li>You won&rsquo;t need a notebook, just watch and then change one thing</li>
+          <li>If you get stuck on something, bring it to your next check-in</li>
         </ul>
       </div>
       <div>
@@ -116,8 +115,8 @@ import { url } from '../../lib/url';
           <p class="dim">Want it applied to you?</p>
           <h2 class="h-1">Book a consultation</h2>
         </div>
-        <p class="lede">The series explains the principles. A consultation turns them into your
-          plan &mdash; built around how you actually live.</p>
+        <p class="lede">A consultation turns what you&rsquo;ve learned into a plan built around
+          how you actually live.</p>
         <div class="btn-row">
           <a class="btn btn-primary" href={url('members/nutrition-request/')}>Request a consultation</a>
         </div>

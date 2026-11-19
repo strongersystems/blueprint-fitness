@@ -55,14 +55,14 @@ export const modules: Module[] = [
     blurb: 'What they are, how a surplus and a deficit work, and how you burn them.',
     lessons: [
       mk(5, 'Calories (Part 1)', 'itGUK7fIeH0'),
-      mk(6, 'Calories (Part 2 — Surplus)', 'yTpFdVbgaiU'),
-      mk(7, 'Calories (Part 3 — Creating a deficit)', '3tGFcsPy35s'),
-      mk(8, 'Calories (Part 4 — How we burn them)', 'e1P1gbCYxXM'),
+      mk(6, 'Calories (Part 2: Surplus)', 'yTpFdVbgaiU'),
+      mk(7, 'Calories (Part 3: Creating a deficit)', '3tGFcsPy35s'),
+      mk(8, 'Calories (Part 4: How we burn them)', 'e1P1gbCYxXM'),
     ],
   },
   {
     title: 'NEAT',
-    blurb: 'The movement you do without thinking about it — and why it matters so much.',
+    blurb: 'The movement you do without thinking about it, and why it matters so much.',
     lessons: [
       mk(9, 'NEAT (Part 1)', 'iC0i9fgFTE4'),
       mk(10, 'NEAT (Part 2)', 'UuzPLnmZ7x0'),

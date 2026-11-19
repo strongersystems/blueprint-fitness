@@ -124,21 +124,21 @@ export const studios: Studio[] = [
     lng: 0.036263,
     email: 'southwoodford@blueprintfitnessldn.com',
     whatsapp: '447538298457',
-    hours: 'Open 6am–9pm, every day — 100+ sessions a week',
+    hours: 'Open 6am–9pm every day, with 100+ sessions a week',
     openingHours: [
       { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: '06:00', closes: '21:00' },
     ],
     openDaysLine: '7 days a week',
     weeklySessions: '100+',
-    classesLine: 'Unlimited classes on top — 100+ a week',
+    classesLine: 'Unlimited classes on top, with 100+ a week',
     teamSessions: true,
     pricingNote: null,
-    reassure: { emphasis: 'Good.', tail: 'That’s day one.' },
+    reassure: { emphasis: 'completely normal', tail: 'and it soon passes.' },
     memberships: { sgpt12: '£239', sgpt8: '£219', sgpt4: '£189' },
     kickstartPrice: '£149',
     eyebrow: 'Where it all started',
     blurb:
-      'The original Blueprint. A premium training space with a thriving community, expert coaching, and structured group training focused on strength, conditioning and consistency.',
+      'The original Blueprint, with a thriving community and coached group training built around strength, conditioning and consistency.',
     heroImage: 'img/bf-sw-session.jpg',
     heroImageAlt: 'Mid-session on the South Woodford training floor',
     locationId: 'cquQsieyBZx9vRgEqBge',
@@ -169,15 +169,15 @@ export const studios: Studio[] = [
     openingHours: null,
     openDaysLine: '7 days a week',
     weeklySessions: '100+',
-    classesLine: 'Unlimited classes on top — 100+ a week',
+    classesLine: 'Unlimited classes on top, with 100+ a week',
     teamSessions: true,
     pricingNote: null,
-    reassure: { emphasis: 'Good.', tail: 'That’s day one.' },
+    reassure: { emphasis: 'completely normal', tail: 'and it soon passes.' },
     memberships: { sgpt12: '£239', sgpt8: '£219', sgpt4: '£189' },
     kickstartPrice: '£149',
     eyebrow: 'Progress you can measure',
     blurb:
-      'Small group coaching built around measurable progress and long-term development — expertly designed programmes, delivered by coaches who genuinely care how you’re getting on.',
+      'Small group coaching built around progress you can measure, with programmes written by coaches who genuinely care how you’re getting on.',
     heroImage: 'img/bf-bench-room.jpg',
     heroImageAlt: 'The training floor mid-session at Blueprint Fitness Leytonstone',
     locationId: 'mztjJyXHNWiEotc8ItXP',
@@ -213,8 +213,8 @@ export const studios: Studio[] = [
     /* SGPT only — no TEAM classes at Hackney, so no classes line */
     classesLine: null,
     teamSessions: false,
-    pricingNote: 'Founders’ prices — the rate while the founders offer runs.',
-    reassure: { emphasis: 'That’s okay.', tail: 'We can help you from here!' },
+    pricingNote: 'Founders’ prices, while the founders offer runs.',
+    reassure: { emphasis: 'okay', tail: 'and we can help you from here!' },
     /* Founders' rates, per Nick (Oct 2026). The standard rates after the offer
        were £279 / £239 / £199. Change here AND in research/ghl/emails/render.mjs,
        then redeploy the Hackney templates. */
@@ -224,9 +224,9 @@ export const studios: Studio[] = [
        research/ghl/emails/render.mjs, then redeploy the Hackney templates and
        update the form's product price in GHL so all three agree. */
     kickstartPrice: '£129',
-    eyebrow: 'The newest one — now open',
+    eyebrow: 'The newest one, now open',
     blurb:
-      'Our newest studio, tucked into a railway arch just off Morning Lane. A brand-new space built for structured training and community-led coaching — same warm welcome, box-fresh kit.',
+      'Our newest studio, tucked into a railway arch just off Morning Lane, with the same warm welcome and brand-new kit.',
     heroImage: 'img/bf-arch-floor.jpg',
     heroImageAlt: 'Inside the Hackney arch studio',
     locationId: '147m777NnBtnn7yLrsdb',

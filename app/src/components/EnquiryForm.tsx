@@ -61,7 +61,7 @@ export default function EnquiryForm({
   successHrefByStudio,
   formId,
   heading = 'Start with a friendly chat',
-  intro = 'Pop your details in and one of the team will give you a ring — no hard sell, ever.',
+  intro = 'Pop your details in and one of the team will give you a ring.',
   submitLabel = 'Book my friendly chat',
 }: Props) {
   const formRef = useRef<HTMLFormElement>(null);
@@ -93,7 +93,7 @@ export default function EnquiryForm({
     if (!v.name) e.name = 'Please tell us your name.';
     if (!isEmail(v.email)) e.email = 'That email doesn’t look right.';
     if (!isPhone(v.phone)) e.phone = 'Please add a number so the team can give you a ring.';
-    if (!v.location) e.location = 'Pick whichever studio is closest — “not sure yet” is fine.';
+    if (!v.location) e.location = 'Pick whichever studio is closest, or “not sure yet” if you haven’t decided.';
     return e;
   }
 
@@ -149,7 +149,7 @@ export default function EnquiryForm({
     return (
       <div className="form-success show" role="status">
         <span className="stamp">Plan approved</span>
-        <h3 className="h-2" style={{ marginTop: '1.2rem' }}>Lovely — you’re in.</h3>
+        <h3 className="h-2" style={{ marginTop: '1.2rem' }}>Lovely, you’re in.</h3>
         <p style={{ color: '#EAF1FB' }}>Taking you to your next steps…</p>
         <p><a className="btn btn-ghost" href={sentHref}>Or go there now</a></p>
       </div>

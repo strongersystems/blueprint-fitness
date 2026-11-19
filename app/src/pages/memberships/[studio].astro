@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 }
 const { studio } = Astro.props;
 const wa = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
-  `Hi Blueprint Fitness ${studio.name} — I'd like to ask about memberships.`)}`;
+  `Hi Blueprint Fitness ${studio.name}, I'd like to ask about memberships.`)}`;
 ---
 <Base
   title={`Memberships — Blueprint Fitness ${studio.name}`}
@@ -29,10 +29,9 @@ const wa = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
   <section class="section on-dark section-tight">
     <div class="container">
       <p class="dim sec-head" style="margin-bottom:1rem">Memberships &middot; {studio.name}</p>
-      <h1 class="h-display">Coached. Structured. <span class="draft-u">Real results.</span></h1>
-      <p class="lede">Small group personal training at our {studio.name} studio. Every membership is
-        the same coaching and the same small groups &mdash; the only question is how many sessions a
-        month suit your life.</p>
+      <h1 class="h-display">Coaching that keeps you <span class="draft-u">moving forward</span></h1>
+      <p class="lede">Every membership at {studio.name} has the same coaching and small groups,
+        so just pick how many sessions a month suit your life.</p>
     </div>
   </section>
 
@@ -56,9 +55,9 @@ const wa = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
         ))}
       </div>
       {studio.pricingNote && <p style="margin-top:1.2rem;font-weight:700;color:var(--blue)">{studio.pricingNote}</p>}
-      <p class="small" style="margin-top:1.2rem;color:var(--grey)">Prices shown are per month at
-        {studio.name} and are set by this studio &mdash;
-        <a href={url('memberships/')} style="color:var(--blue)">the other studios</a> differ.</p>
+      <p class="small" style="margin-top:1.2rem;color:var(--grey)">These are {studio.name}&rsquo;s
+        monthly prices, and <a href={url('memberships/')} style="color:var(--blue)">the other
+        studios</a> set their own.</p>
     </div>
   </section>
 
@@ -111,9 +110,9 @@ const wa = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
 
   <section class="section on-dark">
     <div class="container" style="text-align:center;max-width:42rem">
-      <h2 class="h-1">Not sure yet? <span class="draft-u">Try 30 days.</span></h2>
-      <p class="lede" style="margin-inline:auto">Twelve coached sessions and an InBody scan, with no
-        commitment beyond the month. Most people know by week two.</p>
+      <h2 class="h-1">Try us for <span class="draft-u">30 days</span> first</h2>
+      <p class="lede" style="margin-inline:auto">Twelve coached sessions and an InBody scan over
+        one month, with no commitment after it.</p>
       <div class="btn-row" style="justify-content:center">
         <a class="btn btn-primary" href={url(`${studio.slug}/kickstart/`)}>The 30-Day Kickstart</a>
         <a class="btn btn-ghost" href={url('contact/')}>Talk to us first</a>

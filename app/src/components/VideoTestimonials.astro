@@ -5,7 +5,7 @@ interface Props { heading?: string; lede?: string; eyebrow?: string }
 const {
   eyebrow = 'Member stories',
   heading = 'Hear it from <span class="draft-u">our members</span>',
-  lede = 'Six members, six stories — tap any of them to watch it in their own words.',
+  lede = '',
 } = Astro.props;
 ---
 <section class="section on-dark vt" id="member-stories">
@@ -13,7 +13,7 @@ const {
     <div class="sec-head">
       <p class="dim">{eyebrow}</p>
       <h2 class="h-1" set:html={heading} />
-      <p class="lede">{lede}</p>
+      {lede && <p class="lede">{lede}</p>}
     </div>
     <div class="vt-grid stagger">
       {stories.map((s) => (

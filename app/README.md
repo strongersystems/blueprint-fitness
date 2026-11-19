@@ -159,3 +159,11 @@ POST to HighLevel is intercepted and aborted, so it never writes to the CRM.
 `../site/` (hand-written HTML) and `../import-pack/` (AI Studio paste files)
 are **left intact and unchanged**. Asset URLs under `/blueprint-fitness/img`
 and `/video` are preserved by this build, so the import-pack keeps working.
+
+## Copy check
+
+Every word on the site is held to the agency copy linter. After `npm run build`, run
+`node <Stronger-Web-1>/client-sites/_shared/copy-lint/lint.mjs app` from the repo root
+(it reads `dist/` and the exceptions in `app/.copy-lint-allow.json`, which stays out of
+`public/` so it is never published) and `node <Stronger-Web-1>/client-sites/_shared/adblock-check/check.mjs app/dist`.
+Both must show 0 errors before pushing.

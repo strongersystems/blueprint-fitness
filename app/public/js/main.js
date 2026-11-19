@@ -568,10 +568,10 @@
     var items = Array.prototype.slice.call(survey.querySelectorAll('.survey-item'));
     var verdict = survey.querySelector('[data-survey-verdict]');
     var verdicts = [
-      'Tick what’s true — we’ll be straight with you.',
-      'One tick — promising. Keep going.',
-      'Two ticks — sounding a lot like our members.',
-      'That’s a match. This is exactly who the plan was drawn for.'
+      'Tick what’s true, and we’ll be straight with you.',
+      'One tick, and it’s sounding promising.',
+      'Two ticks, and you’re sounding a lot like our members.',
+      'You’re exactly who we drew the plan for.'
     ];
     var updateVerdict = function () {
       var n = items.filter(function (b) { return b.getAttribute('aria-pressed') === 'true'; }).length;
@@ -596,10 +596,10 @@
       var on = chips.filter(function (c) { return c.getAttribute('aria-pressed') === 'true'; })
         .map(function (c) { return c.getAttribute('data-label'); });
       if (!line) return;
-      if (!on.length) { line.textContent = 'Tap the times that fit your week — we’ll draw around them.'; return; }
+      if (!on.length) { line.textContent = 'Pick the times that suit your week and we’ll plan around them.'; return; }
       var last = on.pop();
       var list = on.length ? on.join(', ') + ' and ' + last : last;
-      line.textContent = '3 sessions a week — ' + list + ' — drawn around your life.';
+      line.textContent = '3 sessions a week, fitted around ' + list + '.';
     }
     chips.forEach(function (c) {
       c.addEventListener('click', function () {

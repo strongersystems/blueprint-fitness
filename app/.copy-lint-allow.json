@@ -1,0 +1,21 @@
+{
+ "_": "Copy-lint exceptions for blueprintfitnessldn.com (the Astro app). Lint with: node <Stronger-Web-1>/client-sites/_shared/copy-lint/lint.mjs app (after npm run build), which reads app/dist and this file. Not in public/, so it is never published. Added in the 19 Nov 2026 copy check; the prices are flagged for Matt to confirm, the same as the £169 in Stronger-Web-1/client-sites/blueprint-fitness-website/.copy-lint-allow.json.",
+ "allow": [
+  { "rule": "price", "text": "£149", "file": "kickstart", "reason": "The 30-Day Kickstart price (South Woodford and Leytonstone), shown twice on /kickstart and once on each studio's Kickstart page since the site was built 'per client direction' (README). It must match the studio's GHL sign-up form product (studios.ts). Not on any ad or funnel page. For Matt to confirm." },
+  { "rule": "price", "text": "£129", "file": "kickstart", "reason": "The Hackney founders' Kickstart price (£169 after the offer ends), same places and same reason as £149. For Matt to confirm." },
+  { "rule": "price", "text": "a month", "file": "memberships", "reason": "Each studio's monthly membership prices on /memberships and /memberships/<studio>, from the studios' own price lists (Hackney founders' rates per Nick, Oct 2026). Pricing pages that members and the CRM emails link to. For Matt to confirm." },
+  { "rule": "fragments", "text": "1. General", "file": "members/terms", "reason": "Numbered clause headings on the membership terms (a legal page), not slogan fragments." },
+  { "rule": "fragments", "text": "2. Membership term", "file": "members/terms", "reason": "Numbered legal clause heading." },
+  { "rule": "fragments", "text": "3. Liability", "file": "members/terms", "reason": "Numbered legal clause heading." },
+  { "rule": "fragments", "text": "4. Membership", "file": "members/terms", "reason": "Numbered legal clause heading." },
+  { "rule": "fragments", "text": "5. Cancellations", "file": "members/terms", "reason": "Numbered legal clause heading." },
+  { "rule": "fragments", "text": "6. Our commitment", "file": "members/terms", "reason": "Numbered legal clause heading." },
+  { "rule": "fragments", "text": "1. Who we are", "file": "privacy", "reason": "Numbered section heading on the privacy policy (the text refers to 'section 5')." },
+  { "rule": "fragments", "text": "2. What we collect", "file": "privacy", "reason": "Numbered privacy policy section heading." },
+  { "rule": "fragments", "text": "5. Cookies and tracking", "file": "privacy", "reason": "Numbered privacy policy section heading." },
+  { "rule": "fragments", "text": "7. Your rights", "file": "privacy", "reason": "Numbered privacy policy section heading." },
+  { "rule": "step-list", "text": "1 Intro", "file": "members/nutrition-course", "reason": "The members' video course contents: numbered lesson titles, not a step list." },
+  { "rule": "step-list", "text": "3 Adherence", "file": "members/nutrition-course", "reason": "Video course contents (lesson titles)." },
+  { "rule": "step-list", "text": "5 Calories", "file": "members/nutrition-course", "reason": "Video course contents (lesson titles)." }
+ ]
+}

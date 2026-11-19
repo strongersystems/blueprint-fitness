@@ -11,8 +11,8 @@ const { studio } = Astro.props;
 ---
 <Base
   title={`You’re in — Blueprint Fitness ${studio.name}`}
-  description={`What happens next after registering for the 30-Day Kickstart at Blueprint Fitness ${studio.name}.`}
-  minimal label={`${studio.name} · Next steps`}
+  description={`Thanks for registering for the 30-Day Kickstart at Blueprint Fitness ${studio.name}. We'll be in touch soon.`}
+  minimal label={`${studio.name} · You’re in`}
   trackStudios={[studio.slug]}
   noindex
 >
@@ -20,16 +20,16 @@ const { studio } = Astro.props;
     <div class="container" style="text-align:center;max-width:44rem">
       <span class="stamp" style="display:inline-block;font-family:var(--font-display);text-transform:uppercase;color:#5EA2FF;border:3px solid #5EA2FF;border-radius:6px;padding:.35em .7em;font-size:1.2rem;letter-spacing:.06em;transform:rotate(-4deg)">On the plan</span>
       <h1 class="h-display" style="margin-top:1.4rem">You’re <span class="draft-u">in.</span></h1>
-      <p class="lede" style="margin-inline:auto">Lovely to have you. No guesswork from here — this
-        is exactly what happens next at {studio.name}.</p>
+      <p class="lede" style="margin-inline:auto">Lovely to have you, and we can’t wait to meet you
+        at {studio.name}.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
       <div class="sec-head">
-        <p class="dim">What happens next</p>
-        <h2 class="h-1">Three steps. <span class="draft-u hl">All planned.</span></h2>
+        <p class="dim">Your first week</p>
+        <h2 class="h-1">We’ll take it <span class="draft-u hl">from here.</span></h2>
       </div>
       <div class="grid-3 stagger">
         <article class="card">
@@ -38,8 +38,8 @@ const { studio } = Astro.props;
             <img src={url('img/bf-demo.jpg')} alt="A Blueprint coach talking a member through a movement" loading="lazy" width="962" height="1436" />
           </div>
           <h3 class="h-3">A friendly call</h3>
-          <p>A member of the {studio.name} team will call you for a friendly chat about your goals
-            — and to make sure Blueprint is a good fit for you too. No hard sell, ever.</p>
+          <p>A coach from {studio.name} will give you a ring to hear about your goals and get your
+            first session booked in.</p>
         </article>
         <article class="card">
           <span class="ghost-num" aria-hidden="true">02</span>
@@ -47,8 +47,8 @@ const { studio } = Astro.props;
             <img src={url('img/bf-assess.jpg')} alt="A coach assessing a member's movement" loading="lazy" width="880" height="1384" />
           </div>
           <h3 class="h-3">Your onboarding session</h3>
-          <p>Your InBody scan and goal-setting session. We’ll map out exactly where you are and
-            where you want to be.</p>
+          <p>Your InBody scan and goal-setting session, where we’ll work out where you are now and
+            where you want to get to.</p>
         </article>
         <article class="card">
           <span class="ghost-num" aria-hidden="true">03</span>
@@ -56,8 +56,8 @@ const { studio } = Astro.props;
             <img src={url('img/bf-banded-lunge.jpg')} alt="A member training in a small group session" loading="lazy" width="988" height="1436" />
           </div>
           <h3 class="h-3">Day one of thirty</h3>
-          <p>You turn up. We take care of the rest — your programme, your coaching, your weekly
-            check-ins with your head coach.</p>
+          <p>You turn up and we take care of the rest, from your programme and coaching to a
+            weekly check-in with your head coach.</p>
         </article>
       </div>
     </div>
@@ -71,21 +71,21 @@ const { studio } = Astro.props;
           <p class="dim">Your next step</p>
           <h2 class="h-1">Message {studio.name}<br /><span class="draft-u">on WhatsApp</span></h2>
         </div>
-        <p class="lede">We&rsquo;ve got your details &mdash; a coach from {studio.name} will be in
-          touch. If you&rsquo;d rather get going now, send us a message and we&rsquo;ll sort your
-          first session between us.</p>
+        <p class="lede">We&rsquo;ve got your details and a coach from {studio.name} will be in
+          touch, but if you&rsquo;d like to get going sooner, send us a message and we&rsquo;ll
+          sort your first session together.</p>
         <p class="annotation">Sessions run {studio.openDaysLine}, early &rsquo;til late.</p>
       </div>
       <div class="card" style="align-self:start">
         <h3 class="h-3" style="margin:0 0 .6rem">Talk to {studio.name}</h3>
-        <p style="margin:0 0 1.4rem;color:#EAF1FB">It opens WhatsApp with a message ready to send
-          &mdash; just add anything you want us to know.</p>
+        <p style="margin:0 0 1.4rem;color:#EAF1FB">Say hello, and add anything you&rsquo;d like us
+          to know before your first session.</p>
         <a class="btn btn-primary btn-big" style="width:100%"
            href={`https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
-             `Hi Blueprint Fitness ${studio.name} — I've just signed up for the 30-Day Kickstart and would like to book my first session.`)}`}
+             `Hi Blueprint Fitness ${studio.name}, I've just signed up for the 30-Day Kickstart and would like to book my first session.`)}`}
            target="_blank" rel="noopener">WhatsApp {studio.name}</a>
         <p style="margin:1.3rem 0 0"><a class="btn btn-ghost" style="width:100%" href={url(`${studio.signupPath}/`)}>Or sign up at {studio.name} &rarr;</a></p>
-        <p class="small" style="margin:1.2rem 0 0;color:#EAF1FB">Prefer email?
+        <p class="small" style="margin:1.2rem 0 0;color:#EAF1FB">Or email us at
           <a href={`mailto:${studio.email}`} style="color:#5EA2FF">{studio.email}</a></p>
       </div>
     </div>
@@ -95,10 +95,9 @@ const { studio } = Astro.props;
     <div class="container grid-2" style="align-items:center">
       <div>
         <p class="annotation reveal">A message from the team</p>
-        <h2 class="h-1">Nervous? <span class="draft-u hl">{studio.reassure.emphasis}</span><br />{studio.reassure.tail}</h2>
-        <p class="lede">The most important step was putting your name down. This week, your only
-          goal is to show up — learn the movements, meet the coaches, get comfortable in the
-          space. Consistency beats intensity, every single time.</p>
+        <h2 class="h-1">Feeling a bit nervous is <span class="draft-u hl">{studio.reassure.emphasis}</span>,<br />{studio.reassure.tail}</h2>
+        <p class="lede">You’ve done the hardest bit by putting your name down, so this week just
+          show up, meet the coaches and get comfortable in the space.</p>
         <ul class="check-list" style="margin-top:1.2rem">
           <li>{studio.addressLines.join(', ')}, {studio.postcode}</li>
           <li>{studio.hours}</li>
@@ -113,6 +112,5 @@ const { studio } = Astro.props;
 
   <VideoTestimonials
     eyebrow="You’re in good company"
-    heading='Members who stood exactly <span class="draft-u">here</span>'
-    lede="Six members who started with the same first step you’ve just taken." />
+    heading='Members who stood exactly <span class="draft-u">here</span>' />
 </Base>

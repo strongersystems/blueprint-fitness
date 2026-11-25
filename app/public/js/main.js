@@ -430,10 +430,11 @@
     });
   }
 
-  /* "Tap to get started" buttons carry data-enquiry-trigger in the markup and
-     are opened by the lightbox island's own delegated listener - nothing to do
-     here. Without JavaScript they stay plain anchors to #register.
-     "Try us for 30 days" buttons elsewhere navigate to the kickstart page. */
+  /* "Try us for 30 days" and "Get started" buttons carry data-start: they open
+     the pop-up in components/StartChooser.astro (its own listener), which asks
+     whether to join now, speak to someone or just get some information.
+     Without JavaScript they stay plain links. "See how the 30-Day Kickstart
+     works" is a plain link to the kickstart page on purpose. */
 
   /* ---------- forms: inline validation + branded success ----------
      Placeholder only — nothing is sent anywhere. */

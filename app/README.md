@@ -117,8 +117,8 @@ off the page, so a form only reaches HighLevel if it keeps to that contract:
   phase on the form itself, so it has already read the fields);
 - a stable `id` on the form. That is the label the submission appears under in
   the CRM — without one everything reports as "Unidentified Form". Ours are
-  `website-enquiry-all-sites`, `blueprint-enquiry-<studio>` and
-  `website-contact-all-sites`.
+  `website-<studio>` (the pop-up's flow), `website-contact-all-sites` and
+  `members-check-in-all-sites`.
 
 Two consequences worth knowing:
 
@@ -130,19 +130,38 @@ Two consequences worth knowing:
 - **One form per tracked page.** The tracker binds to every form in the
   document, so the old placeholder sign-up lightbox was removed from
   `public/js/main.js` — it would have posted empty, unidentified submissions.
+  The pop-up's form lives in its frame's page for the same reason.
 
-The enquiry form is presented in a lightbox (`EnquiryLightbox.tsx`). Two things
-about how it is wired are load-bearing:
+### The "Try us for 30 days" pop-up
 
-- **The overlay is rendered into the layout's `body-end` slot, not the card.**
-  `position: fixed` is trapped by any ancestor with a transform, and the motion
-  kit transforms the cards and sections — nested in the card, the overlay is
-  confined to that column instead of covering the viewport.
-- **The component renders only the overlay.** Anything marked
-  `data-enquiry-trigger` opens it through a delegated listener, so the hero CTAs
-  and the register card share one code path. Without JavaScript those stay plain
-  anchors to `#register`, `.no-js` styling renders the panel inline, and the card
-  swaps its dead button for an anchor down to `#enquiry`.
+Every "Try us for 30 days" / "Get started" button carries `data-start` and opens
+`components/StartChooser.astro` (rendered by `Base` on every page) instead of
+following its href; without JavaScript the href still works. "See how the
+30-Day Kickstart works" on the home page is a plain link on purpose. The pop-up asks:
+
+- **Join and pay now** → which studio → that studio's `signup-<studio>` page;
+- **Speak to someone** → which studio → the three questions → details → a time
+  for a free call (South Woodford and Hackney; Leytonstone's coach rings);
+- **Just looking for information** → which studio → the three questions →
+  details → message or a call?
+
+The studio step is skipped when the button has `data-studio`, or the page is one
+studio's (`Base` sets `<body data-start-studio>` from a single `trackStudios`).
+
+The questions, details and call run in a frame on `pages/start/[studio].astro`,
+a page that loads **only that studio's** tracking snippet, so the form
+(`website-<studio>`) lands in that studio's GHL and nowhere else. A form on the
+all-studio pages would make a contact in all three. It is the same flow and copy
+as the ad landing pages (join.blueprintfitnessldn.com), and the answers go into
+the same Enquiry fields, plus Enquiry: Path (what they chose). In GHL,
+"New Lead - Main Website (Nov 2026)" in each studio follows them up the way the
+ad workflow does, and routes on Enquiry: Path (built by stronger-web-1
+`client-sites/blueprint-funnel/ghl/website-workflow.mjs`). The questions are
+copied from the funnel in `data/startFlow.ts`: change them there first.
+
+The call step calls `/api/lead`, `/api/slots` and `/api/book` on this domain. A
+Cloudflare Worker route (`blueprintfitnessldn.com/api/*`) sends those to the
+funnel's Worker, `blueprint-funnel`.
 
 In HighLevel, Form Analytics and Form Submissions both have to be enabled in
 Settings for these to sync to contacts. The tracker also fires on a submit that

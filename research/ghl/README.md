@@ -39,7 +39,7 @@ record Location = the studio the visitor picked.
     Leytonstone     Rxqtps2bqPTLBpfP3xWp
     Hackney         pjUy3JEvtGrYO2GoL3J5
 
-Still to do: a second trigger on each for `website-enquiry-all-sites`, plus an
-If/Else on Location so a main-site enquiry only continues in the studio the
-visitor picked. The If/Else condition shape for a custom field is not yet
-known — the one captured example branches on tags, not a custom field.
+Superseded (Nov 2026): the site's enquiry lightbox, and its `website-enquiry-*`
+forms, were replaced by the "Try us for 30 days" pop-up. Its form is
+`website-<studio>`, sent only to the studio picked, and "New Lead - Main Website
+(Nov 2026)" follows it up (see app/README.md).

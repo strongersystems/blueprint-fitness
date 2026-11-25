@@ -1,0 +1,165 @@
+---
+/**
+ * The "Try us for 30 days" pop-up (Matt, 25 Nov 2026). Any link or button with `data-start` opens it instead of
+ * going to its href (the href stays as the no-JavaScript way in). It asks what they'd like:
+ *   Join and pay now          > which studio > that studio's sign-up page (signup-<studio>)
+ *   Speak to someone          > which studio > /start/<studio>/?path=speak  (quiz, details, a call with a coach)
+ *   Just looking for info     > which studio > /start/<studio>/?path=info   (quiz, details, message or a call?)
+ * The studio step is skipped when the button says `data-studio="<slug>"`, or the page is one studio's
+ * (<body data-start-studio>, set by Base from a single trackStudios entry).
+ *
+ * The quiz and details run in a frame on a page of their own (pages/start/[studio].astro) so that only that studio's
+ * GHL tracking reads the form; see that page for why. The frame tells this pop-up its height and when to close.
+ */
+import { studios } from '../data/studios';
+import { url } from '../lib/url';
+
+const list = studios.map((s) => ({ slug: s.slug, name: s.name, where: s.addressLines[0], signup: url(`${s.signupPath}/`) }));
+---
+<div class="signup-overlay start-overlay" id="start-pop" hidden>
+  <div class="signup-modal start-modal" role="dialog" aria-modal="true" aria-labelledby="start-h">
+    <button class="signup-close" type="button" data-start-close aria-label="Close">&times;</button>
+
+    <section data-s="choose">
+      <p class="annotation">Try us for 30 days</p>
+      <h2 class="h-3" id="start-h" tabindex="-1">How can we help?</h2>
+      <div class="start-opts">
+        <button type="button" class="start-opt" data-choice="pay">
+          <b>Join and pay now</b><span>Pick your studio and start your 30-Day Kickstart today.</span>
+        </button>
+        <button type="button" class="start-opt" data-choice="speak">
+          <b>Speak to someone</b><span>Three quick questions, then book a free call with one of our coaches.</span>
+        </button>
+        <button type="button" class="start-opt" data-choice="info">
+          <b>I&rsquo;m just looking for information</b><span>Three quick questions, then we&rsquo;ll get you what you need, by message or a call.</span>
+        </button>
+      </div>
+    </section>
+
+    <section data-s="studio" hidden>
+      <button type="button" class="start-back" data-start-back>&larr; Back</button>
+      <h2 class="h-3" tabindex="-1">Which studio suits you best?</h2>
+      <div class="start-opts">
+        {list.map((s) => (
+          <button type="button" class="start-opt" data-studio-pick={s.slug} data-signup={s.signup}>
+            <b>{s.name}</b><span>{s.where}</span>
+          </button>
+        ))}
+      </div>
+    </section>
+
+    <section data-s="flow" hidden>
+      <iframe title="Start your 30 days" data-start-frame></iframe>
+    </section>
+  </div>
+</div>
+
+<style is:global>
+  .start-overlay{z-index:95}
+  .no-js .start-overlay,.no-js .start-overlay[hidden]{display:none!important}
+  .start-modal{width:min(30rem,100%)}
+  .start-modal .annotation{color:var(--sky);margin:0 0 .15rem;font-size:1.05rem}
+  .start-modal .h-3{margin:0 0 1.1rem;padding-right:2.4rem;color:#fff}
+  .start-modal .h-3:focus{outline:none}
+  .start-opts{display:grid;gap:.65rem}
+  .start-opt{display:block;width:100%;text-align:left;cursor:pointer;padding:1rem 1.1rem;border-radius:10px;
+    border:1px solid rgba(94,162,255,.35);background:rgba(255,255,255,.04);color:#EAF1FB;font:inherit;
+    transition:background .15s,border-color .15s}
+  .start-opt b{display:block;color:#fff;font-weight:700;font-size:1.02rem;margin:0 0 .2rem}
+  .start-opt span{display:block;font-size:.88rem;line-height:1.45;color:#cfdcf0}
+  .start-opt:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
+  @media (hover:hover){.start-opt:hover{border-color:var(--sky);background:rgba(94,162,255,.1)}}
+  .start-back{background:none;border:0;color:var(--sky);font:600 .9rem var(--font-body);cursor:pointer;padding:.2rem 0;margin:0 0 .8rem}
+  .start-modal.is-flow{padding:0;overflow:auto}
+  .start-modal.is-flow .signup-close{top:.55rem;right:.55rem}
+  .start-modal [data-start-frame]{display:block;width:100%;height:560px;border:0;border-radius:12px;background:var(--draft)}
+</style>
+
+<script is:inline>
+(function () {
+  'use strict';
+  var pop = document.getElementById('start-pop');
+  if (!pop) return;
+  var modal = pop.querySelector('.start-modal'), frame = pop.querySelector('[data-start-frame]');
+  var choice = '', studio = '', opener = null;
+  var KEEP = /^(utm_[a-z]+|fbclid|gclid|msclkid)$/;
+
+  function track(name, extra) { try { (window.dataLayer = window.dataLayer || []).push(Object.assign({ event: name }, extra || {})); } catch (e) { /* fine */ } }
+  function step(name) {
+    pop.querySelectorAll('[data-s]').forEach(function (s) { s.hidden = s.getAttribute('data-s') !== name; });
+    modal.classList.toggle('is-flow', name === 'flow');
+    modal.scrollTop = 0;
+    var h = pop.querySelector('[data-s="' + name + '"] .h-3');
+    if (h) h.focus({ preventScroll: true });
+  }
+
+  function open(e) {
+    var a = e.target.closest && e.target.closest('[data-start]');
+    if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.button > 0) return;
+    e.preventDefault();
+    opener = a;
+    studio = a.getAttribute('data-studio') || document.body.getAttribute('data-start-studio') || '';
+    choice = '';
+    pop.hidden = false;
+    document.body.classList.add('modal-open');
+    requestAnimationFrame(function () { pop.classList.add('show'); });
+    step('choose');
+    track('start_open', { studio: studio || 'any' });
+  }
+  document.addEventListener('click', open);
+
+  function close() {
+    if (pop.hidden) return;
+    pop.classList.remove('show');
+    document.body.classList.remove('modal-open');
+    setTimeout(function () { pop.hidden = true; frame.removeAttribute('src'); step('choose'); }, 200);
+    if (opener && opener.focus) opener.focus({ preventScroll: true });
+  }
+  pop.querySelector('[data-start-close]').addEventListener('click', close);
+  pop.addEventListener('click', function (e) { if (e.target === pop) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (pop.hidden) return;
+    if (e.key === 'Escape') { close(); return; }
+    if (e.key !== 'Tab') return;
+    var f = [].slice.call(modal.querySelectorAll('button, iframe, a[href]')).filter(function (el) { return el.offsetParent !== null; });
+    if (!f.length) return;
+    if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
+    else if (!e.shiftKey && document.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
+  });
+
+  function go() {
+    track('start_choice', { choice: choice, studio: studio });
+    if (choice === 'pay') {
+      var b = pop.querySelector('[data-studio-pick="' + studio + '"]');
+      location.href = b ? b.getAttribute('data-signup') : '/signup/';
+      return;
+    }
+    var q = new URLSearchParams();
+    q.set('path', choice);
+    new URLSearchParams(location.search).forEach(function (v, k) { if (KEEP.test(k)) q.set(k, v); });
+    frame.style.height = "460px";
+    frame.src = '/start/' + studio + '/?' + q.toString();
+    step('flow');
+    setTimeout(function () { try { frame.focus(); } catch (e) { /* fine */ } }, 50);
+  }
+  pop.querySelectorAll('[data-choice]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      choice = b.getAttribute('data-choice');
+      if (studio && pop.querySelector('[data-studio-pick="' + studio + '"]')) go(); else step('studio');
+    });
+  });
+  pop.querySelectorAll('[data-studio-pick]').forEach(function (b) {
+    b.addEventListener('click', function () { studio = b.getAttribute('data-studio-pick'); go(); });
+  });
+  pop.querySelector('[data-start-back]').addEventListener('click', function () { step('choose'); });
+
+  // The frame says how tall it is (so it needs no scrollbar of its own), when it moves on a step, and when to close.
+  addEventListener('message', function (e) {
+    if (e.origin !== location.origin || !e.data || e.data.bp !== 'start' || e.source !== frame.contentWindow) return;
+    if (e.data.h) frame.style.height = Math.max(280, Math.ceil(e.data.h)) + 'px';
+    if (e.data.top) modal.scrollTop = 0;
+    if (e.data.done) track('start_done', { choice: choice, studio: studio, result: e.data.done });
+    if (e.data.close) close();
+  });
+})();
+</script>

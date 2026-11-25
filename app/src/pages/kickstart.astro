@@ -1,7 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
 import Schema from "../components/Schema.astro";
-import EnquiryLightbox from "../components/EnquiryLightbox.tsx";
 import { studios, kickstartPriceLine } from "../data/studios";
 import { url } from "../lib/url";
 ---
@@ -26,7 +25,7 @@ import { url } from "../lib/url";
         <p class="lede">Personal training in a small, supportive group of no more than five people
           per coach, with people who&rsquo;ll genuinely look after you.</p>
         <div class="btn-row" style="margin-top:1.4rem">
-          <a class="btn btn-primary btn-big" data-enquiry-trigger href="#register">Get started</a>
+          <a class="btn btn-primary btn-big" data-start href="#register">Get started</a>
         </div>
         <p class="hold-hint" style="margin-top:.9rem;color:#5EA2FF">12 coached sessions &middot; your plan written for you &middot; max 5 per coach</p>
         <div class="hero-stats" aria-label="The Kickstart in numbers">
@@ -318,7 +317,7 @@ import { url } from "../lib/url";
       <p class="annotation" style="margin:1.4rem 0 1.8rem">A coach will ring you first to hear
         about your goals and find the best start for you.</p>
       <div class="btn-row" style="align-items:baseline">
-        <a class="btn btn-primary btn-big" data-enquiry-trigger href="#register">Get started</a>
+        <a class="btn btn-primary btn-big" data-start href="#register">Get started</a>
         <a class="quiet-link" href={url("contact/")}>or ask us anything first</a>
       </div>
       </div>
@@ -496,22 +495,12 @@ import { url } from "../lib/url";
       </div>
       <div class="card" style="align-self:start">
         <h3 class="h-3" style="margin:0 0 .6rem">Start your 30 days</h3>
-        <p style="margin:0 0 1.5rem;color:#EAF1FB">All we need is your name, number and the
-          studio that suits you, and one of the team will give you a ring.</p>
-        <button type="button" data-enquiry-trigger
-                class="btn btn-primary btn-big enquiry-trigger" style="width:100%">Get started</button>
-        <a class="btn btn-primary btn-big enquiry-fallback" href="#enquiry" style="width:100%">Get started</a>
+        <p style="margin:0 0 1.5rem;color:#EAF1FB">Join today, book a free call with one of our coaches,
+          or ask us anything first. It all starts here.</p>
+        <a class="btn btn-primary btn-big" data-start href={url("contact/")} style="width:100%;justify-content:center">Get started</a>
         <p class="small" style="margin:.9rem 0 0;text-align:center;color:#EAF1FB">Already decided?
           <a href={url("signup/")} style="color:#5EA2FF">Sign up now &rarr;</a></p>
       </div>
     </div>
   </section>
-  <EnquiryLightbox slot="body-end" client:load
-    studios={studios.map((st) => ({ slug: st.slug, name: st.name, formValue: st.formValue }))}
-    successHref={url("next-steps/")}
-    successHrefByStudio={Object.fromEntries(studios.map((st) => [st.formValue, url(`${st.slug}/next-steps/`)]))}
-    formId="website-enquiry-all-sites"
-    heading="Start your 30 days"
-    intro="Pick your studio"
-    submitLabel="Book my friendly chat" />
 </Base>

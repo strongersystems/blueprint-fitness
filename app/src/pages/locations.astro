@@ -49,7 +49,7 @@ const sw = byslug["south-woodford"], ls = byslug["leytonstone"], hk = byslug["ha
           <li>southwoodford@blueprintfitnessldn.com</li>
         </ul>
         <div class="btn-row">
-          <a class="btn btn-primary" href={url("kickstart/")}>Try us for 30 days</a>
+          <a class="btn btn-primary" data-start data-studio={sw.slug} href={url(`${sw.slug}/kickstart/`)}>Try us for 30 days</a>
           <a class="btn btn-ghost" href={url(`${sw.slug}/timetable/`)}>Class timetable</a>
         </div>
       </div>
@@ -70,7 +70,7 @@ const sw = byslug["south-woodford"], ls = byslug["leytonstone"], hk = byslug["ha
           <li>leytonstone@blueprintfitnessldn.com</li>
         </ul>
         <div class="btn-row">
-          <a class="btn btn-primary" href={url("kickstart/")}>Try us for 30 days</a>
+          <a class="btn btn-primary" data-start data-studio={ls.slug} href={url(`${ls.slug}/kickstart/`)}>Try us for 30 days</a>
           <a class="btn btn-ghost" href={url(`${ls.slug}/timetable/`)}>Class timetable</a>
         </div>
       </div>
@@ -117,7 +117,7 @@ const sw = byslug["south-woodford"], ls = byslug["leytonstone"], hk = byslug["ha
           <li>hackney@blueprintfitnessldn.com</li>
         </ul>
         <div class="btn-row">
-          <a class="btn btn-primary" href={url("kickstart/")}>Try us for 30 days</a>
+          <a class="btn btn-primary" data-start data-studio={hk.slug} href={url(`${hk.slug}/kickstart/`)}>Try us for 30 days</a>
           <a class="btn btn-ghost" href={url(`${hk.slug}/timetable/`)}>Class timetable</a>
         </div>
       </div>
@@ -140,7 +140,7 @@ const sw = byslug["south-woodford"], ls = byslug["leytonstone"], hk = byslug["ha
       <h2 class="h-1">One plan at <span class="draft-u">all three studios</span></h2>
       <p class="lede" style="margin-inline:auto">Whichever studio&rsquo;s closest, come and try us
         for 30 days.</p>
-      <p style="margin-top:1.6rem"><a class="btn btn-primary btn-big" href={url("kickstart/")}>Try us for 30 days</a></p>
+      <p style="margin-top:1.6rem"><a class="btn btn-primary btn-big" data-start href={url("kickstart/")}>Try us for 30 days</a></p>
     </div>
   </section>
 

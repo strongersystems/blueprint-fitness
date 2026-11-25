@@ -37,7 +37,7 @@ const wa = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
       <p class="lede">Every session is coached, with never more than five people per coach, so
         there’s always someone keeping an eye on you.</p>
       <div class="btn-row">
-        <a class="btn btn-primary" href={url(`${studio.slug}/kickstart/`)}>Try us for 30 days</a>
+        <a class="btn btn-primary" data-start data-studio={studio.slug} href={url(`${studio.slug}/kickstart/`)}>Try us for 30 days</a>
         <a class="btn btn-ghost" href={wa} rel="noopener" target="_blank">Message {studio.name}</a>
       </div>
     </div>
@@ -165,7 +165,7 @@ const wa = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
       <p class="lede" style="margin-inline:auto">Twelve coached sessions, an InBody scan and a
         plan written for you.</p>
       <div class="btn-row" style="justify-content:center">
-        <a class="btn btn-primary" href={url(`${studio.slug}/kickstart/`)}>Start your 30 days</a>
+        <a class="btn btn-primary" data-start data-studio={studio.slug} href={url(`${studio.slug}/kickstart/`)}>Start your 30 days</a>
         <a class="btn btn-ghost" href={url('locations/')}>All three studios</a>
       </div>
     </div>

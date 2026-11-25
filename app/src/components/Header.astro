@@ -22,7 +22,7 @@ const { current = '', minimal = false, label = '' } = Astro.props;
             {nav.map((n) => (
               <li><a href={n.href} aria-current={current === n.label ? 'page' : undefined}>{n.label}</a></li>
             ))}
-            <li><a class="btn btn-primary" href={`${base}/kickstart/`}>Try us for 30 days</a></li>
+            <li><a class="btn btn-primary" data-start href={`${base}/kickstart/`}>Try us for 30 days</a></li>
           </ul>
         </nav>
         <button class="burger" aria-expanded="false" aria-label="Open menu" aria-controls="mobile-menu">
@@ -39,7 +39,7 @@ const { current = '', minimal = false, label = '' } = Astro.props;
       <ul>
         {nav.map((n) => (<li><a href={n.href}>{n.label}</a></li>))}
         <li><a href={`${base}/members/`}>Members area</a></li>
-        <li><a href={`${base}/kickstart/`} class="hl">Try us for 30 days</a></li>
+        <li><a href={`${base}/kickstart/`} class="hl" data-start>Try us for 30 days</a></li>
       </ul>
     </nav>
     <span class="annotation">The plan starts here.</span>

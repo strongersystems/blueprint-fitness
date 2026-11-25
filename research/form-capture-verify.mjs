@@ -1,5 +1,5 @@
 /* form-capture-verify.mjs — prove HighLevel's tracking script actually picks up
-   the React enquiry form.
+   the site's forms: the "Try us for 30 days" pop-up's flow (/start/<studio>/), contact and check-in.
 
    Serves the built site locally, loads the REAL external-tracking.js, then
    submits the form and inspects the FORM_SUBMISSION event the tracker tries to
@@ -11,7 +11,7 @@ import fs from 'fs';
 import path from 'path';
 process.env.NODE_EXTRA_CA_CERTS = '/root/.ccr/ca-bundle.crt';
 
-const DIST = '/workspace/blueprint-fitness/app/dist';
+const DIST = new URL('../app/dist', import.meta.url).pathname;
 const BASE = '';
 const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css',
                 '.svg': 'image/svg+xml', '.json': 'application/json' };
@@ -29,7 +29,7 @@ await new Promise(r => server.listen(8655, r));
 const ORIGIN = 'http://localhost:8655' + BASE;
 
 const browser = await chromium.launch({
-  executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome',
+  executablePath: '/opt/pw-browsers/chromium',
   proxy: { server: process.env.HTTPS_PROXY, bypass: 'localhost,127.0.0.1' },
 });
 const problems = [];
@@ -49,6 +49,8 @@ async function run(route, fill) {
     try { events.push(JSON.parse(r.request().postData() || '{}')); } catch { events.push({ unparsed: true }); }
     await r.abort();
   });
+  /* the call step's API: answered here, so no lookup or booking reaches GHL */
+  await ctx.route('**/api/**', r => r.fulfill({ json: { ok: true, id: 'k', token: 't', days: [] } }));
   const p = await ctx.newPage();
   const errs = [];
   p.on('pageerror', e => errs.push(e.message));
@@ -74,21 +76,14 @@ async function run(route, fill) {
   return { subs, errs, forms, snap, all: events.slice(before) };
 }
 
-const good = async p => {
-  /* the enquiry form now lives in a lightbox: open it first */
-  const trig = await p.$('[data-enquiry-trigger]');
-  if (trig) { await trig.click(); await p.waitForTimeout(500); }
-  await p.fill('#eq-name', 'Verify Harness');
-  await p.fill('#eq-email', 'harness@example.invalid');
-  await p.fill('#eq-phone', '+44 7700 900123');
-  const loc = await p.$('select#eq-loc');
-  if (loc) await p.selectOption('#eq-loc', 'Hackney');
-  await p.click('form[id^=website-] button[type=submit], form[id^=members-] button[type=submit]');
-};
-const empty = async p => {
-  const trig = await p.$('[data-enquiry-trigger]');
-  if (trig) { await trig.click(); await p.waitForTimeout(500); }
-  await p.click('form[id^=website-] button[type=submit], form[id^=members-] button[type=submit]');
+/* the pop-up's flow page: three answers, the details, and (info) message or call */
+const start = async p => {
+  for (let i = 0; i < 3; i++) { await p.click('fieldset:not([hidden]) .sf-opt'); await p.waitForTimeout(450); }
+  await p.fill('#f-first', 'Verify'); await p.fill('#f-last', 'Harness');
+  await p.fill('#f-email', 'harness@example.invalid'); await p.fill('#f-phone', '+44 7700 900123');
+  await p.click('.js-details:visible');
+  await p.waitForTimeout(400);
+  if (await p.isVisible('[data-step="prefer"]')) await p.click('[data-step="prefer"] .sf-opt >> nth=0');
 };
 
 const checkin = async p => {
@@ -110,8 +105,8 @@ const contact = async p => {
 };
 
 for (const [label, route, fill] of [
-  ['main site', '/kickstart/', good],
-  ['studio page', '/hackney/kickstart/', good],
+  ['pop-up, speak', '/start/south-woodford/?path=speak', start],
+  ['pop-up, info', '/start/hackney/?path=info', start],
   ['contact', '/contact/', contact],
   ['check-in', '/members/check-in/', checkin],
 ]) {
@@ -132,20 +127,15 @@ for (const [label, route, fill] of [
   const fd = ev.formData || {};
   const need = label === 'contact' ? ['first_name', 'email', 'message']
     : label === 'check-in' ? ['first_name', 'email', 'phone', 'message']
-    : ['first_name', 'email', 'phone'];    // enquiry: no message box any more
+    : ['first_name', 'last_name', 'email', 'phone', 'enquiry_sounds_like_me', 'enquiry_win', 'enquiry_start', 'enquiry_path', 'enquiry_ad'];
   for (const k of need) {
     if (!fd[k]) problems.push(`${label}: field "${k}" missing from formData`);
   }
-  if (!fd.location) problems.push(`${label}: field "location" missing from formData`);
+  /* the pop-up's studio is its page's own tracker (only that studio's GHL), so it carries no location field */
+  if (!label.startsWith('pop-up') && !fd.location) problems.push(`${label}: field "location" missing from formData`);
   if (!ev.formId || ev.formId === 'Unidentified Form') problems.push(`${label}: form not identified`);
 }
 
-/* how the tracker behaves on a click that fails our validation */
-const inv = await run('/kickstart/', empty);
-console.log('\n=== empty submit on /kickstart/ ===');
-console.log('  form_submission events:', inv.subs.length,
-            inv.subs.length ? JSON.stringify((inv.subs[0].events ? inv.subs[0].events.find(x => /form_submission/i.test(String(x.type))) : inv.subs[0]).formData) : '');
-
 await browser.close();
 server.close();
-console.log(problems.length ? '\nPROBLEMS:\n' + problems.join('\n') : '\nALL GREEN — the tracking script captures the enquiry form');
+console.log(problems.length ? '\nPROBLEMS:\n' + problems.join('\n') : '\nALL GREEN — the tracking script captures every form');

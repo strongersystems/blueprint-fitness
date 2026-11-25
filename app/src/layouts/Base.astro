@@ -3,6 +3,7 @@ import '../styles/main.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Tracking from '../components/Tracking.astro';
+import StartChooser from '../components/StartChooser.astro';
 import { url } from '../lib/url';
 
 interface Props {
@@ -25,6 +26,8 @@ const {
   ogImage = 'img/og.jpg',
 } = Astro.props;
 
+/* one studio's page: the "Try us for 30 days" pop-up skips asking which studio */
+const startStudio = trackStudios.length === 1 ? trackStudios[0] : undefined;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 ---
 <!DOCTYPE html>
@@ -51,7 +54,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
   <Tracking studios={trackStudios} all={trackAll} />
   <slot name="head" />
 </head>
-<body class="no-js">
+<body class="no-js" data-start-studio={startStudio}>
   <!-- flip the gate during parsing, not on defer: everything scoped under .js
        (hidden reveal states, the enquiry lightbox) would otherwise flash into
        view before main.js runs -->
@@ -60,6 +63,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
   <Header current={current} minimal={minimal} label={label} />
   <main id="main"><slot /></main>
   <Footer />
+  <StartChooser />
   <script src={url('js/main.js')} defer is:inline></script>
   <slot name="body-end" />
 </body>

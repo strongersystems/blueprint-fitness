@@ -43,3 +43,14 @@ Superseded (Nov 2026): the site's enquiry lightbox, and its `website-enquiry-*`
 forms, were replaced by the "Try us for 30 days" pop-up. Its form is
 `website-<studio>`, sent only to the studio picked, and "New Lead - Main Website
 (Nov 2026)" follows it up (see app/README.md).
+
+## 26 Nov 2026: form audit fixes
+
+- `site-forms.mjs`: the contact page (`website-contact-all-sites`) and members' check-in (`members-check-in-all-sites`)
+  had no workflow anywhere. Each studio now has "Website: Contact form (Nov 2026)" and "Members: Check-in form
+  (Nov 2026)": when Location is that studio (contact form "Not sure yet" goes to South Woodford), email the studio the
+  name, email, phone and message (new "Message" field, `contact.message`), tag the contact, and email them a short
+  "we've got it". Test contacts (@example.com, or tagged `stronger test`) are tagged and stop.
+- `signup-opportunity-values.mjs`: opportunity values = Kickstart price (SW £149, LS £149, Hackney £129) in "1. Signed
+  Up - 30 Day Trial" and both lead workflows.
+- Buying the Kickstart now stops every lead workflow: stronger-web-1 `client-sites/blueprint-funnel/ghl/stop-workflows.mjs`.

@@ -141,7 +141,7 @@ following its href; without JavaScript the href still works. "See how the
 
 - **Join and pay now** → which studio → that studio's `signup-<studio>` page;
 - **Speak to someone** → which studio → the three questions → details → a time
-  for a free call (South Woodford and Hackney; Leytonstone's coach rings);
+  for a free call with a coach (all three studios);
 - **Just looking for information** → which studio → the three questions →
   details → message or a call?
 

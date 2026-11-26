@@ -158,9 +158,9 @@ export const PATH = {
   message: 'Just looking, would like a message',
 } as const;
 
-/** Studios whose Speak With Us calendar takes bookings (Leytonstone's is switched off, as on the funnel: no call
-    step there, the coach rings instead). */
-export const callCalendar: Record<string, boolean> = { 'south-woodford': true, leytonstone: false, hackney: true };
+/** Studios whose Speak With Us calendar takes bookings from the page: all three since 26 Nov 2026 (Leytonstone's was
+    off until then, as on the funnel). false = no call step, the coach rings instead. */
+export const callCalendar: Record<string, boolean> = { 'south-woodford': true, leytonstone: true, hackney: true };
 
 /** The External Tracking form name GHL triggers the website workflow on. */
 export const formName = (slug: string) => `website-${slug}`;

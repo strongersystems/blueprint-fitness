@@ -1,0 +1,19 @@
+# Blueprint Fitness — blueprintfitnessldn.com
+User-agent: *
+Allow: /
+
+# Nothing is disallowed on purpose.
+#
+# The members area, /admin and every next-steps page used to be listed here as
+# well as carrying <meta name="robots" content="noindex">. Those two do not
+# stack — they cancel. A crawler that is refused the page never reads the tag
+# inside it, so the noindex is unreachable and the URL can still be indexed
+# from an external link, with nothing but the URL to show for it. Google's own
+# guidance is to let a page you want dropped be crawled, so the noindex is seen
+# and acted on. Crawl budget is not a concern at this size.
+#
+# Disallow belongs here only for a page that must never be FETCHED. Nothing on
+# this site qualifies: /admin is encrypted client-side, and the members pages
+# are simply not interesting.
+
+Sitemap: https://blueprintfitnessldn.com/sitemap.xml

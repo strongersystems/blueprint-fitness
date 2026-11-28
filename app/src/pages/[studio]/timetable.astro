@@ -7,6 +7,7 @@
  * readable by a screen reader, and editable in src/data/timetables.ts without
  * a designer.
  */
+import GettingHere from '../../components/GettingHere.astro';
 import Base from '../../layouts/Base.astro';
 import Schema from "../../components/Schema.astro";
 import { studios } from '../../data/studios';
@@ -168,6 +169,7 @@ const wa = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
         <a class="btn btn-primary" data-start data-studio={studio.slug} href={url(`${studio.slug}/kickstart/`)}>Start your 30 days</a>
         <a class="btn btn-ghost" href={url('locations/')}>All three studios</a>
       </div>
+      <GettingHere slug={studio.slug} centre />
     </div>
   </section>
 </Base>

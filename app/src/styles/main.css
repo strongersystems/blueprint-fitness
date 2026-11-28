@@ -1613,3 +1613,17 @@ body.no-js .members-form-note{display:block}
 @media (max-width:760px){
   .dir-row{grid-template-columns:1fr;gap:.15rem;padding:.8rem 1rem}
 }
+
+/* Getting here (components/GettingHere.astro) */
+.getting-here{margin:0 0 1.6rem}
+.getting-here .gh-head{margin:0 0 .55rem;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+.gh-list{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}
+.gh-list li{display:grid;grid-template-columns:4.4rem 1fr;gap:.6rem;align-items:baseline;line-height:1.4}
+.gh-min{font-weight:800;color:var(--blue)}
+.on-dark .gh-min{color:#5EA2FF}
+.gh-line{opacity:.7;font-weight:400}
+.getting-here.centre{max-width:27rem;margin:2rem auto 0;text-align:left}
+.on-dark .getting-here,.on-dark .getting-here .gh-what{color:#EAF1FB}
+.on-dark .getting-here .gh-head{color:#EAF1FB;opacity:.7}
+.on-dark .gh-line{color:#B9C7DE;opacity:1}
+.getting-here.centre{max-width:31rem}

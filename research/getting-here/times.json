@@ -1,0 +1,464 @@
+{
+ "south-woodford": [
+  {
+   "from": "South Woodford station",
+   "kind": "st",
+   "walk": [
+    14.8,
+    1.11,
+    7
+   ],
+   "bike": [
+    6.2,
+    1.42,
+    7
+   ],
+   "car": [
+    2.9,
+    1.36,
+    7
+   ]
+  },
+  {
+   "from": "Woodford station",
+   "kind": "st",
+   "walk": [
+    27.0,
+    2.01,
+    5
+   ],
+   "bike": [
+    6.7,
+    2.55,
+    5
+   ],
+   "car": [
+    3.6,
+    2.15,
+    5
+   ]
+  },
+  {
+   "from": "Snaresbrook station",
+   "kind": "st",
+   "walk": [
+    34.3,
+    2.57,
+    9
+   ],
+   "bike": [
+    11.5,
+    2.35,
+    9
+   ],
+   "car": [
+    5.1,
+    2.56,
+    9
+   ]
+  },
+  {
+   "from": "Redbridge station",
+   "kind": "st",
+   "walk": [
+    32.6,
+    2.74,
+    0
+   ],
+   "bike": [
+    11.4,
+    2.84,
+    0
+   ],
+   "car": [
+    5.5,
+    3.42,
+    7
+   ]
+  },
+  {
+   "from": "Woodford Green",
+   "kind": "area",
+   "walk": [
+    36.1,
+    2.7,
+    1
+   ],
+   "bike": [
+    12.8,
+    2.69,
+    1
+   ],
+   "car": [
+    5.7,
+    3.86,
+    1
+   ]
+  },
+  {
+   "from": "Wanstead",
+   "kind": "area",
+   "walk": [
+    37.5,
+    2.81,
+    30
+   ],
+   "bike": [
+    12.8,
+    2.8,
+    30
+   ],
+   "car": [
+    5.3,
+    2.8,
+    1
+   ]
+  },
+  {
+   "from": "Woodford Bridge",
+   "kind": "area",
+   "walk": [
+    23.9,
+    2.57,
+    5
+   ],
+   "bike": [
+    7.3,
+    2.57,
+    5
+   ],
+   "car": [
+    5.2,
+    2.44,
+    5
+   ]
+  },
+  {
+   "from": "Walthamstow Central",
+   "kind": "area",
+   "walk": [
+    69.2,
+    5.19,
+    18
+   ],
+   "bike": [
+    27.9,
+    5.5,
+    18
+   ],
+   "car": [
+    10.5,
+    5.33,
+    22
+   ]
+  }
+ ],
+ "leytonstone": [
+  {
+   "from": "Leytonstone High Road station",
+   "kind": "st",
+   "walk": [
+    1.1,
+    0.08,
+    3
+   ],
+   "bike": [
+    2.2,
+    0.08,
+    3
+   ],
+   "car": [
+    0.3,
+    0.09,
+    21
+   ]
+  },
+  {
+   "from": "Leytonstone station",
+   "kind": "st",
+   "walk": [
+    9.7,
+    0.73,
+    11
+   ],
+   "bike": [
+    3.9,
+    0.74,
+    13
+   ],
+   "car": [
+    2.2,
+    0.83,
+    24
+   ]
+  },
+  {
+   "from": "Leyton station",
+   "kind": "st",
+   "walk": [
+    20.9,
+    1.57,
+    0
+   ],
+   "bike": [
+    8.5,
+    1.58,
+    0
+   ],
+   "car": [
+    4.9,
+    2.05,
+    13
+   ]
+  },
+  {
+   "from": "Wanstead station",
+   "kind": "st",
+   "walk": [
+    29.6,
+    2.22,
+    15
+   ],
+   "bike": [
+    11.0,
+    2.7,
+    15
+   ],
+   "car": [
+    5.3,
+    2.51,
+    13
+   ]
+  },
+  {
+   "from": "Forest Gate",
+   "kind": "area",
+   "walk": [
+    31.7,
+    2.38,
+    24
+   ],
+   "bike": [
+    10.8,
+    2.61,
+    24
+   ],
+   "car": [
+    6.0,
+    2.39,
+    29
+   ]
+  },
+  {
+   "from": "Walthamstow Central",
+   "kind": "area",
+   "walk": [
+    49.2,
+    3.69,
+    18
+   ],
+   "bike": [
+    20.2,
+    4.01,
+    18
+   ],
+   "car": [
+    10.9,
+    5.04,
+    22
+   ]
+  },
+  {
+   "from": "Stratford",
+   "kind": "area",
+   "walk": [
+    41.3,
+    3.09,
+    0
+   ],
+   "bike": [
+    19.0,
+    3.55,
+    0
+   ],
+   "car": [
+    9.4,
+    3.36,
+    90
+   ]
+  },
+  {
+   "from": "Wanstead",
+   "kind": "area",
+   "walk": [
+    30.1,
+    2.26,
+    30
+   ],
+   "bike": [
+    11.9,
+    2.55,
+    30
+   ],
+   "car": [
+    6.4,
+    2.83,
+    1
+   ]
+  }
+ ],
+ "hackney": [
+  {
+   "from": "Hackney Central station",
+   "kind": "st",
+   "walk": [
+    6.9,
+    0.52,
+    2
+   ],
+   "bike": [
+    4.1,
+    0.67,
+    30
+   ],
+   "car": [
+    1.8,
+    0.65,
+    46
+   ]
+  },
+  {
+   "from": "Homerton station",
+   "kind": "st",
+   "walk": [
+    11.4,
+    0.85,
+    14
+   ],
+   "bike": [
+    7.1,
+    1.14,
+    14
+   ],
+   "car": [
+    2.1,
+    0.79,
+    14
+   ]
+  },
+  {
+   "from": "Hackney Downs station",
+   "kind": "st",
+   "walk": [
+    11.9,
+    0.89,
+    23
+   ],
+   "bike": [
+    6.1,
+    1.04,
+    23
+   ],
+   "car": [
+    4.7,
+    1.7,
+    23
+   ]
+  },
+  {
+   "from": "London Fields station",
+   "kind": "st",
+   "walk": [
+    14.4,
+    1.08,
+    14
+   ],
+   "bike": [
+    5.9,
+    1.21,
+    14
+   ],
+   "car": [
+    3.0,
+    1.1,
+    18
+   ]
+  },
+  {
+   "from": "Hackney Wick station",
+   "kind": "st",
+   "walk": [
+    32.0,
+    2.4,
+    3
+   ],
+   "bike": [
+    15.2,
+    2.81,
+    3
+   ],
+   "car": [
+    5.1,
+    2.12,
+    47
+   ]
+  },
+  {
+   "from": "Victoria Park",
+   "kind": "area",
+   "walk": [
+    19.9,
+    1.49,
+    29
+   ],
+   "bike": [
+    9.1,
+    1.58,
+    29
+   ],
+   "car": [
+    4.5,
+    1.73,
+    61
+   ]
+  },
+  {
+   "from": "Clapton Pond",
+   "kind": "area",
+   "walk": [
+    16.0,
+    1.2,
+    4
+   ],
+   "bike": [
+    6.0,
+    1.23,
+    4
+   ],
+   "car": [
+    3.6,
+    1.44,
+    4
+   ]
+  },
+  {
+   "from": "Dalston Junction",
+   "kind": "area",
+   "walk": [
+    25.3,
+    1.9,
+    10
+   ],
+   "bike": [
+    11.9,
+    2.24,
+    10
+   ],
+   "car": [
+    5.1,
+    1.89,
+    16
+   ]
+  }
+ ]
+}

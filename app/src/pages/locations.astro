@@ -3,6 +3,7 @@ import Base from "../layouts/Base.astro";
 import Schema from "../components/Schema.astro";
 import { url } from "../lib/url";
 import { studios, mapEmbed, mapLink } from "../data/studios";
+import GettingHere from "../components/GettingHere.astro";
 
 const byslug = Object.fromEntries(studios.map((s) => [s.slug, s]));
 const sw = byslug["south-woodford"], ls = byslug["leytonstone"], hk = byslug["hackney"];
@@ -48,6 +49,7 @@ const sw = byslug["south-woodford"], ls = byslug["leytonstone"], hk = byslug["ha
           <li>Open 6am&ndash;9pm every day, with 100+ sessions a week</li>
           <li>southwoodford@blueprintfitnessldn.com</li>
         </ul>
+        <GettingHere slug={sw.slug} />
         <div class="btn-row">
           <a class="btn btn-primary" data-start data-studio={sw.slug} href={url(`${sw.slug}/kickstart/`)}>Try us for 30 days</a>
           <a class="btn btn-ghost" href={url(`${sw.slug}/timetable/`)}>Class timetable</a>
@@ -69,6 +71,7 @@ const sw = byslug["south-woodford"], ls = byslug["leytonstone"], hk = byslug["ha
           <li>Open early &rsquo;til late, 7 days a week</li>
           <li>leytonstone@blueprintfitnessldn.com</li>
         </ul>
+        <GettingHere slug={ls.slug} />
         <div class="btn-row">
           <a class="btn btn-primary" data-start data-studio={ls.slug} href={url(`${ls.slug}/kickstart/`)}>Try us for 30 days</a>
           <a class="btn btn-ghost" href={url(`${ls.slug}/timetable/`)}>Class timetable</a>
@@ -116,6 +119,7 @@ const sw = byslug["south-woodford"], ls = byslug["leytonstone"], hk = byslug["ha
           <li>Mon&ndash;Fri 6am&ndash;9pm &middot; Sat 8&ndash;11am &middot; Closed Sunday</li>
           <li>hackney@blueprintfitnessldn.com</li>
         </ul>
+        <GettingHere slug={hk.slug} />
         <div class="btn-row">
           <a class="btn btn-primary" data-start data-studio={hk.slug} href={url(`${hk.slug}/kickstart/`)}>Try us for 30 days</a>
           <a class="btn btn-ghost" href={url(`${hk.slug}/timetable/`)}>Class timetable</a>

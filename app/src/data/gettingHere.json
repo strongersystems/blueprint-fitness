@@ -1,0 +1,27 @@
+{
+ "_": "Walking and cycling times to each studio, from OpenStreetMap routes (routing.openstreetmap.de, foot and bike profiles), rounded up to the minute. route.py made times.json on 28 Nov 2026. Driving is left out: the router assumes empty roads. Lines are TfL's names (Overground lines renamed Nov 2024).",
+ "south-woodford": [
+  {"min": 15, "how": "walk", "from": "South Woodford station", "line": "Central line"},
+  {"min": 7, "how": "bike", "from": "Woodford station", "line": "Central line"},
+  {"min": 8, "how": "bike", "from": "Woodford Bridge"},
+  {"min": 12, "how": "bike", "from": "Snaresbrook"},
+  {"min": 13, "how": "bike", "from": "Wanstead or Woodford Green"}
+ ],
+ "leytonstone": [
+  {"min": 1, "how": "walk", "from": "Leytonstone High Road station", "line": "Suffragette line"},
+  {"min": 10, "how": "walk", "from": "Leytonstone station", "line": "Central line"},
+  {"min": 9, "how": "bike", "from": "Leyton station", "line": "Central line"},
+  {"min": 11, "how": "bike", "from": "Forest Gate"},
+  {"min": 12, "how": "bike", "from": "Wanstead"},
+  {"min": 21, "how": "bike", "from": "Walthamstow"}
+ ],
+ "hackney": [
+  {"min": 7, "how": "walk", "from": "Hackney Central station", "line": "Mildmay line"},
+  {"min": 12, "how": "walk", "from": "Homerton station", "line": "Mildmay line"},
+  {"min": 12, "how": "walk", "from": "Hackney Downs station", "line": "Weaver line"},
+  {"min": 15, "how": "walk", "from": "London Fields station", "line": "Weaver line"},
+  {"min": 6, "how": "bike", "from": "Clapton Pond"},
+  {"min": 10, "how": "bike", "from": "Victoria Park"},
+  {"min": 12, "how": "bike", "from": "Dalston Junction"}
+ ]
+}

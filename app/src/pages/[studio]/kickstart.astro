@@ -1,4 +1,5 @@
 ---
+import GettingHere from '../../components/GettingHere.astro';
 import Base from '../../layouts/Base.astro';
 import Schema from "../../components/Schema.astro";
 import VideoTestimonials from '../../components/VideoTestimonials.astro';
@@ -37,7 +38,7 @@ const { studio } = Astro.props;
           12 coached sessions · {studio.teamSessions ? 'unlimited classes · ' : ''}your plan written for you</p>
         <div class="hero-stats" aria-label="The Kickstart in numbers">
           <div class="stat"><span class="n">30</span><span class="l">days, planned</span></div>
-          <div class="stat"><span class="n">{site.ratio}</span><span class="l">max ratio</span></div>
+          <div class="stat"><span class="n">{studio.perCoach}:1</span><span class="l">max ratio</span></div>
           {studio.weeklySessions && (
             <div class="stat"><span class="n">{studio.weeklySessions}</span><span class="l">sessions a week</span></div>
           )}
@@ -110,6 +111,7 @@ const { studio } = Astro.props;
           <li>{studio.hours}</li>
           <li>{studio.email}</li>
         </ul>
+        <GettingHere slug={studio.slug} />
       </div>
       <div class="card" style="align-self:start">
         <h3 class="h-3" style="margin:0 0 .6rem">Start at {studio.name}</h3>

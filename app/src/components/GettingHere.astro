@@ -1,0 +1,26 @@
+---
+/**
+ * "Getting here": walking and cycling times to a studio, from OpenStreetMap routes
+ * (research/getting-here). Works on light and dark sections: it takes its colour from the section.
+ */
+import data from '../data/gettingHere.json';
+
+interface Props { slug: string; compact?: boolean; centre?: boolean }
+const { slug, compact = false, centre = false } = Astro.props;
+type Row = { min: number; how: 'walk' | 'bike'; from: string; line?: string };
+const rows = ((data as Record<string, unknown>)[slug] || []) as Row[];
+const items = compact ? rows.slice(0, 4) : rows;
+---
+{items.length > 0 && (
+  <div class={`getting-here reveal${centre ? ' centre' : ''}`}>
+    <p class="gh-head">Getting here</p>
+    <ul class="gh-list">
+      {items.map((r) => (
+        <li>
+          <span class="gh-min">{r.min} min</span>
+          <span class="gh-what">{r.how === 'walk' ? 'walk' : 'by bike'} from {r.from}{r.line && <span class="gh-line"> &middot; {r.line}</span>}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}

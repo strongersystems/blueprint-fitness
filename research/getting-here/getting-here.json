@@ -1,27 +1,21 @@
 {
- "_": "Walking and cycling times to each studio, from OpenStreetMap routes (routing.openstreetmap.de, foot and bike profiles), rounded up to the minute. route.py made times.json on 28 Nov 2026. Driving is left out: the router assumes empty roads. Lines are TfL's names (Overground lines renamed Nov 2024).",
+ "_": "Getting here, after Foundry's location pages: London studios list nearby stations as walks; the suburban one lists the station walk and nearby areas as drives. No more than five each, no cycling. Walks: OpenStreetMap foot routes (route.py -> times.json, 28 Nov 2026), rounded up to the minute. Drives: OpenStreetMap car routes plus 50% (the router assumes empty roads), rounded up. No parking line: we have nothing confirmed to say about parking.",
  "south-woodford": [
-  {"min": 15, "how": "walk", "from": "South Woodford station", "line": "Central line"},
-  {"min": 7, "how": "bike", "from": "Woodford station", "line": "Central line"},
-  {"min": 8, "how": "bike", "from": "Woodford Bridge"},
-  {"min": 12, "how": "bike", "from": "Snaresbrook"},
-  {"min": 13, "how": "bike", "from": "Wanstead or Woodford Green"}
+  {"place": "South Woodford station", "min": 15, "how": "walk"},
+  {"place": "Wanstead", "min": 8, "how": "drive"},
+  {"place": "Woodford Green", "min": 9, "how": "drive"},
+  {"place": "Buckhurst Hill", "min": 11, "how": "drive"},
+  {"place": "Chigwell", "min": 11, "how": "drive"}
  ],
  "leytonstone": [
-  {"min": 1, "how": "walk", "from": "Leytonstone High Road station", "line": "Suffragette line"},
-  {"min": 10, "how": "walk", "from": "Leytonstone station", "line": "Central line"},
-  {"min": 9, "how": "bike", "from": "Leyton station", "line": "Central line"},
-  {"min": 11, "how": "bike", "from": "Forest Gate"},
-  {"min": 12, "how": "bike", "from": "Wanstead"},
-  {"min": 21, "how": "bike", "from": "Walthamstow"}
+  {"place": "Leytonstone High Road station", "min": 1, "how": "walk"},
+  {"place": "Leytonstone station", "min": 10, "how": "walk"},
+  {"place": "Leyton station", "min": 21, "how": "walk"}
  ],
  "hackney": [
-  {"min": 7, "how": "walk", "from": "Hackney Central station", "line": "Mildmay line"},
-  {"min": 12, "how": "walk", "from": "Homerton station", "line": "Mildmay line"},
-  {"min": 12, "how": "walk", "from": "Hackney Downs station", "line": "Weaver line"},
-  {"min": 15, "how": "walk", "from": "London Fields station", "line": "Weaver line"},
-  {"min": 6, "how": "bike", "from": "Clapton Pond"},
-  {"min": 10, "how": "bike", "from": "Victoria Park"},
-  {"min": 12, "how": "bike", "from": "Dalston Junction"}
+  {"place": "Hackney Central station", "min": 7, "how": "walk"},
+  {"place": "Homerton station", "min": 12, "how": "walk"},
+  {"place": "Hackney Downs station", "min": 12, "how": "walk"},
+  {"place": "London Fields station", "min": 15, "how": "walk"}
  ]
 }

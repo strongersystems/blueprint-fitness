@@ -1,25 +1,21 @@
 ---
 /**
- * "Getting here": walking and cycling times to a studio, from OpenStreetMap routes
- * (research/getting-here). Works on light and dark sections: it takes its colour from the section.
+ * "Getting here", after Foundry's location pages: a few nearby stations as walks, or areas as drives
+ * where a studio is suburban. Data and method: research/getting-here. Takes its colour from the section.
  */
 import data from '../data/gettingHere.json';
 
-interface Props { slug: string; compact?: boolean; centre?: boolean }
-const { slug, compact = false, centre = false } = Astro.props;
-type Row = { min: number; how: 'walk' | 'bike'; from: string; line?: string };
+interface Props { slug: string; centre?: boolean }
+const { slug, centre = false } = Astro.props;
+type Row = { place: string; min: number; how: 'walk' | 'drive' };
 const rows = ((data as Record<string, unknown>)[slug] || []) as Row[];
-const items = compact ? rows.slice(0, 4) : rows;
 ---
-{items.length > 0 && (
+{rows.length > 0 && (
   <div class={`getting-here reveal${centre ? ' centre' : ''}`}>
     <p class="gh-head">Getting here</p>
     <ul class="gh-list">
-      {items.map((r) => (
-        <li>
-          <span class="gh-min">{r.min} min</span>
-          <span class="gh-what">{r.how === 'walk' ? 'walk' : 'by bike'} from {r.from}{r.line && <span class="gh-line"> &middot; {r.line}</span>}</span>
-        </li>
+      {rows.map((r) => (
+        <li><span class="gh-place">{r.place}</span><span class="gh-time"><b>{r.min} min</b>{' '}{r.how}</span></li>
       ))}
     </ul>
   </div>

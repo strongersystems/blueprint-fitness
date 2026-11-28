@@ -22,7 +22,7 @@ const INK = '#101B2F', BLUE = '#0072F5', MIST = '#EAF1FB', SKY = '#5EA2FF', GREY
 /** Studio facts. Kept here rather than imported so this script stands alone. */
 export const STUDIOS = {
   'south-woodford': {
-    slug: 'south-woodford', name: 'South Woodford', coach: 'Stu',
+    slug: 'south-woodford', name: 'South Woodford', coach: 'Stu', perCoach: 6, perCoachWord: 'six',
     email: 'southwoodford@blueprintfitnessldn.com', whatsapp: '447538298457',
     address: '4 Raven Road, South Woodford, London', postcode: 'E18 1HB',
     hours: 'Open 6am–9pm, every day', signup: 'signup-southwoodford',
@@ -33,7 +33,7 @@ export const STUDIOS = {
     teamup: 'https://goteamup.com/p/3662065-blueprint-fitness-south-w/memberships/',
   },
   leytonstone: {
-    slug: 'leytonstone', name: 'Leytonstone', coach: 'Stu',
+    slug: 'leytonstone', name: 'Leytonstone', coach: 'Stu', perCoach: 5, perCoachWord: 'five',
     email: 'leytonstone@blueprintfitnessldn.com', whatsapp: '447947790035',
     address: 'Unit 3, Hitchcock Business Centre, Leytonstone', postcode: 'E11 4RE',
     hours: 'Open early ’til late, 7 days a week', signup: 'signup-leytonstone',
@@ -44,7 +44,7 @@ export const STUDIOS = {
     teamup: 'https://goteamup.com/p/9748082-blueprint-fitness-leytons/memberships/',
   },
   hackney: {
-    slug: 'hackney', name: 'Hackney', coach: 'Nick',
+    slug: 'hackney', name: 'Hackney', coach: 'Nick', perCoach: 5, perCoachWord: 'five',
     email: 'hackney@blueprintfitnessldn.com', whatsapp: '447944690356',
     address: 'Arch 195, Morning Lane, Hackney, London', postcode: 'E9 6LJ',
     /* Hackney is closed on Sundays and has no 100+ weekly session count —
@@ -118,7 +118,7 @@ export const panel = (html) =>
      <tr><td style="padding:16px 20px;font-family:${FONT};font-size:16px;line-height:1.6;color:${INK}">${html}</td></tr>
    </table>`;
 
-/** The three numbers, as on the site. `ratio` is 5:1 — never 6:1. */
+/** The three numbers, as on the site. The ratio is per studio: 6:1 at South Woodford, 5:1 elsewhere (perCoach). */
 export const stats = (cells) =>
   `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:4px 0 20px"><tr>` +
   cells.map((c, i) => `${i ? '<td width="2%">&nbsp;</td>' : ''}

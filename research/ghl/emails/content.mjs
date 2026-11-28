@@ -22,7 +22,7 @@ import { email, p, h, list, cta, ctaGhost, panel, stats, rule, links, SITE } fro
 /* No module-level Kickstart price: it differs per studio (render.mjs STUDIOS).
    One shared £169 here sent the wrong figure to every South Woodford and
    Leytonstone lead. */
-const RATIO = '5:1';
+/* The coach ratio is per studio (render.mjs STUDIOS perCoach): six at South Woodford, five at Leytonstone and Hackney. */
 const FIRST = '{{contact.first_name}}';
 
 /** Folders the templates are filed under, in order. */
@@ -45,7 +45,9 @@ export function build(s) {
   const FROM_TEAM = s.slug === 'hackney' ? `From ${s.coach}` : 'From the team';
   const wa = (t) => L.whatsapp(t);
 
-  /** Every studio keeps its own ratio line; the number is 5:1, never 6:1. */
+  const RATIO = `${s.perCoach}:1`;
+  const N = s.perCoachWord, Nc = N[0].toUpperCase() + N.slice(1);
+  /** Every studio keeps its own ratio line: 6:1 at South Woodford, 5:1 at Leytonstone and Hackney. */
   const KICK_STATS = stats([
     { n: '12', l: 'Coached sessions' },
     { n: RATIO, l: 'Max ratio' },
@@ -85,7 +87,7 @@ export function build(s) {
       h('What that looks like'),
       list([
         `<strong>12 coached sessions</strong> across your first 30 days`,
-        `<strong>Never more than five people to a coach</strong>, so you always get eyes on you`,
+        `<strong>Never more than ${N} people to a coach</strong>, so you always get eyes on you`,
         `<strong>A plan written for you</strong> — not a class everyone does at once`,
         `<strong>An InBody scan</strong> at the start, so progress is measured rather than guessed`,
       ]),
@@ -153,7 +155,7 @@ export function build(s) {
       h('“I cannot stay consistent”'),
       p(`Which is why the sessions are booked, coached and expected. Consistency is much easier when somebody notices you are missing.`),
       h('“I will feel watched”'),
-      p(`Five people, one coach, everyone concentrating on their own work. Nobody is looking at you — they are busy.`),
+      p(`${Nc} people, one coach, everyone concentrating on their own work. Nobody is looking at you — they are busy.`),
       h('“I do not know what to eat”'),
       p(`We cover that too, with practical guidance rather than a meal plan to buy. Start with training; food follows more easily once you are moving.`),
       cta(L.signup, 'Start your 30 days'),
@@ -168,7 +170,7 @@ export function build(s) {
       h('You get'),
       list([
         `A coach in the room with you for every session, not on a rota somewhere.`,
-        `A maximum of five people to that coach.`,
+        `A maximum of ${N} people to that coach.`,
         `A programme that progresses, written around what you can do now.`,
         `People who know your name by week two.`,
       ]),
@@ -600,7 +602,7 @@ export function build(s) {
         list([
           `<strong>Every session is coached.</strong> A qualified coach runs it, demonstrates each exercise and adjusts it to your level.`,
           `<strong>No experience needed.</strong> Plenty of our members had never picked up a barbell before they started.`,
-          `<strong>Small groups, never more than five to a coach</strong> — so you always get attention and feedback.`,
+          `<strong>Small groups, never more than ${N} to a coach</strong> — so you always get attention and feedback.`,
           `<strong>No shouting, no egos, no judgement.</strong> Just people working hard and getting on with it.`,
         ]),
         p(`The not-knowing feeling disappears in your first session. We have watched it happen hundreds of times.`),
@@ -616,8 +618,8 @@ export function build(s) {
         p(`That is exactly what this is not.`),
         h('Coached, not self-guided'),
         p(`Every session is led by a qualified coach. You do not wander around guessing — you follow a programme written by people who know your name, your goals and what your knee does.`),
-        h('Small groups, never more than five'),
-        p(`Five people to a coach, maximum. You will train alongside people much like you, and you will know everyone's name inside a week.`),
+        h(`Small groups, never more than ${N}`),
+        p(`${Nc} people to a coach, maximum. You will train alongside people much like you, and you will know everyone's name inside a week.`),
         h('Programmed, not random'),
         p(`No workout-of-the-day roulette. Every session is part of a progression built around strength, mobility and moving well, so you actually get somewhere.`),
         panel(`We are not for everyone, and that is deliberate. This was built for people who want expert guidance and a supportive room — usually people who tried a normal gym and hated it.`),

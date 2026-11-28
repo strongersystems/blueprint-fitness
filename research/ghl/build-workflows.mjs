@@ -20,7 +20,7 @@ const DRY = process.argv.includes('--dry');
 const { client } = makeClient();
 
 const STUDIOS = [
-  { name: 'South Woodford', slug: 'south-woodford', loc: 'cquQsieyBZx9vRgEqBge',
+  { name: 'South Woodford', slug: 'south-woodford', perCoach: 6, loc: 'cquQsieyBZx9vRgEqBge',
     pipeline: 'pvnaXstksEawcEjD9z7u', stage: '7561e524-53d5-4378-aa61-88c5ed2049ff',
     coach: 'Stu', email: 'southwoodford@blueprintfitnessldn.com', signup: 'signup-southwoodford' },
   { name: 'Leytonstone', slug: 'leytonstone', loc: 'mztjJyXHNWiEotc8ItXP',

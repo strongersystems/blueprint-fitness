@@ -7,7 +7,7 @@ import { brandedEmail, SUBJECT } from '/tmp/email-tpl.mjs';
 const { client } = makeClient();
 
 const S = [
- { name:'South Woodford', slug:'south-woodford', loc:'cquQsieyBZx9vRgEqBge', wf:'8a7994f4-ad5a-4584-bee8-93c33f861d88',
+ { name:'South Woodford', slug:'south-woodford', perCoach: 6, loc:'cquQsieyBZx9vRgEqBge', wf:'8a7994f4-ad5a-4584-bee8-93c33f861d88',
    coach:'Stu', email:'southwoodford@blueprintfitnessldn.com', signup:'signup-southwoodford', whatsapp:'447538298457',
    address:'4 Raven Road, South Woodford, London', postcode:'E18 1HB', hours:'Open 6am–9pm, every day — 100+ sessions a week' },
  { name:'Leytonstone', slug:'leytonstone', loc:'mztjJyXHNWiEotc8ItXP', wf:'ecbfd43b-e712-4f59-8629-42e2fc335677',

@@ -59,7 +59,7 @@ export function brandedEmail(s) {
        </td>
        <td width="2%">&nbsp;</td>
        <td width="32%" align="center" style="padding:14px 6px;background:#F5F9FF;border-radius:10px">
-         <p style="margin:0;font-family:${FONT};font-size:24px;font-weight:800;color:#0072F5">5:1</p>
+         <p style="margin:0;font-family:${FONT};font-size:24px;font-weight:800;color:#0072F5">${s.perCoach || 5}:1</p>
          <p style="margin:2px 0 0;font-family:${FONT};font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#3D4A63">Max ratio</p>
        </td>
        <td width="2%">&nbsp;</td>

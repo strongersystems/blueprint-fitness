@@ -5,7 +5,7 @@ export const site = {
   crmHost: 'https://link.stronger.systems',
   /** the general enquiry form on the main site (all three studios) */
   nutritionFormId: 'w7SeLy5VqmvSbzp14HKJ',
-  ratio: '5:1',
+  /* No site-wide coach ratio: six at South Woodford, five at Leytonstone and Hackney (perCoach in studios.ts). */
   /* No kickstartPrice here any more: it differs per studio and lives on each
      studio in studios.ts. A site-wide figure is how £169 ended up on pages and
      emails for studios that charge £149. */

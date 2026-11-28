@@ -21,7 +21,7 @@ const wa = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
 ---
 <Base
   title={`Memberships — Blueprint Fitness ${studio.name}`}
-  description={`Membership prices at Blueprint Fitness ${studio.name}: SGPT 12, 8 and 4. Small group personal training, never more than five people per coach.`}
+  description={`Membership prices at Blueprint Fitness ${studio.name}: SGPT 12, 8 and 4. Small group personal training, never more than ${studio.perCoachWord} people per coach.`}
   current="Locations"
   trackStudios={[studio.slug]}
 >

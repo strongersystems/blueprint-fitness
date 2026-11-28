@@ -86,6 +86,9 @@ export interface Studio {
    * the page advertises one figure and the card is charged another.
    */
   kickstartPrice: string;
+  /** most people one coach trains at once: six at South Woodford, five at Leytonstone and Hackney (Matt, 27 Nov 2026) */
+  perCoach: number;
+  perCoachWord: string;
   /** short line used as the eyebrow on studio pages */
   eyebrow: string;
   blurb: string;
@@ -114,6 +117,8 @@ export interface Studio {
 export const studios: Studio[] = [
   {
     slug: 'south-woodford',
+    perCoach: 6,
+    perCoachWord: 'six',
     name: 'South Woodford',
     formValue: 'South Woodford',
     addressLines: ['4 Raven Road', 'South Woodford, London'],
@@ -154,6 +159,8 @@ export const studios: Studio[] = [
   },
   {
     slug: 'leytonstone',
+    perCoach: 5,
+    perCoachWord: 'five',
     name: 'Leytonstone',
     formValue: 'Leytonstone',
     addressLines: ['Unit 3, Hitchcock Business Centre', 'Leytonstone High Road, London'],
@@ -193,6 +200,8 @@ export const studios: Studio[] = [
   },
   {
     slug: 'hackney',
+    perCoach: 5,
+    perCoachWord: 'five',
     name: 'Hackney',
     formValue: 'Hackney',
     addressLines: ['Arch 195, Morning Lane', 'Hackney, London'],

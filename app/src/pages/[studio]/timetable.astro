@@ -34,7 +34,7 @@ const wa = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
     <div class="container">
       <p class="dim sec-head" style="margin-bottom:1rem">{studio.name} · {studio.postcode}</p>
       <h1 class="h-display">Class <span class="draft-u">timetable</span></h1>
-      <p class="lede">Every session is coached, with never more than five people per coach, so
+      <p class="lede">Every session is coached, with never more than {studio.perCoachWord} people per coach, so
         there’s always someone keeping an eye on you.</p>
       <div class="btn-row">
         <a class="btn btn-primary" data-start data-studio={studio.slug} href={url(`${studio.slug}/kickstart/`)}>Try us for 30 days</a>
@@ -133,7 +133,7 @@ const wa = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(
                 <h3 class="h-3" style="display:flex;align-items:center;gap:.55rem">
                   <i class="tt-dot" style={`--dot:${c.colour}`} aria-hidden="true"></i>{c.label}
                 </h3>
-                <p>{c.blurb}</p>
+                <p>{c.blurb.replace('max 5', `max ${studio.perCoach}`)}</p>
               </article>
             ))}
           </div>

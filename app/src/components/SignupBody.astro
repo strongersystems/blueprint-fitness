@@ -24,7 +24,7 @@ const chooser = !studio;
     </h1>
     <p class="lede">
       Twelve coached sessions{studio?.teamSessions ? ', unlimited classes' : ''} and a plan written for you over your first
-      thirty days, with no more than five people to a coach.
+      thirty days, with no more than {studio ? studio.perCoachWord : 'five or six'} people to a coach{studio ? '' : ', depending on the studio'}.
     </p>
     <ul class="check-list" style="margin-top:1.6rem">
       <li>12 coached sessions across your first 30 days</li>
@@ -32,7 +32,7 @@ const chooser = !studio;
         ? studio.classesLine && <li>{studio.classesLine}</li>
         : <li>Unlimited classes on top at South Woodford and Leytonstone</li>}
       <li>A plan written around you and your goals</li>
-      <li>Max 5 people per coach, so nobody gets lost</li>
+      <li>Max {studio ? studio.perCoach : '5 or 6'} people per coach, so nobody gets lost</li>
     </ul>
   </div>
 </section>
